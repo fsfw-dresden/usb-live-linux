@@ -1,13 +1,22 @@
 #!/bin/bash
 
+INFOFILE="/info.txt"
 
 echo "Do only run this on a virtual machine and NOT on a productive system."
+
 exit 0 # comment this if you know what you are doing
+
+
 
 
 # This file contains package list which is applied directly after base installation.
 # For pragmatic reasons (easy commenting, different sources) this a list of commands instead of just package names
 # This script should be run with root privelidges
+
+
+echo "Execution time of install script: `date`" > $INFOFILE
+echo "git-branch: `git branch | head -1` " >> $INFOFILE
+echo "git-commit: `git log -1 | grep -v Author` " >> $INFOFILE
 
 
 
