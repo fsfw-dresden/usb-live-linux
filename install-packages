@@ -46,6 +46,8 @@ deb-src http://security.debian.org/ jessie/updates main contrib non-free" > /etc
 apt install mc
 apt install vim gvim
 apt install silversearcher-ag
+apt install dvipng
+
 
 
 # --------- TeX / LaTeX / PDF handling ---------
