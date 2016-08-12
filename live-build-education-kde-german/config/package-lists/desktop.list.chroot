@@ -32,10 +32,19 @@ education-tasks
 # education-menus
 # games-programming
 
-
 texlive
+texlive-bibtex-extra
+texlive-lang-german
+texlive-fonts-recommended
+texlive-fonts-extra
+texlive-latex-recommended
+texlive-latex-extra
+texlive-extra-utils
 texstudio
 texmaker
+
+pdftk
+xournal
 
 libreoffice
 
@@ -49,7 +58,20 @@ gitk
 
 zim
 graphviz
+
+octave
+octave-control
 gnuplot
+kmplot
+
+build-essential
+python3-dev
+python3-pip
+python-numpy
+python3-scipy
+python3-matplotlib
+python3-ipython
+# python3-jupyter
 
 jabref
 jabref-plugin-oo
@@ -63,9 +85,25 @@ jabref-plugin-oo
 # sweethome3d-furniture-editor
 # sweethome3d-textures-editor
 
+# pidgin
+kopete
 mumble
 
 # vlc
-# audacity
 # gtranscribe
+
+silversearcher-ag
+dvipng
+
+gimp
+inkscape
+
+audacity
+
+firefox-esr
+firefox-esr-l10n-de
+
+kalzium
+
+kwordquiz
 
