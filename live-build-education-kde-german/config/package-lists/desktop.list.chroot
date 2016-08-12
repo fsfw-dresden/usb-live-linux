@@ -53,11 +53,19 @@ gnuplot
 
 jabref
 jabref-plugin-oo
+# xul-ext-zotero
+# libreoffice-zotero-integration
 
 # blender
-
+# makehuman
 # sweethome3d
 # sweethome3d-furniture
 # sweethome3d-furniture-editor
 # sweethome3d-textures-editor
+
+mumble
+
+# vlc
+# audacity
+# gtranscribe
 
