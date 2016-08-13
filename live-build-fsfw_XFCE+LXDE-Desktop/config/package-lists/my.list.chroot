@@ -25,6 +25,14 @@ education-menus
 games-programming
 
 texlive
+# texlive-bibtex-extra
+# texlive-lang-german
+# texlive-fonts-recommended
+# texlive-fonts-extra
+# texlive-latex-recommended
+# texlive-latex-extra
+# texlive-extra-utils
+# dvipng
 texstudio
 texmaker
 
@@ -39,6 +47,20 @@ gitg
 gitk
 
 zim
+# graphviz
+
+# octave
+# octave-control
+# gnuplot
+# kmplot
+
+# build-essential
+# python3-dev
+# python3-pip
+# python-numpy
+# python3-scipy
+# python3-matplotlib
+# python3-ipython
 
 jabref
 jabref-plugin-oo
@@ -47,5 +69,17 @@ blender
 
 sweethome3d
 sweethome3d-furniture
-sweethome3d-furniture-editor
-sweethome3d-textures-editor
+
+# pdftk
+# xournal
+# silversearcher-ag
+
+# mumble
+
+# gimp
+# inkscape
+
+# audacity
+
+# firefox-esr
+# firefox-esr-l10n-de
