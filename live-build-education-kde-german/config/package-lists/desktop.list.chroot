@@ -1,18 +1,12 @@
 task-kde-desktop
 task-print-server
-
-education-desktop-kde
 education-laptop
-
+education-desktop-kde
 plymouth
 plymouth-x11
 
 gstreamer1.0-vaapi
 i965-va-driver
-
-task-german
-task-german-desktop
-task-german-kde-desktop
 
 # education-desktop-other
 education-tasks
@@ -40,6 +34,7 @@ texlive-fonts-extra
 texlive-latex-recommended
 texlive-latex-extra
 texlive-extra-utils
+dvipng
 texstudio
 texmaker
 
@@ -65,12 +60,12 @@ gnuplot
 kmplot
 
 build-essential
-python3-dev
-python3-pip
-python-numpy
-python3-scipy
-python3-matplotlib
-python3-ipython
+# python3-dev
+# python3-pip
+# python-numpy
+# python3-scipy
+# python3-matplotlib
+# python3-ipython
 # python3-jupyter
 
 jabref
@@ -82,8 +77,6 @@ jabref-plugin-oo
 # makehuman
 # sweethome3d
 # sweethome3d-furniture
-# sweethome3d-furniture-editor
-# sweethome3d-textures-editor
 
 # pidgin
 kopete
@@ -92,16 +85,15 @@ mumble
 # vlc
 # gtranscribe
 
-silversearcher-ag
-dvipng
+# silversearcher-ag
 
 gimp
 inkscape
 
 audacity
 
-firefox-esr
-firefox-esr-l10n-de
+# firefox-esr
+# firefox-esr-l10n-de
 
 kalzium
 
