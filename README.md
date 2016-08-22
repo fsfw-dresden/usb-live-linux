@@ -1,7 +1,13 @@
-# usb-live-linux
-Live-Linux System mit der Zielgruppe StudienanfängerInnen in Dresden
+# usb-live-linux - FSFW-Uni-Stick
 
-In diesem Repo sollten Skripte, Konfigurationsdateien und Doku liegen, die eine Standardinstallation in das von uns gewünschte auf Ersti-Bedürfnisse angepasste Live-System verwandeln.
+Live-Linux System mit der Zielgruppe Studium in Dresden
+
+In diesem Repo liegen Skripte, Konfigurationsdateien und Doku, die eine Standardinstallation, in ein von uns gewünschte, auf die Bedürfnisse des Studiums angepasste Live-System-Variante bringt.
+
+- System erstellt auf Debian 8.x - jessie - Stand 2016-08-22
+
+- FSFW-Uni-Stick basiert auf Debian-Live-System - Desktop kde - amd64 - Kernel 3.16
+
 
 
 weitere Infos:
