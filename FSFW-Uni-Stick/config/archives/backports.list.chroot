@@ -1,3 +1,0 @@
-# jessie-backports, previously on backports.debian.org
-deb http://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
-# deb-src http://ftp.de.debian.org/debian/ jessie-backports main contrib non-free

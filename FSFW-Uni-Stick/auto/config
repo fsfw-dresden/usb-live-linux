@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+    --distribution jessie \
+    --architectures amd64 \
+    --archive-areas "main contrib non-free" \
+    --binary-images iso-hybrid \
+    --updates true --backports=true --security=true \
+    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot-security http://security.debian.org/ \
+    --parent-mirror-binary http://ftp.de.debian.org/debian/ \
+    --parent-mirror-binary-security http://security.debian.org/ \
+    --mirror-chroot http://ftp.de.debian.org/debian/ \
+    --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
+    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-binary http://ftp.de.debian.org/debian/ \
+    --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
+    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de vga=current" \
+    --linux-packages linux-image \
+    --linux-flavours "amd64" \
+    --keyring-packages "debian-keyring deb-multimedia-keyring" \
+    --bootloader grub2 \
+    --chroot-filesystem squashfs \
+    --binary-filesystem ext2 \
+    --initsystem systemd \
+    --initramfs live-boot \
+    --apt-source-archives false \
+    --cache-packages true \
+    --source false \
+	"${@}"
