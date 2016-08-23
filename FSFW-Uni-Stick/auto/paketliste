@@ -1,0 +1,74 @@
+#!/bin/bash
+# Author: Gerd Göhler 2016-08-22
+# Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
+# https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
+#
+#  - live-build - debian jessie
+#
+#  erstellen der Paketlisten aus der Doku Paketliste
+#
+# ausführen im live-build-Verzeichnis
+# $ auto/paketliste
+# 
+# Paketliste=$1		# $1 = FSFW_UNI_Stick_-_Paketliste 
+            		# 
+
+PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste
+PAKETPATH=./config/package-lists
+
+DATUM=$(date +%Y-%m-%d)
+
+rm -v ${PAKETPATH}/*.list.*
+
+while read line 
+do 
+    line=${line%%"  -"*}
+
+case "${line%%"  "*}" in
+    "##")
+	liste=${line##*"  "}.list.chroot
+	listeb=${line##*"  "}.list.binary
+	echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
+	echo "" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- #")
+	echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- :x:")
+	echo ${line##*"  "} >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- :+1:")
+	echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- :o:")
+	echo "## ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- [x]")
+	# Kommentarzeilen mit beginnent mit "#" in *.list.binary benötigen patch in 
+	# --> /usr/lib/live/build/binary_packages-list    -- Zeile 101 -- fehlt  	" | grep -v '^#' >> "
+	#
+	#101			Expand_packagelist "${LIST}" "config/package-lists" | grep -v '^#' >> chroot/root/"$(basename ${LIST})"
+	#
+#	if [[ ! -f ${PAKETPATH}/${listeb// /_} ]]; then 
+#		echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${listeb// /_}
+#		echo "" >> ${PAKETPATH}/${listeb// /_}
+#	fi
+
+	echo ${line##*"  "} >> ${PAKETPATH}/${listeb// /_}
+    ;;
+#    "- [ ]")
+#	if [[ ! -f ${PAKETPATH}/${listeb// /_} ]]; then 
+#		echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${listeb// /_}
+#		echo "" >> ${PAKETPATH}/${listeb// /_}
+#	fi
+#	echo "# ${line##*"  "}" >> ${PAKETPATH}/${listeb// /_}
+#    ;;
+    *)
+#	echo " Unbekannt "
+    ;;	
+
+esac
+
+done < ${PAKETLISTE}
+
+
