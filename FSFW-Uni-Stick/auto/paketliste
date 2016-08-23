@@ -13,7 +13,7 @@
 # Paketliste=$1		# $1 = FSFW_UNI_Stick_-_Paketliste 
             		# 
 
-PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste
+PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
