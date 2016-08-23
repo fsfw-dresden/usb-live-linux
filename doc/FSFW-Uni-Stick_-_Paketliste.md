@@ -2,14 +2,14 @@
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
 >  $ auto/paketliste   --  im live-build-Verzeichnis ausführen
->  
+>
 >
 > ##  Syntax für die Paketlisten
 >
 > #### Programme die auf dem Stick sind / sein sollen (...list.chroot)
 >
-> - #  Virtuelle Paketliste  - Task List
->    
+> - ###  Virtuelle Paketliste  - Task List
+>
 >     __vor und hinter dem Paket- und Listennamen zwei Leerzeichen verwenden__
 >
 > - :x:  Paket ausgewählt  -- kurze Info / Beschreibung (wofür braucht man das ?)
@@ -32,12 +32,15 @@
 
 ##  Desktop
 
-- :x:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
-- :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop 
+- :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
+- :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
 
-- #  task-kde-desktop  -- KDE Desktop Umgebung
+- ###  task-kde-desktop  -- KDE Desktop Umgebung
+
 - :x:  kdm  --		KDE-Displaymanager für X11
-- #  kde-standard
+
+- ###  kde-standard
+
 - :x:  akregator  --	RSS/Atom-Feed-Aggregator 
 - :x:  ark  --		Archiv-Werkzeug 
 - :x:  dragonplayer  --	Einfacher Videoabspieler 
@@ -68,10 +71,12 @@
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 
-- #  kde-l10n  -- virtuelles Paket 
+- ###  kde-l10n  -- virtuelles Paket 
+
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
 
-- #  task-mate-desktop  -- Mate Desktop Umgebung
+- ###  task-mate-desktop  -- Mate Desktop Umgebung
+
 - :o:  lightdm  --		Einfaches grafisches Login-Programm
 - :o:  mate-desktop-environment-core
 - :o:  atril  --		MATE-Dokumentenbetrachter
@@ -89,13 +94,16 @@
 - :o:  mate-utils  --		Hilfsprogramme für den MATE-Desktop 
 - :o:  pluma  --		Offizieller Texteditor der Arbeitsumgebung MATE 
 
-- #  mate-media  --		MATE media utilities - PulseAudio oder GStreamer
-- :o:  mate-media-pulse  --	MATE media utilities (PulseAudio Backend)  
+- ###  mate-media  --		MATE media utilities - PulseAudio oder GStreamer
+
+- :o:  mate-media-pulse  --	MATE media utilities (PulseAudio Backend)
 - :o:  mate-media-gstreamer  --	MATE-Medienwerkzeuge (GStreamer Backend) 
 
-- #  task-gnome-desktop
-- #  task-xfce-desktop
-- #  task-cinnamon-desktop
+- ###  task-gnome-desktop -- 
+
+- ###  task-xfce-desktop  --
+
+- ###  task-cinnamon-desktop  --
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
@@ -105,15 +113,16 @@
 - :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
 
-- #  libreoffice
+- ###  libreoffice
+
 - :x:  libreoffice-base  --	Datenbank
 - :x:  libreoffice-calc  --	Tabellenkalkulation
 - :x:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
-- :x:  libreoffice-draw  --	Zeichenprogramm  
+- :x:  libreoffice-draw  --	Zeichenprogramm
 - :x:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
 
-- #  kommunikation
+- ###  kommunikation
 
 - :x:  firefox-esr  --	Mozilla Firefox web browser
 - :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket
@@ -141,55 +150,59 @@
 
 ##  Education - Science  --  Bildung und Wissenschaft
 
-- #  mathematics
+- ###  mathematics
+
 - :x:  octave  --	GNU Octave - Sprache für numerische Berechnungen
 - :x:  octave-control
 
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
 
-- #  scientific python
+- ###  scientific python
+
 - :x:  ipython3  --	Erweiterte interaktive Python-3-Shell
 
-- #  chemistry
+- ###  chemistry
+
 - :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
 - :x:  kalzium-data 
 
-- #  languages
+- ###  languages
+
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
-- :x:  texlive			
-- :x:  texlive-base		
+- :x:  texlive
+- :x:  texlive-base
 - :x:  texlive-bibtex-extra	
 - :x:  texlive-binaries	
-- :x:  texlive-doc-de		
+- :x:  texlive-doc-de
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils	
 - :x:  texlive-fonts-extra	
 - :x:  texlive-fonts-extra-doc	
 - :x:  texlive-fonts-recommended	
 - :x:  texlive-fonts-recommended-doc	
-- :x:  texlive-formats-extra		
+- :x:  texlive-formats-extra
 - :x:  texlive-generic-recommended	
-- :x:  texlive-lang-german		
-- :x:  texlive-latex-base		
-- :x:  texlive-latex-base-doc		
-- :x:  texlive-latex-extra  --		gut für Beamer-presentation		
-- :x:  texlive-latex-extra-doc		
+- :x:  texlive-lang-german
+- :x:  texlive-latex-base
+- :x:  texlive-latex-base-doc
+- :x:  texlive-latex-extra  --		gut für Beamer-presentation
+- :x:  texlive-latex-extra-doc
 - :x:  texlive-latex-recommended	
 - :x:  texlive-latex-recommended-doc	
-- :x:  texlive-luatex			
-- :x:  texlive-math-extra		
-- :x:  texlive-pictures		
-- :x:  texlive-pictures-doc		
-- :x:  texlive-plain-extra		
-- :x:  texlive-pstricks		
-- :x:  texlive-pstricks-doc		
-- :x:  texlive-publishers		
-- :x:  texlive-publishers-doc		
-- :x:  texlive-xetex			
+- :x:  texlive-luatex
+- :x:  texlive-math-extra
+- :x:  texlive-pictures	
+- :x:  texlive-pictures-doc
+- :x:  texlive-plain-extra	
+- :x:  texlive-pstricks	
+- :x:  texlive-pstricks-doc
+- :x:  texlive-publishers	
+- :x:  texlive-publishers-doc
+- :x:  texlive-xetex
 - :x:  texstudio  --			LaTeX-Editor - GUI
 - :x:  texstudio-doc
 - :x:  texstudio-l10n
@@ -204,32 +217,37 @@
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 
-- #  grafik
+- ###  grafik
 
 - :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
 - :x:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
 
-- #  utils
+- ###  utils
+
 - :x:  pciutils  --	PCI-Hilfsprogramme
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
 
-- #  text 
+- ###  text 
+
 - :x:  most  --		Pager-Programm - alternativ zu more / less
 
-- #  admin
+- ###  admin
+
 - :x:  dselect  --	Debian Package Verwaltung
 - :x:  fbset  --	Framebuffer-Geräte einstellen
 - :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
 - :x:  cryptsetup  --	Festplattenverschlüsselung
 
-- #  kernel
+- ###  kernel
+
 - :x:  squashfs-tools  -- Werkzeug zum Erzeugen und Hinzufügen von squashfs-Dateisystemen
 
 ##  German User  -- System Tools - Deutsche Sprachpakete
 
-- #  task-german
+- ###  task-german
+
 - :x:  manpages-de
 - :x:  wngerman
 - :x:  ingerman
@@ -248,7 +266,7 @@
 
 ##  live  -- System Pakete werden fürs Live-System benöttigt
 
-- :x:  live-boot  
+- :x:  live-boot 
 - :x:  live-config
 - :x:  live-config-systemd
 

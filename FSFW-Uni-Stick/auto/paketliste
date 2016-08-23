@@ -31,8 +31,8 @@ case "${line%%"  "*}" in
 	echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
 	echo "" >> ${PAKETPATH}/${liste// /_}
     ;;
-    "- #")
-	echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    "- ###")
+	echo "### ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
     ;;
     "- :x:")
 	echo ${line##*"  "} >> ${PAKETPATH}/${liste// /_}
