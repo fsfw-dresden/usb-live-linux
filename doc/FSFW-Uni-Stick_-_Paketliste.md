@@ -31,7 +31,7 @@
 > - [x]  Programm (Paket) auf dem Stick verfügbar 
 >
 > - [ ]  Programm (Paket) vorschlag 
-<<<<<<< HEAD
+>
 > [//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
 > [//]: # (Gerd: Firmware, Treiber z.B. Grafik Nvidia gibt es in verschiedenen varianten und können untereinander kollidieren, leichteres anpassen auch ohne Netz - nur im "persistence mode" bleiben die geänderten Einstellung erhalten )
 >
@@ -41,16 +41,6 @@
 >
 >    [//]: # (Name: Das ist ein Markdown-Kommentar und wird nicht mit gerendert.)
 >
-=======
-[//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
-
-> #### Anmerkungen / Fragen / Kommentare
-> - am besten als Markdown-Kommentare in den Quelltext
-> - Syntax:
-
-    [//]: # (Name: Das ist ein Markdown-Kommentar und wird nicht mit gerendert.)
-
->>>>>>> 73275161e0642ef559b4bf0d0ea62c2f3eb969d8
 > - Siehe auch den Quelltext dieser Datei
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
 
@@ -156,10 +146,7 @@
 - :x:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 - :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
-<<<<<<< HEAD
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
-=======
->>>>>>> 73275161e0642ef559b4bf0d0ea62c2f3eb969d8
 - :x:  icedove-l10n-de
 - :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
 
@@ -202,15 +189,9 @@
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 
-<<<<<<< HEAD
 - ###  electronics
 
 - :+1:  qucs  --	Schaltungssimulation -- TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb # Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl # Recommends: freehdl, verilog, octave # Außerdem brauchen wir noch Beispiele
-=======
-- ### electronics
-
-- :+1: qucs  --         Schaltungssimulation -- TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb # Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl # Recommends: freehdl, verilog, octave # Außerdem brauchen wir noch Beispiele
->>>>>>> 73275161e0642ef559b4bf0d0ea62c2f3eb969d8
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -302,15 +283,10 @@
 ##  wlan  -- System Tools - Hardware
 
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
-<<<<<<< HEAD
 - :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
-=======
-- :x:  firmware-b43-installer  -- Broadcom 43xx WLAN Karten
-[//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 
->>>>>>> 73275161e0642ef559b4bf0d0ea62c2f3eb969d8
 - [ ]  firmware-b43-installer
 
 ##  live  -- System Pakete werden fürs Live-System benöttigt
