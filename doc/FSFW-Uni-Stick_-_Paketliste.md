@@ -1,3 +1,7 @@
+[//]: # (Das ist ein Markdown-Kommentar; Text wird nicht gerendert)
+[//]: # (Carsten: Vorschlag: wir können diese Syntax nutzen, um Kommentare in die Liste zu schreiben, ohne die Markdown-Synax zu zerstören.)
+
+
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
@@ -27,7 +31,16 @@
 > - [x]  Programm (Paket) auf dem Stick verfügbar 
 >
 > - [ ]  Programm (Paket) vorschlag 
->
+[//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
+
+> #### Anmerkungen / Fragen / Kommentare
+> - am besten als Markdown-Kommentare in den Quelltext
+> - Syntax:
+
+    [//]: # (Name: Das ist ein Markdown-Kommentar und wird nicht mit gerendert.)
+
+> - Siehe auch den Quelltext dieser Datei
+> - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
 
 
 ##  Desktop
@@ -51,6 +64,7 @@
 - :x:  kcalc  --	Einfacher wissenschaftlicher Taschenrechner 
 - :x:  khelpcenter4  --	Hilfezentrum 
 - :x:  kmail  --	Vollständiger grafischer E-Mail-Client 
+[//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.
 - :x:  kmix  --		Lautstärkeregler und Mischer 
 - :x:  knotes  --	Programm für Haftnotizen (sticky notes) 
 - :x:  kopete  --	Instant-Messaging- und Chat-Anwendung 
@@ -129,6 +143,7 @@
 
 - :x:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 - :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
+[//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 - :x:  icedove-l10n-de
 - :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
 
@@ -160,6 +175,7 @@
 - ###  scientific python
 
 - :x:  ipython3  --	Erweiterte interaktive Python-3-Shell
+[//]: # (Carsten: Mir ist es wichtig, dass der ganze Python-Kram aktuell ist, weil da in den letzten Jahren viel pasiert ist. Aktuell ist IPython5. Das würde ich zusammen mit anderen Abhängigkeiten separat (aus den passenden Quellen installieren. Ich kümmere mich im September drum, könnte aber ggf. Hilfe gebrauchen.))
 
 - ###  chemistry
 
@@ -169,6 +185,10 @@
 - ###  languages
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
+
+- ### electronics
+
+- :+1: qucs  --         Schaltungssimulation -- TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb # Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl # Recommends: freehdl, verilog, octave # Außerdem brauchen wir noch Beispiele
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -261,6 +281,7 @@
 
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
 - :x:  firmware-b43-installer  -- Broadcom 43xx WLAN Karten
+[//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 
 - [ ]  firmware-b43-installer
 
