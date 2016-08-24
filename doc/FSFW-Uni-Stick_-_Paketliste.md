@@ -32,14 +32,13 @@
 >
 > - [ ]  Programm (Paket) vorschlag 
 >
-> [//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
-> [//]: # (Gerd: Firmware, Treiber z.B. Grafik Nvidia gibt es in verschiedenen varianten und können untereinander kollidieren, leichteres anpassen auch ohne Netz - nur im "persistence mode" bleiben die geänderten Einstellung erhalten )
+[//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
+[//]: # (Gerd: Firmware, Treiber z.B. Grafik Nvidia gibt es in verschiedenen varianten und können untereinander kollidieren, leichteres anpassen auch ohne Netz - nur im "persistence mode" bleiben die geänderten Einstellung erhalten )
 >
 > #### Anmerkungen / Fragen / Kommentare
 > - am besten als Markdown-Kommentare in den Quelltext
 > - Syntax:
->
->    [//]: # (Name: Das ist ein Markdown-Kommentar und wird nicht mit gerendert.)
+>  `[//]: # (Name: Das ist ein Markdown-Kommentar und wird nicht mit gerendert.)`
 >
 > - Siehe auch den Quelltext dieser Datei
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
