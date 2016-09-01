@@ -192,8 +192,9 @@
 
 - :+1:  qucs  --	Schaltungssimulation -- 
   - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
-    - # Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
-    - # Recommends: freehdl, verilog, octave # Außerdem brauchen wir noch Beispiele
+    - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
+    - Recommends: freehdl, verilog, octave 
+    - Außerdem brauchen wir noch Beispiele
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
