@@ -24,4 +24,4 @@ Areitsverzeichnis aufräumen ( chroot wird gelöscht, cache bleibt erhalten)
 Arbeitsverzeichnis komlett aufräumen
 
   ` $  sudo lb clean --purge `
-`
+

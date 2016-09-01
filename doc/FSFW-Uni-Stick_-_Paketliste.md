@@ -5,7 +5,7 @@
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
->  $ auto/paketliste   --  im live-build-Verzeichnis ausführen
+>  ` $ auto/paketliste `   --  im live-build-Verzeichnis ausführen
 >
 >
 > ##  Syntax für die Paketlisten
