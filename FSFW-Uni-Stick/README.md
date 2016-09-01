@@ -1,5 +1,4 @@
-
-* FSFW-Uni-Stick erstellen
+# FSFW-Uni-Stick erstellen
 
 Herunterladen der benötigeten Dateien
 
