@@ -31,3 +31,6 @@ lb config noauto \
     --cache-packages true \
     --source false \
 	"${@}"
+
+ln -s ../binary_local-hooks/1000-grub2-hotfix.hook.binary config/hooks/1000-grub2-hotfix.hook.binary
+
