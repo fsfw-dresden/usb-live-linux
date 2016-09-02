@@ -5,4 +5,5 @@ set -e
 lb clean noauto "${@}"
 
 rm -f config/binary config/bootstrap config/chroot config/common config/source
+rm -rf ./cache/bootstrap ./cache/contents.chroot
 rm -f build.log
