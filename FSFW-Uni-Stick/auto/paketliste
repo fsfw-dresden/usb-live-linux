@@ -21,14 +21,21 @@ PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
 
-if [[ $(ls -A ${PAKETPATH}) ]]; then
+if [[ -d ${PAKETPATH} ]]; then
 
-    echo " Alte Packetlisten werden gelöscht "
+    if [[ $(ls -A ${PAKETPATH}) ]]; then
 
-    rm -v ${PAKETPATH}/*.list.*
+	echo " Alte Packetlisten werden gelöscht "
+
+	rm -v ${PAKETPATH}/*.list.*
     else
-    echo "Es gibt keine Packetlisten"
-fi
+	echo "Es gibt keine Packetlisten"
+    fi
+
+    else
+    mkdir ${PAKETPATH}
+fi 
+
 
 echo "Packetlisten werden erstellt."
 
