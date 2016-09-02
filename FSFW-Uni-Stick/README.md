@@ -1,5 +1,8 @@
 # FSFW-Uni-Stick erstellen
 
+### getestet auf Debian jessie und Debian strech - 2016-09-02
+
+
 Herunterladen der benötigeten Dateien
 
   ` $ git clone https://github.com/fsfw-dresden/usb-live-linux.git `
