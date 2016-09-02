@@ -21,8 +21,8 @@ config/bootstrap
 config/chroot
 config/common
 config/source
-
 config/build
+config/package-lists
 
 source/
 source*.iso
