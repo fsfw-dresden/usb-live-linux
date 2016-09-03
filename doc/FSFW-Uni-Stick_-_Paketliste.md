@@ -86,7 +86,7 @@
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
-- :X:  konsolekalendar  -- Persönlicher Organizer für die Konsole
+- :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
 - ###  kde-l10n  -- virtuelles Paket 
 
@@ -153,7 +153,7 @@
 
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
-- :X:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
+- :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
 
 ##  Desktop Video - Audio - Bilder
 
@@ -258,7 +258,7 @@
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
-- :X:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
+- :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 
 - ###  text 
 
