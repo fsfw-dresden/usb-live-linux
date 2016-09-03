@@ -35,11 +35,11 @@ Das " live-image " wurde erfolgreich erstellt ?
 
 Benutzerberechtigung ändern 
 
-  ` sudo chown ${USER}:${USER} live-image-amd64.hybrid.iso ` 
+  ` $ sudo chown ${USER}:${USER} live-image-amd64.hybrid.iso ` 
 
 Image mittels kvm (Kernel-based Virtual Machine) testen
 
-  ` kvm -m 1024 -cdrom live-image-amd64.hybrid.iso `
+  ` $ kvm -m 1024 -cdrom live-image-amd64.hybrid.iso `
 
-  * Option -m (Speicher der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
 
