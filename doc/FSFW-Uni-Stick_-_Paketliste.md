@@ -85,6 +85,8 @@
 - :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
+- :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
+- :X:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
 - ###  kde-l10n  -- virtuelles Paket 
 
@@ -151,7 +153,7 @@
 
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
-
+- :X:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
 
 ##  Desktop Video - Audio - Bilder
 
@@ -164,6 +166,8 @@
 - :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
 - :+1:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
+- :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
+- :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
 ##  Education - Science  --  Bildung und Wissenschaft
 
@@ -254,6 +258,7 @@
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
+- :X:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 
 - ###  text 
 
