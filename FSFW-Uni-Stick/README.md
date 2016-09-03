@@ -27,3 +27,19 @@ Arbeitsverzeichnis komlett aufräumen
 
   ` $  sudo lb clean --purge `
 
+Das " live-image " wurde erfolgreich erstellt ?
+
+  ` $ ls -l *.iso `
+
+### testen des Images " live-image-amd64.hybrid.iso " in einer virtuell Umgebung mittels kvm (qemu)
+
+Benutzerberechtigung ändern 
+
+  ` sudo chown ${USER}:${USER} live-image-amd64.hybrid.iso ` 
+
+Image mittels kvm (Kernel-based Virtual Machine) testen
+
+  ` kvm -m 1024 -cdrom live-image-amd64.hybrid.iso `
+
+  * Option -m (Speicher der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+
