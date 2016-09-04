@@ -1,12 +1,11 @@
 # LaTeX auf dem FSFW-Stick
 
-LaTeX ist ein Werkzeug zur Erstellung von Druckerzeugnissen in höchster
-Qualität.  Vor allem für die Erstellung großer wissenschaftlicher Dokumente ist
-der Einsatz von LaTeX sinnvoll.  Dabei bietet LaTeX hervorragende Unterstützung
-für das Setzen von Formeln, die automatische Aktualisierung von Referenzen, und
-die einfache Handhabung von Literaturverzeichnissen und Quellenangaben für alle
-Fachrichtungen.  Allerdings lässt sich LaTeX auch darüber hinaus gewinnbringend
-einsetzen, zum Beispiel bei der Erstellung von Präsentationen.
+LaTeX ist ein Werkzeug zur Erstellung wissenschaftlicher Dokumente in höchster
+Qualität.  Es bietet hervorragende Unterstützung für das Setzen von Formeln, die
+automatische Aktualisierung von Referenzen, und die einfache Handhabung von
+Literaturverzeichnissen und Quellenangaben.  Darüber kann LaTeX auch für
+zahlreiche andere Formen von Dokumenten genutzt werden, wie zum Beispiel
+Präsentationen, Briefe, und sogar Poster.
 
 Unser FSFW-Stick biete einen einfach Einstieg in die Verwendung von LaTeX.  Dazu
 sind auf dem Stick zahlreiche Programme installiert, welche für die grundlegende
