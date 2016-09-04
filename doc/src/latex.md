@@ -5,7 +5,7 @@ alles viel zu kompliziert.  Und überhaupt, lassen Sie mich in Ruhe und gehen Si
 weiter, hier gibt es nichts zu sehen! … so was lästiges.
 
 Wenn das hier fertig ist, wird es eher detaillierter sein; eine einfache
-Übersicht sollte dann in [index.md]() stehen und hierauf verweisen.
+Übersicht sollte dann in [index.md](index.md) stehen und hierauf verweisen.
 
 ## Was ist LaTeX und was kann ich damit machen?
 
