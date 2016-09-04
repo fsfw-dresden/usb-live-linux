@@ -11,6 +11,22 @@ Wenn das hier fertig ist, wird es eher detaillierter sein; eine einfache
 
 LaTeX ist toll, Dinge und so.
 
+Hier sollten auch viele Links zur Verwendung mit LaTeX stehen.
+
+Im Netz:
+
+- http://texample.net/
+- http://www.latex-community.org/forum/
+- https://tex.stackexchange.com
+- https://de.wikibooks.org/wiki/LaTeX-Kompendium
+- http://www.dante.de/
+- Mehr?
+
+Als Bücher:
+
+- Wer liest schon Bücher?
+- Mehr?
+
 ## Was gibt es auf dem Stick dazu?
 
 - Grundlegende Teile von TeXLive 2015(?) als LaTeX-Distribution
