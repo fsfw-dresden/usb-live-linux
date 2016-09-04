@@ -16,6 +16,14 @@ Verwendung, und weiterführende Literatur werden hier im folgenden beschrieben.
 
 LaTeX ist toll, Dinge und so.
 
+TeX von Knuth erfunden, LaTeX von Lamport, …
+
+Die Arbeit mit LaTeX unterscheidet sich grundlegend von der Arbeit mit Word:
+LaTeX kommt als *Compiler*, welche es einem erlaubt, ein LaTeX-Dokument in
+ein gewünschtes Ausgabeformat (meist pdf) zu konvertieren.  Zur Bearbeitung des
+LaTeX-Dokuments braucht man noch ein weiteres Programm, welches wie sich wie ein
+Texteditor verhält (und dann der Word-Oberfläche sehr ähnlich ist).
+
 Hier sollten auch viele Links zur Verwendung mit LaTeX stehen.
 
 Im Netz:
