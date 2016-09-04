@@ -1,6 +1,6 @@
 # FSFW-Uni-Stick erstellen
 
-### getestet auf Debian "jessie" (stabel) und Debian "stretch" (testing) - 2016-09-02
+### getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-09-02
 
 
 Herunterladen der benötigeten Dateien
