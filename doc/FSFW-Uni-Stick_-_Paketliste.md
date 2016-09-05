@@ -129,6 +129,7 @@
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
 - :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
+- :+1: scribus-doc  --	Scribus-Doku
 
 - ###  libreoffice
 
@@ -161,11 +162,13 @@
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
 - :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
+- :+1: sozi --		Inkscape-Plugin zur Präsentationserstellung
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :+1:  gimp-data-extras  -- Ein extra Satz Pinsel, Paletten, Gradienten für GIMP
 - :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
 - :+1:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
+- :+1:  create-resources  --	Vorlagen für versch. Grafikprogramme
 - :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
@@ -199,6 +202,28 @@
     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
     - Recommends: freehdl, verilog, octave 
     - Außerdem brauchen wir noch Beispiele
+- :+1:  geda
+- :+1:  geda-examples
+- :+1:  kicad
+- :+1:  kicad-doc-de
+- :o:  Eagle  --	ist unfrei
+
+- :+1: octave
+- :+1: octave-control
+
+- ### programming
+
+- :+1: eclipse-cdt  --	IDE für C-Programmierung
+- :+1: eclipse-jdt  --	IDE für Java-Programmierung
+- :+1: eclipse-egit  --	Git-Plugin für die Eclipse-IDE
+- :+1: eclipse-eclox --	Plugin für den Doku-Generator Doxygen
+- :+1: gcc  --		GNU-Compilersammlung
+
+## Systemtools -- verschiedene Systemtools von Netzwerkanalsyse bis ...
+
+- ### networktools
+- :+1: wireshark  --	Netwerkanalyse-Tools
+- :+1: wireshark-doc	
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -302,5 +327,3 @@
 - :x:  live-boot 
 - :x:  live-config
 - :x:  live-config-systemd
-
-
