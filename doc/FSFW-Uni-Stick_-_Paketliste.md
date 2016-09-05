@@ -208,9 +208,6 @@
 - :+1:  kicad-doc-de
 - :o:  Eagle  --	ist unfrei
 
-- :+1: octave
-- :+1: octave-control
-
 - ### programming
 
 - :+1: eclipse-cdt  --	IDE für C-Programmierung
@@ -222,6 +219,7 @@
 ## Systemtools -- verschiedene Systemtools von Netzwerkanalsyse bis ...
 
 - ### networktools
+
 - :+1: wireshark  --	Netwerkanalyse-Tools
 - :+1: wireshark-doc	
 
