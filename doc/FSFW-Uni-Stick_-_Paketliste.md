@@ -169,12 +169,24 @@
 - :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
+## Desktop Grafik
+
+- :+1:  blender  --	Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
+- :+1:  makehuman  --	Modelling of 3-Dimensional humanoid characters - ab stretch
+- :+1:  sweethome3d  --	Interior 2D design application with 3D preview (java)
+- :+1:  sweethome3d-furniture-editor  -- Sweet Home 3D Furniture Library Editor
+- :+1:  sweethome3d-textures-editor  --  Sweet Home 3D Textures Library Editor
+
 ##  Education - Science  --  Bildung und Wissenschaft
 
 - ###  mathematics
 
 - :x:  octave  --	GNU Octave - Sprache für numerische Berechnungen
 - :x:  octave-control
+- :x:  geogebra  --	Dynamische Mathematiksoftware für die Lehre
+- :o:  geogebra-gnome  -- GNOME-Integrationsebene für GeoGebra 
+- :x:  geogebra-kde  -- KDE integration layer for GeoGebra 
+- :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
 
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
 
@@ -238,6 +250,13 @@
 - :x:  texstudio-l10n
 
 
+##  Programmierung Softwareentwicklung
+
+- :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+- :x:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
+- :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+
+
 ##  Terminal Tools
 
 - :x:  mc  --		Midnight Commander - ein guter Dateimanager
@@ -266,10 +285,10 @@
 
 - ###  admin
 
-- :x:  dselect  --	Debian Package Verwaltung
+- :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung 
 - :x:  fbset  --	Framebuffer-Geräte einstellen
 - :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
-- :x:  cryptsetup  --	Festplattenverschlüsselung
+- :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 
 - ###  kernel
 
