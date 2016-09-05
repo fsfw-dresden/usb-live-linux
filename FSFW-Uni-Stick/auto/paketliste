@@ -1,24 +1,43 @@
 #!/bin/bash
-# Author: Gerd Göhler 2016-08-22
-# Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
-# https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
+#===========================================
+#         FILE: paketlist
+#        USAGE: auto/paketliste   - ( ausführen im live-build-Verzeichnis )
+#  DESCRIPTION: erstellen der Paketlisten aus der Doku Paketliste
+#        
+#      VERSION: 0.0.2
+#      OPTIONS: PAKETLISTE=$1	# $1 = FSFW_UNI_Stick_-_Paketliste 
+#        NOTES: für - live-build - debian jessie
 #
-#  - live-build - debian jessie
 #
-#  erstellen der Paketlisten aus der Doku Paketliste
-#
-# ausführen im live-build-Verzeichnis
-# $ auto/paketliste
-# 
-# Paketliste=$1		# $1 = FSFW_UNI_Stick_-_Paketliste 
-            		# 
+#       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
+#      CREATED: 2016-08-22
+#     REVISION: 2016-09-02
+#       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
+#               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
+#==========================================
 
 PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
 
-rm -v ${PAKETPATH}/*.list.*
+if [[ -d ${PAKETPATH} ]]; then
+
+    if [[ $(ls -A ${PAKETPATH}) ]]; then
+
+	echo " Alte Packetlisten werden gelöscht "
+
+	rm -v ${PAKETPATH}/*.list.*
+    else
+	echo "Es gibt keine Packetlisten"
+    fi
+
+    else
+    mkdir ${PAKETPATH}
+fi 
+
+
+echo "Packetlisten werden erstellt."
 
 while read line 
 do 
@@ -71,4 +90,5 @@ esac
 
 done < ${PAKETLISTE}
 
+echo "Packetlisten erstellen beendet. "
 

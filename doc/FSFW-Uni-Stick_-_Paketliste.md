@@ -5,7 +5,7 @@
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
->  $ auto/paketliste   --  im live-build-Verzeichnis ausführen
+>  ` $ auto/paketliste `   --  im live-build-Verzeichnis ausführen
 >
 >
 > ##  Syntax für die Paketlisten
@@ -85,6 +85,8 @@
 - :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
+- :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
+- :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
 - ###  kde-l10n  -- virtuelles Paket 
 
@@ -151,7 +153,7 @@
 
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
-
+- :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
 
 ##  Desktop Video - Audio - Bilder
 
@@ -164,6 +166,8 @@
 - :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
 - :+1:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
+- :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
+- :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
 ##  Education - Science  --  Bildung und Wissenschaft
 
@@ -192,8 +196,9 @@
 
 - :+1:  qucs  --	Schaltungssimulation -- 
   - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
-    - # Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
-    - # Recommends: freehdl, verilog, octave # Außerdem brauchen wir noch Beispiele
+    - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
+    - Recommends: freehdl, verilog, octave 
+    - Außerdem brauchen wir noch Beispiele
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -253,6 +258,7 @@
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
+- :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 
 - ###  text 
 
