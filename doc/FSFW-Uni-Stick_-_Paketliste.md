@@ -122,6 +122,25 @@
 
 - ###  task-cinnamon-desktop  --
 
+## Accessibility -- Programme zur Erleichterung und Unterstützung von Anwendern mit körperlicher Einschränkung
+
+- :x:  kdeaccessibility
+- :+1:  brltty
+- :+1:  brltty-espeak
+- :+1:  console-braille 
+- :o:  espeakup -- dieses Paket verursachte Probleme bei einem früheren Live-Build
+- :+1:  Yasr
+- :+1:  accessodf-java
+- :+1:  kvkbd
+- :+1:  cellwriter
+- :0:  vmg
+- :+1:  ebook-speaker 
+- :0:  lios
+- :+1:  gocr
+- :+1:  tesseract-ocr
+- :+1:  tesseract-ocr-deu
+- :+1:  ocrfeeder
+
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
 - :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
