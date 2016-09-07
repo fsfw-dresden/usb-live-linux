@@ -42,6 +42,16 @@
 >
 > - Siehe auch den Quelltext dieser Datei
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
+> 
+> ## Wie diese Liste erstellt wurde...
+> 
+> Nach einigen Trial&Error-Versuchen Programmnamen von Hand in die Liste zu schreiben, wobei sich immerwieder gemeine Schreibfehler einschlichen, schuf eine grafische Sofwarepaketverwaltung (synaptic) abhilfe. Leider fiel es nun schwer herauszubekommen welche der ca. 2000 Programmpakete nun die tatsächlich gewünschten waren und welche nur automatisch zur Erfüllung von Paketabhängigkeiten mitinstalliert wurden. *apt-mark* und *aptitude* sorgten für Abhilfe.
+> 
+> Also einfach
+> 
+> 1. Die gewünschten Pakete in `aptitude` installieren (sie werden dann automatisch als "*manuell installiert*" markiert)
+> 2. Die als *manuell installierten* Pakete mit `apt-mark showmanual > meine_Paketliste.list` exportieren
+
 
 ##  Paketliste  -- TODO: wieder hübsch gliedern
 
