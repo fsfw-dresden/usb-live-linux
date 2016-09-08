@@ -93,6 +93,11 @@
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
 
 - ### :x:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
+[//]: # ( beim testen ist mir aufgefallen: )
+[//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption (kvm -m 1024) benutzt wird)
+[//]: # ( - Images mit Mate-Desktop mit der Speicheroption (kvm -m 256), für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben )
+[//]: # ( - mit der Speicheroption -m 512 geht es gerade so )
+[//]: # ( Bemerkung: es wird derzeit keine "Swap Partition" benutzt - sollte man darüber nachdenken ? )
 
 - ### :o:  task-gnome-desktop  -- 
 
