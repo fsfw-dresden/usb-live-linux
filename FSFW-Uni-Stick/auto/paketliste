@@ -23,7 +23,7 @@ PAKETPATH=./config/package-lists
 DATUM=$(date +%Y-%m-%d)
 
 ######################
-# Funktion: teste ob Verzeichnis ${PAKETPATH} existiert
+# Funktion: überprüfe ob Verzeichnis ${PAKETPATH} existiert
 # 
 
 test_paketpath() {
@@ -89,7 +89,7 @@ do
 	echo "### ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
     ;;
     "- ### :x:")
-	PAKETLISTE="../doc/${line##*"  "}.md"
+	PAKETLISTE="$(dirname "${PAKETLISTE}")/${line##*"  "}.md"
 	test_datei
 	echo " ${PAKETLISTE} wird eingefügt "
 	create_paketlist
