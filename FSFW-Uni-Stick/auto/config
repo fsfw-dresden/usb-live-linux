@@ -27,6 +27,7 @@ lb config noauto \
     --binary-filesystem ext2 \
     --initsystem systemd \
     --initramfs live-boot \
+    --image-name FSFW-Uni-Stick_jessie \
     --apt-source-archives false \
     --cache-packages true \
     --source false \
@@ -52,6 +53,8 @@ if cat /etc/os-release | grep -q stretch ; then
 lb config noauto \
     --bootloader grub-pc \
 	"${@}"
+
+ln -s ../../binary_local-hooks/1000-stretch-boot-hotfix.hook.binary config/hooks/normal/1000-stretch-hotfix.hook.binary
 
 fi
 
