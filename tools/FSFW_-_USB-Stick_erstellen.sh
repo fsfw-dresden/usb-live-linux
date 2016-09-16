@@ -6,16 +6,16 @@
 #  DESCRIPTION: bringt das live-image-amd64.hybrid.iso (FSFW-UNI-Stick) auf einen USB-Stick
 #		bootet mit grub2 - 
 #        
-#      VERSION: 0.0.1
+#      VERSION: 0.0.2
 #      OPTIONS: $1 = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
 #		$2 = live-image.iso - Default = live-image-amd64_hybrid.iso
 #        NOTES: Debian jessie - LANG=de_DE.UTF-8
-#		Optionen in grub.cfg - submenu - toram - persistent mode 
+#		Optionen in grub.cfg - submenu - toram - persistence mode 
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-09-15
-#     REVISION: 
+#     REVISION: 2016-09-16
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -24,11 +24,14 @@ DEVICE=$1
 
 LABEL_LIVE=FSFW-Uni-Stick
 LABEL_WINDOWS_DATEN=WIN-DATEN
-LABEL_PERSISTENT_DATEN=dlp-daten
+LABEL_PERSISTENCE_DATEN=dlp-daten
+PERSISTENT_OPTION="/ union"
 
 LIVE_IMAGE=$2
 DEFAULT_LIVE_IMAGE=live-image-amd64.hybrid.iso
 KERNEL_VERSION=
+BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current"
+BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
 
 DATUM=$(date +%Y-%m-%d)
 
@@ -50,7 +53,7 @@ fi
 
 g_live_system=0
 g_windows_daten=0
-g_persistent_daten=0
+g_persistence_daten=0
 
 ##################################
 # Funktion: Partitionsgröße Live-System festlegen
@@ -99,7 +102,7 @@ if [ ! -f /mnt/${LABEL_LIVE}/boot/img/memdisk ]; then cp /usr/lib/syslinux/memdi
 #
 fehler_test() {
     if [ $? -gt 0 ]; then
-	echo " Es ist ein Fehler aufgetreten "
+	echo "  --  Es ist ein Fehler aufgetreten "
 	echo " Möchten sie weiter fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
 	read FEHLER				
 		if [ ! "$FEHLER" == 'y' ]; then
@@ -111,12 +114,33 @@ fehler_test() {
 }
 
 ##################################
+# Funktion: Fehler - Skript abbrechen ?
+#
+fehler_abbruch() {
+	echo "  --  Es ist ein Fehler aufgetreten "
+	echo " Möchten sie weiter fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
+	read FEHLER				
+		if [ ! "$FEHLER" == 'y' ]; then
+			echo "Skript wird abgebrochen "
+			exit 1
+		fi
+}
+
+
+##################################
 # Funktion: Speichergerät / USB-Stick freigeben
 #
 entfernen() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
 	umount /${DEVICE}${p}${live_partition}
 	rmdir /mnt/${LABEL_LIVE}
+
+    if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
+	echo " Persistence Partition freigeben "
+	umount /${DEVICE}${p}${persistence_partition}
+	rmdir /mnt/${LABEL_PERSISTENCE_DATEN}
+    fi	
+
 	echo "Fertig - USB Stick entfernen"
 }
 
@@ -143,6 +167,13 @@ device_mount() {
 
 	mount ${DEVICE}${p}${live_partition} /mnt/${LABEL_LIVE}
 	fehler_test
+
+    if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
+	echo " Persistence Partition wird eingebunden "
+	  if [ ! -d /mnt/${LABEL_PERSISTENCE_DATEN} ]; then mkdir /mnt/${LABEL_PERSISTENCE_DATEN}; fi	
+	mount ${DEVICE}${p}${persistence_partition} /mnt/${LABEL_PERSISTENCE_DATEN}
+	fehler_test
+    fi	
 }
 
 #################################
@@ -193,12 +224,12 @@ function load_video {
        set gfxmode=auto
        load_video
        insmod gfxterm
-       set locale_dir=$prefix/locale
+       set locale_dir=\${prefix}/locale
        set lang=de_DE
        insmod gettext
        set gfxpayload=keep
        terminal_output gfxterm
-fi
+ fi
 
 insmod png
 if background_image \${prefix}/fsfw-background_640x480.png; then
@@ -208,9 +239,6 @@ else
   set menu_color_normal=cyan/blue
   set menu_color_highlight=white/blue
 fi
-
-set bootoptions="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current"
-set bootoptions_rescue="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
 
 EOF
 }
@@ -223,6 +251,9 @@ create_grub_config_zusatz_menu() { echo "grub.cfg ergänzen "
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
 ## sonstige Menüeinträge
+
+menuentry " " { echo 
+}
 
 menuentry "Booten von HDD - Rechner von Festplatte starten " {
  set root=(hd1)
@@ -249,7 +280,7 @@ insert_toolbox() { echo " Toolbox einfügen "
 
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
-submenu " Toolbox " {
+submenu "--- Toolbox --- " {
 
 EOF
 
@@ -299,9 +330,7 @@ EOF
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Super Grub2 Disk " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     linux16 /boot/img/memdisk iso
     initrd16 ${tool_iso}
 }
@@ -353,79 +382,95 @@ insert_live_image() {
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "${LABEL_LIVE} - Live System " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
     loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile \${bootoptions}
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS}
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
 menuentry " ${LABEL_LIVE} - Live System (rescue mode) " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
     loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile \${bootoptions_rescue} 
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS_RESCUE} 
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-submenu "Optionen " {
+cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
-menuentry " persistence - Geänderte Daten werden " { echo
-}
-menuentry " auf die Partition dlp-daten geschrieben und bleiben erhalten " { echo
-}
+submenu "--- Optionen --- " {
 
-menuentry "${LABEL_LIVE} - Live System - persistence " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
-    insmod ext2
-    insmod part_msdos
-    set isofile=${system_iso}
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile \${bootoptions} persistence persistence-label=dlp-daten
-    initrd (loop)/live/initrd.img${KERNEL_VERSION}
+menuentry " ___________________________ toram ___________________________  " { echo
 }
-
-menuentry " toram - System wird komplett in den Arbeitsspeicher geladen " { echo
+menuentry " System wird komplett in den Arbeitsspeicher geladen " { echo 
+}
+menuentry " " { echo 
 }
 
 menuentry "${LABEL_LIVE} - Live System - toram " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
     loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile \${bootoptions} toram
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} toram
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
-}
-
-menuentry "${LABEL_LIVE} - Live System - toram persistence " {
-    echo " "
-    echo " "
-    echo " Bitte einen kleinen Moment Geduld "
-    insmod ext2
-    insmod part_msdos
-    set isofile=${system_iso}
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile \${bootoptions} toram persistence persistence-label=dlp-daten
-    initrd (loop)/live/initrd.img${KERNEL_VERSION}
-}
-
-# submenu Option Ende
 }
 
 EOF
+
+
+# Persistence Partition Menüeintrag und persistence.conf anlegen
+if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
+	echo " Persistence option in grub.cfg einfügen "
+	echo ${PERSISTENT_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf 
+
+cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+
+menuentry " " { echo 
+}
+
+menuentry " ___________________________ Persistence Mode _________________________________ " { echo
+}
+
+menuentry " Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten. " { echo 
+}
+menuentry " " { echo 
+}
+
+menuentry "${LABEL_LIVE} - Live System - persistence " {
+    echo -e " \n \n \n Bitte einen kleinen Moment Geduld "
+    insmod ext2
+    insmod part_msdos
+    set isofile=${system_iso}
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
+    initrd (loop)/live/initrd.img${KERNEL_VERSION}
+}
+
+menuentry "${LABEL_LIVE} - Live System - persistence toram " {
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
+    insmod ext2
+    insmod part_msdos
+    set isofile=${system_iso}
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} toram persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
+    initrd (loop)/live/initrd.img${KERNEL_VERSION}
+}
+EOF
+
+fi
+
+# submenu Option Ende
+cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+}
+EOF
+
 	memdisk
 	if [[ ! -e /mnt/${LABEL_LIVE}${system_iso} ]]; then
 		echo " ${LIVE_IMAGE} -- kopieren --> ${system_iso}"
@@ -436,8 +481,6 @@ EOF
 	fi
 
 }
-
-
 
 # ======= Stick erstellen - formatieren ==========
 ######################################
@@ -454,24 +497,23 @@ dialog --stdout --yesno "Soll eine Partition für Windows-Daten angelegt werden 
 p_windows_daten=$?
 dialog --clear
 
-# Soll eine Partition oder Datei für Persistent-Mode angelegt werden ? Größe ?
+# Soll eine Partition für Persistence-Mode angelegt werden ? Größe ?
 
 dialog --stdout --yesno \
-"Soll eine Partition für Persistent-Mode angelegt werden ?\n\n\n\
-(Persistent-Mode -- Im Live-System geänderte Daten werden auf dieser Partition abgelegt und bleiben somit erhalten.) " 10 62
+"Soll eine Partition für Persistence-Mode angelegt werden ?\n\n\n\
+(Persistence-Mode -- Im Live-System geänderte Daten werden auf dieser Partition abgelegt und bleiben somit erhalten.) " 10 62
 # Ja = 0 -- Nein = 1
-p_persistent_daten=$? 
-dialog --clear
+p_persistence_daten=$? 
 
 # dialog --stdout --msgbox "Partition Windows = ${p_windows_daten}" 5 30
-# dialog --stdout --msgbox "Partition Persistent = ${p_persistent_daten}" 5 30
+# dialog --stdout --msgbox "Partition Persistence = ${p_persistence_daten}" 5 30
 
 # ==== Patitionsgröße Live-Image festlegen ======
 
-#   Persistent Partition und Windows Daten Partition ja
+#   Persistence Partition und Windows Daten Partition ja
 
-if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 0 ]]; then
-	# dialog --stdout --msgbox "Partition Windows + Partition Persistent" 0 0
+if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 0 ]]; then
+	# dialog --stdout --msgbox "Partition Windows + Partition Persistence" 0 0
 	#   empfohlene Live-System Partitionsgröße
 	#   möglichtst nicht größer 50% des (gesamter Speicher)
 
@@ -499,10 +541,10 @@ if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 0 ]]; then
 	fi
 fi
 
-#   Persistent Partition oder Windows Daten Partition ja
+#   Persistence Partition oder Windows Daten Partition ja
 
-if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 1 ]]; then 
-	# dialog --stdout --msgbox "Partition Windows oder Partition Persistent" 0 0
+if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 1 ]]; then 
+	# dialog --stdout --msgbox "Partition Windows oder Partition Persistence" 0 0
 	#   empfohlene Live-System Partitionsgröße = 50% vom gesamten Speicher mindestens (Speicher Live-System)
 
 	# g_min = (Speicher den das Live-System benötigt)
@@ -527,9 +569,9 @@ if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 1 ]]; then
 	fi
 fi
 
-#   Persistent Partition und Windows Daten Partition nein
+#   Persistence Partition und Windows Daten Partition nein
 
-if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 2 ]]; then 
+if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 2 ]]; then 
 	# dialog --stdout --msgbox "keine Partition" 0 0
 
 	# g_min = (Speicher den das Live-System benötigt) in %
@@ -550,8 +592,8 @@ done
 
 # ==== Patitionsgröße Windos Daten festlegen ======
 
-if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 0 ]]; then
-	# dialog --stdout --msgbox "Partition Windows + Partition Persistent" 0 0
+if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 0 ]]; then
+	# dialog --stdout --msgbox "Partition Windows + Partition Persistence" 0 0
 	#   empfohlene Windows Daten Partitionsgröße
 	#   möglichtst nicht größer 50% des (gesamter Speicher)
 
@@ -576,10 +618,10 @@ if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 0 ]]; then
 	fi
 fi
 
-#   Persistent Partition oder Windows Daten Partition ja
+#   Persistence Partition oder Windows Daten Partition ja
 
-if [[ $(( ${p_windows_daten} + ${p_persistent_daten} )) -eq 1 ]]; then 
-	# dialog --stdout --msgbox "Partition Windows oder Partition Persistent" 0 0
+if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 1 ]]; then 
+	# dialog --stdout --msgbox "Partition Windows oder Partition Persistence" 0 0
 	#   empfohlene Partitionsgröße  
 	
 	# wg_min = 0  -- 5% sollten es schon sein, damit es Sinn ergibt
@@ -618,19 +660,19 @@ if [[ ${p_windows_daten} -eq 0 ]]; then
 	fi
 fi
 
-# Größe Persistent Daten Partition = Rest vom noch verfügbaren Speicher
-# Größe Persistent Daten Partition = 100-(Speicher Live-System)-(Speicher Windows Daten Partition)
+# Größe Persistence Daten Partition = Rest vom noch verfügbaren Speicher
+# Größe Persistence Daten Partition = 100-(Speicher Live-System)-(Speicher Windows Daten Partition)
 
-if [[ ${p_persistent_daten} -eq 0 ]]; then
-	# dialog --stdout --msgbox "Partition Persistent Daten - größe festlegen" 0 0
+if [[ ${p_persistence_daten} -eq 0 ]]; then
+	# dialog --stdout --msgbox "Partition Persistence Daten - größe festlegen" 0 0
 	if [[ $(( 100 - ${g_live_system} - ${g_windows_daten} )) -gt 0 ]]; then
 
-		g_persistent_daten=$(( 100 - ${g_live_system} - ${g_windows_daten} ))
+		g_persistence_daten=$(( 100 - ${g_live_system} - ${g_windows_daten} ))
 		dialog --title "${gdevice%%M*} MB Gesamtgröße" \
-		--backtitle "Größe Persistent Partition" \
-		--msgbox "\n Größe der Patition für Persistente Daten beträgt $(( ${g_persistent_daten} * ${gdevice%%M*} / 100)) MB.\n\n " 8 64
+		--backtitle "Größe Persistence Partition" \
+		--msgbox "\n Größe der Patition für Persistence Daten beträgt $(( ${g_persistence_daten} * ${gdevice%%M*} / 100)) MB.\n\n " 8 64
 	else
-		dialog --stdout --msgbox " Für eine Persistente Daten Partition\n\n ist nicht mehr genügend Speicher verfügbar "  8 48	
+		dialog --stdout --msgbox " Für eine Persistence Daten Partition\n\n ist nicht mehr genügend Speicher verfügbar "  8 48	
 	fi
 fi
 
@@ -639,11 +681,11 @@ fi
 
 dialog --stdout --msgbox "Partition Live-System = ${g_live_system}\n\n\
 Partition Windows Daten = ${g_windows_daten}\n\n\
-Partition Persistent = ${g_persistent_daten}\n " 0 0
+Partition Persistence = ${g_persistence_daten}\n " 0 0
 
 dialog --stdout --msgbox "Partition Live-System = $(( ${g_live_system} * ${gdevice%%M*} / 100)) MB.\n\n\
 Partition Windows Daten = $(( ${g_windows_daten} * ${gdevice%%M*} / 100)) MB.\n\n\
-Partition Persistent = $(( ${g_persistent_daten} * ${gdevice%%M*} / 100)) MB.\n " 0 0
+Partition Persistence = $(( ${g_persistence_daten} * ${gdevice%%M*} / 100)) MB.\n " 0 0
 Kommentar
 
 }
@@ -758,7 +800,7 @@ if [[ $? -eq 0 ]]; then
 			--yesno "\n\
 		Partition Live-System = $(( ${g_live_system} * ${gdevice%%M*} / 100)) MB. \n\n\
 		Partition Windows Daten = $(( ${g_windows_daten} * ${gdevice%%M*} / 100)) MB. \n\n\
-		Partition Persistent = $(( ${g_persistent_daten} * ${gdevice%%M*} / 100)) MB. \n " 0 0
+		Partition Persistence = $(( ${g_persistence_daten} * ${gdevice%%M*} / 100)) MB. \n " 0 0
 		
 		if [[ $? -eq 0 ]]; then
 		device_test
@@ -780,12 +822,13 @@ if [[ $? -eq 0 ]]; then
 		mkfs.ext2 -m 0 -L ${LABEL_LIVE} ${DEVICE}${p}${partition}
 			echo " Live Image Partition ${partition} - ${LABEL_LIVE} angelegt "
 		partition=$(( ${partition} + 1 ))
-			# Persistent Daten Partition anlegen
-			if [[ ${p_persistent_daten} -eq 0 ]] && [[ ${g_persistent_daten} -gt 0 ]]; then
-			parted -s --align=opt ${DEVICE} mkpart primary ext2 $(( 0 + ${g_windows_daten} + ${g_live_system} ))% 100%
+			# Persistence Daten Partition anlegen
+			if [[ ${p_persistence_daten} -eq 0 ]] && [[ ${g_persistence_daten} -gt 0 ]]; then
+			persistence_partition=${partition}
+			parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${g_windows_daten} + ${g_live_system} ))% 100%
 			parted -s ${DEVICE} align-check optimal ${partition}
-			mkfs.ext2 -m 0 -L ${LABEL_PERSISTENT_DATEN} ${DEVICE}${p}${partition}
-			echo " Persistent Partition ${partition} - ${LABEL_PERSISTENT_DATEN} angelegt "
+			mkfs.ext4 -m 0 -L ${LABEL_PERSISTENCE_DATEN} ${DEVICE}${p}${partition}
+			echo " Persistence Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
 			fi
 		  else
 			abbrechen_test
@@ -811,25 +854,37 @@ if [[ $? -eq 0 ]]; then
 			echo " ${label} Patition ${partition} vorhanden "
 			echo
 		  ;;
-		${LABEL_PERSISTENT_DATEN})
+		${LABEL_PERSISTENCE_DATEN})
 			echo " ${label} Patition ${partition} vorhanden "
+			persistence_partition=${partition}
 			echo
 		  ;;
 
 		*)
 			echo " Patition - ${label} - kann nicht benutzt werden "
+			fehler_abbruch
 		  ;;	
 
 		esac
 		
 	 done
-		echo " ${live_partition} Partition wird für das Live-System verwendet. "
+#		echo " ${live_partition} Partition wird für das Live-System verwendet. "
+
 	  if [[ -z ${live_partition} ]]; then
 		echo " Es gibt keine Partition die für das Live-System nutzbar ist. "
 		echo " Das Speichergerät sollt neu formatiert werden. "
 		exit 1
+	     else
+		echo " ${live_partition} Partition wird für das Live-System verwendet. "
 	  fi	
 
+	  if [[ -z ${persistence_partition} ]]; then
+		echo " Es gibt keine Persistence Partition die nutzbar ist. "
+		echo " Das Speichergerät sollte neu formatiert werden. "
+		fehler_abbruch
+	     else
+		echo " ${persistence_partition} Partition wird für Persistence Partition verwendet. "
+	  fi	
 fi
 
 echo " Gerät ist aktuell so partitioniert "
