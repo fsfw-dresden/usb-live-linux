@@ -17,8 +17,8 @@ Das Skript im live-build-Verzeichnis ausführen
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdb `
 
-Standardmäßig wird das im live-build-Verzeichnis erstellte *.iso Image auf das Speicherziel geschrieben, 
-es kann aber alternativ auch ein anderes /PATH_zum/*.iso Image gewählt werden.
+Standardmäßig wird das im live-build-Verzeichnis erstellte \*.iso Image auf das Speicherziel geschrieben, 
+es kann aber alternativ auch ein anderes /PATH_zum/\*.iso Image gewählt werden.
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdx live-image-alternativ.iso `
 
