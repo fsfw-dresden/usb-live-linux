@@ -1,6 +1,6 @@
 # FSFW-Uni-Stick erstellen
 
-### getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-09-02
+### getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-09-17
 
 
 Herunterladen der benötigeten Dateien
@@ -11,7 +11,7 @@ In das Arbeitsverzeichnis wechseln
 
   ` $ cd usb-live-linux/FSFW-Uni-Stick/ `
 
-Packetlisten generieren
+Paketlisten generieren
 
   ` $ auto/paketliste `
 
@@ -39,13 +39,16 @@ Image mittels kvm (Kernel-based Virtual Machine) testen
 
 ### Areitsverzeichnis aufräumen 
 
-Arbeitsdaten löschen
+Arbeitsdaten löschen 
+
 Soll die erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso** erhalten bleiben, ist sie umzubennenen.
+
 zum Beispiel:
 
-  ` $ sudo mv FSFW-Uni-Stick_jessie-amd64.hybrid.iso FSFW-Uni-Stick_DESKTOP_jessie-amd64.hybrid.iso `
+  ` $ mv FSFW-Uni-Stick_jessie-amd64.hybrid.iso FSFW-Uni-Stick_DESKTOP_jessie-amd64.hybrid.iso `
 
 Arbeitsdaten wie chroot, binary bootstrap etc. werden gelöscht 
+
 heruntergeladene Pakete bleiben im "cache/packages.*/*.deb" erhalten 
 
   ` $ sudo lb clean `
