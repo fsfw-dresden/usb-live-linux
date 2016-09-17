@@ -9,7 +9,7 @@
 #      VERSION: 0.0.2
 #      OPTIONS: $1 = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
-#		$2 = live-image.iso - Default = live-image-amd64_hybrid.iso
+#		$2 = live-image.iso - Default = *.hybrid.iso im aktuellen live-build-Verzeichnis
 #        NOTES: Debian jessie - LANG=de_DE.UTF-8
 #		Optionen in grub.cfg - submenu - toram - persistence mode 
 #
@@ -25,10 +25,10 @@ DEVICE=$1
 LABEL_LIVE=FSFW-Uni-Stick
 LABEL_WINDOWS_DATEN=WIN-DATEN
 LABEL_PERSISTENCE_DATEN=dlp-daten
-PERSISTENT_OPTION="/ union"
+PERSISTENCE_OPTION="/ union"
 
 LIVE_IMAGE=$2
-DEFAULT_LIVE_IMAGE=live-image-amd64.hybrid.iso
+DEFAULT_LIVE_IMAGE=$(ls ./*.hybrid.iso)
 KERNEL_VERSION=
 BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current"
 BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
@@ -428,7 +428,7 @@ EOF
 # Persistence Partition Menüeintrag und persistence.conf anlegen
 if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
 	echo " Persistence option in grub.cfg einfügen "
-	echo ${PERSISTENT_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf 
+	echo ${PERSISTENCE_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf 
 
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 

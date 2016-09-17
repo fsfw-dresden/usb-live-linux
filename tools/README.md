@@ -7,7 +7,7 @@ auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 
   * auf dem Speichermediums können mehrere Partitionen angelegt werden
 	* Partition Live-System (ext2) - wird immer benötigt - enthält das Live-System.iso
-		* Zusätzlich können Tools wie memtest86+, Hardware Test (HDT und super-grub2-disk ausgewählt werden
+		* Zusätzlich können Tools wie memtest86+, Hardware Test (HDT) und super-grub2-disk ausgewählt werden
 	* Partition Windows-Daten (fat32) um Daten mit Windows zu tauschen
 	* Partition Persistence-Daten - Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten
 
