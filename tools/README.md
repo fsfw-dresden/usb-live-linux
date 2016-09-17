@@ -1,8 +1,8 @@
 # FSFW-Uni-Stick erstellen
 
-### getestet auf Debian "Debian jessie" - LANG=de_DE.UTF-8 - 2016-09-15 
+### getestet auf Debian "Debian jessie" - LANG=de_DE.UTF-8 - 2016-09-17 
 
-Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich um die im Live-build erstellte **live-image-amd64.hybrid.iso**
+Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich um die im live-build erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
 auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 
   * auf dem Speichermediums können mehrere Partitionen angelegt werden
@@ -12,13 +12,13 @@ auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 	* Partition Persistence-Daten - Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten
 
 	
-Das Skript wirde im live-build-Verzeichnis ausführen 
+Das Skript im live-build-Verzeichnis ausführen 
 ( /dev/sd.. = Gerät/USB-Stick der benutzt werden soll )
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdb `
 
-Standardmäßig wird **live-image-amd64.hybrid.iso** auf das Speicherziel geschrieben, es kann aber alternativ
-auch ein anderes *.iso Image gewählt werden.
+Standardmäßig wird das im live-build-Verzeichnis erstellte *.iso Image auf das Speicherziel geschrieben, 
+es kann aber alternativ auch ein anderes /PATH_zum/*.iso Image gewählt werden.
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdx live-image-alternativ.iso `
 

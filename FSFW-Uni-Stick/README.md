@@ -19,27 +19,38 @@ Live-Image erstellen
 
   ` $ sudo lb build `
 
-Areitsverzeichnis aufräumen ( chroot wird gelöscht, cache bleibt erhalten)
-
-  ` $  sudo lb clean `
-
-Arbeitsverzeichnis komlett aufräumen
-
-  ` $  sudo lb clean --purge `
-
 Das " live-image " wurde erfolgreich erstellt ?
 
   ` $ ls -l *.iso `
 
-### testen des Images " live-image-amd64.hybrid.iso " in einer virtuell Umgebung mittels kvm (qemu)
+
+### testen des Images " FSFW-Uni-Stick_jessie-amd64.hybrid.iso " in einer virtuell Umgebung mittels kvm (qemu)
 
 Benutzerberechtigung ändern 
 
-  ` $ sudo chown ${USER}:${USER} live-image-amd64.hybrid.iso ` 
+  ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_jessie-amd64.hybrid.iso ` 
 
 Image mittels kvm (Kernel-based Virtual Machine) testen
 
-  ` $ kvm -m 1024 -cdrom live-image-amd64.hybrid.iso `
+  ` $ kvm -m 1024 -cdrom FSFW-Uni-Stick_jessie-amd64.hybrid.iso `
 
   * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+
+
+### Areitsverzeichnis aufräumen 
+
+Arbeitsdaten löschen
+Soll die erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso** erhalten bleiben, ist sie umzubennenen.
+zum Beispiel:
+
+  ` $ sudo mv FSFW-Uni-Stick_jessie-amd64.hybrid.iso FSFW-Uni-Stick_DESKTOP_jessie-amd64.hybrid.iso `
+
+Arbeitsdaten wie chroot, binary bootstrap etc. werden gelöscht 
+heruntergeladene Pakete bleiben im "cache/packages.*/*.deb" erhalten 
+
+  ` $ sudo lb clean `
+
+Arbeitsverzeichnis komplett aufräumen
+
+  ` $ sudo lb clean --purge `
 
