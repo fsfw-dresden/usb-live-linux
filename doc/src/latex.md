@@ -25,6 +25,12 @@ LaTeX-Dokuments braucht man noch ein weiteres Programm, welches wie sich wie ein
 Texteditor verhält (und dann der Word-Oberfläche sehr ähnlich ist).
 
 Hier sollten auch viele Links zur Verwendung mit LaTeX stehen.
+## Beispiele
+
+Hier sollen dann ein paar Links zu Beispieldateien stehen, zusammen mit
+Anleitungen, wie man aus diesen ein Dokument bekommt.
+
+## Literatur
 
 Im Netz:
 
@@ -41,15 +47,18 @@ Als Bücher:
 - Wer liest schon Bücher?
 - Mehr?
 
-## Was gibt es auf dem Stick dazu?
+Noch:
+
+- Wikipedia
+- sharelatex
+
+## Noch mehr Details: Was bring der Stick für LaTeX mit?
 
 - Grundlegende Teile von TeXLive 2015(?) als LaTeX-Distribution
 - Zusatzpakete, die gerade zur akademischen Arbeit sinnvoll sind (z.B. beamer,
   tikz, …)
 - Dokumentation (hier könnte man noch texdoc erwähnen)
 - Werkzeuge (pdfjam, texstudio)
-
-## Paketliste
 
 Aus der Übersicht; die bleibt nicht hier, aber zum Schreiben der Dokumentation
 ist sie sehr hilfreich.
