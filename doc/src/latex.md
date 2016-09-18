@@ -14,17 +14,43 @@ Verwendung, und weiterführende Literatur werden hier im folgenden beschrieben.
 
 ## Was ist LaTeX und was kann ich damit machen?
 
-LaTeX ist toll, Dinge und so.
+LaTeX unterscheidet sich in seiner Arbeitsweise grundlegend von Programmen wie
+Microsoft Word, OpenOffice, oder Libreoffice.  In diesen Programmen werden die
+Dokument gleich so formatiert und angezeigt, wie sie auch später aussehen
+sollen.  LaTeX hingegen ist eher eine *Markup-Sprache*, ähnlich zu HTML: das
+Dokument wird in einer *Textdatei* als reiner Text angegeben, ohne jegliche
+Formatierung (unter Windows sind diest .txt-Dateien).  Die gewünschte
+Formatierung wird mit bestimmtem Markup, genannt *Makros*, in dieser Textdatei
+kodiert.  Um zum Beispiel einen kurzen Textabschnitt in kursiv zu setzen, wird
+nicht einfach in der Textdatei kursiver Text hinterlegt (was ja auch gar nicht
+geht).  Stattdessen steht im Dokument dann
 
-TeX von Knuth erfunden, LaTeX von Lamport, …
+    \textit{Ich bin ein Text, der kursiv gesetzt wird.}
 
-Die Arbeit mit LaTeX unterscheidet sich grundlegend von der Arbeit mit Word:
-LaTeX kommt als *Compiler*, welche es einem erlaubt, ein LaTeX-Dokument in
-ein gewünschtes Ausgabeformat (meist pdf) zu konvertieren.  Zur Bearbeitung des
-LaTeX-Dokuments braucht man noch ein weiteres Programm, welches wie sich wie ein
-Texteditor verhält (und dann der Word-Oberfläche sehr ähnlich ist).
+Dabei zeigt `\textit` an, dass der von geschweiften Klammern eingeschlossene
+Text im Dokument dann kursiv gesetzt werden soll.
 
-Hier sollten auch viele Links zur Verwendung mit LaTeX stehen.
+Woher kommt dann aber aus dieser Textdatei, der *LaTeX-Quelldatei*, ein schön
+formatiertes Dokument?  Dazu gibt es Programme, welche die LaTeX-Quelldatei in
+zum Beispiel ein PDF übersetzen.  Dabei werden die ganzen Formatierungsbefehle
+in ihre entsprechende Formatierung konvertiert.  Das obige Beispiel wird dann im
+endgültigen PDF-Dokument als kursiver Text erscheinen.
+
+Das klingt alles erstmal ziemlich kompliziert, und tatsächlich ist die Lernkurve
+für LaTeX am Anfang wesentlich höher als zum Beispiel für Word.  Allerdings
+bringt LaTeX gerade bei der Verarbeitung größerer Dokumente viele Vorteile mit
+sich.  Solche Vorteile sind die automatische Verwaltung von Verweisen auf
+Textabschnitte, Formeln, Abbildung und Tabellen, die automatische Erstellung von
+Literatur- und Quellenverzeichnissen, die mühelose Angabe komplexer
+mathematischer Formeln und insbesondere die Einhaltung eines einheitlichen
+Aussehens im Dokument.  Der Mehraufwand, den man bei LaTeX betreiben muss, zahlt
+sich aber schon bei Dokumenten mittlerer Größe aus.
+
+Zusätzlich gibt es eine Reihe von Programmen, die einen bei der Arbeit mit LaTeX
+unterstützen.  Eines dieser Programmen ist *TeXStudio* und ist auf diesem Stick
+installiert.  Damit lassen sich einfach komplexe Dokumente erstellen und schnell
+in die gewünschte Ausgabe transformieren.
+
 ## Beispiele
 
 Hier sollen dann ein paar Links zu Beispieldateien stehen, zusammen mit
