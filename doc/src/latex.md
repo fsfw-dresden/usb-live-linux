@@ -58,25 +58,34 @@ Anleitungen, wie man aus diesen ein Dokument bekommt.
 
 ## Literatur
 
+Literatur zu LaTeX gibt es reichlich.  Hier wird eine kleine Auswahl von
+nützlichen Referenzen angeben:
+
 Im Netz:
 
-- http://texample.net/
-- http://www.latex-community.org/forum/
-- https://tex.stackexchange.com
-- https://de.wikibooks.org/wiki/LaTeX-Kompendium
-- http://www.dante.de/
-- https://www.ctan.org/
-- Mehr?
+- Die [Wikipedia](https://en.wikipedia.org/wiki/LaTeX) hat nicht nur einen
+  Artikel zu LaTeX, sondern sogar ein sehr
+  ausführliches [Wikibook](https://en.wikibooks.org/wiki/LaTeX).
 
-Als Bücher:
+- Es gibt eine Reihe von aktiven Foren im Netz zum Thema LaTeX:
+  - http://golatex.de/
+  - http://www.latex-community.org/forum/
+  - https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)
 
-- Wer liest schon Bücher?
-- Mehr?
+- [texample.net](http://texample.net/) ist eine Beispielsammlung für
+  LaTeX-Dokumente mit speziellen Fokus auf Bildern
 
-Noch:
+- Wer die Installation von LaTeX auf seinem eigenen Rechner scheut, kann es auch
+  online unter https://www.sharelatex.com/ nutzen.
 
-- Wikipedia
-- sharelatex
+- Wer wissen will, was alles so in LaTeX möglich ist, kann sich im
+  [*Comprehensive TeX Archive Network*](https://www.ctan.org/) umsehen.
+
+Eine Reihe von Büchern, die für den Einstieg, aber auch für die Vertiefung in
+LaTeX hilfreich sind, bietet
+die [*Deutsche Anwendervereinigung TeX e.V.*](http://www.dante.de) auf
+ihrer [Literaturliste](http://www.dante.de/index/Literatur.html); ansonsten
+einfach in der SLUB nachsehen, was es dort für Bücher zum Thema LaTeX gibt.
 
 ## Noch mehr Details: Was bring der Stick für LaTeX mit?
 
