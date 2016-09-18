@@ -51,7 +51,7 @@ unterstützen.  Eines dieser Programmen ist *TeXStudio* und ist auf diesem Stick
 installiert.  Damit lassen sich einfach komplexe Dokumente erstellen und schnell
 in die gewünschte Ausgabe transformieren.
 
-## Beispiele
+## TODO: Beispiele
 
 Hier sollen dann ein paar Links zu Beispieldateien stehen, zusammen mit
 Anleitungen, wie man aus diesen ein Dokument bekommt.
@@ -87,7 +87,7 @@ die [*Deutsche Anwendervereinigung TeX e.V.*](http://www.dante.de) auf
 ihrer [Literaturliste](http://www.dante.de/index/Literatur.html); ansonsten
 einfach in der SLUB nachsehen, was es dort für Bücher zum Thema LaTeX gibt.
 
-## Noch mehr Details: Was bring der Stick für LaTeX mit?
+## TODO: Noch mehr Details: Was bring der Stick für LaTeX mit?
 
 - Grundlegende Teile von TeXLive 2015(?) als LaTeX-Distribution
 - Zusatzpakete, die gerade zur akademischen Arbeit sinnvoll sind (z.B. beamer,
