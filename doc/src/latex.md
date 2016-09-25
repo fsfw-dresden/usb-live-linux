@@ -88,49 +88,35 @@ die [*Deutsche Anwendervereinigung TeX e.V.*](http://www.dante.de) auf
 ihrer [Literaturliste](http://www.dante.de/index/Literatur.html); ansonsten
 einfach in der SLUB nachsehen, was es dort für Bücher zum Thema LaTeX gibt.
 
-## TODO: Noch mehr Details: Was bring der Stick für LaTeX mit?
+## Noch mehr Details: Was bring der Stick für LaTeX mit?
 
-- Grundlegende Teile von TeXLive 2015(?) als LaTeX-Distribution
-- Zusatzpakete, die gerade zur akademischen Arbeit sinnvoll sind (z.B. beamer,
-  tikz, …)
-- Dokumentation (hier könnte man noch texdoc erwähnen)
-- Werkzeuge (pdfjam, texstudio)
+Der Uni-Stick liefert eine reichhaltige TeX-Installation mit allen notwendigen
+Paketen, die gerade für das akademische Arbeiten hilfreich sind, zum Beispiel:
 
-Aus der Übersicht; die bleibt nicht hier, aber zum Schreiben der Dokumentation
-ist sie sehr hilfreich.
+- Eine *LaTeX-Distribution* ([TeXLive 2016][]), die neben den
+  Übersetzungsprogrammen für LaTeX-Quelldateien alle wesentlichen Komponenten
+  für die Arbeit mit LaTeX mitbringt.
 
-- :x:  texlive
-- :x:  texlive-base
-- :x:  texlive-bibtex-extra
-- :x:  texlive-binaries
-- :x:  texlive-doc-de
-- :x:  texlive-extra-utils  --		für pdfjam (pdf90)
-- :x:  texlive-font-utils
-- :x:  texlive-fonts-extra
-- :x:  texlive-fonts-extra-doc
-- :x:  texlive-fonts-recommended
-- :x:  texlive-fonts-recommended-doc
-- :x:  texlive-formats-extra
-- :x:  texlive-generic-recommended
-- :x:  texlive-lang-german
-- :x:  texlive-latex-base
-- :x:  texlive-latex-base-doc
-- :x:  texlive-latex-extra  --		gut für Beamer-presentation
-- :x:  texlive-latex-extra-doc
-- :x:  texlive-latex-recommended
-- :x:  texlive-latex-recommended-doc
-- :x:  texlive-luatex
-- :x:  texlive-math-extra
-- :x:  texlive-pictures
-- :x:  texlive-pictures-doc
-- :x:  texlive-plain-extra
-- :x:  texlive-pstricks
-- :x:  texlive-pstricks-doc
-- :x:  texlive-publishers
-- :x:  texlive-publishers-doc
-- :x:  texlive-xetex
-- :x:  texstudio  --			LaTeX-Editor - GUI
-- :x:  texstudio-doc
-- :x:  texstudio-l10n
+- Viele Zusatzpakete, die gerade zur akademischen Arbeit sinnvoll sind, z.B. für
+  Präsentationen ([beamer][]), Diagramme ([tikz][], [pstricks][]), verschiedene
+  Zitierstile (via bibtex oder [biblatex][]) und mehr.  Eine gute Übersicht über
+  die verfügbaren Pakete und weitere Dokumentation gibt das Programm `texdoctk`.
 
+- Dokumentation zu fast jedem Paket und Werkzeug, welches auch installiert ist.
+  Diese Dokumentation lässt sich am besten mit `texdoc` aufrufen.  Für das Paket
+  `babel` etwa wäre der Aufruf `texdoc babel` auf der Kommandozeile.  Eine
+  kurze [Einführung in LaTeX][] selbst lässt sich durch `texdoc l2kurz`
+  anzeigen.
 
+- Werkzeuge zum Arbeiten mit LaTeX und drumherum, z.B. [TeXStudio][]
+  (LaTeX-Editor) und [pdfjam][] (Manipulation von PDF Dokumenten auf der
+  Kommandozeile.
+
+[beamer]: https://www.ctan.org/pkg/beamer
+[tikz]: https://www.ctan.org/pkg/tikz
+[pstricks]: https://www.ctan.org/pkg/pstricks
+[biblatex]: https://www.ctan.org/pkg/biblatex
+[Einführung in LaTeX]: https://www.ctan.org/pkg/lshort-german
+[TeXLive 2016]: https://www.tug.org/texlive/
+[TeXStudio]: http://www.texstudio.org
+[pdfjam]: http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam
