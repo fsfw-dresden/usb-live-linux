@@ -113,8 +113,8 @@ Paketen, die gerade für das akademische Arbeiten hilfreich sind, zum Beispiel:
   Kommandozeile.
 
 [beamer]: https://www.ctan.org/pkg/beamer
-[tikz]: https://www.ctan.org/pkg/tikz
-[pstricks]: https://www.ctan.org/pkg/pstricks
+[tikz]: https://www.ctan.org/pkg/pgf
+[pstricks]: https://www.ctan.org/pkg/pstricks-base
 [biblatex]: https://www.ctan.org/pkg/biblatex
 [Einführung in LaTeX]: https://www.ctan.org/pkg/lshort-german
 [TeXLive 2016]: https://www.tug.org/texlive/
