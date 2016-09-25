@@ -71,6 +71,7 @@ Im Netz:
   - http://golatex.de/
   - http://www.latex-community.org/forum/
   - https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)
+  - http://texwelt.de
 
 - [texample.net](http://texample.net/) ist eine Beispielsammlung für
   LaTeX-Dokumente mit speziellen Fokus auf Bildern
