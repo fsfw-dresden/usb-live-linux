@@ -51,10 +51,19 @@ unterstützen.  Eines dieser Programmen ist *TeXStudio* und ist auf diesem Stick
 installiert.  Damit lassen sich einfach komplexe Dokumente erstellen und schnell
 in die gewünschte Ausgabe transformieren.
 
-## TODO: Beispiele
+## Beispiel: Eine Vorlage für Diplomarbeiten
 
-Hier sollen dann ein paar Links zu Beispieldateien stehen, zusammen mit
-Anleitungen, wie man aus diesen ein Dokument bekommt.
+Als Beispiel für eine LaTeX-Quelldatei haben wir eine
+kleine [Vorlage](latex/muster-diplomarbeit.tex) für Abschlussarbeiten, hier
+am Beispiel einer Diplomarbeit, erstellt.  Die Datei öffnet sich in TeXStudio,
+und von dort aus kann man sie durch Drücken von F5 oder durch Klicken auf den
+grünen Doppelpfeil in ein [PDF](latex/muster-diplomarbeit.pdf) konvertieren.
+
+Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert.  Das ist
+nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
+über LaTeX wissen.  Dennoch hilft es, wenn man sich die Datei genauer ansieht
+und mit den Kommandos herumspielt, also Anweisungen verändert und dann neu
+übersetzt.
 
 ## Literatur
 
