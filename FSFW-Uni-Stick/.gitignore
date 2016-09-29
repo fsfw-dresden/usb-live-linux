@@ -1,11 +1,11 @@
 binary/
-binary*.iso
-binary*.img
-binary*.tar*
-binary*.contents
-binary*.packages
-binary*.zsync
-live-image-*
+*.iso
+*.img
+*.tar*
+*.files
+*.contents
+*.packages
+*.zsync
 
 .build/
 build.log

@@ -1,0 +1,10 @@
+#!/bin/sh
+# hotfixes for boot links
+# 
+
+cd live
+ln -s vmlinuz* vmlinuz
+ln -s initrd.img* initrd.img
+
+
+exit 0
