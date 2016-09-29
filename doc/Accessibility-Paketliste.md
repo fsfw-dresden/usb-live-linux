@@ -1,38 +1,38 @@
-## Accessibility, Barrierefreiheit/ -reduzierung ##
+##  Accessibility
 
-- :+1:  dasher  -- Gestengesteuerte Eingabe
-- :+1:  ebook-speaker  
-- :+1:  eflite  -- ein auf Festival-Lite basierender Sprachserver für Emacsspeak
+- :x:  dasher  -- Gestengesteuerte Eingabe
+- :x:  ebook-speaker  
+- :x:  eflite  -- ein auf Festival-Lite basierender Sprachserver für Emacsspeak
 - :0: :-1:  # espeakup  -- Sprachsynthese mit Schwierigkeiten
-- :+1:  flite  -- Laufzeit-Sprachsynthese auf Basis von Festival-Lite
+- :x:  flite  -- Laufzeit-Sprachsynthese auf Basis von Festival-Lite
 - :0:  libttspico-utils  -- Sprachsysthese aus dem Non-Free- Repo
-- :+1:  mbrola  
-- :+1:  mbrola-de4  
-- :+1:  mbrola-de5  
-- :+1:  mbrola-de6  
-- :+1:  mbrola-de7  
-- :+1:  mbrola-us1  
-- :+1:  mbrola-us2  
-- :+1:  mbrola-us3  
-- :+1:  pocketsphinx  -- Spracherkennung
+- :x:  mbrola  
+- :x:  mbrola-de4  
+- :x:  mbrola-de5  
+- :x:  mbrola-de6  
+- :x:  mbrola-de7  
+- :x:  mbrola-us1  
+- :x:  mbrola-us2  
+- :x:  mbrola-us3  
+- :x:  pocketsphinx  -- Spracherkennung
 
 
-### Konsole ###
+- ###  Konsole  
 
-- :+1:  freetts  -- FLite basierte Sprachsynthese
-- :+1:  gocr  -- Texterkennung (OCR)
-- :+1:  tesseract-ocr  -- OCR als Vorstufe für Textausgabe per Sprache oder Braillezeile
-- :+1:  tesseract-ocr-deu  -- OCR-Trainingsdaten für Deutsch
-
-
-### KDE-Desktop ###
-
-- :+1:  kaccessible	 -- Barierrereduzierung für Anwender mit Handicap
-- :+1:  kvkbd  -- Oncreen-Keyboard
+- :x:  freetts  -- FLite basierte Sprachsynthese
+- :x:  gocr  -- Texterkennung (OCR)
+- :x:  tesseract-ocr  -- OCR als Vorstufe für Textausgabe per Sprache oder Braillezeile
+- :x:  tesseract-ocr-deu  -- OCR-Trainingsdaten für Deutsch
 
 
-### Gnome-Desktop & Derivate ###
+- ###  KDE-Desktop  
 
-- :+1:  gespeaker  -- GTK+ Frontend für espeaker und mbrola
-- :+1:  gnome-accessibility-themes  -- Barierrereduzierung für Anwender mit Handicap
-- :+1:  gnome-orca  -- Programmierbarer Screenreader
+- :x:  kaccessible	 -- Barierrereduzierung für Anwender mit Handicap
+- :x:  kvkbd  -- Oncreen-Keyboard
+
+
+- ###  Gnome-Desktop & Derivate  
+
+- :x:  gespeaker  -- GTK+ Frontend für espeaker und mbrola
+- :x:  gnome-accessibility-themes  -- Barierrereduzierung für Anwender mit Handicap
+- :x:  gnome-orca  -- Programmierbarer Screenreader
