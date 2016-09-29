@@ -65,7 +65,7 @@ nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
 und mit den Kommandos herumspielt, also Anweisungen verändert und dann neu
 übersetzt.
 
-## Literatur
+## Literatur und Hilfe
 
 Literatur zu LaTeX gibt es reichlich.  Hier wird eine kleine Auswahl von
 nützlichen Referenzen angeben:
@@ -100,6 +100,11 @@ LaTeX hilfreich sind, bietet
 die [*Deutsche Anwendervereinigung TeX e.V.*](http://www.dante.de) auf
 ihrer [Literaturliste](http://www.dante.de/index/Literatur.html); ansonsten
 einfach in der SLUB nachsehen, was es dort für Bücher zum Thema LaTeX gibt.
+
+Schließlich gibt es auch in regelmäßigen Abständen die
+[LaTeX-Sprechstunde](https://wiki.fsfw-dresden.de/doku.php/doku/sprechstunde).
+Häufig gestellte Fragen in dieser Sprechstunde sammeln wir in
+einer [FAQ](https://wiki.fsfw-dresden.de/doku.php/doku/latex/latex_tips).
 
 ## Noch mehr Details: Was bring der Stick für LaTeX mit?
 
