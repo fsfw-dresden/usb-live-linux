@@ -56,198 +56,198 @@
 
 > TODO: Durchsehen und ggf. in andere Listen über nehmen.
 
-arduino
-arduino-mk
-avrdude-doc
-avrprog
-biber
-dasher
-# dblatex
-debconf-kde-helper
-debian-faq
-dia
-diffpdf
-digikam
-digikam-doc
-discover
-dkms
-# doc-debian
-docutils-common
-doxygen-doc
-doxygen-gui
-doxygen-latex
-ebook-speaker
-ebtables
-eclipse
-eclipse-cdt
-eclipse-eclox
-# eclipse-egit
-eflite
-# espeakup
-ethtool
-# fbset
-filelight
-firmware-iwlwifi
-firmware-linux-free
-flite
-focuswriter
-fonts-mathjax-extras
-fonts-stix
-fraqtive
-freecad
-freecad-doc
-freetts
-fritzing
-gcc-doc
-gdb-doc
-geany
-geany-plugin-addons
-geany-plugin-doc
-geany-plugin-gendoc
-geany-plugin-latex
-geany-plugin-markdown
-geany-plugin-pairtaghighlighter
-geany-plugin-pg
-geany-plugin-prettyprinter
-geany-plugin-spellcheck
-geany-plugin-vc
-geda
-geda-examples
-geda-gsymcheck
-gespeaker
-gimp-dcraw
-git-doc
-gitg
-gnome-accessibility-themes
-gnome-orca
-gnuplot-doc
-gocr
-goldendict
-goldendict-wordnet
-gosmore
-gpart
-gparted
-graphviz
-graphviz-doc
-gstreamer0.10-pocketsphinx
-hp-ppd
-htdig
-htop
-hyphen-de
-icc-profiles-free
-ipython3-qtconsole
-irqbalance
-jabref
-jabref-plugin-oo
-josm
-# kalarm
-# kamoso
-kbibtex
-kdeaccessibility
-kde-config-cddb
-kdeconnect
-kdenlive
-kdepim
-kde-standard
-kicad
-kicad-doc-de
-kile
-kile-doc
-kile-l10n
-kio-mtp
-kjots
-klatexformula
-kleopatra
-klettres
-kmplot
-knode
-krecipes
-krecipes-doc
-kteatime
-ktimetracker
-ktouch
-kvkbd
-latex2html
-lib32ncurses5
-lib32ncursesw5
-lib32stdc++6
-lib32z1
-libatm1
-libjs-mathjax-doc
-libttspico-utils
-logisim
-lsof
-man2html-base
-marble
-maven
-maxima-doc
-mbrola
-mbrola-de4
-mbrola-de5
-mbrola-de6
-mbrola-de7
-mbrola-us1
-mbrola-us2
-mbrola-us3
-openteacher
-pandoc
-pandoc-citeproc
-parley
-pcb
-pdfgrep
-pdfmod
-pdfresurrect
-pdftk
-php5
-php5-xdebug
-phpunit
-pitivi
-plasma-netbook
-pm-utils
-pocketsphinx
-postgresql
-pspp
-python3-dev
-python3-matplotlib
-python3-numpy
-python3-pip
-python3-scipy
-python-gnuplot
-python-numpy-doc
-qelectrotech
-qemu-kvm
-qtcreator
-# qtgstreamer-plugins
-qtoctave
-r-base
-r-doc-info
-rfkill
-routino
-scratch
-stellarium
-subtitlecomposer
-swi-prolog
-swi-prolog-doc
-swi-prolog-java
-swi-prolog-odbc
-tesseract-ocr
-tesseract-ocr-deu
-testdisk
-tex4ht
-traceroute
-transcriber
-uisp
-unixodbc
-usbprog
-usbprog-gui
-vbetool
-vim-doc
-virt-manager
-virtualbox
-virtualbox-qt
-# wayv
-winff-doc
-winff-qt
-wireshark
-wireshark-doc
-# xfce4-goodies
+- :+1  arduino  
+- :+1  arduino-mk  
+- :+1  avrdude-doc  
+- :+1  avrprog  
+- :+1  biber  
+- :+1  dasher  
+- :+1  # dblatex  
+- :+1  debconf-kde-helper  
+- :+1  debian-faq  
+- :+1  dia  
+- :+1  diffpdf  
+- :+1  digikam  
+- :+1  digikam-doc  
+- :+1  discover  
+- :+1  dkms  
+- :+1  # doc-debian  
+- :+1  docutils-common  
+- :+1  doxygen-doc  
+- :+1  doxygen-gui  
+- :+1  doxygen-latex  
+- :+1  ebook-speaker  
+- :+1  ebtables  
+- :+1  eclipse  
+- :+1  eclipse-cdt  
+- :+1  eclipse-eclox  
+- :+1  # eclipse-egit  
+- :+1  eflite  
+- :+1  # espeakup  
+- :+1  ethtool  
+- :+1  # fbset  
+- :+1  filelight  
+- :+1  firmware-iwlwifi  
+- :+1  firmware-linux-free  
+- :+1  flite  
+- :+1  focuswriter  
+- :+1  fonts-mathjax-extras  
+- :+1  fonts-stix  
+- :+1  fraqtive  
+- :+1  freecad  
+- :+1  freecad-doc  
+- :+1  freetts  
+- :+1  fritzing  
+- :+1  gcc-doc  
+- :+1  gdb-doc  
+- :+1  geany  
+- :+1  geany-plugin-addons  
+- :+1  geany-plugin-doc  
+- :+1  geany-plugin-gendoc  
+- :+1  geany-plugin-latex  
+- :+1  geany-plugin-markdown  
+- :+1  geany-plugin-pairtaghighlighter  
+- :+1  geany-plugin-pg  
+- :+1  geany-plugin-prettyprinter  
+- :+1  geany-plugin-spellcheck  
+- :+1  geany-plugin-vc  
+- :+1  geda  
+- :+1  geda-examples  
+- :+1  geda-gsymcheck  
+- :+1  gespeaker  
+- :+1  gimp-dcraw  
+- :+1  git-doc  
+- :+1  gitg  
+- :+1  gnome-accessibility-themes  
+- :+1  gnome-orca  
+- :+1  gnuplot-doc  
+- :+1  gocr  
+- :+1  goldendict  
+- :+1  goldendict-wordnet  
+- :+1  gosmore  
+- :+1  gpart  
+- :+1  gparted  
+- :+1  graphviz  
+- :+1  graphviz-doc  
+- :+1  gstreamer0.10-pocketsphinx  
+- :+1  hp-ppd  
+- :+1  htdig  
+- :+1  htop  
+- :+1  hyphen-de  
+- :+1  icc-profiles-free  
+- :+1  ipython3-qtconsole  
+- :+1  irqbalance  
+- :+1  jabref  
+- :+1  jabref-plugin-oo  
+- :+1  josm  
+- :+1  # kalarm  
+- :+1  # kamoso  
+- :+1  kbibtex  
+- :+1  kdeaccessibility  
+- :+1  kde-config-cddb  
+- :+1  kdeconnect  
+- :+1  kdenlive  
+- :+1  kdepim  
+- :+1  kde-standard  
+- :+1  kicad  
+- :+1  kicad-doc-de  
+- :+1  kile  
+- :+1  kile-doc  
+- :+1  kile-l10n  
+- :+1  kio-mtp  
+- :+1  kjots  
+- :+1  klatexformula  
+- :+1  kleopatra  
+- :+1  klettres  
+- :+1  kmplot  
+- :+1  knode  
+- :+1  krecipes  
+- :+1  krecipes-doc  
+- :+1  kteatime  
+- :+1  ktimetracker  
+- :+1  ktouch  
+- :+1  kvkbd  
+- :+1  latex2html  
+- :+1  lib32ncurses5  
+- :+1  lib32ncursesw5  
+- :+1  lib32stdc++6  
+- :+1  lib32z1  
+- :+1  libatm1  
+- :+1  libjs-mathjax-doc  
+- :+1  libttspico-utils  
+- :+1  logisim  
+- :+1  lsof  
+- :+1  man2html-base  
+- :+1  marble  
+- :+1  maven  
+- :+1  maxima-doc  
+- :+1  mbrola  
+- :+1  mbrola-de4  
+- :+1  mbrola-de5  
+- :+1  mbrola-de6  
+- :+1  mbrola-de7  
+- :+1  mbrola-us1  
+- :+1  mbrola-us2  
+- :+1  mbrola-us3  
+- :+1  openteacher  
+- :+1  pandoc  
+- :+1  pandoc-citeproc  
+- :+1  parley  
+- :+1  pcb  
+- :+1  pdfgrep  
+- :+1  pdfmod  
+- :+1  pdfresurrect  
+- :+1  pdftk  
+- :+1  php5  
+- :+1  php5-xdebug  
+- :+1  phpunit  
+- :+1  pitivi  
+- :+1  plasma-netbook  
+- :+1  pm-utils  
+- :+1  pocketsphinx  
+- :+1  postgresql  
+- :+1  pspp  
+- :+1  python3-dev  
+- :+1  python3-matplotlib  
+- :+1  python3-numpy  
+- :+1  python3-pip  
+- :+1  python3-scipy  
+- :+1  python-gnuplot  
+- :+1  python-numpy-doc  
+- :+1  qelectrotech  
+- :+1  qemu-kvm  
+- :+1  qtcreator  
+- :+1  # qtgstreamer-plugins  
+- :+1  qtoctave  
+- :+1  r-base  
+- :+1  r-doc-info  
+- :+1  rfkill  
+- :+1  routino  
+- :+1  scratch  
+- :+1  stellarium  
+- :+1  subtitlecomposer  
+- :+1  swi-prolog  
+- :+1  swi-prolog-doc  
+- :+1  swi-prolog-java  
+- :+1  swi-prolog-odbc  
+- :+1  tesseract-ocr  
+- :+1  tesseract-ocr-deu  
+- :+1  testdisk  
+- :+1  tex4ht  
+- :+1  traceroute  
+- :+1  transcriber  
+- :+1  uisp  
+- :+1  unixodbc  
+- :+1  usbprog  
+- :+1  usbprog-gui  
+- :+1  vbetool  
+- :+1  vim-doc  
+- :+1  virt-manager  
+- :+1  virtualbox  
+- :+1  virtualbox-qt  
+- :+1  # wayv  
+- :+1  winff-doc  
+- :+1  winff-qt  
+- :+1  wireshark  
+- :+1  wireshark-doc  
+- :+1  # xfce4-goodies  
