@@ -84,6 +84,8 @@ Im Netz:
   - https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)
   - http://texwelt.de
 
+  Auch hilfreich ist das [Forum der TU](Forum dehttp://latex.wcms-file3.tu-dresden.de/phpBB3/index.php).
+
 - [texample.net](http://texample.net/) ist eine Beispielsammlung für
   LaTeX-Dokumente mit speziellen Fokus auf Bildern
 
