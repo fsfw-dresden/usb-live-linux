@@ -1,13 +1,13 @@
 #!/bin/bash
 #===========================================
-#         FILE: paketlist
-#        USAGE: auto/paketliste   - ( ausführen im live-build-Verzeichnis )
+#         FILE: paketliste
+#        USAGE: auto/paketliste - ( ausführen im live-build-Verzeichnis )
 #  DESCRIPTION: erstellen der Paketlisten aus der Doku Paketliste
 #        
-#      VERSION: 0.0.2
-#      OPTIONS: PAKETLISTE=$1	# $1 = FSFW_UNI_Stick_-_Paketliste 
-#        NOTES: für - live-build - debian jessie
-#
+#      VERSION: 0.0.3
+#      OPTIONS: PAKETLISTE-1 PAKETLISTE-2 .... 	# ohne Option (Default) $1 = FSFW_UNI_Stick_-_Paketliste.md
+#        NOTES: für - live-build - Debian jessie / Debian stretch
+#		- es können mehrere PAKETLISTEN kombiniert werden.
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-08-22
@@ -16,42 +16,84 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 
-PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
+PAKETLISTE=$@
+DEFAULT_PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
 
-if [[ -d ${PAKETPATH} ]]; then
+######################
+# Funktion: überprüfe ob Verzeichnis ${PAKETPATH} existiert
+# 
 
-    if [[ $(ls -A ${PAKETPATH}) ]]; then
+test_paketpath() {
+    if [[ -d ${PAKETPATH} ]]; then
+	echo " Verzeichnis - ${PAKETPATH##*/} - ist vorhanden"
 
-	echo " Alte Packetlisten werden gelöscht "
-
-	rm -v ${PAKETPATH}/*.list.*
-    else
-	echo "Es gibt keine Packetlisten"
+	else
+	echo " Verzeichnis - ${PAKETPATH##*/} - wird erstellt"
+	mkdir ${PAKETPATH}
     fi
+}
 
+####################
+# Funktion: überprüfe ob ${PAKETLISTE} vorhanden ist
+#
+
+test_datei() {
+    if [[ ! -f ${PAKETLISTE} ]]; then
+	echo " ${PAKETLISTE} existiert nicht "
+	exit 0
+    fi
+}
+
+####################
+# Funktion: alte Packetlisten löschen 
+#
+
+del_paketlist() {
+    if [[ $(ls -A ${PAKETPATH}) ]]; then
+        echo " Alte Paketlisten werden gelöscht "
+        rm -v ${PAKETPATH}/*.list.*
     else
-    mkdir ${PAKETPATH}
-fi 
+	echo " Es gibt keine Packetlisten "
+    fi
+}
 
+####################
+# Funktion Paketlisten generieren
+#
 
-echo "Packetlisten werden erstellt."
+create_paketlist() { echo "Packetlisten werden erstellt."
 
 while read line 
 do 
     line=${line%%"  -"*}
 
-case "${line%%"  "*}" in
+    case "${line%%"  "*}" in
     "##")
 	liste=${line##*"  "}.list.chroot
 	listeb=${line##*"  "}.list.binary
-	echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
-	echo "" >> ${PAKETPATH}/${liste// /_}
+	if [[ -w ${PAKETPATH}/${liste// /_} ]]; then
+	    echo " ${PAKETPATH}/${liste// /_} wird erweitert "
+	else
+	    echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
+	    echo "Paketliste -- ${PAKETPATH}/${liste// /_} -- wurde angelegt "
+	    echo "" >> ${PAKETPATH}/${liste// /_}
+	fi
     ;;
     "- ###")
 	echo "### ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- ### :o:")
+	echo "### ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+    ;;
+    "- ### :x:")
+	PAKETLISTE="$(dirname "${PAKETLISTE}")/${line##*"  "}.md"
+	test_datei
+	echo " ${PAKETLISTE} wird eingefügt "
+	create_paketlist
+	echo " ${PAKETLISTE} wurde eingefügt "
     ;;
     "- :x:")
 	echo ${line##*"  "} >> ${PAKETPATH}/${liste// /_}
@@ -72,8 +114,8 @@ case "${line%%"  "*}" in
 #		echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${listeb// /_}
 #		echo "" >> ${PAKETPATH}/${listeb// /_}
 #	fi
-
 	echo ${line##*"  "} >> ${PAKETPATH}/${listeb// /_}
+	echo "Paketliste -- ${PAKETPATH}/${listeb// /_} -- wurde angelegt "
     ;;
 #    "- [ ]")
 #	if [[ ! -f ${PAKETPATH}/${listeb// /_} ]]; then 
@@ -85,10 +127,56 @@ case "${line%%"  "*}" in
     *)
 #	echo " Unbekannt "
     ;;	
+    esac
 
-esac
+    done < ${PAKETLISTE}
+    echo "Packetlisten erstellen beendet. "
+}
 
-done < ${PAKETLISTE}
+###################
+# Hauptfunktion
+#
 
-echo "Packetlisten erstellen beendet. "
+test_paketpath
+
+# teste ob paketliste ARGUMENTE hat, wenn nein lösche *.list.* und verwende die default Liste (FSFW_UNI_Stick_-_Paketliste.md) ,
+
+if    [[ -z "$@" ]]; then
+	# wenn ja --> Paketlisten einlesen
+	PAKETLISTE=${DEFAULT_PAKETLISTE}
+	echo " ${PAKETLISTE} wurde ausgewählt "
+	del_paketlist
+	create_paketlist
+    else
+	# Sollen vorhandene Paketlisten gelöscht werden ?
+	echo " $@ wurde ausgewählt" 
+		echo " Es sollen neue Packetlisten generiert werden ! "
+		echo " Möchten Sie alle vorhandenen Paketlisten vorher löschen ? "
+		echo " Geben sie >> y << ein und die Eingabetaste. "
+		echo " "
+		echo " Die vorhanden Pakeklisten erweitern - mit jeder anderen Taste. "
+		read NEUE_LISTEN
+		if [ "$NEUE_LISTEN" == 'y' ]; then
+		    echo " Listen löschen "
+		    del_paketlist
+		fi
+	for paketliste in $@
+	    do
+	    PAKETLISTE=${paketliste}
+	    # überprüfe ob Paketliste existiert, sonst Fehlermeldung
+	    test_datei
+	    # Paketlisten generieren
+	    create_paketlist
+	done
+
+	
+fi
+
+
+
+
+
+
+
+
 

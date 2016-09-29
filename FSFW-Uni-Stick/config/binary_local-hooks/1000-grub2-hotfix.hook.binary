@@ -32,4 +32,9 @@ then
     mv binary/boot/grub/*.mod binary/boot/grub/*.lst binary/boot/grub/efiemu??.o binary/boot/grub/*.pf2 binary/boot/grub/i386-pc/
 fi
 
+cd binary/live
+ln -s vmlinuz* vmlinuz
+ln -s initrd.img* initrd.img
+cd ../..
+
 exit 0
