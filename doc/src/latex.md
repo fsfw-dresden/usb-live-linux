@@ -76,7 +76,9 @@ Im Netz:
   Artikel zu LaTeX, sondern sogar ein sehr
   ausführliches [Wikibook](https://en.wikibooks.org/wiki/LaTeX).
 
-- Es gibt eine Reihe von aktiven Foren im Netz zum Thema LaTeX:
+- Bei Problemen mit LaTeX hilft es meistens, in einer Suchmaschine „LaTeX + «was
+  will ich machen»“ einzugeben.  Dabei landet man oft auf folgenden Foren:
+
   - http://golatex.de/
   - http://www.latex-community.org/forum/
   - https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)
