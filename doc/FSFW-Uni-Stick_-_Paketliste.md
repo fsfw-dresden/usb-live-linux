@@ -44,7 +44,7 @@
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
 > 
 
-##  Desktop
+##  Desktop  
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
 - :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
@@ -88,6 +88,8 @@
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
+- :+1:  filelight  -- Speicherbelegungsvisualisierung
+
 - ###  kde-l10n  -- virtuelles Paket 
 
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
@@ -108,10 +110,9 @@
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
 - :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
-- :+1:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
 - :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
+- :+1:  dia  
 
 - ###  libreoffice
 
@@ -121,6 +122,22 @@
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :x:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
+
+- ###  PDF-Tools
+
+- :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
+- :+1:  diffpdf  
+- :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
+- :+1:  pdfgrep  
+- :+1:  pdfmod  
+- :+1:  pdfresurrect  
+
+- ###  Literaturverwaltung
+
+- :+1:  jabref  
+- :+1:  jabref-plugin-oo  
+- :+1:  docear  -- Lit-verw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
+- :+1:  kbibtex  -- Kde basierte Lit.verw.
 
 - ###  kommunikation
 
@@ -138,25 +155,45 @@
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
 - :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
 
-##  Desktop Video - Audio - Bilder
+##  Desktop Video - Audio - Bilder - 3D
+
+- ###  Audio
+
+- :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
+- :+1:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
+
+- ###  Video
 
 - :x:  vlc  --		Multimedia-Player und Streamer
-- :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
+- :+1:  pitivi  -- Videoschnitt
+- :+1:  kdenlive  -- Videoschnitt
+- :+1:  subtitlecomposer  -- Untertiteleditor
+
+
+##  Desktop Grafik
+
 - :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :+1:  gimp-data-extras  -- Ein extra Satz Pinsel, Paletten, Gradienten für GIMP
 - :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
-- :+1:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
+- :x:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
 - :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
+- :+1:  icc-profiles-free  
+- :+1:  winff-qt  -- Videoformatkonverter
 
-## Desktop Grafik
+- ###  Fotoverwaltung
 
-- :+1:  blender  --	Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
+- :+1:  digikam  
+- :+1:  digikam-doc  
+
+- ###  3D-Grafik
+
+- :x:  blender  --	Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
 - :+1:  makehuman  --	Modelling of 3-Dimensional humanoid characters - ab stretch
-- :+1:  sweethome3d  --	Interior 2D design application with 3D preview (java)
+- :x:  sweethome3d  --	Interior 2D design application with 3D preview (java)
 - :+1:  sweethome3d-furniture-editor  -- Sweet Home 3D Furniture Library Editor
 - :+1:  sweethome3d-textures-editor  --  Sweet Home 3D Textures Library Editor
 
@@ -170,13 +207,23 @@
 - :o:  geogebra-gnome  -- GNOME-Integrationsebene für GeoGebra 
 - :x:  geogebra-kde  -- KDE integration layer for GeoGebra 
 - :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
-
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
+- :+1:  fraqtive  -- Fraktalgenerator
 
 - ###  scientific python
 
 - :x:  ipython3  --	Erweiterte interaktive Python-3-Shell
 [//]: # (Carsten: Mir ist es wichtig, dass der ganze Python-Kram aktuell ist, weil da in den letzten Jahren viel pasiert ist. Aktuell ist IPython5. Das würde ich zusammen mit anderen Abhängigkeiten separat (aus den passenden Quellen installieren. Ich kümmere mich im September drum, könnte aber ggf. Hilfe gebrauchen.))
+
+- ###  Statistik
+- :+1:  pspp  -- Statistik-Suite
+- :+1:  r-base  
+- :+1:  r-doc-info  
+
+- ###  CAD
+
+- :+1:  freecad  
+- :+1:  freecad-doc  
 
 - ###  chemistry
 
@@ -186,6 +233,10 @@
 - ###  languages
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
+- :+1:  goldendict  -- Wörterbuch und Lexikon
+- :+1:  goldendict-wordnet  
+- :+1:  openteacher  
+- :+1:  parley  
 
 - ###  electronics
 
@@ -194,6 +245,24 @@
     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
     - Recommends: freehdl, verilog, octave 
     - Außerdem brauchen wir noch Beispiele
+- :+1:  kicad  
+- :+1:  kicad-doc-de  
+- :+1:  fritzing  
+- :+1:  pcb  
+- :+1:  qelectrotech  
+- :+1:  geda  
+- :+1:  geda-examples  
+- :+1:  geda-gsymcheck  
+
+- ###  geography
+
+- :+1:  marble  
+- :+1:  josm  
+- :+1:  gosmore  
+
+- ###  astronomy
+
+- :+1:  stellarium  
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -228,17 +297,45 @@
 - :x:  texlive-publishers	
 - :x:  texlive-publishers-doc
 - :x:  texlive-xetex
+- :+1:  biber  --				Lit.verw.programm
 - :x:  texstudio  --			LaTeX-Editor - GUI
 - :x:  texstudio-doc
 - :x:  texstudio-l10n
+- :+1:  kile  --				KDE basierter LaTeX-Editor
+- :+1:  kile-doc  
+- :+1:  kile-l10n  
+- :+1:  klatexformula  
 
 
 ##  Programmierung Softwareentwicklung
 
+- ###  Programmiersprachen
+
+- :+1:  php5  
+- :+1:  php5-xdebug  
+- :+1:  phpunit  
+
+- ###  Tools
+
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
+- :+1:  gitg  
 - :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+- :+1:  doxygen-gui  -- Frontend des Doku-Generators
 
+- ###  IDEs
+
+- :+1:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
+- :+1:  eclipse-cdt  
+- :+1:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
+- :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
+- :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
+- :+1:  scratch  -- spielerisch programmieren lernen
+- :0: netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
+- :+1:  swi-prolog  -- deklaratives Programmieren
+- :+1:  swi-prolog-doc  
+- :+1:  swi-prolog-java  
+- :+1:  swi-prolog-odbc  
 
 ##  Terminal Tools
 
@@ -248,11 +345,18 @@
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
+- :+1:  htop  
+- :+1:  pandoc  
+- :+1:  pandoc-citeproc  
+- :+1:  docutils-common  
+- :+1:  doxygen-latex  
+
 
 - ###  grafik
 
 - :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
 - :x:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
+- :+1:  graphviz  
 
 - ###  utils
 
@@ -261,10 +365,24 @@
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
 - :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
+- :+1:  pm-utils  -- Powermanagement
+- :+1:  testdisk  -- Datenrettungswerkzeug
+
 
 - ###  text 
 
 - :x:  most  --		Pager-Programm - alternativ zu more / less
+- :+1:  geany  
+- :+1:  geany-plugin-addons  
+- :+1:  geany-plugin-doc  
+- :+1:  geany-plugin-gendoc  
+- :+1:  geany-plugin-latex  
+- :+1:  geany-plugin-markdown  
+- :+1:  geany-plugin-pairtaghighlighter  
+- :+1:  geany-plugin-pg  
+- :+1:  geany-plugin-prettyprinter  
+- :+1:  geany-plugin-spellcheck  
+- :+1:  geany-plugin-vc  
 
 - ###  admin
 
@@ -290,14 +408,27 @@
 - :x:  util-linux-locales
 
 
-##  wlan  -- System Tools - Hardware
+##  SystemTools
 
+- :+1:  gpart  
+- :+1:  gparted  
+- :+1:  virt-manager  
+- :+1:  virtualbox  -- Virtualisierung
+- :+1:  wireshark  -- Netzwerkanalysetool
+- :+1:  traceroute  -- Netzwerkanalysetool
+
+
+-###  Wlan - Hardware
+
+- :+1:  rfkill  -- Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
 - :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
 
+- :+1:  firmware-linux-free  
 - [ ]  firmware-b43-installer
+- [ ]  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
 
 ##  live  -- System Pakete werden fürs Live-System benöttigt
 
