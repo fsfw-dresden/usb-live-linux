@@ -81,7 +81,7 @@
 - :x:  kdeplasma-addons  -- Plasma-Erweiterungen 
 - :x:  kde-plasma-desktop  -- KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
 - :x:  kde-plasma-netbook  -- KDE Plasma Netbook und eine minimale Auswahl an Anwendungen - oder ...desktop
-- :x:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
+- :+1:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
 - :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
@@ -90,7 +90,7 @@
 
 - :x:  filelight  -- Speicherbelegungsvisualisierung
 
-- ###  kde-l10n  -- virtuelles Paket 
+- ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
 
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
 
@@ -111,7 +111,7 @@
 
 - :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
 - :x:  scribus  --	DTP-Programm
-- :x:  scribus-template  -- Vorlagen
+- :+1:  scribus-template  -- Vorlagen
 - :x:  dia  
 
 - ###  libreoffice
@@ -144,7 +144,7 @@
 - :x:  firefox-esr  --	Mozilla Firefox web browser
 - :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket
 
-- :x:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
+- :o: :-1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 - :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
@@ -165,9 +165,10 @@
 - ###  Video
 
 - :x:  vlc  --		Multimedia-Player und Streamer
-- :x:  pitivi  -- Videoschnitt
+- :o:  pitivi  -- Videoschnitt (entweder Pitivi oder Kdenlive)
 - :x:  kdenlive  -- Videoschnitt
 - :x:  subtitlecomposer  -- Untertiteleditor
+- :+1:  winff-qt  -- Videoformatkonverter
 
 
 ##  Desktop Grafik
@@ -176,13 +177,12 @@
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :+1:  gimp-data-extras  -- Ein extra Satz Pinsel, Paletten, Gradienten für GIMP
-- :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
-- :x:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
+- :x:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
+- :o:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
-- :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
+- :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 - :x:  icc-profiles-free  
-- :+1:  winff-qt  -- Videoformatkonverter
 
 - ###  Fotoverwaltung
 
@@ -223,7 +223,7 @@
 - ###  CAD
 
 - :x:  freecad  
-- :x:  freecad-doc  
+- :+1:  freecad-doc  
 
 - ###  chemistry
 
@@ -258,11 +258,12 @@
 
 - :x:  marble  
 - :x:  josm  -- OpenStreetmap-Editor
-- :x:  gosmore  OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+- :x:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
 
 - ###  astronomy
 
-- :x:  stellarium  
+- :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
+- :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -311,9 +312,12 @@
 
 - ###  Programmiersprachen
 
-- :x:  php5  
+- :x:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
+- :x:  php5-cli  -- PHP-Konsolenschnittstelle
+- :+1:  php5-gd  -- PHP5- Grafikbibliothek
+- :+1:  php5-mysqlnd  -- PHP5- Datenbankbibliothek
 - :x:  php5-xdebug  
-- :x:  phpunit  
+- :+1:  phpunit  
 
 - ###  Tools
 
@@ -326,16 +330,23 @@
 - ###  IDEs
 
 - :x:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
-- :x:  eclipse-cdt  
+- :x:  eclipse-cdt  -- Eclipse für C++ Programmierung
+- :x:  eclipse-jdt  -- Eclipse für Java Programmierung
 - :x:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
-- :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
-- :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
+- :o: :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
+- :o: :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
 - :x:  scratch  -- spielerisch programmieren lernen
-- :0: netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
+- :o:  netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
 - :x:  swi-prolog  -- deklaratives Programmieren
-- :x:  swi-prolog-doc  
+- :o: :+1:  swi-prolog-doc  
 - :x:  swi-prolog-java  
 - :x:  swi-prolog-odbc  
+
+- ##  Datenbanken
+
+- :+1:  mysql-server
+- :+1:  mysql-client
+- :+1:  phpmyadmin  -- umfangreiches und lehrreiches MySQL-Webfrontend
 
 ##  Terminal Tools
 
@@ -412,21 +423,22 @@
 
 - :x:  gpart  
 - :x:  gparted  
-- :x:  virt-manager  
+- :+1:  virt-manager  
 - :x:  virtualbox  -- Virtualisierung
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
 
 
--###  Wlan - Hardware
+- ###  Wlan - Hardware
 
 - :x:  rfkill  -- Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
-- :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
+
+- [ ]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
 
-- :+1:  firmware-linux-free  
+- :x:  firmware-linux-free  
 - [ ]  firmware-b43-installer
 - [ ]  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
 
