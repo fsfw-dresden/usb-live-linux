@@ -4,10 +4,16 @@ Live-Linux System mit der Zielgruppe Studium in Dresden
 
 In diesem Repo liegen Skripte, Konfigurationsdateien und Doku, die eine Standardinstallation, in ein von uns gewünschte, auf die Bedürfnisse des Studiums angepasste Live-System-Variante bringt.
 
-- System erstellt auf Debian 8.x - jessie - Stand 2016-08-22
+|						|								|																		|
+|:----------------------|:-----------------------------:|:----------------------------------------------------------------------|
+|Größe des Images		|4,1 GB							|Wird noch etwas reduziert, damit es auf einen 4GB-Stick passt			|
+|Basissystem			|Debian 8 (Jessie), Kernel 3.16	|Dies ist eine etwas ältere, dafür aber auch stabile, Version von Debian	|
+|Desktopumgebung		|KDE (+ MATE)					|KDE eignet sich für schnelle PCs mit mind. 2 GB RAM, MATE auch für Netbooks	|
+|Rechnerarchitektur		|amd64							|Setzt also einen gewöhnlichen Intel-/ AMD- kompatiblen CPU mit 64 Bit vorraus	|
+|Lokalisiereung			|Deutsch + Englisch				|Deutsch sollte zwar installiert sein, ist aber nicht auswählbar		|
+|Logindaten				|Nutzer: "user", Pwd: "live"	|																		|
 
-- FSFW-Uni-Stick basiert auf Debian-Live-System - Desktop kde - amd64 - Kernel 3.16
-
+- System erstellt auf Debian 9 (stretch) - Stand 2016-09-29
 
 weitere Infos:
 https://wiki.fsfw-dresden.de/doku.php/doku/usb-stick#nutzung_von_live-build_fuer_debian
