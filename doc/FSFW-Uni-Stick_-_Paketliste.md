@@ -88,7 +88,7 @@
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
-- :+1:  filelight  -- Speicherbelegungsvisualisierung
+- :x:  filelight  -- Speicherbelegungsvisualisierung
 
 - ###  kde-l10n  -- virtuelles Paket 
 
@@ -112,7 +112,7 @@
 - :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
 - :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
-- :+1:  dia  
+- :x:  dia  
 
 - ###  libreoffice
 
@@ -126,16 +126,16 @@
 - ###  PDF-Tools
 
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :+1:  diffpdf  
+- :x:  diffpdf  
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
-- :+1:  pdfgrep  
-- :+1:  pdfmod  
-- :+1:  pdfresurrect  
+- :x:  pdfgrep  
+- :x:  pdfmod  
+- :x:  pdfresurrect  
 
 - ###  Literaturverwaltung
 
-- :+1:  jabref  
-- :+1:  jabref-plugin-oo  
+- :x:  jabref  
+- :x:  jabref-plugin-oo  
 - :+1:  docear  -- Lit-verw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
 - :+1:  kbibtex  -- Kde basierte Lit.verw.
 
@@ -160,14 +160,14 @@
 - ###  Audio
 
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
-- :+1:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
+- :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
 
 - :x:  vlc  --		Multimedia-Player und Streamer
-- :+1:  pitivi  -- Videoschnitt
-- :+1:  kdenlive  -- Videoschnitt
-- :+1:  subtitlecomposer  -- Untertiteleditor
+- :x:  pitivi  -- Videoschnitt
+- :x:  kdenlive  -- Videoschnitt
+- :x:  subtitlecomposer  -- Untertiteleditor
 
 
 ##  Desktop Grafik
@@ -181,12 +181,12 @@
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
 - :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
-- :+1:  icc-profiles-free  
+- :x:  icc-profiles-free  
 - :+1:  winff-qt  -- Videoformatkonverter
 
 - ###  Fotoverwaltung
 
-- :+1:  digikam  
+- :x:  digikam  
 - :+1:  digikam-doc  
 
 - ###  3D-Grafik
@@ -208,7 +208,7 @@
 - :x:  geogebra-kde  -- KDE integration layer for GeoGebra 
 - :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
-- :+1:  fraqtive  -- Fraktalgenerator
+- :x:  fraqtive  -- Fraktalgenerator
 
 - ###  scientific python
 
@@ -216,14 +216,14 @@
 [//]: # (Carsten: Mir ist es wichtig, dass der ganze Python-Kram aktuell ist, weil da in den letzten Jahren viel pasiert ist. Aktuell ist IPython5. Das würde ich zusammen mit anderen Abhängigkeiten separat (aus den passenden Quellen installieren. Ich kümmere mich im September drum, könnte aber ggf. Hilfe gebrauchen.))
 
 - ###  Statistik
-- :+1:  pspp  -- Statistik-Suite
-- :+1:  r-base  
+- :x:  pspp  -- Statistik-Suite
+- :x:  r-base  
 - :+1:  r-doc-info  
 
 - ###  CAD
 
-- :+1:  freecad  
-- :+1:  freecad-doc  
+- :x:  freecad  
+- :x:  freecad-doc  
 
 - ###  chemistry
 
@@ -233,10 +233,10 @@
 - ###  languages
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
-- :+1:  goldendict  -- Wörterbuch und Lexikon
+- :x:  goldendict  -- Wörterbuch und Lexikon
 - :+1:  goldendict-wordnet  
 - :+1:  openteacher  
-- :+1:  parley  
+- :x:  parley  
 
 - ###  electronics
 
@@ -245,8 +245,8 @@
     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
     - Recommends: freehdl, verilog, octave 
     - Außerdem brauchen wir noch Beispiele
-- :+1:  kicad  
-- :+1:  kicad-doc-de  
+- :x:  kicad  
+- :x:  kicad-doc-de  
 - :+1:  fritzing  
 - :+1:  pcb  
 - :+1:  qelectrotech  
@@ -256,13 +256,13 @@
 
 - ###  geography
 
-- :+1:  marble  
-- :+1:  josm  
-- :+1:  gosmore  
+- :x:  marble  
+- :x:  josm  -- OpenStreetmap-Editor
+- :x:  gosmore  OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
 
 - ###  astronomy
 
-- :+1:  stellarium  
+- :x:  stellarium  
 
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
@@ -297,11 +297,11 @@
 - :x:  texlive-publishers	
 - :x:  texlive-publishers-doc
 - :x:  texlive-xetex
-- :+1:  biber  --				Lit.verw.programm
+- :x:  biber  --				Lit.verw.programm
 - :x:  texstudio  --			LaTeX-Editor - GUI
 - :x:  texstudio-doc
 - :x:  texstudio-l10n
-- :+1:  kile  --				KDE basierter LaTeX-Editor
+- :x:  kile  --				KDE basierter LaTeX-Editor
 - :+1:  kile-doc  
 - :+1:  kile-l10n  
 - :+1:  klatexformula  
@@ -311,31 +311,31 @@
 
 - ###  Programmiersprachen
 
-- :+1:  php5  
-- :+1:  php5-xdebug  
-- :+1:  phpunit  
+- :x:  php5  
+- :x:  php5-xdebug  
+- :x:  phpunit  
 
 - ###  Tools
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
-- :+1:  gitg  
+- :x:  gitg  
 - :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
-- :+1:  doxygen-gui  -- Frontend des Doku-Generators
+- :x:  doxygen-gui  -- Frontend des Doku-Generators
 
 - ###  IDEs
 
-- :+1:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
-- :+1:  eclipse-cdt  
-- :+1:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
+- :x:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
+- :x:  eclipse-cdt  
+- :x:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
 - :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
 - :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
-- :+1:  scratch  -- spielerisch programmieren lernen
+- :x:  scratch  -- spielerisch programmieren lernen
 - :0: netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
-- :+1:  swi-prolog  -- deklaratives Programmieren
-- :+1:  swi-prolog-doc  
-- :+1:  swi-prolog-java  
-- :+1:  swi-prolog-odbc  
+- :x:  swi-prolog  -- deklaratives Programmieren
+- :x:  swi-prolog-doc  
+- :x:  swi-prolog-java  
+- :x:  swi-prolog-odbc  
 
 ##  Terminal Tools
 
@@ -345,18 +345,18 @@
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
-- :+1:  htop  
-- :+1:  pandoc  
-- :+1:  pandoc-citeproc  
-- :+1:  docutils-common  
-- :+1:  doxygen-latex  
+- :x:  htop  
+- :x:  pandoc  
+- :x:  pandoc-citeproc  
+- :x:  docutils-common  
+- :x:  doxygen-latex  
 
 
 - ###  grafik
 
 - :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
 - :x:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
-- :+1:  graphviz  
+- :x:  graphviz  
 
 - ###  utils
 
@@ -365,24 +365,24 @@
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
 - :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
-- :+1:  pm-utils  -- Powermanagement
-- :+1:  testdisk  -- Datenrettungswerkzeug
+- :x:  pm-utils  -- Powermanagement
+- :x:  testdisk  -- Datenrettungswerkzeug
 
 
 - ###  text 
 
 - :x:  most  --		Pager-Programm - alternativ zu more / less
-- :+1:  geany  
-- :+1:  geany-plugin-addons  
-- :+1:  geany-plugin-doc  
-- :+1:  geany-plugin-gendoc  
-- :+1:  geany-plugin-latex  
-- :+1:  geany-plugin-markdown  
-- :+1:  geany-plugin-pairtaghighlighter  
-- :+1:  geany-plugin-pg  
-- :+1:  geany-plugin-prettyprinter  
-- :+1:  geany-plugin-spellcheck  
-- :+1:  geany-plugin-vc  
+- :x:  geany  
+- :x:  geany-plugin-addons  
+- :x:  geany-plugin-doc  
+- :x:  geany-plugin-gendoc  
+- :x:  geany-plugin-latex  
+- :x:  geany-plugin-markdown  
+- :x:  geany-plugin-pairtaghighlighter  
+- :x:  geany-plugin-pg  
+- :x:  geany-plugin-prettyprinter  
+- :x:  geany-plugin-spellcheck  
+- :x:  geany-plugin-vc  
 
 - ###  admin
 
@@ -410,17 +410,17 @@
 
 ##  SystemTools
 
-- :+1:  gpart  
-- :+1:  gparted  
-- :+1:  virt-manager  
-- :+1:  virtualbox  -- Virtualisierung
-- :+1:  wireshark  -- Netzwerkanalysetool
-- :+1:  traceroute  -- Netzwerkanalysetool
+- :x:  gpart  
+- :x:  gparted  
+- :x:  virt-manager  
+- :x:  virtualbox  -- Virtualisierung
+- :x:  wireshark  -- Netzwerkanalysetool
+- :x:  traceroute  -- Netzwerkanalysetool
 
 
 -###  Wlan - Hardware
 
-- :+1:  rfkill  -- Wlan, Bluetooth & Co. an-/ abschalten
+- :x:  rfkill  -- Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
 - :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
