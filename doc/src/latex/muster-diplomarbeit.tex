@@ -17,13 +17,17 @@
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{0.5ex}
 
-\usepackage[style=apa]{biblatex}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{literatur.bib}
 
 \usepackage{makeidx}
 \makeindex
 
 \usepackage{tabu}
 \usepackage{booktabs}
+
+\usepackage{mathtools}
+\newtheorem{Satz}{Satz}
 
 \usepackage{todonotes}
 
@@ -130,7 +134,7 @@ Es geht los, seien Sie gespannt!
 \label{sec:der-erste-streich}
 
 Wir beginnen mit einer einfach Betrachtung klassischer Beispiele.  Dafür
-verweisen wir zuerst eloquent auf die folgende Tabelle verweisen:
+verweisen wir zuerst eloquent auf die folgende Tabelle verweisen:\index{Tabelle}
 
 \begin{center}
   \begin{tabu}{XX}
@@ -194,7 +198,7 @@ in keiner Arbeit fehlen dürfen!  Wir zeigen die ersten 10000 Primzahlen in
    2371 & 2377 & 2381 & 2383 & 2389 & 2393 & 2399 & 2411 & 2417 & 2423 \\
    \bottomrule
   \end{tabu}
-  \caption{Die ersten 10000 Primzahlen (nicht ganz \dots)}
+  \caption{Die ersten 10000 Primzahlen (nicht ganz \dots)\index{Primzahlen}}
   \label{tab:prime-numbers}
 \end{table}
 
@@ -202,20 +206,81 @@ in keiner Arbeit fehlen dürfen!  Wir zeigen die ersten 10000 Primzahlen in
 \label{sec:das-wars}
 
 Damit ist schon das wichtigste dieses Abschnittes gesagt.  Alles weitere findet
-sich in \todo{Referenz}
+sich in~\cite{lakoff87_women_fire_danger_thing}.
 
 \chapter{\dots, Zwei, \dots}
 \label{cha:zwei}
 
+Eine allgemein anerkannte Weisheit besagt, dass alles stimmt, was sich in
+mathematischen Formeln ausdrücken lässt.  Um also den in dieser Arbeit gegebenen
+Thesen noch mehr Gewicht zu geben, weisen wir hier unterstützend nach, dass sie
+aus bekannt Formel der Höheren Mathematik folgen.
+
+\section{Vorbereitungen}
+\label{sec:vorbereitungen}
+
+Zuerst wollen wir aber einige wichtige Formeln der Mathematik nennen.
+
+Als einer der ästhetisch ansprechendsten Formel gilt
+\begin{equation}
+  \label{eq:1}
+  e^{i\pi} + 1 = 0.
+\end{equation}
+Diese Formel hat nur leider nichts mit dem zu tun, worum es in dieser Arbeit
+gehen soll.  Ebenso ist es mit dem folgenden \emph{Cauchyschen
+  Integralsatz}~\parencite{knopp70_funkt_i}.\index{Mathematik}\index{Hauptsatz}
+
+\begin{Satz}[Hauptsatz der Funktionentheorie]
+  Es sei die Funktion $f$ in einem einfach zusammenhängenden Gebiet
+  $\mathcal{G}$, und es seien $z_{0}$ und $Z$ zwei innere Punkte von
+  $\mathcal{G}$.  Dann hat das Integral
+  \begin{equation*}
+    \int_{z_{0}}^{Z} \! f(z) \; \mathrm{d}z
+  \end{equation*}
+  längs jeden von $z_{0}$ nach $Z$ führenden in ganz in $\mathcal{G}$
+  verlaufenden Weges denselben Wert.
+\end{Satz}
+
+\section{Ergebnisse}
+\label{sec:ergebnisse}
+
+Es zeigt, dass auch nach vertiefter Untersuchung sich keinerlei Verbindungen
+zwischen der Mathematik auf der einen, und der in dieser Arbeit beschriebenen
+Thematik auf der anderen Seite finden lassen.  Dennoch sein darauf hingewiesen,
+dass dies in keiner Weise die Glaubwürdigkeit der angebrachten Argumente in
+irgendeiner Weise angreift!
+
 \chapter{\dots, Drei!}
 \label{cha:drei}
+
+Keine Arbeit kann vollständig sein ohne eine eingebundene Graphik, und sei sie
+noch so unabhängig vom eigentlichen Anliegen des Werkes.  Nun denn, hier ist
+sie:\index{Abbildung}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{eyes-to-heaven.jpg}
+  \caption{„Eyes to Heaven“, Basílica de San Pedro, Vatikan, Italien,
+    CC-BY-NC-ND Pablo Fernández,
+    \url{https://www.flickr.com/photos/hadock/8449312293/} }
+  \label{fig:basilica-de-san-pedro}
+\end{figure}
 
 \appendix
 
 \chapter{Dinge, die noch gesagt werden müssen}
 \label{cha:dinge-die-noch}
 
+Tatsächlich fällt mir doch noch was ein, und zwar ein Zitat\index{Zitat}:
+
+\begin{displayquote}[Richard Feynman]
+  „The first principle is that you must not fool yourself – and you are the
+  easiest person to fool.“
+\end{displayquote}
+
 \backmatter
+
+\printbibliography{}
 
 \printindex
 
