@@ -15,17 +15,17 @@ erlauben, die Funktionsweise der Programme zu verstehen oder sie zu verändern.
 Das hat eine Reihe von negativen Folgen, von denen [Anbieterabhängigkeit][1] nur
 eine ist.  Manchmal lässt sich das nicht vermeiden, wie zum Beispiel bei
 hochwertigen CAD-Programmen.  Andererseits gibt es viele funktionsfähige *freie*
-Programme, die sich für den Alltag im Studium genauso gut (oder noch besser)
-eignen wie ihre proprietären Gegenstücke.  Diese Programme sind nicht nur
-kostenlos, sie dürfen auch in ihrer Funktionsweise untersucht, verändert, und
-weitergegeben werden.  Das erlaubt unter anderem Nachvollziehbarkeit, schnelle
-Beseitigung von Fehlern, und das Anpassen an spezielle Bedürfnisse.
+Programme, die sich für den Alltag im Studium genauso gut wie ihre proprietären
+Gegenstücke eignen.  Diese Programme sind nicht nur kostenlos, sie dürfen auch
+in ihrer Funktionsweise untersucht, verändert, und weitergegeben werden.  Das
+erlaubt unter anderem Nachvollziehbarkeit, schnelle Beseitigung von Fehlern, und
+das Anpassen an spezielle Bedürfnisse.
 
 Eine handverlesene Auswahl an freier Software, die für das Studium hilfreich
-sein kann, soll euch dieser Stick bringen.  Das beste daran: die Software kommt
-mit einem *Linux Live-System*, d.h., ihr könnt von diesem Stick ein Linux-System
-mit viel toller Software starten, ohne zuerst eine langwierige Installation
-hinter euch bringen zu müssen!
+sein kann, soll euch dieser Stick bringen.  Das beste daran: der Stick bietet
+ein *Linux Live-System*, so dass ihr von diesem Stick ein Linux-System mit viel
+toller Software starten könnt, ohne zuerst eine langwierige Installation hinter
+euch bringen zu müssen!
 
 [1]: https://en.wikipedia.org/wiki/Vendor_lock-in
 
