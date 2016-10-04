@@ -68,6 +68,20 @@ Wo findet man weitere Dokumentation ((Video-)Tutorials, Referenzen, Foren)
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
-Motivation, FSFW-Programm, StuRa
+Die Ende 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
+beschäftigt sich mit den technischen sowie gesellschaftlichen Aspekten freier
+Software und freien Wissens an der Hochschule.
 
+Neben unserem Ziel, themenspezifische Bildungsangebote mit Hilfe der
+Organisation von Vorträgen, Wissenssammlungen und Veranstaltungen
+bereitzustellen, hat sich die Gruppe auch zur Förderung von sicherer
+Kommunikation und der Nutzungsverbesserung von täglich im universitären Umfeld
+verwendeter Software, wie zum Beispiel LaTeX, ausgesprochen. Darüber hinaus
+bietet die Hochschulgruppe für bereits bestehende verteilte Initiativen eine
+Austauschplattform und Vermittlungsgelegenheit.
 
+Mehr Informationen zum Programm der FSFW gibt es in
+unserem [Programmpapier](https://fsfw-dresden.de/programm.html).
+
+Die FSFW bedankt sich ganz herzlich beim StuRa der TU Dresden für die
+finanzielle Unterstützung!
