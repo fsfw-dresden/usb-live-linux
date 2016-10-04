@@ -34,7 +34,7 @@ hinter euch bringen zu müssen!
 Unser Uni-Stick soll euch helfen, mit freier Software besser durch euer Studium
 zu kommen.  Zur Erstellung euer Seminar- oder Abschlussarbeit liefern
 wir [LaTeX](latex.md) und [LibreOffice][] mit, für eure Poster bieten
-wir [Inkscape][].  Zur mathemtischen Programmieren bekommt ihr [GNUS Octave][]
+wir [Inkscape][].  Zur mathemtischen Programmieren bekommt ihr [GNU Octave][]
 und [Python][], für Statistik gibt es [GNU PSPP][], für Geometrie [geogebra][],
 und für Schaltkreisentwurf [qucs][].  Das alles bieten wir euch in
 einem [GNU][]/[Linux][]-Live System, welches ihr von direkt vom Stick ohne
