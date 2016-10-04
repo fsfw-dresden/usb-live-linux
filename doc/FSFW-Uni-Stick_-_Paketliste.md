@@ -289,39 +289,39 @@
 - :x:  texlive-base
 - :x:  texlive-bibtex-extra	
 - :x:  texlive-binaries	
-- :x:  texlive-doc-de
+- :+1:  texlive-doc-de
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils	
 - :x:  texlive-fonts-extra	
-- :x:  texlive-fonts-extra-doc	
+- :+1:  texlive-fonts-extra-doc	
 - :x:  texlive-fonts-recommended	
-- :x:  texlive-fonts-recommended-doc	
+- :+1:  texlive-fonts-recommended-doc	
 - :x:  texlive-formats-extra
 - :x:  texlive-generic-recommended	
 - :x:  texlive-lang-german
 - :x:  texlive-latex-base
-- :x:  texlive-latex-base-doc
+- :+1:  texlive-latex-base-doc
 - :x:  texlive-latex-extra  --		gut für Beamer-presentation
-- :x:  texlive-latex-extra-doc
+- :+1:  texlive-latex-extra-doc
 - :x:  texlive-latex-recommended	
-- :x:  texlive-latex-recommended-doc	
+- :+1:  texlive-latex-recommended-doc	
 - :x:  texlive-luatex
 - :x:  texlive-math-extra
 - :x:  texlive-pictures	
-- :x:  texlive-pictures-doc
+- :+1:  texlive-pictures-doc
 - :x:  texlive-plain-extra	
 - :x:  texlive-pstricks	
-- :x:  texlive-pstricks-doc
+- :+1:  texlive-pstricks-doc
 - :x:  texlive-publishers	
-- :x:  texlive-publishers-doc
+- :+1:  texlive-publishers-doc
 - :x:  texlive-xetex
 - :x:  biber  --				Lit.verw.programm
 - :x:  texstudio  --			LaTeX-Editor - GUI
-- :x:  texstudio-doc
+- :+1:  texstudio-doc
 - :x:  texstudio-l10n
 - :x:  kile  --				KDE basierter LaTeX-Editor
 - :+1:  kile-doc  
-- :+1:  kile-l10n  
+- :x:  kile-l10n  
 - :+1:  klatexformula  
 
 
@@ -406,7 +406,7 @@
 - :x:  most  --		Pager-Programm - alternativ zu more / less
 - :x:  geany  
 - :x:  geany-plugin-addons  
-- :x:  geany-plugin-doc  
+- :+1:  geany-plugin-doc  
 - :x:  geany-plugin-gendoc  
 - :x:  geany-plugin-latex  
 - :x:  geany-plugin-markdown  
