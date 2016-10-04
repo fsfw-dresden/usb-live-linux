@@ -2,6 +2,9 @@
 
 ### getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-09-17
 
+live-build muss installiert sein, um das ggf. nachzuholen
+
+    $ sudo apt-get update && sudo apt-get install live-build
 
 Herunterladen der benötigeten Dateien
 
