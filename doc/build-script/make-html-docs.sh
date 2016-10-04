@@ -14,11 +14,20 @@ cd ../src/
 
 for f in *.md ;
 do
-cmd="pandoc --standalone --template $ORIGPATH/fsfw-template.html ${f} -o ../html/${f%%.md}.html"
+
+TARGETFILE="../html/${f%%.md}.html"
+
+cmd="pandoc --standalone --template $ORIGPATH/fsfw-template.html ${f} -o $TARGETFILE"
 
 # for debugging:
 # echo $cmd
 eval $cmd
+
+
+# in the markdown docs there are markdown link targets (to play nicely with github)
+# now its time to convert them
+
+perl -p -i -e 's/\.md">/\.html">/g' $TARGETFILE
 done
 
 
