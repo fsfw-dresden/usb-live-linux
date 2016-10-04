@@ -66,7 +66,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 
 Wo findet man weitere Dokumentation ((Video-)Tutorials, Referenzen, Foren)
 
-## Über die Hochschulgruppe für freie Software und freies Wisse
+## Über die Hochschulgruppe für freie Software und freies Wissen
 
 Motivation, FSFW-Programm, StuRa
 
