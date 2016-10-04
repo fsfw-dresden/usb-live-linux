@@ -264,9 +264,9 @@
 
 - ###  Funksignalverarbeitung
 
-- :x:  gnuradio -- SoftwareDefinedRadio/ Signalverarbeitung
+- :x:  gnuradio  -- SoftwareDefinedRadio, Signalverarbeitung
 - :x:  cutesdr  -- SoftwareDefinedRadio für Bildungszwecke
-- :+1:  gqrx-sdr -- SoftwareDefinedRadio mit größerer Hardwareunterstützung
+- :+1:  gqrx-sdr  -- SoftwareDefinedRadio mit größerer Hardwareunterstützung
 
 - ###  geography
 
@@ -331,8 +331,8 @@
 
 - :+1:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
 - :+1:  php5-cli  -- PHP-Konsolenschnittstelle
-- :+1:  php5-gd  -- PHP5- Grafikbibliothek
-- :+1:  php5-mysqlnd  -- PHP5- Datenbankbibliothek
+- :+1:  php5-gd  -- PHP5-Grafikbibliothek
+- :+1:  php5-mysqlnd  -- PHP5-Datenbankbibliothek
 - :+1:  php5-xdebug  
 - :+1:  phpunit  
 
@@ -364,7 +364,7 @@
 - ##  Datenbanken
 
 - :x:  sqlite3  -- kleine leichtgewichtige SQL-Datenbank mit CLI-Frontend
-- :x:  sqlitebrowser -- grafisches Datenbankfrontend für Sqlite (incl. Sqlite-Datenbank)
+- :x:  sqlitebrowser  -- grafisches Datenbankfrontend für Sqlite incl Sqlite-Datenbank
 - :o:  mysql-server
 - :o:  mysql-client
 - :o:  phpmyadmin  -- umfangreiches und lehrreiches MySQL-Webfrontend
@@ -373,7 +373,7 @@
 
 - :x:  mc  --		Midnight Commander - ein guter Dateimanager
 - :x:  vim  --		verbesserter vi-Editor
-- :x:  vimhelp-de  --	Dokumentationsdateien (deutsche Übersetzung)
+- :x:  vimhelp-de  --	Dokumentationsdateien deutsche Übersetzung
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
@@ -450,7 +450,7 @@
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
 - :+1:  discover  -- grafische, einfach gehaltene, Softwareverwaltung
-- :x:  installation-report -- Hilfstool für Bugreports
+- :x:  installation-report  -- Hilfstool für Bugreports
 - :x:  reportbug  -- Hilfstool für Bugreports
 
 - ###  Wlan - Hardware

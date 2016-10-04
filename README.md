@@ -6,7 +6,7 @@ In diesem Repo liegen Skripte, Konfigurationsdateien und Doku, die eine Standard
 
 |						|								|																		|
 |:----------------------|:-----------------------------:|:----------------------------------------------------------------------|
-|Größe des Images		|3,8 GB							|Sollte also auf einen 4GB-Stick passen									|
+|Größe des Images		|3,9 GB	(ohne Doku)				|Sollte also auf einen 4GB-Stick passen                        			|
 |Basissystem			|Debian 8 (Jessie), Kernel 3.16	|Dies ist eine etwas ältere, dafür aber auch stabile, Version von Debian	|
 |Desktopumgebung		|KDE (+ MATE)					|KDE eignet sich für schnelle PCs mit mind. 1 GB RAM, MATE ist eher für für Netbooks gedacht	|
 |Rechnerarchitektur		|amd64							|Setzt also einen gewöhnlichen Intel-/ AMD- kompatiblen CPU mit 64 Bit vorraus	|
