@@ -109,6 +109,9 @@
 
 - ### :o:  task-cinnamon-desktop  --
 
+##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
+- ### :x:  Accessibility-Paketliste  -- [Software zur Barrierereduzierung] (Accessibility-Paketliste.md)
+
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
 - :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
@@ -447,6 +450,8 @@
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
 - :+1:  discover  -- grafische, einfach gehaltene, Softwareverwaltung
+- :x:  installation-report -- Hilfstool für Bugreports
+- :x:  reportbug  -- Hilfstool für Bugreports
 
 - ###  Wlan - Hardware
 
