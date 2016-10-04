@@ -33,34 +33,62 @@ hinter euch bringen zu müssen!
 
 Unser Uni-Stick soll euch helfen, mit freier Software besser durch euer Studium
 zu kommen.  Zur Erstellung euer Seminar- oder Abschlussarbeit liefern
-wir [LaTeX](latex.md) und LibreOffice mit, für eure Poster bieten wir Inkscape.
-Zur mathemtischen Programmieren bekommt ihr Octave und Python, für Statistik
-gibt es PSPP, für Geometrie geogebra, und für Schaltkreisentwurf qucs.  Das
-alles bieten wir euch in einem Linux-Live System, welches ihr von direkt vom
-Stick ohne Installation starten könnte.  Aber auch wenn ihr die Programme lieber
-unter Windows nutzen wollte haben wir was für euch: auf dem Stick ist auch eine
-große Auswahl an freien Programmen drauf, die unter Windows laufen.  Einfach
-ausprobieren!
+wir [LaTeX](latex.md) und [LibreOffice][] mit, für eure Poster bieten
+wir [Inkscape][].  Zur mathemtischen Programmieren bekommt ihr [GNUS Octave][]
+und [Python][], für Statistik gibt es [GNU PSPP][], für Geometrie [geogebra][],
+und für Schaltkreisentwurf [qucs][].  Das alles bieten wir euch in
+einem [GNU][]/[Linux][]-Live System, welches ihr von direkt vom Stick ohne
+Installation starten könnt!
 
 Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 
-- KDE, eine anspruchsvolle graphische Oberfläche mit vielen Einzelprogrammen
-- TeXLive, eine LaTeX-Distribution, und TeXStudio, ein Editor für LaTeX-Dokumente
-- LibreOffice, eine freie Alternative zu Microsoft Office
-- Octave, eine freie Alternative zu Matlab
-- Geogebra, ein interaktives Geometrieprogramm
-- ipython3, eine interaktive Python-3 Shell
-- Icedove/Thunderbird mit Unterstützung für E-Mail-Verschlüsselung
-- Firefox, ein freier Webbrowser
-- VLC, ein ausgezeichneter Mediaplayer
-- Pidgin für Instant Messaging
-- Inkscape, ein vektorbasiertes Zeichenprogramm
-- gimp, das GNU-Bildbearbeitungsprogramm
-- qucs, Software zur Simulation elektronischer Schaltungen
-- Audacity, ein schneller, plattformunabhängiger Audio-Editor
-- gnuplot, ein mächtiges, kommandozeilengesteuertes Plot-Programm
+- [KDE][], eine anspruchsvolle graphische Oberfläche mit vielen Einzelprogrammen
+- [TeXLive][], eine LaTeX-Distribution, und [TeXStudio][], ein Editor für
+  LaTeX-Dokumente; eine kleine Einführung in die Arbeit mit LaTeX findet
+  ihr [hier](latex.md).
+- [LibreOffice][], eine freie Alternative zu Microsoft Office
+- [GNU Octave][], eine freie Alternative zu Matlab
+- [geogebra][], ein interaktives Geometrieprogramm
+- [Python][], eine vielseitig einsetzbare Skriptsprache
+- [GNU PSPP][], eine freie Alternative zu der Statistiksoftware SPSS
+- [Thunderbird][] (Icedove) mit Unterstützung
+  für [E-Mail-Verschlüsselung][enigmail]
+- [Firefox][], ein freier Webbrowser
+- [VLC][], ein ausgezeichneter Mediaplayer
+- [Pidgin][] für Instant Messaging
+- [Inkscape][], ein vektorbasiertes Zeichenprogramm
+- [gimp][], das GNU-Bildbearbeitungsprogramm
+- [qucs][], Software zur Simulation elektronischer Schaltungen
+- [Audacity][], ein schneller, plattformunabhängiger Audio-Editor
+- [gnuplot][], ein mächtiges, kommandozeilengesteuertes Plot-Programm
 - [Scribus](https://www.scribus.net/), ein freies Desktop Publishing Werkzeug
-- git, ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+- [git][], ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+
+[GNU PSPP]: https://www.gnu.org/software/pspp/
+[LibreOffice]: https://www.libreoffice.org/
+[TeXLive]: https://www.tug.org/texlive/
+[qucs]: http://qucs.sourceforge.net/
+[Inkscape]: https://inkscape.org/en/
+[GNU Octave]: https://www.gnu.org/software/octave/
+[Python]: https://www.python.org/
+[geogebra]: https://www.geogebra.org/
+[TeXStudio]: http://www.texstudio.org/
+[KDE]: https://www.kde.org/
+[Thunderbird]: https://www.mozilla.org/en-US/thunderbird/
+[Firefox]: https://www.mozilla.org/en-US/firefox/new/
+[VLC]: https://www.videolan.org/vlc/
+[Pidgin]: https://pidgin.im/
+[gimp]: https://www.gimp.org/
+[Audacity]: http://www.audacityteam.org/
+[gnuplot]: http://www.gnuplot.info/
+[git]: https://git-scm.com/
+[Linux]: https://en.wikipedia.org/wiki/Linux
+[GNU]: https://www.gnu.org/
+[enigmail]: https://www.enigmail.net/index.php/en/
+
+Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
+dieser Stick nützlich sein: auf ihm findet ihr eine große Auswahl an freien
+Programmen drauf, die unter Windows laufen.
 
 ## Wo finde ich Hilfe?
 
