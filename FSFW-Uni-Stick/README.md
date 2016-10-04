@@ -18,7 +18,7 @@ Paketlisten generieren
 
   ` $ auto/paketliste `
 
-Live-Image erstellen
+Live-Image erstellen (das kann eine Weile dauern…)
 
   ` $ sudo lb build `
 
