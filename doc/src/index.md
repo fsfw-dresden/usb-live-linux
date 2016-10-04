@@ -1,6 +1,3 @@
-Damit die NutzerInnen nach dem Start nicht alleine und hilflos sind, sollten wir
-passende Dokumentation erstellen und diese nach dem Start anzeigen.
-
 # Der Uni-Stick der FSFW
 
 Ganz großartige Sache, das muss man haben, um sein Studium zu bestehen.
@@ -10,6 +7,27 @@ haben?  Nun, in gewisser Weise ist das so, aber das erkláren wir später nochma
 ausführlicher …
 
 ## Was soll dieser Stick?
+
+Das Studium ist voller Programme, die wir nutzen wollen oder müssen – egal ob in
+den Ingenieurs-, Natur- oder Geisteswissenschaften.  Viele dieser Programme sind
+*proprietär*, d.h., sie werden von Anbietern bereitgestellt, die es nicht
+erlauben, die Funktionsweise der Programme zu verstehen oder sie zu verändern.
+Das hat eine Reihe von negativen Folgen, von denen [Anbieterabhängigkeit][1] nur
+eine ist.  Manchmal lässt sich das nicht vermeiden, wie zum Beispiel bei
+hochwertigen CAD-Programmen.  Andererseits gibt es viele funktionsfähige *freie*
+Programme, die sich für den Alltag im Studium genauso gut (oder noch besser)
+eignen wie ihre proprietären Gegenstücke.  Diese Programme sind nicht nur
+kostenlos, sie dürfen auch in ihrer Funktionsweise untersucht, verändert, und
+weitergegeben werden.  Das erlaubt unter anderem Nachvollziehbarkeit, schnelle
+Beseitigung von Fehlern, und das Anpassen an spezielle Bedürfnisse.
+
+Eine handverlesene Auswahl an freier Software, die für das Studium hilfreich
+sein kann, soll euch dieser Stick bringen.  Das beste daran: die Software kommt
+mit einem *Linux Live-System*, d.h., ihr könnt von diesem Stick ein Linux-System
+mit viel toller Software starten, ohne zuerst eine langwierige Installation
+hinter euch bringen zu müssen!
+
+[1]: https://en.wikipedia.org/wiki/Vendor_lock-in
 
 ## Wobei hilft mir der Stick?
 
@@ -33,9 +51,11 @@ Beim Studium, ist doch klar.  Doch wobei genau?  naja, zum Beispiel bei
 
 - Geometrie mit geogebra
 
-Und das alles auf nur 4GB!  Woo!
+Und das alles auf nur 4GB!  Woo!  Und dazu noch ein *Live-Linux* obendrauf, ohne
+Installtion oder Folgeschäden (mal abgesehen davon, dass danach keine Angst vor
+Linux mehr existieren kann … ;) )
 
-## Was ist drauf auf dem Stick?
+## Was genau ist auf dem Stick drauf?
 
 ### Oberfläche
 
