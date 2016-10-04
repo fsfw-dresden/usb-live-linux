@@ -59,14 +59,12 @@
 
 ##  WeiterePakete
 
-- :+1:  arduino  
 - :+1:  arduino-mk  
 - :+1:  avrdude-doc  
 - :+1:  avrprog  
 - :+1:  # dblatex  
 - :+1:  debconf-kde-helper  
 - :+1:  debian-faq  
-- :+1:  discover  
 - :+1:  dkms  
 - :+1:  # doc-debian  
 - :+1:  doxygen-doc  
@@ -78,7 +76,6 @@
 - :+1:  fonts-stix  
 - :+1:  gcc-doc  
 - :+1:  gdb-doc  
-- :+1:  gimp-dcraw  
 - :+1:  git-doc  
 - :+1:  gnuplot-doc  
 - :+1:  graphviz-doc  
@@ -102,8 +99,6 @@
 - :+1:  knode  
 - :+1:  krecipes  
 - :+1:  krecipes-doc  
-- :+1:  kteatime  
-- :+1:  ktimetracker  
 - :+1:  ktouch  
 - :+1:  latex2html  
 - :+1:  lib32ncurses5  
@@ -142,3 +137,10 @@
 - :+1:  winff-doc  
 - :+1:  wireshark-doc  
 - :+1:  # xfce4-goodies  
+
+
+##  fehlende Empfehlungen installierter Progs
+
+- :+1:  hunspell  -- Rechtschreibkorrektur
+- :+1:  ghemical  -- GNOME molecular modelling environment
+- :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite

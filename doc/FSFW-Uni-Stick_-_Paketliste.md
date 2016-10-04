@@ -87,6 +87,8 @@
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
+- :+1:  kteatime  -- Kurzzeitwecker, damit der Tee weder zu kurz och zu lange zieht
+- :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
 - :x:  filelight  -- Speicherbelegungsvisualisierung
 
@@ -120,7 +122,7 @@
 - :x:  libreoffice-calc  --	Tabellenkalkulation
 - :x:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 - :x:  libreoffice-draw  --	Zeichenprogramm
-- :x:  libreoffice-help-de  --	Deutsche Hilfe
+- :+1:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
 
 - ###  PDF-Tools
@@ -216,6 +218,7 @@
 [//]: # (Carsten: Mir ist es wichtig, dass der ganze Python-Kram aktuell ist, weil da in den letzten Jahren viel pasiert ist. Aktuell ist IPython5. Das würde ich zusammen mit anderen Abhängigkeiten separat (aus den passenden Quellen installieren. Ich kümmere mich im September drum, könnte aber ggf. Hilfe gebrauchen.))
 
 - ###  Statistik
+
 - :x:  pspp  -- Statistik-Suite
 - :x:  r-base  
 - :+1:  r-doc-info  
@@ -229,6 +232,8 @@
 
 - :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
 - :x:  kalzium-data 
+- :+1:  ghemical  -- GNOME molecular modelling environment
+- :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite
 
 - ###  languages
 
@@ -246,13 +251,19 @@
     - Recommends: freehdl, verilog, octave 
     - Außerdem brauchen wir noch Beispiele
 - :x:  kicad  
-- :x:  kicad-doc-de  
+- :+1:  kicad-doc-de  
 - :+1:  fritzing  
 - :+1:  pcb  
 - :+1:  qelectrotech  
 - :+1:  geda  
 - :+1:  geda-examples  
 - :+1:  geda-gsymcheck  
+
+- ###  Funksignalverarbeitung
+
+- :x:  gnuradio -- SoftwareDefinedRadio/ Signalverarbeitung
+- :x:  cutesdr  -- SoftwareDefinedRadio für Bildungszwecke
+- :+1:  gqrx-sdr -- SoftwareDefinedRadio mit größerer Hardwareunterstützung
 
 - ###  geography
 
@@ -265,6 +276,9 @@
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
 - :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
+- ###  social-science
+
+- :+1:  opensesame  -- Gui für Experimente aus dem sozialwissenschaftlichen Bereich
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
@@ -312,11 +326,11 @@
 
 - ###  Programmiersprachen
 
-- :x:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
-- :x:  php5-cli  -- PHP-Konsolenschnittstelle
+- :+1:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
+- :+1:  php5-cli  -- PHP-Konsolenschnittstelle
 - :+1:  php5-gd  -- PHP5- Grafikbibliothek
 - :+1:  php5-mysqlnd  -- PHP5- Datenbankbibliothek
-- :x:  php5-xdebug  
+- :+1:  php5-xdebug  
 - :+1:  phpunit  
 
 - ###  Tools
@@ -326,6 +340,7 @@
 - :x:  gitg  
 - :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
 - :x:  doxygen-gui  -- Frontend des Doku-Generators
+- :x:  umbrello  -- einfaches UML-Tool für den KDE-Desktop
 
 - ###  IDEs
 
@@ -339,14 +354,17 @@
 - :o:  netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
 - :x:  swi-prolog  -- deklaratives Programmieren
 - :o: :+1:  swi-prolog-doc  
-- :x:  swi-prolog-java  
-- :x:  swi-prolog-odbc  
+- :+1:  swi-prolog-java  
+- :+1:  swi-prolog-odbc  
+- :x:  arduino  -- Entwicklungswerkzeuge für den Anschluss von Arduino-Boards für Hobbybastler und andere
 
 - ##  Datenbanken
 
-- :+1:  mysql-server
-- :+1:  mysql-client
-- :+1:  phpmyadmin  -- umfangreiches und lehrreiches MySQL-Webfrontend
+- :x:  sqlite3  -- kleine leichtgewichtige SQL-Datenbank mit CLI-Frontend
+- :x:  sqlitebrowser -- grafisches Datenbankfrontend für Sqlite (incl. Sqlite-Datenbank)
+- :o:  mysql-server
+- :o:  mysql-client
+- :o:  phpmyadmin  -- umfangreiches und lehrreiches MySQL-Webfrontend
 
 ##  Terminal Tools
 
@@ -415,6 +433,7 @@
 - :x:  ingerman
 - :x:  aspell-de
 - :x:  aspell-de-alt
+- :+1:  hunspell  -- weitere Rechtschreibkorrektur
 
 - :x:  util-linux-locales
 
@@ -427,7 +446,7 @@
 - :x:  virtualbox  -- Virtualisierung
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
-
+- :+1:  discover  -- grafische, einfach gehaltene, Softwareverwaltung
 
 - ###  Wlan - Hardware
 
