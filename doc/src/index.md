@@ -1,10 +1,10 @@
 # Der Uni-Stick der FSFW
 
-Ganz großartige Sache, das muss man haben, um sein Studium zu bestehen.
-
-Doch wozu das alles?  Und warum?  Sind wir alle Altruisten, die zu viel Zeit
-haben?  Nun, in gewisser Weise ist das so, aber das erkláren wir später nochmal
-ausführlicher …
+Der Uni-Stick der Hochschulgruppe für Freie Software und Freies Wissen ist ein
+Projekt, um euch ohne viel Aufwand die Möglichkeiten zum Einsatz freier Software
+in eurem Studium aufzuzeigen.  Was genau auf dem Stick drauf ist, wozu es euch
+nützlich sein kann, und warum wir das eigentlich alles machen, wollen wir euch
+im folgenden ein wenig erläutern.
 
 ## Was soll dieser Stick?
 
