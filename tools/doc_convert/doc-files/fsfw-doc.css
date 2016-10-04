@@ -20,8 +20,8 @@ body {
 #banner {
     display: block;
     width: 100%;
-    height: 160px; /* exact height to match the banner image */
-    background: url(./img/banner.png) repeat-x;
+    height: 63px; /* exact height to match the banner image */
+    background: url(./banner-narrow.png) repeat-x;
     overflow: visible;
     z-index: 2;         /* to make the #sitelogo overlap the rest */
     position: relative; /* z-index only affects positioned elements */
@@ -42,7 +42,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 0 5px #CCC;
     position: absolute;
-    top: 110px;
+    top: 0px;
     left: 1rem;
     background: white;
 }
