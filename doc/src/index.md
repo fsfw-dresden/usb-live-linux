@@ -37,7 +37,7 @@ wir [LaTeX](latex.md) und [LibreOffice][] mit, für eure Poster bieten
 wir [Inkscape][].  Zur mathemtischen Programmieren bekommt ihr [GNU Octave][]
 und [Python][], für Statistik gibt es [GNU PSPP][], für Geometrie [geogebra][],
 und für Schaltkreisentwurf [qucs][].  Das alles bieten wir euch in
-einem [GNU][]/[Linux][]-Live System, welches ihr von direkt vom Stick ohne
+einem [GNU][]/[Linux][]-Live System, welches ihr direkt vom Stick ohne
 Installation starten könnt!
 
 Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
