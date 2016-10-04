@@ -31,49 +31,36 @@ hinter euch bringen zu müssen!
 
 ## Wobei hilft mir der Stick?
 
-Beim Studium, ist doch klar.  Doch wobei genau?  naja, zum Beispiel bei
+Unser Uni-Stick soll euch helfen, mit freier Software besser durch euer Studium
+zu kommen.  Zur Erstellung euer Seminar- oder Abschlussarbeit liefern
+wir [LaTeX](latex.md) und LibreOffice mit, für eure Poster bieten wir Inkscape.
+Zur mathemtischen Programmieren bekommt ihr Octave und Python, für Statistik
+gibt es PSPP, für Geometrie geogebra, und für Schaltkreisentwurf qucs.  Das
+alles bieten wir euch in einem Linux-Live System, welches ihr von direkt vom
+Stick ohne Installation starten könnte.  Aber auch wenn ihr die Programme lieber
+unter Windows nutzen wollte haben wir was für euch: auf dem Stick ist auch eine
+große Auswahl an freien Programmen drauf, die unter Windows laufen.  Einfach
+ausprobieren!
 
-- Dokumenterstellung (Abschlussarbeit, Seminararbeit, Hausarbeit, …)
-  mit [LaTeX](latex.md), LibreOffice, und Scribus;
+Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 
-- Beim Programmieren und so (Octave, Python, GNUplot, git)
-
-- Videos anschauen (auch Entspannung hilft beim Studium!) mit vlc
-
-- Sichere Kommunikation mit pidgin und thunderbird (icedove)
-
-- Audio- und Fotobearbeitung mit audacity, inkscape, gimp, darktable,
-  rawtherapee
-
-- Statistik mit PSPP (statt SPSS …)
-
-- Schaltkreise mit qucs
-
-- Geometrie mit geogebra
-
-Und das alles auf nur 4GB!  Woo!  Und dazu noch ein *Live-Linux* obendrauf, ohne
-Installtion oder Folgeschäden (mal abgesehen davon, dass danach keine Angst vor
-Linux mehr existieren kann … ;) )
-
-## Was genau ist auf dem Stick drauf?
-
-### Oberfläche
-
-KDE
-
-### LaTeX
-
-Viele Sachen zu LaTeX, weil es einfach toll ist (oder: es nichts tolleres gibt
-…)  Eine [genauere Beschreibung](latex.md) gibt es auch schon!
-
-### Python
-
-ipython, numpy, scipy … Rechner war nie schöner!
-
-### Multimedia
-
-Videos anschauen, Audio-Dateien bearbeiten und Fotos manipulieren — alles mit
-diesem Stick!  Jetzt kaufen, solange der Vorrat reicht!
+- KDE, eine anspruchsvolle graphische Oberfläche mit vielen Einzelprogrammen
+- TeXLive, eine LaTeX-Distribution, und TeXStudio, ein Editor für LaTeX-Dokumente
+- LibreOffice, eine freie Alternative zu Microsoft Office
+- Octave, eine freie Alternative zu Matlab
+- Geogebra, ein interaktives Geometrieprogramm
+- ipython3, eine interaktive Python-3 Shell
+- Icedove/Thunderbird mit Unterstützung für E-Mail-Verschlüsselung
+- Firefox, ein freier Webbrowser
+- VLC, ein ausgezeichneter Mediaplayer
+- Pidgin für Instant Messaging
+- Inkscape, ein vektorbasiertes Zeichenprogramm
+- gimp, das GNU-Bildbearbeitungsprogramm
+- qucs, Software zur Simulation elektronischer Schaltungen
+- Audacity, ein schneller, plattformunabhängiger Audio-Editor
+- gnuplot, ein mächtiges, kommandozeilengesteuertes Plot-Programm
+- [Scribus](https://www.scribus.net/), ein freies Desktop Publishing Werkzeug
+- git, ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 
 ## Wo finde ich Hilfe?
 
