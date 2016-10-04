@@ -90,10 +90,6 @@ Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
 dieser Stick nützlich sein: auf ihm findet ihr eine große Auswahl an freien
 Programmen drauf, die unter Windows laufen.
 
-## Wo finde ich Hilfe?
-
-Wo findet man weitere Dokumentation ((Video-)Tutorials, Referenzen, Foren)
-
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
 Die Ende 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
