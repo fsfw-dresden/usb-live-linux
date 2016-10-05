@@ -91,6 +91,8 @@
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
 - :x:  filelight  -- Speicherbelegungsvisualisierung
+- :o:  kde-wallpapers -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
+[//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
 
@@ -114,10 +116,10 @@
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
-- :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
+- :o: :-1:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
 - :x:  scribus  --	DTP-Programm
 - :+1:  scribus-template  -- Vorlagen
-- :x:  dia  
+- :x:  dia  -- umfangreiches Diagrammerstellungsprogramm
 
 - ###  libreoffice
 
@@ -131,26 +133,26 @@
 - ###  PDF-Tools
 
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :x:  diffpdf  
+- :x:  diffpdf  -- grafischer PDF-Vergleicher
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
-- :x:  pdfgrep  
-- :x:  pdfmod  
-- :x:  pdfresurrect  
+- :x:  pdfgrep  -- grep-artiges Suchprogramm für PDF-Dateien für die Konsole
+- :x:  pdfmod  -- PDF-Bearbeitungsfrontend
+- :x:  pdfresurrect  -- zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
 
 - ###  Literaturverwaltung
 
-- :x:  jabref  
-- :x:  jabref-plugin-oo  
-- :+1:  docear  -- Lit-verw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
-- :+1:  kbibtex  -- Kde basierte Lit.verw.
+- :x:  jabref  -- umfangreiche Literatur- und Quellenverwaltung (javabasiert)
+- :x:  jabref-plugin-oo  -- Jabref-Plugin für LibreOffice
+- :+1:  docear  -- Literaturverw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
+- :+1:  kbibtex  -- Kde basierte Literaturverwaltung
 
 - ###  kommunikation
 
-- :x:  firefox-esr  --	Mozilla Firefox web browser
-- :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket
+- :x:  firefox-esr  --	Mozilla Firefox Webbrowser               (Größe 100 MB)
+- :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket für den Firefox
 
 - :o: :-1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
-- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
+- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
 - :x:  icedove-l10n-de
@@ -171,8 +173,8 @@
 
 - :x:  vlc  --		Multimedia-Player und Streamer
 - :o:  pitivi  -- Videoschnitt (entweder Pitivi oder Kdenlive)
-- :x:  kdenlive  -- Videoschnitt
-- :x:  subtitlecomposer  -- Untertiteleditor
+- :o: :-1:  kdenlive  -- Videoschnitt
+- :o: :-1:  subtitlecomposer  -- Untertiteleditor
 - :+1:  winff-qt  -- Videoformatkonverter
 
 
@@ -180,6 +182,7 @@
 
 - :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
+- :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :+1:  gimp-data-extras  -- Ein extra Satz Pinsel, Paletten, Gradienten für GIMP
 - :x:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
@@ -187,11 +190,11 @@
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
 - :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
-- :x:  icc-profiles-free  
+- :x:  icc-profiles-free  -- Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
 
 - ###  Fotoverwaltung
 
-- :x:  digikam  
+- :x:  digikam  -- Full-Featured Fotoverwaltung für KDE
 - :+1:  digikam-doc  
 
 - ###  3D-Grafik
@@ -223,60 +226,67 @@
 - ###  Statistik
 
 - :x:  pspp  -- Statistik-Suite
-- :x:  r-base  
-- :+1:  r-doc-info  
+- :x:  r-base-core  -- GNU R Statistik-Suite (nur das Grundsystem)
+- :+1:  littler  -- GNU R Konsolenfrontend
+- :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
+- :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI
+- :+1:  r-doc-info  -- Info für Gnu-R
 
 - ###  CAD
 
-- :x:  freecad  
-- :+1:  freecad-doc  
+- :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
+- :+1:  freecad-doc  -- Doku für FreeCad
 
 - ###  chemistry
 
 - :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
-- :x:  kalzium-data 
-- :+1:  ghemical  -- GNOME molecular modelling environment
+- :x:  kalzium-data  -- Daten für kalzium
 - :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite
 
 - ###  languages
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 - :x:  goldendict  -- Wörterbuch und Lexikon
-- :+1:  goldendict-wordnet  
-- :+1:  openteacher  
-- :x:  parley  
+- :o: :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
+- :o: :+1:  openteacher  -- eine weitere Sprachlernsoftware
+- :x:  parley  -- Vokabeltrainer für den KDE-Desktop
+- :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync
 
 - ###  electronics
 
-- :+1:  qucs  --	Schaltungssimulation -- 
-  - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
-    - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
-    - Recommends: freehdl, verilog, octave 
-    - Außerdem brauchen wir noch Beispiele
-- :x:  kicad  
-- :+1:  kicad-doc-de  
-- :+1:  fritzing  
-- :+1:  pcb  
-- :+1:  qelectrotech  
-- :+1:  geda  
-- :+1:  geda-examples  
-- :+1:  geda-gsymcheck  
+- :+1:  qucs  --	Schaltungssimulation
+[//]: #   - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
+[//]: #     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
+[//]: #     - Recommends: freehdl, verilog, octave 
+[//]: #     - Außerdem brauchen wir noch Beispiele
+- :x:  kicad  -- KDE basiertes Elektroprogramm
+[//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
+- :+1:  kicad-doc-de  -- 
+- :+1:  fritzing  --
+- :+1:  pcb  --
+- :+1:  qelectrotech  --
+- :+1:  geda  --
+- :+1:  geda-examples  --
+- :+1:  geda-gsymcheck  --
 
 - ###  Funksignalverarbeitung
 
-- :x:  gnuradio  -- SoftwareDefinedRadio, Signalverarbeitung
-- :x:  cutesdr  -- SoftwareDefinedRadio für Bildungszwecke
+- :o: :-1:  gnuradio  -- SoftwareDefinedRadio, Signalverarbeitung
+- ::o: -1:  cutesdr  -- SoftwareDefinedRadio für Bildungszwecke
 - :+1:  gqrx-sdr  -- SoftwareDefinedRadio mit größerer Hardwareunterstützung
 
 - ###  geography
 
-- :x:  marble  
-- :x:  josm  -- OpenStreetmap-Editor
-- :x:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+- :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
+- :o:  josm  -- OpenStreetmap-Editor
+[//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
+- :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+[//]: # (Hat sich nicht so richtig bewähren können)
 
 - ###  astronomy
 
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
+[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
 - ###  social-science
@@ -285,75 +295,105 @@
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
-- :x:  texlive
-- :x:  texlive-base
-- :x:  texlive-bibtex-extra	
-- :x:  texlive-binaries	
-- :+1:  texlive-doc-de
+- :x:  texlive  --
+- :x:  texlive-base  --
+- :x:  texlive-bibtex-extra  --
+- :x:  texlive-binaries  --
+- :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
-- :x:  texlive-font-utils	
-- :x:  texlive-fonts-extra	
-- :+1:  texlive-fonts-extra-doc	
-- :x:  texlive-fonts-recommended	
-- :+1:  texlive-fonts-recommended-doc	
-- :x:  texlive-formats-extra
-- :x:  texlive-generic-recommended	
-- :x:  texlive-lang-german
-- :x:  texlive-latex-base
-- :+1:  texlive-latex-base-doc
+- :x:  texlive-font-utils  --
+- :o: :+1:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
+- :+1:  texlive-fonts-extra-doc  --
+- :x:  texlive-fonts-recommended  --
+- :+1:  texlive-fonts-recommended-doc  --
+- :x:  texlive-formats-extra  --
+- :x:  texlive-generic-recommended  --
+- :x:  texlive-lang-german  --
+- :x:  texlive-latex-base  --
+- :+1:  texlive-latex-base-doc  --
 - :x:  texlive-latex-extra  --		gut für Beamer-presentation
-- :+1:  texlive-latex-extra-doc
-- :x:  texlive-latex-recommended	
-- :+1:  texlive-latex-recommended-doc	
-- :x:  texlive-luatex
-- :x:  texlive-math-extra
-- :x:  texlive-pictures	
-- :+1:  texlive-pictures-doc
-- :x:  texlive-plain-extra	
-- :x:  texlive-pstricks	
-- :+1:  texlive-pstricks-doc
-- :x:  texlive-publishers	
-- :+1:  texlive-publishers-doc
-- :x:  texlive-xetex
-- :x:  biber  --				Lit.verw.programm
+- :+1:  texlive-latex-extra-doc  -- Doku für texlive-latex-extra        (Größe 420 MB)
+[//]: # (Dies dürfte die fetteste Doku sein! Leider wird sie von texlive-latex-extra automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :x:  texlive-latex-recommended  --
+- :+1:  texlive-latex-recommended-doc  --
+- :x:  texlive-luatex  --
+- :x:  texlive-math-extra  --
+- :x:  texlive-pictures  --
+- :+1:  texlive-pictures-doc  --
+- :x:  texlive-plain-extra  --
+- :x:  texlive-pstricks  --
+- :+1:  texlive-pstricks-doc  --   Doku für texlive-publishers         (Größe 112 MB)
+[//]: # (Wird leider von texlive-pstricks automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :x:  texlive-publishers  --
+- :+1:  texlive-publishers-doc  --  Doku für texlive-publishers         (Größe 113 MB)
+[//]: # (Wird leider von texlive-publishers automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :x:  texlive-xetex  --
+- :x:  biber  --				Literaturverw.programm
 - :x:  texstudio  --			LaTeX-Editor - GUI
-- :+1:  texstudio-doc
-- :x:  texstudio-l10n
+- :+1:  texstudio-doc  --
+- :x:  texstudio-l10n  --
 - :x:  kile  --				KDE basierter LaTeX-Editor
-- :+1:  kile-doc  
-- :x:  kile-l10n  
-- :+1:  klatexformula  
+- :+1:  kile-doc  --
+- :x:  kile-l10n  --
+- :+1:  klatexformula  -- grafischer Formeleditor für LaTeX
+- :+1:  ktikz  -- grafischer TikZ-Editor für KDE
 
 
 ##  Programmierung Softwareentwicklung
 
-- ###  Programmiersprachen
+- ###  Programmiersprache PHP
 
 - :+1:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
 - :+1:  php5-cli  -- PHP-Konsolenschnittstelle
 - :+1:  php5-gd  -- PHP5-Grafikbibliothek
 - :+1:  php5-mysqlnd  -- PHP5-Datenbankbibliothek
-- :+1:  php5-xdebug  
-- :+1:  phpunit  
+- :+1:  php5-xdebug  -- praktisches Debugtool für PHP
+- :+1:  phpunit  -- Unittests für PHP
 
 - ###  Tools
 
+- :x:  gcc  -- GNU C Compiler
+- :x:  g++  -- GNU C++ Compiler
+- :x:  make  -- einfaches Build-Tool
+- :x:  gdb-minimal  -- minmaler GNU-Debugger
+- :x:  kdbg  -- Kde basiertes Frontend für den Gdb-Debugger
+
+- :default-jdk:  -- Open Java Development Kit 7
+
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
-- :x:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
-- :x:  gitg  
+- :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
+- :x:  gitg  -- weitere grafische Oberfläche für die Versionsverwaltung Git
 - :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
 - :x:  doxygen-gui  -- Frontend des Doku-Generators
+- :x:  doxygen-latex  -- Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
 - :x:  umbrello  -- einfaches UML-Tool für den KDE-Desktop
 
 - ###  IDEs
 
-- :x:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
-- :x:  eclipse-cdt  -- Eclipse für C++ Programmierung
-- :x:  eclipse-jdt  -- Eclipse für Java Programmierung
-- :x:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
+- :x:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
+- :x:  geany-plugin-addons  
+- :+1:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
+- :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
+- :x:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
+- :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
+[//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
+- :x:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
+- :x:  geany-plugin-pairtaghighlighter  
+- :x:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
+- :x:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
+- :x:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
+- :x:  geany-plugin-vc  -- Geanyplugin für Versionsverwaltungen
+- :x:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
+- :+1:  geany-plugin-projectorganizer  -- Projektverwaltungsplugin für Geany
+- :+1:  jedit  -- weiterer Texteditor, der durch Plugins erweitert werden kann
+- :o: :-1:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
+- :o: :-1:  eclipse-cdt  -- Eclipse für C++ Programmierung
+- :o: :-1:  eclipse-jdt  -- Eclipse für Java Programmierung
+- :o: :-1:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
 - :o: :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
 - :o: :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
 - :x:  scratch  -- spielerisch programmieren lernen
+- :x:  squeak-plugins-scratch  -- spielerisch programmieren lernen (Erweiterung)
 - :o:  netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
 - :x:  swi-prolog  -- deklaratives Programmieren
 - :o: :+1:  swi-prolog-doc  
@@ -361,12 +401,12 @@
 - :+1:  swi-prolog-odbc  
 - :x:  arduino  -- Entwicklungswerkzeuge für den Anschluss von Arduino-Boards für Hobbybastler und andere
 
-- ##  Datenbanken
+##  Datenbanken
 
-- :x:  sqlite3  -- kleine leichtgewichtige SQL-Datenbank mit CLI-Frontend
-- :x:  sqlitebrowser  -- grafisches Datenbankfrontend für Sqlite incl Sqlite-Datenbank
-- :o:  mysql-server
-- :o:  mysql-client
+- :x:  sqlite3  -- kleine leichtgewichtige SQL-Datenbank mit Konsolen-Frontend
+- :x:  sqlitebrowser  -- grafisches Datenbankfrontend für Sqlite
+- :o:  mysql-server  -- MySQL-Datenbankserver
+- :o:  mysql-client  -- MySQL-Datenbankclient (Konsolenvariante)
 - :o:  phpmyadmin  -- umfangreiches und lehrreiches MySQL-Webfrontend
 
 ##  Terminal Tools
@@ -377,18 +417,16 @@
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
-- :x:  htop  
-- :x:  pandoc  
-- :x:  pandoc-citeproc  
-- :x:  docutils-common  
-- :x:  doxygen-latex  
-
+- :x:  htop  -- interaktive Prozessübersicht für die Konsole
+- :x:  pandoc  -- Multiformatkonverter
+- :x:  pandoc-citeproc  -- Literaturverwaltungserweiterung für Pandoc
+- :x:  docutils-common  -- weiterer Multiformatkonverter (für Restructured Text)
 
 - ###  grafik
 
 - :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
-- :x:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
-- :x:  graphviz  
+- :x:  imagemagick  --	konsolenbasierte Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: um ganze Bilderordner zu konvertieren
+- :x:  graphviz  -- umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 
 - ###  utils
 
@@ -404,17 +442,6 @@
 - ###  text 
 
 - :x:  most  --		Pager-Programm - alternativ zu more / less
-- :x:  geany  
-- :x:  geany-plugin-addons  
-- :+1:  geany-plugin-doc  
-- :x:  geany-plugin-gendoc  
-- :x:  geany-plugin-latex  
-- :x:  geany-plugin-markdown  
-- :x:  geany-plugin-pairtaghighlighter  
-- :x:  geany-plugin-pg  
-- :x:  geany-plugin-prettyprinter  
-- :x:  geany-plugin-spellcheck  
-- :x:  geany-plugin-vc  
 
 - ###  admin
 
@@ -431,27 +458,28 @@
 
 - ###  task-german
 
-- :x:  manpages-de
-- :x:  wngerman
-- :x:  ingerman
-- :x:  aspell-de
-- :x:  aspell-de-alt
+- :x:  manpages-de  --
+- :x:  wngerman  --
+- :x:  ingerman  --
+- :x:  aspell-de  --
+- :x:  aspell-de-alt  --
 - :+1:  hunspell  -- weitere Rechtschreibkorrektur
 
-- :x:  util-linux-locales
+- :x:  util-linux-locales  --
 
 
 ##  SystemTools
 
-- :x:  gpart  
-- :x:  gparted  
-- :+1:  virt-manager  
-- :x:  virtualbox  -- Virtualisierung
+- :x:  gpart  -- Partitionierungsprogramm (Konsolenvariante)
+- :x:  gparted  -- Partitionierungsprogramm (Frontend)
+- :+1:  virt-manager  -- mächtiges Virtualisierungsprogramm
+- :x:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
 - :+1:  discover  -- grafische, einfach gehaltene, Softwareverwaltung
 - :x:  installation-report  -- Hilfstool für Bugreports
 - :x:  reportbug  -- Hilfstool für Bugreports
+- :x:  python-vte  -- Gui-Bibliothek für reportbugs
 
 - ###  Wlan - Hardware
 
@@ -462,14 +490,12 @@
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
 
-- :x:  firmware-linux-free  
-- [ ]  firmware-b43-installer
+- :x:  firmware-linux-free  --
+- [ ]  firmware-b43-installer  --
 - [ ]  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
 
 ##  live  -- System Pakete werden fürs Live-System benöttigt
 
-- :x:  live-boot 
-- :x:  live-config
-- :x:  live-config-systemd
-
-
+- :x:  live-boot  --
+- :x:  live-config  --
+- :x:  live-config-systemd  --

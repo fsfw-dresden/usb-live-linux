@@ -2,7 +2,7 @@
 [//]: # (Carsten: Vorschlag: wir können diese Syntax nutzen, um Kommentare in die Liste zu schreiben, ohne die Markdown-Synax zu zerstören.)
 
 
-# Paketliste für FSFW UNI Stick (USB-Live-Stick) 
+# Paketliste für Programme, die es nicht auf den FSFW UNI Stick (USB-Live-Stick) geschafft haben.
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
 >  ` $ auto/paketliste `   --  im live-build-Verzeichnis ausführen
@@ -54,14 +54,15 @@
 > 3. Die als *manuell installierten* Pakete mit `apt-mark showmanual > meine_Paketliste.neu.list` exportieren
 > 3. Alte und neue Paketliste abgleichen und Änderungen übernehmen (Dateivergleicher wie *meld*, *comm* oder *diff* helfen hierbei).
 
-> TODO: Durchsehen und ggf. in andere Listen über nehmen.
+> DONE: Durchsehen und ggf. in Paketliste für den Uni-Stick übernehmen.
 
 
-##  WeiterePakete
+##  Übrige Pakete
 
 - :+1:  arduino-mk  
 - :+1:  avrdude-doc  
 - :+1:  avrprog  
+- :+1:  avogadro  
 - :+1:  # dblatex  
 - :+1:  debconf-kde-helper  
 - :+1:  debian-faq  
@@ -137,6 +138,7 @@
 - :+1:  winff-doc  
 - :+1:  wireshark-doc  
 - :+1:  # xfce4-goodies  
+- :+1:  ghemical  -- GNOME molecular modelling environment
 
 
 ##  fehlende Empfehlungen installierter Progs
