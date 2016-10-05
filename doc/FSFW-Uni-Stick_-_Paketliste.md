@@ -112,6 +112,7 @@
 - ### :o:  task-cinnamon-desktop  --
 
 ##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
+
 - ### :x:  Accessibility-Paketliste  -- [Software zur Barrierereduzierung] (Accessibility-Paketliste.md)
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
@@ -145,6 +146,8 @@
 - :x:  jabref-plugin-oo  -- Jabref-Plugin für LibreOffice
 - :+1:  docear  -- Literaturverw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
+- :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
+- :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
 
 - ###  kommunikation
 
@@ -358,7 +361,7 @@
 - :x:  gdb-minimal  -- minmaler GNU-Debugger
 - :x:  kdbg  -- Kde basiertes Frontend für den Gdb-Debugger
 
-- :default-jdk:  -- Open Java Development Kit 7
+- :x:  default-jdk  -- Open Java Development Kit 7
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
