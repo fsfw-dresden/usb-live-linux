@@ -9,6 +9,7 @@ binary/
 
 .build/
 build.log
+build.errors.log
 
 cache/
 
