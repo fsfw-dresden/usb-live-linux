@@ -173,10 +173,21 @@
 
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
 
-- ###  scientific python
+- ###  scientific python (inkl. Abhängigkeiten)
+- :x:  build-essential  -- Kompiler und diverse Bibliotheken (wichtig)
+- :x:  python3-dev  -- Header (zum kompilieren von Python-Paketen, wird vom Hook gebraucht)
 
-- :x:  ipython3  --	Erweiterte interaktive Python-3-Shell
+- :x:  python-pip  -- Pythons eigener Paketmanager
+- :x:  python3-pip  -- Pythons eigener Paketmanager
+
+- :-1:  ipython3  --	Erweiterte interaktive Python-3-Shell -- Die Version aus den Debian Paketquellen ist zu alt. IPython wird stattdessen separat über einen Hook installiert
 [//]: # (Carsten: Mir ist es wichtig, dass der ganze Python-Kram aktuell ist, weil da in den letzten Jahren viel pasiert ist. Aktuell ist IPython5. Das würde ich zusammen mit anderen Abhängigkeiten separat (aus den passenden Quellen installieren. Ich kümmere mich im September drum, könnte aber ggf. Hilfe gebrauchen.))
+- :x:  python-numpy
+- :x:  python3-numpy
+- :x:  python-scipy
+- :x:  python3-scipy
+- :x:  python-matplotlib
+- :x:  python3-matplotlib
 
 - ###  chemistry
 

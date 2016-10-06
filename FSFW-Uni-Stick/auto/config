@@ -36,6 +36,11 @@ lb config noauto \
 	"${@}"
 
 
+# Verlinke allgemeine Hooks
+
+ln -s ../binary_local-hooks/50-install-recent-ipython-and-configure-it.binary config/hooks/50-install-recent-ipython-and-configure-it.binary
+
+
 # Teste welches Debian Release eingesetzt wird und passe die config an
 if cat /etc/os-release | grep -q jessie ; then
 	echo "Releas jessie - config wird angepasst "
