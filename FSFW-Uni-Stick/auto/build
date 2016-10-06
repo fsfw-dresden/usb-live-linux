@@ -2,4 +2,6 @@
 
 set -e
 
-lb build noauto "${@}" 2>&1 | tee build.log
+# lb build noauto "${@}" 2>&1 | tee build.log
+echo "STDOUT wird nach 'build.log' und STDERR nach 'build.errors.log' umgeleitet. Dies kann z.B. per 'tail -F build.errors.log' (in einem anderen Terminal) mitverfolgt werden."
+lb build noauto "${@}" > build.log 2> build.errors.log
