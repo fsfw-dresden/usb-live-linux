@@ -1,0 +1,13 @@
+#!/bin/sh
+# Skript erstellt von Carsten 2016-10-06
+
+
+
+
+echo "#########################"
+echo "Installing jupyter"
+
+sudo pip3 install jupyter
+
+
+echo "Jupyter finished"

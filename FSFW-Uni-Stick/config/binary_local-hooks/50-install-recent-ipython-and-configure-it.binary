@@ -1,5 +1,0 @@
-#!/bin/sh
-# Skript erstellt von Carsten 2016-10-06
-
-
-sudo pip3 install jupyter

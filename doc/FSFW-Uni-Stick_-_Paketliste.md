@@ -55,44 +55,44 @@
 
 - ###  kde-standard
 
-- :x:  akregator  --	RSS/Atom-Feed-Aggregator 
-- :x:  ark  --		Archiv-Werkzeug 
-- :x:  dragonplayer  --	Einfacher Videoabspieler 
-- :x:  gwenview  --	Bildbetrachter 
-- :x:  juk  --		Jukebox und Musikabspieler 
-- :x:  kaddressbook  --	Adressbuch- und Kontaktdatenverwaltung 
+- :-1:  akregator  --	RSS/Atom-Feed-Aggregator 
+- :-1:  ark  --		Archiv-Werkzeug 
+- :-1:  dragonplayer  --	Einfacher Videoabspieler 
+- :-1:  gwenview  --	Bildbetrachter 
+- :-1:  juk  --		Jukebox und Musikabspieler 
+- :-1:  kaddressbook  --	Adressbuch- und Kontaktdatenverwaltung 
 - :x:  kate  --		Leistungsstarker Texteditor 
-- :x:  kcalc  --	Einfacher wissenschaftlicher Taschenrechner 
-- :x:  khelpcenter4  --	Hilfezentrum 
-- :x:  kmail  --	Vollständiger grafischer E-Mail-Client
+- :-1:  kcalc  --	Einfacher wissenschaftlicher Taschenrechner 
+- :-1:  khelpcenter4  --	Hilfezentrum 
+- :-1:  kmail  --	Vollständiger grafischer E-Mail-Client
 [//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
-- :x:  kmix  --		Lautstärkeregler und Mischer 
-- :x:  knotes  --	Programm für Haftnotizen (sticky notes) 
-- :x:  kopete  --	Instant-Messaging- und Chat-Anwendung 
-- :x:  korganizer  --	Kalender und persönliche Terminverwaltung 
-- :x:  kscreensaver  --	Zusätzliche Bildschirmschoner für KScreenSaver 
-- :x:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos 
-- :x:  kwalletmanager  -- Sichere Passwortverwaltung 
-- :x:  okular  --	Universal-Dokumentenbetrachter 
-- :x:  polkit-kde-1  --	KDE-Dialoge für PolicyKit 
-- :x:  sweeper  --	Löschen von Verlauf und temporären Dateien 
-- :x:  freespacenotifier  -- KDE-Modul zur Benachrichtigung bei Platzmangel 
-- :x:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser 
+- :-1:  kmix  --		Lautstärkeregler und Mischer 
+- :-1:  knotes  --	Programm für Haftnotizen (sticky notes) 
+- :-1:  kopete  --	Instant-Messaging- und Chat-Anwendung 
+- :-1:  korganizer  --	Kalender und persönliche Terminverwaltung 
+- :-1:  kscreensaver  --	Zusätzliche Bildschirmschoner für KScreenSaver 
+- :-1:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos 
+- :-1:  kwalletmanager  -- Sichere Passwortverwaltung 
+- :-1:  okular  --	Universal-Dokumentenbetrachter 
+- :-1:  polkit-kde-1  --	KDE-Dialoge für PolicyKit 
+- :-1:  sweeper  --	Löschen von Verlauf und temporären Dateien 
+- :-1:  freespacenotifier  -- KDE-Modul zur Benachrichtigung bei Platzmangel 
+- :-1:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser 
 - :x:  kdeplasma-addons  -- Plasma-Erweiterungen 
 - :x:  kde-plasma-desktop  -- KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
 - :x:  kde-plasma-netbook  -- KDE Plasma Netbook und eine minimale Auswahl an Anwendungen - oder ...desktop
-- :x:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
-- :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
+- :-1:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
+- :-1:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
  
-- :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
-- :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
-- :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
+- :-1:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
+- :-1:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
+- :-1:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 
 - ###  kde-l10n  -- virtuelles Paket 
 
-- :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
+- :-1:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
 
-- ### :x:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
+- ### :-1:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
 [//]: # ( beim testen ist mir aufgefallen: )
 [//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption (kvm -m 1024) benutzt wird)
 [//]: # ( - Images mit Mate-Desktop mit der Speicheroption (kvm -m 256), für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben )
@@ -107,50 +107,50 @@
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
-- :x:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
+- :-1:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
 - :+1:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
-- :x:  scribus  --	DTP-Programm
-- :x:  scribus-template  -- Vorlagen
+- :-1:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
+- :-1:  scribus  --	DTP-Programm
+- :-1:  scribus-template  -- Vorlagen
 
 - ###  libreoffice
 
-- :x:  libreoffice-base  --	Datenbank
-- :x:  libreoffice-calc  --	Tabellenkalkulation
-- :x:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
-- :x:  libreoffice-draw  --	Zeichenprogramm
-- :x:  libreoffice-help-de  --	Deutsche Hilfe
-- :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
+- :-1:  libreoffice-base  --	Datenbank
+- :-1:  libreoffice-calc  --	Tabellenkalkulation
+- :-1:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
+- :-1:  libreoffice-draw  --	Zeichenprogramm
+- :-1:  libreoffice-help-de  --	Deutsche Hilfe
+- :-1:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
 
 - ###  kommunikation
 
 - :x:  firefox-esr  --	Mozilla Firefox web browser
-- :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket
+- :-1:  firefox-esr-l10n-de  -- Deutsches Sprachpaket
 
-- :x:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
-- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
+- :-1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
+- :-1:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung und integriertem Spam-Filter 
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
-- :x:  icedove-l10n-de
-- :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
+- :-1:  icedove-l10n-de
+- :-1:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
 
-- :x:  pidgin  --	Grafischer Instant-Messaging-Client
-- :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
-- :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
+- :-1:  pidgin  --	Grafischer Instant-Messaging-Client
+- :-1:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
+- :-1:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
 
 ##  Desktop Video - Audio - Bilder
 
-- :x:  vlc  --		Multimedia-Player und Streamer
-- :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
+- :-1:  vlc  --		Multimedia-Player und Streamer
+- :-1:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
 - :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
-- :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
-- :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
+- :-1:  inkscape  --	Vektorbasiertes Zeichenprogramm
+- :-1:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :+1:  gimp-data-extras  -- Ein extra Satz Pinsel, Paletten, Gradienten für GIMP
 - :-1:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
 - :+1:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
-- :x:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
-- :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
+- :-1:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
+- :-1:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
 ## Desktop Grafik
 
@@ -164,12 +164,12 @@
 
 - ###  mathematics
 
-- :x:  octave  --	GNU Octave - Sprache für numerische Berechnungen
-- :x:  octave-control
-- :x:  geogebra  --	Dynamische Mathematiksoftware für die Lehre
+- :-1:  octave  --	GNU Octave - Sprache für numerische Berechnungen
+- :-1:  octave-control
+- :-1:  geogebra  --	Dynamische Mathematiksoftware für die Lehre
 - :o:  geogebra-gnome  -- GNOME-Integrationsebene für GeoGebra 
-- :x:  geogebra-kde  -- KDE integration layer for GeoGebra 
-- :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
+- :-1:  geogebra-kde  -- KDE integration layer for GeoGebra 
+- :-1:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
 
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
 
@@ -191,12 +191,12 @@
 
 - ###  chemistry
 
-- :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
-- :x:  kalzium-data 
+- :-1:  kalzium  --	Periodensystem und Chemiewerkzeuge
+- :-1:  kalzium-data 
 
 - ###  languages
 
-- :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
+- :-1:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 
 - ###  electronics
 
@@ -209,102 +209,102 @@
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
-- :x:  texlive
-- :x:  texlive-base
-- :x:  texlive-bibtex-extra	
-- :x:  texlive-binaries	
-- :x:  texlive-doc-de
-- :x:  texlive-extra-utils  --		für pdfjam (pdf90)
-- :x:  texlive-font-utils	
-- :x:  texlive-fonts-extra	
-- :x:  texlive-fonts-extra-doc	
-- :x:  texlive-fonts-recommended	
-- :x:  texlive-fonts-recommended-doc	
-- :x:  texlive-formats-extra
-- :x:  texlive-generic-recommended	
-- :x:  texlive-lang-german
-- :x:  texlive-latex-base
-- :x:  texlive-latex-base-doc
-- :x:  texlive-latex-extra  --		gut für Beamer-presentation
-- :x:  texlive-latex-extra-doc
-- :x:  texlive-latex-recommended	
-- :x:  texlive-latex-recommended-doc	
-- :x:  texlive-luatex
-- :x:  texlive-math-extra
-- :x:  texlive-pictures	
-- :x:  texlive-pictures-doc
-- :x:  texlive-plain-extra	
-- :x:  texlive-pstricks	
-- :x:  texlive-pstricks-doc
-- :x:  texlive-publishers	
-- :x:  texlive-publishers-doc
-- :x:  texlive-xetex
-- :x:  texstudio  --			LaTeX-Editor - GUI
-- :x:  texstudio-doc
-- :x:  texstudio-l10n
+- :-1:  texlive
+- :-1:  texlive-base
+- :-1:  texlive-bibtex-extra	
+- :-1:  texlive-binaries	
+- :-1:  texlive-doc-de
+- :-1:  texlive-extra-utils  --		für pdfjam (pdf90)
+- :-1:  texlive-font-utils	
+- :-1:  texlive-fonts-extra	
+- :-1:  texlive-fonts-extra-doc	
+- :-1:  texlive-fonts-recommended	
+- :-1:  texlive-fonts-recommended-doc	
+- :-1:  texlive-formats-extra
+- :-1:  texlive-generic-recommended	
+- :-1:  texlive-lang-german
+- :-1:  texlive-latex-base
+- :-1:  texlive-latex-base-doc
+- :-1:  texlive-latex-extra  --		gut für Beamer-presentation
+- :-1:  texlive-latex-extra-doc
+- :-1:  texlive-latex-recommended	
+- :-1:  texlive-latex-recommended-doc	
+- :-1:  texlive-luatex
+- :-1:  texlive-math-extra
+- :-1:  texlive-pictures	
+- :-1:  texlive-pictures-doc
+- :-1:  texlive-plain-extra	
+- :-1:  texlive-pstricks	
+- :-1:  texlive-pstricks-doc
+- :-1:  texlive-publishers	
+- :-1:  texlive-publishers-doc
+- :-1:  texlive-xetex
+- :-1:  texstudio  --			LaTeX-Editor - GUI
+- :-1:  texstudio-doc
+- :-1:  texstudio-l10n
 
 
 ##  Programmierung Softwareentwicklung
 
-- :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
-- :x:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
-- :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+- :-1:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+- :-1:  git-gui  --	Schnelles, skalierbares, verteiltes Versionskontrollsystem (grafische Oberfläche) 
+- :-1:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
 
 
 ##  Terminal Tools
 
-- :x:  mc  --		Midnight Commander - ein guter Dateimanager
-- :x:  vim  --		verbesserter vi-Editor
-- :x:  vimhelp-de  --	Dokumentationsdateien (deutsche Übersetzung)
+- :-1:  mc  --		Midnight Commander - ein guter Dateimanager
+- :-1:  vim  --		verbesserter vi-Editor
+- :-1:  vimhelp-de  --	Dokumentationsdateien (deutsche Übersetzung)
 - :+1:  vim-scripts  --	Erweiterungen für vim
-- :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
-- :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
+- :-1:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
+- :-1:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 
 - ###  grafik
 
-- :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
-- :x:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
+- :-1:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
+- :-1:  imagemagick  --	Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: ganze Bilderordner konvertieren
 
 - ###  utils
 
-- :x:  pciutils  --	PCI-Hilfsprogramme
-- :x:  lshw  --		Informationen über die Hardwarekonfiguration
-- :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
-- :x:  udisks  --	zum ein/aushängen von Speichermedien 
-- :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
+- :-1:  pciutils  --	PCI-Hilfsprogramme
+- :-1:  lshw  --		Informationen über die Hardwarekonfiguration
+- :-1:  lsdvd  --	liest die Inhaltsinformation einer DVD
+- :-1:  udisks  --	zum ein/aushängen von Speichermedien 
+- :-1:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 
 - ###  text 
 
-- :x:  most  --		Pager-Programm - alternativ zu more / less
+- :-1:  most  --		Pager-Programm - alternativ zu more / less
 
 - ###  admin
 
-- :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung 
-- :x:  fbset  --	Framebuffer-Geräte einstellen
-- :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
-- :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
+- :-1:  dselect  --	Oberfläche für die Debian-Paketverwaltung 
+- :-1:  fbset  --	Framebuffer-Geräte einstellen
+- :-1:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
+- :-1:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 
 - ###  kernel
 
-- :x:  squashfs-tools  -- Werkzeug zum Erzeugen und Hinzufügen von squashfs-Dateisystemen
+- :-1:  squashfs-tools  -- Werkzeug zum Erzeugen und Hinzufügen von squashfs-Dateisystemen
 
 ##  German User  -- System Tools - Deutsche Sprachpakete
 
 - ###  task-german
 
-- :x:  manpages-de
-- :x:  wngerman
-- :x:  ingerman
-- :x:  aspell-de
-- :x:  aspell-de-alt
+- :-1:  manpages-de
+- :-1:  wngerman
+- :-1:  ingerman
+- :-1:  aspell-de
+- :-1:  aspell-de-alt
 
-- :x:  util-linux-locales
+- :-1:  util-linux-locales
 
 
 ##  wlan  -- System Tools - Hardware
 
-- :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
-- :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
+- :-1:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
+- :-1:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
 
