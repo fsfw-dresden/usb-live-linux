@@ -2,6 +2,8 @@
 # Skript erstellt von Carsten 2016-10-06
 
 
+echo "test"
+echo "test" > /root/text.txt
 
 
 echo "#########################"

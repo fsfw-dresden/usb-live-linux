@@ -87,6 +87,8 @@
 - :-1:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 - :-1:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :-1:  konsolekalendar  -- Persönlicher Organizer für die Konsole
+- :x:  konsole  -- KDE Terminal
+
 
 - ###  kde-l10n  -- virtuelles Paket 
 

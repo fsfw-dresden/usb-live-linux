@@ -78,6 +78,11 @@ do
 	    echo " ${PAKETPATH}/${liste// /_} wird erweitert "
 	else
 	    echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
+            echo >> ${PAKETPATH}/${liste// /_}
+            
+            # sicherstellen, dass mindestens ein Kommentar in der Liste steht, sonst verschluckt sich eins der weiteren skripte von lb build
+            echo "# dummy" >> ${PAKETPATH}/${liste// /_}
+            
 	    echo "Paketliste -- ${PAKETPATH}/${liste// /_} -- wurde angelegt "
 	    echo "" >> ${PAKETPATH}/${liste// /_}
 	fi

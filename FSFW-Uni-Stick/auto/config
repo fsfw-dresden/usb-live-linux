@@ -38,6 +38,9 @@ lb config noauto \
 
 # Verlinke allgemeine Hooks
 
+mkdir config/hooks/live
+mkdir config/hooks/normal
+
 ln -s ../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/1050-install-recent-ipython-and-configure-it.hook.chroot
 
 
