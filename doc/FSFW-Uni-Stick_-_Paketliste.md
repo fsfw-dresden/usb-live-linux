@@ -190,6 +190,8 @@
 - :x:  python3-scipy
 - :x:  python-matplotlib
 - :x:  python3-matplotlib
+- :x:  python3-tk
+- :x:  python-tk
 
 - ###  chemistry
 
