@@ -146,3 +146,4 @@
 - :+1:  hunspell  -- Rechtschreibkorrektur
 - :+1:  ghemical  -- GNOME molecular modelling environment
 - :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite
+- :+1:  rkward  --  IDE für R (Statistik-Gui)
