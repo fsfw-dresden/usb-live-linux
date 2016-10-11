@@ -6,10 +6,19 @@ echo "test"
 echo "test" > /root/text.txt
 
 
-echo "#########################"
+echo "# # # ######################"
 echo "Installing jupyter"
 
 sudo pip3 install jupyter
 
 
-echo "Jupyter finished"
+echo "# # # Jupyter installation finished"
+
+echo "# # #  chown"
+chown -vR 1000:1000 /home/user/aux-files/home-dir
+
+echo "# # #  copy home-dir"
+# cp ignoriert versteckte verzeichnisse
+#cp -vR /home/user/aux-files/home-dir/* /home/user/ 
+rsync -av --progress --stats /home/user/aux-files/home-dir /home/user/
+

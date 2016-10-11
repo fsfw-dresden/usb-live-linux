@@ -193,6 +193,12 @@
 - :x:  python3-tk
 - :x:  python-tk
 
+[//]: # (Carsten: die folgenden Pakete erleichtern das Testen)
+
+- :x:  virtualbox-guest-utils
+- :x:  virtualbox-guest-x11
+
+
 - ###  chemistry
 
 - :-1:  kalzium  --	Periodensystem und Chemiewerkzeuge
@@ -257,7 +263,7 @@
 
 ##  Terminal Tools
 
-- :-1:  mc  --		Midnight Commander - ein guter Dateimanager
+- :x:  mc  --		Midnight Commander - ein guter Dateimanager
 - :-1:  vim  --		verbesserter vi-Editor
 - :-1:  vimhelp-de  --	Dokumentationsdateien (deutsche Übersetzung)
 - :+1:  vim-scripts  --	Erweiterungen für vim
