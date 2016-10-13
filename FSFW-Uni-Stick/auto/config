@@ -59,3 +59,7 @@ ln -s ../../binary_local-hooks/1000-stretch-boot-hotfix.hook.binary config/hooks
 
 fi
 
+
+## Desktoplinks & Co. anpassen
+#ln -s ../../binary_local-hooks/1100-create-desktop-links.hook.binary config/hooks/normal/1100-create-desktop-links.hook.binary
+

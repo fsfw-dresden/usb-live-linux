@@ -1,0 +1,10 @@
+#!/bin/sh
+# hotfixes for desktoplinks
+# 
+
+echo " -- hotfix for desktoplinks -- "
+
+
+mkdir /BspDesktoplink
+
+exit 0

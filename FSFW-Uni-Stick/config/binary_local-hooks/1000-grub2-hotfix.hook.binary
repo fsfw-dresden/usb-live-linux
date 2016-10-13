@@ -10,9 +10,11 @@ if [ -r ${config} ]
     then
 	. ${config}
     else
-	echo " config/binary nicht lesbar "
+	echo " ERROR: config/binary nicht lesbar "
 fi
 
+echo "Aktuelles Arbeitsverzeichnis: "
+pwd
 
 
 case "${LB_BOOTLOADER}" in

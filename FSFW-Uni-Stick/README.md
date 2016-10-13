@@ -37,7 +37,10 @@ Image mittels kvm (Kernel-based Virtual Machine) testen
 
   ` $ kvm -m 1024 -cdrom FSFW-Uni-Stick_jessie-amd64.hybrid.iso `
 
-  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+  * Optionen
+
+	-m <Speicher in MB, der vom Gastsystem benutzt wird> -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+	-smp cpus=<Anzahl der zu verwendenden CPUs>  -- ist zum Testen von Multicoresystemen bzw. zum testen aufwendigerer Anwendungen praktisch
 
 
 ### Areitsverzeichnis aufräumen 
