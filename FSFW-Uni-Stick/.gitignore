@@ -8,8 +8,7 @@ binary/
 *.zsync
 
 .build/
-build.log
-build.errors.log
+*.log
 
 cache/
 
