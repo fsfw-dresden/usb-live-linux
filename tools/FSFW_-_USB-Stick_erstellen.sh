@@ -20,6 +20,7 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 #
+
 DEVICE=$1
 
 LABEL_LIVE=FSFW-Uni-Stick
@@ -36,6 +37,9 @@ BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodese
 DATUM=$(date +%Y-%m-%d)
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
+
+LOG_FILE="FSFW_-_USB-Stick_estellen_${DATUM}_build.log"
+
 
 #######################################
 # Funktion: Dialog abbrechen überprüfen
@@ -692,6 +696,12 @@ Kommentar
 
 # ====== Beginn ===========================
 
+main() {
+echo " \$0 = ${0}"
+echo " \$@ = ${@}"
+
+echo " DEFAULT_LIVE_IMAGE = ${DEFAULT_LIVE_IMAGE} "
+
 # System auf benötigte Software / Pakete prüfen
 
 echo "System prüft - sind alle benötigten Software-pakete vorhanden."
@@ -917,5 +927,9 @@ create_grub_config_zusatz_menu
 
 entfernen
 
+}
+
 # ====== Ende ===============
 #
+main "${@}" | tee ${LOG_FILE}
+
