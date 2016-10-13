@@ -4,15 +4,15 @@
 
 echo " -- hotfix for Debian stretch -- "
 
-config=${PWD}/config/binary
-
-if [ -r ${config} ]
-    then
-	. ${config}
-    else
-	echo " ERROR: config/binary nicht lesbar "
-	echo ""
-fi
+# config=${PWD}/config/binary
+# 
+# if [ -r ${config} ]
+#     then
+# 	. ${config}
+#     else
+# 	echo " ERROR: config/binary nicht lesbar "
+# 	echo ""
+# fi
 
 echo "Aktuelles Arbeitsverzeichnis: "
 pwd
@@ -35,10 +35,10 @@ pwd
 #    mv binary/boot/grub/*.mod binary/boot/grub/*.lst binary/boot/grub/efiemu??.o binary/boot/grub/*.pf2 binary/boot/grub/i386-pc/
 # fi
 
-cd binary/live
-# cd live
+# cd binary/live
+cd live
 ln -s vmlinuz* vmlinuz
 ln -s initrd.img* initrd.img
-cd ../..
+# cd ../..
 
 exit 0
