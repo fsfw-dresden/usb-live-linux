@@ -10,6 +10,8 @@ echo "# # # ######################"
 echo "Installing jupyter"
 
 sudo pip3 install jupyter
+sudo pip3 install sympy
+sudo pip install sympy
 
 
 echo "# # # Jupyter installation finished"
