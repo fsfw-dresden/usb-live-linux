@@ -13,37 +13,31 @@ Was hier auf der Liste steht ist im Quellcode unter einer freien Lizens verfügb
 	* Thunderbird
 		* Kathegorien: Messaging, E-Mail
 		* Alternative zu: Outlook, Apple Mail
-		* Plattformen: 
+		* Plattformen: Win, Lin, Mac
 		* portable installiert: 86,2 MB
 		* Paket-Größe: 75,5 MB
-		* Projekt-Link: 
-		* Paket von: 
-	* Enigmail
-		* Kathegorien: 
-		* Alternative zu: Postkarten-Emails
-		* Plattformen: 
-		* Paket-Größe: 1,7 MB
-		* Projekt-Link: 
-		* Paket von: 
+		* Dokumentation: [Portable TB and Enigmail](https://securityinabox.org//en/guide/thunderbird/windows)
+		* Projekt-Link: [Mozilla Thunderbird](https://www.mozilla.org/de/thunderbird/)
+		* Paket von: [PortableApps.com](http://portableapps.com/apps/internet/thunderbird_portable)
 	* Notepad++
-		* Kathegorien: 
+		* Kathegorien: Editor, Programmieren
 		* Alternative zu: Notepad, Geany
-		* Plattformen: 
+		* Plattformen: Win
 		* portable installiert: 14,4 MB
 		* Paket-Größe: 4,1 MB
-		* Projekt-Link: 
+		* Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 		* Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
 	* TeX Studio
-		* Kathegorien: 
+		* Kathegorien: LaTeX, Editor, Zeichensatz
 		* Alternative zu: MikTeX
-		* Plattformen: 
+		* Plattformen: Win, Mac, Lin
 		* Paket-Größe: 52,1 MB
-		* Projekt-Link: 
-		* Paket von: 
+		* Hersteller-Link: [benibela.de](http://www.benibela.de/tools_de.html#texstudio)
+		* Paket von: [computerbild.de](http://www.computerbild.de/download/TeXstudio-Portable-11851474.html)
 	* JabRef
-		* Kathegorien: 
-		* Alternative zu:
-		* Plattformen: 
+		* Kathegorien: Quellenverwaltung, LaTeX
+		* Alternative zu: Citavi
+		* Plattformen: Win, Lin, Mac
 		* Paket-Größe: 26,1 MB
 		* Projekt-Link: 
 		* Paket von: 
@@ -51,11 +45,11 @@ Was hier auf der Liste steht ist im Quellcode unter einer freien Lizens verfügb
 		* Kathegorien: 
 		* Alternative zu:
 		* Plattformen: 
-		* Projekt-Link: 
-		* Paket von: 
+		* Projekt-Link: []()
+		* Paket von: []()
 	* GIMP
-		* Kathegorien: 
-		* Alternative zu:
+		* Kathegorien: Foto, Bitmapgrafiken, Bildbearbeitung
+		* Alternative zu: Microsoft Paint, paint.net
 		* Plattformen: Lin, Mac, Win
 		* portable installiert: 313 MB
 		* Paket-Größe: 75,6 MB
@@ -115,7 +109,7 @@ Was hier auf der Liste steht ist im Quellcode unter einer freien Lizens verfügb
 		* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
 		* Paket-Größe: 
 		* Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/)
-		* Paket von: 
+		* Paket von: []()
 	* TIPP10 Portable 
 		* Kathegorien: Bildung, Tastschreiben
 		* Alternative zu: 
@@ -138,12 +132,16 @@ Was hier auf der Liste steht ist im Quellcode unter einer freien Lizens verfügb
 		* Kathegorien: [tags:lemmas]
 		* Alternative zu: <bekanntere, inbs. proprietäre Alternativen>
 		* Plattformen: [Win, Lin, Mac, Android, iOS, …]
-		* Projekt-Link: <homepage des herstellers>
-		* Paket von: <Quelle der Binary>
+		* Projekt-Link: []()
+		* Paket von: []()
 
 ## Weitere Links
 
-Hier noch ein paar weitere Programme, die wir hier nur verlinken weil es keine portablen Pakete gibt oder der Platz auf dem Stick sonst zu eng wird:
+Hier noch ein paar weitere Programme, die wir hier nur verlinken weil …
+
+* keine portablen Pakete gibt, oder
+* ein anderes Produkt hier besser geeignet erscheint, oder
+* der Platz auf dem Stick begrenzt ist
 
 	* Darktable 
 		* Kathegorien: Foto, Bildbearbeitung
@@ -156,8 +154,25 @@ Hier noch ein paar weitere Programme, die wir hier nur verlinken weil es keine p
 		* Plattformen: 
 		* Paket-Größe: 262,4 MB
 		* Projekt-Link: [GNU Octave](https://www.gnu.org/software/octave/)
+	* Mendeley
+		* Kathegorien: Zitatverwaltung, Quellenverwaltung, Literaturverwaltung
+		* Alternative zu: Citavi
+		* Plattformen: Win, Lin, Mac
+		* Projekt-Link: [mendeley.com](https://www.mendeley.com/)
+	* Enigmail
+		* Kathegorien: Datenschutz, Sicherheit, E-Mail
+		* Alternative zu: Postkarten-Emails
+		* Plattformen: Thunderbird
+		* Paket-Größe: 1,7 MB
+		* Projekt-Link: [enigmail.net](https://www.enigmail.net/)
+	* Zotero
+		* Kathegorie: Literaturverwaltung
+		* Alternative zu:
+		* Plattformen: 
+		* Paket-Größe: 262,4 MB
+		* Projekt-Link: []()
 	* <name>…
 		* Kathegorien: [tags:lemmas]
 		* Alternative zu: <bekanntere, inbs. proprietäre Alternativen>
 		* Plattformen: [Win, Lin, Mac, Android, iOS, …]
-		* Projekt-Link: <homepage des herstellers>
+		* Projekt-Link: []()
