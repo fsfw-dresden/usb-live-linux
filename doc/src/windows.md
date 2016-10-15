@@ -248,6 +248,17 @@ vielleicht sind sie ja dennoch etwas für euch:
   Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter
   den Formaten und bietet Plugins um die Funktionalität zu erweitern.
 
+* [Pidgin](https://pidgin.im/),
+  [auch portable](http://portableapps.com/apps/internet/pidgin_portable),
+  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac unterstützt
+  als Multiprotokoll-Messenger viele Protokolle (Jabber, IRC, ICQ, …) gleichzeitig.
+
+* [Conversations](https://conversations.im/), das letzte Wort in Sachen Messenger,
+  zumindest auf Android – sagen die Macher. Definitiv einer der nutzerfreundlichsten
+  Clients für Jabber und das bewahrt euch von Abhängigkeiten von Firmen wie Whatsapp,
+  Telegram oder Threema. Selbst [Signal und Redphone](https://whispersystems.org/)
+  sind aktuell auf zentrale Dienste – die eben auch wegfallen können – ausgelegt.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
