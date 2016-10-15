@@ -322,6 +322,11 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [Zim](http://zim-wiki.org/downloads.html), ein Wiki für den Desktop weil die mobile
   Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
+* [Apachefriends](http://www.apachefriends.org/),
+  [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
+  für all jene, die einen Server als Testumgebung für erste Gehversuche in der
+  Web-Programmierung benötigen.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
