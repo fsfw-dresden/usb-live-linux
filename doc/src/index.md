@@ -6,6 +6,11 @@ in eurem Studium aufzuzeigen.  Was genau auf dem Stick drauf ist, wozu es euch
 nützlich sein kann, und warum wir das eigentlich alles machen, wollen wir euch
 im folgenden ein wenig erläutern.
 
+Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
+
+- [→LaTeX](latex.md)
+- [→Freie Software für Windows](windows.md)
+
 ## Was soll dieser Stick?
 
 Das Studium ist voller Programme, die wir nutzen wollen oder müssen – egal ob in
@@ -45,7 +50,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 - [KDE][], eine anspruchsvolle graphische Oberfläche mit vielen Einzelprogrammen
 - [TeXLive][], eine LaTeX-Distribution, und [TeXStudio][], ein Editor für
   LaTeX-Dokumente; eine kleine Einführung in die Arbeit mit LaTeX findet
-  ihr [hier](latex.md).
+  ihr [→hier](latex.md).
 - [LibreOffice][], eine freie Alternative zu Microsoft Office
 - [GNU Octave][], eine freie Alternative zu Matlab
 - [geogebra][], ein interaktives Geometrieprogramm
@@ -87,7 +92,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 [enigmail]: https://www.enigmail.net/index.php/en/
 
 Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
-dieser Stick nützlich sein: auf ihm findet ihr eine [große Auswahl](windows.md)
+dieser Stick nützlich sein: auf ihm findet ihr eine [→große Auswahl](windows.md)
 an freien Programmen drauf, die unter Windows laufen.
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen

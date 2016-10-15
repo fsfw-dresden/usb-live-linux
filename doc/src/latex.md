@@ -53,12 +53,16 @@ in die gewünschte Ausgabe transformieren.
 
 ## Beispiel: Eine Vorlage für Diplomarbeiten
 
-Als Beispiel für eine LaTeX-Quelldatei haben wir eine
-kleine [Vorlage](../latex-vorlage/muster-diplomarbeit.tex) für Abschlussarbeiten, hier
-am Beispiel einer Diplomarbeit, erstellt.  Die Datei öffnet sich in TeXStudio,
-und von dort aus kann man sie durch Drücken von F6 oder durch Klicken auf den
-grünen Doppelpfeil in ein [PDF](../latex-vorlage/muster-diplomarbeit.pdf)
-konvertieren.
+Typischerweise fängt man nicht mit einer leeren Datei, sondern mit einer passenden
+Vorlage an. Von manchen Inistituten werden solche Vorlagen für ihre Studierenden
+bereitgestellt, z.B. [hier](https://tu-dresden.de/ing/elektrotechnik/rst/studium/downloads)
+vom Institut für Regelungs- und Steuerungstheorie.
+
+Wir haben eine eigene Vorlage (hier am Beispiel einer Diplomarbeit) erstellt
+und auf den Stick gepackt: [→Link zur Vorlage](../latex-vorlage/muster-diplomarbeit.tex).
+Die Datei öffnet sich in TeXStudio, und von dort aus kann man sie durch Drücken
+von F6 oder durch Klicken auf den grünen Pfeil in ein [PDF](../latex-vorlage/muster-diplomarbeit.pdf)
+konvertieren. Mit F7 wird diese Datei dann angezeigt.
 
 Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert.  Das ist
 nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
