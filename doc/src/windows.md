@@ -1,8 +1,11 @@
 # Freie Software für Windows
 
-Hier möchten wir euch Programme für Windows, entsprechend denen auf der Live-Partition mit Linux, in die Hand geben. Ein Vorteil von Freier Software ist, dass sie auch oft für andere Betriebssysteme zur Verfügung stehen oder die Datenformate in alternativen Programmen verwendet werden können.
+Hier möchten wir euch Programme für Windows, entsprechend denen auf der
+Live-Partition mit Linux, in die Hand geben. Ein Vorteil von Freier Software
+ist, dass sie auch oft für andere Betriebssysteme zur Verfügung stehen oder die
+Datenformate in alternativen Programmen verwendet werden können.
 
-TODO: hier nochwas zu Portable Apps erzählen.
+TODO: hier nochwas zu Portable Apps erzählen.  https://de.wikipedia.org/wiki/Portable_Software
 
 Was hier auf der Liste steht ist im Quellcode unter einer freien Lizenz verfügbar.
 
@@ -33,7 +36,7 @@ Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
 ## Notepad++
 
 Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber
-mit vielen Funktionen und Unterstützungen für Programmierer.
+mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
 * portable installiert: 14,4 MB
 * Paket-Größe: 4,1 MB
@@ -51,18 +54,19 @@ verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 
 ## JabRef
 
-TODO: Beschreibung (Alternative zu: Citavi)
+Ein bekanntes Literaturverwaltungsprogramm, welches dank der Verwendung von
+BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * Paket-Größe: 26,1 MB
-* Projekt-Link:
-* Paket von:
 
 ## winpython/anaconda
 
-TODO: Beschreibung
+Eine portable Python-Distribution für Windows mit speziellem Fokus auf
+wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy,
+SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
 
-* Projekt-Link: []()
-* Paket von: []()
+* Projekt-Link: https://winpython.github.io/
+* Paket von: https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.2.2/
 
 ## GIMP
 
@@ -76,7 +80,7 @@ Photoshop.  Läuft auf GNU/Linux, OSX, und Windows.
 
 ## Inkscape
 
-TODO: Beschreibung (Alternative zu: Adobe Illustrator, Adobe InDesign)
+Ein freies Programm zur Erstellung und Manipulation von Vektorgraphiken.
 
 * portable installiert: 227 MB
 * Paket-Größe: 95,6 MB
@@ -85,7 +89,8 @@ TODO: Beschreibung (Alternative zu: Adobe Illustrator, Adobe InDesign)
 
 ## Audacity
 
-TODO: Beschreibung
+Ein freier Audio-Editor und Audio-Rekorder, in dem beliebig viele Audiospuren
+gleichzeitig bearbeitet werden können.
 
 * portable installiert: 65,5 MB
 * Paket-Größe: 33,9 MB
@@ -103,7 +108,7 @@ Unterstützt zahlreiche Standardformate.
 
 ## Firefox
 
-TODO: Beschreibung
+Der wohl am meisten genutzte freie Web-Browser.
 
 * portable installiert: 190 MB
 * Paket-Größe: 83 MB
@@ -112,8 +117,9 @@ TODO: Beschreibung
 
 ## VLC Media Player
 
-TODO: Beschreibung (Alternative zu: Windows Media Player, Plattformen: Win, Mac,
-Lin, Android, iOS)
+Als eine freie Alternative zum Windows Media Player kann der VLC Media Player
+für das Abspielen aller gängigen Audio- und Video-Formate genutzt werden.  Läuft
+nicht nur unter Windows, OSX und Linux, sondern auch unter Android und iOS.
 
 * portable installiert: 125 MB
 * Paket-Größe: 36,5 MB
@@ -122,7 +128,9 @@ Lin, Android, iOS)
 
 ## VirtualBox
 
-TODO: Beschreibung
+Ein Programm zur Simulation eines gesamten Rechners, auf dem dann auch andere
+Betriebssysteme wie z.B. GNU/Linux laufen können, ohne das der eigentliche
+Rechner dafür verändert werden muss.
 
 * portable installiert: 3,37 MB
 * Paket-Größe: 118,4 MB
@@ -131,11 +139,14 @@ TODO: Beschreibung
 
 ## VeraCrypt
 
-TODO: Beschreibung (TrueCrypt erwähnen)
+Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward
+Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die
+Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten
+Festplatte.
 
 * Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
 * Paket-Größe:
-* Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/)
+* Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/), https://en.wikipedia.org/wiki/VeraCrypt
 * Paket von: []()
 
 ## TIPP10 Portable
@@ -148,49 +159,39 @@ Tastaturlayouts anpassbar.
 
 ## 7-zip
 
-TODO: Beschreibung (Alternative zu: WinZip, WinRar)
+Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und
+WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 * Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
 ## DownThemAll
 
-TODO: Beschreibung (Kathegorien: Dateimanagement, Browsererweiterung)
+Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 
 * Projekt-Link: [downthemall.net](http://www.downthemall.net/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/internet/downthemall_extension)
 
 ## Weitere Links
 
-Hier noch ein paar weitere Programme, die wir hier nur verlinken weil …
+es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
+unter Windows genutzt werden kann, die wir aber auf diesem Stick nicht mit
+unterbringen wollten, weil
 
-* keine portablen Pakete gibt, oder
-* ein anderes Produkt hier besser geeignet erscheint, oder
-* der Platz auf dem Stick begrenzt ist
+* es keine portablen Pakete für diese Software gibt, oder
+* ein anderes Programm hier besser geeignet erschien, oder
+* einfach der Platz auf dem Stick begrenzt ist.
 
-* Darktable
-    * Kathegorien: Foto, Bildbearbeitung
-    * Alternative zu: Adobe Photoshop
-    * Plattformen: Lin, Mac
-    * Projekt-Link: https://www.darktable.org/
+Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn
+vielleicht sind sie ja dennoch etwas für euch:
 
-* GNU Octave
-    * Kathegorien:
-    * Alternative zu: Matlab
-    * Plattformen:
-    * Paket-Größe: 262,4 MB
-    * Projekt-Link: [GNU Octave](https://www.gnu.org/software/octave/)
+* [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich
+  zu Adobe Photoshop
 
-* Enigmail
-    * Kathegorien: Datenschutz, Sicherheit, E-Mail
-    * Alternative zu: Postkarten-Emails
-    * Plattformen: Thunderbird
-    * Paket-Größe: 1,7 MB
-    * Projekt-Link: [enigmail.net](https://www.enigmail.net/)
+* [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz für
+  Matlab.
 
-* Zotero
-    * Kathegorie: Literaturverwaltung
-    * Alternative zu:
-    * Plattformen:
-    * Paket-Größe: 262,4 MB
-    * Projekt-Link: []()
+* [Enigmail](https://www.enigmail.net/), ein Thunderbird-Plugin zur
+  Verschlüsselung von E-Mails.
+
+* [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
