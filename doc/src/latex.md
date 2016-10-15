@@ -80,10 +80,10 @@ Im Netz:
 - Bei Problemen mit LaTeX hilft es meistens, in einer Suchmaschine „LaTeX + «was
   will ich machen»“ einzugeben.  Dabei landet man oft auf folgenden Foren:
 
-  - http://golatex.de/
-  - http://www.latex-community.org/forum/
-  - https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)
-  - http://texwelt.de
+  - [http://golatex.de/](http://golatex.de/)
+  - [http://www.latex-community.org/forum/](http://www.latex-community.org/forum/)
+  - [https://tex.stackexchange.com](https://tex.stackexchange.com) (wenn man das als „Forum“ verstehen möchte …)
+  - [http://texwelt.de](http://texwelt.de)
 
   Auch hilfreich ist das [Forum der TU](http://latex.wcms-file3.tu-dresden.de/phpBB3/index.php).
 
@@ -92,6 +92,9 @@ Im Netz:
 
 - Wer die Installation von LaTeX auf seinem eigenen Rechner scheut, kann es auch
   online unter https://www.sharelatex.com/ nutzen.
+  
+- Wenn man einfach nur wissen will wie man ein bestimmtes (mathematisches) Symbol in LaTeX erzeugt,
+  hilft [http://detexify.kirelabs.org](http://detexify.kirelabs.org/classify.html).
 
 - Wer wissen will, was alles so in LaTeX möglich ist, kann sich im
   [*Comprehensive TeX Archive Network*](https://www.ctan.org/) umsehen.
