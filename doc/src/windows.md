@@ -301,6 +301,13 @@ vielleicht sind sie ja dennoch etwas für euch:
   ist praktisch um Gedanken bei einem Brainstorming zu dokumentieren oder das Ergebnis
   für eine spätere Präsentation aufzubereiten.
 
+* [CamStudio](http://camstudio.org/),
+  [auch portabel](http://portableapps.com/apps/utilities/camstudio_portable),
+  hilft ganze Videos vom Bildschirm (so gewünscht mit Ton) aufzunehmen. Das ist eine
+  beinahe Kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
+  Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
+  besser planen zu können.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
