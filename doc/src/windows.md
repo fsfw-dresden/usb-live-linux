@@ -206,8 +206,8 @@ Darstellungen in euren Arbeiten.
 ## MediathekView
 
 Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
-zu verleihen. Gesten den Tatort verpasst, kein Problem. Oder eine Sendung hat Relvanz
-für dein Studium – speichere Sie für die spätere Verwendung.
+zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
+für dein Studium? Speichere Sie für die spätere Verwendung.
 
 * Projekt-Link: [MediathekView auf Sourceforge](http://zdfmediathk.sourceforge.net/)
 * Paket von: [Github / xaverW](https://github.com/xaverW/MediathekView/tree/master/dist/Portable)
