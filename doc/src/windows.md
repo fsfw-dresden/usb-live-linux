@@ -278,4 +278,4 @@ vielleicht sind sie ja dennoch etwas für euch:
   eine Programmsammlung die uns unter anderem zu diesem Projekt inspiriert hat.
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
-* [dudle](), ein Tool für Abstimmungen an der TU Dresden.
+* [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
