@@ -224,7 +224,10 @@ vielleicht sind sie ja dennoch etwas für euch:
   Matlab.
 
 * [Enigmail](https://www.enigmail.net/), ein Thunderbird-Plugin zur
-  Verschlüsselung von E-Mails.
+  Verschlüsselung von E-Mails.  Dazu gibt es auch eine
+  einfache
+  [Schritt-für-Schritt Anleitung](https://wiki.fsfw-dresden.de/doku.php/doku/software/gpg/anleitungen_zu_pgp) der
+  FSFW.
 
 * [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
 
