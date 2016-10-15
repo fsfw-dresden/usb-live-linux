@@ -264,9 +264,18 @@ vielleicht sind sie ja dennoch etwas für euch:
   das Programm, welches [Photoshop an der Universität von Paris](https://krita.org/en/item/goodbye-photoshop-and-hello-krita-at-university-paris-8/)
   abgelöst hat ermöglicht insb. Skizzen und Malerei auf dem Bildschirm.
 
+* [nomacs](https://nomacs.org/), ein Viewer für viele Bildformate, inkl. PSD und
+  RAW-Dateien einiger Digital-Kameras.
+
+* [CuteMarkEd](https://cloose.github.io/CuteMarkEd/),
+  [auch portabel](http://portableapps.com/apps/office/cutemarked-portable), ist ein
+  Markdown-Editor mit eingebautem Preview – nur falls Eduroam mal zu langsam oder
+  ob der vielen Menschen im Raum nicht erreichbar ist.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
   eine Programmsammlung die uns unter anderem zu diesem Projekt inspiriert hat.
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
+* [dudle](), ein Tool für Abstimmungen an der TU Dresden.
