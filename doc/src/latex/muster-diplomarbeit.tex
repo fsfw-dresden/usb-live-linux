@@ -1,10 +1,32 @@
 \documentclass{scrbook}
 
+% Alle Zeilen die mit % anfangen sind Kommentare
+
+% FSFW-LaTeX-Vorlage
+
+% VERSION = 0.2 (2016-10-16)
+
+% Wichtiger Hinweis: diese Vorlage nutzt das Program "biber" anstatt "bibtex"
+% zur Erstellung des Literaturverzeichnisses. Falls es Probleme beim kompilieren
+% gibt, bitte prüfen, ob biber korrekt ausgeführt wurde.
+
+
+
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
+% Paket für interne verlinkungen
 \usepackage{hyperref}
+
+% mögliche Angaben für Farben, siehe z.B.
+% http://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+\hypersetup{
+colorlinks=true,
+allcolors=[rgb]{0, .1, .5} % dunkelblau
+%allcolors=[rgb]{0, 0, 0} % schwarz
+}
+
 \usepackage{csquotes}
 \MakeAutoQuote{„}{“}
 \usepackage{cleveref}
@@ -18,7 +40,12 @@
 \setlength{\parskip}{0.5ex}
 
 \usepackage[style=authoryear,backend=biber]{biblatex}
+
+% hier wird die Datei eingebunden, in der alle möglichen Quellen stehen können.
 \addbibresource{literatur.bib}
+
+% LaTeX und biber sorgen dann dafür, dass nur die zitierten Quellen auch im
+% Literaturverzeichnis auftauchen
 
 \usepackage{makeidx}
 \makeindex
@@ -107,7 +134,7 @@ International License. To view a copy of this license, visit
 In unserer virtuellen Zeit ist es wichtiger denn je, sich des Unterschieds
 zwischen dem Hier und dem Jetzt klar zu werden.  Eine einfacher Verwischung
 dieser beiden doch sehr unterschiedlichen Begriffe kann dafür sorgen, dass wir
-uns in unserem Denke und Handeln nicht mehr leiten lassen von den Motivation
+uns in unserem Denken und Handeln nicht mehr leiten lassen von den Motivation
 unser Intuition, sondern von der Versprechungen der externen Welt.  Ein Teil
 dieser Arbeit soll es sein, sich diesen Begrifflichkeiten auf wissenschaftlichem
 Wege zu nähern und so auch für die Außenstehende und den Außenstehenden klar zu
@@ -277,6 +304,10 @@ Tatsächlich fällt mir doch noch was ein, und zwar ein Zitat\index{Zitat}:
   „The first principle is that you must not fool yourself – and you are the
   easiest person to fool.“
 \end{displayquote}
+
+\section{Weitere Informationen}
+Fragen und Probleme rund um LaTeX können in der FSFW-Sprechstunde geklärt werden: 
+\url{https://fsfw-dresden.de/sprechstunde}.
 
 \backmatter
 
