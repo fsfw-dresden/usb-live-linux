@@ -5,8 +5,6 @@ Live-Partition mit Linux, in die Hand geben. Ein Vorteil von Freier Software
 ist, dass sie auch oft für andere Betriebssysteme zur Verfügung stehen oder die
 Datenformate in alternativen Programmen verwendet werden können.
 
-TODO: hier nochwas zu Portable Apps erzählen.  https://de.wikipedia.org/wiki/Portable_Software
-
 Was hier auf der Liste steht ist im Quellcode unter einer freien Lizenz verfügbar.
 
 ## LibreOffice
