@@ -22,6 +22,15 @@ Dateiformate.
 * Projekt-Link: [LibreOffice](https://www.libreoffice.org/)
 * Paket von: [LibreOffice/Downloads/Portable Version](https://www.libreoffice.org/download/portable-versions/)
 
+## Sumatra
+
+Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, Comic Book (CBZ and CBR).
+
+* Portable installiert: 11,6 MB
+* Paket-Größe: 4,2 MB
+* Projekt-Link: [Sumatra PDF](http://www.sumatrapdfreader.org/free-pdf-reader.html)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/office/sumatra_pdf_portable)
+
 ## Thunderbird
 
 Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
@@ -172,6 +181,15 @@ Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 * Projekt-Link: [downthemall.net](http://www.downthemall.net/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/internet/downthemall_extension)
 
+## Dia
+
+Ein Programm zur Erstellung von Diagrammen inkl. TeX-Export für skalierbare
+Darstellungen in euren Arbeiten. 
+
+* Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
+
+
 ## Weitere Links
 
 es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
@@ -195,3 +213,44 @@ vielleicht sind sie ja dennoch etwas für euch:
   Verschlüsselung von E-Mails.
 
 * [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
+
+* [Gantt Project](http://www.ganttproject.biz/), eine handliche, freie
+  Projektverwaltung mit übersichtlicher Darstellung.
+
+* [Scribus](http://www.scribus.net/),
+  [auch portabel](http://portableapps.com/apps/office/scribus_portable), Professionelles
+  Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer, Visitenkarten,
+  Bilderbücher und andere Arbeiten die bislang oft mit Adobe-Produkten
+  erledigt wurden.
+
+* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell
+  Skizzen erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird gerechnet).
+
+* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud der es ermöglicht auch
+  abseits von Dropbox, OneDrive oder iCloud Dokumente auf eigenen Rechnern mit
+  anderen zu teilen, egal ob Kommilitonen, Arbeitskollegen oder Familie.
+
+* [WinCDEmu](http://wincdemu.sysprogs.org/),
+  [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable), virtuelle
+  Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute kaum ein Rechner
+  optische Laufwerke hat, von Disketten ganz zu schweigen.
+
+* [Blender](http://www.blender.org/),
+  [auch portabel](http://portableapps.com/apps/graphics_pictures/blender_portable),
+  ein Programm zum erstellen von 3D-Animationen vom 3D-Modell bis zum Film-Projekt.
+
+* [Evince](http://projects.gnome.org/evince/),
+  [auch portabel](http://portableapps.com/apps/office/evince_portable), zeigt euch
+  neben PDF auch Dokumente in den Formaten PostScript, djvu, tiff, dvi an. Diese
+  werden  häufig für Druckerzeugnisse benötigt.
+
+* [Calibre](https://calibre-ebook.com/), dein digitales Bücherregal mit Reader und
+  Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter
+  den Formaten und bietet Plugins um die Funktionalität zu erweitern.
+
+## Siehe auch
+
+* [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
+  eine Programmsammlung die uns unter anderem zu diesem Projekt inspiriert hat.
+* [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
+  Programme für Windows, von denen die meisten auch Freie Software sind.
