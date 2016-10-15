@@ -203,6 +203,14 @@ Darstellungen in euren Arbeiten.
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
 
+## MediathekView
+
+Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
+zu verleihen. Gesten den Tatort verpasst, kein Problem. Oder eine Sendung hat Relvanz
+für dein Studium – speichere Sie für die spätere Verwendung.
+
+* Projekt-Link: [MediathekView auf Sourceforge](http://zdfmediathk.sourceforge.net/)
+* Paket von: [Github / xaverW](https://github.com/xaverW/MediathekView/tree/master/dist/Portable)
 
 ## Weitere Links
 
@@ -310,6 +318,9 @@ vielleicht sind sie ja dennoch etwas für euch:
   beinahe kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
+  
+* [Zim](http://zim-wiki.org/downloads.html), ein Wiki für den Desktop weil die mobile
+  Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
 ## Siehe auch
 
@@ -318,3 +329,5 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
+* [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
+  aus Freier Software für vielerlei Anwendungsfälle.
