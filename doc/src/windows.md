@@ -146,6 +146,18 @@ Rechner dafür verändert werden muss.
 * Projekt-Link: [virtualbox.org](https://www.virtualbox.org/)
 * Paket von: [vbox.me](http://vbox.me)
 
+## KeePass
+
+Passworte sollten nicht offen auf dem Stick herumliegen. Nicht auf der (FAT32-)Partition
+mit Windows-Programmen und anderen Daten und nicht auf denen für GNU/Linux.
+Mit diesem Programm können Passworte – über so gut wie jede Plattform nutzbar – abgelegt
+werden.
+
+* portable installiert: 5,2 MB
+* Paket-Größe: 2,3 MB
+* Projekt-Link: [keepass.info](http://www.keepass.info/)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/utilities/keepass_portable)
+
 ## VeraCrypt
 
 Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward
@@ -153,10 +165,11 @@ Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die
 Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten
 Festplatte.
 
-* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
-* Paket-Größe:
+* portable installiert: 40,8 MB
+* Paket-Größe: 6,0 MB
 * Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/), https://en.wikipedia.org/wiki/VeraCrypt
-* Paket von: []()
+* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
+* Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
 ## TIPP10 Portable
 
@@ -171,6 +184,8 @@ Tastaturlayouts anpassbar.
 Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und
 WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
+* portable installiert: 4,1 MB
+* Paket-Größe: 2,6 MB
 * Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
@@ -280,6 +295,11 @@ vielleicht sind sie ja dennoch etwas für euch:
   – wohl nicht nur für [TypeScript](https://github.com/Microsoft/TypeScript) –
   gewohnt ist könnte auch letzteren als eines der Projekte von Microsoft unter
   einer Freien Lizens mit Unterstützung auch jenseits von Windows wählen.
+
+* [XMind](http://www.xmind.net/),
+  [auch portabel](http://www.xmind.net/download/portable/),
+  ist praktisch um Gedanken bei einem Brainstorming zu dokumentieren oder das Ergebnis
+  für eine spätere Präsentation aufzubereiten.
 
 ## Siehe auch
 
