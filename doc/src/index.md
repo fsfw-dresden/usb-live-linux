@@ -87,8 +87,8 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 [enigmail]: https://www.enigmail.net/index.php/en/
 
 Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
-dieser Stick nützlich sein: auf ihm findet ihr eine große Auswahl an freien
-Programmen drauf, die unter Windows laufen.
+dieser Stick nützlich sein: auf ihm findet ihr eine [große Auswahl](windows.md)
+an freien Programmen drauf, die unter Windows laufen.
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
