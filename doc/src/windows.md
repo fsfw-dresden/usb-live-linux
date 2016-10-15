@@ -24,7 +24,8 @@ Dateiformate.
 
 ## Sumatra
 
-Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, Comic Book (CBZ and CBR).
+Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und
+Comic Book (CBZ and CBR).
 
 * Portable installiert: 11,6 MB
 * Paket-Größe: 4,2 MB
@@ -63,7 +64,7 @@ verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 
 ## JabRef
 
-Ein bekanntes Literaturverwaltungsprogramm, welches dank der Verwendung von
+Ein bekanntes Literaturverwaltungsprogramm, welches Dank der Verwendung von
 BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * Paket-Größe: 26,1 MB
@@ -148,10 +149,10 @@ Rechner dafür verändert werden muss.
 
 ## KeePass
 
-Passworte sollten nicht offen auf dem Stick herumliegen. Nicht auf der (FAT32-)Partition
-mit Windows-Programmen und anderen Daten und nicht auf denen für GNU/Linux.
-Mit diesem Programm können Passworte – über so gut wie jede Plattform nutzbar – abgelegt
-werden.
+Passworte sollten nicht offen auf dem Stick herumliegen, nicht auf der
+(FAT32-)Partition mit Windows-Programmen und anderen Daten und nicht auf denen
+für GNU/Linux.  Mit diesem Programm können Passworte – über so gut wie jede
+Plattform nutzbar – abgelegt werden.
 
 * portable installiert: 5,2 MB
 * Paket-Größe: 2,3 MB
@@ -198,8 +199,8 @@ Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 
 ## Dia
 
-Ein Programm zur Erstellung von Diagrammen inkl. TeX-Export für skalierbare
-Darstellungen in euren Arbeiten. 
+Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare
+Darstellungen in euren Arbeiten.
 
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
@@ -233,26 +234,27 @@ vielleicht sind sie ja dennoch etwas für euch:
   Projektverwaltung mit übersichtlicher Darstellung.
 
 * [Scribus](http://www.scribus.net/),
-  [auch portabel](http://portableapps.com/apps/office/scribus_portable), Professionelles
-  Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer, Visitenkarten,
-  Bilderbücher und andere Arbeiten die bislang oft mit Adobe-Produkten
-  erledigt wurden.
+  [auch portabel](http://portableapps.com/apps/office/scribus_portable),
+  professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer,
+  Visitenkarten, Bilderbücher und andere Arbeiten, die bislang oft mit
+  Adobe-Produkten erledigt wurden.
 
-* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell
-  Skizzen erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird gerechnet).
+* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell Skizzen
+  erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird
+  gerechnet).
 
-* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud der es ermöglicht auch
+* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud, der es ermöglicht auch
   abseits von Dropbox, OneDrive oder iCloud Dokumente auf eigenen Rechnern mit
   anderen zu teilen, egal ob Kommilitonen, Arbeitskollegen oder Familie.
 
 * [WinCDEmu](http://wincdemu.sysprogs.org/),
-  [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable), virtuelle
-  Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute kaum ein Rechner
-  optische Laufwerke hat, von Disketten ganz zu schweigen.
+  [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable),
+  virtuelle Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute kaum ein
+  Rechner optische Laufwerke hat, von Disketten ganz zu schweigen.
 
 * [Blender](http://www.blender.org/),
   [auch portabel](http://portableapps.com/apps/graphics_pictures/blender_portable),
-  ein Programm zum erstellen von 3D-Animationen vom 3D-Modell bis zum Film-Projekt.
+  ein Programm zum erstellen von 3D-Animationen, 3D-Modellen bis hin zum Film-Projekt.
 
 * [Evince](http://projects.gnome.org/evince/),
   [auch portabel](http://portableapps.com/apps/office/evince_portable), zeigt euch
@@ -265,7 +267,7 @@ vielleicht sind sie ja dennoch etwas für euch:
 
 * [Pidgin](https://pidgin.im/),
   [auch portable](http://portableapps.com/apps/internet/pidgin_portable),
-  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac unterstützt
+  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac.  Unterstützt
   als Multiprotokoll-Messenger viele Protokolle (Jabber, IRC, ICQ, …) gleichzeitig.
 
 * [Conversations](https://conversations.im/), das letzte Wort in Sachen Messenger,
@@ -277,10 +279,10 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [Krita](https://krita.org/),
   [auch portabel](http://portableapps.com/apps/graphics_pictures/krita-portable),
   das Programm, welches [Photoshop an der Universität von Paris](https://krita.org/en/item/goodbye-photoshop-and-hello-krita-at-university-paris-8/)
-  abgelöst hat ermöglicht insb. Skizzen und Malerei auf dem Bildschirm.
+  abgelöst hat.  Ermöglicht insbesondere Skizzen und Malerei auf dem Bildschirm.
 
-* [nomacs](https://nomacs.org/), ein Viewer für viele Bildformate, inkl. PSD und
-  RAW-Dateien einiger Digital-Kameras.
+* [nomacs](https://nomacs.org/), ein Viewer für viele Bildformate, inklusive PSD
+  und RAW-Dateien einiger Digital-Kameras.
 
 * [CuteMarkEd](https://cloose.github.io/CuteMarkEd/),
   [auch portabel](http://portableapps.com/apps/office/cutemarked-portable), ist ein
@@ -289,11 +291,11 @@ vielleicht sind sie ja dennoch etwas für euch:
 
 * [OpenProject](https://www.openproject.org/), eine Alternative zu Microsoft Project
   für das Projekt-Management.
-  
+
 * [Atom](https://atom.io/), ein flinker Editor für den Desktop; vergleichbar zu
-  [Visual Studio Code](https://code.visualstudio.com/) – wer ihn von Visual Studio
+  [Visual Studio Code](https://code.visualstudio.com/).  Wer ihn von Visual Studio
   – wohl nicht nur für [TypeScript](https://github.com/Microsoft/TypeScript) –
-  gewohnt ist könnte auch letzteren als eines der Projekte von Microsoft unter
+  gewohnt ist, könnte auch letzteren als eines der Projekte von Microsoft unter
   einer Freien Lizens mit Unterstützung auch jenseits von Windows wählen.
 
 * [XMind](http://www.xmind.net/),
@@ -304,14 +306,14 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [CamStudio](http://camstudio.org/),
   [auch portabel](http://portableapps.com/apps/utilities/camstudio_portable),
   hilft ganze Videos vom Bildschirm (so gewünscht mit Ton) aufzunehmen. Das ist eine
-  beinahe Kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
+  beinahe kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
 
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
-  eine Programmsammlung die uns unter anderem zu diesem Projekt inspiriert hat.
+  eine Programmsammlung, die uns unter anderem zu diesem Projekt inspiriert hat.
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
