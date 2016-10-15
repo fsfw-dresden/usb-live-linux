@@ -16,7 +16,7 @@ Verwendung, und weiterführende Literatur werden hier im folgenden beschrieben.
 
 LaTeX unterscheidet sich in seiner Arbeitsweise grundlegend von Programmen wie
 Microsoft Word, OpenOffice, oder Libreoffice.  In diesen Programmen werden die
-Dokument gleich so formatiert und angezeigt, wie sie auch später aussehen
+Dokumente gleich so formatiert und angezeigt, wie sie auch später aussehen
 sollen.  LaTeX hingegen ist eher eine *Markup-Sprache*, ähnlich zu HTML: das
 Dokument wird in einer *Textdatei* als reiner Text angegeben, ohne jegliche
 Formatierung (unter Windows sind diest .txt-Dateien).  Die gewünschte
@@ -54,10 +54,11 @@ in die gewünschte Ausgabe transformieren.
 ## Beispiel: Eine Vorlage für Diplomarbeiten
 
 Als Beispiel für eine LaTeX-Quelldatei haben wir eine
-kleine [Vorlage](latex/muster-diplomarbeit.tex) für Abschlussarbeiten, hier
+kleine [Vorlage](../latex-vorlage/muster-diplomarbeit.tex) für Abschlussarbeiten, hier
 am Beispiel einer Diplomarbeit, erstellt.  Die Datei öffnet sich in TeXStudio,
-und von dort aus kann man sie durch Drücken von F5 oder durch Klicken auf den
-grünen Doppelpfeil in ein [PDF](latex/muster-diplomarbeit.pdf) konvertieren.
+und von dort aus kann man sie durch Drücken von F6 oder durch Klicken auf den
+grünen Doppelpfeil in ein [PDF](../latex-vorlage/muster-diplomarbeit.pdf)
+konvertieren.
 
 Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert.  Das ist
 nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
