@@ -259,6 +259,11 @@ vielleicht sind sie ja dennoch etwas für euch:
   Telegram oder Threema. Selbst [Signal und Redphone](https://whispersystems.org/)
   sind aktuell auf zentrale Dienste – die eben auch wegfallen können – ausgelegt.
 
+* [Krita](https://krita.org/),
+  [auch portabel](http://portableapps.com/apps/graphics_pictures/krita-portable),
+  das Programm, welches [Photoshop an der Universität von Paris](https://krita.org/en/item/goodbye-photoshop-and-hello-krita-at-university-paris-8/)
+  abgelöst hat ermöglicht insb. Skizzen und Malerei auf dem Bildschirm.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
