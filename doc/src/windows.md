@@ -272,6 +272,15 @@ vielleicht sind sie ja dennoch etwas für euch:
   Markdown-Editor mit eingebautem Preview – nur falls Eduroam mal zu langsam oder
   ob der vielen Menschen im Raum nicht erreichbar ist.
 
+* [OpenProject](https://www.openproject.org/), eine Alternative zu Microsoft Project
+  für das Projekt-Management.
+  
+* [Atom](https://atom.io/), ein flinker Editor für den Desktop; vergleichbar zu
+  [Visual Studio Code](https://code.visualstudio.com/) – wer ihn von Visual Studio
+  – wohl nicht nur für [TypeScript](https://github.com/Microsoft/TypeScript) –
+  gewohnt ist könnte auch letzteren als eines der Projekte von Microsoft unter
+  einer Freien Lizens mit Unterstützung auch jenseits von Windows wählen.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
