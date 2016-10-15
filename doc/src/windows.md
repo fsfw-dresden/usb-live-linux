@@ -204,6 +204,14 @@ Darstellungen in euren Arbeiten.
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
 
+## Tor Browser Bundle
+
+Für anonymisiertes Surfen in den Netzen und Zugriff auf Onion Services ist
+der ohnehin portabel ausgelegte Fork von Mozilla Firefox mit der fertigen
+Konfiguration für das Tor-Netzwerk genau das Richtige.
+
+* Projekt-Link: [Tor-Project](https://www.torproject.org/)
+* Paket von: [Projekt-Seite](https://www.torproject.org/download/download-easy.html.en)
 
 ## Weitere Links
 
