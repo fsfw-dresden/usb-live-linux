@@ -22,6 +22,15 @@ Dateiformate.
 * Projekt-Link: [LibreOffice](https://www.libreoffice.org/)
 * Paket von: [LibreOffice/Downloads/Portable Version](https://www.libreoffice.org/download/portable-versions/)
 
+## Sumatra
+
+Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, Comic Book (CBZ and CBR).
+
+* Portable installiert: 11,6 MB
+* Paket-Größe: 4,2 MB
+* Projekt-Link: [Sumatra PDF](http://www.sumatrapdfreader.org/free-pdf-reader.html)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/office/sumatra_pdf_portable)
+
 ## Thunderbird
 
 Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
@@ -137,6 +146,18 @@ Rechner dafür verändert werden muss.
 * Projekt-Link: [virtualbox.org](https://www.virtualbox.org/)
 * Paket von: [vbox.me](http://vbox.me)
 
+## KeePass
+
+Passworte sollten nicht offen auf dem Stick herumliegen. Nicht auf der (FAT32-)Partition
+mit Windows-Programmen und anderen Daten und nicht auf denen für GNU/Linux.
+Mit diesem Programm können Passworte – über so gut wie jede Plattform nutzbar – abgelegt
+werden.
+
+* portable installiert: 5,2 MB
+* Paket-Größe: 2,3 MB
+* Projekt-Link: [keepass.info](http://www.keepass.info/)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/utilities/keepass_portable)
+
 ## VeraCrypt
 
 Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward
@@ -144,10 +165,11 @@ Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die
 Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten
 Festplatte.
 
-* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
-* Paket-Größe:
+* portable installiert: 40,8 MB
+* Paket-Größe: 6,0 MB
 * Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/), https://en.wikipedia.org/wiki/VeraCrypt
-* Paket von: []()
+* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
+* Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
 ## TIPP10 Portable
 
@@ -162,6 +184,8 @@ Tastaturlayouts anpassbar.
 Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und
 WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
+* portable installiert: 4,1 MB
+* Paket-Größe: 2,6 MB
 * Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
@@ -171,6 +195,15 @@ Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 
 * Projekt-Link: [downthemall.net](http://www.downthemall.net/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/internet/downthemall_extension)
+
+## Dia
+
+Ein Programm zur Erstellung von Diagrammen inkl. TeX-Export für skalierbare
+Darstellungen in euren Arbeiten. 
+
+* Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
+
 
 ## Weitere Links
 
@@ -195,3 +228,90 @@ vielleicht sind sie ja dennoch etwas für euch:
   Verschlüsselung von E-Mails.
 
 * [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
+
+* [Gantt Project](http://www.ganttproject.biz/), eine handliche, freie
+  Projektverwaltung mit übersichtlicher Darstellung.
+
+* [Scribus](http://www.scribus.net/),
+  [auch portabel](http://portableapps.com/apps/office/scribus_portable), Professionelles
+  Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer, Visitenkarten,
+  Bilderbücher und andere Arbeiten die bislang oft mit Adobe-Produkten
+  erledigt wurden.
+
+* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell
+  Skizzen erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird gerechnet).
+
+* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud der es ermöglicht auch
+  abseits von Dropbox, OneDrive oder iCloud Dokumente auf eigenen Rechnern mit
+  anderen zu teilen, egal ob Kommilitonen, Arbeitskollegen oder Familie.
+
+* [WinCDEmu](http://wincdemu.sysprogs.org/),
+  [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable), virtuelle
+  Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute kaum ein Rechner
+  optische Laufwerke hat, von Disketten ganz zu schweigen.
+
+* [Blender](http://www.blender.org/),
+  [auch portabel](http://portableapps.com/apps/graphics_pictures/blender_portable),
+  ein Programm zum erstellen von 3D-Animationen vom 3D-Modell bis zum Film-Projekt.
+
+* [Evince](http://projects.gnome.org/evince/),
+  [auch portabel](http://portableapps.com/apps/office/evince_portable), zeigt euch
+  neben PDF auch Dokumente in den Formaten PostScript, djvu, tiff, dvi an. Diese
+  werden  häufig für Druckerzeugnisse benötigt.
+
+* [Calibre](https://calibre-ebook.com/), dein digitales Bücherregal mit Reader und
+  Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter
+  den Formaten und bietet Plugins um die Funktionalität zu erweitern.
+
+* [Pidgin](https://pidgin.im/),
+  [auch portable](http://portableapps.com/apps/internet/pidgin_portable),
+  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac unterstützt
+  als Multiprotokoll-Messenger viele Protokolle (Jabber, IRC, ICQ, …) gleichzeitig.
+
+* [Conversations](https://conversations.im/), das letzte Wort in Sachen Messenger,
+  zumindest auf Android – sagen die Macher. Definitiv einer der nutzerfreundlichsten
+  Clients für Jabber und das bewahrt euch von Abhängigkeiten von Firmen wie Whatsapp,
+  Telegram oder Threema. Selbst [Signal und Redphone](https://whispersystems.org/)
+  sind aktuell auf zentrale Dienste – die eben auch wegfallen können – ausgelegt.
+
+* [Krita](https://krita.org/),
+  [auch portabel](http://portableapps.com/apps/graphics_pictures/krita-portable),
+  das Programm, welches [Photoshop an der Universität von Paris](https://krita.org/en/item/goodbye-photoshop-and-hello-krita-at-university-paris-8/)
+  abgelöst hat ermöglicht insb. Skizzen und Malerei auf dem Bildschirm.
+
+* [nomacs](https://nomacs.org/), ein Viewer für viele Bildformate, inkl. PSD und
+  RAW-Dateien einiger Digital-Kameras.
+
+* [CuteMarkEd](https://cloose.github.io/CuteMarkEd/),
+  [auch portabel](http://portableapps.com/apps/office/cutemarked-portable), ist ein
+  Markdown-Editor mit eingebautem Preview – nur falls Eduroam mal zu langsam oder
+  ob der vielen Menschen im Raum nicht erreichbar ist.
+
+* [OpenProject](https://www.openproject.org/), eine Alternative zu Microsoft Project
+  für das Projekt-Management.
+  
+* [Atom](https://atom.io/), ein flinker Editor für den Desktop; vergleichbar zu
+  [Visual Studio Code](https://code.visualstudio.com/) – wer ihn von Visual Studio
+  – wohl nicht nur für [TypeScript](https://github.com/Microsoft/TypeScript) –
+  gewohnt ist könnte auch letzteren als eines der Projekte von Microsoft unter
+  einer Freien Lizens mit Unterstützung auch jenseits von Windows wählen.
+
+* [XMind](http://www.xmind.net/),
+  [auch portabel](http://www.xmind.net/download/portable/),
+  ist praktisch um Gedanken bei einem Brainstorming zu dokumentieren oder das Ergebnis
+  für eine spätere Präsentation aufzubereiten.
+
+* [CamStudio](http://camstudio.org/),
+  [auch portabel](http://portableapps.com/apps/utilities/camstudio_portable),
+  hilft ganze Videos vom Bildschirm (so gewünscht mit Ton) aufzunehmen. Das ist eine
+  beinahe Kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
+  Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
+  besser planen zu können.
+
+## Siehe auch
+
+* [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
+  eine Programmsammlung die uns unter anderem zu diesem Projekt inspiriert hat.
+* [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
+  Programme für Windows, von denen die meisten auch Freie Software sind.
+* [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
