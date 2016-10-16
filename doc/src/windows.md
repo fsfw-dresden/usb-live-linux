@@ -74,6 +74,12 @@ BibTeX gut mit LaTeX zusammen genutzt werden kann.
 * Paket-Größe: 26,1 MB
 * Paket von [heise.de](https://www.heise.de/download/product/jabref-244593)
 
+## Zim
+
+Ein vielseitiges kleines Wiki für den eigenen Desktop zum speichern von Notizen, einfachen Todo-Listen, Bildern und einigem mehr.
+
+* Projekt-Link: [zim-wiki.org](http://zim-wiki.org)
+
 ## winpython/anaconda
 
 Eine portable Python-Distribution für Windows mit speziellem Fokus auf
@@ -335,9 +341,6 @@ vielleicht sind sie ja dennoch etwas für euch:
   beinahe kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
-
-* [Zim](http://zim-wiki.org/downloads.html), ein Wiki für den Desktop weil die mobile
-  Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
 * [Apachefriends](http://www.apachefriends.org/),
   [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
