@@ -81,7 +81,7 @@
 - :x:  kdeplasma-addons  -- Plasma-Erweiterungen 
 - :x:  kde-plasma-desktop  -- KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
 - :x:  kde-plasma-netbook  -- KDE Plasma Netbook und eine minimale Auswahl an Anwendungen - oder ...desktop
-- :+1:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
+- :x:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
 - :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
@@ -91,7 +91,7 @@
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
 - :x:  filelight  -- Speicherbelegungsvisualisierung
-- :o:  kde-wallpapers -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
+- :x:  kde-wallpapers -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
@@ -121,6 +121,7 @@
 - :x:  scribus  --	DTP-Programm
 - :+1:  scribus-template  -- Vorlagen
 - :x:  dia  -- umfangreiches Diagrammerstellungsprogramm
+- :x:  zim  -- Desktopwiki, welches durch Plugins erweitert werden kann
 
 - ###  libreoffice
 
@@ -262,7 +263,7 @@
 [//]: #     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
 [//]: #     - Recommends: freehdl, verilog, octave 
 [//]: #     - Außerdem brauchen wir noch Beispiele
-- :x:  kicad  -- KDE basiertes Elektroprogramm
+- :+1:  kicad  -- KDE basiertes Elektroprogramm
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
 - :+1:  kicad-doc-de  -- 
 - :+1:  fritzing  --
@@ -305,7 +306,7 @@
 - :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils  --
-- :o: :+1:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
+- :x: :+1:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
 - :+1:  texlive-fonts-extra-doc  --
 - :x:  texlive-fonts-recommended  --
 - :+1:  texlive-fonts-recommended-doc  --
@@ -365,28 +366,28 @@
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
-- :x:  gitg  -- weitere grafische Oberfläche für die Versionsverwaltung Git
-- :x:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+- :+1:  gitg  -- weitere grafische Oberfläche für die Versionsverwaltung Git
+- :+1:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
 - :x:  doxygen-gui  -- Frontend des Doku-Generators
 - :x:  doxygen-latex  -- Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
 - :x:  umbrello  -- einfaches UML-Tool für den KDE-Desktop
 
 - ###  IDEs
 
-- :x:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
-- :x:  geany-plugin-addons  
+- :+1:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
+- :+1:  geany-plugin-addons  
 - :+1:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
 - :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
-- :x:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
+- :+1:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
 - :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
 [//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
-- :x:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
-- :x:  geany-plugin-pairtaghighlighter  
-- :x:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
-- :x:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
-- :x:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
-- :x:  geany-plugin-vc  -- Geanyplugin für Versionsverwaltungen
-- :x:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
+- :+1:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
+- :+1:  geany-plugin-pairtaghighlighter  
+- :+1:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
+- :+1:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
+- :+1:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
+- :+1:  geany-plugin-vc  -- Geanyplugin für Versionsverwaltungen
+- :+1:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
 - :+1:  geany-plugin-projectorganizer  -- Projektverwaltungsplugin für Geany
 - :+1:  jedit  -- weiterer Texteditor, der durch Plugins erweitert werden kann
 - :o: :-1:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
@@ -424,7 +425,7 @@
 - :x:  pandoc  -- Multiformatkonverter
 - :x:  pandoc-citeproc  -- Literaturverwaltungserweiterung für Pandoc
 - :x:  docutils-common  -- weiterer Multiformatkonverter (für Restructured Text)
-- :+1:  hopenpgp-tools  -- hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
+- :x:  hopenpgp-tools  -- hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
 
 - ###  grafik
 
@@ -474,8 +475,8 @@
 
 ##  SystemTools
 
-- :x:  gpart  -- Partitionierungsprogramm (Konsolenvariante)
-- :x:  gparted  -- Partitionierungsprogramm (Frontend)
+- :o:  gpart  -- Partitionierungsprogramm (Konsolenvariante)
+- :o:  gparted  -- Partitionierungsprogramm (Frontend)
 - :+1:  virt-manager  -- mächtiges Virtualisierungsprogramm
 - :x:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm
 - :x:  wireshark  -- Netzwerkanalysetool
@@ -495,8 +496,8 @@
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
 
 - :x:  firmware-linux-free  --
-- [ ]  firmware-b43-installer  --
-- [ ]  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
+- :o:  firmware-b43-installer  --
+- :o:  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
 
 ##  live  -- System Pakete werden fürs Live-System benöttigt
 
