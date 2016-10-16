@@ -197,11 +197,36 @@
 
 - :x:  virtualbox-guest-utils
 - :x:  virtualbox-guest-x11
-[//]: # (Carsten: das gehört nicht hier her aber ist vermutlich in Normans Liste)
+[//]: # (Carsten: das gehört nicht hier her aber ist vermutlich in Normans Liste bzw ist aus meiner Sicht wichtig)
 - :x:  zim
 - :x:  okular-extra-backends
 - :x:  pdfchain
 - :x:  gfortran
+- :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
+- :x:  partitionmanager
+- :x:  kdesudo
+
+[//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
+- :x:  synaptic
+
+[//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
+- :x:  biber
+
+[//]: # (Carsten: finde ich wichtig zum Vergleich von Quelltexten)
+- :x:  kdiff3
+
+
+[//]: # Abhängigkeiten für qucs (Schaltungssimulation)
+- :x:  libc6
+- :x:  libgcc1
+- :x:  libqt4-qt3support
+- :x:  libqt4-script
+- :x:  libqt4-svg
+- :x:  libqtcore4
+- :x:  libqtgui4
+- :x:  libstdc++6
+- :x:  perl
+
 
 - ###  chemistry
 
