@@ -12,6 +12,15 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 - [→Freie Software für Windows](windows.md)
 - [→Python](python.md)
 
+## Rechtliches
+Das Linux-Live-System auf dem Stick basiert auf der Distribution
+[Debian stable](https://www.debian.org/) und enthält nur freie Software.
+Der Quellcode zu allen Programmen kann entweder von [debian](https://www.debian.org/)
+oder auf [Nachfrage](mailto:kontakt@fsfw-dresden.de) über uns bezogen werden.
+
+
+
+
 ## Was soll dieser Stick?
 
 Das Studium ist voller Programme, die wir nutzen wollen oder müssen – egal ob in
