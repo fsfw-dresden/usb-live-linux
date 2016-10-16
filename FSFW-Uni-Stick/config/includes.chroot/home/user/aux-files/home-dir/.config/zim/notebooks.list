@@ -1,0 +1,9 @@
+[NotebookList]
+Default=
+1=~/zim-notebooks/Notes
+
+[Notebook 1]
+uri=~/zim-notebooks/Notes
+name=Notes
+interwiki=None
+icon=None

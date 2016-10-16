@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment[de]=Arbeitsfläche für Netbook-Geräte
+Comment=Workspace shell for netbook devices.
+Exec=plasma-netbook --desktop
+Hidden=true
+Name[de]=Plasma Netbook
+Name=Plasma Netbook
+OnlyShowIn=KDE;
+Type=Service
+X-DBUS-StartupType=wait
+X-KDE-StartupNotify=false
+X-KDE-autostart-phase=BaseDesktop

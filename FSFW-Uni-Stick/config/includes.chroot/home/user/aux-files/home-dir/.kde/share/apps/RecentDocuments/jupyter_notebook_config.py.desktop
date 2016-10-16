@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=text-x-python
+Name=jupyter_notebook_config.py
+Type=Link
+URL[$e]=file://$HOME/.jupyter/jupyter_notebook_config.py
+X-KDE-LastOpenedWith=kate

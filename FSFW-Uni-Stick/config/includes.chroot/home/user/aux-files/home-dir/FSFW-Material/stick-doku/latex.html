@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title></title>
+    
+    <link rel="stylesheet" type="text/css" href="doc-files/fsfw-doc.css">
+    <link rel="shortcut icon" href="https://fsfw-dresden.de/img/favicon.ico" sizes="32x32">
+</head>
+
+
+<body>
+    <header id="banner">
+        <div id="banner-container">
+            <a id="sitelogo" href="https://fsfw-dresden.de/index.html" title="Zur Startseite"><img src="doc-files/sitelogo.svg" title="FSFW-Logo"></a>
+            
+        </div>
+    </header>
+        <nav>
+        <div id="navigation-area">
+            <a id="sticky-sitelogo" href="https://fsfw-dresden.de/index.html" title="Zur Startseite"><img src="doc-files/navlogo.svg" title="FSFW-Logo"></a>
+            <ul id="navigation" class="navigation">
+                <li class="turquoise"><a href="index.html">Hauptseite (Doku)</a></li>
+                <li class="violet"><a href="https://fsfw-dresden.de/index.html">FSFW-Webseite</a></li>
+                <li class="green"><a href="https://wiki.fsfw-dresden.de/">Wiki</a></li>
+                <li class="turquoise"><a href="https://wiki.fsfw-dresden.de/doku.php/doku/mitmachen">Mitmachen</a></li>
+            </ul>
+            <ul id="share-navigation" class="navigation">
+                <li class="nav-icon facebook-blue"><a href="https://facebook.com/fsfwdresden">
+                    <i class="fa fa-lg logo-facebook l-svg" title="Unsere Facebook-Seite">&nbsp;</i>
+                    <span class="hidden">Facebook</span>
+                </a><a id="facebook-note" href="https://wiki.fsfw-dresden.de/doku.php/positionen/position_zu_facebook">Bitte beachte auch unsere Position zu Facebook.</a></li><!--
+                --><li class="nav-icon twitter-blue"><a href="https://twitter.com/fsfwdresden">
+                    <i class="fa fa-lg logo-twitter l-svg" title="Unser Twitter-Account">&nbsp;</i>
+                    <span class="hidden">Twitter</span>
+                </a></li><!--
+                --><li class="nav-icon diaspora-grey"><a href="https://jenaspora.de/u/fsfw_dresden">
+                    <i class="fa fa-lg logo-diaspora l-svg" title="Unser Diaspora-Account">&nbsp;</i>
+                    <span class="hidden">Diaspora</span>
+                </a></li><!--
+                --><li class="nav-icon github-black"><a href="https://github.com/fsfw-dresden">
+                    <i class="fa fa-lg logo-github l-svg" title="Unsere GitHub-Organisation">&nbsp;</i>
+                    <span class="hidden">Github</span>
+                </a></li><!--
+                --><li class="nav-icon turquoise"><a href="mailto:kontakt@fsfw-dresden.de">
+                    <i class="fa fa-lg logo-envelope l-svg" title="Kontakt per E-Mail aufnehmen">&nbsp;</i>
+                    <span class="hidden">E-Mail</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div id="content-container" class="nopadding">
+<section id="vorstellung">
+
+<h1 id="latex-auf-dem-fsfw-stick">LaTeX auf dem FSFW-Stick</h1>
+<p>LaTeX (sprich: ‚la-tech‘) ist ein Werkzeug zur Erstellung wissenschaftlicher Dokumente in höchster Qualität. Es bietet hervorragende Unterstützung für das Setzen von Formeln, die automatische Aktualisierung von Referenzen, und die einfache Handhabung von Literaturverzeichnissen und Quellenangaben. Darüber kann LaTeX auch für zahlreiche andere Formen von Dokumenten genutzt werden, wie zum Beispiel Präsentationen, Briefe, und sogar Poster.</p>
+<p>Unser FSFW-Stick biete einen einfach Einstieg in die Verwendung von LaTeX. Dazu sind auf dem Stick zahlreiche Programme installiert, welche für die grundlegende Arbeit mit LaTeX bereits vollkommen ausreichend sind. Diese Programme, ihre Verwendung, und weiterführende Literatur werden hier im folgenden beschrieben.</p>
+<h2 id="was-ist-latex-und-was-kann-ich-damit-machen">Was ist LaTeX und was kann ich damit machen?</h2>
+<p>LaTeX unterscheidet sich in seiner Arbeitsweise grundlegend von Programmen wie Microsoft Word, OpenOffice, oder Libreoffice. In diesen Programmen werden die Dokument gleich so formatiert und angezeigt, wie sie auch später aussehen sollen. LaTeX hingegen ist eher eine <em>Markup-Sprache</em>, ähnlich zu HTML: das Dokument wird in einer <em>Textdatei</em> als reiner Text angegeben, ohne jegliche Formatierung (unter Windows sind diest .txt-Dateien). Die gewünschte Formatierung wird mit bestimmtem Markup, genannt <em>Makros</em>, in dieser Textdatei kodiert. Um zum Beispiel einen kurzen Textabschnitt in kursiv zu setzen, wird nicht einfach in der Textdatei kursiver Text hinterlegt (was ja auch gar nicht geht). Stattdessen steht im Dokument dann</p>
+<pre><code>\textit{Ich bin ein Text, der kursiv gesetzt wird.}</code></pre>
+<p>Dabei zeigt <code>\textit</code> an, dass der von geschweiften Klammern eingeschlossene Text im Dokument dann kursiv gesetzt werden soll.</p>
+<p>Woher kommt dann aber aus dieser Textdatei, der <em>LaTeX-Quelldatei</em>, ein schön formatiertes Dokument? Dazu gibt es Programme, welche die LaTeX-Quelldatei in zum Beispiel ein PDF übersetzen. Dabei werden die ganzen Formatierungsbefehle in ihre entsprechende Formatierung konvertiert. Das obige Beispiel wird dann im endgültigen PDF-Dokument als kursiver Text erscheinen.</p>
+<p>Das klingt alles erstmal ziemlich kompliziert, und tatsächlich ist die Lernkurve für LaTeX am Anfang wesentlich höher als zum Beispiel für Word. Allerdings bringt LaTeX gerade bei der Verarbeitung größerer Dokumente viele Vorteile mit sich. Solche Vorteile sind die automatische Verwaltung von Verweisen auf Textabschnitte, Formeln, Abbildung und Tabellen, die automatische Erstellung von Literatur- und Quellenverzeichnissen, die mühelose Angabe komplexer mathematischer Formeln und insbesondere die Einhaltung eines einheitlichen Aussehens im Dokument. Der Mehraufwand, den man bei LaTeX betreiben muss, zahlt sich aber schon bei Dokumenten mittlerer Größe aus.</p>
+<p>Zusätzlich gibt es eine Reihe von Programmen, die einen bei der Arbeit mit LaTeX unterstützen. Eines dieser Programmen ist <em>TeXStudio</em> und ist auf diesem Stick installiert. Damit lassen sich einfach komplexe Dokumente erstellen und schnell in die gewünschte Ausgabe transformieren.</p>
+<h2 id="beispiel-eine-vorlage-für-diplomarbeiten">Beispiel: Eine Vorlage für Diplomarbeiten</h2>
+<p>Als Beispiel für eine LaTeX-Quelldatei haben wir eine kleine <a href="../latex-vorlage/muster-diplomarbeit.tex">Vorlage</a> für Abschlussarbeiten, hier am Beispiel einer Diplomarbeit, erstellt. Die Datei öffnet sich in TeXStudio, und von dort aus kann man sie durch Drücken von F6 oder durch Klicken auf den grünen Doppelpfeil in ein <a href="../latex-vorlage/muster-diplomarbeit.pdf">PDF</a> konvertieren.</p>
+<p>Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert. Das ist nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles über LaTeX wissen. Dennoch hilft es, wenn man sich die Datei genauer ansieht und mit den Kommandos herumspielt, also Anweisungen verändert und dann neu übersetzt.</p>
+<h2 id="literatur-und-hilfe">Literatur und Hilfe</h2>
+<p>Literatur zu LaTeX gibt es reichlich. Hier wird eine kleine Auswahl von nützlichen Referenzen angeben:</p>
+<p>Im Netz:</p>
+<ul>
+<li><p>Die <a href="https://en.wikipedia.org/wiki/LaTeX">Wikipedia</a> hat nicht nur einen Artikel zu LaTeX, sondern sogar ein sehr ausführliches <a href="https://en.wikibooks.org/wiki/LaTeX">Wikibook</a>.</p></li>
+<li><p>Bei Problemen mit LaTeX hilft es meistens, in einer Suchmaschine „LaTeX + «was will ich machen»“ einzugeben. Dabei landet man oft auf folgenden Foren:</p></li>
+<li>http://golatex.de/</li>
+<li>http://www.latex-community.org/forum/</li>
+<li>https://tex.stackexchange.com (wenn man das als „Forum“ verstehen möchte …)</li>
+<li><p>http://texwelt.de</p></li>
+</ul>
+<p>Auch hilfreich ist das <a href="http://latex.wcms-file3.tu-dresden.de/phpBB3/index.php">Forum der TU</a>.</p>
+<ul>
+<li><p><a href="http://texample.net/">texample.net</a> ist eine Beispielsammlung für LaTeX-Dokumente mit speziellen Fokus auf Bildern</p></li>
+<li><p>Wer die Installation von LaTeX auf seinem eigenen Rechner scheut, kann es auch online unter https://www.sharelatex.com/ nutzen.</p></li>
+<li><p>Wer wissen will, was alles so in LaTeX möglich ist, kann sich im <a href="https://www.ctan.org/"><em>Comprehensive TeX Archive Network</em></a> umsehen.</p></li>
+</ul>
+<p>Eine Reihe von Büchern, die für den Einstieg, aber auch für die Vertiefung in LaTeX hilfreich sind, bietet die <a href="http://www.dante.de"><em>Deutsche Anwendervereinigung TeX e.V.</em></a> auf ihrer <a href="http://www.dante.de/index/Literatur.html">Literaturliste</a>; ansonsten einfach in der SLUB nachsehen, was es dort für Bücher zum Thema LaTeX gibt.</p>
+<p>Schließlich gibt es auch in regelmäßigen Abständen die <a href="https://wiki.fsfw-dresden.de/doku.php/doku/sprechstunde">LaTeX-Sprechstunde</a>. Häufig gestellte Fragen in dieser Sprechstunde sammeln wir in einer <a href="https://wiki.fsfw-dresden.de/doku.php/doku/latex/latex_tips">FAQ</a>.</p>
+<h2 id="noch-mehr-details-was-bring-der-stick-für-latex-mit">Noch mehr Details: Was bring der Stick für LaTeX mit?</h2>
+<p>Der Uni-Stick liefert eine reichhaltige TeX-Installation mit allen notwendigen Paketen, die gerade für das akademische Arbeiten hilfreich sind, zum Beispiel:</p>
+<ul>
+<li><p>Eine <em>LaTeX-Distribution</em> (<a href="https://www.tug.org/texlive/">TeXLive 2016</a>), die neben den Übersetzungsprogrammen für LaTeX-Quelldateien alle wesentlichen Komponenten für die Arbeit mit LaTeX mitbringt.</p></li>
+<li><p>Viele Zusatzpakete, die gerade zur akademischen Arbeit sinnvoll sind, z.B. für Präsentationen (<a href="https://www.ctan.org/pkg/beamer">beamer</a>), Diagramme (<a href="https://www.ctan.org/pkg/pgf">tikz</a>, <a href="https://www.ctan.org/pkg/pstricks-base">pstricks</a>), verschiedene Zitierstile (via bibtex oder <a href="https://www.ctan.org/pkg/biblatex">biblatex</a>) und mehr. Eine gute Übersicht über die verfügbaren Pakete und weitere Dokumentation gibt das Programm <code>texdoctk</code>.</p></li>
+<li><p>Dokumentation zu fast jedem Paket und Werkzeug, welches auch installiert ist. Diese Dokumentation lässt sich am besten mit <code>texdoc</code> aufrufen. Für das Paket <code>babel</code> etwa wäre der Aufruf <code>texdoc babel</code> auf der Kommandozeile. Eine kurze <a href="https://www.ctan.org/pkg/lshort-german">Einführung in LaTeX</a> selbst lässt sich durch <code>texdoc l2kurz</code> anzeigen.</p></li>
+<li><p>Werkzeuge zum Arbeiten mit LaTeX und drumherum, z.B. <a href="http://www.texstudio.org">TeXStudio</a> (LaTeX-Editor) und <a href="http://www2.warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/pdfjam">pdfjam</a> (Manipulation von PDF Dokumenten auf der Kommandozeile.</p></li>
+</ul>
+
+</section>
+<div>
+
+    <footer class="legal-links">
+        <ul class="navigation">
+            <li class="green"><a href="#">nach oben</a></li>
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="turquoise"><a href="https://fsfw-dresden.de/impressum.html">Impressum</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

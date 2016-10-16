@@ -1,0 +1,24 @@
+kcminputrc Mouse cursorTheme 'Oxygen_White'
+!/home/user/.kde/share/config/kcminputrc
+!/usr/share/config/kcminputrc
+*
+kcminputrc Mouse cursorSize ''
+!/home/user/.kde/share/config/kcminputrc
+!/usr/share/config/kcminputrc
+*
+ksplashrc KSplash Theme Default
+!/home/user/.kde/share/config/ksplashrc
+!/usr/share/config/ksplashrc
+*
+ksplashrc KSplash Engine KSplashX
+!/home/user/.kde/share/config/ksplashrc
+!/usr/share/config/ksplashrc
+*
+kcmfonts General forceFontDPI 0
+!/home/user/.kde/share/config/kcmfonts
+!/usr/share/config/kcmfonts
+*
+kdeglobals Locale Language '' # trigger requesting languages from KLocale
+!/home/user/.kde/share/config/kdeglobals
+!/usr/share/config/kdeglobals
+*

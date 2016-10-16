@@ -1,0 +1,6 @@
+[Added Associations]
+text/html=firefox-esr.desktop;kde4-kfmclient_html.desktop;kde4-kate.desktop;kde4-kwrite.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;gvim.desktop;vim.desktop;
+text/x-tex=texstudio.desktop;kde4-kate.desktop;kde4-kwrite.desktop;gvim.desktop;vim.desktop;
+
+[Removed Associations]
+text/x-tex=prerex.desktop;vprerex.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;

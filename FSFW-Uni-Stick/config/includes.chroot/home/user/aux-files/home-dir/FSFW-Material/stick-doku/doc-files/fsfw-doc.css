@@ -1,0 +1,588 @@
+@font-face {
+    font-family: 'TitilliumWebRegular';
+    src: url('./font/TitilliumWebRegular.eot');
+    src: local('TitilliumWebRegular'), url('./font/TitilliumWebRegular.woff') format('woff'), url('./font/TitilliumWebRegular.ttf') format('truetype');
+}
+
+html {
+    font-family: TitilliumWebRegular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: #F0F0F0;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/********** header **********/
+
+#banner {
+    display: block;
+    width: 100%;
+    height: 63px; /* exact height to match the banner image */
+    background: url(./banner-narrow.png) repeat-x;
+    overflow: visible;
+    z-index: 2;         /* to make the #sitelogo overlap the rest */
+    position: relative; /* z-index only affects positioned elements */
+    box-shadow: inset 0 -1px 3px -1px #CCC;
+}
+
+#banner-container {
+    display: block;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative; /* for placement of #sitelogo */
+    overflow: visible;
+}
+
+#sitelogo img {
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #CCC;
+    position: absolute;
+    top: 0px;
+    left: 1rem;
+    background: white;
+}
+#sitelogo:active img,
+#sitelogo:focus img,
+#sitelogo:hover img {
+    box-shadow: 0 0 8px #CCC;
+    background: #FAFAFA;
+}
+
+/********** navigation bar **********/
+
+nav {
+    display: block;
+    background: white;
+    box-shadow: 0 0 3px #CCC; /* NOTE: does not work for the top edge because of z-index; see #banner above for fix */
+    width: 100%;
+    min-height: 3rem;
+    z-index: 1;
+    position: relative; /* fallback for clients without position:sticky support */
+    position: sticky;   /* only supported in Firefox ATM, see http://caniuse.com/#feat=css-sticky */
+    top: 0;
+}
+
+#navigation-area {
+    display: block;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 0.5rem 0 1rem;
+    box-sizing: border-box;
+    line-height: 3rem;
+    position: relative; /* for correct placement of #sticky-sitelogo */
+}
+
+#sticky-sitelogo {
+    position: absolute;
+    left: 1rem;
+    top: -0.2rem;
+}
+#sticky-sitelogo img {
+    width: 150px;
+    vertical-align: middle;
+}
+
+/* NOTE: Don't confuse the class .navigation with the ID #navigation. The class
+ * also applies to #mobile-navigation. */
+ul.navigation {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul#navigation {
+    margin-left: calc(150px + 1rem);
+}
+
+ul#mobile-navigation {
+    display: none;
+}
+
+ul.navigation > li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul.navigation > li > a {
+    display: inline-block;
+    color: inherit !important;
+    text-decoration: none !important;
+    line-height: 1rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* .nav-icon applies to icons both in #share-navigation and #mobile-navigation
+ * (which are both .navigation) */
+ul.navigation > li.nav-icon > a {
+    width: 2rem;
+    text-align: center;
+}
+
+ul#share-navigation {
+    float: right;
+    position: relative;
+    top: 2px;
+}
+
+ul.navigation > li > a > i.fa {
+    font-size: 1.8rem;
+}
+
+ul.navigation > li.turquoise > a:hover,
+ul.navigation > li.turquoise > a:active,
+ul.navigation > li.turquoise > a:focus {
+    background: #28ADB8;
+    color: white !important;
+}
+
+ul.navigation > li.violet > a:hover,
+ul.navigation > li.violet > a:active,
+ul.navigation > li.violet > a:focus {
+    background: #654BC7;
+    color: white !important;
+}
+
+ul.navigation > li.green > a:hover,
+ul.navigation > li.green > a:active,
+ul.navigation > li.green > a:focus {
+    background: #6BBB00;
+    color: white !important;
+}
+
+ul.navigation > li.twitter-blue > a:hover,
+ul.navigation > li.twitter-blue > a:active,
+ul.navigation > li.twitter-blue > a:focus {
+    background: #55ACEE;
+    color: white !important;
+}
+
+ul.navigation > li.facebook-blue > a:hover,
+ul.navigation > li.facebook-blue > a:active,
+ul.navigation > li.facebook-blue > a:focus {
+    background: #3B5998;
+    color: white !important;
+}
+
+ul.navigation > li.diaspora-grey > a:hover,
+ul.navigation > li.diaspora-grey > a:active,
+ul.navigation > li.diaspora-grey > a:focus {
+    background: #eee;
+    color: white !important;
+}
+
+ul.navigation > li.github-black > a:hover,
+ul.navigation > li.github-black > a:active,
+ul.navigation > li.github-black > a:focus {
+    background: #333333;
+    color: white !important;
+}
+
+/* facebook note banner */
+
+a#facebook-note {
+    display: block;
+    position: absolute;
+    top: calc(2.8rem - 3px);
+    left: -32768px; /* hidden unless shown, but in a way that does not break [Tab] navigation */
+    width: 100%; /*relative to ul#share-navigation */
+    box-sizing: border-box;
+    border: 5px solid #3B5998;
+    padding: 0.5rem;
+    background: white;
+    color: black;
+}
+
+li:hover a#facebook-note, a:focus + a#facebook-note {
+    left: 0;
+}
+
+a#facebook-note:focus, a#facebook-note:hover, a#facebook-note:active {
+    left: 0;
+    background: #3B5998;
+    color: white;
+}
+
+code{
+    white-space: pre;
+    background:#F0F0F0;
+/*     border:black dashed 1px; */
+    padding:4px
+    
+}
+
+/********** condensed header layout for mobile **********/
+
+/* This reverts some rules below, which apply to the content area, through !important. */
+
+@media (max-width: 750px) {
+    #sitelogo img {
+        top: -10px;
+    }
+    #sticky-sitelogo {
+        display: none;
+    }
+
+    #navigation-area {
+        padding: 0 0.5rem;
+    }
+    ul#navigation {
+        margin-left: 0;
+    }
+
+    h1 {
+        margin-left: 1rem !important;
+    }
+}
+
+/* On narrow screens, we break the navigation icons out of the navigation bar,
+ * into a separate floating container. */
+
+@media (max-width: 550px) {
+    ul#share-navigation {
+        display: none;
+    }
+
+    ul#mobile-navigation {
+        display: block;
+        position: absolute;
+        top: -0.5rem;
+        right: 1rem;
+        box-shadow: 0 0 5px #CCC;
+        border-radius: 5px;
+        border: 1px solid #DDD;
+        padding: 0.75rem 0 0.25rem 0;
+        max-width: 6rem; /* two icons per 3rem */
+        background: white;
+    }
+
+    #navigation-area {
+        padding: 0;
+        text-align: center;
+    }
+}
+
+/********** content area **********/
+
+#content-container {
+    display: block;
+    margin: 0 auto;
+    max-width: 960px;
+    min-height: calc(100vh - 160px - 6rem); /* viewport height minus banner, <nav>, <footer> */
+    box-sizing: border-box;
+    background: white;
+    box-shadow: 0 0 3px #CCC;
+    padding: 0;
+}
+
+#content-container > section > * {
+    margin: 1rem;
+}
+#content-container > section:not(.notopmargin):first-child > *:first-child {
+    /* this placement is a bit more complicated because it needs to take the
+     * overflowing sitelogo into account */
+    margin-top: calc(100px - 3rem);
+}
+
+h1 {
+    text-align: left;
+    font-size: 200%;
+}
+
+#content-container > section:not(.notopmargin):first-child > h1:first-child {
+    /* when the content starts with a <h1>, move it next to the overflowing sitelogo */
+    padding-top: 0.5rem;
+    margin-top: 0;
+    margin-left: calc(150px + 2rem);
+}
+
+dl dd {
+    margin-left: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.important {
+    font-size: 120%;
+}
+
+a:link {
+    color: #28ADB8;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #654BC7;
+    text-decoration: none;
+}
+
+a:hover:link,
+a:active:link,
+a:focus:link {
+    color: #6BBB00;
+    text-decoration: underline;
+}
+
+a:hover:visited,
+a:active:visited,
+a:focus:visited {
+    color: #654BC7;
+    text-decoration: underline;
+}
+
+#content-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/********** special rules for themen.html **********/
+
+#content-container section .imageheader {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    min-height: 200px;
+    position: relative; /* for .imagelicense placement */
+}
+
+.imageheader h1 {
+    margin: 1rem 0;
+    margin-left: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    line-height: 1.8rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/********** special rules for programm.html **********/
+
+.abstract p {
+    font-size: 90%;
+    padding: 0 3rem;
+}
+
+@media(max-width: 30rem) {
+    .abstract p {
+        padding: 0 2rem;
+    }
+}
+
+aside.header-link {
+    float: right;
+    font-size: 0.8rem;
+    margin: 1rem;
+    margin-top: 0.5rem !important;
+}
+
+/* We condense the header layout a bit on narrow screens because it really looks weird when these inline-blocks break to the next line. */
+@media (max-width: 30rem) {
+    .imageheader h1 {
+        display: block;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+}
+@media (max-width: 25rem) {
+    .imageheader h1 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 20rem) {
+    .imageheader h1 {
+        font-size: 1.6rem;
+    }
+}
+
+
+a.imagelicense {
+    display: inline-block;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+a.imagelicense img {
+    max-height: 1.5rem;
+    vertical-align: middle;
+    padding-left: 0.15rem;
+}
+
+section.turquoise h1 {
+    background-color: #28ADB8;
+}
+section.violet h1 {
+    background-color: #654BC7;
+}
+section.green h1 {
+    background-color: #6BBB00;
+}
+
+section:first-child .imageheader h1 {
+    margin-left: calc(150px + 2rem);
+    margin-top: 0.3rem;
+}
+
+p.conclusion {
+    font-weight: bold;
+}
+
+footer {
+    min-height: 3rem;
+    background: #E8E8E8;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+footer h2 {
+    margin: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+footer ul#imagecredit {
+    margin: 0.5rem 1rem;
+    padding-left: 0.5rem;
+    list-style: none;
+    font-size: 0.8rem;
+}
+
+footer ul#imagecredit li {
+    padding: 0 0.5rem;
+}
+
+footer p.version {
+    margin: 0.5rem 1rem;
+    padding-left 0.5rem;
+    font-size: 0.8rem;
+}
+
+footer ul#imagecredit li:target {
+    display: inline-block;
+    background: #CCC;
+}
+
+/* Styling for the impressum-link footer */
+footer.legal-links {
+    display: block;
+    background: white;
+    box-shadow: 0 0 3px #CCC;
+    width: 100%;
+    text-align: center;
+}
+
+footer.legal-links ul {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+footer.legal-links ul li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+footer.legal-links a {
+}
+
+/* Styling for the staging warning */
+div.staging-warning {
+    display: block;
+    position: absolute;
+    font-size: 150%;
+    left: 0;
+    top: 0;
+    background: red;
+    z-index: 100; /* assure it is always on top */
+}
+
+/** logos actually used as svg **/
+
+/* some taken from font-awesome
+ * @license: MIT	http://opensource.org/licenses/mit-license.html
+ * */
+.logo-twitter {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjg0IDQwOHEtNjcgOTgtMTYyIDE2NyAxIDE0IDEgNDIgMCAxMzAtMzggMjU5LjV0LTExNS41IDI0OC41LTE4NC41IDIxMC41LTI1OCAxNDYtMzIzIDU0LjVxLTI3MSAwLTQ5Ni0xNDUgMzUgNCA3OCA0IDIyNSAwIDQwMS0xMzgtMTA1LTItMTg4LTY0LjV0LTExNC0xNTkuNXEzMyA1IDYxIDUgNDMgMCA4NS0xMS0xMTItMjMtMTg1LjUtMTExLjV0LTczLjUtMjA1LjV2LTRxNjggMzggMTQ2IDQxLTY2LTQ0LTEwNS0xMTV0LTM5LTE1NHEwLTg4IDQ0LTE2MyAxMjEgMTQ5IDI5NC41IDIzOC41dDM3MS41IDk5LjVxLTgtMzgtOC03NCAwLTEzNCA5NC41LTIyOC41dDIyOC41LTk0LjVxMTQwIDAgMjM2IDEwMiAxMDktMjEgMjA1LTc4LTM3IDExNS0xNDIgMTc4IDkzLTEwIDE4Ni01MHoiLz48L3N2Zz4=);
+}
+.logo-facebook {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNTc5IDEyOHEzNSAwIDYwIDI1dDI1IDYwdjEzNjZxMCAzNS0yNSA2MHQtNjAgMjVoLTM5MXYtNTk1aDE5OWwzMC0yMzJoLTIyOXYtMTQ4cTAtNTYgMjMuNS04NHQ5MS41LTI4bDEyMi0xdi0yMDdxLTYzLTktMTc4LTktMTM2IDAtMjE3LjUgODB0LTgxLjUgMjI2djE3MWgtMjAwdjIzMmgyMDB2NTk1aC03MzVxLTM1IDAtNjAtMjV0LTI1LTYwdi0xMzY2cTAtMzUgMjUtNjB0NjAtMjVoMTM2NnoiLz48L3N2Zz4=);
+}
+.logo-github {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjY0IDg5NnEwIDI1MS0xNDYuNSA0NTEuNXQtMzc4LjUgMjc3LjVxLTI3IDUtMzkuNS03dC0xMi41LTMwdi0yMTFxMC05Ny01Mi0xNDIgNTctNiAxMDIuNS0xOHQ5NC0zOSA4MS02Ni41IDUzLTEwNSAyMC41LTE1MC41cTAtMTIxLTc5LTIwNiAzNy05MS04LTIwNC0yOC05LTgxIDExdC05MiA0NGwtMzggMjRxLTkzLTI2LTE5Mi0yNnQtMTkyIDI2cS0xNi0xMS00Mi41LTI3dC04My41LTM4LjUtODYtMTMuNXEtNDQgMTEzLTcgMjA0LTc5IDg1LTc5IDIwNiAwIDg1IDIwLjUgMTUwdDUyLjUgMTA1IDgwLjUgNjcgOTQgMzkgMTAyLjUgMThxLTQwIDM2LTQ5IDEwMy0yMSAxMC00NSAxNXQtNTcgNS02NS41LTIxLjUtNTUuNS02Mi41cS0xOS0zMi00OC41LTUydC00OS41LTI0bC0yMC0zcS0yMSAwLTI5IDQuNXQtNSAxMS41IDkgMTQgMTMgMTJsNyA1cTIyIDEwIDQzLjUgMzh0MzEuNSA1MWwxMCAyM3ExMyAzOCA0NCA2MS41dDY3IDMwIDY5LjUgNyA1NS41LTMuNWwyMy00cTAgMzggLjUgODl0LjUgNTRxMCAxOC0xMyAzMHQtNDAgN3EtMjMyLTc3LTM3OC41LTI3Ny41dC0xNDYuNS00NTEuNXEwLTIwOSAxMDMtMzg1LjV0Mjc5LjUtMjc5LjUgMzg1LjUtMTAzIDM4NS41IDEwMyAyNzkuNSAyNzkuNSAxMDMgMzg1LjV6Ii8+PC9zdmc+);
+}
+.logo-envelope {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc5MiIgaGVpZ2h0PSIxNzkyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNjY0IDE1MDR2LTc2OHEtMzIgMzYtNjkgNjYtMjY4IDIwNi00MjYgMzM4LTUxIDQzLTgzIDY3dC04Ni41IDQ4LjUtMTAyLjUgMjQuNWgtMnEtNDggMC0xMDIuNS0yNC41dC04Ni41LTQ4LjUtODMtNjdxLTE1OC0xMzItNDI2LTMzOC0zNy0zMC02OS02NnY3NjhxMCAxMyA5LjUgMjIuNXQyMi41IDkuNWgxNDcycTEzIDAgMjIuNS05LjV0OS41LTIyLjV6bTAtMTA1MXYtMjQuNWwtLjUtMTMtMy0xMi41LTUuNS05LTktNy41LTE0LTIuNWgtMTQ3MnEtMTMgMC0yMi41IDkuNXQtOS41IDIyLjVxMCAxNjggMTQ3IDI4NCAxOTMgMTUyIDQwMSAzMTcgNiA1IDM1IDI5LjV0NDYgMzcuNSA0NC41IDMxLjUgNTAuNSAyNy41IDQzIDloMnEyMCAwIDQzLTl0NTAuNS0yNy41IDQ0LjUtMzEuNSA0Ni0zNy41IDM1LTI5LjVxMjA4LTE2NSA0MDEtMzE3IDU0LTQzIDEwMC41LTExNS41dDQ2LjUtMTMxLjV6bTEyOC0zN3YxMDg4cTAgNjYtNDcgMTEzdC0xMTMgNDdoLTE0NzJxLTY2IDAtMTEzLTQ3dC00Ny0xMTN2LTEwODhxMC02NiA0Ny0xMTN0MTEzLTQ3aDE0NzJxNjYgMCAxMTMgNDd0NDcgMTEzeiIvPjwvc3ZnPg==);
+}
+/* PDFReaders PDF File Icon - source: https://pdfreaders.org/graphics.htlm
+ * @license: unknown but intended and encouraged to use by source
+ * */
+.symbl-pdf-file {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIuMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjAiIGhlaWdodD0iMzIuMiI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJhIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3k9Ii0xLjkxIiBjeD0iMS41MSIgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLjYyIDAgMCAyLjA3IC00NC40IDI2LjQpIiByPSIxNC40Ij48c3RvcCBzdG9wLWNvbG9yPSIjNmJiMzQwIiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMDc1MDAwIiBvZmZzZXQ9IjEiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4xNSAtMS40NSkiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyLjkgMjQuNikiPjxyZWN0IHRyYW5zZm9ybT0ic2NhbGUoMSwtMSkiIGhlaWdodD0iMzAiIHdpZHRoPSIyMy40IiB5PSItOC42MSIgeD0iLTQxIiBmaWxsPSIjN2I3YjdiIi8+PHJlY3Qgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgdHJhbnNmb3JtPSJzY2FsZSgxLC0xKSIgaGVpZ2h0PSIzMCIgd2lkdGg9IjIzLjQiIHN0cm9rZT0iIzAwMCIgeT0iLTcuNjEiIHg9Ii00MiIgc3Ryb2tlLXdpZHRoPSIuNSIgZmlsbD0idXJsKCNhKSIvPjxwYXRoIHN0cm9rZS13aWR0aD0iLjM0MSIgZD0ibS0zNS42LTcuMzZzLTAuMiAwLTAuMi0wLjA1YzAtMC4wOSAwLjktMC4xNyAwLjktMC4xNyAxLjItMC4wNSAyLjItMC4xOCAzLjMtMC4zMSAzLjEtMC40NCA4LjYtMS41IDguNi01LjUxIDAtMC4zLTAuMS0wLjctMC4zLTAuOS0wLjItMC4xLTAuNS0wLjEtMC41LTAuM2gwLjZzLTAuMyAwLjEtMC4zIDAuMWwtMC41IDAuM2MtMC41IDAuNC0wLjggMC45LTEuMiAxLjQtMS4xIDEuNS0yLjEgMy4xNC0yLjkgNC44Mi0xLjUgMi45NS01LjIgMTMuMy05LjIgMTMuMy0wLjcgMC4wMi0xLjQtMC40Ni0xLjQtMS4yMSAwLTMuNDQgMTItOC40NyAxNC4yLTguNDcgMCAwIDAuMSAwIDAuMSAwLjA0LTIgMC44NC0xMy4xIDQuNTktMTMuMSA4LjM0IDAgMC4zNSAwLjIgMC43IDAuNSAwLjg4bDAuMyAwLjE4cy0wLjMgMC4wNC0wLjMgMC4wNGMzLjQgMCA4LjUtMTkuOSAxMy45LTE5LjkgMC45IDAgMS4zIDAuNCAxLjMgMS4zIDAgNS4xMi0xMC4xIDYuMTQtMTMuOCA2LjE0eiIgZmlsbD0iI2ZmZiIvPjxyZWN0IGhlaWdodD0iOC40OCIgd2lkdGg9IjIyLjIiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiB5PSItMjAuOCIgeD0iLTQ5LjUiIHN0cm9rZS13aWR0aD0iLjUiIGZpbGw9IiNmZmYiLz48dGV4dCBmb250LXNpemU9IjkuNjdweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeT0iLTEzLjkyNTk4NyIgeD0iLTQ2LjU3NTkxMiIgZm9udC1mYW1pbHk9IkJpdHN0cmVhbSBWZXJhIFNhbnMiIGZpbGw9IiMwMDAwMDAiPjx0c3BhbiB5PSItMTMuOTI1OTg3IiB4PSItNDYuNTc1OTEyIiBmb250LXNpemU9IjcuMjVweCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwNzUwMDAiPlBERjwvdHNwYW4+PC90ZXh0PjwvZz48L2c+PC9zdmc+);
+	padding-top: 0.7rem;
+}
+/* Creative Commons Symbols - source: https://creativecommons.org/about/downloads
+ * @license: CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/
+ * */
+.symbl-cc {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyBpZD0iY2Mtc3ltYm9sIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjUuNSAtMy41IDY0IDY0IiBoZWlnaHQ9IjY0IiB3aWR0aD0iNjQiPjxwYXRoIGZpbGw9IiNmOWY5ZjkiIGQ9Im0zNy42IDFjLTcuNiAwLTE0LjEgMi42OC0xOS40IDguMDUtMi42IDIuNjUtNC43IDUuNjUtNi4xIDkuMDUtMS40IDMuMy0yLjEgNi44LTIuMSAxMC41IDAgMy42MSAwLjcwOCA3LjA3IDIuMTMgMTAuNCAxLjQyIDMuMzQgMy40NCA2LjMyIDYuMDkgOC45NSAyLjYzIDIuNjMgNS42MSA0LjYzIDguOTMgNi4wMSAzLjMgMS4zIDYuNyAyIDEwLjQgMiAzLjYgMCA3LjA4LTAuNjk4IDEwLjUtMi4xIDMuMzgtMS40IDYuNDItMy40MyA5LjEzLTYuMDYgNS4yLTUuMSA3LjgtMTEuNSA3LjgtMTkuMiAwLTMuNy0wLjctNy4zLTItMTAuNi0xLjQtMy4zLTMuNC02LjItNi04Ljg3LTUuNS01LjM0LTEyLTguMDUtMTkuNS04LjA1eiIvPjxwYXRoIGQ9Im0zNy41LTMuMzZjOC45NCAwIDE2LjYgMy4xMiAyMi45IDkuMzYgMy4wMSAzLjAxIDUuMyA2LjQ0IDYuODYgMTAuMyAxLjUgMy45IDIuMyA4IDIuMyAxMi4zIDAgNC4zOC0wLjc3MyA4LjQ4LTIuMzEgMTIuMy0xLjU0IDMuODMtMy44MiA3LjItNi44MyAxMC4xLTMuMiAzLTYuNyA1LjQtMTAuNiA3LTQgMS43LTguMSAyLjUtMTIuMyAyLjUtNC4zIDAtOC4zLTAuOC0xMi4xLTIuNC0zLjktMS42LTcuMy00LTEwLjQtNy4xLTMuMS0zLTUuNC02LjUtNy0xMC4zLTEuNi0zLjktMi41LTcuOS0yLjUtMTIuMnMwLjgxLTguMyAyLjQzLTEyLjIgMy45Ny03LjQxIDcuMDctMTAuNWM2LjEtNi4xOSAxMy42LTkuMyAyMi40LTkuM3ptMC4yIDUuNzZjLTcuMzEgMC0xMy41IDIuNTUtMTguNSA3LjY1LTIuNTIgMi41NS00LjQ1IDUuNDEtNS44IDguNTlzLTIuMDMgNi40OS0yLjAzIDkuOTZjMCAzLjQzIDAuNjc1IDYuNzIgMi4wMyA5LjkgMS4zNSAzLjE4IDMuMjggNi4wMSA1LjggOC41MSAyLjUxIDIuNSA1LjM1IDQuNCA4LjUxIDUuNzFzNi40OCAxLjk3IDkuOTMgMS45N2MzLjQzIDAgNi43NS0wLjY2NCA5Ljk2LTIgMy4yMi0xLjMzIDYuMTItMy4yNiA4LjctNS43NiA0Ljk5LTQuODggNy40OC0xMSA3LjQ4LTE4LjMgMC0zLjU0LTAuNjQ4LTYuODktMS45NC0xMC4xLTEuMy0zLjEtMy4yLTUuOS01LjctOC40LTUuMy01LjA1LTExLjUtNy42Mi0xOC43LTcuNjJ6bS0wLjQgMjAuOS00LjMgMi4yYy0wLjQ1OC0wLjk1LTEuMDItMS42Mi0xLjY4LTItMC42NjctMC4zOC0xLjI5LTAuNTctMS44Ni0wLjU3LTIuODYgMC00LjI5IDEuODgtNC4yOSA1LjY1IDAgMS43MSAwLjM2MiAzLjA4IDEuMDggNC4xMSAwLjcyNCAxLjAzIDEuNzkgMS41NCAzLjIgMS41NCAxLjg3IDAgMy4xOC0wLjkxNCAzLjk0LTIuNzRsMy45NCAyYy0wLjgzNyAxLjU2LTIgMi43OS0zLjQ5IDMuNjktMS40OCAwLjg5NS0zLjEyIDEuMzQtNC45MSAxLjM0LTIuODYgMC01LjE2LTAuODc0LTYuOTItMi42My0xLjc1LTEuNzUtMi42My00LjE5LTIuNjMtNy4zIDAtMy4wNSAwLjg4NS01LjQ2IDIuNjYtNy4yNSAxLjc3LTEuNzkgNC4wMS0yLjY5IDYuNzItMi42OSA0IDAuMDk5OSA2LjggMS42IDguNTkgNC43em0xOC40IDAtNC4yMyAyLjIzYy0wLjUtMC45LTEtMS42LTEuNy0ycy0xLjMtMC42LTEuOS0wLjZjLTIuODYgMC00LjI5IDEuODgtNC4yOSA1LjY1IDAgMS43MSAwLjM2MyAzLjA4IDEuMDkgNC4xMSAwLjcyMyAxLjAzIDEuNzkgMS41NCAzLjIgMS41NCAxLjg2IDAgMy4xOC0wLjkxNCAzLjk0LTIuNzRsNCAyYy0wLjg3NCAxLjU2LTIuMDYgMi43OS0zLjU0IDMuNjktMS40OSAwLjg5NS0zLjEgMS4zNC00Ljg2IDEuMzQtMi45IDAtNS4yMS0wLjg3NC02Ljk0LTIuNjMtMS43NC0xLjc1LTIuNi00LjE5LTIuNi03LjMgMC0zLjA1IDAuODg0LTUuNDYgMi42Ni03LjI1IDEuNzctMS43OSA0LjAxLTIuNjkgNi43MS0yLjY5IDMuOSAwLjA5OTkgNi43IDEuNiA4LjM5IDQuN3oiLz48L3N2Zz4=);
+}
+.symbl-by {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyBpZD0iYnktc3ltYm9sIiB3aWR0aD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iNS41IC0zLjUgNjQgNjQiIGhlaWdodD0iNjQiPjxjaXJjbGUgdHJhbnNmb3JtPSJtYXRyaXgoLjk1NSAwIDAgLjk1NSAxLjU2IC45OTQpIiBjeT0iMjguOCIgY3g9IjM3LjYiIHI9IjI4LjMiIGZpbGw9IiNmOWY5ZjkiLz48cGF0aCBkPSJtMzcuNC0zLjVjOC45OSAwIDE2LjYgMy4wOCAyMi43IDkuMjYgNi4yMSA2LjIxIDkuMzIgMTMuOCA5LjMyIDIyLjcgMCA4Ljk5LTMuMDUgMTYuNS05LjE0IDIyLjUtNi40IDYuMy0xNC4xIDkuNS0yMi45IDkuNS04LjYgMC0xNi4xLTMuMS0yMi41LTkuNC02LjI2LTYuMy05LjQtMTMuOC05LjQtMjIuNnMzLjE0LTE2LjMgOS40LTIyLjdjNi4yLTYuMjIgMTMuNy05LjMgMjIuNS05LjN6bTAuMTE0IDUuNzdjLTcuMjggMC0xMy40IDIuNTUtMTguNSA3LjY2LTUuMjIgNS4zMy03LjgzIDExLjUtNy44MyAxOC42IDAgNy4wOSAyLjU5IDEzLjIgNy43NyAxOC40IDUuMTggNS4xOCAxMS40IDcuNzcgMTguNSA3Ljc3IDcuMTIgMCAxMy4zLTIuNjEgMTguNi03LjgzIDUuMDMtNC44NCA3LjU0LTExIDcuNTQtMTguMyAwLTcuMjgtMi41NS0xMy41LTcuNjYtMTguNi00LjktNS4yOC0xMS4xLTcuODMtMTguMy03Ljgzem04LjU3IDE4LjN2MTNoLTMuNnYxNS42aC0xMHYtMTUuNmgtMy42di0xM2MwLTAuNTcyIDAuMi0xLjA2IDAuNTk5LTEuNDYgMC40MDEtMC4zOTkgMC44ODctMC42IDEuNDYtMC42aDEzLjFjMC41MzMgMCAxLjAxIDAuMiAxLjQzIDAuNiAwLjQxNyAwLjQgMC42MjggMC44ODYgMC42MjggMS40NnptLTEzLjEtOC4zYzAtMy4wMSAxLjQ4LTQuNTEgNC40Ni00LjUxIDIuOTcgMCA0LjQ2IDEuNSA0LjQ2IDQuNTEgMCAyLjk3LTEuNDkgNC40Ni00LjQ2IDQuNDZzLTQuNDYtMS40OS00LjQ2LTQuNDZ6Ii8+PC9zdmc+);
+}
+.symbl-nc-eur {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNjQiIHdpZHRoPSI2NCIgdmlld0JveD0iNS41IC0zLjUgNjQgNjQiPjxjaXJjbGUgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjU3NiAuMDk3MCkiIGN5PSIyOC40IiBjeD0iMzYuOSIgcj0iMjguOSIgZmlsbD0iI2Y5ZjlmOSIvPjxwYXRoIGQ9Im02MC4yIDUuNzhjLTYuMi02LjE5LTEzLjgtOS4yOC0yMi43LTkuMjhzLTE2LjQgMy4wOS0yMi41IDkuMjhjLTYuMzUgNi40Mi05LjUgMTQtOS41IDIyLjcgMCA4Ljc0IDMuMTUgMTYuMyA5LjQ1IDIyLjZzMTMuOCA5LjQ0IDIyLjUgOS40NGM4LjgxIDAgMTYuNC0zLjE4IDIyLjktOS41MiA2LjEtNiA5LjEtMTMuNSA5LjEtMjIuNXMtMy4xLTE2LjUtOS4zLTIyLjd6bS00IDQxYy01LjI5IDUuMjMtMTEuNSA3Ljg0LTE4LjcgNy44NC03LjE2IDAtMTMuMy0yLjU5LTE4LjUtNy43Ni01LjE4LTUuMTctNy43Ny0xMS4zLTcuNzctMTguNCAwLTMgMC40NzQtNS44NCAxLjQxLTguNTFsOC40OCAzLjc1aC0wLjYxMXYzLjhoM2MwIDAuNTM4LTAuMDU0IDEuMDctMC4wNTQgMS42MXYwLjkxMmgtMi45NXYzLjhoMy40OGMwLjQ4MyAyLjg0IDEuNTYgNS4xNCAzIDYuOTYgMyAzLjk2IDcuODIgNi4xMSAxMy4xIDYuMTEgMy40MyAwIDYuNTMtMS4wMiA4LjM2LTIuMDRsLTEuMi02Yy0xLjEyIDAuNTg5LTMuNjQgMS4zOS02LjEgMS4zOS0yLjY4IDAtNS4yLTAuODAyLTYuOTEtMi43My0wLjgwMy0wLjkxLTEuMzktMi4xNC0xLjc3LTMuNzVoMTEuNmwxNi41IDcuMzJjLTEuMTQgMi4wMy0yLjYgMy45MS00LjM4IDUuNjJ6bS0yMC44LTE2LjgtMC4wNy0wLjA1NCAwLjEyIDAuMDU0aC0wLjA1em05Ljk2LTIuNTJoMC40Nzl2LTMuOGgtOS4wN2wtMy42OC0xLjYzYzAuMzE3LTAuNzEzIDAuNjkzLTEuMzUgMS4xMy0xLjg1IDEuNjYtMi4wNCA0LjAyLTIuOSA2LjU5LTIuOSAyLjM2IDAgNC41NSAwLjY5NiA1Ljk0IDEuMjhsMS41LTYuMTFjLTEuOTMtMC44NTUtNC43Ny0xLjYtOC4wNC0xLjYtNS4wNCAwLTkuMzIgMi4wNC0xMi40IDUuNDYtMC42NzggMC43ODMtMS4yNyAxLjY2LTEuOCAyLjU5bC0xMC42LTQuN2MxLjAyLTEuNTMgMi4yMi0zIDMuNjEtNC40IDUuMDItNS4xMiAxMS4yLTcuNjggMTguNC03LjY4IDcuMjYgMCAxMy40IDIuNTYgMTguNSA3LjY4IDUuMTIgNS4wNyA3LjY5IDExLjMgNy42OSAxOC42IDAgMi40MS0wLjI3MiA0LjY4LTAuODEyIDYuODJsLTE3LjUtNy44eiIvPjwvc3ZnPg==);
+}
+.symbl-nc-usd {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB3aWR0aD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iNS41IC0zLjUgNjQgNjQiIGhlaWdodD0iNjQiPjxjaXJjbGUgdHJhbnNmb3JtPSJtYXRyaXgoLjkxNiAwIDAgLjkxNiAzLjE3IDIuMTcpIiBjeT0iMjguNyIgY3g9IjM3LjUiIHI9IjI5LjUiIGZpbGw9IiNmOWY5ZjkiLz48cGF0aCBkPSJtMzcuNC0zLjVjOC45OSAwIDE2LjYgMy4wOCAyMi43IDkuMjYgNi4yMSA2LjE3IDkuMzIgMTMuOCA5LjMyIDIyLjcgMCA4Ljk5LTMuMDUgMTYuNS05LjE0IDIyLjUtNi40IDYuMy0xNC4xIDkuNS0yMi45IDkuNS04LjYgMC0xNi4xLTMuMi0yMi41LTkuNS02LjI2LTYuMy05LjQtMTMuOC05LjQtMjIuNSAwLTguOCAzLjE0LTE2LjMgOS40LTIyLjcgNi4yLTYuMjEgMTMuNy05LjMgMjIuNS05LjN6bS0yNC43IDIzLjRjLTAuOTUyIDIuNjMtMS40MyA1LjUtMS40MyA4LjYzIDAgNy4wOSAyLjU5IDEzLjIgNy43NyAxOC40IDUuMjIgNS4xNCAxMS40IDcuNzIgMTguNSA3LjcyIDcuMiAwIDEzLjQtMi42MSAxOC42LTcuODMgMS44Ny0xLjc5IDMuMzMtMy42NiA0LjQtNS42bC0xMi01LjRjLTAuNDIxIDIuMDItMS40NCAzLjY3LTMuMDYgNC45NC0xLjYyIDEuMjgtMy41NCAyLjAxLTUuNzQgMi4ydjQuOTJoLTMuN3YtNC44Yy0zLjUtMC4xLTYuOC0xLjQtOS43LTMuOWw0LjQtNC40NmMyLjA5IDEuOTQgNC40OCAyLjkxIDcuMTQgMi45MSAxLjEgMCAyLjA1LTAuMjQ2IDIuODMtMC43NDMgMC43OC0wLjQ5NCAxLjE3LTEuMzEgMS4xNy0yLjQ2IDAtMC44MDEtMC4yODctMS40NS0wLjg1OC0xLjk0bC0zLTEuMy0zLjgtMS43LTUuMS0yLjItMTYuMy03LjN6bTI0LjktMTcuN2MtNy4yOCAwLTEzLjQgMi41Ny0xOC41IDcuNzEtMS4yNiAxLjI2LTIuNDQgMi42OS0zLjU0IDQuMjlsMTIuMiA1LjVjMC41MzMtMS42OCAxLjU0LTMuMDIgMy4wMy00LjAzIDEuNDgtMS4wMSAzLjIyLTEuNTcgNS4yLTEuNjl2LTQuOTNoMy43MnY0LjkyYzIuOTMgMC4xNTMgNS42IDEuMTQgOCAyLjk3bC00LjE3IDQuMjljLTEuNzktMS4yNi0zLjYyLTEuODgtNS40OS0xLjg4LTAuOTkxIDAtMS44OCAwLjE5MS0yLjY2IDAuNTcxLTAuNzgxIDAuMzgxLTEuMTcgMS4wMy0xLjE3IDEuOTQgMCAwLjI2NyAwLjA5NSAwLjUzMyAwLjI4NSAwLjhsNC4wNiAxLjgzIDIuOCAxLjI2IDUuMTQgMi4yOCAxNi40IDcuMzFjMC41MzUtMi4yNSAwLjgwMS00LjUzIDAuODAxLTYuODYgMC03LjM1LTIuNTUtMTMuNS03LjY2LTE4LjYtNS01LjEyLTExLjItNy42OS0xOC40LTcuNjl6Ii8+PC9zdmc+);
+}
+/* own designs
+ * @lixense: AGPL 3.0 https://www.gnu.org/licenses/agpl-3.0.html
+ * */
+.logo-diaspora {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyBpZD0iZGlhc3BvcmEtbG9nbyIgd2lkdGg9IjYyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjYyMCI+PHBhdGggZD0ibTMxMSAxMGMtMTggMC4xNzktMzcuNCAxLjU0LTUwLjUgMy44NC02NCAxMS4zLTEyMCA0MC43LTE2NSA4Ny43LTQxLjUgNDIuNy02OSA5NS40LTc5LjYgMTUzLTguMzEgNDUuMS02Ljg1IDg2LjUgNC42IDEzMiAxNS43IDYxLjIgNTMuNSAxMTkgMTAzIDE1OSAyNS43IDIwLjUgNjEuNSAzOS45IDkyLjcgNTAuMiAyMi43IDcuNTMgNDQuMSAxMS45IDcyIDE0LjcgOS43MyAwLjk5OSA1Mi4zLTAuNDUyIDY0LjEtMi4xOCA4Ni44LTEyLjcgMTYxLTYwIDIxMC0xMzMgMTcuNS0yNi4yIDMzLjEtNjIgNDAuNy05My40IDYuNC0yNi4xIDcuNjEtMzcuNyA3LjYyLTcxLjIgMC4wMTI2LTM0LjktMS4zMS00Ni4xLTguODItNzUuNS0zMS0xMjItMTM3LTIxMi0yNjItMjI0LTgtMS4yLTE4LTEuNS0yOS0xLjR6Ii8+PHBhdGggZD0ibTMxMSAzNS41Yy0xNi41IDAuMTY0LTM0LjIgMS40MS00Ni4zIDMuNTItNTguNyAxMC4zLTExMCAzNy4zLTE1MiA4MC40LTM4LjEgMzkuMS02My4yIDg3LjQtNzIuOSAxNDAtNy42MiA0MS4zLTYuMjggNzkuNCA0LjIxIDEyMCAxNC40IDU2LjEgNDkgMTA5IDk0LjcgMTQ2IDIzLjUgMTguOCA1Ni40IDM2LjYgODQuOSA0NiAyMC45IDYuOSA0MC40IDEwLjkgNjYgMTMuNSA4LjkxIDAuOTE2IDQ4LTAuNDE0IDU4LjctMiA3OS41LTExLjcgMTQ4LTU1IDE5Mi0xMjIgMTYtMjQgMzAuMy01Ni44IDM3LjQtODUuNiA1Ljg3LTI0IDYuOTgtMzQuNSA2Ljk5LTY1LjIgMC4wMTE2LTMyLTEuMTktNDIuMy04LjA4LTY5LjItMjgtMTEyLTEyNS0xOTQtMjQwLTIwNi03LjQ3LTAuNzQ4LTE2LjktMS4wMy0yNi44LTAuOTM2eiIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Im0yOTQgNTM0Yy0yMC45LTIuMTUtMzYuOS01LjQyLTU0LTExLTIzLjQtNy43Mi01MC4yLTIyLjMtNjkuNS0zNy41LTM3LjUtMjkuOC02NS43LTczLjMtNzcuNi0xMTktOC41OS0zMy40LTkuNjYtNjQuNS0zLjQ1LTk4IDcuOTgtNDMuMSAyOC42LTgyLjYgNTkuNy0xMTUgMzQuMy0zNS4yIDc2LTU3LjIgMTI0LTY1LjYgMTUuOS0yLjc3IDQzLjYtMy43NSA1OS45LTIuMTIgOTMuOSA5LjM2IDE3MyA3Ni43IDE5NiAxNjggNS42NCAyMiA2LjYyIDMwLjQgNi42MSA1Ni41LTAuMDA5IDI1LjEtMC45MzkgMzMuNi01Ljc0IDUzLjMtNS43OCAyMy41LTE3LjUgNTAuMy0zMC42IDY5LjktMzYuNCA1NC41LTkyLjEgOTAuMS0xNTggOTkuOC04Ljc5IDEuMjktNDAuOCAyLjM4LTQ4LjEgMS42M3ptLTM1LjctODUuOGMxLjE0LTEuMzggMTMuMi0xNy44IDI2LjgtMzYuNyAxMy42LTE4LjggMjUuMi0zNC4yIDI1LjgtMzQuMiAwLjU1NS0wLjAxMTYgMTMgMTYuNSAyNy43IDM2LjcgMTkgMjYuMSAyNy4xIDM2LjYgMjguMSAzNi4yIDAuNzE1LTAuMjc0IDE0LjMtOS44OSAzMC4xLTIxLjQgMjAuNy0xNSAyOC43LTIxLjMgMjguNC0yMi4zLTAuMjA4LTAuNzc5LTEyLjItMTcuNy0yNi43LTM3LjUtMTQuNy0yMC4xLTI2LTM2LjUtMjUuNS0zNi45IDAuNDE5LTAuNDE4IDE5LjgtNi45NCA0My4yLTE0LjVzNDIuOC0xNCA0My4xLTE0LjRjMC44ODEtMC44NC0yMS41LTY5LjYtMjIuOC03MC4xLTAuNTE5LTAuMTg3LTIwLjMgNS45NC00My45IDEzLjYtMjMuNyA3LjY3LTQzLjIgMTMuNy00My42IDEzLjMtMC4zNjEtMC4zNTctMC43NTktMjEuMS0wLjg4Ni00Ni4xbC0wLjIyOS00NS41LTM2LjctMC4yMzFjLTI4LjgtMC4xODEtMzYuOSAwLjAxLTM3LjQgMC44ODMtMC4zOSAwLjYxMy0wLjcxNiAyMS4zLTAuNzIzIDQ1LjlzLTAuMzEzIDQ1LTAuNjc4IDQ1LjFjLTAuMzY1IDAuMjA5LTIwLTUuODktNDMuNi0xMy42LTMyLjctMTAuNi00My4yLTEzLjctNDQtMTIuOS0xLjUxIDEuNTEtMjIuNyA2Ny42LTIyLjEgNjkgMC4yNyAwLjcwMiAxMS44IDQuODcgMjYuOCA5LjcyIDQxLjYgMTMuNCA1OS4xIDE5LjQgNTkuNCAyMC4zIDAuMTQzIDAuNDg2LTExLjMgMTYuOC0yNS41IDM2LjJzLTI2LjEgMzYtMjYuNiAzNi44Yy0wLjYyNyAxLjE2LTAuMzM3IDEuOTUgMS4xOSAzLjI2IDMuMyAyLjgzIDU2LjkgNDEuNSA1Ny41IDQxLjYgMC4zMjIgMC4wMSAxLjUxLTEuMTEgMi42Ni0yLjQ5eiIvPjwvc3ZnPg==);
+}
+/* common logo/symbol style */
+.l-svg {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.fa-lg {
+	line-height: 1.35em; /* former calulation was font-size:1.8em \times line-height: 0.75em */
+	width: 1em;
+	height: 1em;
+	vertical-align: -15%;
+}
+.fa-sb {
+	line-height: 1.5em;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: -15%;
+	margin-left: 0.2ex;
+}
+.fa {
+	display: inline-block;
+	transform: translate(0px, 0px);
+}
+a:hover > .fa {
+	outline-color: invert;
+	filter: invert(100%);
+}
+

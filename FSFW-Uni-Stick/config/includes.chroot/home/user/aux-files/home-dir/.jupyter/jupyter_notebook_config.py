@@ -205,7 +205,7 @@ c.NotebookApp.notebook_dir = '/home/user/jupyter-notebooks'
 # platform dependent and determined by the python standard library `webbrowser`
 # module, unless it is overridden using the --browser (NotebookApp.browser)
 # configuration option.
-# c.NotebookApp.open_browser = True
+c.NotebookApp.open_browser = True
 
 # Hashed password to use for web authentication.
 #
