@@ -192,7 +192,7 @@ WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 * portable installiert: 4,1 MB
 * Paket-Größe: 2,6 MB
-* Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
+* Projekt-Link: [www.7-zip.org](http://www.7-zip.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/utilities/7-zip_portable2)
 
 ## DownThemAll
@@ -221,7 +221,7 @@ Konfiguration für das Tor-Netzwerk genau das Richtige.
 
 ## MediathekView
 
-Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
+Das Programm um endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
 zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
 für dein Studium? Speichere Sie für die spätere Verwendung.
 
