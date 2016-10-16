@@ -266,7 +266,7 @@
 - :x:  kdiff3
 
 
-[//]: # Abhängigkeiten für qucs (Schaltungssimulation)
+- ###  Abhängigkeiten für qucs (Schaltungssimulation)
 - :x:  libc6
 - :x:  libgcc1
 - :x:  libqt4-qt3support
