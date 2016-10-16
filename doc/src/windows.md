@@ -25,7 +25,7 @@ Dateiformate.
 Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und
 Comic Book (CBZ and CBR).
 
-* Portable installiert: 11,6 MB
+* Portable installiert: 6.79 MB
 * Paket-Größe: 4,2 MB
 * Projekt-Link: [Sumatra PDF](http://www.sumatrapdfreader.org/free-pdf-reader.html)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/sumatra_pdf_portable)
@@ -46,7 +46,7 @@ Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
 Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber
 mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
-* portable installiert: 14,4 MB
+* portable installiert: 16,5 MB
 * Paket-Größe: 4,1 MB
 * Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
@@ -64,22 +64,6 @@ Linux-Teil dieses Sticks.
 * Paket-Größe: 52,1 MB
 * Hersteller-Link: [texstudio.org](http://www.texstudio.org/)
 * Paket von: [computerbild.de](http://www.computerbild.de/download/TeXstudio-Portable-11851474.html)
-
-## JabRef
-
-Ein bekanntes Literaturverwaltungsprogramm, welches Dank der Verwendung von
-BibTeX gut mit LaTeX zusammen genutzt werden kann.
-
-* Paket-Größe: 26,1 MB
-
-## winpython/anaconda
-
-Eine portable Python-Distribution für Windows mit speziellem Fokus auf
-wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy,
-SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
-
-* Projekt-Link: https://winpython.github.io/
-* Paket von: https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.2.2/
 
 ## GIMP
 
@@ -172,7 +156,7 @@ Festplatte.
 * portable installiert: 40,8 MB
 * Paket-Größe: 6,0 MB
 * Projekt-Link: [veracrypt.codeplex.com](https://veracrypt.codeplex.com/), https://en.wikipedia.org/wiki/VeraCrypt
-* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation) {lang:en}
+* Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
 ## TIPP10 Portable
@@ -180,6 +164,8 @@ Festplatte.
 Ausgezeichnete Lernsoftware zum Thema Zehnfingersystem.  An verschiedene
 Tastaturlayouts anpassbar.
 
+* 13,8 MB
+* 4,34 MB
 * Projekt-Link: [tipp10.com](https://www.tipp10.com/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
@@ -193,18 +179,13 @@ WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 * Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
-## DownThemAll
-
-Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
-
-* Projekt-Link: [downthemall.net](http://www.downthemall.net/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/internet/downthemall_extension)
-
 ## Dia
 
 Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare
 Darstellungen in euren Arbeiten.
 
+* portable installiert: 78 MB
+* Paket-Größe: 14,1 MB
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
 
@@ -214,13 +195,15 @@ Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigu
 zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
 für dein Studium? Speichere Sie für die spätere Verwendung.
 
+* portable installiert: 88,1 MB
+* Paket-Größe: 37,5 MB
 * Projekt-Link: [MediathekView auf Sourceforge](http://zdfmediathk.sourceforge.net/)
 * Paket von: [Github / xaverW](https://github.com/xaverW/MediathekView/tree/master/dist/Portable)
 
 ## Weitere Links
 
 es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
-unter Windows genutzt werden kann, die wir aber auf diesem Stick nicht mit
+unter Windows genutzt werden kann, die wir aber auf diesem Stick icht mit
 unterbringen wollten, weil
 
 * es keine portablen Pakete für diese Software gibt, oder
@@ -247,11 +230,23 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [Gantt Project](http://www.ganttproject.biz/), eine handliche, freie
   Projektverwaltung mit übersichtlicher Darstellung.
 
+* [JabRef](http://www.jabref.org/), ein bekanntes Literaturverwaltungsprogramm,
+  welches Dank der Verwendung von BibTeX gut mit LaTeX zusammen genutzt werden kann.
+
+* [winpython/anaconda](https://winpython.github.io/), eine portable
+  Python-Distribution für Windows mit speziellem Fokus auf wissenschaftlicher
+  Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy, SciPy, Sympy,
+  Matplotlib, Pandas, und pyqtgraph.
+
 * [Scribus](http://www.scribus.net/),
   [auch portabel](http://portableapps.com/apps/office/scribus_portable),
   professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer,
   Visitenkarten, Bilderbücher und andere Arbeiten, die bislang oft mit
   Adobe-Produkten erledigt wurden.
+
+* [DownThemAll](http://www.downthemall.net/),
+  [auch portabel](http://portableapps.com/apps/internet/downthemall_extension),
+  Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 
 * [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell Skizzen
   erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird
