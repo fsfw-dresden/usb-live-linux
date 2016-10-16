@@ -199,7 +199,7 @@ c.NotebookApp.browser = '/usr/bin/firefox'
 # c.NotebookApp.nbserver_extensions = {}
 
 # The directory to use for notebooks and kernels.
-c.NotebookApp.notebook_dir = '/home/user/jupyter-notebooks'
+c.NotebookApp.notebook_dir = '/home/user/FSFW-Material/jupyter-notebooks'
 
 # Whether to open in a browser after starting. The specific browser used is
 # platform dependent and determined by the python standard library `webbrowser`
