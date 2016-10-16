@@ -23,7 +23,7 @@ Dateiformate.
 ## Sumatra
 
 Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und
-Comic Book (CBZ and CBR). Vorteile gegenüber Adobe Reader: sperrt geöffnete Dateien nicht, was LaTeX am 
+Comic Book (CBZ and CBR). Vorteile gegenüber Adobe Reader: sperrt geöffnete Dateien nicht, was LaTeX am
 Neuschreiben hindern würde. Außerdem ist er schneller.
 
 * Portable installiert: 11,6 MB
@@ -52,10 +52,15 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 * Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
 
-## TeX Studio
+## TeXStudio
 
 Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
+
+Damit ihr mit TeXStudio vernünftig arbeiten könnt, braucht ihr aber noch eine
+LaTeX-Distribution.  Wir empfehlen [TeXLive](https://www.tug.org/texlive/),
+siehe auch unsere [ausführlichere Beschreibung](latex.md) von LaTeX auf dem
+Linux-Teil dieses Sticks.
 
 * Paket-Größe: 52,1 MB
 * Hersteller-Link: [texstudio.org](http://www.texstudio.org/)
@@ -213,6 +218,16 @@ Konfiguration für das Tor-Netzwerk genau das Richtige.
 * Projekt-Link: [Tor-Project](https://www.torproject.org/)
 * Paket von: [Projekt-Seite](https://www.torproject.org/download/download-easy.html.en)
 
+## MediathekView
+
+Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
+zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
+für dein Studium? Speichere Sie für die spätere Verwendung.
+
+* Projekt-Link: [MediathekView auf Sourceforge](http://zdfmediathk.sourceforge.net/)
+* Paket von: [Github / xaverW](https://github.com/xaverW/MediathekView/tree/master/dist/Portable)
+
+
 ## Weitere Links
 
 es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
@@ -320,6 +335,14 @@ vielleicht sind sie ja dennoch etwas für euch:
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
 
+* [Zim](http://zim-wiki.org/downloads.html), ein Wiki für den Desktop weil die mobile
+  Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
+
+* [Apachefriends](http://www.apachefriends.org/),
+  [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
+  für all jene, die einen Server als Testumgebung für erste Gehversuche in der
+  Web-Programmierung benötigen.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
@@ -327,3 +350,5 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
+* [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
+  aus Freier Software für vielerlei Anwendungsfälle.
