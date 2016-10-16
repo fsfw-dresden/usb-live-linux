@@ -344,6 +344,8 @@ vielleicht sind sie ja dennoch etwas für euch:
   für all jene, die einen Server als Testumgebung für erste Gehversuche in der
   Web-Programmierung benötigen.
 
+* [MuseScore](MuseScore), ein freies Notensatzprogramm.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
