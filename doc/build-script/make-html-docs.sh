@@ -8,6 +8,9 @@
 
 # convert all markdown files at once
 
+
+echo "Siehe auch auto/paketliste. Dort wird die Doku auch gebaut."
+
 ORIGPATH=`pwd`
 
 cd ../src/
@@ -32,3 +35,5 @@ done
 
 
 cd $ORIGPATH
+
+echo "Fertig."
