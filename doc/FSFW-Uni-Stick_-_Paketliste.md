@@ -114,6 +114,8 @@
 ##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
 
 - ### :x:  Accessibility-Paketliste  -- [Software zur Barrierereduzierung] (Accessibility-Paketliste.md)
+ 
+- ### 
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
