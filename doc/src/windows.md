@@ -23,7 +23,8 @@ Dateiformate.
 ## Sumatra
 
 Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und
-Comic Book (CBZ and CBR).
+Comic Book (CBZ and CBR). Vorteile gegenüber Adobe Reader: sperrt geöffnete Dateien nicht, was LaTeX am 
+Neuschreiben hindern würde. Außerdem ist er schneller.
 
 * Portable installiert: 11,6 MB
 * Paket-Größe: 4,2 MB
