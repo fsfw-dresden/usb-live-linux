@@ -216,10 +216,25 @@ cp -vR ../html/* ../../FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files
 
 
 
-#cd $ORIGPATH
+cd $ORIGPATH
 
 echo "Doku-Erstellung und Verteilung fertig."
+echo "Manuelle Paket-Installation für chroot.hooks vorbereiten."
+
+cd ../manual-installed-packages
+
+if [ -e qucs_0.0.18-2_amd64.deb ];
+then
+
+    echo "qucs gefunden"
+else
+    wget https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
+fi
+
+cp -vR ./* ${ORIGPATH}/config/includes.chroot/home/user/aux-files/manual-installed-packages/
+
+echo " "
+echo "Manuelle Paket-Installation fertig vorbereitet."
 
 
-
-
+cd $ORIGPATH
