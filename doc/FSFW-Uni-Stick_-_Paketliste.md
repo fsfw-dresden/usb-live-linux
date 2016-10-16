@@ -202,6 +202,7 @@
 
 - :x:  digikam  -- Full-Featured Fotoverwaltung für KDE
 - :+1:  digikam-doc  
+- :+1:  kipi-plugins  -- Grafikbibliothek für KDEs Digikam
 
 - ###  3D-Grafik
 
