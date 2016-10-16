@@ -72,6 +72,7 @@ Ein bekanntes Literaturverwaltungsprogramm, welches Dank der Verwendung von
 BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * Paket-Größe: 26,1 MB
+* Paket von [heise.de](https://www.heise.de/download/product/jabref-244593)
 
 ## winpython/anaconda
 
@@ -192,7 +193,7 @@ WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 * portable installiert: 4,1 MB
 * Paket-Größe: 2,6 MB
 * Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
-* Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
+* Paket von: [PortableApps.com](http://portableapps.com/apps/utilities/7-zip_portable2)
 
 ## DownThemAll
 
@@ -342,6 +343,8 @@ vielleicht sind sie ja dennoch etwas für euch:
   [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
   für all jene, die einen Server als Testumgebung für erste Gehversuche in der
   Web-Programmierung benötigen.
+
+* [MuseScore](MuseScore), ein freies Notensatzprogramm.
 
 ## Siehe auch
 
