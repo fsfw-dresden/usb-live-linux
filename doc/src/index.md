@@ -10,6 +10,7 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 
 - [→LaTeX](latex.md)
 - [→Freie Software für Windows](windows.md)
+- [→Python](python.md)
 
 ## Was soll dieser Stick?
 
@@ -75,7 +76,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 [qucs]: http://qucs.sourceforge.net/
 [Inkscape]: https://inkscape.org/en/
 [GNU Octave]: https://www.gnu.org/software/octave/
-[Python]: https://www.python.org/
+[Python]: python.md
 [geogebra]: https://www.geogebra.org/
 [TeXStudio]: http://www.texstudio.org/
 [KDE]: https://www.kde.org/
