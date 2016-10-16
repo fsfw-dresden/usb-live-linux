@@ -91,7 +91,7 @@
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
 - :x:  filelight  -- Speicherbelegungsvisualisierung
-- :x:  kde-wallpapers -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
+- :x:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
