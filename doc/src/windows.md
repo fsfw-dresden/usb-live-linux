@@ -51,10 +51,15 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 * Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
 
-## TeX Studio
+## TeXStudio
 
 Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
+
+Damit ihr mit TeXStudio vernünftig arbeiten könnt, braucht ihr aber noch eine
+LaTeX-Distribution.  Wir empfehlen [TeXLive](https://www.tug.org/texlive/),
+siehe auch unsere [ausführlichere Beschreibung](latex.md) von LaTeX auf dem
+Linux-Teil dieses Sticks.
 
 * Paket-Größe: 52,1 MB
 * Hersteller-Link: [texstudio.org](http://www.texstudio.org/)
@@ -318,7 +323,7 @@ vielleicht sind sie ja dennoch etwas für euch:
   beinahe kugelsichere Vorbereitung für Vorführungen von gerne misslingenden
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
-  
+
 * [Zim](http://zim-wiki.org/downloads.html), ein Wiki für den Desktop weil die mobile
   Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
