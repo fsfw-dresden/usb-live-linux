@@ -71,8 +71,9 @@ Linux-Teil dieses Sticks.
 Ein bekanntes Literaturverwaltungsprogramm, welches Dank der Verwendung von
 BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
-* Paket-Größe: 26,1 MB
-* Paket von [heise.de](https://www.heise.de/download/product/jabref-244593)
+* Paket-Größe: 25 MB
+* Projekt-Link: [www.jabref.org/](http://www.jabref.org/)
+* Paket von [heise.de](https://www.fosshub.com/JabRef.html)
 
 ## Zim
 
