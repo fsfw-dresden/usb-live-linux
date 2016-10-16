@@ -150,7 +150,7 @@ nicht nur unter Windows, OSX und Linux, sondern auch unter Android und iOS.
 
 ## VirtualBox
 
-Ein Programm zur Simulation eines gesamten Rechners, auf dem dann auch andere
+Ein Programm zur Emulation eines gesamten Rechners, auf dem dann auch andere
 Betriebssysteme wie z.B. GNU/Linux laufen können, ohne das der eigentliche
 Rechner dafür verändert werden muss.
 
