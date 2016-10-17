@@ -34,6 +34,7 @@ Comic Book (CBZ and CBR).
 
 Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
 Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
+<!-- todo: LDAP der TU/HS einbinden -->
 
 * portable installiert: 86,2 MB
 * Paket-Größe: 75,5 MB
@@ -51,7 +52,7 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 * Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
 
-## TeXStudio
+## TeXstudio
 
 Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
@@ -93,15 +94,6 @@ gleichzeitig bearbeitet werden können.
 * Paket-Größe: 33,9 MB
 * Projekt-Link: [audacityteam.org](http://www.audacityteam.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/music_video/audacity_portable)
-
-## avidemux
-
-Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.
-Unterstützt zahlreiche Standardformate.
-
-* Paket-Größe: 21,4 MB
-* Hersteller-Link: [fixounet](http://fixounet.free.fr/avidemux/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/music_video/avidemux-portable)
 
 ## Firefox
 
@@ -159,13 +151,15 @@ Festplatte.
 * Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
+<!-- VPN-Software -->
+
 ## TIPP10 Portable
 
 Ausgezeichnete Lernsoftware zum Thema Zehnfingersystem.  An verschiedene
 Tastaturlayouts anpassbar.
 
-* 13,8 MB
-* 4,34 MB
+* portable installiert: 13,8 MB
+* Paket-Größe: 4,34 MB
 * Projekt-Link: [tipp10.com](https://www.tipp10.com/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
@@ -189,16 +183,7 @@ Darstellungen in euren Arbeiten.
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
 
-## MediathekView
-
-Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
-zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
-für dein Studium? Speichere Sie für die spätere Verwendung.
-
-* portable installiert: 88,1 MB
-* Paket-Größe: 37,5 MB
-* Projekt-Link: [MediathekView auf Sourceforge](http://zdfmediathk.sourceforge.net/)
-* Paket von: [Github / xaverW](https://github.com/xaverW/MediathekView/tree/master/dist/Portable)
+<!-- ToDo: Irgendwas für Backups -->
 
 ## Weitere Links
 
@@ -216,6 +201,11 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich
   zu Adobe Photoshop
 
+* [avidemux](http://fixounet.free.fr/avidemux/),
+  [auch portabel](http://portableapps.com/apps/music_video/avidemux-portable),
+  Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.
+  Unterstützt zahlreiche Standardformate.
+
 * [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz für
   Matlab.
 
@@ -224,6 +214,14 @@ vielleicht sind sie ja dennoch etwas für euch:
   einfache
   [Schritt-für-Schritt Anleitung](https://wiki.fsfw-dresden.de/doku.php/doku/software/gpg/anleitungen_zu_pgp) der
   FSFW.
+
+* [LyX](http://www.lyx.org/), What you see is what you mean!
+
+* [MediathekView](http://zdfmediathk.sourceforge.net/),
+  [auch portabel](https://github.com/xaverW/MediathekView/tree/master/dist/Portable),
+  Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
+  zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
+  für dein Studium? Speichere Sie für die spätere Verwendung.
 
 * [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
 
@@ -323,9 +321,9 @@ vielleicht sind sie ja dennoch etwas für euch:
   Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
 * [Apachefriends](http://www.apachefriends.org/),
-  [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
-  für all jene, die einen Server als Testumgebung für erste Gehversuche in der
-  Web-Programmierung benötigen.
+  [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver,
+  Datenbank und Script-Interpreter für PHP für all jene, die einen Server als Testumgebung
+  für erste Gehversuche in der Web-Programmierung benötigen.
 
 ## Siehe auch
 
@@ -336,3 +334,5 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
 * [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
   aus Freier Software für vielerlei Anwendungsfälle.
+
+<!-- ToDo: WebDAV / Sync-Kram -->
