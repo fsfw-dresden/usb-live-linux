@@ -325,6 +325,9 @@ vielleicht sind sie ja dennoch etwas für euch:
   Datenbank und Script-Interpreter für PHP für all jene, die einen Server als Testumgebung
   für erste Gehversuche in der Web-Programmierung benötigen.
 
+* [Denemo](http://www.denemo.org/), ein freies Notensatzprogramm für die Musiker unter
+  den Studierenden.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
