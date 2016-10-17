@@ -1,6 +1,7 @@
 # usb-live-linux - FSFW-Uni-Stick
 
-Live-Linux System mit der Zielgruppe Studium in Dresden
+* Live-Linux System mit der Zielgruppe Studium in Dresden
+* Zusammenstellung von [Programmen für Windows](doc/src/windows.md)
 
 In diesem Repo liegen Skripte, Konfigurationsdateien und Doku, die eine Standardinstallation, in ein von uns gewünschte, auf die Bedürfnisse des Studiums angepasste Live-System-Variante bringt.
 
