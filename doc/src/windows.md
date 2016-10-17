@@ -151,7 +151,7 @@ Festplatte.
 * Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
-<!-- VPN-Software -->
+<!-- [OpenVPN](http://ovpnp.sourceforge.net/), portabler Client für OpenVPN -->
 
 ## TIPP10 Portable
 
