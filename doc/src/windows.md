@@ -1,19 +1,14 @@
 # Freie Software für Windows
 
 Hier möchten wir euch Programme für Windows, entsprechend denen auf der
-Live-Partition mit Linux, in die Hand geben. Ein Vorteil von Freier Software
-ist, dass sie auch oft für andere Betriebssysteme zur Verfügung stehen oder die
-Datenformate in alternativen Programmen verwendet werden können.
+Live-Partition mit Linux, in die Hand geben. Ein Vorteil von Freier Software ist, dass sie auch oft für andere Betriebssysteme zur Verfügung stehen oder die Datenformate in alternativen Programmen verwendet werden können.
 
 Was hier auf der Liste steht ist im Quellcode unter einer freien Lizenz verfügbar.
 
 ## LibreOffice
 
-Eine freie Office-Suite ähnlich zu der von Microsoft, inklusive Textverabeitung
-(Writer), Tabellenkalkulation (Calc), und Präsentationserstellung (Impress).
-LibreOffice ist in der Lage, Dokumente von Microsoft-Produkten einigermaßen
-ansehnlich zu öffnen und zu verarbeiten, nutzt sonst aber eher freie
-Dateiformate.
+Eine freie Office-Suite ähnlich zu der von Microsoft, inklusive Textverarbeitung (Writer), Tabellenkalkulation (Calc), und Präsentationen (Impress).
+LibreOffice ist in der Lage, Dokumente von Microsoft-Produkten einigermaßen ansehnlich zu öffnen und zu verarbeiten, nutzt sonst aber eher freie Dateiformate.
 
 * Portable installiert: 700 MB
 * Paket-Größe: 243,7 MB
@@ -22,8 +17,7 @@ Dateiformate.
 
 ## Sumatra
 
-Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und
-Comic Book (CBZ and CBR).
+Ein Viewer für die Datei-Formate PDF, eBook (ePub, Mobi), XPS, DjVu, CHM, und Comic Book (CBZ and CBR).
 
 * Portable installiert: 6.79 MB
 * Paket-Größe: 4,2 MB
@@ -34,6 +28,7 @@ Comic Book (CBZ and CBR).
 
 Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
 Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
+
 <!-- todo: LDAP der TU/HS einbinden -->
 
 * portable installiert: 86,2 MB
@@ -44,8 +39,7 @@ Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
 
 ## Notepad++
 
-Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber
-mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
+Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
 * portable installiert: 16,5 MB
 * Paket-Größe: 4,1 MB
@@ -54,8 +48,7 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
 ## TeXstudio
 
-Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
-verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
+Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 
 Damit ihr mit TeXStudio vernünftig arbeiten könnt, braucht ihr aber noch eine
 LaTeX-Distribution.  Wir empfehlen [TeXLive](https://www.tug.org/texlive/),
@@ -68,8 +61,7 @@ Linux-Teil dieses Sticks.
 
 ## GIMP
 
-Ein hochqualitatives Programm zur Bildbearbeitung, vergleichbar mit Adobe
-Photoshop.  Läuft auf GNU/Linux, OSX, und Windows.
+Ein hochqualitatives Programm zur Bildbearbeitung, vergleichbar mit Adobe Photoshop.  Läuft auf GNU/Linux, Mac, und Windows.
 
 * portable installiert: 313 MB
 * Paket-Größe: 75,6 MB
@@ -87,8 +79,7 @@ Ein freies Programm zur Erstellung und Manipulation von Vektorgraphiken.
 
 ## Audacity
 
-Ein freier Audio-Editor und Audio-Rekorder, in dem beliebig viele Audiospuren
-gleichzeitig bearbeitet werden können.
+Ein freier Audio-Editor und Audio-Rekorder, in dem beliebig viele Audiospuren gleichzeitig bearbeitet werden können.
 
 * portable installiert: 65,5 MB
 * Paket-Größe: 33,9 MB
@@ -106,9 +97,7 @@ Der wohl am meisten genutzte freie Web-Browser.
 
 ## VLC Media Player
 
-Als eine freie Alternative zum Windows Media Player kann der VLC Media Player
-für das Abspielen aller gängigen Audio- und Video-Formate genutzt werden.  Läuft
-nicht nur unter Windows, OSX und Linux, sondern auch unter Android und iOS.
+Als eine freie Alternative zum Windows Media Player kann der VLC Media Player für das Abspielen aller gängigen Audio- und Video-Formate genutzt werden.  Läuft nicht nur unter Windows, Mac und Linux, sondern auch unter Android und iOS.
 
 * portable installiert: 125 MB
 * Paket-Größe: 36,5 MB
@@ -117,9 +106,7 @@ nicht nur unter Windows, OSX und Linux, sondern auch unter Android und iOS.
 
 ## VirtualBox
 
-Ein Programm zur Simulation eines gesamten Rechners, auf dem dann auch andere
-Betriebssysteme wie z.B. GNU/Linux laufen können, ohne das der eigentliche
-Rechner dafür verändert werden muss.
+Ein Programm zur Simulation eines gesamten Rechners, auf dem dann auch andere Betriebssysteme wie z.B. GNU/Linux laufen können, ohne das der eigentliche Rechner dafür verändert werden muss.
 
 * portable installiert: 3,37 MB
 * Paket-Größe: 118,4 MB
@@ -129,9 +116,7 @@ Rechner dafür verändert werden muss.
 ## KeePass
 
 Passworte sollten nicht offen auf dem Stick herumliegen, nicht auf der
-(FAT32-)Partition mit Windows-Programmen und anderen Daten und nicht auf denen
-für GNU/Linux.  Mit diesem Programm können Passworte – über so gut wie jede
-Plattform nutzbar – abgelegt werden.
+(FAT32-)Partition mit Windows-Programmen und anderen Daten und nicht auf denen für GNU/Linux.  Mit diesem Programm können Passworte – über so gut wie jede Plattform nutzbar – abgelegt werden.
 
 * portable installiert: 5,2 MB
 * Paket-Größe: 2,3 MB
@@ -140,10 +125,7 @@ Plattform nutzbar – abgelegt werden.
 
 ## VeraCrypt
 
-Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward
-Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die
-Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten
-Festplatte.
+Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten Festplatte.
 
 * portable installiert: 40,8 MB
 * Paket-Größe: 6,0 MB
@@ -165,8 +147,7 @@ Tastaturlayouts anpassbar.
 
 ## 7-zip
 
-Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und
-WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
+Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 * portable installiert: 4,1 MB
 * Paket-Größe: 2,6 MB
@@ -175,8 +156,7 @@ WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 ## Dia
 
-Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare
-Darstellungen in euren Arbeiten.
+Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare Darstellungen in euren Arbeiten.
 
 * portable installiert: 78 MB
 * Paket-Größe: 14,1 MB
@@ -187,27 +167,21 @@ Darstellungen in euren Arbeiten.
 
 ## Weitere Links
 
-es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
-unter Windows genutzt werden kann, die wir aber auf diesem Stick icht mit
-unterbringen wollten, weil
+es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die unter Windows genutzt werden kann, die wir aber auf diesem Stick nicht mit unterbringen wollten, weil
 
 * es keine portablen Pakete für diese Software gibt, oder
 * ein anderes Programm hier besser geeignet erschien, oder
 * einfach der Platz auf dem Stick begrenzt ist.
 
-Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn
-vielleicht sind sie ja dennoch etwas für euch:
+Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn vielleicht sind sie ja dennoch etwas für euch:
 
-* [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich
-  zu Adobe Photoshop
+* [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich zu Adobe Photoshop
 
 * [avidemux](http://fixounet.free.fr/avidemux/),
-  [auch portabel](http://portableapps.com/apps/music_video/avidemux-portable),
-  Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.
-  Unterstützt zahlreiche Standardformate.
+  [auch portabel](http://portableapps.com/apps/music_video/avidemux-portable), Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.  Unterstützt zahlreiche Standardformate.
 
-* [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz für
-  Matlab.
+* [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz
+  für Matlab.
 
 * [Enigmail](https://www.enigmail.net/), ein Thunderbird-Plugin zur
   Verschlüsselung von E-Mails.  Dazu gibt es auch eine
@@ -219,11 +193,12 @@ vielleicht sind sie ja dennoch etwas für euch:
 
 * [MediathekView](http://zdfmediathk.sourceforge.net/),
   [auch portabel](https://github.com/xaverW/MediathekView/tree/master/dist/Portable),
-  Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung
-  zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz
-  für dein Studium? Speichere Sie für die spätere Verwendung.
+  Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine
+  Berechtigung zu verleihen. Gestern den Tatort verpasst? Kein Problem!
+  Oder eine Sendung hat Relevanz für dein Studium? Speichere Sie für
+  die spätere Verwendung.
 
-* [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
+* [Zotero](https://www.zotero.org/), ein freies Programm zur Literaturverwaltung mit [Unterstützung für LibreOffice](https://www.zotero.org/support/word_processor_plugin_installation#libreoffice) und einem Webservice für kollaboratives Arbeiten, den man auch selbst betreiben kann.
 
 * [Gantt Project](http://www.ganttproject.biz/), eine handliche, freie
   Projektverwaltung mit übersichtlicher Darstellung.
@@ -232,50 +207,56 @@ vielleicht sind sie ja dennoch etwas für euch:
   welches Dank der Verwendung von BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * [winpython/anaconda](https://winpython.github.io/), eine portable
-  Python-Distribution für Windows mit speziellem Fokus auf wissenschaftlicher
-  Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy, SciPy, Sympy,
-  Matplotlib, Pandas, und pyqtgraph.
+  Python-Distribution für Windows mit speziellem Fokus auf
+  wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken
+  wie NumPy, SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
 
 * [Scribus](http://www.scribus.net/),
   [auch portabel](http://portableapps.com/apps/office/scribus_portable),
-  professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer,
-  Visitenkarten, Bilderbücher und andere Arbeiten, die bislang oft mit
-  Adobe-Produkten erledigt wurden.
+  professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a.
+  Flyer, Visitenkarten, Bilderbücher und andere Arbeiten, die bislang
+  oft mit Adobe-Produkten erledigt wurden.
 
 * [DownThemAll](http://www.downthemall.net/),
   [auch portabel](http://portableapps.com/apps/internet/downthemall_extension),
-  Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
+  Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer
+  Webseite.
 
-* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell Skizzen
-  erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird
-  gerechnet).
+* [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell
+  Skizzen erstellen und Ergebnisse geometrisch sauber "ermitteln"
+  (intern wird gerechnet).
 
-* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud, der es ermöglicht auch
-  abseits von Dropbox, OneDrive oder iCloud Dokumente auf eigenen Rechnern mit
-  anderen zu teilen, egal ob Kommilitonen, Arbeitskollegen oder Familie.
+* [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud, der es
+  ermöglicht auch abseits von Dropbox, OneDrive oder iCloud Dokumente
+  auf eigenen Rechnern mit anderen zu teilen, egal ob Kommilitonen,
+  Arbeitskollegen oder Familie.
 
 * [WinCDEmu](http://wincdemu.sysprogs.org/),
   [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable),
-  virtuelle Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute kaum ein
-  Rechner optische Laufwerke hat, von Disketten ganz zu schweigen.
+  virtuelle Laufwerke für Images von USB/DVD/CD/Disketten…. Weil heute
+  kaum ein Rechner optische Laufwerke hat, von Disketten ganz zu
+  schweigen.
 
 * [Blender](http://www.blender.org/),
   [auch portabel](http://portableapps.com/apps/graphics_pictures/blender_portable),
-  ein Programm zum erstellen von 3D-Animationen, 3D-Modellen bis hin zum Film-Projekt.
+  ein Programm zum erstellen von 3D-Animationen, 3D-Modellen bis hin
+  zum Film-Projekt.
 
 * [Evince](http://projects.gnome.org/evince/),
-  [auch portabel](http://portableapps.com/apps/office/evince_portable), zeigt euch
-  neben PDF auch Dokumente in den Formaten PostScript, djvu, tiff, dvi an. Diese
-  werden  häufig für Druckerzeugnisse benötigt.
+  [auch portabel](http://portableapps.com/apps/office/evince_portable),
+  zeigt euch neben PDF auch Dokumente in den Formaten PostScript, djvu,
+  tiff, dvi an. Diese werden  häufig für Druckerzeugnisse benötigt.
 
-* [Calibre](https://calibre-ebook.com/), dein digitales Bücherregal mit Reader und
-  Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter
-  den Formaten und bietet Plugins um die Funktionalität zu erweitern.
+* [Calibre](https://calibre-ebook.com/), dein digitales Bücherregal mit
+  Reader und Unterstützung beinahe aller Datei-Formate für e-Books. Er
+  konvertiert auch unter den Formaten und bietet Plugins um die
+  Funktionalität zu erweitern.
 
 * [Pidgin](https://pidgin.im/),
   [auch portable](http://portableapps.com/apps/internet/pidgin_portable),
-  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac.  Unterstützt
-  als Multiprotokoll-Messenger viele Protokolle (Jabber, IRC, ICQ, …) gleichzeitig.
+  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac.
+  Unterstützt als Multiprotokoll-Messenger viele Protokolle (Jabber,
+  IRC, ICQ, …) gleichzeitig.
 
 * [Conversations](https://conversations.im/), das letzte Wort in Sachen Messenger,
   zumindest auf Android – sagen die Macher. Definitiv einer der nutzerfreundlichsten
@@ -296,7 +277,7 @@ vielleicht sind sie ja dennoch etwas für euch:
   Markdown-Editor mit eingebautem Preview – nur falls Eduroam mal zu langsam oder
   ob der vielen Menschen im Raum nicht erreichbar ist.
 
-* [OpenProject](https://www.openproject.org/), eine Alternative zu Microsoft Project
+* [OpenProject](https://www.openproject.org/), eine Alternative zu *Microsoft Project*
   für das Projekt-Management.
 
 * [Atom](https://atom.io/), ein flinker Editor für den Desktop; vergleichbar zu
@@ -321,9 +302,10 @@ vielleicht sind sie ja dennoch etwas für euch:
   Datenleitung beschränkt ist und das WLAN im Uni-Alltag nicht immer funktioniert.
 
 * [Apachefriends](http://www.apachefriends.org/),
-  [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver,
-  Datenbank und Script-Interpreter für PHP für all jene, die einen Server als Testumgebung
-  für erste Gehversuche in der Web-Programmierung benötigen.
+  [auch portabel](http://portableapps.com/apps/development/xampp), ein
+  Bundle von Webserver, Datenbank und Script-Interpreter für PHP für
+  all jene, die einen Server als Testumgebung für erste Gehversuche in
+  der Web-Programmierung benötigen.
 
 * [Denemo](http://www.denemo.org/), ein freies Notensatzprogramm für die Musiker unter
   den Studierenden.
