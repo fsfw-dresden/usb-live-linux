@@ -170,7 +170,7 @@ WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 * portable installiert: 4,1 MB
 * Paket-Größe: 2,6 MB
-* Projekt-Link: [www.7-zip.org](http://www.7-zip.org/]
+* Projekt-Link: [www.7-zip.org](http://www.7-zip.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
 ## Dia
