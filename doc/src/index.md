@@ -103,9 +103,10 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [enigmail]: https://www.enigmail.net/index.php/en/
 [zim]: http://zim-wiki.org/
 
-Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
-dieser Stick nützlich sein: auf ihm findet ihr eine [→große Auswahl](windows.md)
-an freien Programmen drauf, die unter Windows laufen.
+Insgesamt sind noch viel mehr Programme im Live-System installiert ([vollständige Paketliste](https://github.com/fsfw-dresden/usb-live-linux/blob/master/doc/FSFW-Uni-Stick_-_Paketliste.md)).
+Aber auch wenn ihr unter Windows arbeiten wollt/müsst, kann euch
+dieser Stick nützlich sein: auf ihm findet ihr ebenfalls eine [→große Auswahl](windows.md)
+an freien Programmen, die unter Windows laufen.
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
