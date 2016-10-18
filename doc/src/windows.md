@@ -151,8 +151,6 @@ Festplatte.
 * Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
-<!-- [OpenVPN](http://ovpnp.sourceforge.net/), portabler Client für OpenVPN -->
-
 ## TIPP10 Portable
 
 Ausgezeichnete Lernsoftware zum Thema Zehnfingersystem.  An verschiedene
@@ -324,6 +322,8 @@ vielleicht sind sie ja dennoch etwas für euch:
   [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver,
   Datenbank und Script-Interpreter für PHP für all jene, die einen Server als Testumgebung
   für erste Gehversuche in der Web-Programmierung benötigen.
+
+* [OpenVPN](http://ovpnp.sourceforge.net/), portabler Client für OpenVPN
 
 ## Siehe auch
 
