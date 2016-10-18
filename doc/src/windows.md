@@ -133,8 +133,6 @@ Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward Snowd
 * Dokumentation: [Guide](https://veracrypt.codeplex.com/documentation)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/security/veracrypt-portable)
 
-<!-- VPN-Software -->
-
 ## TIPP10 Portable
 
 Ausgezeichnete Lernsoftware zum Thema Zehnfingersystem.  An verschiedene
@@ -309,6 +307,8 @@ Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn viel
 
 * [Denemo](http://www.denemo.org/), ein freies Notensatzprogramm für die Musiker unter
   den Studierenden.
+
+* [OpenVPN](http://ovpnp.sourceforge.net/), portabler Client für OpenVPN
 
 ## Siehe auch
 
