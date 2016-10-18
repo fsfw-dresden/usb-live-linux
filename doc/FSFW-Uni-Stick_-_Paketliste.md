@@ -322,22 +322,11 @@
 - :+1: :x:  qucs  --	Schaltungssimulation
 	- Extra Installation da nicht im Repro verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
-	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
-[//]: #   - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
-[//]: #     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
-[//]: #     - Recommends: freehdl, verilog, octave 
-[//]: #     - Außerdem brauchen wir noch Beispiele
-
-- ###  Abhängigkeiten für qucs (Schaltungssimulation)
-- :o:  libc6
-- :o:  libgcc1
-- :o:  libqt4-qt3support
-- :o:  libqt4-script
-- :o:  libqt4-svg
-- :o:  libqtcore4
-- :o:  libqtgui4
-- :o:  libstdc++6
-- :o:  perl
+	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
+[//]: # (  - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb )
+[//]: # (    - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl )
+[//]: # (    - Recommends: freehdl, verilog, octave )
+[//]: # (    - Außerdem brauchen wir noch Beispiele )
 
 - :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
