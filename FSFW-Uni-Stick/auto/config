@@ -31,6 +31,7 @@ lb config noauto \
     --initramfs live-boot \
     --image-name FSFW-Uni-Stick_${DISTRIBUTION} \
     --apt-source-archives false \
+    --apt-recommends false \
     --cache-packages true \
     --source false \
 	"${@}"

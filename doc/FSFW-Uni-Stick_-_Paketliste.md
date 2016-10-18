@@ -47,6 +47,10 @@
 ##  Desktop  
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
+ - :x:  xserver-xorg  -- 
+ - :x:  gsfonts-x11  --
+ - :x:  xfonts-utils  --
+
 - :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
 
 - ###  task-kde-desktop  -- KDE Desktop Umgebung
@@ -119,16 +123,16 @@
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
+- ###  Textverarbeitung
+
 - :o: :-1:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
-- :x:  scribus  --	DTP-Programm
-- :+1:  scribus-template  -- Vorlagen
-- :x:  dia  -- umfangreiches Diagrammerstellungsprogramm
 - :x:  zim  -- Desktopwiki, welches durch Plugins erweitert werden kann
 
 - ###  libreoffice
 
 - :x:  libreoffice-base  --	Datenbank
 - :x:  libreoffice-calc  --	Tabellenkalkulation
+- :x:  libreoffice-math  --	Formel-Editor
 - :x:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
@@ -186,6 +190,7 @@
 
 ##  Desktop Grafik
 
+- :x:  dia  -- umfangreiches Diagrammerstellungsprogramm
 - :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
 - :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
@@ -197,11 +202,14 @@
 - :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 - :x:  icc-profiles-free  -- Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
+- :x:  scribus  --	DTP-Programm
+- :+1:  scribus-template  -- Vorlagen
+- :x:  xsane  --	Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
 
 - ###  Fotoverwaltung
 
 - :x:  digikam  -- Full-Featured Fotoverwaltung für KDE
-- :+1:  digikam-doc  
+- :+1:  digikam-doc  --
 - :+1:  kipi-plugins  -- Grafikbibliothek für KDEs Digikam
 
 - ###  3D-Grafik
@@ -359,6 +367,7 @@
 - :x:  texlive-font-utils  --
 - :x: :+1:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
 - :+1:  texlive-fonts-extra-doc  --
+- :x:  tex-gyre  -- 	Skalierbare PostScript- und OpenType-Schriften auf Basis der URW-Schriften
 - :x:  texlive-fonts-recommended  --
 - :+1:  texlive-fonts-recommended-doc  --
 - :x:  texlive-formats-extra  --
@@ -482,10 +491,11 @@
 
 - :x:  dvipng  --	Konvertiert DVI-Dateien in PNG-Grafiken
 - :x:  imagemagick  --	konsolenbasierte Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: um ganze Bilderordner zu konvertieren
-- :x:  graphviz  -- umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
+- :x:  graphviz  --	umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 
 - ###  utils
 
+- :x:  usbutils  --	Linux USB-Hilfsprogramme 
 - :x:  pciutils  --	PCI-Hilfsprogramme
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
@@ -495,6 +505,9 @@
 - :x:  testdisk  -- Datenrettungswerkzeug
 
 
+- :x:  cups  -- Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
+- :x:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
+
 - ###  text 
 
 - :x:  most  --		Pager-Programm - alternativ zu more / less
@@ -503,6 +516,7 @@
 
 - :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung 
 - :x:  fbset  --	Framebuffer-Geräte einstellen
+- :x:  hdparm  --	Festplattenparameter einstellen 
 - :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 
@@ -522,7 +536,16 @@
 - :+1:  hunspell  -- weitere Rechtschreibkorrektur
 
 - :x:  util-linux-locales  --
+- :x:  gettext  --		GNU-Internationalisierungswerkzeuge
 
+## fonts
+
+- :x:  fonts-dejavu  --		Vera-Schriftartfamile mit zusätzlichen Zeichen 
+- :x:  fonts-texgyre  --	OpenType-Schriften auf Basis der URW-Schriften
+- :x:  fonts-liberation  --	Schriften mit den gleichen Metriken wie Times, Arial und Courier
+- :x:  fonts-lmodern  --	OpenType-Schriften auf Grundlage von Computer Modern
+- :x:  fonts-freefont-ttf  --	Freefont-TrueType-Schriften Serif, Sans und Mono 
+- :x:  fonts-freefont-otf  --	Freefont Serif, Sans and Mono OpenType fonts
 
 ##  SystemTools
 
@@ -539,7 +562,8 @@
 
 - ###  Wlan - Hardware
 
-- :x:  rfkill  -- Wlan, Bluetooth & Co. an-/ abschalten
+- :x:  iw  --		Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
+- :x:  rfkill  --	Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
 
 - [ ]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
@@ -553,5 +577,11 @@
 ##  live  -- System Pakete werden fürs Live-System benöttigt
 
 - :x:  live-boot  --
+ - :x:  live-tools  --
+ - :x:  rsync  --
+ - :x:  uuid-runtime
 - :x:  live-config  --
-- :x:  live-config-systemd  --
+ - :x:  live-config-systemd  --
+ - :x:  iproute2  --
+ - :x:  user-setup  --
+

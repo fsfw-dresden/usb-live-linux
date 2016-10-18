@@ -77,11 +77,11 @@ do
         if [[ -w ${PAKETPATH}/${liste// /_} ]]; then
             echo " ${PAKETPATH}/${liste// /_} wird erweitert "
         else
-            echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
+            echo "#  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${liste// /_}
             echo >> ${PAKETPATH}/${liste// /_}
             
             # sicherstellen, dass mindestens ein Kommentar in der Liste steht, sonst verschluckt sich eins der weiteren skripte von lb build
-            echo "# dummy" >> ${PAKETPATH}/${liste// /_}
+            # echo "# dummy" >> ${PAKETPATH}/${liste// /_}
             
             echo "Paketliste -- ${PAKETPATH}/${liste// /_} -- wurde angelegt "
             echo "" >> ${PAKETPATH}/${liste// /_}
@@ -197,6 +197,7 @@ for f in *.md ;
 
     TARGETFILE="../html/${f%%.md}.html"
 
+# TODO: Fehler fals Paket pandoc nicht installiert ist -- Programm testen
     cmd="pandoc --standalone --template $ORIGPATH/../doc/build-script/fsfw-template.html ${f} -o $TARGETFILE"
 
     # for debugging:
