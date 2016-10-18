@@ -4,14 +4,14 @@
 #        USAGE: auto/paketliste - ( ausführen im live-build-Verzeichnis )
 #  DESCRIPTION: erstellen der Paketlisten aus der Doku Paketliste
 #        
-#      VERSION: 0.0.3
+#      VERSION: 0.0.4
 #      OPTIONS: PAKETLISTE-1 PAKETLISTE-2 ....  # ohne Option (Default) $1 = FSFW_UNI_Stick_-_Paketliste.md
 #        NOTES: für - live-build - Debian jessie / Debian stretch
 #               - es können mehrere PAKETLISTEN kombiniert werden.
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-08-22
-#     REVISION: 2016-09-02
+#     REVISION: 2016-10-18
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -21,6 +21,8 @@ DEFAULT_PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
+
+DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
 ######################
 # Funktion: überprüfe ob Verzeichnis ${PAKETPATH} existiert
@@ -106,6 +108,9 @@ do
     "- :+1:")
         echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
     ;;
+    "- :+1: :x:")
+        echo "## ${line##*"  "} wird alternativ über packages.chroot installiert" >> ${PAKETPATH}/${liste// /_}
+    ;;
     "- :o:")
         echo "## ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
     ;;
@@ -182,6 +187,30 @@ echo "##############################"
 echo " "
 
 echo "Paketlisten-Erstellung fertig."
+
+echo "Extra Paket-Installation für packages.chroot vorbereiten."
+
+# cd ../manual-installed-packages
+
+# Pakete download
+
+qucs="qucs_0.0.18-2_amd64.deb"
+
+# TODO: prüfen ob Paket zur installation ausgewäht ist  ( "- :+1: :x:  ")
+if [ -e config/packages.chroot/${qucs} ];
+then
+
+    echo "qucs gefunden"
+else
+    ${DOWNLOAD} https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb -O config/packages.chroot/${qucs}
+fi
+
+#cp -vR ./* ${ORIGPATH}/config/includes.chroot/home/user/aux-files/manual-installed-packages/
+
+echo " "
+echo "Extra Paket-Installation fertig vorbereitet."
+
+
 echo " "
 echo "Doku bauen und verteilen"
 
@@ -197,7 +226,7 @@ for f in *.md ;
 
     TARGETFILE="../html/${f%%.md}.html"
 
-# TODO: Fehler fals Paket pandoc nicht installiert ist -- Programm testen
+# TODO: Fehler! fals Paket pandoc nicht installiert ist -- Programmverfügbarkeit vorher testen
     cmd="pandoc --standalone --template $ORIGPATH/../doc/build-script/fsfw-template.html ${f} -o $TARGETFILE"
 
     # for debugging:
@@ -215,27 +244,7 @@ done
 
 cp -vR ../html/* ../../FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/home-dir/FSFW-Material/stick-doku/
 
-
-
 cd $ORIGPATH
 
 echo "Doku-Erstellung und Verteilung fertig."
-echo "Manuelle Paket-Installation für chroot.hooks vorbereiten."
 
-cd ../manual-installed-packages
-
-if [ -e qucs_0.0.18-2_amd64.deb ];
-then
-
-    echo "qucs gefunden"
-else
-    wget https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
-fi
-
-cp -vR ./* ${ORIGPATH}/config/includes.chroot/home/user/aux-files/manual-installed-packages/
-
-echo " "
-echo "Manuelle Paket-Installation fertig vorbereitet."
-
-
-cd $ORIGPATH

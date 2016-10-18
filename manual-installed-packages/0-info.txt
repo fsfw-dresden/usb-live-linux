@@ -1,1 +1,0 @@
-Diese Datei hat denn Sinn, dass git das Verzeichnis kennt. 

@@ -5,7 +5,7 @@
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
->  ` $ auto/paketliste `   --  im live-build-Verzeichnis ausführen
+>  ` $ sudo ./auto/paketliste `   --  im live-build-Verzeichnis ausführen
 >
 >
 > ##  Syntax für die Paketlisten
@@ -23,8 +23,18 @@
 > - :o:  Paket nicht ausgewählt
 >
 > - :+1:  Paket vorschlag - Abstimmung im Plenum (reguläre Treffen) folgt 	-- Beschreibung
+>	- Paket kann im Live-System auch nachträglich installiert werden
+>	- Wird der Persistence-Mode benutzt bleibt es auch erhalten.
 >
-> - :o: :-1:  Paket derzeit nicht benutzt weil 	-- Beschreibung
+>		Alt+F2	--> konsole
+>
+>		`$ sudo apt-get install Paketname `
+>
+> - :+1: :x:  Paket vorschlag - ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
+>		- Beschreibung / Erklärungen
+>
+> - :o: :-1:  Paket derzeit nicht benutzt weil -- (Pakete die bei der Installation Probleme/Kollisionen mit anderen Programmen verursachen )
+>		- Beschreibung / Erklärungen - fals möglich Lösungsvorschläge
 >
 > #### Programme die auf dem Stick als Paket verfügbar sind, aber noch nicht installiert sind (...list.binary)
 >
@@ -125,7 +135,7 @@
 
 - ###  Textverarbeitung
 
-- :o: :-1:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
+- :o:  vim-gtk  --	verbessserter vi-Editor - mit GTK2-Oberfläche
 - :x:  zim  -- Desktopwiki, welches durch Plugins erweitert werden kann
 
 - ###  libreoffice
@@ -161,7 +171,7 @@
 - :x:  firefox-esr  --	Mozilla Firefox Webbrowser               (Größe 100 MB)
 - :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket für den Firefox
 
-- :o: :-1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
+- :+1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 - :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
@@ -183,8 +193,8 @@
 
 - :x:  vlc  --		Multimedia-Player und Streamer
 - :o:  pitivi  -- Videoschnitt (entweder Pitivi oder Kdenlive)
-- :o: :-1:  kdenlive  -- Videoschnitt
-- :o: :-1:  subtitlecomposer  -- Untertiteleditor
+- :o:  kdenlive  -- Videoschnitt
+- :o:  subtitlecomposer  -- Untertiteleditor
 - :+1:  winff-qt  -- Videoformatkonverter
 
 
@@ -235,10 +245,14 @@
 
 - ###  scientific python
 
-- :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell
+- :o: :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell
+	- IPython (jupyter, sympy) wird über Extra-Installation bereitgestellt. Ist deutlich aktueller
+- :+1: :x:  jupyter  --  Jupyter projects for Python 3
+	- Extra Installation da nicht im Repro verfügbar
+- :+1: :x:  sympy  --	Python-Computeralgebrasystem (CAS)
+	- Extra Installation da nicht im Repro verfügbar
 [//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
 
-- :x:  build-essential  -- Kompiler und diverse Bibliotheken (wichtig)
 - :x:  python3-dev  -- Header (zum kompilieren von Python-Paketen, wird vom Hook gebraucht)
 
 - :x:  python-pip  -- Pythons eigener Paketmanager
@@ -274,18 +288,6 @@
 [//]: # (Carsten: finde ich wichtig zum Vergleich von Quelltexten)
 - :x:  kdiff3
 
-
-- ###  Abhängigkeiten für qucs (Schaltungssimulation)
-- :x:  libc6
-- :x:  libgcc1
-- :x:  libqt4-qt3support
-- :x:  libqt4-script
-- :x:  libqt4-svg
-- :x:  libqtcore4
-- :x:  libqtgui4
-- :x:  libstdc++6
-- :x:  perl
-
 - ###  Statistik
 
 - :x:  pspp  -- Statistik-Suite
@@ -309,20 +311,35 @@
 - ###  languages
 
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
-- :x:  goldendict  -- Wörterbuch und Lexikon
-- :o: :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
-- :o: :+1:  openteacher  -- eine weitere Sprachlernsoftware
+- :x:  goldendict  --	Wörterbuch und Lexikon
+- :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
+- :o:  openteacher  -- eine weitere Sprachlernsoftware
 - :x:  parley  -- Vokabeltrainer für den KDE-Desktop
 - :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync
 
 - ###  electronics
 
-- :+1:  qucs  --	Schaltungssimulation
+- :+1: :x:  qucs  --	Schaltungssimulation
+	- Extra Installation da nicht im Repro verfügbar
+	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
+	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
 [//]: #   - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
 [//]: #     - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl
 [//]: #     - Recommends: freehdl, verilog, octave 
 [//]: #     - Außerdem brauchen wir noch Beispiele
-- :+1:  kicad  -- KDE basiertes Elektroprogramm
+
+- ###  Abhängigkeiten für qucs (Schaltungssimulation)
+- :o:  libc6
+- :o:  libgcc1
+- :o:  libqt4-qt3support
+- :o:  libqt4-script
+- :o:  libqt4-svg
+- :o:  libqtcore4
+- :o:  libqtgui4
+- :o:  libstdc++6
+- :o:  perl
+
+- :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
 - :+1:  kicad-doc-de  -- 
 - :+1:  fritzing  --
@@ -334,9 +351,9 @@
 
 - ###  Funksignalverarbeitung
 
-- :o: :-1:  gnuradio  -- SoftwareDefinedRadio, Signalverarbeitung
-- ::o: -1:  cutesdr  -- SoftwareDefinedRadio für Bildungszwecke
-- :+1:  gqrx-sdr  -- SoftwareDefinedRadio mit größerer Hardwareunterstützung
+- :o:  gnuradio  --	SoftwareDefinedRadio, Signalverarbeitung
+- :o:  cutesdr  --	SoftwareDefinedRadio für Bildungszwecke
+- :+1:  gqrx-sdr  --	SoftwareDefinedRadio mit größerer Hardwareunterstützung
 
 - ###  geography
 
@@ -365,7 +382,7 @@
 - :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils  --
-- :x: :+1:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
+- :x:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
 - :+1:  texlive-fonts-extra-doc  --
 - :x:  tex-gyre  -- 	Skalierbare PostScript- und OpenType-Schriften auf Basis der URW-Schriften
 - :x:  texlive-fonts-recommended  --
@@ -396,9 +413,9 @@
 - :x:  texstudio  --			LaTeX-Editor - GUI
 - :+1:  texstudio-doc  --
 - :x:  texstudio-l10n  --
-- :x:  kile  --				KDE basierter LaTeX-Editor
+- :+1:  kile  --				KDE basierter LaTeX-Editor
 - :+1:  kile-doc  --
-- :x:  kile-l10n  --
+- :+1:  kile-l10n  --
 - :+1:  klatexformula  -- grafischer Formeleditor für LaTeX
 - :+1:  ktikz  -- grafischer TikZ-Editor für KDE
 
@@ -416,21 +433,22 @@
 
 - ###  Tools
 
-- :x:  gcc  -- GNU C Compiler
-- :x:  g++  -- GNU C++ Compiler
-- :x:  make  -- einfaches Build-Tool
-- :x:  gdb-minimal  -- minmaler GNU-Debugger
+- :x:  build-essential  --	Kompiler und diverse Bibliotheken (wichtig)
+- :x:  gcc  --			GNU C Compiler
+- :x:  g++  --			GNU C++ Compiler
+- :x:  make  --			einfaches Build-Tool
+- :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :x:  kdbg  -- Kde basiertes Frontend für den Gdb-Debugger
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
-- :+1:  gitg  -- weitere grafische Oberfläche für die Versionsverwaltung Git
+- :+1:  gitg  --	weitere grafische Oberfläche für die Versionsverwaltung Git
 - :+1:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
-- :x:  doxygen-gui  -- Frontend des Doku-Generators
+- :x:  doxygen-gui  --	Frontend des Doku-Generators
 - :x:  doxygen-latex  -- Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
-- :x:  umbrello  -- einfaches UML-Tool für den KDE-Desktop
+- :x:  umbrello  --	einfaches UML-Tool für den KDE-Desktop
 
 - ###  IDEs
 
@@ -450,17 +468,17 @@
 - :+1:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
 - :+1:  geany-plugin-projectorganizer  -- Projektverwaltungsplugin für Geany
 - :+1:  jedit  -- weiterer Texteditor, der durch Plugins erweitert werden kann
-- :o: :-1:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
-- :o: :-1:  eclipse-cdt  -- Eclipse für C++ Programmierung
-- :o: :-1:  eclipse-jdt  -- Eclipse für Java Programmierung
-- :o: :-1:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
-- :o: :+1:  # eclipse-egit  -- Git-Plugin für Eclipse
-- :o: :+1:  qtcreator  -- IDE für C++ incl. QT-Framework
+- :o:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
+- :o:  eclipse-cdt  -- Eclipse für C++ Programmierung
+- :o:  eclipse-jdt  -- Eclipse für Java Programmierung
+- :o:  eclipse-eclox  -- Doxygen-Plugin für Eclipse
+- :o:  eclipse-egit  -- Git-Plugin für Eclipse
+- :o:  qtcreator  -- IDE für C++ incl. QT-Framework
 - :x:  scratch  -- spielerisch programmieren lernen
 - :x:  squeak-plugins-scratch  -- spielerisch programmieren lernen (Erweiterung)
 - :o:  netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
 - :x:  swi-prolog  -- deklaratives Programmieren
-- :o: :+1:  swi-prolog-doc  
+- :+1:  swi-prolog-doc  
 - :+1:  swi-prolog-java  
 - :+1:  swi-prolog-odbc  
 - :x:  arduino  -- Entwicklungswerkzeuge für den Anschluss von Arduino-Boards für Hobbybastler und andere
@@ -501,11 +519,11 @@
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
 - :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
-- :x:  pm-utils  -- Powermanagement
-- :x:  testdisk  -- Datenrettungswerkzeug
+- :x:  pm-utils  --	Powermanagement
+- :x:  testdisk  --	Datenrettungswerkzeug
 
 
-- :x:  cups  -- Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
+- :x:  cups  --		Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
 - :x:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
 
 - ###  text 
