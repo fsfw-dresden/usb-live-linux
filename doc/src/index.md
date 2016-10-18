@@ -55,7 +55,7 @@ und für Schaltkreisentwurf [qucs][].  Das alles bieten wir euch in
 einem [GNU][]/[Linux][]-Live System, welches ihr direkt vom Stick ohne
 Installation starten könnt!
 
-Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
+Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 
 - [KDE][], eine anspruchsvolle graphische Oberfläche mit vielen Einzelprogrammen
 - [TeXLive][], eine LaTeX-Distribution, und [TeXStudio][], ein Editor für
@@ -78,6 +78,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 - [gnuplot][], ein mächtiges, kommandozeilengesteuertes Plot-Programm
 - [Scribus](https://www.scribus.net/), ein freies Desktop Publishing Werkzeug
 - [git][], ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+- [zim][], ein persönliches Desktop-Wiki. Zum Abspeichern von Formeln, Bildern, Zitaten, Ideen, Fragen etc.
 
 [GNU PSPP]: https://www.gnu.org/software/pspp/
 [LibreOffice]: https://www.libreoffice.org/
@@ -100,6 +101,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick rauf:
 [Linux]: https://en.wikipedia.org/wiki/Linux
 [GNU]: https://www.gnu.org/
 [enigmail]: https://www.enigmail.net/index.php/en/
+[zim]: http://zim-wiki.org/
 
 Aber auch wenn ihr die Programme lieber unter Windows nutzen wollt, kann euch
 dieser Stick nützlich sein: auf ihm findet ihr eine [→große Auswahl](windows.md)
