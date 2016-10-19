@@ -9,4 +9,4 @@ https://f-droid.org/FDroid.apk  -- F-Droid App Installieren
 - DAVdroid  -- Contacts and Calendar sync
 - OpenTasks  -- Aufgabenliste - sync mit DAVdroid und CalDAV server
 - My Expenses  -- Manage finances - Export in ein Desktop Financeprogram wie Grisbi, GnuCash, Quicken or MS Money.
-
+- NextCloud  -- Dateiablage & Freigabe, Gruppenkkalender & Adressbuch etc. (Client)
