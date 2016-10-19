@@ -228,6 +228,10 @@ Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn viel
   ermöglicht auch abseits von Dropbox, OneDrive oder iCloud Dokumente
   auf eigenen Rechnern mit anderen zu teilen, egal ob Kommilitonen,
   Arbeitskollegen oder Familie.
+* [Transmission](https://transmissionbt.com/),
+  [auch portabel](http://portableapps.com/apps/internet/transmission-portable),
+  ein Client für Bittorrent. Damit kann u.a. das aktuelle Image des Uni-Sticks effizient
+  herunter geladen werden. Die dezentrale Verteilung macht [nicht nur für Urlaubsfotos](https://media.ccc.de/v/24c3-2355-de-trecker_fahrn) Sinn.
 
 * [WinCDEmu](http://wincdemu.sysprogs.org/),
   [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable),
