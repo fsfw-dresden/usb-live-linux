@@ -188,6 +188,11 @@ echo " "
 
 echo "Paketlisten-Erstellung fertig."
 
+
+
+# TODO: Extra Paket-Installation, Doku bauen und und ins Image laden --> separate Skripte
+#      - Skript zum Bauen des FSFW-Uni-Sticks erstellen 
+
 echo "Extra Paket-Installation für packages.chroot vorbereiten."
 
 # cd ../manual-installed-packages
@@ -197,6 +202,8 @@ echo "Extra Paket-Installation für packages.chroot vorbereiten."
 qucs="qucs_0.0.18-2_amd64.deb"
 
 # TODO: prüfen ob Paket zur installation ausgewäht ist  ( "- :+1: :x:  ")
+#	Paket möglichst direkt aus der "FSFW-Uni-Stick_-_Paketliste.md" extrahieren
+
 if [ -e config/packages.chroot/${qucs} ];
 then
 
@@ -207,8 +214,7 @@ fi
 
 #cp -vR ./* ${ORIGPATH}/config/includes.chroot/home/user/aux-files/manual-installed-packages/
 
-echo " "
-echo "Extra Paket-Installation fertig vorbereitet."
+echo "Fertig - Extra Paket-Installation für packages.chroot vorbereiten."
 
 
 echo " "
@@ -242,6 +248,7 @@ for f in *.md ;
     echo "Datei geschrieben:" $TARGETFILE
 done
 
+# TODO: *.hlml  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
 cp -vR ../html/* ../../FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/home-dir/FSFW-Material/stick-doku/
 
 cd $ORIGPATH
