@@ -925,6 +925,15 @@ insert_toolbox
 
 create_grub_config_zusatz_menu
 
+# ToDo:
+#prepare WindowsFiles
+#copy WindowsFiles
+#make USBImage
+#pack USBImage (ZIP)
+#make Checksums (PGP, MD5, SHA256, SHA512)
+#create Torrent with Webseed
+#create Magnet Link
+
 entfernen
 
 }
