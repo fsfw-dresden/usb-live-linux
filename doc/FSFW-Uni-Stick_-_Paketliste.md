@@ -317,7 +317,7 @@
 [//]: # (    - Außerdem brauchen wir noch Beispiele )
 
 - :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
-	[//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
+[//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
 - :+1:  kicad-doc-de  -- 
 - :+1:  fritzing  --
 - :+1:  pcb  --
@@ -336,14 +336,14 @@
 
 - :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :o:  josm  -- OpenStreetmap-Editor
-[	//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
+[//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
 - :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
-	[//]: # (Hat sich nicht so richtig bewähren können)
+[//]: # (Hat sich nicht so richtig bewähren können)
 
 - ###  astronomy
 
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
-	[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
+[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
 - ###  social-science
@@ -353,7 +353,7 @@
 - ###  admin
 
 - :x:  synaptic  -- Grafischer Paket-Verwalter
-	[//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
+[//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
@@ -361,7 +361,7 @@
 - :x:  texlive-base  --
 - :x:  texlive-bibtex-extra  --
  - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
-	[//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
+[//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
 - :x:  texlive-binaries  --
 - :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
