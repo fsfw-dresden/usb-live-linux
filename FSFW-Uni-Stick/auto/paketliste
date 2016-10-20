@@ -109,7 +109,9 @@ do
         echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
     ;;
     "- :+1: :x:")
-        echo "## ${line##*"  "} wird alternativ über packages.chroot installiert" >> ${PAKETPATH}/${liste// /_}
+        echo "## ${line##*"  "} wird alternativ mittels extra-installation über packages.chroot installiert" >> ${PAKETPATH}/${liste// /_}
+	line=${line##*] (}
+        echo "## --extra--installation -->${line//)/ }" >> ${PAKETPATH}/${liste// /_}
     ;;
     "- :o:")
         echo "## ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}

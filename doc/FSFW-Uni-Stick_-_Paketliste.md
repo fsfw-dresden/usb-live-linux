@@ -22,7 +22,7 @@
 >
 > - :o:  Paket nicht ausgewählt
 >
-> - :+1:  Paket vorschlag - Abstimmung im Plenum (reguläre Treffen) folgt 	-- Beschreibung
+> - :+1:  Paket vorschlag  -- Abstimmung im Plenum (reguläre Treffen) folgt 	-- Beschreibung
 >	- Paket kann im Live-System auch nachträglich installiert werden
 >	- Wird der Persistence-Mode benutzt bleibt es auch erhalten.
 >
@@ -30,8 +30,11 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  Paket vorschlag - ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
->		- Beschreibung / Erklärungen
+> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
+>		- Beschreibung / Erklärungen 
+>		- Extra Installation da nicht im Repro verfügbar
+>		- Quelle: 
+>		- Abhängigkeiten / Besonderheiten 
 >
 > - :o: :-1:  Paket derzeit nicht benutzt weil -- (Pakete die bei der Installation Probleme/Kollisionen mit anderen Programmen verursachen )
 >		- Beschreibung / Erklärungen - fals möglich Lösungsvorschläge
@@ -58,8 +61,9 @@
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
  - :x:  xserver-xorg  -- 
+ - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
  - :x:  gsfonts-x11  --
- - :x:  xfonts-utils  --
+  - :o:  xfonts-utils  --
 
 - :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
 
@@ -88,6 +92,7 @@
 - :x:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos 
 - :x:  kwalletmanager  -- Sichere Passwortverwaltung 
 - :x:  okular  --	Universal-Dokumentenbetrachter 
+- :x:  okular-extra-backends  --  Unterstützung von zusätzlichen Dokumentformaten für Okular 
 - :x:  polkit-kde-1  --	KDE-Dialoge für PolicyKit 
 - :x:  sweeper  --	Löschen von Verlauf und temporären Dateien 
 - :x:  freespacenotifier  -- KDE-Modul zur Benachrichtigung bei Platzmangel 
@@ -97,6 +102,7 @@
 - :x:  kde-plasma-netbook  -- KDE Plasma Netbook und eine minimale Auswahl an Anwendungen - oder ...desktop
 - :x:  plasma-desktopthemes-artwork  -- Desktop Themes für KDE Plasma Workspaces 
 - :x:  plasma-widget-networkmanagement  -- Transitional package for plasma-nm
+- :x:  plasma-scriptengines  --	install all Plasma script engines 
  
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
@@ -104,8 +110,11 @@
 - :+1:  kteatime  -- Kurzzeitwecker, damit der Tee weder zu kurz och zu lange zieht
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
+- :x:  kdiff3  -- Vergleicht und führt zwei oder drei Dateien oder Verzeichnisse zusammen 
+- :x:  kdesudo  -- sudo-Oberfläche für KDE
+- :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
-- :x:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
+  - :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
@@ -151,11 +160,12 @@
 - ###  PDF-Tools
 
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :x:  diffpdf  -- grafischer PDF-Vergleicher
+- :x:  diffpdf  --	grafischer PDF-Vergleicher
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
-- :x:  pdfgrep  -- grep-artiges Suchprogramm für PDF-Dateien für die Konsole
-- :x:  pdfmod  -- PDF-Bearbeitungsfrontend
+- :x:  pdfgrep  --	grep-artiges Suchprogramm für PDF-Dateien für die Konsole
+- :x:  pdfmod  --	PDF-Bearbeitungsfrontend
 - :x:  pdfresurrect  -- zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
+- :x:  pdfchain  --	Grafische Benutzeroberfläche für das PDF Tool Kit
 
 - ###  Literaturverwaltung
 
@@ -254,10 +264,8 @@
 [//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
 
 - :x:  python3-dev  -- Header (zum kompilieren von Python-Paketen, wird vom Hook gebraucht)
-
 - :x:  python-pip  -- Pythons eigener Paketmanager
 - :x:  python3-pip  -- Pythons eigener Paketmanager
-
 - :x:  python-numpy
 - :x:  python3-numpy
 - :x:  python-scipy
@@ -267,32 +275,12 @@
 - :x:  python3-tk
 - :x:  python-tk
 
-[//]: # (Carsten: Die folgenden Pakete gehören eigentlich inhaltlich wo anders hin.. )
-
-[//]: # (Carsten: erleichtern eventuell das Testen auf einer vbox)
-- :x:  virtualbox-guest-utils
-- :x:  virtualbox-guest-x11
-- :x:  okular-extra-backends
-- :x:  pdfchain
-- :x:  gfortran
-- :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
-- :x:  partitionmanager
-- :x:  kdesudo
-
-[//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
-- :x:  synaptic
-
-[//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
-- :x:  biber
-
-[//]: # (Carsten: finde ich wichtig zum Vergleich von Quelltexten)
-- :x:  kdiff3
-
 - ###  Statistik
 
 - :x:  pspp  -- Statistik-Suite
-- :x:  r-base-core  -- GNU R Statistik-Suite (nur das Grundsystem)
-- :+1:  littler  -- GNU R Konsolenfrontend
+- :o:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
+- :x:  r-base-core  --	GNU R Statistik-Suite (nur das Grundsystem)
+- :+1:  littler  --	GNU R Konsolenfrontend
 - :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
 - :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI
 - :+1:  r-doc-info  -- Info für Gnu-R
@@ -319,7 +307,7 @@
 
 - ###  electronics
 
-- :+1: :x:  qucs  --	Schaltungssimulation
+- :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
 	- Extra Installation da nicht im Repro verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
@@ -329,7 +317,7 @@
 [//]: # (    - Außerdem brauchen wir noch Beispiele )
 
 - :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
-[//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
+	[//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
 - :+1:  kicad-doc-de  -- 
 - :+1:  fritzing  --
 - :+1:  pcb  --
@@ -348,25 +336,32 @@
 
 - :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :o:  josm  -- OpenStreetmap-Editor
-[//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
+[	//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
 - :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
-[//]: # (Hat sich nicht so richtig bewähren können)
+	[//]: # (Hat sich nicht so richtig bewähren können)
 
 - ###  astronomy
 
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
-[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
+	[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
 - ###  social-science
 
 - :+1:  opensesame  -- Gui für Experimente aus dem sozialwissenschaftlichen Bereich
 
+- ###  admin
+
+- :x:  synaptic  -- Grafischer Paket-Verwalter
+	[//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
+
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
 
 - :x:  texlive  --
 - :x:  texlive-base  --
 - :x:  texlive-bibtex-extra  --
+ - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
+	[//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
 - :x:  texlive-binaries  --
 - :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
@@ -411,6 +406,8 @@
 
 ##  Programmierung Softwareentwicklung
 
+- :x:  gfortran  -- GNU-Fortran-95-Compiler 
+
 - ###  Programmiersprache PHP
 
 - :+1:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
@@ -427,14 +424,14 @@
 - :x:  g++  --			GNU C++ Compiler
 - :x:  make  --			einfaches Build-Tool
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
-- :x:  kdbg  -- Kde basiertes Frontend für den Gdb-Debugger
+- :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
 - :+1:  gitg  --	weitere grafische Oberfläche für die Versionsverwaltung Git
-- :+1:  gitk  --	Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+- :x:  gitk  --		Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
 - :x:  doxygen-gui  --	Frontend des Doku-Generators
 - :x:  doxygen-latex  -- Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
 - :x:  umbrello  --	einfaches UML-Tool für den KDE-Desktop
@@ -502,17 +499,20 @@
 
 - ###  utils
 
+- :x:  console-setup  -- Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole 
 - :x:  usbutils  --	Linux USB-Hilfsprogramme 
 - :x:  pciutils  --	PCI-Hilfsprogramme
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
+- :x:  eject  --	Auswerfen von CDs und Steuern von CD-Wechslern unter Linux
 - :x:  udisks  --	zum ein/aushängen von Speichermedien 
 - :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 - :x:  pm-utils  --	Powermanagement
 - :x:  testdisk  --	Datenrettungswerkzeug
-
+- :x:  dosfstools  --	Programme zum Anlegen und Überprüfen von MS-DOS-FAT-Dateisystemen
 
 - :x:  cups  --		Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
+- :x:  cups-bsd  --	Common UNIX Printing System(tm) - BSD-Befehle 
 - :x:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
 
 - ###  text 
@@ -526,6 +526,7 @@
 - :x:  hdparm  --	Festplattenparameter einstellen 
 - :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
+- :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
 
 - ###  kernel
 
@@ -547,6 +548,7 @@
 
 ## fonts
 
+- :x:  ttf-bitstream-vera  --	Die TrueType-Schriftfamilie Bitstream Vera
 - :x:  fonts-dejavu  --		Vera-Schriftartfamile mit zusätzlichen Zeichen 
 - :x:  fonts-texgyre  --	OpenType-Schriften auf Basis der URW-Schriften
 - :x:  fonts-liberation  --	Schriften mit den gleichen Metriken wie Times, Arial und Courier
@@ -554,22 +556,36 @@
 - :x:  fonts-freefont-ttf  --	Freefont-TrueType-Schriften Serif, Sans und Mono 
 - :x:  fonts-freefont-otf  --	Freefont Serif, Sans and Mono OpenType fonts
 
-##  SystemTools
+##  SystemTools - Virtualisierung - Netzwerk
 
 - :o:  gpart  -- Partitionierungsprogramm (Konsolenvariante)
 - :o:  gparted  -- Partitionierungsprogramm (Frontend)
-- :+1:  virt-manager  -- mächtiges Virtualisierungsprogramm
-- :x:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm
-- :x:  wireshark  -- Netzwerkanalysetool
-- :x:  traceroute  -- Netzwerkanalysetool
 - :+1:  discover  -- grafische, einfach gehaltene, Softwareverwaltung
 - :x:  installation-report  -- Hilfstool für Bugreports
 - :x:  reportbug  -- Hilfstool für Bugreports
 - :x:  python-vte  -- Gui-Bibliothek für reportbugs
 
+- ###  Virtualisierung
+
+- :x:  qemu-kvm  --	Vollständige Virtualisierung auf x86-Hardware 
+- :+1:  virt-manager  -- mächtiges Virtualisierungsprogramm
+- :x:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm
+- :x:  virtualbox-guest-utils
+- :x:  virtualbox-guest-x11
+
+- ###  Netzwerk
+
+- :x:  wireshark  -- Netzwerkanalysetool
+- :x:  traceroute  -- Netzwerkanalysetool
+- :x:  network-manager-openvpn  --	Verwaltung von Netzwerken OpenVPN-Erweiterung
+- :x:  network-manager-pptp  --		Verwaltung von Netzwerken PPTP-Erweiterung (Point-to-Point Tunneling Protocol)
+- :x:  network-manager-vpnc  --		Verwaltung von Netzwerken VPNC-Erweiterung (Cisco-kompatibler VPN-Client)
+- :x:  modem-manager-gui  --		GUI front-end for ModemManager / Wader / oFono
+
 - ###  Wlan - Hardware
 
-- :x:  iw  --		Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
+- :x:  crda  --		Central Regulatory Domain Agent für kabellose Geräte 
+ - :x:  iw  --		Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
 - :x:  rfkill  --	Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
 
