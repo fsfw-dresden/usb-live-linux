@@ -382,10 +382,12 @@ insert_live_image() {
 		echo " ${LIVE_IMAGE##*/} Live-System-Image einfügen "
 		iso_time=($(ls --full-time ${LIVE_IMAGE}))
 		system_iso=/boot/iso/${iso_time[5]}_${LIVE_IMAGE##*/}
+		# menu_label = {LIVE_IMAGE} ohne PATH - .hybrid.iso entfernen - Leerzeichen entfernen
+		menu_label=${LIVE_IMAGE##*/} && menu_label=${menu_label%%.*} && menu_label=${menu_label//_/ }
 
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 
-menuentry "${LABEL_LIVE} - Live System " {
+menuentry "${menu_label} - Live System " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
@@ -395,7 +397,7 @@ menuentry "${LABEL_LIVE} - Live System " {
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-menuentry " ${LABEL_LIVE} - Live System (rescue mode) " {
+menuentry " ${menu_label} - Live System (rescue mode) " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
@@ -416,7 +418,7 @@ menuentry " System wird komplett in den Arbeitsspeicher geladen " { echo
 menuentry " " { echo 
 }
 
-menuentry "${LABEL_LIVE} - Live System - toram " {
+menuentry "${menu_label} - Live System - toram " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
@@ -447,7 +449,7 @@ menuentry " Geänderte Daten werden auf die Partition dlp-daten geschrieben und 
 menuentry " " { echo 
 }
 
-menuentry "${LABEL_LIVE} - Live System - persistence " {
+menuentry "${menu_label} - Live System - persistence " {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
@@ -457,7 +459,7 @@ menuentry "${LABEL_LIVE} - Live System - persistence " {
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-menuentry "${LABEL_LIVE} - Live System - persistence toram " {
+menuentry "${menu_label} - Live System - persistence toram " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
