@@ -3,6 +3,7 @@
 set -e
 
 DISTRIBUTION=jessie
+FSFW_UNI_STICK_VERSION="$(echo "$(../tools/calc-version-number.sh)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \
@@ -29,7 +30,7 @@ lb config noauto \
     --binary-filesystem ext2 \
     --initsystem systemd \
     --initramfs live-boot \
-    --image-name FSFW-Uni-Stick_${DISTRIBUTION} \
+    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}_${DISTRIBUTION} \
     --apt-source-archives false \
     --apt-recommends false \
     --cache-packages true \

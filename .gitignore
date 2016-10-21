@@ -1,9 +1,9 @@
 
-manual-installed-packages/*.deb
-FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/manual-installed-packages/*.deb
-
-FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/home-dir/FSFW-Material/stick-doku/*
 FSFW-Uni-Stick/config/packages.chroot/*
+
+FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/manual-installed-packages/*.deb
+FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/home-dir/FSFW-Material/stick-doku/*
+FSFW-Uni-Stick/config/includes.chroot/home/user/.version_fsfw-uni-stick
 
 /doc/html/*.html
 /doc/src/latex/muster-diplomarbeit.aux
