@@ -31,26 +31,25 @@
 #
 
 # live-build Umgebung aufräumen
-
 sudo lb clean
 
 # live-build config generieren
-
 sudo lb config
 
 # Paketlisten generieren
-
-sudo ./auto/paketliste
+./auto/paketliste
 
 # extra Pakete holen
 
 # TODO:
 #script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
+../tools/extra-install_paket.sh
 
 # Doku bauen und verteilen
 
 # TODO: 
 #script doku_create.sh		# ../html/*  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
+../tools/doku_create.sh
 
 # FSFW user config erstellen
 # TODO:

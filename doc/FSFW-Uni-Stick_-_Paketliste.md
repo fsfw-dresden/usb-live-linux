@@ -257,9 +257,9 @@
 
 - :o: :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell
 	- IPython (jupyter, sympy) wird über Extra-Installation bereitgestellt. Ist deutlich aktueller
-- :+1: :x:  jupyter  --  Jupyter projects for Python 3
+- :+1: :x:  [jupyter] ( )  --  Jupyter projects for Python 3
 	- Extra Installation da nicht im Repro verfügbar
-- :+1: :x:  sympy  --	Python-Computeralgebrasystem (CAS)
+- :+1: :x:  [sympy] ( )  --	Python-Computeralgebrasystem (CAS)
 	- Extra Installation da nicht im Repro verfügbar
 [//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
 
