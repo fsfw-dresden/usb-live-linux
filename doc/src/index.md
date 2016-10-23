@@ -66,8 +66,8 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 - [geogebra][], ein interaktives Geometrieprogramm
 - [Python][], eine vielseitig einsetzbare Skriptsprache
 - [GNU PSPP][], eine freie Alternative zu der Statistiksoftware SPSS
-- [Thunderbird][] (Icedove) mit Unterstützung
-  für [E-Mail-Verschlüsselung][enigmail]
+- [Thunderbird][] mit Unterstützung für [E-Mail-Verschlüsselung][enigmail]
+  - Aus Markenrechtlichen Gründen heißt das Thunderbird im Live-Linux "Icedove", ist aber bis Name und Logo identisch.
 - [Firefox][], ein freier Webbrowser
 - [VLC][], ein ausgezeichneter Mediaplayer
 - [Pidgin][] für Instant Messaging
