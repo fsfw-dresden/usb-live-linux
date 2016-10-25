@@ -513,7 +513,9 @@
 
 - :x:  cups  --		Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
 - :x:  cups-bsd  --	Common UNIX Printing System(tm) - BSD-Befehle 
-- :x:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
+
+[//]: # (Carsten: printer-driver-cups-pdf will während des Bauens ein root-Passwort eingegeben haben)
+- :-1:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
 
 - ###  text 
 
