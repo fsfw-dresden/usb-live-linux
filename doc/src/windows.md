@@ -52,15 +52,15 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 * Projekt-Link: [notepad-plus-plus.org](https://notepad-plus-plus.org/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/development/notepadpp_portable)
 
-## TeXStudio
+## TeXstudio
 
 Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 <!--**Wichtig**: Das ist nur der Editor, die Konfiguration von LaTeX muss noch
 erfolgen. <!-- ToDo [Link auf eine Anleitung](http://fsfw-dresden.de/) -->
 
-Damit ihr mit TeXStudio vernünftig arbeiten könnt, braucht ihr aber noch eine
-LaTeX-Distribution.  Wir empfehlen [TeXLive](https://www.tug.org/texlive/),
+Damit ihr mit TeXstudio vernünftig arbeiten könnt, braucht ihr aber noch eine
+LaTeX-Distribution.  Wir empfehlen [TeX Live](https://www.tug.org/texlive/),
 siehe auch unsere [ausführlichere Beschreibung](latex.md) von LaTeX auf dem
 Linux-Teil dieses Sticks.
 
