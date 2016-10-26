@@ -10,3 +10,5 @@ https://f-droid.org/FDroid.apk  -- F-Droid App Installieren
 - OpenTasks  -- Aufgabenliste - sync mit DAVdroid und CalDAV server
 - My Expenses  -- Finanzmanager - Export in ein Desktop Finanzprogramm wie Grisbi, GnuCash, Quicken oder MS Money.
 - NextCloud  -- Dateiablage & Freigabe, Gruppenkkalender & Adressbuch etc. (Client)
+- K9-Mail  -- E-Mailclient (Plugins für Verschlüsselung verfügbar)
+- Scanner for Zotero  -- Barcode-Scanner für Bücher um sie der Zotero-Literaturverwaltung hinzuzufügen
