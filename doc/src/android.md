@@ -2,11 +2,11 @@
 
 https://f-droid.org/FDroid.apk  -- F-Droid App Installieren
 
-- Ring  -- Secure and distributed communication platform
-- Conversations  -- Chat using the XMPP network
-- OsmAnd~  -- Offline/online maps and navigation
-- Barcode Scanner  -- Scan and create 2D and QR codes
-- DAVdroid  -- Contacts and Calendar sync
+- Ring  -- Sichere und verteilte Kommunikationsplattform
+- Conversations  -- Chatprogramm (Client) fürs XMPP/ Jabber Protokoll
+- OsmAnd~  -- Offline/ online Landkarten- und Navi-App
+- Barcode Scanner  -- Scant und erstellt 2D- und QR-Codes
+- DAVdroid  -- Adressbuch- und Kalendersynchronisation
 - OpenTasks  -- Aufgabenliste - sync mit DAVdroid und CalDAV server
-- My Expenses  -- Manage finances - Export in ein Desktop Financeprogram wie Grisbi, GnuCash, Quicken or MS Money.
+- My Expenses  -- Finanzmanager - Export in ein Desktop Finanzprogramm wie Grisbi, GnuCash, Quicken oder MS Money.
 - NextCloud  -- Dateiablage & Freigabe, Gruppenkkalender & Adressbuch etc. (Client)
