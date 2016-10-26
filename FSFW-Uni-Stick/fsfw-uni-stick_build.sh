@@ -74,5 +74,18 @@ sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
 # Windows Programme downoad & copieren auf WIN-DATEN Partition
 # usb-live-linux/doc/src/windows.md	- anpassen [Programm] (download-path-programm.zip *.exe ..*.etc )
 #script win-daten_download.sh
-#script win-daten_patition_create.sh
+#script win-daten_copy.sh
+#
+
+# TODO:
+# Distibution / Verteilung Script
+# script Uni_Stick_distri.show
+#
+# pack USBImage (ZIP)
+# make Checksums (PGP, MD5, SHA256, SHA512)
+# create Torrent with Webseed
+# create Magnet Link
+
+
+
 

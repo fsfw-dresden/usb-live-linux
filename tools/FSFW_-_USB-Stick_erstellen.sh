@@ -918,7 +918,6 @@ if [[ ! -e /mnt/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
 fi
 fehler_test
 
-
 create_grub_config
 
 insert_live_image
@@ -926,15 +925,6 @@ insert_live_image
 insert_toolbox
 
 create_grub_config_zusatz_menu
-
-# ToDo:
-#prepare WindowsFiles
-#copy WindowsFiles
-#make USBImage
-#pack USBImage (ZIP)
-#make Checksums (PGP, MD5, SHA256, SHA512)
-#create Torrent with Webseed
-#create Magnet Link
 
 entfernen
 
