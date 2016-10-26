@@ -35,6 +35,7 @@ sudo lb clean
 
 # live-build config generieren
 sudo lb config
+sudo chown -R ${USER}:${USER} ./config
 
 # Paketlisten generieren
 ./auto/paketliste
