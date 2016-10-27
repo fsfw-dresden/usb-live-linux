@@ -1,0 +1,77 @@
+Manifest-Version: 1.0
+
+Name: install.rdf
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: zu4KHQfv4032aFeSntz1RA==
+SHA1-Digest: 1mQmV2hESye6Ynp52alfSqkkk+o=
+
+Name: chrome.manifest
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: kgvjmCr/WDtLYMWxWdWfpg==
+SHA1-Digest: JeqzL41IPUUwvZ/1qhNFuRgag6g=
+
+Name: README.md
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 90/ekofguWokC098biIfgA==
+SHA1-Digest: SvD1j0IXqDb6d5qZwl4rmS5ayII=
+
+Name: chrome/install.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: XOQDJ48SdmW5VaCPGsB3Og==
+SHA1-Digest: qP30h/Rg/71+rcRmjDJJWquCd6I=
+
+Name: chrome/install.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 2DYAW+9hNK0IfzwBGkjChQ==
+SHA1-Digest: DZAShfFGDWvjQbYarIzMABsuXp0=
+
+Name: chrome/overlay.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: KVf9gUsuRu1/iflEDPudxg==
+SHA1-Digest: Yo5NMf86Go7slh5ajWGc+h1L6jA=
+
+Name: chrome/preferences.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: CX8eg45wi+IyVK9pKR9o1Q==
+SHA1-Digest: lDb83WhyznrGmp4+bVZL6zR2BzM=
+
+Name: chrome/progress.xul
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: rhUYU8AHHcvoE0VoRMuGiA==
+SHA1-Digest: YgskdIKvZRPqHm8bc3xKk01R7xs=
+
+Name: components/zoteroIntegration.xpt
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: C5ctUTqz/5sZt9l8xAFLfA==
+SHA1-Digest: SxKxK4JW7fl7vF7hi4XUACLhz5w=
+
+Name: components/zoteroOpenOfficeIntegration.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: W2f112Rz1TaaoP8PEhafLw==
+SHA1-Digest: 44Z3rDhRGx91pizsgWYZh+BlV8k=
+
+Name: defaults/preferences/zoteroOpenOfficeIntegration.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: vw0JXGDb8F5eMLQas6Xhfg==
+SHA1-Digest: CbkWBSck6GyXo+KetSiktgjQoAs=
+
+Name: install/Zotero_OpenOffice_Integration.oxt
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: V9mrndUnW8I4sx+ZPlo4lQ==
+SHA1-Digest: zMh8jNo2EmJ2z1GIJ9LTfVsUBZc=
+
+Name: resource/installer.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: Ln5GQdLMx5GRqSZbawyuvA==
+SHA1-Digest: MwjhE7oYY22/rvofb4vr5VdLavo=
+
+Name: resource/installer_common.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: TUEQFqz4URs42xkQezfENw==
+SHA1-Digest: bg9J0BgWfINs1ygFFxDDXLydWb0=
+
+Name: COPYING
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: AEFGHMaHZ5jFBEaxlXxyLg==
+SHA1-Digest: UXgI/jT4l5xnZec4VW6gh2U+qvI=
+
