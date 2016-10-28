@@ -69,6 +69,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 - [Thunderbird][] mit Unterstützung für [E-Mail-Verschlüsselung][enigmail]
   - Aus Markenrechtlichen Gründen heißt das Thunderbird im Live-Linux "Icedove", ist aber bis auf Name und Logo identisch.
 - [Firefox][], ein freier Webbrowser
+- [Zotero][], eine freie Literatur-, Zitate- und Anmerkungsverwaltung (als Plugin für Firefox und LibreOffice)
 - [VLC][], ein ausgezeichneter Mediaplayer
 - [Pidgin][] für Instant Messaging
 - [Inkscape][], ein vektorbasiertes Zeichenprogramm
@@ -102,6 +103,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [GNU]: https://www.gnu.org/
 [enigmail]: https://www.enigmail.net/index.php/en/
 [zim]: http://zim-wiki.org/
+[Zotero]: https://www.zotero.org/
 
 Insgesamt sind noch viel mehr Programme im Live-System installiert ([vollständige Paketliste](https://github.com/fsfw-dresden/usb-live-linux/blob/master/doc/FSFW-Uni-Stick_-_Paketliste.md)).
 Aber auch wenn ihr unter Windows arbeiten wollt/müsst, kann euch

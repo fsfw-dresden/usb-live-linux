@@ -1,0 +1,1829 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:name="Addons" oor:package="org.openoffice.Office">
+  <node oor:name="AddonUI">
+    <node oor:name="OfficeMenuBar">
+      <node oor:name="org.openoffice.Office.addon.aide" oor:op="replace">
+        <prop oor:name="Context" oor:type="xs:string">
+          <value>com.sun.star.text.TextDocument</value>
+        </prop>
+        <prop oor:name="Title" oor:type="xs:string">
+          <value>Dmaths</value>
+        </prop>
+        <node oor:name="Submenu">
+        <node oor:name="menu01" oor:op="replace">
+               <prop oor:name="Context" oor:type="xs:string">
+               <value>com.sun.star.text.TextDocument</value>
+               </prop>
+               <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Aide sur Dmaths</value>
+               <value xml:lang="de">Dmaths Hilfe</value>
+               <value xml:lang="en">Help</value>
+               <value xml:lang="it">Aiuto</value>
+               </prop>
+               <prop oor:name="URL" oor:type="xs:string">
+               <value>macro:///Dmaths.Tools.Aide</value>
+               </prop>
+               <prop oor:name="Target" oor:type="xs:string">
+               <value>_self</value>
+               </prop>
+               <prop oor:name="ImageIdentifier" oor:type="xs:string">
+               <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/aide</value>
+               </prop>
+           </node>
+         <node oor:name="menu02" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+              <value>FAQ</value>
+              </prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///Dmaths.Tools.FAQ</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/faq</value>
+              </prop>
+         </node>
+         <node oor:name="menu03" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Références</value>
+               <value xml:lang="de">Maths-Referenz</value>
+               <value xml:lang="en">References</value>
+               <value xml:lang="it">Refers</value>
+               <value>References</value>
+		</prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///Dmaths.Tools.FormulaReference</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/ref</value>
+              </prop>
+         </node>
+        <node oor:name="menu04" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+              <value>Addons</value>
+              </prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>XXX</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/addon</value>
+              </prop>
+              <node oor:name="Submenu">
+              <node oor:name="menu04.menu01" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+                  <value>Latex/SPIP</value>
+                </prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>XXX</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/ouvrirlatex</value>
+                </prop>
+              <node oor:name="Submenu">
+              <node oor:name="menu04.menu01.menu01" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Copier vers SPIP</value>
+               <value xml:lang="de">Als SPIP-Text kopieren</value>
+               <value xml:lang="it">Copy to SPIP</value>
+               <value xml:lang="en">Copy to SPIP</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///CmathOOo.mCopy2Spip.Copy2Spip</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/spip</value>
+                </prop>
+              </node>
+              <node oor:name="menu04.menu01.menu02" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Coller depuis Latex</value>
+               <value xml:lang="de">Latex-Quelltext einfügen</value>
+               <value xml:lang="it">Past from Latex</value>
+               <value xml:lang="en">Past from Latex</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///CmathOOo.mImportFromLatex.PasteFromLatex</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/collerlatex</value>
+                </prop>
+               </node>
+               <node oor:name="menu04.menu01.menu03" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Convertir fichier Latex</value>
+               <value xml:lang="de">Latex-Datei importieren</value>
+               <value xml:lang="it">Import from Latex</value>
+               <value xml:lang="en">Import from Latex</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///CmathOOo.mImportFromLatex.ImportLatexFile</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/ouvrirlatex</value>
+                </prop>
+              </node>
+              </node>
+              </node>
+              <node oor:name="menu04.menu02" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+		 <value xml:lang="fr">Lancer le grapheur externe</value>
+		 <value xml:lang="de">starte den Graphplotter</value>
+		 <value xml:lang="it">Avvia il plotter esterno</value>
+		 <value xml:lang="en">Start the external plotter</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                <value>macro:///Dmaths.Module3b.LanceGraphPlotter</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/lancegraphplotter</value>
+                </prop>
+              </node>             
+              <node oor:name="menu04.menu03" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Lance BoxPlot Histogrammes</value>
+               <value xml:lang="de">BoxPlot und Histogramme starten</value>
+               <value xml:lang="it">Launch BoxPlot and histograms</value>
+               <value xml:lang="en">Launch BoxPlot and histograms</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///Dmaths.Tools.LanceBPH</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/BPH</value>
+                </prop>
+              </node>
+	      <node oor:name="menu04.menu04" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">MiliFred</value>
+               <value xml:lang="de">Milifred</value>
+               <value xml:lang="it">Milifred</value>
+               <value xml:lang="en">Milifred</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///Dmaths.Tools.LanceMilifred</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/repregrille</value>
+                </prop>
+              </node>
+              <node oor:name="menu04.menu05" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                  <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+               <value xml:lang="fr">Outil de corrélation</value>
+               <value xml:lang="de">Regressionkurven starten</value>
+               <value xml:lang="it">Launch Fitoo</value>
+               <value xml:lang="en">Launch Fitoo</value>
+		</prop>
+                <prop oor:name="URL" oor:type="xs:string">
+                  <value>macro:///Dmaths.Tools.Lancefitoo</value>
+                </prop>
+                <prop oor:name="Target" oor:type="xs:string">
+                  <value>_self</value>
+                </prop>
+                <prop oor:name="ImageIdentifier" oor:type="xs:string">
+                  <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/fitoo</value>
+                </prop>
+              </node>
+              <node oor:name="menu04.menu06" oor:op="replace">
+                <prop oor:name="Context" oor:type="xs:string">
+                   <value>com.sun.star.text.TextDocument</value>
+                </prop>
+                <prop oor:name="Title" oor:type="xs:string">
+                   <value xml:lang="fr">Exporter dans un autre format</value>
+                   <value xml:lang="de">Dateien exportieren</value>
+                   <value xml:lang="it">Salvare in formati multipli</value>
+                   <value xml:lang="en">Export to another format</value>
+                </prop>
+               <prop oor:name="URL" oor:type="xs:string">
+               <value>macro:///Dmaths.Tools.LanceBatchConv</value>
+               </prop>
+               <prop oor:name="Target" oor:type="xs:string">
+               <value>_self</value>
+               </prop>
+               <prop oor:name="ImageIdentifier" oor:type="xs:string">
+               <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/lancebatchconv</value>
+               </prop>
+              </node>
+              </node>
+         </node>
+         <node oor:name="menu05" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+              <value xml:lang="fr">Désintaller Dmaths</value>
+              <value xml:lang="de">Deinstalliere Dmaths</value>
+              <value xml:lang="it">Remove Dmaths</value>
+              <value xml:lang="en">Remove Dmaths</value>
+              </prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///DmInstall.Un_Install.Desinstaller</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/update</value>
+              </prop>
+         </node>
+         <node oor:name="menu06" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+		<value xml:lang="fr">Choisir les options de Dmaths [Control+Maj+O]</value>
+		<value xml:lang="de">Optionen [Strg+Umsch+O]</value>
+		<value xml:lang="it">Seleziona le opzioni di Dmaths [Control (Ctrl)+Shift+O]</value>
+		<value xml:lang="en">Select Dmaths options [Ctrl+Shift+O]</value>
+              </prop>
+	      <prop oor:name="URL" oor:type="xs:string">
+		 <value>macro:///DmInstall.Options.ChoixOptionsDmaths</value>
+	      </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/choixoptionsdmaths</value>
+              </prop>
+         </node>
+         <node oor:name="menu07" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+              <value xml:lang="fr">Chercher les mises à jour</value>
+              <value xml:lang="de">Updates suchen</value>
+              <value xml:lang="it">Chercher les mises à jour</value>
+              <value xml:lang="en">Update Dmaths</value>
+              </prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///DmInstall.MajAuto.LanceMiseAJourAutomatique</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/update</value>
+              </prop>
+         </node>
+	 <node oor:name="menu08" oor:op="replace">
+              <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+              </prop>
+              <prop oor:name="Title" oor:type="xs:string">
+              <value xml:lang="fr">A propos de Dmaths</value>
+              <value xml:lang="de">über Dmaths</value>
+              <value xml:lang="it">Informazioni su Dmaths</value>
+              <value xml:lang="en">About Dmaths</value>
+              </prop>
+              <prop oor:name="URL" oor:type="xs:string">
+              <value>macro:///DmInstall.Options.about_dmaths</value>
+              </prop>
+              <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+              </prop>
+              <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/info</value>
+              </prop>
+         </node>
+        </node>
+      </node>
+    </node>
+    <node oor:name="OfficeToolBar">
+      <node oor:name="org.openoffice.Office.addon.DMathsBarre" oor:op="replace">
+        <node oor:name="btn01" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Insérer la formule</value>
+            <value xml:lang="de">starte Formeleditor</value>
+            <value xml:lang="it">Inserisci Formula</value>
+            <value xml:lang="en">InsertFormula</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.InsereObjetFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/writeformula</value>
+          </prop>
+        </node>
+        <node oor:name="btn02" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer un tableau [Control+T]</value>
+            <value xml:lang="de">Tabellen-Dialog [Strg+T]</value>
+            <value xml:lang="it">Creare una tavola [Control (Ctrl)+T]</value>
+            <value xml:lang="en">Create a table [Ctrl+T]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tableau.LanceCreationTableau</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/lancecreationtableau</value>
+          </prop>
+        </node>
+        <node oor:name="btn03" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire la formule [F10]</value>
+            <value xml:lang="de">in Formel [F10]</value>
+            <value xml:lang="it">Scrivi la formula [F10]</value>
+            <value xml:lang="en">Write the formula [F10]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn04" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire un vecteur [Control+Maj+V]</value>
+            <value xml:lang="de">in Vektor [Strg+Umsch+V]</value>
+            <value xml:lang="it">Scrivi un vettore [Control (Ctrl)+Shift+V]</value>
+            <value xml:lang="en">Write a vector [Ctrl+Shift+V]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenVecteur</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenvecteur</value>
+          </prop>
+        </node>
+        <node oor:name="btn05" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une mesure algébrique [Control+Maj+E]</value>
+            <value xml:lang="de">in Strecke [Strg+Umsch+E]</value>
+            <value xml:lang="it">Scrivi un'espressione algebrica [Control (Ctrl)+Shift+E]</value>
+            <value xml:lang="en">Write an algebraic expression [Ctrl+Shift+E]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenMesureAlgebrique</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenmesurealgebrique</value>
+          </prop>
+        </node>
+        <node oor:name="btn06" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire un angle [Control+Maj+A]</value>
+            <value xml:lang="de">in Winkel [Strg+Umsch+A]</value>
+            <value xml:lang="it">Scrivi un angolo [Control (Ctrl)+Shift+A]</value>
+            <value xml:lang="en">Write an angle [Ctrl+Shift+A]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenAngle</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenangle</value>
+          </prop>
+        </node>
+        <node oor:name="btn07" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une limite [Control+Maj+L]</value>
+            <value xml:lang="de">in Limes [Strg+Umsch+L]</value>
+            <value xml:lang="it">Scrivi un limite [Control (Ctrl)+Shift+L]</value>
+            <value xml:lang="en">Write a limit [Ctrl+Shift+L]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenLimite</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenlimite</value>
+          </prop>
+        </node>
+        <node oor:name="btn08" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une intégrale [Control+Maj+I]</value>
+            <value xml:lang="de">in Integral [Strg+Umsch+I]</value>
+            <value xml:lang="it">Scrivi un integrale [Control (Ctrl)+Shift+I]</value>
+            <value xml:lang="en">Write an integral [Ctrl+Shift+I]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenIntegrale</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenintegrale</value>
+          </prop>
+        </node>
+        <node oor:name="btn09" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une somme [Control+Maj+S]</value>
+            <value xml:lang="de">in Summe</value>
+            <value xml:lang="it">Scrivi una somma [Control (Ctrl)+Shift+S]</value>
+            <value xml:lang="en">Write a sum [Ctrl+Shift+S]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenSomme</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metensomme</value>
+          </prop>
+        </node>
+        <node oor:name="btn10" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire un produit</value>
+            <value xml:lang="de">in Produkt</value>
+            <value xml:lang="it">Scrivi un prodotto</value>
+            <value xml:lang="en">Write a product</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenProduit</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenproduit</value>
+          </prop>
+        </node>
+        <node oor:name="btn11" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une dérivée pointée</value>
+            <value xml:lang="de">1 Ableitungspunkt</value>
+            <value xml:lang="it">Scrivi una derivata prima</value>
+            <value xml:lang="en">Write a pointed derivative</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenPointe</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenpointe</value>
+          </prop>
+        </node>
+        <node oor:name="btn12" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une dérivée double pointée</value>
+            <value xml:lang="de">2 Ableitungspunkte</value>
+            <value xml:lang="it">Scrivi una derivata seconda</value>
+            <value xml:lang="en">Write a double pointed derivative</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenDoublePointe</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metendoublepointe</value>
+          </prop>
+        </node>
+        <node oor:name="btn13" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une racine [Control+Maj+R]</value>
+            <value xml:lang="de">in Wurzel [Strg+Umsch+R]</value>
+            <value xml:lang="it">Scrivi una radice quadrata [Control (Ctrl)+Shift+R]</value>
+            <value xml:lang="en">Write a root [Ctrl+Shift+R]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenRacine</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenracine</value>
+          </prop>
+        </node>
+        <node oor:name="btn14" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire un système [Control+Maj+X]</value>
+            <value xml:lang="de">in System [Strg+Umsch+X]</value>
+            <value xml:lang="it">Scrivi un sistema [Control (Ctrl)+Shift+X]</value>
+            <value xml:lang="en">Write a system [Ctrl+Shift+X]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenSysteme</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metensysteme</value>
+          </prop>
+        </node>
+        <node oor:name="btn15" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Écrire une matrice [Control+Maj+M]</value>
+            <value xml:lang="de">in Matrix [Strg+Umsch+M]</value>
+            <value xml:lang="it">Scrivi una matrice [Control (Ctrl)+Shift+M]</value>
+            <value xml:lang="en">Write a matrix [Ctrl+Shift+M]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetenMatrice</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenmatrice</value>
+          </prop>
+        </node>
+        <node oor:name="btn16" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer un système </value>
+            <value xml:lang="de">System Dialog </value>
+            <value xml:lang="it">Crea un sistema </value>
+            <value xml:lang="en">Create a system </value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module2.SystemeGraphique</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/systemegraphique</value>
+          </prop>
+        </node>
+        <node oor:name="btn17" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer une matrice</value>
+            <value xml:lang="de">Matrix Dialog</value>
+            <value xml:lang="it">Crea una matrice</value>
+            <value xml:lang="en">Create a matrix</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module2.MatriceGraphique</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/matricegraphique</value>
+          </prop>
+        </node>
+        <node oor:name="btn18" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer une formule complexe</value>
+            <value xml:lang="de">erweiterter Formel-Dialog</value>
+            <value xml:lang="it">Crea una formula complessa</value>
+            <value xml:lang="en">Create a complex formula</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module2.FormuleGraphique</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/formulegraphique</value>
+          </prop>
+        </node>
+        <node oor:name="btn19" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer une formule</value>
+            <value xml:lang="de">kurzer Formel-Dialog</value>
+            <value xml:lang="it">Crea una formula</value>
+            <value xml:lang="en">Create a formula</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module2.FormuleGraphique2</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/formulegraphique2</value>
+          </prop>
+        </node>
+        <node oor:name="btn20" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Met entre [Control+Maj+Z]</value>
+            <value xml:lang="de">Klammermenü Formelquelltext [Strg+Umsch+Z]</value>
+            <value xml:lang="it">Metti tra [Control (Ctrl)+Shift+Z]</value>
+            <value xml:lang="en">Set between [Ctrl+Shift+Z]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.LoadParCro</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/loadparcro</value>
+          </prop>
+        </node>
+        <node oor:name="btn21" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Mettre entre accolades [F9]</value>
+            <value xml:lang="de">setze in geschweifte Klammern [F9]</value>
+            <value xml:lang="it">Mettere tra parentesi [F9]</value>
+            <value xml:lang="en">Set between accolades [F9]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetentreAccolades</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metentreaccolades</value>
+          </prop>
+        </node>
+        <node oor:name="btn22" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Met entre parenthèses [Maj+F9]</value>
+            <value xml:lang="de">setze in runde Klammern [Umsch+F9]</value>
+            <value xml:lang="it">Metti tra parentesi [Shift+F9]</value>
+            <value xml:lang="en">Set between braces [Shift+F9]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module1.MetentreParentheses</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metentreparentheses</value>
+          </prop>
+        </node>
+        <node oor:name="btn23" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Met en italique avant le curseur [Maj+F3]</value>
+            <value xml:lang="de">Kursiv vor dem Cursor [Umsch+F3]</value>
+            <value xml:lang="it">Scegli il carattere corsivo prima del cursore [Shift+F3]</value>
+            <value xml:lang="en">Set italic before the cursor [Shift+F3]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tools.MetenItalic</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/metenitalic</value>
+          </prop>
+        </node>
+        <node oor:name="btn24" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Met en police cursive [Maj+F4]</value>
+            <value xml:lang="de">inSpezialschriftart [Umsch+F4]</value>
+            <value xml:lang="it">Met en police cursive [Maj+F4]</value>
+            <value xml:lang="en">Cursiv Police [Shift+F4]</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tools.MetenAtalante</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/atalante</value>
+          </prop>
+        </node>
+        <node oor:name="btn25" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Encadrer du texte</value>
+            <value xml:lang="de">Textumrandung</value>
+            <value xml:lang="it">Incornicia il testo</value>
+            <value xml:lang="en">Border the text</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tools.Bordure_Selection</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/bordure_selection</value>
+          </prop>
+        </node>
+        <node oor:name="btn26" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Fixer la taille des formules</value>
+            <value xml:lang="de">Formeleigenschaften einstellen</value>
+            <value xml:lang="it">Stabilisci la dimensione della formula</value>
+            <value xml:lang="en">Set the size of the formulae</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.TailleEquations.AffecteTailleFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/affectetailleformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn27" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Encadrer les formules</value>
+            <value xml:lang="de">Formelumrandung</value>
+            <value xml:lang="it">Incornicia la formula</value>
+            <value xml:lang="en">Border the formulae</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.TailleEquations.EncadreFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/encadreformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn28" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Augmenter la taille des formules</value>
+            <value xml:lang="de">Formelgröße + 1 pt</value>
+            <value xml:lang="it">Aumenta la dimensione della formula</value>
+            <value xml:lang="en">Increase the size of the formulae</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.TailleEquations.AugmenteTailleFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/augmentetailleformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn29" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Diminuer la taille des formules</value>
+            <value xml:lang="de">Formelgröße - 1 pt</value>
+            <value xml:lang="it">Riduci la dimensione della formula</value>
+            <value xml:lang="en">Reduce the size of the formulae</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.TailleEquations.DiminueTailleFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/diminuetailleformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn30" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Tracer des courbes</value>
+            <value xml:lang="de">Graphen-Dialog</value>
+            <value xml:lang="it">Disegna una curva</value>
+            <value xml:lang="en">Plot a curve</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module3.Repregraphique</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/repregraphique</value>
+          </prop>
+        </node>
+        <node oor:name="btn31" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Créer un tableau de variations ou de signes</value>
+            <value xml:lang="de">f(x)-f'(x)-Tabelle-Dialog</value>
+            <value xml:lang="it">Créer un tableau de variations ou de signes</value>
+            <value xml:lang="en">Tabel of variations or signs</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tableau_de_variations.LanceTableVar</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/lancetablevar</value>
+          </prop>
+        </node>
+        <node oor:name="btn32" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Tracer une grille</value>
+            <value xml:lang="de">Gitter-Dialog</value>
+            <value xml:lang="it">Traccia una griglia</value>
+            <value xml:lang="en">Plot a grid</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module3.Repregrille</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/repregrille</value>
+          </prop>
+        </node>
+        <node oor:name="btn33" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Tracer un diagramme en boîte</value>
+            <value xml:lang="de">Statistik-Dialog</value>
+            <value xml:lang="it">Traccia una curva</value>
+            <value xml:lang="en">Plot a diagram in a box</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module3.Reprediagbox</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/reprediagbox</value>
+          </prop>
+        </node>
+        <node oor:name="btn34" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Tracer une figure géométrique</value>
+            <value xml:lang="de">Figuren-Dialog</value>
+            <value xml:lang="it">Traccia una forma geometrica</value>
+            <value xml:lang="en">Plot a geometric shape</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module6.FaireFigureInWriter</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/fairefigure</value>
+          </prop>
+        </node>
+        <node oor:name="soft1" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Lancer le logiciel 1</value>
+            <value xml:lang="de">starte Programm 1</value>
+            <value xml:lang="it">Avvia il Programma 1</value>
+            <value xml:lang="en">Start Program 1</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module4.Launchsoftware1</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/launchsoftware1</value>
+          </prop>
+        </node>
+        <node oor:name="soft2" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Lancer le logiciel 2</value>
+            <value xml:lang="de">starte Programm 2</value>
+            <value xml:lang="it">Avvia il Programma 2</value>
+            <value xml:lang="en">Start Program 2</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module4.Launchsoftware2</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/launchsoftware2</value>
+          </prop>
+        </node>
+        <node oor:name="soft3" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Lancer le logiciel 3</value>
+            <value xml:lang="de">starte Programm 3</value>
+            <value xml:lang="it">Avvia il Programma 3</value>
+            <value xml:lang="en">Start Program 3</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module4.Launchsoftware3</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/launchsoftware3</value>
+          </prop>
+        </node>
+        <node oor:name="btn36" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Changer le mode formule</value>
+            <value xml:lang="de">Formelmodus</value>
+            <value xml:lang="it">Cambia le opzioni di formula</value>
+            <value xml:lang="en">Change formula mode</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Module5.ChangeModeFormule</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/changemodeformule</value>
+          </prop>
+        </node>
+        <node oor:name="btn37" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value xml:lang="fr">Lancer une sauvegarde</value>
+            <value xml:lang="de">Backup</value>
+            <value xml:lang="it">Make a backup</value>
+            <value xml:lang="en">Make a backup</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///Dmaths.Tools.LanceBackup</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/lancebackup</value>
+          </prop>
+        </node>
+      </node>
+      <node oor:name="org.openoffice.Office.addon.OOoTep-Gdmath" oor:op="replace">
+        <node oor:name="btn01" oor:op="replace">
+	      <prop oor:name="Context" oor:type="xs:string">
+		<value>com.sun.star.drawing.DrawingDocument</value>
+	      </prop>
+	      <prop oor:name="Title" oor:type="xs:string">
+		<value xml:lang="fr">Tracer une figure géométrique</value>
+		<value xml:lang="de">Figuren-Dialog</value>
+		<value xml:lang="it">Traccia una forma geometrica</value>
+		<value xml:lang="en">Plot a geometric shape</value>
+	      </prop>
+	      <prop oor:name="URL" oor:type="xs:string">
+		<value>macro:///Dmaths.Module6.FaireFigureInDraw</value>
+	      </prop>
+	      <prop oor:name="Target" oor:type="xs:string">
+		<value>_self</value>
+	      </prop>
+	      <prop oor:name="ImageIdentifier" oor:type="xs:string">
+		<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/fairefigure</value>
+	      </prop>
+        </node>
+	<node oor:name="btn02" oor:op="replace">
+		<prop oor:name="Context" oor:type="xs:string">
+			<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+		</prop>
+		<prop oor:name="Title" oor:type="xs:string">
+			<value>OOoGdmath</value>
+		</prop>
+		<prop oor:name="URL" oor:type="xs:string">
+			<value>macro:///OOoGdmath.Debug.Main</value>
+		</prop>
+		<prop oor:name="Target" oor:type="xs:string">
+			<value>_self</value>
+		</prop>
+		<prop oor:name="ImageIdentifier" oor:type="xs:string">
+			<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Gdmath</value>
+		</prop>
+	</node>
+	<node oor:name="btn03" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>OOoTep</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///OOoTep.Module1.Main</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Tep</value>
+          </prop>
+        </node>
+
+        <node oor:name="btn04" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>Textes</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///OOoTep.Textes.Main</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Tep-Texte</value>
+          </prop>
+        </node>
+
+        <node oor:name="btn05" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>ScriptTep</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///OOoTep.Module4.Main</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Tep-Script</value>
+          </prop>
+        </node>
+        <node oor:name="btn06" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>Options</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>macro:///OOoTep.Module5.Main</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Tep-Options</value>
+          </prop>
+        </node>
+	</node>
+	<node oor:name="org.openoffice.Office.addon.DMathsDisplayBarre" oor:op="replace">
+		  <node oor:name="btn01" oor:op="replace">
+		    <prop oor:name="Context" oor:type="xs:string">
+		      <value>com.sun.star.text.TextDocument</value>
+		    </prop>
+		    <prop oor:name="Title" oor:type="xs:string">
+		      <value xml:lang="fr">Afficher/Masquer la barre Dmaths</value>
+		      <value xml:lang="de">Dmaths-Symbolleiste an/aus</value>
+		      <value xml:lang="it">Dmaths toolbar on/off</value>
+		      <value xml:lang="en">Dmaths toolbar on/off</value>
+		    </prop>
+		    <prop oor:name="URL" oor:type="xs:string">
+		      <value>macro:///Dmaths.Tools.Display_Dmaths_barre</value>
+		    </prop>
+		    <prop oor:name="Target" oor:type="xs:string">
+		      <value>_self</value>
+		    </prop>
+		    <prop oor:name="ImageIdentifier" oor:type="xs:string">
+		      <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/about_dmaths</value>
+		    </prop>
+		  </node>
+		<node oor:name="btn02" oor:op="replace">
+		  <prop oor:name="Context" oor:type="xs:string">
+			<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+		</prop>
+		  <prop oor:name="Title" oor:type="xs:string">
+		      <value xml:lang="fr">Afficher/Masquer la barre Gdmath</value>
+		      <value xml:lang="de">Gdmath-Symbolleiste an/aus</value>
+		      <value xml:lang="it">Gdmath toolbar on/off</value>
+		      <value xml:lang="en">Gdmath toolbar on/off</value>
+		</prop>
+		  <prop oor:name="URL" oor:type="xs:string">
+			<value>macro:///Dmaths.Tools.Display_Gdmath_barre</value>
+		</prop>
+		  <prop oor:name="Target" oor:type="xs:string">
+			<value>_self</value>
+		</prop>
+		  <prop oor:name="ImageIdentifier" oor:type="xs:string">
+			<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/addons/Gdmath</value>
+		</prop>
+		</node>
+	  </node>
+	  <node oor:name="org.openoffice.Office.addon.InsertDocumentWriter" oor:op="replace">
+		  <node oor:name="btn01" oor:op="replace">
+		    <prop oor:name="Context" oor:type="xs:string">
+		      <value>com.sun.star.presentation.PresentationDocument</value>
+		    </prop>
+		    <prop oor:name="Title" oor:type="xs:string">
+		      <value xml:lang="fr">Insérer une formule dans un Objet texte [F10]</value>
+		      <value xml:lang="de">Inserer une formule dans un Objet texte [F10]</value>
+		      <value xml:lang="it">Inserer une formule dans un Objet texte [F10]</value>
+		      <value xml:lang="en">Insert a formula in a Writer Object [F10]</value>
+		    </prop>
+		    <prop oor:name="URL" oor:type="xs:string">
+		      <value>macro:///Dmaths.Tools.InsereObjetWriterdsPresentation</value>
+		    </prop>
+		    <prop oor:name="Target" oor:type="xs:string">
+		      <value>_self</value>
+		    </prop>
+		    <prop oor:name="ImageIdentifier" oor:type="xs:string">
+		      <value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/Fichiers/icons/theme1/about_dmaths</value>
+		    </prop>
+		  </node>		
+	  </node>
+	<node oor:name="org.openoffice.Office.addon.OOoGdmathBarre1" oor:op="replace">
+				<node oor:name="btn03" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Redresse les textes</value>
+						<value xml:lang="de-DE">Ausrichtung von Grafiktext</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.Gdmath.RedresseTexte</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_redresse</value>
+					</prop>
+				</node>				
+
+				<node oor:name="btn04" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Déplace les textes</value>
+						<value xml:lang="de-DE">Änderung von Textpositionen</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.ChangerTexteCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_changer</value>
+					</prop>
+				</node>				
+
+				<node oor:name="btn05" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Police par défaut</value>
+						<value xml:lang="de-DE">Standard-Schriftart</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.ChangerPoliceCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_police</value>
+					</prop>
+				</node>				
+
+				<node oor:name="btn06" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Paramètres</value>
+						<value xml:lang="de-DE">Optionen</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.NommageCode.AfficheNommageForm</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_parametres</value>
+					</prop>
+				</node>				
+				<node oor:name="btn07" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn08" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Met en forme (seulement writer)</value>
+						<value xml:lang="de-DE">Umwandlung in Math-Formel (nur Writer)</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.InsereExpression.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_expression</value>
+					</prop>
+				</node>
+				
+				<node oor:name="btn09" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+				
+				<node oor:name="btn10" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un angle de droite</value>
+						<value xml:lang="de-DE">Winkel</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.AngleDDForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_angle</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn11" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un triangle</value>
+						<value xml:lang="de-DE">Dreieck</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.TriangleForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_triangle</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn12" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn13" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un carré</value>
+						<value xml:lang="de-DE">Quadrat</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.CarreForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_carre</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn14" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un losange</value>
+						<value xml:lang="de-DE">Raute</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.LosangeCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_losange</value>
+					</prop>
+				</node>
+				
+				<node oor:name="btn15" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un parallélogramme</value>
+						<value xml:lang="de-DE">Parallelogramm</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.ParalleloCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_parallelogramme</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn16" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un rectangle</value>
+						<value xml:lang="de-DE">Rechteck</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.RectangleForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_rectangle</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn17" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un trapèze</value>
+						<value xml:lang="de-DE">Trapez</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.TrapezeCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_trapeze</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn18" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn19" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un polygone régulier</value>
+						<value xml:lang="de-DE">Reguläres Polygon</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.PolygoneRegulierCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_polygone</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn20" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn21" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un cercle</value>
+						<value xml:lang="de-DE">Kreis</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.CercleForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_cercle</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn22" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un arc de cercle</value>
+						<value xml:lang="de-DE">Kreisbogen</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.ArcDCForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_arc</value>
+					</prop>
+				</node>
+					
+				<node oor:name="btn23" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un camembert</value>
+						<value xml:lang="de-DE">Tortendiagramm</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.CammCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_cammembert</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn24" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Représenter une fraction</value>
+						<value xml:lang="de-DE">Bruchdarstellung</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.RepFractionForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_fraction</value>
+					</prop>
+				</node>
+					
+				<node oor:name="btn25" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un rapporteur</value>
+						<value xml:lang="de-DE">Winkelmesser</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.Rapporteur.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_rapporteur</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn26" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn27" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer une droite graduée</value>
+						<value xml:lang="de-DE">Zahlenstrahl</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.DroiteGForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_graduee</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn28" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer une repère</value>
+						<value xml:lang="de-DE">Koordinatensystem mit Inhalten</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.RepereCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_repere</value>
+					</prop>
+				</node>
+				
+				<node oor:name="btn29" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un quadrillage</value>
+						<value xml:lang="de-DE">Gitter</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.QuadrillageForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_grille</value>
+					</prop>
+				</node>
+					
+				<node oor:name="btn30" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer un réseau</value>
+						<value xml:lang="de-DE">Punkraster</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.ReseauForm.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_reseau</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn31" oor:op="replace">
+					<prop oor:name="URL">
+						<value>private:separator</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn32" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer une addition/soustraction posée</value>
+						<value xml:lang="de-DE">Additions-/Subtraktionsaufgabe</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.AdditionCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_addition</value>
+					</prop>
+				</node>
+				
+				<node oor:name="btn33" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer une multiplication posée</value>
+						<value xml:lang="de-DE">Multiplikationsaufgabe</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.MultiCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_multiplication</value>
+					</prop>
+				</node>
+
+				<node oor:name="btn34" oor:op="replace">
+					<prop oor:name="Context" oor:type="xs:string">
+						<value>com.sun.star.text.TextDocument,com.sun.star.drawing.DrawingDocument</value>
+					</prop>
+					<prop oor:name="Title" oor:type="xs:string">
+						<value xml:lang="fr-FR">Insérer une division posée</value>
+						<value xml:lang="de-DE">Divisionsaufgabe</value>
+					</prop>
+					<prop oor:name="URL" oor:type="xs:string">
+						<value>macro:///OOoGdmath.DivisionCode.Main</value>
+					</prop>
+					<prop oor:name="Target" oor:type="xs:string">
+						<value>_self</value>
+					</prop>
+					<prop oor:name="ImageIdentifier" oor:type="xs:string">
+						<value>vnd.sun.star.expand:$BUNDLED_EXTENSIONS/DmathsAddon/OOoGdmath/Bitmaps/menu_division</value>
+					</prop>
+				</node>
+
+			</node>
+	</node>
+  </node>
+</oor:component-data>
+
