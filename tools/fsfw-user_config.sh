@@ -32,7 +32,7 @@ for f in ${dlist_md[@]##*/} ;
     TARGETFILE="../doc/html/${f%%.md}.html"
 
 # TODO: Fehler! fals Paket pandoc nicht installiert ist -- Programmverfügbarkeit vorher testen
-    cmd="pandoc --standalone --template ../doc/build-script/fsfw-template.html ${dlist_md} -o $TARGETFILE"
+    cmd="pandoc --standalone --template ../doc/build-script/fsfw-template.html ../doc/src/${f} -o $TARGETFILE"
 
     # for debugging:
     # echo $cmd
