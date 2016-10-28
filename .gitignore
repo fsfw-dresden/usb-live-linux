@@ -3,6 +3,6 @@ FSFW-Uni-Stick/config/packages.chroot/*
 
 FSFW-Uni-Stick/config/includes.chroot/home/user/*
 
-/doc/html/*.html
+doc/html/*.html
 
 .lock
