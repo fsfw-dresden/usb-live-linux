@@ -14,6 +14,11 @@ echo " git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git 
 
 echo "FSFW "user" config verteilen"
 
+  if [ ! -d config/includes.chroot/home/user/ ]; then
+	 mkdir -p config/includes.chroot/home/user/
+	 echo " config/includes.chroot/home/user/ erstellt"
+  fi 
+
 rsync -avP --delete ../doc/src_fsfw-user_config/ config/includes.chroot/home/user
 
 echo "FSFW "user" configuration fertig."
