@@ -22,20 +22,17 @@
 # 	sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu live-build live-config-systemd live-boot
 
 # Dialog welche Aufgaben sollen eredigt werden ? - default alle ?
-#	FSFW_UNI_Stick_*.iso bauen
+#
+#	FSFW_UNI_Stick_*.iso bauen (CD-Image)
 #	Doku bauen und verteilen
 #	FSFW user config erstellen	
-#	USB-Stick erstellen
-#	Windows Programme copieren
+#	USB-Stick erstellen (komplettes Image mit WIN-DATEN und Persistence Partition)
+#	Windows Programme copieren ( auf WIN-DATEN Partition )
 #
 #
 
 # live-build Umgebung aufräumen
 sudo lb clean
-
-# live-build config generieren
-sudo lb config
-sudo chown -R ${USER}:${USER} ./config
 
 # Paketlisten generieren
 ./auto/paketliste
@@ -57,6 +54,10 @@ sudo chown -R ${USER}:${USER} ./config
 #script fsfw-user_config.sh 	# user config aus doc/src_user-config/*  --> config/includes.chroot/home/user/  --> config/includes.chroot/etc/...
 # git-versionsnummer / link --> config/includes.chroot/home/user/.version_fsfw-uni-stick
 ../tools/fsfw-user_config.sh
+
+# live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
+# sudo lb config
+# sudo chown -R ${USER}:${USER} ./config
 
 # live-build config generieren und FSFW_UNI_Stick_*.iso bauen
 sudo lb build

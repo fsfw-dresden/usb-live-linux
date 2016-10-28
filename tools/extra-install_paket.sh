@@ -28,6 +28,10 @@ for paket_liste in ${PAKET_LISTEN[@]}
 			  then
 				echo "${paket_quelle##*/} - verfügbar "
 			  else
+				if [ ! -d config/packages.chroot/ ]; then
+				 mkdir -p config/packages.chroot/
+				 echo " config/packages.chroot/ erstellt"
+				fi 
 				${DOWNLOAD} ${paket_quelle} -O config/packages.chroot/${paket_quelle##*/}
 				echo "${paket_quelle##*/} - geholt "
 			fi
