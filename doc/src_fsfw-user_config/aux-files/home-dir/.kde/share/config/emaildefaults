@@ -1,0 +1,9 @@
+[Defaults]
+Profile=Standard
+
+[PROFILE_Standard]
+EmailAddress=
+FullName=Debian Live user
+Organization=
+ReplyAddr=
+ServerType=

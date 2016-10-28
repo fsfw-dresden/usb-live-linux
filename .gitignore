@@ -1,24 +1,8 @@
 
 FSFW-Uni-Stick/config/packages.chroot/*
 
-FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/manual-installed-packages/*.deb
-FSFW-Uni-Stick/config/includes.chroot/home/user/aux-files/home-dir/FSFW-Material/stick-doku/*
-FSFW-Uni-Stick/config/includes.chroot/home/user/.version_fsfw-uni-stick
-FSFW-Uni-Stick/config/includes.chroot/home/user/FSFW-Material/
+FSFW-Uni-Stick/config/includes.chroot/home/user/*
 
 /doc/html/*.html
-/doc/src/latex/muster-diplomarbeit.aux
-/doc/src/latex/muster-diplomarbeit.bcf
-/doc/src/latex/muster-diplomarbeit.idx
-/doc/src/latex/muster-diplomarbeit.ilg
-/doc/src/latex/muster-diplomarbeit.ind
-/doc/src/latex/muster-diplomarbeit.log
-/doc/src/latex/muster-diplomarbeit.out
-/doc/src/latex/muster-diplomarbeit.pdf
-/doc/src/latex/muster-diplomarbeit.run.xml
-/doc/src/latex/muster-diplomarbeit.synctex.gz
-/doc/src/latex/muster-diplomarbeit.toc
-/doc/src/latex/muster-diplomarbeit.bbl
-/doc/src/latex/muster-diplomarbeit.blg
-/doc/src/latex/muster-diplomarbeit.fdb_latexmk
-/doc/src/latex/muster-diplomarbeit.fls
+
+.lock

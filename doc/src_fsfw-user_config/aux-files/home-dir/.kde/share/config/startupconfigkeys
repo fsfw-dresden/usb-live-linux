@@ -1,0 +1,6 @@
+kcminputrc Mouse cursorTheme 'Oxygen_White'
+kcminputrc Mouse cursorSize ''
+ksplashrc KSplash Theme Default
+ksplashrc KSplash Engine KSplashX
+kcmfonts General forceFontDPI 0
+kdeglobals Locale Language '' # trigger requesting languages from KLocale

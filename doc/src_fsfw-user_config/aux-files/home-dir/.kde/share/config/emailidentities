@@ -1,0 +1,16 @@
+[$Version]
+update_info=kmail.upd:3.3-move-identities-to-own-file,kmail.upd:3.3-aegypten-emailidentities-split-sign-encr-keys
+
+[General]
+Default Identity=619859168
+
+[Identity #0]
+Default Domain=debian
+Dictionary=Deutsch
+Disable Fcc=false
+Identity=Debian Live user
+Image Location=
+Inline Signature=
+Name=Debian Live user
+Signature Enabled=false
+uoid=619859168

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-10-15T17:05:30+00:00
+
+====== Nützliche Webseiten ======
+Created Samstag 15 Oktober 2016
+
+Marker in OpenStreetMap-Karten setzen:
+
+http://m.osmtools.de/0qP8D32gPOF0qPoS32g7T4
+
+-> Edit Marker klicken
+
+------------
+
+LaTeX-Sybole zeichnen
+
+http://detexify.kirelabs.org/
+
+

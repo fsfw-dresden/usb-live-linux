@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-10-15T17:20:20+00:00
+
+====== Linux-Befehle ======
+Created Samstag 15 Oktober 2016
+
+
+Achtung: Kopieren/Einfügen funktioniert in der Konsole mit STRG-SHIFT+C/V
+
+------------
+
+Zeigt verfügbare Video-Anschlüsse (Monitor, Beamer, ...) an:
+
+xrandr
+
+---
+
+Der Beamer (im SLUB Vortragssaal) am VGA-Anschluss soll das selbe Bild zeigen, wie auf dem Display
+
+xrandr --output LVDS1 --mode 1024x768 --output VGA1 --same-as LVDS1 --auto
+
+------------
+
+Falls das automatische einhängen ("mounten") nicht klappt:
+
+Einen weiteren USB-Stick einhängen (statt sdc1 ggf. auch sdc oder sdc2 oder sdc3 verwenden, je nachdem welche Partition gebraucht wird)
+
+sudo mount /dev/sdc1 [[/home/user/media/]]
+
+Den eingehängten USB-Stick für den normalen user schreibbar machen:
+
+sudo chmod +w /home/user/media/
+
+
+

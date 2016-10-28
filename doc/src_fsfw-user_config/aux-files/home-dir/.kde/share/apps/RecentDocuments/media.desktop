@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=inode-directory
+Name=media
+Type=Link
+URL[$e]=file://$HOME/media
+X-KDE-LastOpenedWith=dolphin

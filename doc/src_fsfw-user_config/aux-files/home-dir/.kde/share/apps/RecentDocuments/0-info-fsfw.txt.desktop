@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=text-plain
+Name=0-info-fsfw.txt
+Type=Link
+URL[$e]=file://$HOME/bin/0-info-fsfw.txt
+X-KDE-LastOpenedWith=kate

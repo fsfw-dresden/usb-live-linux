@@ -7,14 +7,18 @@
 #
 #
 
-
 # git-versionsnummer / link --> config/includes.chroot/home/user/.version_fsfw-uni-stick
 #
 echo " FSFW_UNI_STICK_VERSION = "$(echo "$(../tools/calc-version-number.sh)")" " > config/includes.chroot/home/user/.version_fsfw-uni-stick
 echo " git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)" >> config/includes.chroot/home/user/.version_fsfw-uni-stick
 
-#
+echo "FSFW "user" config verteilen"
 
+rsync -avP --delete ../doc/src_fsfw-user_config/ config/includes.chroot/home/user
+
+echo "FSFW "user" configuration fertig."
+
+#
 echo "FSFW Material/Doku bauen und verteilen"
 
 # allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
@@ -59,3 +63,5 @@ rsync -avP --delete ../doc/html/ config/includes.chroot/home/user/FSFW-Material/
 rsync -avP --delete ../doc/latex-vorlage config/includes.chroot/home/user/FSFW-Material
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
+
+
