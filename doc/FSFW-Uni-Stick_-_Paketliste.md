@@ -64,6 +64,7 @@
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
  - :x:  gsfonts-x11  --
   - :o:  xfonts-utils  --
+.- :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
 
 - :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
 
