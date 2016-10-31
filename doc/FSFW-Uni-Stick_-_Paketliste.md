@@ -567,6 +567,7 @@
 - :x:  installation-report  -- Hilfstool für Bugreports
 - :x:  reportbug  -- Hilfstool für Bugreports
 - :x:  python-vte  -- Gui-Bibliothek für reportbugs
+- [x]  openssh-server  -- Ermöglicht Zugriff von Außen, hilfreich für die Entwicklung des Live-Systems
 
 - ###  Virtualisierung
 
