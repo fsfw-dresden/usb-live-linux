@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-10-31T15:14:20+01:00
+
+====== ksnapshot ======
+Created Monday 31 October 2016
+
+ksnapshot ist ein Programm mit dem man Screenshots erstellen kann. 
+
+Optionen: ganzen Bildschirm, ein Fenster, rechteckiger Bereich, Zeitverzögerung.
+
+Das Bild kann man speichern oder in die Zwischenablage kopieren um es woanders (z.B. hier in [[Programme:zim|zim]]) einzufügen.
