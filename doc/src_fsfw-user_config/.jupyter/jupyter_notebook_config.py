@@ -205,7 +205,13 @@ c.NotebookApp.notebook_dir = '/home/user/FSFW-Material/jupyter-notebooks'
 # platform dependent and determined by the python standard library `webbrowser`
 # module, unless it is overridden using the --browser (NotebookApp.browser)
 # configuration option.
-c.NotebookApp.open_browser = False
+
+# FSFW-Comment: We want the browser to open, but if the following
+# statement-line is uncommented it does not work (bug?).
+# So we keep the default.
+
+#c.NotebookApp.open_browser = True
+
 
 # Hashed password to use for web authentication.
 #
