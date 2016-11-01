@@ -55,9 +55,6 @@ lb config noauto \
 
 ln -s ../binary_local-hooks/1000-grub2-hotfix.hook.binary config/hooks/1000-grub2-hotfix.hook.binary
 
-ln -s ../chroot_local-hooks/1100-home-user-configure.hook.chroot config/hooks/1100-home-user-configure.hook.chroot
-
-
 fi
 
 if cat /etc/os-release | grep -q stretch ; then
@@ -68,8 +65,6 @@ lb config noauto \
 	"${@}"
 
 ln -s ../../binary_local-hooks/1000-stretch-boot-hotfix.hook.binary config/hooks/normal/1000-stretch-hotfix.hook.binary
-
-ln -s ../../chroot_local-hooks/1100-home-user-configure.hook.chroot config/hooks/normal/1100-home-user-configure.hook.chroot
 
 fi
 
