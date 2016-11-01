@@ -15,7 +15,7 @@
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-09-15
-#     REVISION: 2016-09-16
+#     REVISION: 2016-11-01
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -38,7 +38,7 @@ DATUM=$(date +%Y-%m-%d)
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
-LOG_FILE="FSFW_-_USB-Stick_estellen_${DATUM}_build.log"
+LOG_FILE="FSFW_-_USB-Stick_erstellen_${DATUM}_build.log"
 
 
 #######################################
