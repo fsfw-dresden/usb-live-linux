@@ -1,3 +1,5 @@
 [Added Associations]
 audio/mpeg=vlc.desktop;audacity.desktop;
 text/html=firefox-esr.desktop;kde4-kfmclient_html.desktop;kde4-kate.desktop;kde4-kwrite.desktop;libreoffice-writer.desktop;kde4-okularApplication_txt.desktop;vim.desktop;
+text/x-tex=texstudio.desktop;
+
