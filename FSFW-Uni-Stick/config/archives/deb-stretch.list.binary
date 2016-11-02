@@ -1,0 +1,2 @@
+deb http://ftp.de.debian.org/debian/ stretch main contrib non-free   
+deb-src http://ftp.de.debian.org/debian/ stretch main contrib non-free
