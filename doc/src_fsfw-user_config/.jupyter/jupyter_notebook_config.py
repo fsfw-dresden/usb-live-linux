@@ -210,7 +210,7 @@ c.NotebookApp.notebook_dir = '/home/user/FSFW-Material/jupyter-notebooks'
 # statement-line is uncommented it does not work (bug?).
 # So we keep the default.
 
-#c.NotebookApp.open_browser = True
+c.NotebookApp.open_browser = False
 
 
 # Hashed password to use for web authentication.

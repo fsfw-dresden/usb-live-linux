@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=jupyter notebook& firefox http://localhost:8888/
+Exec=~/bin/jupyter_start_script.sh
 GenericName=Jupyter/IPython Notebook
 Icon=text-x-python
 Name=Jupyter/IPython Notebook
