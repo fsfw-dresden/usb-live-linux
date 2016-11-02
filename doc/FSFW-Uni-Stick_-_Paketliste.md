@@ -157,6 +157,8 @@
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
+- :+1:  libreoffice-java-common  -- Java-Unterstützung fürs (Zotero-)Plugin
+[//]: # ( erfordert zwingend die Version 1:4.3.3.2, also jener von Debian Jessie)
 
 - ###  PDF-Tools
 
@@ -176,6 +178,10 @@
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
 - :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
 - :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
+- :+1:  libreoffice-zotero-integration  -- Zotero-Plugin für LibreOffice
+[//]: # (stammt aus Debians testing-Repo und benötigt zwingend LibreOffice-java-common in der Version von Debian stable also 1:4.3.3.2)
+- :x:  xul-ext-zotero  -- Zotero-Plugin für Firefox
+[//]: # (stammt aus Debians testing-Repo)
 
 - ###  kommunikation
 
