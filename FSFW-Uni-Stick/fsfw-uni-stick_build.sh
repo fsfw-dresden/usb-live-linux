@@ -40,8 +40,12 @@ main_function() {
 # sicherstellen, dass dieses script mit superuser-Recheten ausgeführt wird.
 
 if [ "$(id -u)" != "0" ]; then
-   echo "Dieses Script muss mit root-Rechten ausgeführt werden" 1>&2
-   exit 1
+   echo " "
+   echo "Hinweis: Dieses Skript wird derzeit nicht mit root-Rechten ausgeführt."
+   echo "Diese werden bei Bedarf (ggf. mehrfach) abgefragt."
+   echo " "
+   echo " "
+   sleep 1
 fi
 
 # live-build Umgebung aufräumen
