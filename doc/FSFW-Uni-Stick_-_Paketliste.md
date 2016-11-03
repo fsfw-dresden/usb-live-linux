@@ -62,6 +62,10 @@
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
  - :x:  xserver-xorg  -- 
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
+ - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
+  - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
+[//]: # ohne mesa kein blender
+  - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers 
  - :x:  gsfonts-x11  --
   - :o:  xfonts-utils  --
 .- :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
@@ -500,6 +504,7 @@
 
 - ###  utils
 
+- :x:  bash-completion  -- Programmierbare Vervollständigung für die Bash-Shell
 - :x:  console-setup  -- Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole 
 - :x:  usbutils  --	Linux USB-Hilfsprogramme 
 - :x:  pciutils  --	PCI-Hilfsprogramme
