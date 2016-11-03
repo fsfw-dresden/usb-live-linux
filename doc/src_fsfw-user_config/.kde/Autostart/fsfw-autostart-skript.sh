@@ -4,10 +4,12 @@
 
 
 
-sleep 2
+#sleep 2
+
 
 # das dolphin-Fenster schließen, durch eine ungünstige Konfiguration am Anfang aufgeht
-killall dolphin
+# (Das ist inzwischen Überflüssig und kann demnächst gelöscht werden)
+#killall dolphin
 
 
 # Unsere Startseite laden

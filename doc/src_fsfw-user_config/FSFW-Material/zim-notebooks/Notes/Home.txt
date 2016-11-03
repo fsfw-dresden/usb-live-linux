@@ -5,14 +5,11 @@ Creation-Date: 2016-10-15T17:00:40+00:00
 ====== Home ======
 Created Samstag 15 Oktober 2016
 
-Das ist die Startseite von Zim.
+Das ist die Startseite von [[Programme:zim|zim]]. (Auf den Link klicken, um mehr über das Programm zu erfahren.) 
 
 Von hier aus kann man z.B. wichtige Seiten verlinken:
 * [[Nützliche Webseiten]]
 * [[Mathe-Fragen]]
 * [[Linux-Befehle]]
 
-
-
-
-Man kann Bilder aus der Zwischenablage einfügen, z.B. Screenshots von ksnapshot
+Man kann Bilder aus der Zwischenablage einfügen, z.B. Screenshots von [[Programme:ksnapshot|ksnapshot]]

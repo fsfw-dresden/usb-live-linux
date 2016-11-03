@@ -1,0 +1,31 @@
+# User-Konfiguration, damit git commit ohne Fehlermeldung funktioniert
+[user]
+    name = unknown-uni-stick-user
+    email = user0815@fsfw-uni-stick-live-linux.de
+    
+# Anpassungen, um die Benutzbarkeit von git auf dem uni-stick-live-system zu erhöhen
+[core]
+    editor = kate -n
+[color]
+    diff  = auto
+    status= auto
+    branch= auto
+    interactive = true
+
+[alias]
+    ci = commit
+    cia = commit -a
+    di = diff --color-words
+    dt = difftool
+    st = status
+    co = checkout
+    log1 = log --pretty=oneline --abbrev-commit
+    logs = log --stat
+    
+[diff]
+    tool = kdiff3
+
+[merge]
+    tool = kdiff3
+[push]
+    default = simple

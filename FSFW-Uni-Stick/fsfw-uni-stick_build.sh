@@ -31,6 +31,19 @@
 #
 #
 
+
+
+# Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
+# deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
+main_function() {
+
+# sicherstellen, dass dieses script mit superuser-Recheten ausgeführt wird.
+
+if [ "$(id -u)" != "0" ]; then
+   echo "Dieses Script muss mit root-Rechten ausgeführt werden" 1>&2
+   exit 1
+fi
+
 # live-build Umgebung aufräumen
 sudo lb clean
 
@@ -88,6 +101,9 @@ sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
 # create Torrent with Webseed
 # create Magnet Link
 
+}
 
+
+main_function 2>&1 | tee -a fsfw-build-script.log
 
 
