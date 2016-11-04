@@ -161,6 +161,7 @@
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
+- :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
 
 - ###  PDF-Tools
 
