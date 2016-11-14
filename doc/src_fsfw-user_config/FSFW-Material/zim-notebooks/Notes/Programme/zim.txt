@@ -51,7 +51,7 @@ Wie jedes andere komplexe Programm auch, erfordert zim ein bisschen **Einarbeitu
 
 Mit der Zeit aber wird der Anteil des "Erntens" immer größer, was das weitere "Sähen" natürlich um so mehr motiviert. Vielleicht nicht mehr in der Quantität wie am Anfang aber dafür gezielter und strukturierter. Schließlich gibt es ja jetzt schon eine (dynamische) Struktur in die Neues eingebaut werden kann.
 
-Natürlich, gibt es unter der Überschrift „persönliche Informationsverwaltung“ auch noch andere Lösungen (z.B. Evernote) mit anderen Schwerpunkten. Aber WikidPad finde ich persönlich am besten. Ganz nebenbei: wie viele hervorragende Programme steht es unter einer **freien Lizenz** und ist damit kostenlos. Außerdem ist es in der Programmiersprache Python geschrieben und kann darin auch in Form von Plugins erweitert werden.
+Natürlich, gibt es unter der Überschrift „persönliche Informationsverwaltung“ auch noch andere Lösungen (z.B. Evernote) mit anderen Schwerpunkten. Aber zim finde ich persönlich am besten. Ganz nebenbei: wie viele hervorragende Programme steht es unter einer **freien Lizenz** und ist damit kostenlos. Außerdem ist es in der Programmiersprache Python geschrieben und kann darin auch in Form von Plugins erweitert werden.
 
 Kurzum, für Menschen, die oft und viel Informationen mit einem Computer verarbeiten, ist es ein sehr nützliches Programm, um den **Überblick** zu behalten oder um ihn sich erstmal zu verschaffen.
 """
