@@ -182,7 +182,7 @@
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
 - :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
 - :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
-- :+1:  [libreoffice-zotero-integration] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/libreoffice-zotero-integration_4.0.22-1_all.deb)  -- Zotero-Plugin für LibreOffice
+- :+1: :x:  [libreoffice-zotero-integration] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/libreoffice-zotero-integration_4.0.22-1_all.deb)  -- Zotero-Plugin für LibreOffice
 [//]: # (stammt aus Debians testing-Repo und benötigt zwingend LibreOffice-java-common in der Version von Debian stable also 1:4.3.3.2)
 - :+1: :x:  [xul-ext-zotero] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/xul-ext-zotero_4.0.22-1_all.deb)  -- Zotero-Plugin für Firefox
 [//]: # (stammt aus Debians testing-Repo)
