@@ -93,4 +93,6 @@ user_pref("toolkit.telemetry.cachedClientID", "a3c7c7bc-f6cf-433d-b6fb-32cf3e797
 user_pref("toolkit.telemetry.previousBuildID", "20160921204512");
 user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 user_pref("extension.zotero.firstRun2", false);
-
+user_pref("extensions.zotero.firstRunGuidanceShown.quickFormat", true);
+user_pref("extensions.zotero.firstRunGuidanceShown.saveButton", true);
+user_pref("extensions.zotero.firstRunGuidanceShown.toolbarButton", true);
