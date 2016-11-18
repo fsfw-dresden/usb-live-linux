@@ -1,0 +1,25 @@
+#!/bin/sh
+# Skript erstellt von Norman 2016-11-16
+
+echo "# # # ######################"
+echo "Installing docear"
+
+# echo "Aktuelles Verzeichnis:"
+# pwd
+
+echo "Docear erneut herunterladen und entpacken:"
+# TODO: Download ggf. cachen, damit er nur bei einer Änderung neu runtergeladen werden braucht.
+wget http://docear.org/downloads/docear_linux.tar.gz
+mkdir docear
+
+# Nur mit "docear" beginnende Verzeichnisse berücksichtigen. Sicher ist sicher.
+tar -xf docear_linux.tar.gz --directory docear
+# ln -s docear/docear*/docear.sh docear.sh
+mv docear/docear* /usr/local/bin/ 
+
+echo "Lösche temp. Installtationsdateien"
+# rm docear_linux.tar.gz
+# rm -rf docear/
+
+echo "# # # Docear installation finished"
+
