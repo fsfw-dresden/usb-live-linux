@@ -49,7 +49,7 @@ euch bringen zu müssen!
 Unser Uni-Stick soll euch helfen, mit freier Software besser durch euer Studium
 zu kommen.  Zur Erstellung euer Seminar- oder Abschlussarbeit liefern
 wir [LaTeX](latex.md) und [LibreOffice][] mit, für eure Poster bieten
-wir [Inkscape][].  Zur mathemtischen Programmieren bekommt ihr [GNU Octave][]
+wir [Inkscape][].  Zum mathemtischen Programmieren bekommt ihr [GNU Octave][]
 und [Python][], für Statistik gibt es [GNU PSPP][], für Geometrie [geogebra][],
 und für Schaltkreisentwurf [qucs][].  Das alles bieten wir euch in
 einem [GNU][]/[Linux][]-Live System, welches ihr direkt vom Stick ohne
@@ -79,6 +79,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 - [Scribus](https://www.scribus.net/), ein freies Desktop Publishing Werkzeug
 - [git][], ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - [zim][], ein persönliches Desktop-Wiki. Zum Abspeichern von Formeln, Bildern, Zitaten, Ideen, Fragen etc.
+- [Zotero][], eine Quellen- und Zitateverwaltung, die als Plugin für den [Firefox][] sowie [LibreOffice][] der Verwaltung von Literatur, Webseiten, PDF-Dokumente oder einfach Notizen dazu dient.
 
 [GNU PSPP]: https://www.gnu.org/software/pspp/
 [LibreOffice]: https://www.libreoffice.org/
@@ -102,6 +103,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [GNU]: https://www.gnu.org/
 [enigmail]: https://www.enigmail.net/index.php/en/
 [zim]: http://zim-wiki.org/
+[Zotero]: https://www.zotero.org/
 
 Insgesamt sind noch viel mehr Programme im Live-System installiert ([vollständige Paketliste](https://github.com/fsfw-dresden/usb-live-linux/blob/master/doc/FSFW-Uni-Stick_-_Paketliste.md)).
 Aber auch wenn ihr unter Windows arbeiten wollt/müsst, kann euch
