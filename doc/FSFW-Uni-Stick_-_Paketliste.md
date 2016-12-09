@@ -203,6 +203,8 @@
 - ###  Audio
 
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
+- :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
+[//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
