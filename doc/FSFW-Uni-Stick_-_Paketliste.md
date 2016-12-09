@@ -212,6 +212,8 @@
 - :x:  vlc  --		Multimedia-Player und Streamer
 - :o:  pitivi  -- Videoschnitt (entweder Pitivi oder Kdenlive)
 - :o:  kdenlive  -- Videoschnitt
+- :+1:  mkvtoolnix  -- Toolsammlung fürs Matroska-Containerformat für Mediendateien (Audio+Video, incl. Metadaten)
+- :+1:  mkvtoolnix-gui  -- GUI für mkvtoolnix
 - :o:  subtitlecomposer  -- Untertiteleditor
 - :+1:  winff-qt  -- Videoformatkonverter
 
