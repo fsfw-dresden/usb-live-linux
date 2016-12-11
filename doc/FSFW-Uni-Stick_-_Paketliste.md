@@ -214,8 +214,15 @@
 - :o:  kdenlive  -- Videoschnitt
 - :+1:  mkvtoolnix  -- Toolsammlung fürs Matroska-Containerformat für Mediendateien (Audio+Video, incl. Metadaten)
 - :+1:  mkvtoolnix-gui  -- GUI für mkvtoolnix
+- :+1:  oggvideotools  -- Tools fürs Ogg-Mediencontainerformat
 - :o:  subtitlecomposer  -- Untertiteleditor
 - :+1:  winff-qt  -- Videoformatkonverter
+
+
+- ### Konverter und sonstiges
+
+- :+1:  ogmtools  -- Dient der Bearbeitung von OGG-Streams
+- :+1:  oggconvert  -- Dienst der Konvertierung verschiedener Medienformate in freie Formate
 
 
 ##  Desktop Grafik
