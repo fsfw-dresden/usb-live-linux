@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[de]=
+Comment=
+Exec=/usr/local/bin/docear.sh
+GenericName[de]=vielseitiges Mindmapping-Programm
+GenericName=vielseitiges Mindmapping-Programm
+Icon=/usr/local/bin/docear-1.2.0.0_stable_build291/docear.png
+MimeType=
+Name[de]=Docear
+Name=Docear
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

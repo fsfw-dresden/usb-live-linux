@@ -14,9 +14,14 @@ cd docear
 wget http://docear.org/downloads/docear_linux.tar.gz
 tar -xf docear_linux.tar.gz
 
+# Programm an passende Stelle verschieben
 ln -s docear*/docear.sh docear.sh
 mv docear* /usr/local/bin/ 
-# TODO: .desktop-Datei bereitstellen und an passende Stelle verschieben
+
+# Programme-Menüeintrag aus Desktopverknüpfung erstellen
+find / -iname Docear.destop
+cp ~user/Schreibtisch/Docear.destop /usr/share/applications/
+# mv ~/Schreibtisch/Docear.destop /usr/share/applications/
 
 echo "Lösche temp. Installtationsdateien"
 cd ..
