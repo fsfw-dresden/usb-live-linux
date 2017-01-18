@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -36,6 +36,25 @@ lb config noauto \
     --cache-packages true \
     --source false \
 	"${@}"
+
+# Branchname im Image-Nammen setzen
+nbranch=$(git branch --column)
+#echo "Branch Name1 ${nbranch}"
+nbranch=${nbranch////_}
+echo "Branch Name2 "$(echo ${nbranch////_})""
+
+nbranch=${nbranch//-/_}
+echo "Branch Name3 ${nbranch}"
+
+nbranch=${nbranch##*"* "}
+nbranch=${nbranch%% *}
+
+if [[ ! "${nbranch}" = "master" ]]; then
+
+lb config noauto \
+    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DISTRIBUTION} \
+	"${@}"
+fi
 
 
 # Verlinke allgemeine Hooks
