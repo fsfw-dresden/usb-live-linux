@@ -201,7 +201,7 @@ cat <<EOF> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
 ## grub.cfg - generiert - $(date) 
 
 set timeout=15
-set default=0
+set default=3
 
 insmod part_msdos
 insmod ntfs
@@ -385,7 +385,43 @@ insert_live_image() {
 		# menu_label = {LIVE_IMAGE} ohne PATH - .hybrid.iso entfernen - Leerzeichen entfernen
 		menu_label=${LIVE_IMAGE##*/} && menu_label=${menu_label%%.*} && menu_label=${menu_label//_/ }
 
+# Persistence Partition Menüeintrag und persistence.conf anlegen
+if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
+	echo " Persistence option in grub.cfg einfügen "
+	echo ${PERSISTENCE_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf 
+
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+
+menuentry " ____________________ Live System + Persistence Mode ____________________ " { echo
+}
+
+menuentry " Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten. " { echo 
+}
+menuentry " " { echo 
+}
+
+menuentry "${menu_label} - Live System - persistence " {
+    echo -e " \n \n \n Bitte einen kleinen Moment Geduld "
+    insmod ext2
+    insmod part_msdos
+    set isofile=${system_iso}
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
+    initrd (loop)/live/initrd.img${KERNEL_VERSION}
+}
+
+EOF
+
+fi
+
+cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+menuentry " " { echo 
+}
+
+menuentry " _____________________________ Live System _____________________________ " { echo
+}
+menuentry " " { echo 
+}
 
 menuentry "${menu_label} - Live System " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
@@ -397,17 +433,13 @@ menuentry "${menu_label} - Live System " {
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-menuentry " ${menu_label} - Live System (rescue mode) " {
-    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-    insmod ext2
-    insmod part_msdos
-    set isofile=${system_iso}
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS_RESCUE} 
-    initrd (loop)/live/initrd.img${KERNEL_VERSION}
-}
+EOF
+
 
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+
+menuentry " " { echo 
+}
 
 submenu "--- Optionen --- " {
 
@@ -428,49 +460,24 @@ menuentry "${menu_label} - Live System - toram " {
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-EOF
-
-
-# Persistence Partition Menüeintrag und persistence.conf anlegen
-if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
-	echo " Persistence option in grub.cfg einfügen "
-	echo ${PERSISTENCE_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf 
-
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
-
 menuentry " " { echo 
 }
 
-menuentry " ___________________________ Persistence Mode _________________________________ " { echo
+menuentry " _____________________ Live System - rescue mode ____________________ " { echo
 }
 
-menuentry " Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten. " { echo 
-}
-menuentry " " { echo 
-}
-
-menuentry "${menu_label} - Live System - persistence " {
-    echo -e " \n \n \n Bitte einen kleinen Moment Geduld "
-    insmod ext2
-    insmod part_msdos
-    set isofile=${system_iso}
-    loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
-    initrd (loop)/live/initrd.img${KERNEL_VERSION}
-}
-
-menuentry "${menu_label} - Live System - persistence toram " {
+menuentry "${menu_label} - Live System (rescue mode) " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
     loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} toram persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS_RESCUE} 
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
+
 EOF
 
-fi
 
 # submenu Option Ende
 cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
