@@ -11,7 +11,7 @@ Ein bisschen Einarbeitung ist notwendig. Die ausführliche Dokumentation (F1 dr�
 
 Es folgt ein Text, der die Vorzüge eines Desktopwiks anpreist.
 Quelle: http://cknoll.github.io/wikidpad.html
-Eigentlich Ursprünglich für ein anderes Desktopwiki geschrieben, aber hier in einigen Details angepasst:
+
 
 """
 Seit dem ich es kenne, ist mir klar, dass ich es immer vermisst habe.
