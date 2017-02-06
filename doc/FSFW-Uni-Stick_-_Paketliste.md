@@ -162,7 +162,8 @@
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
-
+[//]: # ( fürs (Zotero-)Plugin; erfordert zwingend die Version 1:4.3.3.2, also jener von Debian Jessie)
+  
 - ###  PDF-Tools
 
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
@@ -181,6 +182,10 @@
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
 - :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
 - :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
+- :+1: :x:  [libreoffice-zotero-integration] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/libreoffice-zotero-integration_4.0.22-1_all.deb)  -- Zotero-Plugin für LibreOffice
+[//]: # (stammt aus Debians testing-Repo und benötigt zwingend LibreOffice-java-common in der Version von Debian stable also 1:4.3.3.2)
+- :+1: :x:  [zotero-standalone] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/)  -- Zotero-Standalone
+[//]: # (stammt aus Debians testing-Repo)
 
 - ###  kommunikation
 
