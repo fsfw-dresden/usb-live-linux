@@ -212,6 +212,12 @@
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
 - :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
 [//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
+- :+1:  csound  -- Soundsynthese und Multieffekt-Prozessor
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
+- :+1:  supercollider  -- algorithmische Soundsynthese
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
+- :+1:  puredata  -- Echtzeit-Musik- & Grafiksystem
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
