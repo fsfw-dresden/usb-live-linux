@@ -280,7 +280,8 @@
 	- Extra Installation da nicht im Repro verfügbar
 [//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
 
-- :x:  python3-dev  -- Header (zum kompilieren von Python-Paketen, wird vom Hook gebraucht)
+- :x:  python3-dev  -- Header (zum Kompilieren von Python-Paketen, wird vom Hook gebraucht)
+- :x:  python3-setuptools  -- Werkzeuge zur Installation von Python-Paketen
 - :x:  python-pip  -- Pythons eigener Paketmanager
 - :x:  python3-pip  -- Pythons eigener Paketmanager
 - :x:  python-numpy

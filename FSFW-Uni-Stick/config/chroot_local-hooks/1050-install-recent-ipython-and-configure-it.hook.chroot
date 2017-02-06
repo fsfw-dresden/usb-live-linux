@@ -1,12 +1,28 @@
 #!/bin/sh
-# Skript erstellt von Carsten 2016-10-06
+# Script created 2016-10-06
+
+# This hook is necessary because there are no sufficiently recent
+# package versions of sympy and jupyter for debian jessie available.
+# Workarround: install them via pip
+
+# Status 2017-02-06:
+# Version conflicts between packages installed via apt and pip
+# -> attempt to manually install the critical dependencies
 
 echo "# # # ######################"
+echo "Installing sympy"
+
+sudo pip install sympy
+
 echo "Installing jupyter"
 
-sudo pip3 install jupyter
 sudo pip3 install sympy
-sudo pip install sympy
+sudo pip3 install six
+sudo pip3 install --upgrade packaging
+sudo pip3 install --upgrade appdirs
+sudo pip3 install --upgrade wcwidth
+sudo pip3 install --upgrade ipython
+sudo pip3 install jupyter
 
 
 echo "# # # Jupyter installation finished"
