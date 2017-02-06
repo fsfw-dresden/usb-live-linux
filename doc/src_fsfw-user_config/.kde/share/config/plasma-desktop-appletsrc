@@ -148,7 +148,7 @@ zvalue=0
 Order=1
 
 [Containments][1][Applets][4]
-geometry=58,2,0,25
+geometry=58,2,51,25
 immutability=1
 plugin=pager
 zvalue=0
@@ -160,7 +160,7 @@ hideWhenSingleDesktop=true
 Order=2
 
 [Containments][1][Applets][5]
-geometry=62,2,746,25
+geometry=113,2,661,25
 immutability=1
 plugin=tasks
 zvalue=0
@@ -173,7 +173,7 @@ filemanager=preferred://filemanager, , ,\s
 Order=3
 
 [Containments][1][Applets][6]
-geometry=812,2,134,25
+geometry=778,2,162,25
 immutability=1
 plugin=systemtray
 zvalue=0
@@ -193,7 +193,11 @@ immutability=1
 plugin=org.kde.notifications
 zvalue=0
 
-[Containments][1][Applets][6][Configuration][Applets][8]
+[Containments][1][Applets][6][Configuration][Applets][11][PopupApplet]
+DialogHeight=96
+DialogWidth=332
+
+[Containments][1][Applets][6][Configuration][Applets][13]
 plugin=notifications
 
 [Containments][1][Applets][6][Configuration][Applets][9]
@@ -209,7 +213,7 @@ SystemTray-Klipper-6=Ctrl+Alt+V
 Order=4
 
 [Containments][1][Applets][7]
-geometry=950,2,50,25
+geometry=944,2,50,25
 immutability=1
 plugin=digital-clock
 zvalue=0
@@ -225,7 +229,7 @@ minimumSize=1024,27
 ActionPluginsSource=Global
 activity=Main
 activityId=00000000-0000-0000-0000-000000000000
-alignToGrid=false
+alignToGrid=true
 alignment=0
 clickForFolderPreviews=true
 customIconSize=48
@@ -246,9 +250,10 @@ location=0
 mimeFilter=
 numTextLines=2
 plugin=folderview
+savedPositions=1,10,FSFW-Material,124,10,Firefox,580,10,FSFW-Dokumentation,238,10,Home,694,10,jupyter-ipython-notebook,238,115,Konsole,466,115,synaptic,580,115,Systemeinstellungen,466,10,texstudio mit FSFW-LaTeX Vorlage,124,115,zim,124,220
 screen=0
 showPreviews=true
-sortColumn=0
+sortColumn=-1
 sortDirsFirst=true
 sortOrder=ascending
 url=file:///home/user/Schreibtisch
