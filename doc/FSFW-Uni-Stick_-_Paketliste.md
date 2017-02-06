@@ -163,7 +163,7 @@
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
 [//]: # ( fürs (Zotero-)Plugin; erfordert zwingend die Version 1:4.3.3.2, also jener von Debian Jessie)
-  
+
 - ###  PDF-Tools
 
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
@@ -186,6 +186,9 @@
 [//]: # (stammt aus Debians testing-Repo und benötigt zwingend LibreOffice-java-common in der Version von Debian stable also 1:4.3.3.2)
 - :+1: :x:  [zotero-standalone] (http://ftp.debian.org/debian/pool/main/z/zotero-standalone-build/)  -- Zotero-Standalone
 [//]: # (stammt aus Debians testing-Repo)
+- :+1:  docear  --  Literaturverwaltung per Mindmap
+[//]: # ( Gibts leider nicht als Paket sondern nur von: http://docear.org/downloads/docear_linux.tar.gz)
+
 
 - ###  kommunikation
 
@@ -210,6 +213,12 @@
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
 - :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
 [//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
+- :+1:  csound  -- Soundsynthese und Multieffekt-Prozessor
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
+- :+1:  supercollider  -- algorithmische Soundsynthese
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
+- :+1:  puredata  -- Echtzeit-Musik- & Grafiksystem
+[//]: # (Erwähnt von Hochschule für Musik Dresden)
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
