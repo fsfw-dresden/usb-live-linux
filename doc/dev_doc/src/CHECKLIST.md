@@ -4,6 +4,10 @@ Diese Datei definiert (auszugsweise) das von uns gewünschte Verhalten. Automati
 Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 
 # Checkliste
+## Desktop (Hintergrund und Symbole)
+* Sieht ungefähr so aus: ![Screenshot-1](../data/desktop-screenshot-1.jpg "Screenshot")
+ * darauf achten, dass die Uni-Stick-spezifischen Programme räumlich von den allgemeinen Systemprogrammen getrennt sind.
+
 ## jupyter
 
 ### Test-1
