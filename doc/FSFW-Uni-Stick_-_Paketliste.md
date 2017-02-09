@@ -179,6 +179,7 @@
 - :x:  jabref  -- umfangreiche Literatur- und Quellenverwaltung (javabasiert)
 - :x:  jabref-plugin-oo  -- Jabref-Plugin für LibreOffice
 - :+1:  docear  -- Literaturverw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
+[//]: # (Ist für die PDF-Annotations- und Literaturverwaltung ganz praktisch)
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
 - :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
 - :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
