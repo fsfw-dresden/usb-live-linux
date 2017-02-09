@@ -3,7 +3,7 @@
 Mit *Branches* können verschiedene Varianten, ausgehend von einem gemeinsamen Versionsstand, gleichzeitig und im selben Repo vorgehalten werden. Die (Wieder-)zusammenführung von Branches wird als *Merge* bezeichnet.
 
 Größere Änderungen sollten in einem eigenem Branch erfolgen und erst nach dessen Test gemerged werden. Gern kann hierfür ein Pullrequest gestellt werden.
-Branches sollten der übersichtlichkeit nach folgendem Namensschema aufgebaut sein: '<Namenskürzel>_<Branchname>'. Beides sollte kurz, eindeutig und möglichst aussagekräftig sein. (Achtung: Einige Sonderzeichen wie z.B. der "/" können zu Problemen führen.)
+Branches sollten der Übersichtlichkeit nach folgendem Namensschema aufgebaut sein: \'<Namenskürzel>_<Branchname>\' und nur Zeichen enthalten, die auch in Dateinamen zulässig wären (um sie z.B. als Dateinamensbestandteil verwenden zu können). Beides sollte kurz, eindeutig und möglichst aussagekräftig sein. (Achtung: Einige Sonderzeichen wie z.B. der "/", "*" oder ":" können zu Problemen führen.)
 Idealerweise werden Branches in *Issues* referenziert und gelöscht sobald sie nicht mehr gebraucht werden.
 
 ## Pullrequest

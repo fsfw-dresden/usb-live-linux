@@ -1,10 +1,10 @@
 #!/bin/bash
 # Skript zur Berechnung einer einfachen und trotzdem präzisen Versionsnummer
-# Differenztage zwischen dem ersten commit und dem aktuellen HEAD des git repos.
-# Bei Zahlen größer als 999 (knapp 3 Jahre) wird Hunderter-Stelle als Buchstabe ausgeführt.
-# a = 1100, b = 1200,..., z = 3600 (knapp zehn Jahre) (ist noch nicht implementiert).
-# Stundenanteil der Uhrzeit wird als Buchstabe a-x (entspricht 0-23) repräsentiert
-
+# * Differenztage zwischen dem ersten commit und dem aktuellen HEAD des git repos.
+#   Bei Zahlen größer als 999 (knapp 3 Jahre) wird Hunderter-Stelle als Buchstabe ausgeführt.
+#   a = 1100, b = 1200,..., z = 3600 (knapp zehn Jahre) (ist noch nicht implementiert).
+#   Stundenanteil der Uhrzeit wird als Buchstabe a-x (entspricht 0-23) repräsentiert
+# * Namen des aktuellen Git-Branches
 
 # Diese Versionsnummer eignet sich auch für das ISO
 
@@ -20,6 +20,8 @@ TIME_STAMP_LC=`git log -1 HEAD --pretty=format:%ct`
 # Anzahl der Differenztage bestimmen und auf zwei Kommastellen runden
 # Dazu folgenden Pythoncode ausführen
 
+# Namen des aktuellen Git-Branches ermitteln TODO: TODO: diesen ggf. escapen, damit er auch in Dateinamen verwendet werden kann
+BRANCH_NAME=`git branch --contains HEAD | cut -c1,2 --complement`
 
 PYTHON_CODE=$(cat <<END
 import math
@@ -33,10 +35,10 @@ index = int(dec_part*24);
 
 # in Buchstabe umwandeln
 print('%i%s' % (int_part, chr(97 + index)))
-
+# print('{}{}{}'.format(int_part, chr(97 + index), BRANCH_NAME))
 END
 )
 
-VERSION="$(python3 -c "$PYTHON_CODE")"
+VERSION="$(python3 -c "$PYTHON_CODE")-$BRANCH_NAME"
 
 echo "$VERSION"
