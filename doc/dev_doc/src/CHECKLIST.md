@@ -20,7 +20,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 ## zim
 * Es ist eine Desktop-Verknüpfung dafür vorhanden
 * Beim Starten wird die FSFW-zim-Vorlage geöffnet
-* Sieht so aus: ![Screenshot-1](../data/jupyter-screenshot-1.jpg "jupyter Screenshot 1")
+* Sieht so aus: ![Screenshot-1](../data/zim-screenshot-1.jpg "jupyter Screenshot 1")
 * Über das Menü: Einfügen -> Gleichung bzw. `ALT+E` `G` erreicht man den Dialog zum einfügen von LaTeX-Formeln
  * folgender String sollte ein sinnvolles Ergebnis liefern: `\alpha^2 + \beta = \frac{\pi}{2}`
 
