@@ -360,6 +360,8 @@ Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn viel
 
 * [MuseScore](MuseScore), ein freies Notensatzprogramm.
 
+* [NVDA](https://www.nvaccess.org/), freier Screenreader für Win.
+
 ## Siehe auch
 
 * [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
