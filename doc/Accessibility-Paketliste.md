@@ -23,9 +23,9 @@
 
 - :x:  brltty  -- Braille-Tool
 - :x:  console-braille  -- Fonts and keymaps for reading/typing unicode braille
-- :x:  brltty-espeak  --
-- :x:  brltty-flite  --
-- :x:  brltty-speechd  --
+- :x:  brltty-espeak  -- optionaler Treiber für die espeak-Sprachsynthese für die Brailleconsole
+- :x:  brltty-flite  -- optionaler Treiber für die Festival Lite-Sprachsynthese für die Brailleconsole
+- :x:  brltty-speechd  -- optionaler Treiber für die Speech Dispatcher-Sprachsyntheseserver für die Brailleconsole
 - :x:  speech-dispatcher  -- Common interface to speech synthesizers
 - :x:  speech-dispatcher-festival  
 - :x:  freetts  -- FLite basierte Sprachsynthese
@@ -46,3 +46,4 @@
 - :x:  gespeaker  -- GTK+ Frontend für espeaker und mbrola
 - :x:  gnome-accessibility-themes  -- Barrierereduzierung für Anwender mit Handicap
 - :x:  gnome-orca  -- Programmierbarer Screenreader
+[//]: # (Sollte über den Hotkey \<Super\> + S (wie auch unter Gnome) aufrufbar sein)
