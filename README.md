@@ -1,25 +1,31 @@
-# usb-live-linux - FSFW-Uni-Stick
+# FSFW-Uni-Stick
+Das Projekt "FSFW-Uni-Stick" besteht aus zwei Komponenten (jeweils angepasst auf die Zielgruppe Studierende bzw. den Anwendungsfall Studium):
 
-* Live-Linux System mit [vielen Anwendungen](doc/FSFW-Uni-Stick_-_Paketliste.md) für die Zielgruppe Studium in Dresden
+* Live-Linux System mit [vielen Anwendungen](doc/FSFW-Uni-Stick_-_Paketliste.md)
 * Zusammenstellung von [Programmen für Windows](doc/src/windows.md)
 
-In diesem Repo liegen Skripte, Konfigurationsdateien und Doku, die eine Standardinstallation, in ein von uns gewünschte, auf die Bedürfnisse des Studiums angepasste Live-System-Variante bringt.
+Weitere Infos: [https://fsfw-dresden.de/uni-stick](https://fsfw-dresden.de/uni-stick).
 
-- System erstellt auf Debian 8.x - jessie - Stand 2016-08-22
+Dieses Repo enthält
+* Skripte,
+* Konfigurationsdateien,
 
-- FSFW-Uni-Stick basiert auf Debian-Live-System - Desktop kde - amd64 - Kernel 3.16
+die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
+Das erstellte System basiert derzeit (Stand März 2017) auf Debian-Live, Desktop: kde, Architektur: amd64, Kernel: 3.16.
 
 
-weitere Infos:
-https://wiki.fsfw-dresden.de/doku.php/doku/usb-stick#nutzung_von_live-build_fuer_debian
+**Screenshot vom Desktop:**
+![Screenshot-1](doc/dev_doc/data/desktop-screenshot-1.jpg "Screenshot")
 
-### Screenshots vom FSFW-Uni-Stick - 2016-08-24  ###
 
-![FSFW-Uni-Stick_boot](doc/media/FSFW-Uni-Stick_boot_1024x768.png)
+# Weitere Infos:
+## Benutzer.innen Doku:
+* [doc/src/index.md](doc/src/index.md): Welche Programme sind dabei und wozu sind die gut?
+* [FSFW-Uni-Stick/README.md](FSFW-Uni-Stick/README.md): Wie kann ich lokal bei mir das Live-Image erzeugen und testen?
 
-![FSFW-Uni-Stick_boot-kde](doc/media/FSFW_Uni-Stick_boot-kde_1024x768.png)
 
-![FSFW-Uni-Stick_icedove](doc/media/FSFW-Uni-Stick_icedove_1024x768.png)
+## Entwickler.innen Doku:
+* [CONTRIBUTING.md](CONTRIBUTING.md)
+* [dev_doc](doc/dev_doc/src/README.md)
 
-![FSFW-Uni-Stick_KDE-Desktop](doc/media/FSFW-Uni-Stick_KDE-Desktop_1024x768.png)
 

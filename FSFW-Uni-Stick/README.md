@@ -1,14 +1,15 @@
-# FSFW-Uni-Stick erstellen
+Diese Verzeichnis enthält die wesentlichen Dateien, um das Linux-Live-Image des FSFW-Uni-Sticks zu erstellen.
 
-### getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-10-28
+# Kurzanleitung zum Erstellen und Testen des FSFW-Uni-Stick
 
-live-build muss installiert sein, um das ggf. nachzuholen 
+(getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-10-28
 
-    $ sudo apt-get update && sudo apt-get install live-build
+## Erstellen
 
-Pakete die ebenfalls wichtig sind und installiert sein sollten: 
+Wichtigste Komponente im Build-Prozess ist das Paket `live-build`, außerdem werden weitere Pakete benötigt:
 
- -  sudo apt-get install pandoc python3 perl sudo wget rsync
+    $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync
+
 
 Herunterladen der benötigeten Dateien
 
@@ -22,60 +23,57 @@ FSFW-Uni-Stick CD-Image bauen
 
   ` $ ./fsfw-uni-stick_build.sh `
 
-### --- fsfw-uni-stick_build.sh --- 
-an Stelle von "fsfw-uni-stick_build.sh" können auch nachfolgende Schritte ausgeführt werden.
+Dieses Skript führt im Wesentlichen folgende Schritte aus:
 
-Paketlisten generieren - extra Pakete holen
+* Arbeitsverzeichnis ggf. von Überresten des letzten Build-Prozesses befreien (siehe unten)
+
+    ` $ sudo lb clean `
+
+
+* Paketlisten generieren - extra Pakete holen
 
   ` $ auto/paketliste `
 
   ` $ ../tools/extra-install_paket.sh	`
 
-FSFW Material/Doku bauen, user config anpassen (optional)
+* FSFW Doku im HTML-Format erzeugen, user config anpassen (optional)
 
   ` $ ../tools/fsfw-user_config.sh `
 
-Live-Image erstellen (das kann eine Weile dauern…)
+* Live-Image erstellen (das kann 20 - 90 min dauern...)
 
   ` $ sudo lb build `
-
-### -----
-
-Das " live-image " wurde erfolgreich erstellt ?
-
-  ` $ ls -l *.iso `
-
-
-### testen des Images " FSFW-Uni-Stick_jessie-amd64.hybrid.iso " in einer virtuell Umgebung mittels kvm (qemu)
-
-Benutzerberechtigung ändern 
+  
+ * Status-, Warn- und Fehlermeldungen werden in `fsfw-build-script.log` gespeichert.
+  
+* Benutzerberechtigung ändern (bisher gehört die .iso-Datei root)
 
   ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_*_jessie-amd64.hybrid.iso ` 
 
-Image mittels kvm (Kernel-based Virtual Machine) testen
+ 
+## Live-Image in einer virtuell Maschine testen
+
+* Image mittels kvm (Kernel-based Virtual Machine) bzw. qemu testen
 
   ` $ kvm -m 1024 -cdrom FSFW-Uni-Stick_jessie-amd64.hybrid.iso `
 
   * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
+  
+* Alternativ kann z.B. auch VirtualBox zum erzeugen einer Virtuellen Maschine genutzt werden
 
 
-### Areitsverzeichnis aufräumen 
+### Arbeitsverzeichnis aufräumen 
 
-Arbeitsdaten löschen 
 
-Soll die erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso** erhalten bleiben, ist sie umzubennenen.
-
-zum Beispiel:
+* Soll die erstellte .iso-Datei erhalten bleiben, ist sie umzubennenen, z.B. mit 
 
   ` $ mv FSFW-Uni-Stick_jessie-amd64.hybrid.iso FSFW-Uni-Stick_DESKTOP_jessie-amd64.hybrid.iso `
 
-Arbeitsdaten wie chroot, binary bootstrap etc. werden gelöscht 
-
-heruntergeladene Pakete bleiben im "cache/packages.*/*.deb" erhalten 
+* Arbeitsdaten wie chroot, binary bootstrap etc. löschen (heruntergeladene Pakete bleiben im "cache/packages.*/*.deb" erhalten)
 
   ` $ sudo lb clean `
 
-Arbeitsverzeichnis komplett aufräumen
+* Alternativ: Arbeitsverzeichnis komplett aufräumen (auch *.deb Dateien löschen):
 
   ` $ sudo lb clean --purge `
 
