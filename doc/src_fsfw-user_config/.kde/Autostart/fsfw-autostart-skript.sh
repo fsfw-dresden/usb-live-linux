@@ -17,5 +17,5 @@ nohup firefox /home/user/FSFW-Material/stick-doku/index.html &
 
 # Beim ersten Start erscheint nun zusätzlich im Webbrowser eine Begrüßungsseite des Zotero-Plugins...
 #...um unsere Startseite wieder in den Vordergrund zu bringen, folgender Workaround.
-sleep 5
+sleep 15
 nohup firefox /home/user/FSFW-Material/stick-doku/index.html
