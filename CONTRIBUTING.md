@@ -12,7 +12,7 @@ Größere Änderungen sollten in einem eigenem Branch erfolgen und erst nach des
 
 **Bitte beachten:** Um die Übersicht zu bewahren, verwenden wir das Branching-Modell [git flow](http://nvie.com/posts/a-successful-git-branching-model/). 
 
-Neue Features-Zweige sollten der nach folgendem Namensschema aufgebaut sein: 'feature\_\<Person\>\_\<thema-bzw-issue\>'. Beides sollte kurz, eindeutig und möglichst aussagekräftig sein. Im Branchname sind möglichst keine Sonderzeichen außer `_` und `-`  zu verwenden. Idealerweise werden Branches in *Issues* referenziert und gelöscht sobald sie nicht mehr gebraucht werden.
+Neue Feature-Zweige sollten der nach folgendem Namensschema aufgebaut sein: 'feature\_\<Person\>\_\<thema-bzw-issue\>'. Beides sollte kurz, eindeutig und möglichst aussagekräftig sein. Im Branchname sind möglichst keine Sonderzeichen außer `_` und `-`  zu verwenden. Idealerweise werden Branches in *Issues* referenziert und gelöscht sobald sie nicht mehr gebraucht werden.
 
 ## Pullrequest
 
@@ -33,6 +33,6 @@ Wer z.B. ein Paket in der Liste ergänzt, baut das Image erstmal und überprüft
 Wenn man im gebooteten Live-Image etwas über ein Konfigurationsmenü ändert und wissen möchte, welche Dateien davon betroffen sind:
 * das komplette $HOME vorher in ein git-repo einchecken
 * nach der Änderung wieder committen
-* Optional vom Host mit sshfs auf das (vermutlich in einer VM) gebootete Image zugreifen und die Änderungen in die user-config übernehmen
+
 
 
