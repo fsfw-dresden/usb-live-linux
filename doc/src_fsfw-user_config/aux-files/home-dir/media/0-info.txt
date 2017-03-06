@@ -1,1 +1,0 @@
-Dieses Verzeichnis dient als provisorischer Mount-Point  für ein externes Medium (weiterer USB-Stick)
