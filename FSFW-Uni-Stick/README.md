@@ -8,7 +8,7 @@ live-build muss installiert sein, um das ggf. nachzuholen
 
 Pakete die ebenfalls wichtig sind und installiert sein sollten: 
 
- - sudo, wget, rsync, pandoc, python3, perl
+ -  sudo apt-get install pandoc python3 perl sudo wget rsync
 
 Herunterladen der benötigeten Dateien
 
