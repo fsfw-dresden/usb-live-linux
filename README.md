@@ -22,6 +22,7 @@ Das erstellte System basiert derzeit (Stand März 2017) auf Debian-Live, Desktop
 ## Benutzer.innen Doku:
 * [doc/src/index.md](doc/src/index.md): Welche Programme sind dabei und wozu sind die gut?
 * [FSFW-Uni-Stick/README.md](FSFW-Uni-Stick/README.md): Wie kann ich lokal bei mir das Live-Image erzeugen und testen?
+* [tools/README.md](tools/README.md): Erstellen eines bootfähigen USB-Sticks mit dem Live-Image
 
 
 ## Entwickler.innen Doku:

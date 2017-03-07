@@ -1,11 +1,25 @@
-# FSFW-Uni-Stick erstellen
+Dieses Verzeichnis enthält Hilfs-Skripte, die zum Erstellen des Live-Images oder des Stick-Images benötigt werden.
 
-### getestet auf Debian "Debian jessie" - LANG=de_DE.UTF-8 - 2016-09-17 
+# Konzept:
+Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene relevante Image-Typen
+* Linux-Live-Image; Ergebnis von `lb build`
+* Stick-Image;
+  * Es enthält
+    * Boot-Konfiguration
+    * und bis zu drei Partitioinen:
+        * für Linux-Live,
+        * für Windows-Programme und
+        * für Daten (Persistenz)
+  * Es kann in eine Datei oder direkt auf einen USB-Stick geschrieben werden.
 
-Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich um die im live-build erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
+# Stick-Image erstellen
+
+(getestet auf Debian Jessie)
+
+Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich, um die im live-build erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
 auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 
-  * auf dem Speichermediums können mehrere Partitionen angelegt werden
+  * auf dem Speichermedium können mehrere Partitionen angelegt werden
 	* Partition Live-System (ext2) - wird immer benötigt - enthält das Live-System.iso
 		* Zusätzlich können Tools wie memtest86+, Hardware Test (HDT) und super-grub2-disk ausgewählt werden
 	* Partition Windows-Daten (fat32) um Daten mit Windows zu tauschen
@@ -13,22 +27,22 @@ auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 
 	
 Das Skript im live-build-Verzeichnis ausführen 
-( /dev/sd.. = Gerät/USB-Stick der benutzt werden soll )
+( /dev/sd.. = zu benutzendes Gerät (z.B. USB-Stick) )
 
-  ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdb `
+  ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc `
 
-Standardmäßig wird das im live-build-Verzeichnis erstellte \*.iso Image auf das Speicherziel geschrieben, 
-es kann alternativ auch ein anderes /PATH_zum/\*.iso Image genutzt werden.
+Standardmäßig wird das im live-build-Verzeichnis erstellte \*.iso Image auf das Speicherziel geschrieben.
+Alternativ kann auch eine *.iso Datei explizit angegeben werden:
 
-  ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdx live-image-alternativ.iso `
+  ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc live-image-alternativ.iso `
 
+**TODO:** Das Skript hat noch mehr Funktionen (noch zu dokumentieren). Die sind aber größtenteils selbsterklärend. Bei Bedarf einfach [fragen](mailto:kontakt@fsfw-dresden.de).
 
-### testen des Speichermediums in einer virtuell Umgebung mittels kvm (qemu)
+### testen des Speichermediums in einer virtuellen Maschine mittels kvm (qemu)
 
 Image mittels kvm (Kernel-based Virtual Machine) testen
 
   ` $ sudo kvm -m 1024 -hda /dev/sd..`
 
-  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
-  * /dev/sd.. = Gerät/USB-Stick der benutzt werden soll 
+  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) - kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher der Host-Rechner hat.
 

@@ -1,6 +1,6 @@
 Diese Verzeichnis enthält die wesentlichen Dateien, um das Linux-Live-Image des FSFW-Uni-Sticks zu erstellen.
 
-# Kurzanleitung zum Erstellen und Testen des FSFW-Uni-Stick
+# Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
 (getestet auf Debian "jessie" (stable) und Debian "stretch" (testing) - 2016-10-28
 
@@ -77,3 +77,5 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
 
   ` $ sudo lb clean --purge `
 
+### USB-Stick erstellen
+siehe [../tools/README.md](../tools/README.md)
