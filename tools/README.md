@@ -1,16 +1,17 @@
 Dieses Verzeichnis enthält Hilfs-Skripte, die zum Erstellen des Live-Images oder des Stick-Images benötigt werden.
 
 # Konzept:
-Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene relevante Image-Typen
+Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene relevante Image-Typen (.iso-Dateien)
 * Linux-Live-Image; Ergebnis von `lb build`
 * Stick-Image;
   * Es enthält
-    * Boot-Konfiguration
+    * Boot-Konfiguration (GRUB)
     * und bis zu drei Partitioinen:
         * für Linux-Live,
         * für Windows-Programme und
         * für Daten (Persistenz)
-  * Es kann in eine Datei oder direkt auf einen USB-Stick geschrieben werden.
+  * GRUB ist so konfiguriert, dass das BS aus der Linux-Live.iso gebootet wird
+  * Das Stick-Image kann in eine .iso-Datei oder direkt auf einen USB-Stick (z.B. /dev/sdb) geschrieben werden.
 
 # Stick-Image erstellen
 
