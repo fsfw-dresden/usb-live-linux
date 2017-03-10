@@ -24,6 +24,13 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Über das Menü: Einfügen -> Gleichung bzw. `ALT+E` `G` erreicht man den Dialog zum einfügen von LaTeX-Formeln
  * folgender String sollte ein sinnvolles Ergebnis liefern: `\alpha^2 + \beta = \frac{\pi}{2}`
 
+## Zotero
+* Es sollte als Plugin im Webbrowser und LibreOffice installiert sein.
+* Beim ersten Start des Uni-Sticks sollte sich im Webbrowser die Zotero-Startseite nicht in den Vordergrund drängeln
+ * Sieht so aus: ![Screenshot-1](..data/Firefox+Zoteroaddon-screenshot-1.png "Zoteroaddon im Firefox Screenshot 1") ![Screenshot-2](..data/LibreOffice+Zoteroaddon-screenshot-2.png "Zoteroaddon im LibreOffice Screenshot 2")
+* Webseiten oder manuell eingetragene Quellenangaben sollten sich über das Browseraddon erstellen und mittels des LibreOffice-Addon in Texte einfügen lassen
+* Zusätzlich sollten sich im Browser-Addon Quellen nach Bib(La)TeX (etwa für die Verwendung in LaTeX-Dokumenten) exportieren lassen
+
 ## Tastenkombinationen
 
 * WIN+T: öffnet ein Terminal
