@@ -31,7 +31,14 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Webseiten oder manuell eingetragene Quellenangaben sollten sich über das Browseraddon erstellen und mittels des LibreOffice-Addon in Texte einfügen lassen
 * Zusätzlich sollten sich im Browser-Addon Quellen nach Bib(La)TeX (etwa für die Verwendung in LaTeX-Dokumenten) exportieren lassen
 
+## Accessibilityverbesserung (Screenreader & Co.)
+* Brltty (Brailleterminal) soll beim booten automatisch und mit deutschsprachiger Konfig gestartet werden
+* Screenreader (Linux) und NVDA (Windows) sollen in der Doku (samt Tastenkombi zum Starten) erwähnt werden.
+* mit Gnome-orca/ espeak sollte ein Text vorgelesen werden können.
+
 ## Tastenkombinationen
 
 * WIN+T: öffnet ein Terminal
 * WIN+K: öffnet KSnapshot (Programm für Bildschirmfotos)
+* WIN+s: soll Gnome-orca öffnen
+
