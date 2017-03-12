@@ -37,7 +37,7 @@
 # deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
 main_function() {
 
-# sicherstellen, dass dieses script mit superuser-Recheten ausgeführt wird.
+# Hinweis bzgl. benötigter superuser-Rechete
 
 if [ "$(id -u)" != "0" ]; then
    echo " "

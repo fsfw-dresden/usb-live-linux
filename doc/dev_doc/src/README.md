@@ -1,4 +1,4 @@
-Dieses Verzeichnis enthält technische Dokumentation mit der Zielgruppe EntwicklerInnen des Projekts.
+Dieses Verzeichnis enthält technische Dokumentation mit der Zielgruppe Entwickler.innen des Projekts.
 
 ## Wichtige Dateien in diesem Verzeichnis:
 * [CHECKLIST](CHECKLIST.md) Liste mit Funktionen, die nach dem Bauen des Live-Images überprüft werden sollten.
