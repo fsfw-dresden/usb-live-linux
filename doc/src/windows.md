@@ -369,5 +369,3 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
-* [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
-  aus Freier Software für vielerlei Anwendungsfälle.
