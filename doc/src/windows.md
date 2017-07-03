@@ -345,6 +345,16 @@ vielleicht sind sie ja dennoch etwas für euch:
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
 
+* [Shotcut](https://www.shotcut.org/),
+  [auch portabel](https://www.shotcut.org/download/),
+  ist eine sehr übersichtliche und stabile Anwendung zum Schneiden von Videos für
+  und von Präsentationen oder Lehrveranstaltungen sowie vom Scheitern bedrohten
+  Vorführungen.
+  Für den Einsteiger sind auch zahlreiche Beispiele als Video-Anleitung
+  [vom Projekt selbst](https://www.shotcut.org/tutorials/) sowie
+  aus der Community (u.a.
+  [von TECHTEST](https://www.youtube.com/playlist?list=PLFwM71NcKmpCyI1rXGrQVYa8tw8zuRYkp) verfügbar.
+
 * [Apachefriends](http://www.apachefriends.org/),
   [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
   für all jene, die einen Server als Testumgebung für erste Gehversuche in der
