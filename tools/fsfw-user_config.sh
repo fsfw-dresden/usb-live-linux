@@ -14,7 +14,7 @@
 
   if [ -d config/includes.chroot/etc/skel/ ]; then
 	 rm -R config/includes.chroot/etc/skel/*
-	.echo " löschen - config/includes.chroot/etc/skel/* "
+	echo " löschen - config/includes.chroot/etc/skel/* "
   fi 
 
 # git-versionsnummer / link --> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
@@ -24,7 +24,7 @@
 	 echo " config/includes.chroot/etc/skel/ erstellt"
 	else
 	 rm config/includes.chroot/etc/skel/*
-	.echo " löschen - config/includes.chroot/etc/skel/* "
+	echo " löschen - config/includes.chroot/etc/skel/* "
   fi 
 
 echo " FSFW_UNI_STICK_VERSION = "$(echo "$(../tools/calc-version-number.sh)")" " > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
@@ -39,9 +39,8 @@ echo "FSFW "user" configuration fertig."
 #
 echo "FSFW Material/Doku bauen und verteilen"
 
-# allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
+# TODO: allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
 
-#### erstellt von Carsten / angepasst gerd -->
 
 dlist_md=(../doc/src/*.md)
 
@@ -49,22 +48,21 @@ for f in ${dlist_md[@]##*/} ;
    do
     TARGETFILE="../doc/html/${f%%.md}.html"
 
-# TODO: Fehler! fals Paket pandoc nicht installiert ist -- Programmverfügbarkeit vorher testen
+# TODO: Fehler, falls Paket pandoc nicht installiert ist -> Programmverfügbarkeit vorher testen
     cmd="pandoc --standalone --template ../doc/build-script/fsfw-template.html ../doc/src/${f} -o $TARGETFILE"
 
     # for debugging:
     # echo $cmd
+    
     eval $cmd
 
     # in the markdown docs there are markdown link targets (to play nicely with github)
     # now its time to convert them
 
-    perl -p -i -e 's/\.md">/\.html">/g' $TARGETFILE
+    python3 convert-md-links.py "$TARGETFILE"
     
     echo "Datei geschrieben:" $TARGETFILE
 done
-
-## erstellt Carsten <--
 
 
 # TODO: *.hlml  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/

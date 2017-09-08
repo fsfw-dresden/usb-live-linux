@@ -42,3 +42,8 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * WIN+K: öffnet KSnapshot (Programm für Bildschirmfotos)
 * WIN+s: soll Gnome-orca öffnen
 
+## FSFW-Doku
+
+* In der Bookmark-Toolbar von Firefox ist ein Link auf unsere Dokumentation gut sichtbar
+* Wenn man drauf klickt öffnet sich die Index-Seite mit dem FSFW-Layout
+* Alle Links funktionieren, insbesondere auch der Link auf unsere "Vollständige Paketliste", die bei github liegt (hier gab es einen Bug: #74)
