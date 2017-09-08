@@ -57,7 +57,6 @@ fi
 # mkdir config/hooks/live
 # mkdir config/hooks/normal
 
-ln -s ../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/1050-install-recent-ipython-and-configure-it.hook.chroot
 
 # Teste welches Debian Release eingesetzt wird und passe die config an
 if cat /etc/os-release | grep -q jessie ; then
@@ -68,6 +67,7 @@ lb config noauto \
 	"${@}"
 
 ln -s ../binary_local-hooks/1000-grub2-hotfix.hook.binary config/hooks/1000-grub2-hotfix.hook.binary
+ln -s ../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/1050-install-recent-ipython-and-configure-it.hook.chroot
 
 fi
 
@@ -79,6 +79,7 @@ lb config noauto \
 	"${@}"
 
 ln -s ../../binary_local-hooks/1000-stretch-boot-hotfix.hook.binary config/hooks/normal/1000-stretch-hotfix.hook.binary
+ln -s ../../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/normal/1050-install-recent-ipython-and-configure-it.hook.chroot
 
 fi
 
