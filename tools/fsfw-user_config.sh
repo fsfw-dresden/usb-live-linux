@@ -14,7 +14,7 @@
 
   if [ -d config/includes.chroot/etc/skel/ ]; then
 	 rm -R config/includes.chroot/etc/skel/*
-	.echo " löschen - config/includes.chroot/etc/skel/* "
+	echo " löschen - config/includes.chroot/etc/skel/* "
   fi 
 
 # git-versionsnummer / link --> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
@@ -24,7 +24,7 @@
 	 echo " config/includes.chroot/etc/skel/ erstellt"
 	else
 	 rm config/includes.chroot/etc/skel/*
-	.echo " löschen - config/includes.chroot/etc/skel/* "
+	echo " löschen - config/includes.chroot/etc/skel/* "
   fi 
 
 echo " FSFW_UNI_STICK_VERSION = "$(echo "$(../tools/calc-version-number.sh)")" " > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
