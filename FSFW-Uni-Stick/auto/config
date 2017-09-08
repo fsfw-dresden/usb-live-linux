@@ -58,6 +58,7 @@ fi
 # mkdir config/hooks/normal
 
 ln -s ../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/1050-install-recent-ipython-and-configure-it.hook.chroot
+ln -s ../chroot_local-hooks/1050-install-recent-docear.hook.chroot config/hooks/1050-install-recent-docear.hook.chroot
 
 # Teste welches Debian Release eingesetzt wird und passe die config an
 if cat /etc/os-release | grep -q jessie ; then

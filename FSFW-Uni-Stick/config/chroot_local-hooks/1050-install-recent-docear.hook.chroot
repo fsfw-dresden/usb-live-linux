@@ -1,0 +1,30 @@
+#!/bin/sh
+# Skript erstellt von Norman 2016-11-16
+
+echo "# # # ######################"
+echo "Installing docear"
+
+# echo "Aktuelles Verzeichnis:"
+# pwd
+
+echo "Docear erneut herunterladen und entpacken:"
+# TODO: Download ggf. cachen, damit er nur bei einer Änderung neu runtergeladen werden braucht.
+mkdir docear
+cd docear
+wget http://docear.org/downloads/docear_linux.tar.gz
+tar -xf docear_linux.tar.gz
+
+# Programm an passende Stelle verschieben
+ln -s docear*/docear.sh docear.sh
+mv docear* /usr/local/bin/ 
+
+# Programme-Menüeintrag aus Desktopverknüpfung erstellen
+find / -iname Docear.destop
+cp ~user/Schreibtisch/Docear.destop /usr/share/applications/
+# mv ~/Schreibtisch/Docear.destop /usr/share/applications/
+
+echo "Lösche temp. Installtationsdateien"
+cd ..
+rm -rf docear/
+
+echo "# # # Docear installation finished"
