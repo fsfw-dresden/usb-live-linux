@@ -19,7 +19,7 @@ if [[ -z ${FSFW_UNI_STICK_CONFIG} ]]; then
 fi
 
 rm ./auto/config
-ln -s ../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
+ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
 
 
 # passende system configuration aktivieren

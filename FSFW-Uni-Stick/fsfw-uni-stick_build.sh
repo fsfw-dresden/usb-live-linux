@@ -92,11 +92,10 @@ sudo lb clean
 ../tools/doku_create.sh
 
 # FSFW user config erstellen
-# TODO:
-# script aufruf aus ./config/${}FSFW_UNI_STICK_CONFIG/user_config.sh   fsfw-user_config.sh 	# user config aus doc/src_fsfw-user_config/*  --> config/includes.chroot/home/user/  --> config/includes.chroot/etc/...
-# git-versionsnummer / link --> config/includes.chroot/home/user/.version_fsfw-uni-stick
-# alt  ../tools/fsfw-user_config.sh
-# in multiconfig neue Aufteilung der user configuration 
+# in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
+
+echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
+
 ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
