@@ -1,38 +1,25 @@
 #!/bin/bash
 #
-# Skript erstellt gerdg-dd@gmx.de 2016-10-21
+# Skript erstellt gerdg-dd@gmx.de 2016-10-21 
 #
-# erstellten der user Konfiguration aus doc/src_user-config/*  
-# und schreibt sie nach "config/includes.chroot/etc/skel/" und "config/includes.chroot/etc/..."
+#	VERSION: 0.0.3
 #
+#	CREATED: 2016-10-21
+#      REVISION: 2017-09-13
 #
-# aufräumen ( ist ../home/user vorhanden wird die config nicht aus ../etc/skel übernommen)
-  if [ -d config/includes.chroot/home/ ]; then
-	 rm -R config/includes.chroot/home
-	 echo " config/includes.chroot/home gelöscht"
-  fi 
-
-  if [ -d config/includes.chroot/etc/skel/ ]; then
-	 rm -R config/includes.chroot/etc/skel/*
-	 echo " löschen - config/includes.chroot/etc/skel/* "
-  fi 
-
-# git-versionsnummer / link --> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
+# erstellten der user Konfiguration aus doc/src_fsfw-user_config/*  
+# und schreibt sie nach "../config/${FSFW_UNI_STICK_CONFIG}/user_config/..."
 #
-  if [ ! -d config/includes.chroot/etc/skel/ ]; then
-	 mkdir -p config/includes.chroot/etc/skel/
-	 echo " config/includes.chroot/etc/skel/ erstellt"
-	else
-	 rm config/includes.chroot/etc/skel/*
-	 echo " löschen - config/includes.chroot/etc/skel/* "
-  fi 
 
-echo " FSFW_UNI_STICK_VERSION = "$(echo "$(../tools/calc-version-number.sh)")" " > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
-echo " git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)" >> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
+FSFW_UNI_STICK_CONFIG=$1
+echo "fsfw-user_config.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
 
+
+# aktuallisieren der ../config/${FSFW_UNI_STICK_CONFIG}/user_config/..
+# 
 echo "FSFW "user" config verteilen"
 
-rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ config/includes.chroot/etc/skel 
+rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config
 
 echo "FSFW "user" configuration fertig."
 
@@ -40,7 +27,6 @@ echo "FSFW "user" configuration fertig."
 echo "FSFW Material/Doku bauen und verteilen"
 
 # TODO: allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
-
 
 dlist_md=(../doc/src/*.md)
 
@@ -67,16 +53,16 @@ done
 
 # TODO: *.hlml  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
 
-if [ ! -d config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ ]; then
-	 mkdir -p config/includes.chroot/etc/skel/FSFW-Material/stick-doku/
-	 echo " config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ erstellt"
+if [ ! -d ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku/ ]; then
+	 mkdir -p ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku/
+	 echo " ../config/${FSFW_UNI_STICK_CONFIG}/user_configFSFW-Material/stick-doku/ erstellt"
 fi 
 
-rsync -avP ../doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
+rsync -avP ../doc/html/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku
 
 # doc/latex-vorlage  übernehmen
 
-rsync -avP ../doc/latex-vorlage config/includes.chroot/etc/skel/FSFW-Material
+rsync -avP ../doc/latex-vorlage ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 

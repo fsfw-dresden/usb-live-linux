@@ -24,8 +24,7 @@ config/source
 config/build
 config/package-lists
 config/hooks
-config/includes.chroot/var
-config/includes.chroot/etc/skel
+config/includes.chroot/*
 
 source/
 source*.iso

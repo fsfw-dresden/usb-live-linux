@@ -7,4 +7,6 @@ doc/html/*.html
 
 manual-installed-packages/*
 
+images
+
 .lock
