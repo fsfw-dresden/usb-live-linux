@@ -31,8 +31,25 @@ ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
  fi
 
 
+ if [ -d config/apt/ ]; then
+  rm -R config/apt/*
+  echo " löschen - config/apt/* "
+ fi
+
+
+ if [ -d config/packages.chroot/ ]; then
+  rm -R config/packages.chroot/*
+  echo " löschen - config/packages.chroot/* "
+ fi
+
+ if [ -d config/archives/ ]; then
+  rm -R config/archives/*
+  echo " löschen - config/archives/* "
+ fi
+
 echo " system_config  schreiben "
-
-rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config/includes.chroot/ 
-
+# rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config config
+rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config
 echo " system_config  configuration fertig."
+
+

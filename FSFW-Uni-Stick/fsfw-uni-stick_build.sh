@@ -83,7 +83,7 @@ sudo lb clean
 
 # TODO:
 #script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
-../tools/extra-install_paket.sh
+../tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # Doku bauen und verteilen
 
