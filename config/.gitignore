@@ -1,4 +1,6 @@
 FSFW-Uni-Stick_KDE_jessie_amd64/user_config/
 FSFW-Uni-Stick_KDE_jessie_amd64/system_config/packages.chroot/*
+FSFW-Uni-Stick_KDE_stretch_amd64/user_config/
+FSFW-Uni-Stick_KDE_stretch_amd64/system_config/packages.chroot/*
 FSFW-Uni-Stick_Test_*
 

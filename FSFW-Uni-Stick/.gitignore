@@ -17,6 +17,7 @@ chroot.packages.*
 chroot.files
 
 config/apt
+config/archives/*
 config/binary
 config/bootstrap
 config/chroot
