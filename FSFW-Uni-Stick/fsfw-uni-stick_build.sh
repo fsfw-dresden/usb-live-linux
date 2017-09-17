@@ -65,7 +65,7 @@ fi
 
 # Configuration einspielen
 
-../tools/config_link.sh "${FSFW_UNI_STICK_CONFIG}"
+../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # live-build Umgebung aufräumen
 sudo lb clean
