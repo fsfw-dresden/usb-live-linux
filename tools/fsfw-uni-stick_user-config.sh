@@ -9,28 +9,14 @@
 FSFW_UNI_STICK_CONFIG=$1
 echo "fsfw-uni-stick_user_config  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
 
-#
+
 # aufräumen ( ist ../home/user vorhanden wird die config nicht aus ../etc/skel übernommen)
   if [ -d config/includes.chroot/home/ ]; then
 	 rm -R config/includes.chroot/home
 	 echo " config/includes.chroot/home gelöscht"
   fi 
 
-# aufräumen ( ist ../etc/skel nicht vorhanden --> neu anlegen )
-  
-  if [ ! -d config/includes.chroot/etc/skel/ ]; then
-	 mkdir -p config/includes.chroot/etc/skel/
-	 echo " config/includes.chroot/etc/skel/ erstellt"
-	else
-	    # aufräumen ( ist ../etc/skel vorhanden wird gelöscht )
-	 if [ -d config/includes.chroot/etc/skel/ ]; then
-	  rm -R config/includes.chroot/etc/skel/*
-	  echo " löschen - config/includes.chroot/etc/skel/* "
-	 fi
-  fi 
-
-
-# TUDO: ist skript ../../config/${FSFW_UNI_STICK_CONFIG}/user_config.sh vorhanden dann ausführen
+# ist skript ../../config/${FSFW_UNI_STICK_CONFIG}/user_config.sh vorhanden dann ausführen
 
  if [ -x ../config/${FSFW_UNI_STICK_CONFIG}/user_config.sh ]; then
 	 ../config/${FSFW_UNI_STICK_CONFIG}/user_config.sh "${FSFW_UNI_STICK_CONFIG}"

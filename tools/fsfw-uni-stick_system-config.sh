@@ -22,7 +22,6 @@ ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
   echo " löschen - config/includes.chroot/* "
  fi
 
-
  if [ -d config/apt/ ]; then
   rm -R config/apt/*
   echo " löschen - config/apt/* "
@@ -39,9 +38,20 @@ ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
   echo " löschen - config/archives/* "
  fi
 
+ if [ -d config/bootloaders/ ]; then
+  rm -R config/bootloaders/*
+  echo " löschen - config/bootloaders/* "
+ fi
+
+ if [ -d config/templates/ ]; then
+  rm -R config/templates/*
+  echo " löschen - config/templates/* "
+ fi
+
+
 # system_config übernehmen
 
-echo " system_config  schreiben "
+echo " system_config ${FSFW_UNI_STICK_CONFIG} schreiben "
 rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config
 echo " system_config  configuration fertig."
 

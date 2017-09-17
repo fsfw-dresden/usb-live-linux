@@ -1,11 +1,4 @@
-FSFW-Uni-Stick/auto/config
-FSFW-Uni-Stick/config/packages.chroot/*
-
-FSFW-Uni-Stick/config/includes.chroot/home/user/*
-
 doc/html/*.html
-
-manual-installed-packages/*
 
 images
 

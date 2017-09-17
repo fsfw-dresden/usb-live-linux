@@ -63,12 +63,12 @@ if [ "$(id -u)" != "0" ]; then
    sleep 1
 fi
 
-# Configuration einspielen
-
-../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
-
 # live-build Umgebung aufräumen
 sudo lb clean
+
+# System Configuration einspielen
+../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
+
 
 # Paketlisten generieren
  if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then

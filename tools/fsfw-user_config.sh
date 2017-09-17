@@ -8,20 +8,21 @@
 #      REVISION: 2017-09-13
 #
 # erstellten der user Konfiguration aus doc/src_fsfw-user_config/*  
-# und schreibt sie nach "../config/${FSFW_UNI_STICK_CONFIG}/user_config/..."
+# und schreibt sie nach "../config/includes.chroot/..."
 #
 
 FSFW_UNI_STICK_CONFIG=$1
 echo "fsfw-user_config.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
 
+# TODO:  ${DISTRIBUTION}  jessie - stretch .... unterscheiden ??
 
-# aktuallisieren der ../config/${FSFW_UNI_STICK_CONFIG}/user_config/..
+# aktuallisieren der ../config/includes.chroot/etc/skel/..
 # 
-echo "FSFW "user" config verteilen"
+echo "fsfw-user_config.sh - config verteilen"
 
-rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config
+rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ config/includes.chroot/etc/skel
 
-echo "FSFW "user" configuration fertig."
+echo "fsfw-user_config.sh - configuration fertig."
 
 #
 echo "FSFW Material/Doku bauen und verteilen"
@@ -53,17 +54,17 @@ done
 
 # TODO: *.hlml  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
 
-if [ ! -d ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku/ ]; then
-	 mkdir -p ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku/
-	 echo " ../config/${FSFW_UNI_STICK_CONFIG}/user_configFSFW-Material/stick-doku/ erstellt"
+
+if [ ! -d config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ ]; then
+	 mkdir -p config/includes.chroot/etc/skel/FSFW-Material/stick-doku/
+	 echo " config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ erstellt"
 fi 
 
-rsync -avP ../doc/html/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material/stick-doku
+rsync -avP ../doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
 
 # doc/latex-vorlage  übernehmen
 
-rsync -avP ../doc/latex-vorlage ../config/${FSFW_UNI_STICK_CONFIG}/user_config/FSFW-Material
+rsync -avP ../doc/latex-vorlage config/includes.chroot/etc/skel/FSFW-Material
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
-
 
