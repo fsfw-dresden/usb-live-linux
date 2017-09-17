@@ -55,7 +55,7 @@
 >
 > - Siehe auch den Quelltext dieser Datei
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
-> 
+>
 
 ##  Desktop  
 
@@ -68,7 +68,7 @@
   - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers 
  - :x:  gsfonts-x11  --
   - :o:  xfonts-utils  --
-.- :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
+ - :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
 
 - :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
 
@@ -128,16 +128,16 @@
 - :x:  kdesudo  -- sudo-Oberfläche für KDE
 - :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
-- :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop          (Größe 90 MB)
+- :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
-
 - ### :x:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
-[//]: # ( beim testen ist mir aufgefallen: )
-[//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption (kvm -m 1024) benutzt wird)
-[//]: # ( - Images mit Mate-Desktop mit der Speicheroption (kvm -m 256), für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben )
-[//]: # ( - mit der Speicheroption -m 512 geht es gerade so )
-[//]: # ( Bemerkung: es wird derzeit keine "Swap Partition" benutzt - sollte man darüber nachdenken ? )
+
+[//]: # ( beim testen ist mir aufgefallen: ) 
+[//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption (kvm -m 1024) benutzt wird) 
+[//]: # ( - Images mit Mate-Desktop mit der Speicheroption (kvm -m 256), für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben ) 
+[//]: # ( - mit der Speicheroption -m 512 geht es gerade so ) 
+[//]: # ( Bemerkung: es wird derzeit keine "Swap Partition" benutzt - sollte man darüber nachdenken ? ) 
 
 - ### :o:  task-gnome-desktop  -- 
 
