@@ -644,9 +644,60 @@
  - :x:  uuid-runtime
 - :x:  live-config  --
  - :x:  live-config-systemd  --
- - :x:  iproute2  --
- - :x:  user-setup  --
-- :x:  live-tools  -- 
+ - :o:  iproute2  --
 
+##  recommends  -- Pakete die installiert werden sollten wenn > lb config --apt-recommends < verwendet wird
+
+- :x:  user-setup  --
+- :x:  sudo  --
+
+- :x:  dbus  --
+- :x:  irqbalance  -- 
+- :x:  ixo-usb-jtag  --
+- :x:  keyboard-configuration  -- 
+- :x:  libglib2.0-data  -- 
+- :x:  locales  --
+- :x:  sgml-base  --
+- :x:  shared-mime-info --
+- :x:  xdg-user-dirs  --
+- :x:  xml-core  --
+
+##  firmware  -- wird > lb config --firmware-chroot false < verwendet, fehlen diese Pakete
+
+- :o:  firmware-linux  --
+ - :x:  firmware-linux-free  -- 
+ - :o:  firmware-linux-nonfree  --
+  - :o:  firmware-misc-nonfree  --
+  - :o:  firmware-amd-graphics  -- 
+
+- :x:  hdmi2usb-fx2-firmware  --
+
+- :o:  dahdi-firmware-nonfree  --
+
+- :o:  bluez-firmware  --
+- :o:  atmel-firmware  --
+- :o:  amd64-microcode  --
+- :o:  intel-microcode  --
+
+- :o:  firmware-atheros  -- 
+- :o:  firmware-bnx2  -- 
+- :o:  firmware-bnx2x  -- 
+- :o:  firmware-brcm80211  -- 
+- :o:  firmware-cavium  -- 
+- :o:  firmware-crystalhd  -- 
+- :o:  firmware-intel-sound  -- 
+- :o:  firmware-intelwimax  -- 
+- :o:  firmware-ipw2x00  -- 
+- :o:  firmware-ivtv  -- 
+- :o:  firmware-iwlwifi  -- 
+- :o:  firmware-libertas  -- 
+- :o:  firmware-myricom  -- 
+- :o:  firmware-netxen  -- 
+- :o:  firmware-qlogic  -- 
+- :o:  firmware-realtek  -- 
+- :o:  firmware-samsung  -- 
+- :o:  firmware-siano  -- 
+- :o:  firmware-ti-connectivity  -- 
+- :o:  firmware-zd1211  -- 
 
 
