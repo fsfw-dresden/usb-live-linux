@@ -74,9 +74,12 @@
 
 - ###  task-kde-desktop  -- KDE Desktop Umgebung
 
-- :x:  task-kde-desktop  -- 
 - :o:  kde-full  --  Vollständige KDE (5:92) Software Compilation für Anwender
-- :x:  lightdm-kde-greeter  --	LightDM KDE
+- :x:  task-kde-desktop  -- 
+
+- :x:  lightdm-kde-greeter  -- LightDM KDE
+- :x:  kde-style-oxygen-qt5  -- Oxygen desktop theme is used by Plasma and other KDE Software
+- :x:  kwin-x11  -- KDE-Fenstermanager - X11-Version
 
 - ###  kde-standard
 
@@ -89,6 +92,7 @@
 - :x:  kate  --		Leistungsstarker Texteditor 
 - :x:  kcalc  --	Einfacher wissenschaftlicher Taschenrechner
 - :x:  kde-plasma-desktop  -- KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
+ - :x:  user-manager  -- user management tool for the Plasma workspace
 - :x:  kde-spectacle  -- Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
 - :x:  khelpcenter  --	Hilfezentrum 
 - :x:  kmail  --	Vollständiger grafischer E-Mail-Client
@@ -113,12 +117,12 @@
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
 
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
+- :x:  systemsettings  -- Anwendung zur Konfiguration der Arbeitsfläche
 
 ##  KDE Programme
 
 - :o:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos 
 - :x:  okular-extra-backends  --  Unterstützung von zusätzlichen Dokumentformaten für Okular 
- 
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 - :+1:  kteatime  -- Kurzzeitwecker, damit der Tee weder zu kurz och zu lange zieht
@@ -619,6 +623,8 @@
 - :x:  network-manager-pptp  --		Verwaltung von Netzwerken PPTP-Erweiterung (Point-to-Point Tunneling Protocol)
 - :x:  network-manager-vpnc  --		Verwaltung von Netzwerken VPNC-Erweiterung (Cisco-kompatibler VPN-Client)
 - :x:  modem-manager-gui  --		GUI front-end for ModemManager / Wader / oFono
+- :x:  usb-modeswitch  -- Werkzeug für Modiwechsel zum Steuern von USB-Geräten mit Flipflopschaltung
+- :x:  usbmuxd  -- USB-Multiplexer-Daemon für iPhone- und iPod-Touch-Geräte
 
 - ###  Wlan - Hardware
 
@@ -641,7 +647,7 @@
  - :x:  live-boot-initramfs-tools  -- hinzugefügt stretch
  - :x:  live-tools  --
  - :x:  rsync  --
- - :x:  uuid-runtime
+ - :x:  uuid-runtime  --
 - :x:  live-config  --
  - :x:  live-config-systemd  --
  - :o:  iproute2  --

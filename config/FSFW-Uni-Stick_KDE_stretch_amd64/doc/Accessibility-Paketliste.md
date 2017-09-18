@@ -36,7 +36,7 @@
 
 - ###  KDE-Desktop -- für den KDE-Desktop 
 
-- :x:  kaccessible  -- Barrierereduzierung für gehandicapte Anwender
+- :x:  kdeaccessibility  -- Barrierereduzierung für gehandicapte Anwender
 - :x:  kvkbd  -- Oncreen-Keyboard
 - :x:  kmouth  -- Frontend für Sprachausgabe
 
