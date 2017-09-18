@@ -25,13 +25,11 @@ echo "fsfw-uni-stick_user_config  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG
 	 echo " ../config/${FSFW_UNI_STICK_CONFIG}/user_config.sh  nicht vorhanden "
  fi
 
-
 echo " user_config  schreiben "
 
-rsync -avP --exclude=aux-files/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config/ config/includes.chroot/etc/skel 
+rsync -avP --exclude=src/ ../config/${FSFW_UNI_STICK_CONFIG}/user_config/ config/includes.chroot/etc/skel 
 
 echo " user_config  configuration fertig."
-
 
 # git-versionsnummer / link --> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
 #
