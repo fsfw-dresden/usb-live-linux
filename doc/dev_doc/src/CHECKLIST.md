@@ -46,4 +46,15 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 
 * In der Bookmark-Toolbar von Firefox ist ein Link auf unsere Dokumentation gut sichtbar
 * Wenn man drauf klickt öffnet sich die Index-Seite mit dem FSFW-Layout
-* Alle Links funktionieren, insbesondere auch der Link auf unsere "Vollständige Paketliste", die bei github liegt (hier gab es einen Bug: #74)
+* Alle Links funktionieren, insbesondere
+  - der Link auf unsere "Vollständige Paketliste", die bei github liegt (hier gab es einen Bug: #74)
+  - Links auf LaTeX-Vorlagen (Diplomarbeit und Präsentation öffnen korrekt in TeX-Studio und lassen sich kompilieren)
+
+
+## Hello-World-Collection
+* Das Verzeichnis FSFW-Material/hello-world-collection/ existiert
+* Es hat die Unterverzeichnisse C, go, Python
+* Die C und go-Beispiele lassen sich kompilieren und ausführen
+* Die Python-Beispiele lassen sich ohne Fehlermeldungen ausführen (entsprechend der Anweisungen in python/README.md)
+ * Das Matplotlib-Beispiel liefert so ein Bild: ![Screenshot-1](../data/02-python-example-plot-result.png "Matplotlib Example result")
+
