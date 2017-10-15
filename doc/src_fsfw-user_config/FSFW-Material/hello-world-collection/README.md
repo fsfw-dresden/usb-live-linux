@@ -13,8 +13,8 @@ This repository is part of the [*FSFW-Uni-Stick*-Project](https://github.com/fsf
 but might be interesting on its own.
 
 
-For all examples it is necessary to have a terminal in the appropriate directory.
-One way to achive this: pressing Shift+F4 in Dolphin (opens a new Terminal in the Currently shown directory)
+For all examples it is necessary to have a terminal open in the appropriate directory.
+One way to achive this: Pressing Shift+F4 in Dolphin (opens a new terminal in the currently shown directory).
 Basic commands:
 * `cd <dirname>`
   - change directory to <dirname>
