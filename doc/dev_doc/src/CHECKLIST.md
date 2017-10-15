@@ -7,6 +7,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 ## Desktop (Hintergrund und Symbole)
 * Sieht ungefähr so aus: ![Screenshot-1](../data/desktop-screenshot-1.jpg "Screenshot")
  * darauf achten, dass die Uni-Stick-spezifischen Programme räumlich von den allgemeinen Systemprogrammen getrennt sind.
+ * Zusätzlich sollte noch R-Studio mit schönem Symbol zu sehen sein
 
 ## jupyter
 
@@ -49,7 +50,12 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Alle Links funktionieren, insbesondere
   - der Link auf unsere "Vollständige Paketliste", die bei github liegt (hier gab es einen Bug: #74)
   - Links auf LaTeX-Vorlagen (Diplomarbeit und Präsentation öffnen korrekt in TeX-Studio und lassen sich kompilieren)
+* Index-Seite enthält die neu hinzugefügten FSFW-Links (Sprechstunde, Blog, ...)
 
+## Kate
+* Zeigt beim ersten Start keinen Tipp-Dialog
+* Verwendet zum Einrücken 4 Leerzeichen
+* Entfernt beim Speichern überflüssige Leerzeichen am Zeilenende
 
 ## Hello-World-Collection
 * Das Verzeichnis FSFW-Material/hello-world-collection/ existiert
