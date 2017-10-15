@@ -133,7 +133,7 @@ Weitere interessante Angebote von uns
 * [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
 * [Anleitung zu Mailverschlüsselung](https://fsfw-dresden.de/gpg)
 * [Blog](https://fsfw-dresden.de/blog)
-* [Newsletter](https://fsfw-dresden.de/Newsletter)
+* [Newsletter](https://fsfw-dresden.de/newsletter)
 
 
 Die FSFW bedankt sich ganz herzlich bei den StuRä der TU Dresden und der HTW für die
