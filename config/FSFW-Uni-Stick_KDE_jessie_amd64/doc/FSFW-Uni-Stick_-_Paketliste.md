@@ -298,6 +298,7 @@
 - :x:  python3-matplotlib
 - :x:  python3-tk
 - :x:  python-tk
+- :x:  python3-sphinx  -- Tool zur automatischen Erzeugung von Dokumentaion aus source-code
 
 - ###  Statistik
 
@@ -449,6 +450,7 @@
 - :x:  make  --			einfaches Build-Tool
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
+- :x:  golang  -- Compiler und toolchain zur Programmiersprache go
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 

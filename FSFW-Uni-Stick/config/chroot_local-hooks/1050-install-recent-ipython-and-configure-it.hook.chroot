@@ -26,4 +26,11 @@ sudo pip3 install jupyter
 
 
 echo "# # # Jupyter installation finished"
+echo "installing further useful python packages"
+
+# render markdown
+sudo pip3 install grip
+sudo pip3 install sphinx_rtd_theme
+
+
 
