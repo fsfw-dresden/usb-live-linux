@@ -51,7 +51,7 @@ unterstützen.  Eines dieser Programmen ist *TeXStudio* und ist auf diesem Stick
 installiert.  Damit lassen sich einfach komplexe Dokumente erstellen und schnell
 in die gewünschte Ausgabe transformieren.
 
-## Beispiel: Eine Vorlage für Diplomarbeiten
+## Beispiel 1: Eine Vorlage für Diplomarbeiten
 
 Typischerweise fängt man nicht mit einer leeren Datei, sondern mit einer passenden
 Vorlage an. Von manchen Inistituten werden solche Vorlagen für ihre Studierenden
@@ -59,9 +59,10 @@ bereitgestellt, z.B. [hier](https://tu-dresden.de/ing/elektrotechnik/rst/studium
 vom Institut für Regelungs- und Steuerungstheorie.
 
 Wir haben eine eigene Vorlage (hier am Beispiel einer Diplomarbeit) erstellt
-und auf den Stick gepackt: [→Link zur Vorlage](../latex-vorlage/muster-diplomarbeit.tex).
+und auf den Stick gepackt: [→Link zur Vorlage](../latex-vorlage/abschlussarbeit/muster-diplomarbeit.tex).
 Die Datei öffnet sich in TeXStudio, und von dort aus kann man sie durch Drücken
-von F6 oder durch Klicken auf den grünen Pfeil in ein [PDF](../latex-vorlage/muster-diplomarbeit.pdf)
+von F6 oder durch Klicken auf den grünen Pfeil in ein
+[PDF](../latex-vorlage/abschlussarbeit/muster-diplomarbeit.pdf)
 konvertieren. Mit F7 wird diese Datei dann angezeigt.
 
 Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert.  Das ist
@@ -69,6 +70,14 @@ nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
 über LaTeX wissen.  Dennoch hilft es, wenn man sich die Datei genauer ansieht
 und mit den Kommandos herumspielt, also Anweisungen verändert und dann neu
 übersetzt.
+
+## Beispiel 2: Eine Vorlage für Präsentationen
+Mit LaTeX kann man auch relativ einfach eine Präsentation erstellen.
+Insbesondere wenn man keine aufwendigen Animationen will oder wenn man Wert auf ansprechende Darstellung
+von mathematischen Formeln legt ist das die ein sehr Empfehlenswerter Ansatz.
+Um den Einstieg zu erleichtern haben wir auch hierfür eine Vorlage erstellt:
+[Quellcode](../latex-vorlage/praesentation/fsfw-beamer-vorlage.tex),
+[Ergebnis](../latex-vorlage/praesentation/fsfw-beamer-vorlage.pdf).
 
 ## Literatur und Hilfe
 
@@ -96,7 +105,7 @@ Im Netz:
 
 - Wer die Installation von LaTeX auf seinem eigenen Rechner scheut, kann es auch
   online unter https://www.sharelatex.com/ nutzen.
-  
+
 - Wenn man einfach nur wissen will wie man ein bestimmtes (mathematisches) Symbol in LaTeX erzeugt,
   hilft [http://detexify.kirelabs.org](http://detexify.kirelabs.org/classify.html).
 
