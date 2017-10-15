@@ -30,9 +30,9 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
+> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
 >		- Beschreibung / Erklärungen
->		- Extra Installation da nicht im Repro verfügbar
+>		- Extra Installation da nicht im Repo verfügbar
 >		- Quelle:
 >		- Abhängigkeiten / Besonderheiten
 >
@@ -281,9 +281,9 @@
 - :o: :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell
 	- IPython (jupyter, sympy) wird über Extra-Installation bereitgestellt. Ist deutlich aktueller
 - :+1: :x:  [jupyter] ( )  --  Jupyter projects for Python 3
-	- Extra Installation da nicht im Repro verfügbar
+	- Extra Installation da nicht im Repo verfügbar
 - :+1: :x:  [sympy] ( )  --	Python-Computeralgebrasystem (CAS)
-	- Extra Installation da nicht im Repro verfügbar
+	- Extra Installation da nicht im Repo verfügbar
 [//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
 
 - :x:  python3-dev  -- Header (zum Kompilieren von Python-Paketen, wird vom Hook gebraucht)
@@ -333,7 +333,7 @@
 - ###  electronics
 
 - :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
-	- Extra Installation da nicht im Repro verfügbar
+	- Extra Installation da nicht im Repo verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
 [//]: # (  - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb )
