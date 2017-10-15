@@ -558,6 +558,7 @@
 - :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 - :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
+- :x:  locate  --	schnell nach Dateien auf der Platte suchen
 
 - ###  kernel
 
