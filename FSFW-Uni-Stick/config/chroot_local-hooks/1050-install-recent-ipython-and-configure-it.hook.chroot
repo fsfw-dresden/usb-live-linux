@@ -43,5 +43,5 @@ echo "Dirty hack: install a r-studio via hook (because packages.chroot does not 
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 ${DOWNLOAD} https://download1.rstudio.org/rstudio-1.1.383-amd64.deb
-sudo dpkg -i https://download1.rstudio.org/rstudio-1.1.383-amd64.deb
+sudo dpkg -i rstudio-1.1.383-amd64.deb
 
