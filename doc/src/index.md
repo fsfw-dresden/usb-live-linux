@@ -130,6 +130,7 @@ Mehr Informationen zum Programm der FSFW gibt es in
 unserem [Programmpapier](https://fsfw-dresden.de/programm.html).
 
 Weitere interessante Angebote von uns
+
 - [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
 - [Anleitung zu Mailverschlüsselung](https://fsfw-dresden.de/gpg)
 - [Blog](https://fsfw-dresden.de/blog)
