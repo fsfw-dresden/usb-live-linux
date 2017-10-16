@@ -28,7 +28,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 ## Zotero
 * Es sollte als Plugin im Webbrowser und LibreOffice installiert sein.
 * Beim ersten Start des Uni-Sticks sollte sich im Webbrowser die Zotero-Startseite nicht in den Vordergrund drängeln
- * Sieht so aus: ![Screenshot-1](../data/Firefox+Zoteroaddon-screenshot-1.png "Zoteroaddon im Firefox Screenshot 1") ![Screenshot-2](../data/LibreOffice+Zoteroaddon-screenshot-2.png "Zoteroaddon im LibreOffice Screenshot 2")
+  * Sieht so aus: ![Screenshot-1](../data/Firefox+Zoteroaddon-screenshot-1.png "Zoteroaddon im Firefox Screenshot 1") ![Screenshot-2](../data/LibreOffice+Zoteroaddon-screenshot-2.png "Zoteroaddon im LibreOffice Screenshot 2")
 * Webseiten oder manuell eingetragene Quellenangaben sollten sich über das Browseraddon erstellen und mittels des LibreOffice-Addon in Texte einfügen lassen
 * Zusätzlich sollten sich im Browser-Addon Quellen nach Bib(La)TeX (etwa für die Verwendung in LaTeX-Dokumenten) exportieren lassen
 
@@ -36,6 +36,10 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Brltty (Brailleterminal) soll beim booten automatisch und mit deutschsprachiger Konfig gestartet werden
 * Screenreader (Linux) und NVDA (Windows) sollen in der Doku (samt Tastenkombi zum Starten) erwähnt werden.
 * mit Gnome-orca/ espeak sollte ein Text vorgelesen werden können.
+
+## LibreOffice
+
+* Writer lässt sich über das Startmenü (K-Symbol links unten) starten. (Da hatten wir mal einen Bug).
 
 ## Tastenkombinationen
 
@@ -62,5 +66,5 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Es hat die Unterverzeichnisse C, go, Python
 * Die C und go-Beispiele lassen sich kompilieren und ausführen
 * Die Python-Beispiele lassen sich ohne Fehlermeldungen ausführen (entsprechend der Anweisungen in python/README.md)
- * Das Matplotlib-Beispiel liefert so ein Bild: ![Screenshot-1](../data/02-python-example-plot-result.png "Matplotlib Example result")
+  * Das Matplotlib-Beispiel liefert so ein Bild: ![Screenshot-1](../data/02-python-example-plot-result.png "Matplotlib Example result")
 

@@ -156,6 +156,7 @@
 
 - :x:  libreoffice-base  --	Datenbank
 - :x:  libreoffice-calc  --	Tabellenkalkulation
+- :x:  libreoffice-writer  --	Text-Verarbeitung
 - :x:  libreoffice-math  --	Formel-Editor
 - :-1:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 [//]: # (Carsten: dmaths entfernt weil es beim ersten Start Verwirrung stiftet
