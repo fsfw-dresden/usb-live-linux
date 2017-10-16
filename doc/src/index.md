@@ -69,7 +69,6 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 - [Python][], eine vielseitig einsetzbare Skriptsprache (siehe auch: [extra Doku](python.md))
 - [GNU PSPP][], eine freie Alternative zu der Statistiksoftware SPSS
 - [Thunderbird][] mit Unterstützung für [E-Mail-Verschlüsselung][enigmail]
-  - Aus Markenrechtlichen Gründen heißt das Thunderbird im Live-Linux "Icedove", ist aber bis auf Name und Logo identisch.
 - [Firefox][], ein freier Webbrowser
 - [VLC][], ein ausgezeichneter Mediaplayer
 - [Pidgin][] für Instant Messaging
