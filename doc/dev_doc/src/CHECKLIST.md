@@ -5,6 +5,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 
 # Checkliste
 ## Desktop (Hintergrund und Symbole)
+
 * Sieht ungefähr so aus: ![Screenshot-1](../data/desktop-screenshot-1.jpg "Screenshot")
  * darauf achten, dass die Uni-Stick-spezifischen Programme räumlich von den allgemeinen Systemprogrammen getrennt sind.
  * Zusätzlich sollte noch R-Studio mit schönem Symbol zu sehen sein
@@ -19,6 +20,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Sieht so aus (nur die ersten 2 Zellen ausgeführt): ![Screenshot-2](../data/jupyter-screenshot-2.jpg "jupyter Screenshot 2")
 
 ## zim
+
 * Es ist eine Desktop-Verknüpfung dafür vorhanden
 * Beim Starten wird die FSFW-zim-Vorlage geöffnet
 * Sieht so aus: ![Screenshot-1](../data/zim-screenshot-1.jpg "jupyter Screenshot 1")
@@ -26,6 +28,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
  * folgender String sollte ein sinnvolles Ergebnis liefern: `\alpha^2 + \beta = \frac{\pi}{2}`
 
 ## Zotero
+
 * Es sollte als Plugin im Webbrowser und LibreOffice installiert sein.
 * Beim ersten Start des Uni-Sticks sollte sich im Webbrowser die Zotero-Startseite nicht in den Vordergrund drängeln
   * Sieht so aus: ![Screenshot-1](../data/Firefox+Zoteroaddon-screenshot-1.png "Zoteroaddon im Firefox Screenshot 1") ![Screenshot-2](../data/LibreOffice+Zoteroaddon-screenshot-2.png "Zoteroaddon im LibreOffice Screenshot 2")
@@ -33,6 +36,7 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Zusätzlich sollten sich im Browser-Addon Quellen nach Bib(La)TeX (etwa für die Verwendung in LaTeX-Dokumenten) exportieren lassen
 
 ## Accessibilityverbesserung (Screenreader & Co.)
+
 * Brltty (Brailleterminal) soll beim booten automatisch und mit deutschsprachiger Konfig gestartet werden
 * Screenreader (Linux) und NVDA (Windows) sollen in der Doku (samt Tastenkombi zum Starten) erwähnt werden.
 * mit Gnome-orca/ espeak sollte ein Text vorgelesen werden können.
@@ -40,6 +44,11 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 ## LibreOffice
 
 * Writer lässt sich über das Startmenü (K-Symbol links unten) starten. (Da hatten wir mal einen Bug).
+
+## Datei-Assoziationen
+
+* .md-Dateien werden mit Kate geöffnet.
+* Firefox öffnet Ordner mit Dolphin (im Download-Dialog (nach Herunterladen einer Datei) -> Klick auf Ordner-Symbol)
 
 ## Tastenkombinationen
 
@@ -57,11 +66,13 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 * Index-Seite enthält die neu hinzugefügten FSFW-Links (Sprechstunde, Blog, ...)
 
 ## Kate
+
 * Zeigt beim ersten Start keinen Tipp-Dialog
 * Verwendet zum Einrücken 4 Leerzeichen
 * Entfernt beim Speichern überflüssige Leerzeichen am Zeilenende
 
 ## Hello-World-Collection
+
 * Das Verzeichnis FSFW-Material/hello-world-collection/ existiert
 * Es hat die Unterverzeichnisse C, go, Python
 * Die C und go-Beispiele lassen sich kompilieren und ausführen
