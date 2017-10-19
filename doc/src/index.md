@@ -11,6 +11,7 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 - [→LaTeX](latex.md)
 - [→Freie Software für Windows](windows.md)
 - [→Python](python.md)
+- [→R](r.md)
 
 ## Rechtliches
 Das Linux-Live-System auf dem Stick basiert auf der Distribution
@@ -63,11 +64,11 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
   ihr [→hier](latex.md).
 - [LibreOffice][], eine freie Alternative zu Microsoft Office
 - [GNU Octave][], eine freie Alternative zu Matlab
+- [R-Studio][], grafisches Frontend für [R][] (mächtiges Werkzeug für Statistik und Datenmodellierung, siehe auch: [extra Doku](r.md))
 - [geogebra][], ein interaktives Geometrieprogramm
-- [Python][], eine vielseitig einsetzbare Skriptsprache
+- [Python][], eine vielseitig einsetzbare Skriptsprache (siehe auch: [extra Doku](python.md))
 - [GNU PSPP][], eine freie Alternative zu der Statistiksoftware SPSS
 - [Thunderbird][] mit Unterstützung für [E-Mail-Verschlüsselung][enigmail]
-  - Aus Markenrechtlichen Gründen heißt das Thunderbird im Live-Linux "Icedove", ist aber bis auf Name und Logo identisch.
 - [Firefox][], ein freier Webbrowser
 - [VLC][], ein ausgezeichneter Mediaplayer
 - [Pidgin][] für Instant Messaging
@@ -77,7 +78,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 - [Audacity][], ein schneller, plattformunabhängiger Audio-Editor
 - [gnuplot][], ein mächtiges, kommandozeilengesteuertes Plot-Programm
 - [Scribus](https://www.scribus.net/), ein freies Desktop Publishing Werkzeug
-- [git][], ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+- [git][], ein schnelles, skalierbares, verteiltes Revisions-Kontroll-System (siehe auch [FSFW-Git-Workshop](https://fsfw-dresden.de/git-ws))
 - [zim][], ein persönliches Desktop-Wiki. Zum Abspeichern von Formeln, Bildern, Zitaten, Ideen, Fragen etc.
 
 [GNU PSPP]: https://www.gnu.org/software/pspp/
@@ -86,6 +87,8 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [qucs]: http://qucs.sourceforge.net/
 [Inkscape]: https://inkscape.org/en/
 [GNU Octave]: https://www.gnu.org/software/octave/
+[R-Studio]: https://www.rstudio.com/
+[R]: https://cran.r-project.org/
 [Python]: python.md
 [geogebra]: https://www.geogebra.org/
 [TeXStudio]: http://www.texstudio.org/
@@ -125,5 +128,13 @@ Austauschplattform und Vermittlungsgelegenheit.
 Mehr Informationen zum Programm der FSFW gibt es in
 unserem [Programmpapier](https://fsfw-dresden.de/programm.html).
 
-Die FSFW bedankt sich ganz herzlich beim StuRa der TU Dresden für die
-finanzielle Unterstützung!
+Weitere interessante Angebote von uns
+
+- [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
+- [Anleitung zu Mailverschlüsselung](https://fsfw-dresden.de/gpg)
+- [Blog](https://fsfw-dresden.de/blog)
+- [Newsletter](https://fsfw-dresden.de/newsletter)
+
+
+Die FSFW bedankt sich ganz herzlich bei den StuRä der TU Dresden und der HTW für die
+finanzielle Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick)

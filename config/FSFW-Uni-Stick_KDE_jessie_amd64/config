@@ -1,0 +1,86 @@
+#!/bin/bash
+
+set -e
+
+DISTRIBUTION=jessie
+DESKTOP=KDE
+FSFW_UNI_STICK_VERSION="$(echo "$(../tools/calc-version-number.sh)")"
+
+lb config noauto \
+    --distribution ${DISTRIBUTION} \
+    --architectures amd64 \
+    --archive-areas "main contrib non-free" \
+    --binary-images iso-hybrid \
+    --updates true --backports=true --security=true \
+    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot-security http://security.debian.org/ \
+    --parent-mirror-binary http://ftp.de.debian.org/debian/ \
+    --parent-mirror-binary-security http://security.debian.org/ \
+    --mirror-chroot http://ftp.de.debian.org/debian/ \
+    --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
+    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-binary http://ftp.de.debian.org/debian/ \
+    --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
+    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de vga=current" \
+    --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
+    --linux-packages linux-image \
+    --linux-flavours "amd64" \
+    --keyring-packages "debian-keyring deb-multimedia-keyring" \
+    --chroot-filesystem squashfs \
+    --binary-filesystem ext2 \
+    --initsystem systemd \
+    --initramfs live-boot \
+    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
+    --apt-source-archives false \
+    --apt-recommends false \
+    --cache-packages true \
+    --source false \
+	"${@}"
+
+# Branchname im Image-Nammen setzen
+
+nbranch=$(git branch --column)
+nbranch=${nbranch////_}
+nbranch=${nbranch//-/_}
+nbranch=${nbranch##*"* "}
+nbranch=${nbranch%% *}
+
+if [[ ! "${nbranch}" = "master" ]]; then
+lb config noauto \
+    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
+	"${@}"
+fi
+
+
+# Verlinke allgemeine Hooks
+
+# mkdir config/hooks/live
+# mkdir config/hooks/normal
+
+
+# Teste welches Debian Release eingesetzt wird und passe die config an
+if cat /etc/os-release | grep -q jessie ; then
+	echo "Releas jessie - config wird angepasst "
+
+lb config noauto \
+    --bootloader grub2 \
+	"${@}"
+
+ln -s ../binary_local-hooks/1000-grub2-hotfix.hook.binary config/hooks/1000-grub2-hotfix.hook.binary
+ln -s ../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/1050-install-recent-ipython-and-configure-it.hook.chroot
+
+fi
+
+if cat /etc/os-release | grep -q stretch ; then
+	echo "Releas stretch - config wird angepasst "
+
+lb config noauto \
+    --bootloader grub-pc \
+	"${@}"
+
+ln -s ../../binary_local-hooks/1000-stretch-boot-hotfix.hook.binary config/hooks/normal/1000-stretch-hotfix.hook.binary
+ln -s ../../chroot_local-hooks/1050-install-recent-ipython-and-configure-it.hook.chroot config/hooks/normal/1050-install-recent-ipython-and-configure-it.hook.chroot
+
+fi
+

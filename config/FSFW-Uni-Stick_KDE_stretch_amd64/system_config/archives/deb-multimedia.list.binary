@@ -1,0 +1,3 @@
+deb http://www.deb-multimedia.org stretch main non-free
+# deb http://www.deb-multimedia.org jessie main non-free
+# deb-src http://www.deb-multimedia.org jessie main non-free

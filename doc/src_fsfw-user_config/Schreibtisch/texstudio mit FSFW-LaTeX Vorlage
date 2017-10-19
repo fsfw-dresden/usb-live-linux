@@ -1,7 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Categories=Office;Publishing;
-Exec=cd ~/FSFW-Material/latex-vorlage; texstudio muster-diplomarbeit.tex
+Exec=cd ~/FSFW-Material/latex-vorlage/abschlussarbeit; texstudio muster-diplomarbeit.tex
 GenericName=LaTeX Editor
 Comment=LaTeX development environment
 Keywords=editor;latex;pdflatex;xelatex;lualatex;context;bibtex;

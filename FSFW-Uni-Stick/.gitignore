@@ -10,22 +10,15 @@ binary/
 .build/
 *.log
 
+auto/config
+
 cache/
 
 chroot/
 chroot.packages.*
 chroot.files
 
-config/binary
-config/bootstrap
-config/chroot
-config/common
-config/source
-config/build
-config/package-lists
-config/hooks
-config/includes.chroot/var
-config/includes.chroot/etc/skel
+config/*
 
 source/
 source*.iso

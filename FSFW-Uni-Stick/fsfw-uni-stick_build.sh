@@ -3,16 +3,20 @@
 #         FILE: fsfw-uni-stick_build.sh
 #        USAGE: ./fsfw-uni-stick_build.sh - ( ausführen im live-build-Verzeichnis )
 #  DESCRIPTION: erstellen des FSFW-Uni-Stick
-#        
-#      VERSION: 0.0.1
-#      OPTIONS: $1 = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
+#        	Nutzung variabler configurationen möglich
+#		alle Schritte in diesem Skript können auch einzeln ausgeführt werden 
+#
+#      VERSION: 0.0.3
+#      OPTIONS: TUDO: = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
+#		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_jessie_amd64 (default)
+#
 #        NOTES: für - live-build - Debian jessie / Debian stretch - LANG=de_DE.UTF-8
 #               
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 
+#     REVISION: 2017-08-13
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -31,6 +35,17 @@
 #
 #
 
+FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_jessie_amd64"
+
+FSFW_UNI_STICK_CONFIG=$1
+echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
+
+# TUDO: testen ob Verzeichnis und config vorhanden existieren
+
+if [[ -z ${FSFW_UNI_STICK_CONFIG} ]]; then
+    FSFW_UNI_STICK_CONFIG=${FSFW_UNI_STICK_CONFIG_DEFAULT}
+    echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
+fi
 
 
 # Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
@@ -51,14 +66,24 @@ fi
 # live-build Umgebung aufräumen
 sudo lb clean
 
+# System Configuration einspielen
+../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
+
+
 # Paketlisten generieren
-./auto/paketliste
+ if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then
+	 echo " ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)  wird ausgeführt "
+	 ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)
+	else
+	 ./auto/paketliste
+	 echo " ./auto/paketliste wird ausgeführt "
+ fi
 
 # extra Pakete holen
 
 # TODO:
 #script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
-../tools/extra-install_paket.sh
+../tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # Doku bauen und verteilen
 
@@ -67,10 +92,11 @@ sudo lb clean
 ../tools/doku_create.sh
 
 # FSFW user config erstellen
-# TODO:
-#script fsfw-user_config.sh 	# user config aus doc/src_user-config/*  --> config/includes.chroot/home/user/  --> config/includes.chroot/etc/...
-# git-versionsnummer / link --> config/includes.chroot/home/user/.version_fsfw-uni-stick
-../tools/fsfw-user_config.sh
+# in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
+
+echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
+
+../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
 # sudo lb config
@@ -82,6 +108,15 @@ sudo lb build
 # Benutzerberechtigung ändern 
 echo "Benutzerberechtigung ändern "
 sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
+
+# Image ins Verzeichnis images verschieben
+
+  if [ ! -d ../images/ ]; then
+	 mkdir -p ../images/
+	 echo " Verzeichnis images erstellt."
+  fi 
+
+mv ./FSFW-Uni-Stick*.iso ../images/
 
 # TODO:
 # USB-Stick erstellen - Speichergerät partitionieren,formatieren - FSFW_UNI_Stick_*.iso schreiben

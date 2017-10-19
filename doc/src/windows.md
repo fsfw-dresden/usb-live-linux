@@ -77,7 +77,7 @@ BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * Paket-Größe: 25 MB
 * Projekt-Link: [www.jabref.org/](http://www.jabref.org/)
-* Paket von https://www.fosshub.com/JabRef.html
+* Paket von [https://www.fosshub.com/JabRef.html](https://www.fosshub.com/JabRef.html)
 
 ## Zim
 
@@ -85,14 +85,15 @@ Ein vielseitiges kleines Wiki für den eigenen Desktop zum speichern von Notizen
 
 * Projekt-Link: [zim-wiki.org](http://zim-wiki.org)
 
-## winpython/anaconda
+## Python (Miniconda)
 
-Eine portable Python-Distribution für Windows mit speziellem Fokus auf
-wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy,
-SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
+Installer für die Conda-Python-Distribution. Aus dieser Basis-Installation heraus kann man andere Python-Pakete,
+[z. B. für wissenschaftliches Rechnen](https://scipy.org/) oder [coole Grafiken](http://matplotlib.org/gallery/index.html)
+einfach nach Bedarf nachinstallieren.
 
-* Projekt-Link: https://winpython.github.io/
-* Paket von: https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.2.2/
+* [Infos zu Python von der FSFW](python.md)
+* [Miniconda Kurz-Info](https://conda.io/docs/glossary.html#miniconda-glossary)
+* [Installer für weitere Distributionen](https://conda.io/miniconda.html)
 
 ## GIMP
 
