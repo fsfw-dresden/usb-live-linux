@@ -43,7 +43,7 @@ allcolors=[rgb]{0, .1, .5} % dunkelblau
 
 % diese Schriftart sieht zwar schön aus ist aber im Paket
 % texlive-fonts-extra welches sehr groß ist.
-\usepackage[scaled=0.83]{beramono}
+% \usepackage[scaled=0.83]{beramono}
 
 \usepackage{mathpazo}
 
@@ -52,7 +52,10 @@ allcolors=[rgb]{0, .1, .5} % dunkelblau
 
 \usepackage[style=authoryear,backend=biber]{biblatex}
 
-% hier wird die Datei eingebunden, in der alle möglichen Quellen stehen können.
+% hier wird die Datei eingebunden, in der alle möglichen Quellen stehen können,
+% nicht nur die, die in der Arbeit verwendet (zitiert) werden.
+% Vorteil: man kann sich eine eigene Literatur-Liste aufbauen, aus der man dann
+% Je nach Bedarf zitiert (im jeweils erforderlichen Stil).
 \addbibresource{literatur.bib}
 
 % LaTeX und biber sorgen dann dafür, dass nur die zitierten Quellen auch im
@@ -291,7 +294,7 @@ irgendeiner Weise angreift!
 \chapter{\dots, Drei!}
 \label{cha:drei}
 
-Keine Arbeit kann vollständig sein ohne eine eingebundene Graphik, und sei sie
+Keine Arbeit kann vollständig sein ohne eine eingebundene Grafik, und sei sie
 noch so unabhängig vom eigentlichen Anliegen des Werkes.  Nun denn, hier ist
 sie:\index{Abbildung}
 
@@ -320,7 +323,30 @@ Tatsächlich fällt mir doch noch was ein, und zwar ein Zitat\index{Zitat}:
 Fragen und Probleme rund um LaTeX können in der FSFW-Sprechstunde geklärt werden: 
 \url{https://fsfw-dresden.de/sprechstunde}.
 
+Ggf. sind auch die Kommentare im Quelltext dieser Datei hilfreich.
+
+
+
 \backmatter
+
+% Hinweis: Diese Vorlage nutzt zur Erstellung das Paket `biblatex` mit dem
+% Backend `biber` zur Erzeugung der notwendigen bbl-Datei.
+
+% Das ist im Vergleich zu `bibtex` der modernere und empfehlenswerte Zugang
+% zur Erzeugung des Literaturverzeichnisses.
+% Im Netz findet man aber noch viele Vorlagen die `bibtex` benutzen.
+% Nicht -> verwirren lassen.
+
+% um das vorliegende Dokument manuell von der Kommandozeile aus zu komplieren nutzt man
+% die folgenden Befehle (in dieser Reihenfolge)
+
+% pdflatex muster-diplomarbeit.tex
+% biber muster-diplomarbeit
+% pdflatex muster-diplomarbeit.tex
+
+
+% Siehe auch: https://tex.stackexchange.com/questions/13509/biblatex-in-a-nutshell-for-beginners
+
 
 \printbibliography{}
 

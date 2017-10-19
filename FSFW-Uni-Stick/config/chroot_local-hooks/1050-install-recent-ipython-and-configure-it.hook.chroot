@@ -26,4 +26,46 @@ sudo pip3 install jupyter
 
 
 echo "# # # Jupyter installation finished"
+echo "installing further useful python packages"
+
+# render markdown
+sudo pip3 install grip
+sudo pip3 install sphinx_rtd_theme
+
+# be able to test whether the hooks was executed via python3 -c "import ipydex"
+sudo pip3 install ipydex
+
+
+cd /tmp
+
+echo "# # # !!!!!!!!!!!"
+echo "Dirty hack: install a r-studio via hook (because packages.chroot does not work)"
+
+DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
+${DOWNLOAD} https://download1.rstudio.org/rstudio-1.1.383-amd64.deb
+sudo dpkg -i rstudio-1.1.383-amd64.deb
+
+# Problem: R-Studio associates itself with .md files.
+
+# when writing this code I am not sure whether
+# /home/user/.local/share/applications/mimeapps.list already exists
+# if it exists it was maybe affected by the installation of r-studio
+# overwrite it with the file mimeapps.list_save which should then also exists
+# if mimeapps.list does not exist it will be created later when the danger is over
+
+# BTW i am interested which user runs this script
+echo ${whoami}
+
+if [ -e /home/user/.local/share/applications/mimeapps.list ]
+then
+  echo "mimeapps.list already existed. -> replacing now"
+  # save the bad one for reference
+  sudo mv /home/user/.local/share/applications/mimeapps.list /home/user/.local/share/applications/mimeapps.list_original
+
+  # copy desired file to correct name
+  sudo cp /home/user/.local/share/applications/mimeapps.list_save /home/user/.local/share/applications/mimeapps.list
+else
+  echo "nothint to do with mimeapps.list"
+fi
+
 

@@ -36,6 +36,8 @@ Neuschreiben hindern würde. Außerdem ist er schneller.
 Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
 Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
 
+<!-- todo: LDAP der TU/HS einbinden -->
+
 * portable installiert: 86,2 MB
 * Paket-Größe: 75,5 MB
 * Dokumentation: [Portable TB and Enigmail](https://securityinabox.org//en/guide/thunderbird/windows)
@@ -75,7 +77,7 @@ BibTeX gut mit LaTeX zusammen genutzt werden kann.
 
 * Paket-Größe: 25 MB
 * Projekt-Link: [www.jabref.org/](http://www.jabref.org/)
-* Paket von https://www.fosshub.com/JabRef.html
+* Paket von [https://www.fosshub.com/JabRef.html](https://www.fosshub.com/JabRef.html)
 
 ## Zim
 
@@ -83,14 +85,15 @@ Ein vielseitiges kleines Wiki für den eigenen Desktop zum speichern von Notizen
 
 * Projekt-Link: [zim-wiki.org](http://zim-wiki.org)
 
-## winpython/anaconda
+## Python (Miniconda)
 
-Eine portable Python-Distribution für Windows mit speziellem Fokus auf
-wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken wie NumPy,
-SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
+Installer für die Conda-Python-Distribution. Aus dieser Basis-Installation heraus kann man andere Python-Pakete,
+[z. B. für wissenschaftliches Rechnen](https://scipy.org/) oder [coole Grafiken](http://matplotlib.org/gallery/index.html)
+einfach nach Bedarf nachinstallieren.
 
-* Projekt-Link: https://winpython.github.io/
-* Paket von: https://sourceforge.net/projects/winpython/files/WinPython_3.5/3.5.2.2/
+* [Infos zu Python von der FSFW](python.md)
+* [Miniconda Kurz-Info](https://conda.io/docs/glossary.html#miniconda-glossary)
+* [Installer für weitere Distributionen](https://conda.io/miniconda.html)
 
 ## GIMP
 
@@ -164,9 +167,7 @@ Rechner dafür verändert werden muss.
 ## KeePass
 
 Passworte sollten nicht offen auf dem Stick herumliegen, nicht auf der
-(FAT32-)Partition mit Windows-Programmen und anderen Daten und nicht auf denen
-für GNU/Linux.  Mit diesem Programm können Passworte – über so gut wie jede
-Plattform nutzbar – abgelegt werden.
+(FAT32-)Partition mit Windows-Programmen und anderen Daten und nicht auf denen für GNU/Linux.  Mit diesem Programm können Passworte – über so gut wie jede Plattform nutzbar – abgelegt werden.
 
 * portable installiert: 5,2 MB
 * Paket-Größe: 2,3 MB
@@ -175,10 +176,7 @@ Plattform nutzbar – abgelegt werden.
 
 ## VeraCrypt
 
-Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward
-Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die
-Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten
-Festplatte.
+Der Nachfolger zu TrueCrypt, der Verschlüsselungssoftware, mit der Edward Snowden seine Festplatten gesichert hatte.  Dieses Programm erlaubt die Verschlüsselung einzelner Dateien, ganzer Partitionen oder der gesamten Festplatte.
 
 * portable installiert: 40,8 MB
 * Paket-Größe: 6,0 MB
@@ -191,13 +189,14 @@ Festplatte.
 Ausgezeichnete Lernsoftware zum Thema Zehnfingersystem.  An verschiedene
 Tastaturlayouts anpassbar.
 
+* portable installiert: 13,8 MB
+* Paket-Größe: 4,34 MB
 * Projekt-Link: [tipp10.com](https://www.tipp10.com/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/education/tipp10_portable)
 
 ## 7-zip
 
-Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und
-WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
+Bekannte Komprimierungssoftware, ausgezeichnet als Alternative zu WinZip und WinRar einsetzbar.  Unterstützt eine Vielzahl von Kompressionsalgorithmen.
 
 * portable installiert: 4,1 MB
 * Paket-Größe: 2,6 MB
@@ -213,9 +212,10 @@ Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer Webseite.
 
 ## Dia
 
-Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare
-Darstellungen in euren Arbeiten.
+Ein Programm zur Erstellung von Diagrammen inklusive TeX-Export für skalierbare Darstellungen in euren Arbeiten.
 
+* portable installiert: 78 MB
+* Paket-Größe: 14,1 MB
 * Projekt-Link: [Dia auf GNOME.org](https://wiki.gnome.org/Dia/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/dia_portable)
 
@@ -240,22 +240,21 @@ für dein Studium? Speichere Sie für die spätere Verwendung.
 
 ## Weitere Links
 
-es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die
-unter Windows genutzt werden kann, die wir aber auf diesem Stick nicht mit
-unterbringen wollten, weil
+es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die unter Windows genutzt werden kann, die wir aber auf diesem Stick nicht mit unterbringen wollten, weil
 
 * es keine portablen Pakete für diese Software gibt, oder
 * ein anderes Programm hier besser geeignet erschien, oder
 * einfach der Platz auf dem Stick begrenzt ist.
 
-Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn
-vielleicht sind sie ja dennoch etwas für euch:
+Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn vielleicht sind sie ja dennoch etwas für euch:
 
-* [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich
-  zu Adobe Photoshop
+* [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich zu Adobe Photoshop
 
-* [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz für
-  Matlab.
+* [avidemux](http://fixounet.free.fr/avidemux/),
+  [auch portabel](http://portableapps.com/apps/music_video/avidemux-portable), Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.  Unterstützt zahlreiche Standardformate.
+
+* [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz
+  für Matlab.
 
 * [Enigmail](https://www.enigmail.net/), ein Thunderbird-Plugin zur
   Verschlüsselung von E-Mails.  Dazu gibt es auch eine
@@ -263,24 +262,45 @@ vielleicht sind sie ja dennoch etwas für euch:
   [Schritt-für-Schritt Anleitung](https://wiki.fsfw-dresden.de/doku.php/doku/software/gpg/anleitungen_zu_pgp) der
   FSFW.
 
-* [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm
+* [LyX](http://www.lyx.org/), What you see is what you mean!
+
+* [MediathekView](http://zdfmediathk.sourceforge.net/),
+  [auch portabel](https://github.com/xaverW/MediathekView/tree/master/dist/Portable),
+  Das Programm und endlich dem Rundfunkbeitrag auch ohne Fernseher eine Berechtigung zu verleihen. Gestern den Tatort verpasst? Kein Problem! Oder eine Sendung hat Relevanz für dein Studium? Speichere Sie für die spätere Verwendung.
+
+* [Zotero](https://www.zotero.org/), ein freies Literaturverwaltungsprogramm mit [Unterstützung für LibreOffice](https://www.zotero.org/support/word_processor_plugin_installation#libreoffice) und einem Webservice für kollaboratives Arbeiten, den man auch selbst betreiben kann.
 
 * [Gantt Project](http://www.ganttproject.biz/), eine handliche, freie
   Projektverwaltung mit übersichtlicher Darstellung.
 
+* [JabRef](http://www.jabref.org/), ein bekanntes Literaturverwaltungsprogramm,
+  welches Dank der Verwendung von BibTeX gut mit LaTeX zusammen genutzt werden kann.
+
+* [winpython/anaconda](https://winpython.github.io/), eine portable
+  Python-Distribution für Windows mit speziellem Fokus auf
+  wissenschaftlicher Arbeit.  Enthält dazu wichtige Python-Bibliotheken
+  wie NumPy, SciPy, Sympy, Matplotlib, Pandas, und pyqtgraph.
+
 * [Scribus](http://www.scribus.net/),
   [auch portabel](http://portableapps.com/apps/office/scribus_portable),
-  professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer,
-  Visitenkarten, Bilderbücher und andere Arbeiten, die bislang oft mit
-  Adobe-Produkten erledigt wurden.
+  professionelles Desktop-Publishing ohne Kenntnisse in LaTeX für u.a. Flyer, Visitenkarten, Bilderbücher und andere Arbeiten, die bislang oft mit Adobe-Produkten erledigt wurden.
+
+* [DownThemAll](http://www.downthemall.net/),
+  [auch portabel](http://portableapps.com/apps/internet/downthemall_extension),
+  Ein Firefox-Plugin zum Herunterladen aller Links und Bilder einer
+  Webseite.
 
 * [GeoGebra](http://www.geogebra.org/), wirklich handlich und schnell Skizzen
-  erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird
-  gerechnet).
+  erstellen und Ergebnisse geometrisch sauber "ermitteln" (intern wird gerechnet).
 
 * [NextCloud](https://nextcloud.com/), ein Fork von OwnCloud, der es ermöglicht auch
   abseits von Dropbox, OneDrive oder iCloud Dokumente auf eigenen Rechnern mit
   anderen zu teilen, egal ob Kommilitonen, Arbeitskollegen oder Familie.
+
+* [Transmission](https://transmissionbt.com/),
+  [auch portabel](http://portableapps.com/apps/internet/transmission-portable),
+  ein Client für Bittorrent. Damit kann u.a. das aktuelle Image des Uni-Sticks effizient
+  herunter geladen werden. Die dezentrale Verteilung macht [nicht nur für Urlaubsfotos](https://media.ccc.de/v/24c3-2355-de-trecker_fahrn) Sinn.
 
 * [WinCDEmu](http://wincdemu.sysprogs.org/),
   [auch portabel](http://portableapps.com/apps/utilities/wincdemu-portable),
@@ -294,7 +314,7 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [Evince](http://projects.gnome.org/evince/),
   [auch portabel](http://portableapps.com/apps/office/evince_portable), zeigt euch
   neben PDF auch Dokumente in den Formaten PostScript, djvu, tiff, dvi an. Diese
-  werden  häufig für Druckerzeugnisse benötigt.
+  werden häufig für Druckerzeugnisse benötigt.
 
 * [Calibre](https://calibre-ebook.com/), dein digitales Bücherregal mit Reader und
   Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter
@@ -302,7 +322,7 @@ vielleicht sind sie ja dennoch etwas für euch:
 
 * [Pidgin](https://pidgin.im/),
   [auch portable](http://portableapps.com/apps/internet/pidgin_portable),
-  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac.  Unterstützt
+  ein einfach zu bedienender Messenger auf GNU/Linux, Windows und Mac. Unterstützt
   als Multiprotokoll-Messenger viele Protokolle (Jabber, IRC, ICQ, …) gleichzeitig.
 
 * [Conversations](https://conversations.im/), das letzte Wort in Sachen Messenger,
@@ -345,10 +365,24 @@ vielleicht sind sie ja dennoch etwas für euch:
   Experimenten um eine Präsentation mit/vor den Kommilitonen abzusichern und Zeiten
   besser planen zu können.
 
+* [Shotcut](https://www.shotcut.org/),
+  [auch portabel](https://www.shotcut.org/download/),
+  ist eine sehr übersichtliche und stabile Anwendung zum Schneiden von Videos für
+  und von Präsentationen oder Lehrveranstaltungen sowie vom Scheitern bedrohten
+  Vorführungen.
+  Für den Einsteiger sind auch zahlreiche Beispiele als Video-Anleitung
+  [vom Projekt selbst](https://www.shotcut.org/tutorials/) sowie
+  aus der Community (u.a.
+  [von TECHTEST](https://www.youtube.com/playlist?list=PLFwM71NcKmpCyI1rXGrQVYa8tw8zuRYkp) verfügbar.
+
 * [Apachefriends](http://www.apachefriends.org/),
   [auch portabel](http://portableapps.com/apps/development/xampp), ein Bundle von Webserver, Datenbank und Script-Interpreter für PHP
-  für all jene, die einen Server als Testumgebung für erste Gehversuche in der
-  Web-Programmierung benötigen.
+  für all jene, die einen Server als Testumgebung für erste Gehversuche in der Web-Programmierung benötigen.
+
+* [Denemo](http://www.denemo.org/), ein freies Notensatzprogramm für die Musiker unter
+  den Studierenden.
+
+* [OpenVPN](http://ovpnp.sourceforge.net/), portabler Client für OpenVPN
 
 * [MuseScore](MuseScore), ein freies Notensatzprogramm.
 
@@ -359,5 +393,3 @@ vielleicht sind sie ja dennoch etwas für euch:
 * [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
   Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
-* [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
-  aus Freier Software für vielerlei Anwendungsfälle.
