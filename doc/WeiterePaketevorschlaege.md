@@ -139,7 +139,7 @@
 - :+1:  wireshark-doc  
 - :+1:  # xfce4-goodies  
 - :+1:  ghemical  -- GNOME molecular modelling environment
-
+- :+1:  sm  -- Zeigt einen kurzen Text bildschirmfüllend an
 
 ##  fehlende Empfehlungen installierter Progs
 
