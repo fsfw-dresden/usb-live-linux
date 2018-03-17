@@ -315,6 +315,10 @@
 - :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
 - :+1:  freecad-doc  -- Doku für FreeCad
 
+- ###  LaserCut
+
+- :+1: :x:  [VisiCut] (http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-19-gdfea529f-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+
 - ###  chemistry
 
 - :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
