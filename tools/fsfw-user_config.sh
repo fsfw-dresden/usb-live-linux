@@ -18,25 +18,25 @@ echo "fsfw-user_config.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} "
 
 # aktuallisieren der ../config/includes.chroot/etc/skel/..
 # 
-echo "fsfw-user_config.sh - config verteilen"
+#echo "fsfw-user_config.sh - config verteilen"
 
-rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ config/includes.chroot/etc/skel
+#rsync -avP --exclude=aux-files/ ../doc/src_fsfw-user_config/ config/includes.chroot/etc/skel
 
-echo "fsfw-user_config.sh - configuration fertig."
+#echo "fsfw-user_config.sh - configuration fertig."
 
 #
 echo "FSFW Material/Doku bauen und verteilen"
 
 # TODO: allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
 
-dlist_md=(../doc/src/*.md)
+dlist_md=(../config/${FSFW_UNI_STICK_CONFIG}/doc/src/*.md)
 
 for f in ${dlist_md[@]##*/} ; 
    do
     TARGETFILE="../doc/html/${f%%.md}.html"
 
 # TODO: Fehler, falls Paket pandoc nicht installiert ist -> Programmverfügbarkeit vorher testen
-    cmd="pandoc --standalone --template ../doc/build-script/fsfw-template.html ../doc/src/${f} -o $TARGETFILE"
+    cmd="pandoc --standalone --template ../doc/build-script/fsfw-template.html ../config/${FSFW_UNI_STICK_CONFIG}/doc/src/${f} -o $TARGETFILE"
 
     # for debugging:
     # echo $cmd
