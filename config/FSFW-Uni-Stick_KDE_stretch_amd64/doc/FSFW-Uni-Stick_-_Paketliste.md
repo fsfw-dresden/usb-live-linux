@@ -60,22 +60,27 @@
 ##  Desktop  
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
- - :x:  xserver-xorg  -- 
- - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
- - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
+ - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop 
+[//]: # (gerd: schlägt bevorzugt (recommends true) gnome als Desktop vor - alternativ kde-standard,xfce4,wmaker )
+ - :x:  xorg  -- 
+  - :x:  xserver-xorg  -- 
+   -:x:  x11-utils  -- Hilfsprogramme für X11 
+   - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
   - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
 [//]: # ohne mesa kein blender
   - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers 
- - :x:  gsfonts-x11  --
-  - :o:  xfonts-utils  --
- - :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
 
-- :o:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop - schlägt gnome vor
+ - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber 
+ - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
+
+ - :o:  xfonts-utils  --
+  - :x:  gsfonts-x11  --
+ - :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
 
 - ###  task-kde-desktop  -- KDE Desktop Umgebung
 
 - :o:  kde-full  --  Vollständige KDE (5:92) Software Compilation für Anwender
-- :x:  task-kde-desktop  -- 
+- :o:  task-kde-desktop  -- 
 
 - :x:  lightdm-kde-greeter  -- LightDM KDE
 - :x:  kde-style-oxygen-qt5  -- Oxygen desktop theme is used by Plasma and other KDE Software
@@ -134,6 +139,13 @@
 - :x:  filelight  -- Speicherbelegungsvisualisierung
 - :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
+
+- :x:  kdeartwork-wallpapers  --
+- :x:  plasma-workspace-wallpapers  --
+- :x:  fonts-oxygen  --
+- :x:  kde-style-oxygen-qt4  --
+- :x:  kwin-decoration-oxygen  --
+- :x:  gnome-keyring  --
 
 - ### :x:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
 
@@ -621,6 +633,7 @@
 
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
+- :x:  netcat-traditional  -- Unix-Programm, das über Netzwerkverbindungen per TCP oder UDP Daten liest und schreibt
 - :x:  network-manager-openvpn  --	Verwaltung von Netzwerken OpenVPN-Erweiterung
 - :x:  network-manager-pptp  --		Verwaltung von Netzwerken PPTP-Erweiterung (Point-to-Point Tunneling Protocol)
 - :x:  network-manager-vpnc  --		Verwaltung von Netzwerken VPNC-Erweiterung (Cisco-kompatibler VPN-Client)
