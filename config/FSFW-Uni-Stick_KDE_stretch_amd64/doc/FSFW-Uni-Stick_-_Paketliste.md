@@ -675,7 +675,7 @@
 - :o:  firmware-linux  --
  - :x:  firmware-linux-free  -- 
  - :o:  firmware-linux-nonfree  --
-  - :o:  firmware-misc-nonfree  --
+  - :x:  firmware-misc-nonfree  --  Binäre Firmware für verschiedene Treiber im Linux-Kernel z.B.: i915, Intel, Nvidia, Ralink ... 
   - :o:  firmware-amd-graphics  -- 
 
 - :x:  hdmi2usb-fx2-firmware  --
