@@ -60,14 +60,15 @@
 ##  Desktop
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
- - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop 
-[//]: # (gerd: schlägt bevorzugt (recommends true) gnome als Desktop vor - alternativ kde-standard,xfce4,wmaker )
- - :x:  xorg  --
-  - :x:  xserver-xorg  -- 
-   -:x:  x11-utils  -- Hilfsprogramme für X11
+ - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop
+
+[//]: # ( gerd: schlägt bevorzugt >> recommends true << gnome als Desktop vor - alternativ kde-standard,xfce4,wmaker )
+- :x:  xorg  --
+  - :x:  xserver-xorg  --
+   - :x:  x11-utils  -- Hilfsprogramme für X11
    - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
   - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
-[//]: # ohne mesa kein blender
+[//]: # ( ohne mesa kein blender )
   - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber 
@@ -101,7 +102,8 @@
 - :x:  kde-spectacle  -- Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
 - :x:  khelpcenter  --	Hilfezentrum
 - :x:  kmail  --	Vollständiger grafischer E-Mail-Client
-[//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
+
+[//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove >> bzw. vorzugsweise thunderbird << ist ohnehin gesetzt. Alles weitere verwirrt nur.)
 - :x:  knotes  --	Programm für Haftnotizen (sticky notes)
 - :x:  kopete  --	Instant-Messaging- und Chat-Anwendung
 - :x:  korganizer  --	Kalender und persönliche Terminverwaltung
@@ -138,6 +140,7 @@
 - :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
 - :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
+
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
 
 - :x:  kdeartwork-wallpapers  --
@@ -212,6 +215,7 @@
 
 - :+1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 - :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
+
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
 - :x:  icedove-l10n-de
@@ -227,13 +231,21 @@
 
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor
 - :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
+
 [//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
+
 - :+1:  csound  -- Soundsynthese und Multieffekt-Prozessor
+
 [//]: # (Erwähnt von Hochschule für Musik Dresden)
+
 - :+1:  supercollider  -- algorithmische Soundsynthese
+
 [//]: # (Erwähnt von Hochschule für Musik Dresden)
+
 - :+1:  puredata  -- Echtzeit-Musik- & Grafiksystem
+
 [//]: # (Erwähnt von Hochschule für Musik Dresden)
+
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
@@ -301,17 +313,23 @@
 
 - ###  scientific python
 
-- :x:  ipython3  -- Erweiterte interaktive Python-3-Shell 
+- :x:  ipython3  --  Erweiterte interaktive Python-3-Shell 
 - :x:  jupyter-notebook  --  Jupyter projects for Python 3
 - :x:  python3-sympy  --	Python-Computeralgebrasystem (CAS)
 
-[//]: # (- :o: :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell )
-[//]: # (	- IPython (jupyter, sympy) wird über Extra-Installation bereitgestellt. Ist deutlich aktueller )
-[//]: # (- :+1: :x:  [jupyter] ( )  --  Jupyter projects for Python 3 )
+[//]: # ( - :o: :-1:  ipython3  -- Erweiterte interaktive Python-3-Shell )
+
+[//]: # (	- IPython >> jupyter, sympy << wird über Extra-Installation bereitgestellt. Ist deutlich aktueller )
+
+[//]: # ( - :+1: :x:  [jupyter] --  Jupyter projects for Python 3 )
+
 [//]: # (	- Extra Installation da nicht im Repro verfügbar )
-[//]: # (- :+1: :x:  [sympy] ( )  --	Python-Computeralgebrasystem (CAS) )
+
+[//]: # ( - :+1: :x:  [sympy] --	Python-Computeralgebrasystem >> CAS << )
+
 [//]: # (	- Extra Installation da nicht im Repro verfügbar )
-[//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
+
+[//]: # ( Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller )
 
 - :x:  python3-dev  -- Header (zum Kompilieren von Python-Paketen, wird vom Hook gebraucht)
 - :x:  python3-setuptools  -- Werkzeuge zur Installation von Python-Paketen
@@ -360,7 +378,7 @@
 
 - ###  electronics
 
-- :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
+- :+1: :x:  [qucs](https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
 	- Extra Installation da nicht im Repo verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
@@ -539,8 +557,8 @@
 - :x:  vim-doc  --	HTML-Version der Online-Dokumentation	
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
-- :1:  tmux  --	Terminal-Multiplexer 
-- :1:  sm  -- Zeigt einen kurzen Text bildschirmfüllend an
+- :+1:  tmux  --	Terminal-Multiplexer 
+- :+1:  sm  -- Zeigt einen kurzen Text bildschirmfüllend an
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 - :x:  htop  -- interaktive Prozessübersicht für die Konsole
 - :x:  pandoc  -- Multiformatkonverter
