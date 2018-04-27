@@ -389,6 +389,7 @@
 [//]: # (    - Außerdem brauchen wir noch Beispiele )
 
 - :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
+
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
 - :+1:  kicad-doc-de  --
 - :+1:  fritzing  --
@@ -408,13 +409,16 @@
 
 - :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :o:  josm  -- OpenStreetmap-Editor
+
 [//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
 - :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+
 [//]: # (Hat sich nicht so richtig bewähren können)
 
 - ###  astronomy
 
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
+
 [//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
 
@@ -425,6 +429,7 @@
 - ###  admin
 
 - :x:  synaptic  -- Grafischer Paket-Verwalter
+
 [//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm
@@ -433,6 +438,7 @@
 - :x:  texlive-base  --
 - :x:  texlive-bibtex-extra  --
  - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
+ 
 [//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
 - :x:  texlive-binaries  --
 - :+1:  texlive-doc-de  --
@@ -450,6 +456,7 @@
 - :+1:  texlive-latex-base-doc  --
 - :x:  texlive-latex-extra  --		gut für Beamer-presentation
 - :+1:  texlive-latex-extra-doc  -- Doku für texlive-latex-extra        (Größe 420 MB)
+
 [//]: # (Dies dürfte die fetteste Doku sein! Leider wird sie von texlive-latex-extra automatisch nachgezogen, auch wenn man das garnicht möchte.)
 - :x:  texlive-latex-recommended  --
 - :+1:  texlive-latex-recommended-doc  --
@@ -460,9 +467,11 @@
 - :x:  texlive-plain-extra  --
 - :x:  texlive-pstricks  --
 - :+1:  texlive-pstricks-doc  --   Doku für texlive-publishers         (Größe 112 MB)
+
 [//]: # (Wird leider von texlive-pstricks automatisch nachgezogen, auch wenn man das garnicht möchte.)
 - :x:  texlive-publishers  --
 - :+1:  texlive-publishers-doc  --  Doku für texlive-publishers         (Größe 113 MB)
+
 [//]: # (Wird leider von texlive-publishers automatisch nachgezogen, auch wenn man das garnicht möchte.)
 - :x:  texlive-xetex  --
 - :x:  biber  --				Literaturverw.programm
@@ -517,7 +526,9 @@
 - :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
 - :+1:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
 - :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
+
 [//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
+
 - :+1:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
 - :+1:  geany-plugin-pairtaghighlighter
 - :+1:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
