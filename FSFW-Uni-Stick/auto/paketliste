@@ -17,7 +17,7 @@
 #==========================================
 
 PAKETLISTE=$@
-DEFAULT_PAKETLISTE=../doc/FSFW-Uni-Stick_-_Paketliste.md
+DEFAULT_PAKETLISTE=../doc/default_config/doc/FSFW-Uni-Stick_-_Paketliste.md
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)

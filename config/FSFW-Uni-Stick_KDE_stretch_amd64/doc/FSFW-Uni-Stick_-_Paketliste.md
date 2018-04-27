@@ -2,7 +2,7 @@
 [//]: # (Carsten: Vorschlag: wir können diese Syntax nutzen, um Kommentare in die Liste zu schreiben, ohne die Markdown-Synax zu zerstören.)
 
 
-# Paketliste für FSFW UNI Stick (USB-Live-Stick) 
+# Paketliste für FSFW UNI Stick (USB-Live-Stick)
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
 >  ` $ sudo ./auto/paketliste `   --  im live-build-Verzeichnis ausführen
@@ -30,20 +30,20 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
->		- Beschreibung / Erklärungen 
->		- Extra Installation da nicht im Repro verfügbar
->		- Quelle: 
->		- Abhängigkeiten / Besonderheiten 
+> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
+>		- Beschreibung / Erklärungen
+>		- Extra Installation da nicht im Repo verfügbar
+>		- Quelle:
+>		- Abhängigkeiten / Besonderheiten
 >
 > - :o: :-1:  Paket derzeit nicht benutzt weil -- (Pakete die bei der Installation Probleme/Kollisionen mit anderen Programmen verursachen )
 >		- Beschreibung / Erklärungen - fals möglich Lösungsvorschläge
 >
 > #### Programme die auf dem Stick als Paket verfügbar sind, aber noch nicht installiert sind (...list.binary)
 >
-> - [x]  Programm (Paket) auf dem Stick verfügbar 
+> - [x]  Programm (Paket) auf dem Stick verfügbar
 >
-> - [ ]  Programm (Paket) vorschlag 
+> - [ ]  Programm (Paket) vorschlag
 >
 [//]: # (Carsten: Ich verstehe noch nicht ganz den Sinn, Pakete auf dem Stick vorzuhalten, aber sie noch nicht zu installieren)
 [//]: # (Gerd: Firmware, Treiber z.B. Grafik Nvidia gibt es in verschiedenen varianten und können untereinander kollidieren, leichteres anpassen auch ohne Netz - nur im "persistence mode" bleiben die geänderten Einstellung erhalten )
@@ -57,18 +57,18 @@
 > - Zur lokalen Vorschau eignet sich z.B. [https://github.com/joeyespo/grip](https://github.com/joeyespo/grip)
 >
 
-##  Desktop  
+##  Desktop
 
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
  - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop 
 [//]: # (gerd: schlägt bevorzugt (recommends true) gnome als Desktop vor - alternativ kde-standard,xfce4,wmaker )
- - :x:  xorg  -- 
+ - :x:  xorg  --
   - :x:  xserver-xorg  -- 
-   -:x:  x11-utils  -- Hilfsprogramme für X11 
+   -:x:  x11-utils  -- Hilfsprogramme für X11
    - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
   - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
 [//]: # ohne mesa kein blender
-  - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers 
+  - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber 
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
@@ -80,44 +80,41 @@
 - ###  task-kde-desktop  -- KDE Desktop Umgebung
 
 - :o:  kde-full  --  Vollständige KDE (5:92) Software Compilation für Anwender
-- :o:  task-kde-desktop  -- 
-
-- :x:  lightdm-kde-greeter  -- LightDM KDE
-- :x:  kde-style-oxygen-qt5  -- Oxygen desktop theme is used by Plasma and other KDE Software
-- :x:  kwin-x11  -- KDE-Fenstermanager - X11-Version
+- :o:  task-kde-desktop  --
+- :x:  sddm  --		Moderner Displaymanager für X11
 
 - ###  kde-standard
 
-- :x:  akregator  --	RSS/Atom-Feed-Aggregator 
-- :x:  ark  --		Archiv-Werkzeug 
-- :x:  dragonplayer  --	Einfacher Videoabspieler 
-- :x:  gwenview  --	Bildbetrachter 
-- :x:  juk  --		Jukebox und Musikabspieler 
-- :x:  kaddressbook  --	Adressbuch- und Kontaktdatenverwaltung 
-- :x:  kate  --		Leistungsstarker Texteditor 
+- :x:  akregator  --	RSS/Atom-Feed-Aggregator
+- :x:  ark  --		Archiv-Werkzeug
+- :x:  dragonplayer  --	Einfacher Videoabspieler
+- :x:  gwenview  --	Bildbetrachter
+- :x:  juk  --		Jukebox und Musikabspieler
+- :x:  kaddressbook  --	Adressbuch- und Kontaktdatenverwaltung
+- :x:  kate  --		Leistungsstarker Texteditor
 - :x:  kcalc  --	Einfacher wissenschaftlicher Taschenrechner
 - :x:  kde-plasma-desktop  -- KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
  - :x:  user-manager  -- user management tool for the Plasma workspace
 - :x:  kde-spectacle  -- Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
-- :x:  khelpcenter  --	Hilfezentrum 
+- :x:  khelpcenter  --	Hilfezentrum
 - :x:  kmail  --	Vollständiger grafischer E-Mail-Client
 [//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
-- :x:  knotes  --	Programm für Haftnotizen (sticky notes) 
-- :x:  kopete  --	Instant-Messaging- und Chat-Anwendung 
-- :x:  korganizer  --	Kalender und persönliche Terminverwaltung 
-- :x:  kwalletmanager  -- Sichere Passwortverwaltung 
-- :x:  okular  --	Universal-Dokumentenbetrachter 
-- :x:  plasma-dataengines-addons  --  additional data engines for Plasma 
+- :x:  knotes  --	Programm für Haftnotizen (sticky notes)
+- :x:  kopete  --	Instant-Messaging- und Chat-Anwendung
+- :x:  korganizer  --	Kalender und persönliche Terminverwaltung
+- :x:  kwalletmanager  -- Sichere Passwortverwaltung
+- :x:  okular  --	Universal-Dokumentenbetrachter
+- :x:  plasma-dataengines-addons  --  additional data engines for Plasma
 - :x:  plasma-pa  --    Plasma 5 Volume controller
-- :x:  kmix  --		Lautstärkeregler und Mischer 
-- :x:  plasma-runners-addons  -- additional runners for Plasma 5 and Krunner 
-- :x:  plasma-wallpapers-addons  -- additional wallpaper plugins for Plasma 5 
-- :x:  plasma-widgets-addons  --    additional widgets for Plasma 5 
-- :x:  polkit-kde-agent-1  --	KDE-Dialoge für PolicyKit 
-- :x:  sweeper  --	Löschen von Verlauf und temporären Dateien 
-- :x:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser 
-- :x:  plasma-nm  --    Plasma5-Bibliothek zur Netzwerkverwaltung 
-- :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
+- :x:  kmix  --		Lautstärkeregler und Mischer
+- :x:  plasma-runners-addons  -- additional runners for Plasma 5 and Krunner
+- :x:  plasma-wallpapers-addons  -- additional wallpaper plugins for Plasma 5
+- :x:  plasma-widgets-addons  --    additional widgets for Plasma 5
+- :x:  polkit-kde-agent-1  --	KDE-Dialoge für PolicyKit
+- :x:  sweeper  --	Löschen von Verlauf und temporären Dateien
+- :x:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser
+- :x:  plasma-nm  --    Plasma5-Bibliothek zur Netzwerkverwaltung
+- :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4
 
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
 
@@ -126,14 +123,14 @@
 
 ##  KDE Programme
 
-- :o:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos 
-- :x:  okular-extra-backends  --  Unterstützung von zusätzlichen Dokumentformaten für Okular 
+- :o:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos
+- :x:  okular-extra-backends  --  Unterstützung von zusätzlichen Dokumentformaten für Okular
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
 - :x:  konsolekalendar  -- Persönlicher Organizer für die Konsole
 - :+1:  kteatime  -- Kurzzeitwecker, damit der Tee weder zu kurz och zu lange zieht
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
-- :x:  kdiff3  -- Vergleicht und führt zwei oder drei Dateien oder Verzeichnisse zusammen 
+- :x:  kdiff3  -- Vergleicht und führt zwei oder drei Dateien oder Verzeichnisse zusammen
 - :x:  kdesudo  -- sudo-Oberfläche für KDE
 - :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
@@ -147,15 +144,15 @@
 - :x:  kwin-decoration-oxygen  --
 - :x:  gnome-keyring  --
 
-- ### :x:  task-mate-desktop  -- [Mate Desktop Umgebung] (task-mate-desktop.md)
+- ### :o:  task-mate-desktop  -- [Mate Desktop Umgebung](task-mate-desktop.md)
 
-[//]: # ( beim testen ist mir aufgefallen: ) 
-[//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption (kvm -m 1024) benutzt wird) 
-[//]: # ( - Images mit Mate-Desktop mit der Speicheroption (kvm -m 256), für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben ) 
-[//]: # ( - mit der Speicheroption -m 512 geht es gerade so ) 
-[//]: # ( Bemerkung: es wird derzeit keine "Swap Partition" benutzt - sollte man darüber nachdenken ? ) 
+[//]: # ( beim testen ist mir aufgefallen: )
+[//]: # ( - Images mit KDE-Desktop booten erst wenn die Speicheroption >> kvm -m 1024 << benutzt wird)
+[//]: # ( - Images mit Mate-Desktop mit der Speicheroption >> kvm -m 256 <<, für Firefox scheint das aber zu wenig Speicher zu sein - dieser startet nicht - Last geht nach oben )
+[//]: # ( - mit der Speicheroption -m 512 geht es gerade so )
+[//]: # ( Bemerkung: es wird derzeit keine "Swap Partition" benutzt - sollte man darüber nachdenken ? )
 
-- ### :o:  task-gnome-desktop  -- 
+- ### :o:  task-gnome-desktop  --
 
 - ### :o:  task-xfce-desktop  --
 
@@ -163,9 +160,9 @@
 
 ##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
 
-- ### :o:  Accessibility-Paketliste  -- [Software zur Barrierereduzierung] (Accessibility-Paketliste.md)
- 
-- ### 
+- ### :o:  Accessibility-Paketliste  -- [Software zur Barrierereduzierung](Accessibility-Paketliste.md)
+
+- ###
 
 ##  Desktop office  -- Büroprogramme - Textverarbeitung - Tabellenkalkulation etc.
 
@@ -178,11 +175,12 @@
 
 - :x:  libreoffice-base  --	Datenbank
 - :x:  libreoffice-calc  --	Tabellenkalkulation
+- :x:  libreoffice-writer  --	Text-Verarbeitung
 - :x:  libreoffice-math  --	Formel-Editor
 - :o: :-1:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
-- :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket 
+- :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
 
 - ###  PDF-Tools
@@ -218,13 +216,13 @@
 
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
-- :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging 
+- :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging
 
 ##  Desktop Video - Audio - Bilder - 3D
 
 - ###  Audio
 
-- :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor 
+- :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor
 - :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
 [//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
 - :+1:  csound  -- Soundsynthese und Multieffekt-Prozessor
@@ -264,7 +262,7 @@
 - :x:  gimp-dcraw  --	GIMP-Erweiterung zum Laden von RAW-Digitalfotos		-- kollidiert mit gimp-ufraw
 - :o:  gimp-ufraw  --	Gimp Importierprogramm für Kamerabilder im raw-Format
 - :o:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) - in stretch (testing)
-- :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen 
+- :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
 - :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 - :x:  icc-profiles-free  -- Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
 - :x:  scribus  --	DTP-Programm
@@ -292,9 +290,9 @@
 - :x:  octave  --	GNU Octave - Sprache für numerische Berechnungen
 - :x:  octave-control
 - :x:  geogebra  --	Dynamische Mathematiksoftware für die Lehre
-- :o:  geogebra-gnome  -- GNOME-Integrationsebene für GeoGebra 
-- :x:  geogebra-kde  -- KDE integration layer for GeoGebra 
-- :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm 
+- :o:  geogebra-gnome  -- GNOME-Integrationsebene für GeoGebra
+- :x:  geogebra-kde  -- KDE integration layer for GeoGebra
+- :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
 - :x:  fraqtive  -- Fraktalgenerator
 
@@ -324,12 +322,14 @@
 - :x:  python3-matplotlib
 - :x:  python3-tk
 - :x:  python-tk
+- :x:  python3-sphinx  -- Tool zur automatischen Erzeugung von Dokumentaion aus source-code
 
 - ###  Statistik
 
 - :x:  pspp  -- Statistik-Suite
-- :o:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
+- :x:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
 - :x:  r-base-core  --	GNU R Statistik-Suite (nur das Grundsystem)
+- :+1: :x:  [rstudio-xenial] (https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
 - :+1:  littler  --	GNU R Konsolenfrontend
 - :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
 - :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI
@@ -358,9 +358,10 @@
 - ###  electronics
 
 - :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
-	- Extra Installation da nicht im Repro verfügbar
-	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb 
+	- Extra Installation da nicht im Repo verfügbar
+	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
+
 [//]: # (  - TODO: nicht in den offiziellen stable Quellen, gibt es aber hier: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb )
 [//]: # (    - Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl )
 [//]: # (    - Recommends: freehdl, verilog, octave )
@@ -368,7 +369,7 @@
 
 - :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
-- :+1:  kicad-doc-de  -- 
+- :+1:  kicad-doc-de  --
 - :+1:  fritzing  --
 - :+1:  pcb  --
 - :+1:  qelectrotech  --
@@ -405,7 +406,7 @@
 - :x:  synaptic  -- Grafischer Paket-Verwalter
 [//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
 
-##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm 
+##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm
 
 - :x:  texlive  --
 - :x:  texlive-base  --
@@ -456,7 +457,7 @@
 
 ##  Programmierung Softwareentwicklung
 
-- :x:  gfortran  -- GNU-Fortran-95-Compiler 
+- :x:  gfortran  -- GNU-Fortran-95-Compiler
 
 - ###  Programmiersprache PHP
 
@@ -475,13 +476,14 @@
 - :x:  make  --			einfaches Build-Tool
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
+- :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 
 - :x:  git  --		Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
 - :x:  git-gui  --	grafische Oberfläche für die Versionsverwaltung Git
 - :+1:  gitg  --	weitere grafische Oberfläche für die Versionsverwaltung Git
-- :x:  gitk  --		Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm) 
+- :x:  gitk  --		Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm)
 - :x:  doxygen-gui  --	Frontend des Doku-Generators
 - :x:  doxygen-latex  -- Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
 - :x:  umbrello  --	einfaches UML-Tool für den KDE-Desktop
@@ -489,14 +491,14 @@
 - ###  IDEs
 
 - :+1:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
-- :+1:  geany-plugin-addons  
+- :+1:  geany-plugin-addons
 - :+1:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
 - :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
 - :+1:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
 - :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
 [//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
 - :+1:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
-- :+1:  geany-plugin-pairtaghighlighter  
+- :+1:  geany-plugin-pairtaghighlighter
 - :+1:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
 - :+1:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
 - :+1:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
@@ -514,9 +516,9 @@
 - :x:  squeak-plugins-scratch  -- spielerisch programmieren lernen (Erweiterung)
 - :o:  netbeans  -- IDE für Webprogrammierung (Ist leider nicht im Repo)
 - :x:  swi-prolog  -- deklaratives Programmieren
-- :+1:  swi-prolog-doc  
-- :+1:  swi-prolog-java  
-- :+1:  swi-prolog-odbc  
+- :+1:  swi-prolog-doc
+- :+1:  swi-prolog-java
+- :+1:  swi-prolog-odbc
 - :x:  arduino  -- Entwicklungswerkzeuge für den Anschluss von Arduino-Boards für Hobbybastler und andere
 
 ##  Datenbanken
@@ -531,7 +533,7 @@
 
 - :x:  mc  --		Midnight Commander - ein guter Dateimanager
 - :x:  vim  --		verbesserter vi-Editor
-- :o: :-1:  vimhelp-de  --	Dokumentationsdateien deutsche Übersetzung
+- :x:  vim-doc  --	HTML-Version der Online-Dokumentation	
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :1:  tmux  --	Terminal-Multiplexer 
@@ -552,23 +554,23 @@
 - ###  utils
 
 - :x:  bash-completion  -- Programmierbare Vervollständigung für die Bash-Shell
-- :x:  console-setup  -- Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole 
-- :x:  usbutils  --	Linux USB-Hilfsprogramme 
+- :x:  console-setup  -- Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole
+- :x:  usbutils  --	Linux USB-Hilfsprogramme
 - :x:  pciutils  --	PCI-Hilfsprogramme
 - :x:  lshw  --		Informationen über die Hardwarekonfiguration
 - :x:  lsdvd  --	liest die Inhaltsinformation einer DVD
 - :x:  eject  --	Auswerfen von CDs und Steuern von CD-Wechslern unter Linux
-- :x: :-1:  udisks  --	zum ein/aushängen von Speichermedien 
+- :x:  udisks2  --	D-Bus-Dienst für Zugriff auf und Manipulation von Speichergeräten
 - :x:  sshfs  --	Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 - :x:  pm-utils  --	Powermanagement
 - :x:  testdisk  --	Datenrettungswerkzeug
 - :x:  dosfstools  --	Programme zum Anlegen und Überprüfen von MS-DOS-FAT-Dateisystemen
 
 - :x:  cups  --		Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
-- :x:  cups-bsd  --	Common UNIX Printing System(tm) - BSD-Befehle 
+- :x:  cups-bsd  --	Common UNIX Printing System(tm) - BSD-Befehle
 
 [//]: # (Carsten: printer-driver-cups-pdf will während des Bauens ein root-Passwort eingegeben haben)
-- :-1:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung 
+- :-1:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung
 
 - ###  text 
 
@@ -576,12 +578,13 @@
 
 - ###  admin
 
-- :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung 
+- :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung
 - :x:  fbset  --	Framebuffer-Geräte einstellen
-- :x:  hdparm  --	Festplattenparameter einstellen 
-- :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen 
+- :x:  hdparm  --	Festplattenparameter einstellen
+- :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 - :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
+- :x:  locate  --	schnell nach Dateien auf der Platte suchen
 
 - ###  kernel
 
@@ -604,11 +607,11 @@
 ## fonts
 
 - :x:  ttf-bitstream-vera  --	Die TrueType-Schriftfamilie Bitstream Vera
-- :x:  fonts-dejavu  --		Vera-Schriftartfamile mit zusätzlichen Zeichen 
+- :x:  fonts-dejavu  --		Vera-Schriftartfamile mit zusätzlichen Zeichen
 - :x:  fonts-texgyre  --	OpenType-Schriften auf Basis der URW-Schriften
 - :x:  fonts-liberation  --	Schriften mit den gleichen Metriken wie Times, Arial und Courier
 - :x:  fonts-lmodern  --	OpenType-Schriften auf Grundlage von Computer Modern
-- :x:  fonts-freefont-ttf  --	Freefont-TrueType-Schriften Serif, Sans und Mono 
+- :x:  fonts-freefont-ttf  --	Freefont-TrueType-Schriften Serif, Sans und Mono
 - :x:  fonts-freefont-otf  --	Freefont Serif, Sans and Mono OpenType fonts
 
 ##  SystemTools - Virtualisierung - Netzwerk
@@ -623,7 +626,7 @@
 
 - ###  Virtualisierung
 
-- :x:  qemu-kvm  --	Vollständige Virtualisierung auf x86-Hardware 
+- :x:  qemu-kvm  --	Vollständige Virtualisierung auf x86-Hardware
 - :+1:  virt-manager  -- mächtiges Virtualisierungsprogramm
 - :x:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm
 - :x:  virtualbox-guest-utils
@@ -633,20 +636,20 @@
 
 - :x:  wireshark  -- Netzwerkanalysetool
 - :x:  traceroute  -- Netzwerkanalysetool
-- :x:  netcat-traditional  -- Unix-Programm, das über Netzwerkverbindungen per TCP oder UDP Daten liest und schreibt
+- :x:  netcat-traditional  -- 		Unix-Programm, das über Netzwerkverbindungen per TCP oder UDP Daten liest und schreibt
 - :x:  network-manager-openvpn  --	Verwaltung von Netzwerken OpenVPN-Erweiterung
 - :x:  network-manager-pptp  --		Verwaltung von Netzwerken PPTP-Erweiterung (Point-to-Point Tunneling Protocol)
 - :x:  network-manager-vpnc  --		Verwaltung von Netzwerken VPNC-Erweiterung (Cisco-kompatibler VPN-Client)
 - :x:  modem-manager-gui  --		GUI front-end for ModemManager / Wader / oFono
-- :x:  usb-modeswitch  -- Werkzeug für Modiwechsel zum Steuern von USB-Geräten mit Flipflopschaltung
-- :x:  usbmuxd  -- USB-Multiplexer-Daemon für iPhone- und iPod-Touch-Geräte
+- :x:  usb-modeswitch  -- 		Werkzeug für Modiwechsel zum Steuern von USB-Geräten mit Flipflopschaltung
+- :x:  usbmuxd  -- 		USB-Multiplexer-Daemon für iPhone- und iPod-Touch-Geräte
 
 - ###  Wlan - Hardware
 
-- :x:  crda  --		Central Regulatory Domain Agent für kabellose Geräte 
+- :x:  crda  --		Central Regulatory Domain Agent für kabellose Geräte
  - :x:  iw  --		Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
 - :x:  rfkill  --	Wlan, Bluetooth & Co. an-/ abschalten
-- :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen 
+- :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen
 
 - [ ]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)

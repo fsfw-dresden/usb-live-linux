@@ -16,7 +16,7 @@
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 2017-08-13
+#     REVISION: 2018-04-16
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -35,7 +35,7 @@
 #
 #
 
-FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_jessie_amd64"
+FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_stretch_amd64"
 
 FSFW_UNI_STICK_CONFIG=$1
 echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
