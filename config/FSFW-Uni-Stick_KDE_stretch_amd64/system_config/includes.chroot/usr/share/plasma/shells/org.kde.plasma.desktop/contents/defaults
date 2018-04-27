@@ -14,12 +14,3 @@ ToolBox=org.kde.paneltoolbox
 [Panel][ContainmentActions]
 RightButton;NoModifier=org.kde.contextmenu
 
-[Formats]
-LANG=de_DE.UTF-8
-
-[Translations]
-LANGUAGE=de
-
-[Icons]
-Theme=oxygen
-
