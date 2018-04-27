@@ -30,7 +30,7 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
+> - :+1: :x:  [Paket vorschlag](http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
 >		- Beschreibung / Erklärungen
 >		- Extra Installation da nicht im Repo verfügbar
 >		- Quelle:
@@ -82,6 +82,9 @@
 - :o:  kde-full  --  Vollständige KDE (5:92) Software Compilation für Anwender
 - :o:  task-kde-desktop  --
 - :x:  sddm  --		Moderner Displaymanager für X11
+
+- :x:  kde-style-oxygen-qt5  -- Oxygen desktop theme is used by Plasma and other KDE Software
+- :x:  kwin-x11  -- KDE-Fenstermanager - X11-Version
 
 - ###  kde-standard
 
@@ -329,7 +332,7 @@
 - :x:  pspp  -- Statistik-Suite
 - :x:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
 - :x:  r-base-core  --	GNU R Statistik-Suite (nur das Grundsystem)
-- :+1: :x:  [rstudio-xenial] (https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
+- :+1: :x:  [rstudio](https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
 - :+1:  littler  --	GNU R Konsolenfrontend
 - :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
 - :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI

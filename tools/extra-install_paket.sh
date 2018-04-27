@@ -24,19 +24,20 @@ for paket_liste in ${PAKET_LISTEN[@]}
 		# echo "download = ${line##*-->}"
 		paket_quelle=${line##*-->}
 		paket=${paket_quelle##*/}
+		paket=${paket/-amd64/_amd64}
 
 		if [ -n "${paket}" ]; then
-			# echo "download = ${paket}"
+			 echo "download = ${paket}"
 			if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket} ];
 			  then
-				echo "${paket_quelle##*/} - verfügbar "
+				echo "${paket} - verfügbar "
 			  else
 				if [ ! -d ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ ]; then
 				 mkdir -p ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/
 				 echo " ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket_quelle##*/}
-				echo "${paket_quelle##*/} - geholt "
+				${DOWNLOAD} ${paket_quelle} -O ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket}
+				echo "${paket} - geholt "
 			fi
 		fi
 
