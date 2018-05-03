@@ -84,8 +84,8 @@
 - :o:  task-kde-desktop  --
 - :x:  sddm  --		Moderner Displaymanager für X11
 
-- :x:  kde-style-oxygen-qt5  -- Oxygen desktop theme is used by Plasma and other KDE Software
 - :x:  kwin-x11  -- KDE-Fenstermanager - X11-Version
+- :x:  plasma-theme-oxygen  --  kde-style-oxygen-qt5 - Oxygen desktop theme is used by Plasma and other KDE Software
 
 - ###  kde-standard
 
@@ -124,7 +124,13 @@
 - ###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
 
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
+
 - :x:  systemsettings  -- Anwendung zur Konfiguration der Arbeitsfläche
+- :x:  khotkeys  --  Konfiguriere die Einstellungen für die Eingabeaktionen in Plasma.
+- :x:  kmenuedit  -- stellt einen Menüeditor bereit, mit dem Sie das KDE-Plasma- Arbeitsflächen-Menü oder ein beliebiges anderes XDG-Menü bearbeiten können
+- :x:  kde-config-screenlocker  -- KCM Module for kscreenlocker
+- :x:  kde-config-sddm  -- KCM module for SDDM
+- :x:  kscreen  -- KDE-Unterstützung für Monitorwechsel und Handhabung der Anzeige
 
 ##  KDE Programme
 
