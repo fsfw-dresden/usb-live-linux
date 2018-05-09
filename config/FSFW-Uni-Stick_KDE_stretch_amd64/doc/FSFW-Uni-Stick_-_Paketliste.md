@@ -30,7 +30,7 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  [Paket vorschlag](http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
+> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repos verfügbar, wird aber alternativ installiert
 >		- Beschreibung / Erklärungen
 >		- Extra Installation da nicht im Repo verfügbar
 >		- Quelle:
@@ -59,16 +59,17 @@
 
 ##  Desktop
 
+[//]: # (gerd: >> recommends true << schlägt bevorzugt >> gnome << als Desktop vor - alternativ mate,kde-standard,xfce4,wmaker )
 - :o:  task-desktop  -- Grafische Desktop Umgebung - Progamm Sammlung
- - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop
 
-[//]: # ( gerd: schlägt bevorzugt >> recommends true << gnome als Desktop vor - alternativ kde-standard,xfce4,wmaker )
+ - :x:  desktop-base  -- Allgemeine Dateien für den Debian-Desktop
 - :x:  xorg  --
   - :x:  xserver-xorg  --
    - :x:  x11-utils  -- Hilfsprogramme für X11
+
+[//]: # ( ohne mesa kein blender )
    - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
   - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
-[//]: # ( ohne mesa kein blender )
   - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber 
@@ -101,9 +102,9 @@
  - :x:  user-manager  -- user management tool for the Plasma workspace
 - :x:  kde-spectacle  -- Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
 - :x:  khelpcenter  --	Hilfezentrum
-- :x:  kmail  --	Vollständiger grafischer E-Mail-Client
 
 [//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove >> bzw. vorzugsweise thunderbird << ist ohnehin gesetzt. Alles weitere verwirrt nur.)
+- :x:  kmail  --	Vollständiger grafischer E-Mail-Client
 - :x:  knotes  --	Programm für Haftnotizen (sticky notes)
 - :x:  kopete  --	Instant-Messaging- und Chat-Anwendung
 - :x:  korganizer  --	Kalender und persönliche Terminverwaltung
@@ -145,9 +146,9 @@
 - :x:  kdesudo  -- sudo-Oberfläche für KDE
 - :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
-- :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
 
 [//]: # (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
+- :o:  kde-wallpapers  -- Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
 
 - :x:  kdeartwork-wallpapers  --
 - :x:  plasma-workspace-wallpapers  --
@@ -220,10 +221,10 @@
 - :x:  firefox-esr-l10n-de  -- Deutsches Sprachpaket für den Firefox
 
 - :+1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
-- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
 
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
+- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
 - :x:  icedove-l10n-de
 - :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
 
@@ -236,22 +237,14 @@
 - ###  Audio
 
 - :x:  audacity  --	Schneller, plattformunabhängiger Audio-Editor
-- :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
 
 [//]: # (Aktuell nicht installiert, da bereits audacity installiert wird)
-
+- :o:  ardour3  -- Audioeditor/ DAW für den Gnoem-Desktop
 - :+1:  csound  -- Soundsynthese und Multieffekt-Prozessor
 
 [//]: # (Erwähnt von Hochschule für Musik Dresden)
-
 - :+1:  supercollider  -- algorithmische Soundsynthese
-
-[//]: # (Erwähnt von Hochschule für Musik Dresden)
-
 - :+1:  puredata  -- Echtzeit-Musik- & Grafiksystem
-
-[//]: # (Erwähnt von Hochschule für Musik Dresden)
-
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video
@@ -356,22 +349,11 @@
 - :x:  pspp  -- Statistik-Suite
 - :x:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
 - :x:  r-base-core  --	GNU R Statistik-Suite (nur das Grundsystem)
-- :+1: :x:  [rstudio](https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
+- :+1: :x:  [rstudio] (https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
 - :+1:  littler  --	GNU R Konsolenfrontend
 - :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
 - :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI
 - :+1:  r-doc-info  -- Info für Gnu-R
-
-- ###  CAD
-
-- :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
-- :+1:  freecad-doc  -- Doku für FreeCad
-
-- ###  chemistry
-
-- :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
-- :x:  kalzium-data  -- Daten für kalzium
-- :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite
 
 - ###  languages
 
@@ -382,9 +364,38 @@
 - :x:  parley  -- Vokabeltrainer für den KDE-Desktop
 - :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync
 
+- ###  chemistry
+
+- :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
+- :x:  kalzium-data  -- Daten für kalzium
+- :+1:  scilab  -- matrixbasierte Wissenschaftssoftwaresuite
+
+- ###  geography
+
+- :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
+
+[//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
+- :o:  josm  -- OpenStreetmap-Editor
+
+[//]: # (Hat sich nicht so richtig bewähren können)
+- :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+
+
+- ###  astronomy
+
+[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
+- :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
+
+- :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
+
+- ###  social-science
+
+- :+1:  opensesame  -- Gui für Experimente aus dem sozialwissenschaftlichen Bereich
+
+
 - ###  electronics
 
-- :+1: :x:  [qucs](https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
+- :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
 	- Extra Installation da nicht im Repo verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
@@ -394,9 +405,8 @@
 [//]: # (    - Recommends: freehdl, verilog, octave )
 [//]: # (    - Außerdem brauchen wir noch Beispiele )
 
-- :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
-
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
+- :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
 - :+1:  kicad-doc-de  --
 - :+1:  fritzing  --
 - :+1:  pcb  --
@@ -411,41 +421,36 @@
 - :o:  cutesdr  --	SoftwareDefinedRadio für Bildungszwecke
 - :+1:  gqrx-sdr  --	SoftwareDefinedRadio mit größerer Hardwareunterstützung
 
-- ###  geography
+- ###  CAD
 
-- :x:  marble  -- Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
-- :o:  josm  -- OpenStreetmap-Editor
+- :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
+- :+1:  freecad-doc  -- Doku für FreeCad
+- :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
+- :o:  openscad  --	script file based graphical CAD environment 
 
-[//]: # (Machte zwar einen guten Eindruck, leider wird aber eine neuere Javaversion benötigt, als bei Debian Jessie vorgesehen ist)
-- :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+- ###  Maker Tools  -- 3D Tools - G-Code 
 
-[//]: # (Hat sich nicht so richtig bewähren können)
+- :o:  printrun  -- 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software
+- :o:  slic3r  -- G-code generator for 3D printers
 
-- ###  astronomy
+- ###  LaserCut
 
-- :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
-
-[//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
-- :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
-
-- ###  social-science
-
-- :+1:  opensesame  -- Gui für Experimente aus dem sozialwissenschaftlichen Bereich
+[//]: # ( http://download.visicut.org/master )
+- :+1: :x:  [VisiCut] (http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-23-ga18789c7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
 
 - ###  admin
 
-- :x:  synaptic  -- Grafischer Paket-Verwalter
-
 [//]: # (Carsten: Das ist meiner Meinung nach das benutzerfreundlichste Paketmanager-Frontend)
+- :x:  synaptic  -- Grafischer Paket-Verwalter
 
 ##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm
 
 - :x:  texlive  --
 - :x:  texlive-base  --
 - :x:  texlive-bibtex-extra  --
- - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
- 
+
 [//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
+ - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
 - :x:  texlive-binaries  --
 - :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
@@ -461,9 +466,9 @@
 - :x:  texlive-latex-base  --
 - :+1:  texlive-latex-base-doc  --
 - :x:  texlive-latex-extra  --		gut für Beamer-presentation
-- :+1:  texlive-latex-extra-doc  -- Doku für texlive-latex-extra        (Größe 420 MB)
 
 [//]: # (Dies dürfte die fetteste Doku sein! Leider wird sie von texlive-latex-extra automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :+1:  texlive-latex-extra-doc  -- Doku für texlive-latex-extra        (Größe 420 MB)
 - :x:  texlive-latex-recommended  --
 - :+1:  texlive-latex-recommended-doc  --
 - :x:  texlive-luatex  --
@@ -472,13 +477,13 @@
 - :+1:  texlive-pictures-doc  --
 - :x:  texlive-plain-extra  --
 - :x:  texlive-pstricks  --
-- :+1:  texlive-pstricks-doc  --   Doku für texlive-publishers         (Größe 112 MB)
 
 [//]: # (Wird leider von texlive-pstricks automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :+1:  texlive-pstricks-doc  --   Doku für texlive-publishers         (Größe 112 MB)
 - :x:  texlive-publishers  --
-- :+1:  texlive-publishers-doc  --  Doku für texlive-publishers         (Größe 113 MB)
 
 [//]: # (Wird leider von texlive-publishers automatisch nachgezogen, auch wenn man das garnicht möchte.)
+- :+1:  texlive-publishers-doc  --  Doku für texlive-publishers         (Größe 113 MB)
 - :x:  texlive-xetex  --
 - :x:  biber  --				Literaturverw.programm
 - :x:  texstudio  --			LaTeX-Editor - GUI
@@ -531,10 +536,9 @@
 - :+1:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
 - :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
 - :+1:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
-- :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
 
 [//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
-
+- :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
 - :+1:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
 - :+1:  geany-plugin-pairtaghighlighter
 - :+1:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
@@ -689,9 +693,9 @@
 - :x:  rfkill  --	Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen
 
-- [ ]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 [//]: # (Carsten: Ist das nur der Installer, oder der komplette Treiber?)
 [//]: # (Gerd: installiert den Firmwareteil der Treiber)
+- [ ]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware
 
 - :x:  firmware-linux-free  --
 - :o:  firmware-b43-installer  --

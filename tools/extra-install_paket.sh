@@ -24,7 +24,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 		# echo "download = ${line##*-->}"
 		paket_quelle=${line##*-->}
 		paket=${paket_quelle##*/}
-		paket=${paket/-amd64/_amd64}
+		paket=${paket/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert)
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
