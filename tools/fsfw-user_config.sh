@@ -64,7 +64,10 @@ rsync -avP ../doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
 
 # doc/latex-vorlage  übernehmen
 
-rsync -avP ../doc/latex-vorlage config/includes.chroot/etc/skel/FSFW-Material
+# Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo: 
+# <https://github.com/fsfw-dresden/latex-vorlagen>.
+
+git clone https://github.com/fsfw-dresden/latex-vorlagen config/includes.chroot/etc/skel/FSFW-Material/latex-vorlagen
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 
