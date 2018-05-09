@@ -2,7 +2,7 @@
 
 - ###  task-mate-desktop  -- Mate Desktop Umgebung
 
-- :o:  lightdm  --		Einfaches grafisches Login-Programm
+- :x:  lightdm  --		Einfaches grafisches Login-Programm
 - :x:  lightdm-gtk-greeter  --  Einfaches grafisches Login-Programm (GTK+-Anmeldefenster) LightDM 
 
 - ###  mate-desktop-environment  -- 
