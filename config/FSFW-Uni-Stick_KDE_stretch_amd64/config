@@ -54,11 +54,9 @@ lb config noauto \
 
 # Branchname im Image-Nammen setzen
 
-nbranch=$(git branch --column)
-nbranch=${nbranch////_}
-nbranch=${nbranch//-/_}
-nbranch=${nbranch##*"* "}
-nbranch=${nbranch%% *}
+nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
+nbranch=${nbranch////_}			# ersetze von / in _
+nbranch=${nbranch//-/_}			# ersetze von - in _
 
 if [[ ! "${nbranch}" = "master" ]]; then
 lb config noauto \
