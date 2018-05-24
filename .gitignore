@@ -1,6 +1,6 @@
 doc/html/*.html
 doc/latex-vorlagen
 
-images
+images/*
 
 .lock
