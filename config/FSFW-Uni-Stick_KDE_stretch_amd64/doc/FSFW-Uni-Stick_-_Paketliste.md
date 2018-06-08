@@ -562,6 +562,8 @@
 - :+1:  swi-prolog-java
 - :+1:  swi-prolog-odbc
 - :x:  arduino  -- Entwicklungswerkzeuge für den Anschluss von Arduino-Boards für Hobbybastler und andere
+- :+1:  spyder  -- Python-IDE für Wissenschaftler (Python 2)Python-IDE für Wissenschaftler (Python 2)
+- :+1:  spyder3  -- Python-IDE für Wissenschaftler (Python 3)
 
 ##  Datenbanken
 
