@@ -158,17 +158,11 @@ device_remove() {
 }
 
 ##################################
-# Funktion: Partition testen
+# Funktion: Ermittle, ob Partitionen Präfix p á la /dev/loop0p1 haben
 #
-device_test() {
+device_name_test() {
     echo ":::$DEVICE"
-    # Carsten: !! die Bedingung sollte auch für grep -q "/dev/loop" gelten
-    if echo "$DEVICE" | grep -q "/dev/nbd"
-	then
-	    p=p
-	else
-	    p=""
-    fi
+    [[ ${DEVICE} =~ /dev/nbd|/dev/loop ]] && p=p || p=""
 }
 
 #################################
@@ -176,7 +170,7 @@ device_test() {
 #
 device_mount() {
 	echo " Gerät ${DEVICE} wird eingebunden "
-	device_test
+	device_name_test
 
     if [ ! -d ${TMPDIR}/${LABEL_LIVE} ]; then mkdir ${TMPDIR}/${LABEL_LIVE}; fi
 
@@ -835,7 +829,7 @@ if [[ $? -eq 0 ]]; then
 		Partition Persistence = $(( ${g_persistence_daten} * ${gdevice} / 100)) MB. \n " 0 0
 
 		if [[ $? -eq 0 ]]; then
-		device_test
+		device_name_test
 		partition=1
 		parted -s ${DEVICE} mklabel msdos
 			# Windows Daten Partition anlegen
