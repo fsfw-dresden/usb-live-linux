@@ -54,9 +54,9 @@ URL_SUPERGRUB2_ISO=https://sourceforge.net/projects/supergrub2/files/2.02s9/supe
 ## Variablen - Größen werden im Skript ermittelt
 # für neue Partitionen
 
-g_live_system=0
-g_windows_daten=0
-g_persistence_daten=0
+rel_size_live_system=0
+rel_size_windows_daten=0
+rel_size_persistence_daten=0
 
 # für existierende Partition
 
@@ -77,14 +77,14 @@ fi
 # Funktion: Partitionsgröße Live-System festlegen
 #
 size_part_live() {
-g_live_system=$(
-dialog --stdout --title "${gdevice} MB Gesamtgröße" \
+rel_size_live_system=$(
+dialog --stdout --title "${size_device} MB Gesamtgröße" \
 --backtitle "Partitionsgröße Live-System festlegen - Eingabe - Wert in % " \
 --inputbox "\n\
-	${g_min}% des Speicherplatzes wird mindestens fürs Live-System benötigt.\n\n\
+	${rel_size_live_system_min}% des Speicherplatzes wird mindestens fürs Live-System benötigt.\n\n\
 	Bei Bedarf kann die Größe geändert werden. Eingabewert in % \n\n\
-	sollte zwischen ${g_min} und ${g_max} liegen.\n " \
-0 0 "${emp_live_system}"
+	sollte zwischen ${rel_size_live_system_min} und ${rel_size_live_system_max} liegen.\n " \
+0 0 "${rel_size_live_system_default}"
 # 12 70
 )
 abbrechen_test
@@ -94,15 +94,15 @@ abbrechen_test
 # Funktion: Partitionsgröße Windows-Daten festlegen
 #
 size_part_win() {
-g_windows_daten=$(
-dialog --stdout --title "${gdevice} MB Gesamtgröße" \
+rel_size_windows_daten=$(
+dialog --stdout --title "${size_device} MB Gesamtgröße" \
 --backtitle "Größe Windows Partition festlegen - Eingabe - Wert in % " \
 --inputbox "\n\
-	${wg_max}% des Speicherplatzes können für Daten-Partitionen genutzt werden.\n\n\
+	${rel_size_windows_daten_max}% des Speicherplatzes können für Daten-Partitionen genutzt werden.\n\n\
 	Bei Bedarf kann die Größe geändert werden. Eingabewert in % \n\n\
-	sollte zwischen ${wg_min} und ${wg_max} liegen.\n\n\
+	sollte zwischen ${rel_size_windows_daten_min} und ${rel_size_windows_daten_max} liegen.\n\n\
 	Größe Windows Partition festlegen: \n " \
-0 0 "${emp_windows_daten}"
+0 0 "${rel_size_windows_daten_default}"
 # 15 64
 )
 abbrechen_test
@@ -507,7 +507,7 @@ EOF
 #
 device_config() {
 	# Part-größe $(( Live-Image-Größe * 100 / Stick-Größe )) ## in %
-	# echo $(( ${min_glive} * 100 / ${gdevice} ))
+	# echo $(( ${size_live_system_min} * 100 / ${size_device} ))
 
 # Soll eine WINDOS-Partition (vfat) angelegt werden ? - Welche Größe MB oder % von USB-Stick-Größe
 
@@ -536,27 +536,27 @@ if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 0 ]]; then
 	#   empfohlene Live-System Partitionsgröße
 	#   möglichtst nicht größer 50% des (gesamter Speicher)
 
-	# g_min = (Speicher den das Live-System benötigt) in %
-	g_min=$(( ${min_glive} * 100 / ${gdevice} ))
-	# g_max 50% des (gesamter Speicher)
-	g_max=50
-	# g_min > g_max
-	# --> g_max = g_min
-	if [[ ${g_min} -gt ${g_max} ]]; then
-		g_max=${g_min}
+	# rel_size_live_system_min = (Speicher den das Live-System benötigt) in %
+	rel_size_live_system_min=$(( ${size_live_system_min} * 100 / ${size_device} ))
+	# rel_size_live_system_max 50% des (gesamter Speicher)
+	rel_size_live_system_max=50
+	# rel_size_live_system_min > rel_size_live_system_max
+	# --> rel_size_live_system_max = rel_size_live_system_min
+	if [[ ${rel_size_live_system_min} -gt ${rel_size_live_system_max} ]]; then
+		rel_size_live_system_max=${rel_size_live_system_min}
 	fi
 	#   empfohlene Live-System Partitionsgröße = (Speicher Live-System + 20%)
-	emp_live_system=$(( ${g_min} * 12 / 10 ))
+	rel_size_live_system_default=$(( ${rel_size_live_system_min} * 12 / 10 ))
 
 	# (gesamter Speicher) < (empfohlener Speicher Live-System)
 	# --> (empfohlener Speicher Live-System) = (Speicher den das Live-System benötigt) in %
-	if [[ ${gdevice} -lt ${emp_live_system} ]]; then
-		emp_live_system=${g_min}
+	if [[ ${size_device} -lt ${rel_size_live_system_default} ]]; then
+		rel_size_live_system_default=${rel_size_live_system_min}
 	fi
-	# empfohlene Live-System Partitionsgröße > g_max
-	# g_max = empfohlene Live-System Partitionsgröße
-	if [[ ${emp_live_system} -gt ${g_max} ]]; then
-		g_max=${emp_live_system}
+	# empfohlene Live-System Partitionsgröße > rel_size_live_system_max
+	# rel_size_live_system_max = empfohlene Live-System Partitionsgröße
+	if [[ ${rel_size_live_system_default} -gt ${rel_size_live_system_max} ]]; then
+		rel_size_live_system_max=${rel_size_live_system_default}
 	fi
 fi
 
@@ -566,25 +566,25 @@ if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 1 ]]; then
 	# dialog --stdout --msgbox "Partition Windows oder Partition Persistence" 0 0
 	#   empfohlene Live-System Partitionsgröße = 50% vom gesamten Speicher mindestens (Speicher Live-System)
 
-	# g_min = (Speicher den das Live-System benötigt)
-	g_min=$(( ${min_glive} * 100 / ${gdevice} ))
-	# g_max 70% des (gesamter Speicher)
-	g_max=70
-	# g_min > g_max
-	# --> g_max = g_min
-	if [[ "${g_min}" -gt "${g_max}" ]]; then
-		g_max=${g_min}
+	# rel_size_live_system_min = (Speicher den das Live-System benötigt)
+	rel_size_live_system_min=$(( ${size_live_system_min} * 100 / ${size_device} ))
+	# rel_size_live_system_max 70% des (gesamter Speicher)
+	rel_size_live_system_max=70
+	# rel_size_live_system_min > rel_size_live_system_max
+	# --> rel_size_live_system_max = rel_size_live_system_min
+	if [[ "${rel_size_live_system_min}" -gt "${rel_size_live_system_max}" ]]; then
+		rel_size_live_system_max=${rel_size_live_system_min}
 	fi
 	#   empfohlene Live-System Partitionsgröße = (Speicher Live-System + 20%)
-	emp_live_system=$(( ${g_min} * 12 / 10 ))
-	if [[ "${emp_live_system}" -lt "50" ]]; then
-		emp_live_system=50
+	rel_size_live_system_default=$(( ${rel_size_live_system_min} * 12 / 10 ))
+	if [[ "${rel_size_live_system_default}" -lt "50" ]]; then
+		rel_size_live_system_default=50
 	fi
 	# (gesamter Speicher) < (empfohlener Speicher Live-System)
 	# --> (empfohlener Speicher Live-System) = (Speicher den das Live-System benötigt) in %
-	if [[ "${gdevice}" -lt "${emp_live_system}" ]]; then
-		emp_live_system=${g_min}
-#		emp_live_system=$(( $(( ${glive%%M *} + 32 )) * 100 / ${gdevice} ))
+	if [[ "${size_device}" -lt "${rel_size_live_system_default}" ]]; then
+		rel_size_live_system_default=${rel_size_live_system_min}
+#		rel_size_live_system_default=$(( $(( ${size_live_image%%M *} + 32 )) * 100 / ${size_device} ))
 	fi
 fi
 
@@ -593,17 +593,17 @@ fi
 if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 2 ]]; then
 	# dialog --stdout --msgbox "keine Partition" 0 0
 
-	# g_min = (Speicher den das Live-System benötigt) in %
-	g_min=$(( ${min_glive} * 100 / ${gdevice} ))
-	# g_max 100% des (gesamter Speicher)
-	g_max=100
+	# rel_size_live_system_min = (Speicher den das Live-System benötigt) in %
+	rel_size_live_system_min=$(( ${size_live_system_min} * 100 / ${size_device} ))
+	# rel_size_live_system_max 100% des (gesamter Speicher)
+	rel_size_live_system_max=100
 	#   empfohlene Live-System Partitionsgröße = gesamten Speicher (100%)
-	emp_live_system=100
+	rel_size_live_system_default=100
 fi
 
-# überprüfen g_live_system < Speicher den das Live-System benötigt
-# überprüfen g_live_system > 100 %
-while [[ ${g_live_system} -lt ${g_min} ]] || [[ ${g_live_system} -gt 100 ]]
+# überprüfen rel_size_live_system < Speicher den das Live-System benötigt
+# überprüfen rel_size_live_system > 100 %
+while [[ ${rel_size_live_system} -lt ${rel_size_live_system_min} ]] || [[ ${rel_size_live_system} -gt 100 ]]
 do
 	size_part_live
 done
@@ -616,24 +616,24 @@ if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 0 ]]; then
 	#   empfohlene Windows Daten Partitionsgröße
 	#   möglichtst nicht größer 50% des (gesamter Speicher)
 
-	# wg_min = 0  -- 5% sollten es schon sein, damit es Sinn ergibt
-	wg_min=5
-	# wg_max = noch nicht belegten (gesamter Speicher)
-	wg_max=$(( 100 - ${g_live_system} ))
+	# rel_size_windows_daten_min = 0  -- 5% sollten es schon sein, damit es Sinn ergibt
+	rel_size_windows_daten_min=5
+	# rel_size_windows_daten_max = noch nicht belegten (gesamter Speicher)
+	rel_size_windows_daten_max=$(( 100 - ${rel_size_live_system} ))
 
-	# sollte wg_min > wg_max sein
-	# --> wg_min = wg_max
-	if [[ ${wg_min} -gt ${wg_max} ]]; then
-		wg_min=${wg_max}
+	# sollte rel_size_windows_daten_min > rel_size_windows_daten_max sein
+	# --> rel_size_windows_daten_min = rel_size_windows_daten_max
+	if [[ ${rel_size_windows_daten_min} -gt ${rel_size_windows_daten_max} ]]; then
+		rel_size_windows_daten_min=${rel_size_windows_daten_max}
 	fi
 
 	#  empfohlene Windows Daten Partitionsgröße = 50% vom noch nicht belegten (gesamte Speicher)
-	emp_windows_daten=$(( ${wg_max} / 2 ))
+	rel_size_windows_daten_default=$(( ${rel_size_windows_daten_max} / 2 ))
 
-	# (empfohlene Windows Daten Partitionsgröße) < (wg_min)
-	# --> (empfohlene Windows Daten Partitionsgröße) = (wg_min) in %
-	if [[ ${emp_windows_daten} -lt ${wg_min} ]]; then
-		emp_windows_daten=${wg_min}
+	# (empfohlene Windows Daten Partitionsgröße) < (rel_size_windows_daten_min)
+	# --> (empfohlene Windows Daten Partitionsgröße) = (rel_size_windows_daten_min) in %
+	if [[ ${rel_size_windows_daten_default} -lt ${rel_size_windows_daten_min} ]]; then
+		rel_size_windows_daten_default=${rel_size_windows_daten_min}
 	fi
 fi
 
@@ -643,34 +643,34 @@ if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 1 ]]; then
 	# dialog --stdout --msgbox "Partition Windows oder Partition Persistence" 0 0
 	#   empfohlene Partitionsgröße
 
-	# wg_min = 0  -- 5% sollten es schon sein, damit es Sinn ergibt
-	wg_min=5
-	# wg_max = noch nicht belegten (gesamter Speicher)
-	wg_max=$(( 100 - ${g_live_system} ))
+	# rel_size_windows_daten_min = 0  -- 5% sollten es schon sein, damit es Sinn ergibt
+	rel_size_windows_daten_min=5
+	# rel_size_windows_daten_max = noch nicht belegten (gesamter Speicher)
+	rel_size_windows_daten_max=$(( 100 - ${rel_size_live_system} ))
 
-	# sollte wg_min > wg_max sein
-	# --> wg_min = wg_max
-	if [[ "${wg_min}" -gt "${wg_max}" ]]; then
-		wg_min=${wg_max}
+	# sollte rel_size_windows_daten_min > rel_size_windows_daten_max sein
+	# --> rel_size_windows_daten_min = rel_size_windows_daten_max
+	if [[ "${rel_size_windows_daten_min}" -gt "${rel_size_windows_daten_max}" ]]; then
+		rel_size_windows_daten_min=${rel_size_windows_daten_max}
 	fi
 	#  empfohlene Windows Daten Partitionsgröße = Rest vom noch verfügbaren Speicher
-	emp_windows_daten=${wg_max}
+	rel_size_windows_daten_default=${rel_size_windows_daten_max}
 
-	# (empfohlene Windows Daten Partitionsgröße) < (wg_min)
-	# --> (empfohlene Windows Daten Partitionsgröße) = (wg_min) in %
-	if [[ "${emp_windows_daten}" -lt "${wg_min}" ]]; then
-		emp_windows_daten=${wg_min}
+	# (empfohlene Windows Daten Partitionsgröße) < (rel_size_windows_daten_min)
+	# --> (empfohlene Windows Daten Partitionsgröße) = (rel_size_windows_daten_min) in %
+	if [[ "${rel_size_windows_daten_default}" -lt "${rel_size_windows_daten_min}" ]]; then
+		rel_size_windows_daten_default=${rel_size_windows_daten_min}
 	fi
 fi
 
 
-# überprüfen g_windows_daten <= Rest vom noch verfügbaren Speicher
-# überprüfen g_windows_daten => 0 %
+# überprüfen rel_size_windows_daten <= Rest vom noch verfügbaren Speicher
+# überprüfen rel_size_windows_daten => 0 %
 
 if [[ ${p_windows_daten} -eq 0 ]]; then
 	# dialog --stdout --msgbox "Partition Windows Daten - größe festlegen" 0 0
-	if [[ $(( 100 - ${g_live_system} )) -gt 5 ]]; then
-		while [[ ${g_windows_daten} -lt 5 ]] || [[ ${g_windows_daten} -gt ${wg_max} ]]
+	if [[ $(( 100 - ${rel_size_live_system} )) -gt 5 ]]; then
+		while [[ ${rel_size_windows_daten} -lt 5 ]] || [[ ${rel_size_windows_daten} -gt ${rel_size_windows_daten_max} ]]
 		do
 			size_part_win
 		done
@@ -684,12 +684,12 @@ fi
 
 if [[ ${p_persistence_daten} -eq 0 ]]; then
 	# dialog --stdout --msgbox "Partition Persistence Daten - größe festlegen" 0 0
-	if [[ $(( 100 - ${g_live_system} - ${g_windows_daten} )) -gt 0 ]]; then
+	if [[ $(( 100 - ${rel_size_live_system} - ${rel_size_windows_daten} )) -gt 0 ]]; then
 
-		g_persistence_daten=$(( 100 - ${g_live_system} - ${g_windows_daten} ))
-		dialog --title "${gdevice} MB Gesamtgröße" \
+		rel_size_persistence_daten=$(( 100 - ${rel_size_live_system} - ${rel_size_windows_daten} ))
+		dialog --title "${size_device} MB Gesamtgröße" \
 		--backtitle "Größe Persistence Partition" \
-		--msgbox "\n Größe der Patition für Persistence Daten beträgt $(( ${g_persistence_daten} * ${gdevice} / 100)) MB.\n\n " 8 64
+		--msgbox "\n Größe der Patition für Persistence Daten beträgt $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB.\n\n " 8 64
 	else
 		dialog --stdout --msgbox " Für eine Persistence Daten Partition\n\n ist nicht mehr genügend Speicher verfügbar "  8 48
 	fi
@@ -698,13 +698,13 @@ fi
 : << Kommentar
 # Werte für die Partitionsgrößen
 
-dialog --stdout --msgbox "Partition Live-System = ${g_live_system}\n\n\
-Partition Windows Daten = ${g_windows_daten}\n\n\
-Partition Persistence = ${g_persistence_daten}\n " 0 0
+dialog --stdout --msgbox "Partition Live-System = ${rel_size_live_system}\n\n\
+Partition Windows Daten = ${rel_size_windows_daten}\n\n\
+Partition Persistence = ${rel_size_persistence_daten}\n " 0 0
 
-dialog --stdout --msgbox "Partition Live-System = $(( ${g_live_system} * ${gdevice} / 100)) MB.\n\n\
-Partition Windows Daten = $(( ${g_windows_daten} * ${gdevice} / 100)) MB.\n\n\
-Partition Persistence = $(( ${g_persistence_daten} * ${gdevice} / 100)) MB.\n " 0 0
+dialog --stdout --msgbox "Partition Live-System = $(( ${rel_size_live_system} * ${size_device} / 100)) MB.\n\n\
+Partition Windows Daten = $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB.\n\n\
+Partition Persistence = $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB.\n " 0 0
 Kommentar
 
 }
@@ -759,15 +759,15 @@ echo "System erfolgreich überprüft."
 
 # Größe des Sticks feststellen - Größe Ausgeben
 
-unset gdevice
-gdevice=($(lsblk -b -n --output SIZE ${DEVICE}))
-gdevice=$(( ${gdevice[0]} / 1024 / 1024))
+unset size_device
+size_device=($(lsblk -b -n --output SIZE ${DEVICE}))
+size_device=$(( ${size_device[0]} / 1024 / 1024))
 
-# echo "  ${gdevice} werden vom verwendet Speichergerät >> ${DEVICE} << bereitgestellt "
+# echo "  ${size_device} werden vom verwendet Speichergerät >> ${DEVICE} << bereitgestellt "
 dialog --title "Gesamtgröße verfügbarer Speicher" \
 --backtitle "Speicher der zur Verfügung steht " \
 --msgbox "\n\
-		${gdevice} MB werden vom verwendet Speichergerät\n\n\
+		${size_device} MB werden vom verwendet Speichergerät\n\n\
 			>> ${DEVICE} <<  bereitgestellt\n " 0 0
 
 # Größe des Live-Images feststellen	Fehler falls USB-Stick zu klein
@@ -775,18 +775,18 @@ dialog --title "Gesamtgröße verfügbarer Speicher" \
 # grub2 + memdisk 	ca. 15 MB
 # tools			ca. 25 MB
 
-glive=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
-min_glive=$((${glive%%M *}+40))
-# echo "  $(min_glive)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
+size_live_image=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
+size_live_image_min=$((${size_live_image%%M *}+40))
+# echo "  $(size_live_image_min)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
 
 dialog --title "Speicher den das Live-System benötigt" \
 --backtitle "Speicher Live-System" \
 --msgbox "\n\
-		${min_glive} MB werden mindestens für das Live-Image\n\n\
+		${size_live_system_min} MB werden mindestens für das Live-Image\n\n\
 			>> ${LIVE_IMAGE##*/} << \n\n\
 		und Tools benötigt\n " 0 0
 
-if [[ "${gdevice}" -lt "${min_glive}" ]]; then
+if [[ "${size_device}" -lt "${size_live_system_min}" ]]; then
 #	echo "  Das Speichergerät hat nicht genügend Kapazität um das System zu erstellende "
 #	echo "  Skript wird abgebrochen."
 	dialog --stdout --msgbox "\nDas Speichergerät hat nicht genügend Kapazität um das System zu erstellende. Das Skript wird abgebrochen. \n " 8 60
@@ -806,13 +806,13 @@ tool=$(dialog \
 # USB-Stick formatieren	-
 # Soll der USB-Stick neu formatiert werden ?
 
-dialog --stdout --defaultno --title "${gdevice} MB Gesamtgröße" \
+dialog --stdout --defaultno --title "${size_device} MB Gesamtgröße" \
 		--backtitle "${DEVICE} wird neu formatiert" \
 		--yesno "\n ${DEVICE} neu formatieren ? \n " 0 0
 
 if [[ $? -eq 0 ]]; then
 
-	dialog --stdout --defaultno --title "${gdevice} MB Gesamtgröße" \
+	dialog --stdout --defaultno --title "${size_device} MB Gesamtgröße" \
 		--backtitle "${DEVICE} wird neu formatiert" \
 		--yesno "\n\
 		Das Gerät >> ${DEVICE} << soll neu formatiert werden. \n\n\
@@ -821,20 +821,20 @@ if [[ $? -eq 0 ]]; then
 	  if [[ $? -eq 0 ]]; then
 		device_config
 
-		dialog --stdout --title "${gdevice} MB Gesamtgröße" \
+		dialog --stdout --title "${size_device} MB Gesamtgröße" \
 			--backtitle "${DEVICE} wird neu formatiert" \
 			--yesno "\n\
-		Partition Live-System = $(( ${g_live_system} * ${gdevice} / 100)) MB. \n\n\
-		Partition Windows Daten = $(( ${g_windows_daten} * ${gdevice} / 100)) MB. \n\n\
-		Partition Persistence = $(( ${g_persistence_daten} * ${gdevice} / 100)) MB. \n " 0 0
+		Partition Live-System = $(( ${rel_size_live_system} * ${size_device} / 100)) MB. \n\n\
+		Partition Windows Daten = $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB. \n\n\
+		Partition Persistence = $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB. \n " 0 0
 
 		if [[ $? -eq 0 ]]; then
 		device_name_test
 		partition=1
 		parted -s ${DEVICE} mklabel msdos
 			# Windows Daten Partition anlegen
-			if [[ ${p_windows_daten} -eq 0 ]] && [[ ${g_windows_daten} -gt 0 ]]; then
-			parted -s --align=opt ${DEVICE} mkpart primary fat32 0% ${g_windows_daten}%
+			if [[ ${p_windows_daten} -eq 0 ]] && [[ ${rel_size_windows_daten} -gt 0 ]]; then
+			parted -s --align=opt ${DEVICE} mkpart primary fat32 0% ${rel_size_windows_daten}%
 			parted -s ${DEVICE} align-check optimal ${partition}
 			mkfs.vfat -F32 -n ${LABEL_WINDOWS_DATEN} ${DEVICE}${p}${partition}
 			echo " Windos Daten Partition ${partition} - ${LABEL_WINDOWS_DATEN} angelegt "
@@ -842,16 +842,16 @@ if [[ $? -eq 0 ]]; then
 			fi
 		# Live-System Partition anlegen
 		live_partition=${partition}
-		parted -s --align=opt ${DEVICE} mkpart primary ext2 $(( 0 + ${g_windows_daten} ))% $(( ${g_windows_daten} + ${g_live_system} ))%
+		parted -s --align=opt ${DEVICE} mkpart primary ext2 $(( 0 + ${rel_size_windows_daten} ))% $(( ${rel_size_windows_daten} + ${rel_size_live_system} ))%
 		parted -s ${DEVICE} set ${partition} boot on
 		parted -s ${DEVICE} align-check optimal ${partition}
 		mkfs.ext2 -m 0 -L ${LABEL_LIVE} ${DEVICE}${p}${partition}
 			echo " Live Image Partition ${partition} - ${LABEL_LIVE} angelegt "
 		partition=$(( ${partition} + 1 ))
 			# Persistence Daten Partition anlegen
-			if [[ ${p_persistence_daten} -eq 0 ]] && [[ ${g_persistence_daten} -gt 0 ]]; then
+			if [[ ${p_persistence_daten} -eq 0 ]] && [[ ${rel_size_persistence_daten} -gt 0 ]]; then
 			persistence_partition=${partition}
-			parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${g_windows_daten} + ${g_live_system} ))% 100%
+			parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${rel_size_windows_daten} + ${rel_size_live_system} ))% 100%
 			parted -s ${DEVICE} align-check optimal ${partition}
 			mkfs.ext4 -m 0 -L ${LABEL_PERSISTENCE_DATEN} ${DEVICE}${p}${partition}
 			echo " Persistence Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
