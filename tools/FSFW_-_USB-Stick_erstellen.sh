@@ -6,7 +6,7 @@
 #  DESCRIPTION: bringt das live-image.iso (vorzugsweise FSFW-UNI-Stick_${FSFW_UNI_STICK_VERSION}_KDE_stretch-amd64.hybrid.iso) auf einen USB-Stick
 #		bootet mit grub2 -
 #
-#      VERSION: 0.0.3
+#      VERSION: 0.1.1
 #      OPTIONS: $1 = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
 #		$2 = live-image.iso - Default = *.hybrid.iso im aktuellen live-build-Verzeichnis
@@ -64,7 +64,7 @@ rel_size_persistence_daten=0
 #######################################
 # Funktion: Dialog abbrechen überprüfen
 #
-abbrechen_test() {
+check_input_abbruch() {
 if [[ $? -eq 1 ]]; then
 	clear
 #	echo " Skript wurde abgebrochen. "
@@ -76,7 +76,7 @@ fi
 ##################################
 # Funktion: Partitionsgröße Live-System festlegen
 #
-size_part_live() {
+input_size_live_system() {
 rel_size_live_system=$(
 dialog --stdout --title "${size_device} MB Gesamtgröße" \
 --backtitle "Partitionsgröße Live-System festlegen - Eingabe - Wert in % " \
@@ -87,13 +87,13 @@ dialog --stdout --title "${size_device} MB Gesamtgröße" \
 0 0 "${rel_size_live_system_default}"
 # 12 70
 )
-abbrechen_test
+check_input_abbruch
 }
 
 ##################################
 # Funktion: Partitionsgröße Windows-Daten festlegen
 #
-size_part_win() {
+input_size_windows_daten() {
 rel_size_windows_daten=$(
 dialog --stdout --title "${size_device} MB Gesamtgröße" \
 --backtitle "Größe Windows Partition festlegen - Eingabe - Wert in % " \
@@ -105,36 +105,20 @@ dialog --stdout --title "${size_device} MB Gesamtgröße" \
 0 0 "${rel_size_windows_daten_default}"
 # 15 64
 )
-abbrechen_test
+check_input_abbruch
 }
 
 ##################################
 # Funktion: prüfen ob memdisk vorhanden
 #
-memdisk() {
+copy_memdisk() {
 if [ ! -f ${TMPDIR}/${LABEL_LIVE}/boot/img/memdisk ]; then cp /usr/lib/syslinux/memdisk ${TMPDIR}/${LABEL_LIVE}/boot/img/memdisk ; fi
-}
-
-##################################
-# Funktion: Fehlermeldung - gegebenenfalls abbruch
-#
-fehler_test() {
-    if [ $? -gt 0 ]; then
-	echo "  --  Es ist ein Fehler aufgetreten "
-	echo " Möchten sie weiter fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
-	read FEHLER
-		if [ ! "$FEHLER" == 'y' ]; then
-			echo "Skript wird abgebrochen "
-			device_remove
-			exit 1
-		fi
-    fi
 }
 
 ##################################
 # Funktion: Fehler - Skript abbrechen ?
 #
-fehler_abbruch() {
+input_abbruch() {
 	echo "  --  Es ist ein Fehler aufgetreten "
 	echo " Möchten sie weiter fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
 	read FEHLER
@@ -174,14 +158,12 @@ device_mount() {
 
     if [ ! -d ${TMPDIR}/${LABEL_LIVE} ]; then mkdir ${TMPDIR}/${LABEL_LIVE}; fi
 
-	mount ${DEVICE}${p}${live_partition} ${TMPDIR}/${LABEL_LIVE}
-	fehler_test
+	mount ${DEVICE}${p}${live_partition} ${TMPDIR}/${LABEL_LIVE} || input_abbruch
 
     if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
 	echo " Persistence Partition wird eingebunden "
 	  if [ ! -d ${TMPDIR}/${LABEL_PERSISTENCE_DATEN} ]; then mkdir ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}; fi
-	mount ${DEVICE}${p}${persistence_partition} ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}
-	fehler_test
+	mount ${DEVICE}${p}${persistence_partition} ${TMPDIR}/${LABEL_PERSISTENCE_DATEN} || input_abbruch
     fi
 }
 
@@ -200,7 +182,7 @@ grub_install() {
 ################################
 # Funktion: Bootoader configuration erstellen
 #
-create_grub_config() { echo "grub.cfg wird erstellt "
+grub_config_create() { echo "grub.cfg wird erstellt "
 
 cat <<EOF> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 ## grub.cfg - generiert - $(date)
@@ -255,7 +237,7 @@ EOF
 ################################
 # Funktion: Bootoader - Zusatzmenü anhängen
 #
-create_grub_config_zusatz_menu() { echo "grub.cfg ergänzen "
+grub_config_append_zusatz_menu() { echo "grub.cfg ergänzen "
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
@@ -285,7 +267,7 @@ EOF
 #######################################
 # Toolbox einfügen
 #
-insert_toolbox() { echo " Toolbox einfügen "
+grub_config_insert_toolbox() { echo " Toolbox einfügen "
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
@@ -308,12 +290,10 @@ menuentry "Memory test (memtest86+) iso " {
 }
 
 EOF
-		memdisk
+		copy_memdisk
 		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} ${URL_MEMTEST_ISO}.gz -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz
-		fehler_test
-		gzip -d  ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz
-		fehler_test
+		${DOWNLOAD} ${URL_MEMTEST_ISO}.gz -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz || input_abbruch
+		gzip -d  ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz || input_abbruch
 		fi
 		;;
 	hdt)
@@ -326,10 +306,9 @@ menuentry "Hardware Test (HDT) " {
      initrd16 ${tool_iso}
 }
 EOF
-		memdisk
+		copy_memdisk
 		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} ${URL_HDT_ISO}?raw=true -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}
-		fehler_test
+		${DOWNLOAD} ${URL_HDT_ISO}?raw=true -O ${TMPDIR}/${LABEL_LIVE}${tool_iso} || input_abbruch
 		fi
 	    ;;
 	super-grub2-disk)
@@ -346,10 +325,9 @@ menuentry "Super Grub2 Disk " {
 }
 
 EOF
-		memdisk
+		copy_memdisk
 		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} ${URL_SUPERGRUB2_ISO} -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}
-		fehler_test
+		${DOWNLOAD} ${URL_SUPERGRUB2_ISO} -O ${TMPDIR}/${LABEL_LIVE}${tool_iso} || input_abbruch
 		fi
 	    ;;
 
@@ -384,7 +362,7 @@ EOF
 #######################################
 # Funktion: Live-Image einfügen
 #
-insert_live_image() {
+grub_config_insert_live_image() {
 		echo " ${LIVE_IMAGE##*/} Live-System-Image einfügen "
 		iso_time=($(ls --full-time ${LIVE_IMAGE}))
 		system_iso=/boot/boot-isos/${iso_time[5]}_${LIVE_IMAGE##*/}
@@ -490,11 +468,10 @@ cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 }
 EOF
 
-	memdisk
+	copy_memdisk
 	if [[ ! -e ${TMPDIR}/${LABEL_LIVE}${system_iso} ]]; then
 		echo " ${LIVE_IMAGE} -- kopieren --> ${system_iso}"
-		cp ${LIVE_IMAGE} ${TMPDIR}/${LABEL_LIVE}${system_iso}
-		fehler_test
+		cp ${LIVE_IMAGE} ${TMPDIR}/${LABEL_LIVE}${system_iso} || input_abbruch
 	else
 		echo " ${system_iso} ist vorhanden "
 	fi
@@ -505,7 +482,7 @@ EOF
 ######################################
 # Funktion: Speichergerät Partitionen configurieren
 #
-device_config() {
+input_partition_layout() {
 	# Part-größe $(( Live-Image-Größe * 100 / Stick-Größe )) ## in %
 	# echo $(( ${size_live_system_min} * 100 / ${size_device} ))
 
@@ -605,7 +582,7 @@ fi
 # überprüfen rel_size_live_system > 100 %
 while [[ ${rel_size_live_system} -lt ${rel_size_live_system_min} ]] || [[ ${rel_size_live_system} -gt 100 ]]
 do
-	size_part_live
+	input_size_live_system
 done
 
 
@@ -672,7 +649,7 @@ if [[ ${p_windows_daten} -eq 0 ]]; then
 	if [[ $(( 100 - ${rel_size_live_system} )) -gt 5 ]]; then
 		while [[ ${rel_size_windows_daten} -lt 5 ]] || [[ ${rel_size_windows_daten} -gt ${rel_size_windows_daten_max} ]]
 		do
-			size_part_win
+			input_size_windows_daten
 		done
 	else
 		dialog --stdout --msgbox " Für eine Windows Daten Partition\n\n ist nicht mehr genügend Speicher verfügbar "  8 48
@@ -819,7 +796,7 @@ if [[ $? -eq 0 ]]; then
 		            ALLE DATEN GEHEN VERLOREN ! \n\n " 0 0
 
 	  if [[ $? -eq 0 ]]; then
-		device_config
+		input_partition_layout
 
 		dialog --stdout --title "${size_device} MB Gesamtgröße" \
 			--backtitle "${DEVICE} wird neu formatiert" \
@@ -857,10 +834,10 @@ if [[ $? -eq 0 ]]; then
 			echo " Persistence Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
 			fi
 		  else
-			abbrechen_test
+			check_input_abbruch
 		fi
 	  else
-		abbrechen_test
+		check_input_abbruch
 	  fi
 
 
@@ -888,7 +865,7 @@ if [[ $? -eq 0 ]]; then
 
 		*)
 			echo " Patition - ${label} - kann nicht benutzt werden "
-			fehler_abbruch
+			input_abbruch
 		  ;;
 
 		esac
@@ -907,7 +884,7 @@ if [[ $? -eq 0 ]]; then
 	  if [[ -z ${persistence_partition} ]]; then
 		echo " Es gibt keine Persistence Partition die nutzbar ist. "
 		echo " Das Speichergerät sollte neu formatiert werden. "
-		fehler_abbruch
+		input_abbruch
 	     else
 		echo " ${persistence_partition} Partition wird für Persistence Partition verwendet. "
 	  fi
@@ -928,16 +905,15 @@ if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/img ]; then mkdir ${TMPDIR}/${LABEL_LIVE}
 if [[ ! -e ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
  cp ../doc/default_config/system_config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
 #${DOWNLOAD} https://wiki.fsfw-dresden.de/lib/exe/fetch.php/playground/beispiele/media/bilder/fsfw-background_640x480.png -O ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
-fi
-fehler_test
+fi || input_abbruch
 
-create_grub_config
+grub_config_create
 
-insert_live_image
+grub_config_insert_live_image
 
-insert_toolbox
+grub_config_insert_toolbox
 
-create_grub_config_zusatz_menu
+grub_config_append_zusatz_menu
 
 device_remove
 
