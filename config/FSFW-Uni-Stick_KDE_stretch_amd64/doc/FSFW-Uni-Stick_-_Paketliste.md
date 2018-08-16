@@ -518,6 +518,7 @@
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 - :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
+- :+1:  gnat-6  --		GNU Ada compiler
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 
