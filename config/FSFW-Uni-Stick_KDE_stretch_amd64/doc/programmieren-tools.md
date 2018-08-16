@@ -10,6 +10,7 @@
 - :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 - :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
 - :x:  gfortran  -- GNU-Fortran-95-Compiler 
+- :+1:  gnat-6  --		GNU Ada compiler
 
 - ###  Revisions-Kontroll-Systeme
 
