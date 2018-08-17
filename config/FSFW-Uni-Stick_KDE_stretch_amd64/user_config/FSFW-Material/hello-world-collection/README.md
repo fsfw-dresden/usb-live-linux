@@ -6,6 +6,7 @@ Currently the following languages are covered (see README.md files in each direc
 * [Python](python/README.md)
 * [C](python/README.md)
 * [Go](python/README.md)
+* [Ada](ada/README.md)
 
 **Note**: You can use the command `grip` to render markdown files (like this one).
 
