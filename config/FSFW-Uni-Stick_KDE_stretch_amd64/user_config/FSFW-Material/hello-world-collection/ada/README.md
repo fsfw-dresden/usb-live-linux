@@ -25,7 +25,9 @@ hilft Ihnen Ada dabei, Software zu entwickeln, die zuverlässig und sicher ist, 
 
 # TODO:
 
-  * gnat make hello.adb
+  * build: `gprbuild -P hello.gpr`
+  * run: `./hello`
+  * clean: `gprclean`
 
 # Info:
 
