@@ -2,7 +2,7 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 # Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
-(getestet auf Debian "stretch"  - 2018-04-16)
+(getestet auf Debian "stretch"  - 2018-08-17)
 
 ## Erstellen
 
@@ -55,7 +55,7 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
 
 * Image mittels kvm (Kernel-based Virtual Machine) bzw. qemu testen
 
-  ` $ kvm -m 1024 -cdrom FSFW-Uni-Stick_jessie-amd64.hybrid.iso `
+  ` $ kvm -m 2048 -cdrom ../images/FSFW-Uni-Stick_KDE-stretch-amd64.hybrid.iso `
 
   * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
   
@@ -65,9 +65,7 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
 ### Arbeitsverzeichnis aufräumen 
 
 
-* Soll die erstellte .iso-Datei erhalten bleiben, ist sie umzubennenen, z.B. mit 
-
-  ` $ mv FSFW-Uni-Stick_jessie-amd64.hybrid.iso FSFW-Uni-Stick_DESKTOP_jessie-amd64.hybrid.iso `
+* Die erstellte .iso-Datei befinden sich im Path ../images und bleiben erhalten. Ältere und nicht mehr benötigte *.iso Images einfach löschen.
 
 * Arbeitsdaten wie chroot, binary bootstrap etc. löschen (heruntergeladene Pakete bleiben im "cache/packages.*/*.deb" erhalten)
 

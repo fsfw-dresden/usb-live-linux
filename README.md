@@ -11,10 +11,11 @@ Dieses Repo enthält
 * Konfigurationsdateien,
 
 die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
-Das erstellte System basiert derzeit (Stand März 2017) auf Debian-Live, Desktop: kde, Architektur: amd64, Kernel: 3.16.
+Das erstellte System basiert derzeit (Stand 08-2018) auf Debian-Live, Desktop: kde, Architektur: amd64, Kernel: 4.9.
 
 
 **Screenshot vom Desktop:**
+
 ![Screenshot-1](doc/dev_doc/data/desktop-screenshot-1.jpg "Screenshot")
 
 
