@@ -74,6 +74,7 @@
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber 
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
+ - :x:  xserver-xorg-video-intel  -- X.Org-X-Server -- Grafikkartentreiber für Intel i8xx, i9xx 
 
  - :o:  xfonts-utils  --
   - :x:  gsfonts-x11  --
@@ -127,6 +128,7 @@
 - :x:  kde-l10n-de  --	Deutsche (de) Lokalisierung für KDE
 
 - :x:  systemsettings  -- Anwendung zur Konfiguration der Arbeitsfläche
+- :x:  kio-extras  --  Extra functionality for kioslaves -
 - :x:  khotkeys  --  Konfiguriere die Einstellungen für die Eingabeaktionen in Plasma.
 - :x:  kmenuedit  -- stellt einen Menüeditor bereit, mit dem Sie das KDE-Plasma- Arbeitsflächen-Menü oder ein beliebiges anderes XDG-Menü bearbeiten können
 - :x:  kde-config-screenlocker  -- KCM Module for kscreenlocker
@@ -135,6 +137,8 @@
 
 ##  KDE Programme
 
+- :x:  konqueror  --  Hochentwickelter Dokumentenbetrachter, Webbrowser und Dateimanager
+- :x:  kpart-webkit  --  KPart für WeKit
 - :o:  ksnapshot  --	Werkzeug für die Erstellung von Bildschirmfotos
 - :x:  okular-extra-backends  --  Unterstützung von zusätzlichen Dokumentformaten für Okular
 - :x:  kontact  --	    Integrierte Anwendung für die Verwaltung persönlicher Informationen
@@ -518,7 +522,7 @@
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :x:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 - :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
-- :+1:  gnat-6  --		GNU Ada compiler
+- :x:  gnat-6  --		GNU Ada compiler
 
 - :x:  default-jdk  -- Open Java Development Kit 7
 
