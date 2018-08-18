@@ -16,7 +16,7 @@ Das erstellte System basiert derzeit (Stand 08-2018) auf Debian-Live, Desktop: k
 
 **Screenshot vom Desktop: 2018-08-18 **
 
-![Screenshot-1](doc/dev_doc/data/desktop-screenshot_2018-08-18_1024x78.png "Screenshot")
+![Screenshot-1](doc/dev_doc/data/desktop-screenshot_2018-08-18_1024x768.png "Desktop Screenshot")
 
 
 # Weitere Infos:
