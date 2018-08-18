@@ -14,9 +14,9 @@ die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
 Das erstellte System basiert derzeit (Stand 08-2018) auf Debian-Live, Desktop: kde, Architektur: amd64, Kernel: 4.9.
 
 
-**Screenshot vom Desktop:**
+**Screenshot vom Desktop: 2018-08-18 **
 
-![Screenshot-1](doc/dev_doc/data/desktop-screenshot-1.jpg "Screenshot")
+![Screenshot-1](doc/dev_doc/data/desktop-screenshot_2018-08-18_1024x78.png "Screenshot")
 
 
 # Weitere Infos:
