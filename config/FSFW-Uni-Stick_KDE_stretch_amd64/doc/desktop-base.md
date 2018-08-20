@@ -16,6 +16,7 @@
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
+ - :x:  xserver-xorg-video-intel  -- X.Org-X-Server -- Grafikkartentreiber für Intel i8xx, i9xx
 
  - :o:  xfonts-utils  --
   - :x:  gsfonts-x11  --

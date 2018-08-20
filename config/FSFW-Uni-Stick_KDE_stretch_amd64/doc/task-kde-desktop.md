@@ -41,6 +41,7 @@
  - :x:  user-manager  -- user management tool for the Plasma workspace
 - :x:  kde-spectacle  -- Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
 - :x:  khelpcenter  --	Hilfezentrum 
+- :x:  kio-extras  --  Extra functionality for kioslaves - wird benötigt für Vorschau Hintergrundbilder
 
 [//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
 - :x:  kmail  --	Vollständiger grafischer E-Mail-Client
@@ -57,7 +58,9 @@
 - :x:  plasma-widgets-addons  --    additional widgets for Plasma 5 
 - :x:  polkit-kde-agent-1  --	KDE-Dialoge für PolicyKit 
 - :x:  sweeper  --	Löschen von Verlauf und temporären Dateien 
+- :x:  konqueror  --  Hochentwickelter Dokumentenbetrachter, Webbrowser und Dateimanager
 - :x:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser 
+- :x:  kpart-webkit  --  KPart für WeKit	- sonst keine Anzeige von *.svg im konqueror
 - :x:  plasma-nm  --    Plasma5-Bibliothek zur Netzwerkverwaltung 
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4 
 
