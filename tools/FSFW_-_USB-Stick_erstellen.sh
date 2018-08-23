@@ -3,10 +3,10 @@
 #         FILE: FSFW_-_USB-Stick_erstellen.sh
 #        USAGE: sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sd...  ( Gerät/USB-Stick der benutzt werden soll )
 #		- ( ausführen im live-build-Verzeichnis )
-#  DESCRIPTION: bringt das live-image-amd64.hybrid.iso (FSFW-UNI-Stick) auf einen USB-Stick
+#  DESCRIPTION: bringt das live-image.iso (vorzugsweise FSFW-UNI-Stick_${FSFW_UNI_STICK_VERSION}_KDE_stretch-amd64.hybrid.iso) auf einen USB-Stick
 #		bootet mit grub2 -
 #
-#      VERSION: 0.0.2
+#      VERSION: 0.0.3
 #      OPTIONS: $1 = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
 #		$2 = live-image.iso - Default = *.hybrid.iso im aktuellen live-build-Verzeichnis
@@ -15,11 +15,12 @@
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-09-15
-#     REVISION: 2016-11-01
+#     REVISION: 2016-11-01 - 2018-08-20
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 #
+# TODO: LANG testen und fals nicht vorhanden auf C (en) stellen -- verschiedene Sprachen unterstützen de, en ....
 
 DEVICE=$1
 
@@ -29,16 +30,35 @@ LABEL_PERSISTENCE_DATEN=dlp-daten
 PERSISTENCE_OPTION="/ union"
 
 LIVE_IMAGE=$2
-DEFAULT_LIVE_IMAGE=$(ls ./*.hybrid.iso)
+LIST_LIVE_IMAGES=($(ls ../images/FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso))
+DEFAULT_LIVE_IMAGE=(${LIST_LIVE_IMAGES[${#LIST_LIVE_IMAGES[@]}-1]})	# letztes erstelltes Image
 KERNEL_VERSION=
 BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current"
 BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
 
 DATUM=$(date +%Y-%m-%d)
 
+# für mount ein temporäres Verzeichnis erstellen mktemp /mnt/FSFW-Uni-Stick_XXXXXX
+TMPDIR=$(mktemp -d /mnt/FSFW-Uni-Stick_XXXXXX)			# rm -IRv $(TMPDIR) -- TMPDIR löschen / aufräumen
+
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
 LOG_FILE="FSFW_-_USB-Stick_erstellen_${DATUM}_build.log"
+
+# Variablen für download url's (hdt.iso , memtest.iso  ....)
+
+URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
+URL_MEMTEST_ISO=http://www.memtest.org/download/5.01/memtest86+-5.01.iso	#.gz
+URL_SUPERGRUB2_ISO=https://sourceforge.net/projects/supergrub2/files/2.02s9/super_grub2_disk_2.02s9/super_grub2_disk_hybrid_2.02s9.iso
+
+## Variablen - Größen werden im Skript ermittelt
+# für neue Partitionen
+
+g_live_system=0
+g_windows_daten=0
+g_persistence_daten=0
+
+# für existierende Partition
 
 
 #######################################
@@ -52,12 +72,6 @@ if [[ $? -eq 1 ]]; then
 	exit 1
 fi
 }
-
-## Variablen für Partitionsgröße
-
-g_live_system=0
-g_windows_daten=0
-g_persistence_daten=0
 
 ##################################
 # Funktion: Partitionsgröße Live-System festlegen
@@ -98,7 +112,7 @@ abbrechen_test
 # Funktion: prüfen ob memdisk vorhanden
 #
 memdisk() {
-if [ ! -f /mnt/${LABEL_LIVE}/boot/img/memdisk ]; then cp /usr/lib/syslinux/memdisk /mnt/${LABEL_LIVE}/boot/img/memdisk ; fi
+if [ ! -f ${TMPDIR}/${LABEL_LIVE}/boot/img/memdisk ]; then cp /usr/lib/syslinux/memdisk ${TMPDIR}/${LABEL_LIVE}/boot/img/memdisk ; fi
 }
 
 ##################################
@@ -111,7 +125,7 @@ fehler_test() {
 	read FEHLER
 		if [ ! "$FEHLER" == 'y' ]; then
 			echo "Skript wird abgebrochen "
-			entfernen
+			device_remove
 			exit 1
 		fi
     fi
@@ -134,18 +148,13 @@ fehler_abbruch() {
 ##################################
 # Funktion: Speichergerät / USB-Stick freigeben
 #
-entfernen() {
+device_remove() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
-	umount /${DEVICE}${p}${live_partition}
-	rmdir /mnt/${LABEL_LIVE}
-
-    if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
-	echo " Persistence Partition freigeben "
-	umount /${DEVICE}${p}${persistence_partition}
-	rmdir /mnt/${LABEL_PERSISTENCE_DATEN}
-    fi
-
-	echo "Fertig - USB Stick entfernen"
+	umount ${DEVICE}*
+	echo "  ----- Hinweis ----- "
+ 	echo "löschen mit Taste "y" bestätigen"
+	rm -IRv ${TMPDIR}
+	echo "Fertig - Speichergerät (USB Stick) kann entfernt werden "
 }
 
 ##################################
@@ -169,15 +178,15 @@ device_mount() {
 	echo " Gerät ${DEVICE} wird eingebunden "
 	device_test
 
-    if [ ! -d /mnt/${LABEL_LIVE} ]; then mkdir /mnt/${LABEL_LIVE}; fi
+    if [ ! -d ${TMPDIR}/${LABEL_LIVE} ]; then mkdir ${TMPDIR}/${LABEL_LIVE}; fi
 
-	mount ${DEVICE}${p}${live_partition} /mnt/${LABEL_LIVE}
+	mount ${DEVICE}${p}${live_partition} ${TMPDIR}/${LABEL_LIVE}
 	fehler_test
 
     if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
 	echo " Persistence Partition wird eingebunden "
-	  if [ ! -d /mnt/${LABEL_PERSISTENCE_DATEN} ]; then mkdir /mnt/${LABEL_PERSISTENCE_DATEN}; fi
-	mount ${DEVICE}${p}${persistence_partition} /mnt/${LABEL_PERSISTENCE_DATEN}
+	  if [ ! -d ${TMPDIR}/${LABEL_PERSISTENCE_DATEN} ]; then mkdir ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}; fi
+	mount ${DEVICE}${p}${persistence_partition} ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}
 	fehler_test
     fi
 }
@@ -186,9 +195,9 @@ device_mount() {
 # Funktion: Bootloader installieren
 #
 grub_install() {
-    if [ ! -d /mnt/${LABEL_LIVE}/boot/grub ]; then
+    if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/grub ]; then
 	echo "grub-install wird ausführt - Bitte warten "
-	grub-install --no-floppy --force --removable --root-directory=/mnt/${LABEL_LIVE} ${DEVICE}
+	grub-install --no-floppy --force --removable --root-directory=${TMPDIR}/${LABEL_LIVE} ${DEVICE}
     else
 	echo " Grub bereites installiert. "
     fi
@@ -199,7 +208,7 @@ grub_install() {
 #
 create_grub_config() { echo "grub.cfg wird erstellt "
 
-cat <<EOF> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 ## grub.cfg - generiert - $(date)
 
 set timeout=15
@@ -254,7 +263,7 @@ EOF
 #
 create_grub_config_zusatz_menu() { echo "grub.cfg ergänzen "
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 ## sonstige Menüeinträge
 
@@ -284,7 +293,7 @@ EOF
 #
 insert_toolbox() { echo " Toolbox einfügen "
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 submenu "--- Toolbox --- " {
 
@@ -296,8 +305,8 @@ EOF
 
 	memtest86+)
 		echo " ${xtool} einfügen "
-		tool_iso=/boot/iso/memtest86+-5.01.iso
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+		tool_iso=/boot/boot-isos/${URL_MEMTEST_ISO##*/}
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Memory test (memtest86+) iso " {
      linux16 /boot/img/memdisk iso
@@ -306,17 +315,17 @@ menuentry "Memory test (memtest86+) iso " {
 
 EOF
 		memdisk
-		if [ ! -e /mnt/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} http://www.memtest.org/download/5.01/${tool_iso##*/}.gz -O /mnt/${LABEL_LIVE}${tool_iso}.gz
+		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
+		${DOWNLOAD} ${URL_MEMTEST_ISO}.gz -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz
 		fehler_test
-		gzip -d  /mnt/${LABEL_LIVE}/boot/iso/memtest86+-5.01.iso.gz
+		gzip -d  ${TMPDIR}/${LABEL_LIVE}${tool_iso}.gz
 		fehler_test
 		fi
 		;;
 	hdt)
 		echo " ${xtool} einfügen "
-		tool_iso=/boot/iso/hdt-0.5.2.iso
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+		tool_iso=/boot/boot-isos/${URL_HDT_ISO##*/}
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Hardware Test (HDT) " {
      linux16 /boot/img/memdisk iso
@@ -324,27 +333,28 @@ menuentry "Hardware Test (HDT) " {
 }
 EOF
 		memdisk
-		if [ ! -e /mnt/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} http://www.hdt-project.org/raw-attachment/wiki/hdt-0.5.0/${tool_iso##*/} -O /mnt/${LABEL_LIVE}${tool_iso}
+		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
+		${DOWNLOAD} ${URL_HDT_ISO}?raw=true -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}
 		fehler_test
 		fi
 	    ;;
 	super-grub2-disk)
 		echo " ${xtool} einfügen "
-		tool_iso=/boot/iso/super_grub2_disk_hybrid_2.02s4.iso
+		tool_iso=/boot/boot-isos/${URL_SUPERGRUB2_ISO##*/}
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Super Grub2 Disk " {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-    linux16 /boot/img/memdisk iso
-    initrd16 ${tool_iso}
+    loopback loop ${tool_iso}
+    root=(loop)
+    configfile /boot/grub/loopback.cfg
 }
 
 EOF
 		memdisk
-		if [ ! -e /mnt/${LABEL_LIVE}${tool_iso} ]; then
-		${DOWNLOAD} https://sourceforge.net/projects/supergrub2/files/2.02s4/${tool_iso##*/} -O /mnt/${LABEL_LIVE}${tool_iso}
+		if [ ! -e ${TMPDIR}/${LABEL_LIVE}${tool_iso} ]; then
+		${DOWNLOAD} ${URL_SUPERGRUB2_ISO} -O ${TMPDIR}/${LABEL_LIVE}${tool_iso}
 		fehler_test
 		fi
 	    ;;
@@ -355,7 +365,7 @@ EOF
     esac
   done
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "lspci - Hardware Infos " {
 lspci
@@ -370,7 +380,7 @@ read
 EOF
 
 # submenu Toolbox schließen
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 }
 EOF
 
@@ -383,16 +393,16 @@ EOF
 insert_live_image() {
 		echo " ${LIVE_IMAGE##*/} Live-System-Image einfügen "
 		iso_time=($(ls --full-time ${LIVE_IMAGE}))
-		system_iso=/boot/iso/${iso_time[5]}_${LIVE_IMAGE##*/}
+		system_iso=/boot/boot-isos/${iso_time[5]}_${LIVE_IMAGE##*/}
 		# menu_label = {LIVE_IMAGE} ohne PATH - .hybrid.iso entfernen - Leerzeichen entfernen
 		menu_label=${LIVE_IMAGE##*/} && menu_label=${menu_label%%.*} && menu_label=${menu_label//_/ }
 
 # Persistence Partition Menüeintrag und persistence.conf anlegen
 if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
 	echo " Persistence option in grub.cfg einfügen "
-	echo ${PERSISTENCE_OPTION} > /mnt/${LABEL_PERSISTENCE_DATEN}/persistence.conf
+	echo ${PERSISTENCE_OPTION} > ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}/persistence.conf
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry " ____________________ Live System + Persistence Mode ____________________ " { echo
 }
@@ -416,7 +426,7 @@ EOF
 
 fi
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 menuentry " " { echo
 }
 
@@ -438,7 +448,7 @@ menuentry "${menu_label} - Live System " {
 EOF
 
 
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry " " { echo
 }
@@ -482,14 +492,14 @@ EOF
 
 
 # submenu Option Ende
-cat <<EOF>> /mnt/${LABEL_LIVE}/boot/grub/grub.cfg
+cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 }
 EOF
 
 	memdisk
-	if [[ ! -e /mnt/${LABEL_LIVE}${system_iso} ]]; then
+	if [[ ! -e ${TMPDIR}/${LABEL_LIVE}${system_iso} ]]; then
 		echo " ${LIVE_IMAGE} -- kopieren --> ${system_iso}"
-		cp ${LIVE_IMAGE} /mnt/${LABEL_LIVE}${system_iso}
+		cp ${LIVE_IMAGE} ${TMPDIR}/${LABEL_LIVE}${system_iso}
 		fehler_test
 	else
 		echo " ${system_iso} ist vorhanden "
@@ -769,10 +779,10 @@ dialog --title "Gesamtgröße verfügbarer Speicher" \
 # Größe des Live-Images feststellen	Fehler falls USB-Stick zu klein
 # Partition für Live-Image - mindestens Größe = live-image + grub2 + memdisk + tools
 # grub2 + memdisk 	ca. 15 MB
-# tools			ca. 17 MB
+# tools			ca. 25 MB
 
-glive=$(ls -s --block-size=M ${LIVE_IMAGE})
-min_glive=$((${glive%%M *}+32))
+glive=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
+min_glive=$((${glive%%M *}+40))
 # echo "  $(min_glive)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
 
 dialog --title "Speicher den das Live-System benötigt" \
@@ -796,7 +806,7 @@ tool=$(dialog \
 	--checklist "\n Welche Tools sollen mit auf den Datenträger ?.\n " 13 65 5 \
     "memtest86+" 		" Tool für Speichertest  	- 1,8 MB " on \
     "hdt" 			" Hardware Test (HDT)    	- 1,3 MB " on \
-    "super-grub2-disk" 		" Toolbox 			-  13 MB " on \
+    "super-grub2-disk" 		" Toolbox 			-  20 MB " on \
     )
 
 # USB-Stick formatieren	-
@@ -918,12 +928,12 @@ grub_install
 
 echo " Datein / Verzeichnise anlegen"
 
-if [ ! -d /mnt/${LABEL_LIVE}/boot/iso ]; then mkdir /mnt/${LABEL_LIVE}/boot/iso; echo "/mnt/${LABEL_LIVE}/boot/iso angelegt "; fi
-if [ ! -d /mnt/${LABEL_LIVE}/boot/img ]; then mkdir /mnt/${LABEL_LIVE}/boot/img; echo "/mnt/${LABEL_LIVE}/boot/img angelegt "; fi
+if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos; echo "${TMPDIR}/${LABEL_LIVE}/boot/boot-isos angelegt "; fi
+if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/img ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/img; echo "${TMPDIR}/${LABEL_LIVE}/boot/img angelegt "; fi
 
-if [[ ! -e /mnt/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
- cp ./config/bootloaders/grub-pc/fsfw-background_640x480.png /mnt/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
-#${DOWNLOAD} https://wiki.fsfw-dresden.de/lib/exe/fetch.php/playground/beispiele/media/bilder/fsfw-background_640x480.png -O /mnt/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
+if [[ ! -e ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
+ cp ../doc/default_config/system_config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
+#${DOWNLOAD} https://wiki.fsfw-dresden.de/lib/exe/fetch.php/playground/beispiele/media/bilder/fsfw-background_640x480.png -O ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
 fi
 fehler_test
 
@@ -935,7 +945,7 @@ insert_toolbox
 
 create_grub_config_zusatz_menu
 
-entfernen
+device_remove
 
 }
 
