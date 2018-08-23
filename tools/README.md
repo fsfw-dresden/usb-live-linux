@@ -15,9 +15,9 @@ Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene relevante Ima
 
 # Stick-Image erstellen
 
-(getestet auf Debian Jessie)
+(getestet auf Debian stretch)
 
-Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich, um die im live-build erstellte **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
+Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich, um die im live-build erstellte **FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso**
 auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.
 
   * auf dem Speichermedium können mehrere Partitionen angelegt werden
@@ -32,8 +32,8 @@ Das Skript im live-build-Verzeichnis ausführen
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc `
 
-Standardmäßig wird das im live-build-Verzeichnis erstellte \*.iso Image auf das Speicherziel geschrieben.
-Alternativ kann auch eine *.iso Datei explizit angegeben werden:
+Standardmäßig wird das zuletzt erstellte Image (../images/FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso) das Speicherziel geschrieben.
+Alternativ kann auch eine *.iso Datei explizit als zweites Argument angegeben werden:
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc live-image-alternativ.iso `
 
@@ -43,7 +43,8 @@ Alternativ kann auch eine *.iso Datei explizit angegeben werden:
 
 Image mittels kvm (Kernel-based Virtual Machine) testen
 
-  ` $ sudo kvm -m 1024 -hda /dev/sd..`
+  ` $ sudo kvm -m 2048 -hda /dev/sd..`
 
-  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) - kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher der Host-Rechner hat.
+  * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) - kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher der Host-Rechner hat. 
+    ( >= 4GB im Host-Rechner sind zu empfehlen )
 

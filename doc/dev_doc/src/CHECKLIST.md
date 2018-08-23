@@ -6,9 +6,8 @@ Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.
 # Checkliste
 ## Desktop (Hintergrund und Symbole)
 
-* Sieht ungefähr so aus: ![Screenshot-1](../data/desktop-screenshot_1024x768.png "Desktop Screenshot")
+* Sollte ungefähr so aussehen: ![Screenshot-1](../data/desktop-screenshot_1024x768.png "Desktop Screenshot")
  * darauf achten, dass die Uni-Stick-spezifischen Programme räumlich von den allgemeinen Systemprogrammen getrennt sind.
- * Zusätzlich sollte noch R-Studio mit schönem Symbol zu sehen sein
 
 ## jupyter
 
