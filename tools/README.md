@@ -32,7 +32,7 @@ Das Skript im live-build-Verzeichnis ausführen
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc `
 
-Standardmäßig wird das zuletzt erstellte Image (../images/FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso) das Speicherziel geschrieben.
+Standardmäßig wird das zuletzt erstellte Image (../images/FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso) auf das Speicherziel geschrieben.
 Alternativ kann auch eine *.iso Datei explizit als zweites Argument angegeben werden:
 
   ` sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc live-image-alternativ.iso `
