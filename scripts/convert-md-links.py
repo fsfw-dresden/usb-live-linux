@@ -12,11 +12,6 @@
 import sys
 import re
 
-# from ipHelp import IPS<------><------># --> # Fehlermeldung in der Debian Standadinstallation
-#<------><------><------><------><------># Traceback (most recent call last):
-#<------><------><------><------><------>#   File "convert-md-links.py", line 16, in <module>
-#<------><------><------><------><------>#     from ipHelp import IPS
-#<------><------><------><------><------># ImportError: No module named ipHelp 
 fname = sys.argv[1]
 
 #print("called with", fname)
