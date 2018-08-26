@@ -2,18 +2,21 @@
 #
 # Skript erstellt gerdg-dd@gmx.de 2016-10-21
 #
-# Paketlisten nach extra-install Paketen durchsuchen und download nach config/packages.chroot/*
+# konvertierte Paketlisten nach mit "--extra--installation" markierten
+# Paketen durchsuchen und download nach config/packages.chroot/*
 #
+. "$(dirname "${0}")/functions.sh"
+cd_repo_root
 
 FSFW_UNI_STICK_CONFIG=$1
 echo "extra-install_paket.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} "
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
-PAKET_LISTEN=($(ls ./config/package-lists/*))
+PAKET_LISTEN=($(command ls config/package-lists/*))
 
 echo "Extra Paket-Installation für packages.chroot vorbereiten."
 
-# Paketlisten nach "## --extra-installation -->" Paketen durchsuchen
+# Paketlisten nach "## --extra--installation -->" Paketen durchsuchen
 
 for paket_liste in ${PAKET_LISTEN[@]}
   do
@@ -28,22 +31,22 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket} ];
+			if [ -e profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
-				if [ ! -d ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ ]; then
-				 mkdir -p ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/
-				 echo " ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ erstellt"
+				if [ ! -d profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ ]; then
+				 mkdir -p profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/
+				 echo " profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket}
+				${DOWNLOAD} ${paket_quelle} -O profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket}
 				echo "${paket} - geholt "
 			fi
 		fi
 
 	    ;;
 	    *)
-		#       echo " Unbekannt "
+		#       echo "extra-install_paket.sh skipping ${line}"
 	    ;;
 
 	    esac
@@ -52,9 +55,9 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 done
 
-echo " extra-install_paket.sh -- system_config  aktuallisieren  "
-rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config
-echo " extra-install_paket.sh --system_config  aktuallisiert fertig."
+echo " extra-install_paket.sh -- config aktuallisieren.."
+rsync -avP config/${FSFW_UNI_STICK_CONFIG}/config/ config/
+echo " extra-install_paket.sh -- config aktuallisiert fertig."
 
 
-echo "Fertig - Extra Paket-Installation für packages.chroot vorbereiten."
+echo "Fertig - Extra Paket-Installation für packages.chroot vorbereitet."
