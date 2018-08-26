@@ -18,6 +18,7 @@ rm -f config/binary \
 # clean some more
 rm -riv cache/bootstrap \
   cache/contents.chroot \
+  config/auto \
   config/hooks \
   config/package-lists \
   config/includes.chroot/* \
