@@ -214,9 +214,10 @@
 
 - :x:  jabref  -- umfangreiche Literatur- und Quellenverwaltung (javabasiert)
 - :o: :-1:  jabref-plugin-oo  -- Jabref-Plugin für LibreOffice
-- :+1:  docear  -- Literaturverw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
+- :+1: :o:  [docear](http://docear.org/downloads/docear_linux.tar.gz)  -- Literaturverw. per Mindmap (leider nicht in den Repos sondern nur auf <www.docear.org>)
 - :+1:  kbibtex  -- Kde basierte Literaturverwaltung
-- :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen
+
+[//]: # (- :+1:  utopia-documents  -- PDF-Viewer mit der Möglichkeit seine Annotationen Online zu teilen - nicht in stretch - nur in unstable / sid )
 - :+1:  referencer  -- einfache Literaturverwaltung für den Gnomedesktop
 
 - ###  kommunikation
@@ -266,7 +267,6 @@
 - ### Konverter und sonstiges
 
 - :+1:  ogmtools  -- Dient der Bearbeitung von OGG-Streams
-- :+1:  oggconvert  -- Dienst der Konvertierung verschiedener Medienformate in freie Formate
 
 
 ##  Desktop Grafik
@@ -353,7 +353,7 @@
 - :x:  pspp  -- Statistik-Suite
 - :x:  r-base  --	GNU R - ein System für statistische Berechnungen und Grafiken
 - :x:  r-base-core  --	GNU R Statistik-Suite (nur das Grundsystem)
-- :+1: :x:  [rstudio] (https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
+- :+1: :x:  [rstudio](https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb)  -- Frontend für R (Wunsch des FSR Psychologie)
 - :+1:  littler  --	GNU R Konsolenfrontend
 - :+1:  r-cran-zelig  -- GNU R package providing a unified front-end for estimating statistical models
 - :+1:  r-cran-rcmdr  -- GNU R platform-independent basic-statistics GUI
@@ -364,9 +364,11 @@
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 - :x:  goldendict  --	Wörterbuch und Lexikon
 - :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
-- :o:  openteacher  -- eine weitere Sprachlernsoftware
+
+[//]: # (- :o:  openteacher  -- eine weitere Sprachlernsoftware - nicht in stretch - nur in unstable / sid )
 - :x:  parley  -- Vokabeltrainer für den KDE-Desktop
-- :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync
+
+[//]: # (- :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync - nicht in stretch - nur in unstable / sid )
 
 - ###  chemistry
 
@@ -390,7 +392,7 @@
 [//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
 
-- :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
+[//]: # (- :+1:  celestia-gnome  -- Desktop-Planetarium (Fotorelistische Planetenansichten) - nicht in stretch - nur in unstable / sid )
 
 - ###  social-science
 
@@ -399,7 +401,7 @@
 
 - ###  electronics
 
-- :+1: :x:  [qucs] (https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
+- :+1: :x:  [qucs](https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
 	- Extra Installation da nicht im Repo verfügbar
 	- Quelle: https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb
 	- Abhängigkeiten: libc6 libgcc1 libqt4-qt3support libqt4-script libqt4-svg libqtcore4 libqtgui4 libstdc++6 perl werden automatisch aufgelöst.
@@ -428,7 +430,6 @@
 - ###  CAD
 
 - :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
-- :+1:  freecad-doc  -- Doku für FreeCad
 - :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 - :o:  openscad  --	script file based graphical CAD environment 
 
@@ -440,7 +441,7 @@
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut] (http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-23-ga18789c7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-23-ga18789c7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
 
 - ###  admin
 
@@ -456,7 +457,6 @@
 [//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
  - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
 - :x:  texlive-binaries  --
-- :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils  --
 - :x:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
@@ -476,7 +476,7 @@
 - :x:  texlive-latex-recommended  --
 - :+1:  texlive-latex-recommended-doc  --
 - :x:  texlive-luatex  --
-- :x:  texlive-math-extra  --
+- :x:  texlive-science  -- TeX Live: Mathematics and science packages
 - :x:  texlive-pictures  --
 - :+1:  texlive-pictures-doc  --
 - :x:  texlive-plain-extra  --
@@ -506,11 +506,11 @@
 
 - ###  Programmiersprache PHP
 
-- :+1:  php5  -- PHP-Hauptpaket (zieht leider den Apache2 nach sich)
-- :+1:  php5-cli  -- PHP-Konsolenschnittstelle
-- :+1:  php5-gd  -- PHP5-Grafikbibliothek
-- :+1:  php5-mysqlnd  -- PHP5-Datenbankbibliothek
-- :+1:  php5-xdebug  -- praktisches Debugtool für PHP
+- :+1:  php7.0  -- In HTML eingebettete, serverseitige Skriptsprache (Metapaket) (zieht leider den Apache2 nach sich)
+- :+1:  php7.0-cli  -- Befehlszeileninterpreter für die Skriptsprache PHP 
+- :+1:  php7.0-gd  -- PHP5-Grafikbibliothek
+- :+1:  php7.0-mysqlnd  -- PHP5-Datenbankbibliothek
+- :+1:  php7.0-xml-dbgsym  -- debug symbols for php7.0-xml 
 - :+1:  phpunit  -- Unittests für PHP
 
 - ###  Tools
