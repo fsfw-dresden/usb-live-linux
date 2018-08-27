@@ -11,7 +11,6 @@
 - ###  CAD
 
 - :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
-- :+1:  freecad-doc  -- Doku für FreeCad
 - :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 - :o:  openscad  --	script file based graphical CAD environment 
 
@@ -24,4 +23,4 @@
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut] (http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-23-ga18789c7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](http://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-23-ga18789c7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll

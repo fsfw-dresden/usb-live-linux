@@ -9,7 +9,6 @@
 [//]: # (Carsten: biber ist notwendig für Daniels Vorlage)
  - :x:  biber  --  Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
 - :x:  texlive-binaries  --
-- :+1:  texlive-doc-de  --
 - :x:  texlive-extra-utils  --		für pdfjam (pdf90)
 - :x:  texlive-font-utils  --
 - :x:  texlive-fonts-extra  -- Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
@@ -29,7 +28,7 @@
 - :x:  texlive-latex-recommended  --
 - :+1:  texlive-latex-recommended-doc  --
 - :x:  texlive-luatex  --
-- :x:  texlive-math-extra  --
+- :x:  texlive-science  -- TeX Live: Mathematics and science packages
 - :x:  texlive-pictures  --
 - :+1:  texlive-pictures-doc  --
 - :x:  texlive-plain-extra  --

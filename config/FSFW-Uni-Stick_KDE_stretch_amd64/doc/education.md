@@ -5,9 +5,11 @@
 - :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 - :x:  goldendict  --	Wörterbuch und Lexikon
 - :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
-- :o:  openteacher  --	eine weitere Sprachlernsoftware
+
+[//]: # (- :o:  openteacher  -- eine weitere Sprachlernsoftware - nicht in stretch - nur in unstable / sid)
 - :x:  parley  --	Vokabeltrainer für den KDE-Desktop
-- :+1:  anki  --	Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync
+
+[//]: # (- :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync - nicht in stretch - nur in unstable / sid )
 
 - ###  chemistry
 
@@ -27,5 +29,6 @@
 
 [//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
 - :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
-- :+1:  celestia  -- Desktop-Planetarium (Fotorelistische Planetenansichten)
+
+[//]: # (- :+1:  celestia-gnome  -- Desktop-Planetarium (Fotorelistische Planetenansichten) - nicht in stretch - nur in unstable / sid )
  
