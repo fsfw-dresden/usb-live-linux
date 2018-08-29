@@ -27,7 +27,7 @@ cd_repo_root
 FSFW_UNI_STICK_CONFIG=$(readlink profiles/active)
 echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
 
-[ ! -d "profiles/${FSFW_UNI_STICK_CONFIG}" ] || { echo "FAIL: profiles/active not symlink pointing to valid config profile"; exit 1; }
+[ -d "profiles/${FSFW_UNI_STICK_CONFIG}" ] || { echo "FAIL: profiles/active not symlink pointing to valid config profile"; exit 1; }
 
 main() {
     if [ "$(id -u)" != "0" ]; then
