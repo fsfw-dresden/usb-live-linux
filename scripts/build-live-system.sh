@@ -3,7 +3,7 @@
 #         FILE: fsfw-uni-stick_build.sh
 #        USAGE: fsfw-uni-stick_build.sh
 #  DESCRIPTION: erstellen des FSFW-Uni-Stick
-#        	Nutzung variabler Konfigurationsprofile möglich
+#        	Nutzung verschiedener Konfigurationsvarianten möglich
 #		alle Schritte in diesem Skript können auch einzeln ausgeführt werden
 #
 #      VERSION: 0.0.4
@@ -24,10 +24,10 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$(readlink profiles/active)
+FSFW_UNI_STICK_CONFIG=$(readlink variants/active)
 echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
 
-[ -d "profiles/${FSFW_UNI_STICK_CONFIG}" ] || { echo "FAIL: profiles/active not symlink pointing to valid config profile"; exit 1; }
+[ -d "variants/${FSFW_UNI_STICK_CONFIG}" ] || { echo "FAIL: variants/active not symlink pointing to valid config variant"; exit 1; }
 
 main() {
     if [ "$(id -u)" != "0" ]; then
@@ -42,15 +42,11 @@ main() {
     # live-build Umgebung aufräumen; siehe auto/clean
     sudo lb clean
 
-    # profilspezifische live-build Konfiguration einspielen
-    scripts/apply-build-profile.sh "${FSFW_UNI_STICK_CONFIG}"
+    # variantenspezifische live-build Konfiguration einspielen
+    scripts/apply-build-variant.sh "${FSFW_UNI_STICK_CONFIG}"
 
     # Paketlisten aus markdown konvertieren.
-    # Liegt mit Endung .md im paketlisten-Ordner = aktiv!
-    # .. ob ich das wieder verkompliziere überleg ich mir noch (Marcel 2018-08-18)
-    for list in profiles/${FSFW_UNI_STICK_CONFIG}/paketlisten/*.md; do
-        scripts/md2packagelist.sh "${list}"
-    done
+    scripts/md2packagelist.sh variants/${FSFW_UNI_STICK_CONFIG}/paketlisten/default
 
     # Paketlisten nach out-of-repo Pakenten durchsuchen und download nach config/packages.chroot/*
     scripts/extra-install-paket.sh "${FSFW_UNI_STICK_CONFIG}"

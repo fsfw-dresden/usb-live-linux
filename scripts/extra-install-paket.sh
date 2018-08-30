@@ -31,15 +31,15 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -e profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
+			if [ -e variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
-				if [ ! -d profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ ]; then
-				 mkdir -p profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/
-				 echo " profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ erstellt"
+				if [ ! -d variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ ]; then
+				 mkdir -p variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/
+				 echo " variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O profiles/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket}
+				${DOWNLOAD} ${paket_quelle} -O variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket}
 				echo "${paket} - geholt "
 			fi
 		fi

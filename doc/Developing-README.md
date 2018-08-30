@@ -4,7 +4,7 @@
 
 * __auto__    -- Hauptkonfiguration für live-build
 * __config__    -- Arbeitsverzeichnis von live-build
-* __profiles__    -- verschiedene Varianten zum auswählen
+* __variants__    -- verschiedene Varianten zum auswählen
    - __FSFW-Uni-Stick_KDE_stretch_amd64__ -- aktuelle stabile Debian-Version
    - __FSFW-Uni-Stick_KDE_jessie_amd64__ -- oldstable
       - __doc__ -- Paketlisten und spezielle Doku und Hinweise für diese Konfigurationsvariante

@@ -8,12 +8,12 @@ echo "FSFW Material/Doku bauen und verteilen"
 
 check_program_exists pandoc || exit 1
 
-LIST_MD=(profiles/${FSFW_UNI_STICK_CONFIG}/doc/src/*.md)
+LIST_MD=(variants/${FSFW_UNI_STICK_CONFIG}/doc/src/*.md)
 for FILE in ${LIST_MD[@]##*/} ;
 do
     TARGETFILE="doc/html/${FILE%%.md}.html"
 
-    pandoc --standalone --template doc/src/fsfw-template.html profiles/${FSFW_UNI_STICK_CONFIG}/doc/src/${FILE} -o $TARGETFILE
+    pandoc --standalone --template doc/src/fsfw-template.html variants/${FSFW_UNI_STICK_CONFIG}/doc/src/${FILE} -o $TARGETFILE
     python3 scripts/convert-md-links.py "$TARGETFILE"
 
     echo "Datei geschrieben:" $TARGETFILE
