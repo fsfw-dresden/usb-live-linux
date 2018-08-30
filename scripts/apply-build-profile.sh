@@ -8,4 +8,4 @@ FSFW_UNI_STICK_CONFIG=$1
 echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
 
 ln -sv ../profiles/${FSFW_UNI_STICK_CONFIG}/auto/config auto/config
-rsync -avP profiles/${FSFW_UNI_STICK_CONFIG}/system_config/ config/
+rsync -avP profiles/${FSFW_UNI_STICK_CONFIG}/config/ config/
