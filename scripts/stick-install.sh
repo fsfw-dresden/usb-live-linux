@@ -124,6 +124,7 @@ input_abbruch() {
 	read FEHLER
 		if [ ! "$FEHLER" == 'y' ]; then
 			echo "Skript wird abgebrochen "
+			device_remove
 			exit 1
 		fi
 }
@@ -134,7 +135,7 @@ input_abbruch() {
 #
 device_remove() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
-	umount ${DEVICE}*
+	umount -v ${DEVICE}*
 	echo "  ----- Hinweis ----- "
  	echo "löschen mit Taste "y" bestätigen"
 	rm -IRv ${TMPDIR}
