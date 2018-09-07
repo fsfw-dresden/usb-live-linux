@@ -1,0 +1,30 @@
+#!/bin/sh
+
+set -e
+
+# this cleans chroot, binary, stage & source
+# c.f. /usr/lib/live/build/clean
+lb clean noauto "${@}"
+
+# used in live-images examples
+rm -f config/binary \
+  config/bootstrap \
+  config/chroot \
+  config/common \
+  config/source \
+  config/control \
+  build.log
+
+# clean some more
+rm -r cache/bootstrap
+rm -rv cache/contents.chroot \
+  config/auto \
+  config/hooks \
+  config/package-lists \
+  config/includes.chroot/* \
+  config/apt/* \
+  config/packages.chroot/* \
+  config/archives/* \
+  config/bootloaders/* \
+  config/templates/* \
+  fsfw-build-script.log 

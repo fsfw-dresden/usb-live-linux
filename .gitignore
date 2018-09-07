@@ -3,3 +3,29 @@ doc/html/*.html
 images/*
 
 .lock
+
+# from previous FSFW-Uni-Stick dir
+binary/
+*.iso
+*.img
+*.tar*
+*.files
+*.contents
+*.packages
+*.zsync
+
+.build/
+*.log
+
+auto/config
+
+cache/
+
+chroot/
+chroot.packages.*
+chroot.files
+
+config/*
+
+source/
+
