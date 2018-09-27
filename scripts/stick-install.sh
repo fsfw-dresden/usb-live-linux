@@ -21,6 +21,8 @@
 #==========================================
 #
 # TODO: LANG testen und fals nicht vorhanden auf C (en) stellen -- verschiedene Sprachen unterstützen de, en ....
+. "`dirname "${0}"`/functions.sh"
+cd_repo_root
 
 DEVICE=$1
 
