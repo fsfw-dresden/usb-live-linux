@@ -906,7 +906,7 @@ if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos ]; then mkdir ${TMPDIR}/${LABEL
 if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/img ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/img; echo "${TMPDIR}/${LABEL_LIVE}/boot/img angelegt "; fi
 
 if [[ ! -e ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
- cp ../doc/default_config/system_config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
+ cp variants/active/config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
 #${DOWNLOAD} https://wiki.fsfw-dresden.de/lib/exe/fetch.php/playground/beispiele/media/bilder/fsfw-background_640x480.png -O ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
 fi || input_abbruch
 
