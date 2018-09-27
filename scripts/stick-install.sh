@@ -564,7 +564,7 @@ if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 1 ]]; then
 	# --> (empfohlener Speicher Live-System) = (Speicher den das Live-System benötigt) in %
 	if [[ "${size_device}" -lt "${rel_size_live_system_default}" ]]; then
 		rel_size_live_system_default=${rel_size_live_system_min}
-#		rel_size_live_system_default=$(( $(( ${size_live_image%%M *} + 32 )) * 100 / ${size_device} ))
+#		rel_size_live_system_default=$(( $(( ${size_live_system%%M *} + 32 )) * 100 / ${size_device} ))
 	fi
 fi
 
@@ -755,9 +755,9 @@ dialog --title "Gesamtgröße verfügbarer Speicher" \
 # grub2 + memdisk 	ca. 15 MB
 # tools			ca. 25 MB
 
-size_live_image=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
-size_live_image_min=$((${size_live_image%%M *}+40))
-# echo "  $(size_live_image_min)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
+size_live_system=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
+size_live_system_min=$((${size_live_system%%M *}+40))
+# echo "  $(size_live_system_min)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
 
 dialog --title "Speicher den das Live-System benötigt" \
 --backtitle "Speicher Live-System" \
