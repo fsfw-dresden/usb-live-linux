@@ -4,7 +4,7 @@ set -e
 
 DISTRIBUTION=stretch
 DESKTOP=KDE
-FSFW_UNI_STICK_VERSION="$(echo "$(../tools/calc-version-number.sh)")"
+FSFW_UNI_STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \

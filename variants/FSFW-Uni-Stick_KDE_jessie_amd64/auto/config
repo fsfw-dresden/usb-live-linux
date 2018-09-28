@@ -4,7 +4,7 @@ set -e
 
 DISTRIBUTION=jessie
 DESKTOP=KDE
-FSFW_UNI_STICK_VERSION="$(echo "$(../tools/calc-version-number.sh)")"
+FSFW_UNI_STICK_VERSION="$(echo "$(../scipts/calc-version-number.sh)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \
