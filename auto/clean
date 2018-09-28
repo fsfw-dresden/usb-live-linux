@@ -16,8 +16,8 @@ rm -f config/binary \
   build.log
 
 # clean some more
-rm -r cache/bootstrap
-rm -rv cache/contents.chroot \
+rm -rf cache/bootstrap
+rm -rfv cache/contents.chroot \
   config/auto \
   config/hooks \
   config/package-lists \
