@@ -31,7 +31,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -e variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
+			if [ -s variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
