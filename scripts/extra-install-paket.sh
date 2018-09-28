@@ -56,7 +56,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 done
 
 echo " extra-install_paket.sh -- config aktuallisieren.."
-rsync -avP config/${FSFW_UNI_STICK_CONFIG}/config/ config/
+rsync -avP variants/${FSFW_UNI_STICK_CONFIG}/config/ config/
 echo " extra-install_paket.sh -- config aktuallisiert fertig."
 
 
