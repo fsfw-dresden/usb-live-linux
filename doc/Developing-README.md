@@ -7,9 +7,10 @@
 * __variants__    -- verschiedene Varianten zum auswählen
    - __FSFW-Uni-Stick_KDE_stretch_amd64__ -- aktuelle stabile Debian-Version
    - __FSFW-Uni-Stick_KDE_jessie_amd64__ -- oldstable
-      - __doc__ -- Paketlisten und spezielle Doku und Hinweise für diese Konfigurationsvariante
-      - __system_config__ -- system bedingte vorgaben (FIXME)
-      - __user_config__ -- user bezogene vorgaben (FIXME)
+      - __doc__ -- spezielle Doku und Hinweise für diese Konfigurationsvariante
+      - __paketlisten__ -- Paketlisten (symlink default => Hauptpaketliste) 
+      - __config__ -- live-build Konfiguration
+      - __home_skel__ -- Vorkonfiguration für Benutzer
 * __doc__
    - __latex-vorlagen__ --	Vorlagen für Latex
    - __src__ -- markdown-Vorlagen für Erstellung der HTML Doku (.md wird auf github formatiert angezeigt)
