@@ -17,9 +17,8 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 . "$(dirname "${0}")/functions.sh"
-cd_repo_root
-
-TARGET_PATH=config/package-lists
+ROOT=$(repo_root)
+TARGET_PATH=${ROOT}/config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
 

@@ -1,8 +1,12 @@
 #!/bin/sh
 
+repo_root() {
+        git rev-parse --show-toplevel
+}
+
 cd_repo_root() {
         echo "current dir: " $(pwd)
-        ROOT=$(git rev-parse --show-toplevel)
+        ROOT=$(repo_root)
         cd "${ROOT}"
 }
 
