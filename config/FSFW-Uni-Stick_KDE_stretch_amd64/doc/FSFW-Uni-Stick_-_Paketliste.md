@@ -232,9 +232,13 @@
 
 [//]: # (Carsten: Wie viel Aufwand macht es das Programm als Thunderbird mit "Original-Logo" zu installieren? Sollte doch Lizenzrechtlich möglich sein. Bei Ubuntu geht es ja auch. Hintergrund: Möglichst wenig Verwirrung stiften. Außerdem läuft Icedove 45.2.0 aus debian stable bei mir nicht besonders stabil.)
 [//]: # (Gerd: icedove entspricht Thunderbird Version 45.2.0 -- muss jemand testen - kann sein das enigmail unkompatible mit dem PGP-Agent ist ? )
-- :x:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
-- :x:  icedove-l10n-de
-- :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
+- :o:  icedove  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
+- :o:  icedove-l10n-de  --
+
+- :x:  thunderbird  -- Mail/News-Client mit integriertem Spam-Filter und Unterstützung für RSS/Chat
+- :x:  thunderbird-l10n-de  -- German language package for Thunderbird
+
+- :o:  enigmail  --	GPG-Unterstützung für Thunderbird und Debian Icedove
 
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
