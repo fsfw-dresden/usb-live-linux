@@ -703,7 +703,7 @@ echo "System prüft - sind alle benötigten Software-pakete vorhanden."
     for paket in "sudo" "grub2" "parted" "dosfstools" "gzip" "syslinux-common" "wget" "dialog" "util-linux" # "Test-Paket"
 	do
 #		echo " ${paket} überprüfen "
-		dpkg -l | grep -q ${paket}
+		dpkg -l 2>/dev/null | grep -q ${paket}
 		if [[ $? -eq 1 ]]; then
 			echo "Das Paket >> $paket << ist nicht installiert"
 			echo "Instalieren sie es mit"
