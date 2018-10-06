@@ -4,8 +4,8 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
+BUILD_VARIANT=$(readlink variants/active)
+echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 # === FIXME KILL => auto/clean
 # aufräumen ( ist ../home/user vorhanden wird die config nicht aus ../etc/skel übernommen)
@@ -19,7 +19,7 @@ echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} "
 
 mkdir -pv config/includes.chroot/etc/skel
 scripts/copy-docs.sh
-rsync --verbose --archive --copy-links --stats --info=progress2 variants/${FSFW_UNI_STICK_CONFIG}/home_skel/ config/includes.chroot/etc/skel 
+rsync --verbose --archive --copy-links --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel 
 
 echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
 

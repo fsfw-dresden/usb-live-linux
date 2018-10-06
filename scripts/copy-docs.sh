@@ -2,18 +2,18 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
+BUILD_VARIANT=$(readlink variants/active)
+echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 echo "FSFW Material/Doku bauen und verteilen"
 
 check_program_exists pandoc || exit 1
 
-LIST_MD=(variants/${FSFW_UNI_STICK_CONFIG}/doc/src/*.md)
+LIST_MD=(variants/${BUILD_VARIANT}/doc/src/*.md)
 for FILE in ${LIST_MD[@]##*/} ;
 do
     TARGETFILE="doc/html/${FILE%%.md}.html"
 
-    pandoc --standalone --template doc/src/fsfw-template.html variants/${FSFW_UNI_STICK_CONFIG}/doc/src/${FILE} -o $TARGETFILE
+    pandoc --standalone --template doc/src/fsfw-template.html variants/${BUILD_VARIANT}/doc/src/${FILE} -o $TARGETFILE
     python3 scripts/convert-md-links.py "$TARGETFILE"
 
     echo "Datei geschrieben:" $TARGETFILE

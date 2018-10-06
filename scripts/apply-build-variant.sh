@@ -4,8 +4,8 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
+BUILD_VARIANT=$(readlink variants/active)
+echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-ln -sv ../variants/${FSFW_UNI_STICK_CONFIG}/auto/config auto/config
-rsync -avP variants/${FSFW_UNI_STICK_CONFIG}/config/ config/
+ln -sv ../variants/${BUILD_VARIANT}/auto/config auto/config
+rsync -avP variants/${BUILD_VARIANT}/config/ config/

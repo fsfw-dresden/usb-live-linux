@@ -8,8 +8,8 @@
 . "$(dirname "${0}")/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "extra-install_paket.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} "
+BUILD_VARIANT=$(readlink variants/active)
+echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 PAKET_LISTEN=($(command ls config/package-lists/*))
@@ -31,15 +31,15 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -s variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket} ];
+			if [ -s variants/${BUILD_VARIANT}/config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
-				if [ ! -d variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ ]; then
-				 mkdir -p variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/
-				 echo " variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/ erstellt"
+				if [ ! -d variants/${BUILD_VARIANT}/config/packages.chroot/ ]; then
+				 mkdir -p variants/${BUILD_VARIANT}/config/packages.chroot/
+				 echo " variants/${BUILD_VARIANT}/config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O variants/${FSFW_UNI_STICK_CONFIG}/config/packages.chroot/${paket}
+				${DOWNLOAD} ${paket_quelle} -O variants/${BUILD_VARIANT}/config/packages.chroot/${paket}
 				echo "${paket} - geholt "
 			fi
 		fi
@@ -56,7 +56,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 done
 
 echo " extra-install_paket.sh -- config aktuallisieren.."
-rsync -avP variants/${FSFW_UNI_STICK_CONFIG}/config/ config/
+rsync -avP variants/${BUILD_VARIANT}/config/ config/
 echo " extra-install_paket.sh -- config aktuallisiert fertig."
 
 

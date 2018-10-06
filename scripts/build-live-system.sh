@@ -24,10 +24,10 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-FSFW_UNI_STICK_CONFIG=$(readlink variants/active)
-echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} " 
+BUILD_VARIANT=$(readlink variants/active)
+echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-[ -d "variants/${FSFW_UNI_STICK_CONFIG}" ] || { echo "FAIL: variants/active not symlink pointing to valid config variant"; exit 1; }
+[ -d "variants/${BUILD_VARIANT}" ] || { echo "FAIL: variants/active not symlink pointing to valid config variant"; exit 1; }
 
 main() {
     if [ "$(id -u)" != "0" ]; then
@@ -43,16 +43,16 @@ main() {
     sudo lb clean
 
     # variantenspezifische live-build Konfiguration einspielen
-    scripts/apply-build-variant.sh "${FSFW_UNI_STICK_CONFIG}"
+    scripts/apply-build-variant.sh
 
     # Paketlisten aus markdown konvertieren.
-    scripts/md2packagelist.sh variants/${FSFW_UNI_STICK_CONFIG}/paketlisten/default
+    scripts/md2packagelist.sh variants/${BUILD_VARIANT}/paketlisten/default
 
     # Paketlisten nach out-of-repo Pakenten durchsuchen und download nach config/packages.chroot/*
-    scripts/extra-install-paket.sh "${FSFW_UNI_STICK_CONFIG}"
+    scripts/extra-install-paket.sh
 
     # FSFW home (skel) erstellen
-    scripts/prepare-home-skel.sh "${FSFW_UNI_STICK_CONFIG}"
+    scripts/prepare-home-skel.sh
 
     # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt
     sudo lb config
