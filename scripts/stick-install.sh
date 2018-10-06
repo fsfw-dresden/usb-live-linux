@@ -721,7 +721,7 @@ fi
 
 # ${LIVE_IMAGE} vorhanden ?
 if [ -z "${LIVE_IMAGE}" ]; then
-	if [ -e ${DEFAULT_LIVE_IMAGE} ]; then
+	if [ -n "${DEFAULT_LIVE_IMAGE}" ] && [ -s "${DEFAULT_LIVE_IMAGE}" ]; then
 			# echo "${DEFAULT_LIVE_IMAGE} ist vorhanden"
 			LIVE_IMAGE=${DEFAULT_LIVE_IMAGE}
 		else
