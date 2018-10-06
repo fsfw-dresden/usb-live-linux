@@ -48,10 +48,10 @@ main() {
     # Paketlisten aus markdown konvertieren.
     scripts/md2packagelist.sh variants/${BUILD_VARIANT}/paketlisten/default
 
-    # Paketlisten nach out-of-repo Pakenten durchsuchen und download nach config/packages.chroot/*
+    # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
     scripts/extra-install-paket.sh
 
-    # FSFW home (skel) erstellen
+    # live user home skeleton erstellen
     scripts/prepare-home-skel.sh
 
     # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt
