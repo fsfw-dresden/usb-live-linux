@@ -18,6 +18,7 @@ echo "FSFW-Uni-Stick ${0} ${FSFW_UNI_STICK_CONFIG} "
 # === FIXME KILL => auto/clean
 
 mkdir -pv config/includes.chroot/etc/skel
+scripts/copy-docs.sh
 rsync --verbose --archive --copy-links --stats --info=progress2 variants/${FSFW_UNI_STICK_CONFIG}/home_skel/ config/includes.chroot/etc/skel 
 
 echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
