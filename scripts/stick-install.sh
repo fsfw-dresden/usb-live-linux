@@ -1,7 +1,7 @@
 #!/bin/bash
 #===========================================
-#         FILE: FSFW_-_USB-Stick_erstellen.sh
-#        USAGE: sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sd...  ( Gerät/USB-Stick der benutzt werden soll )
+#         FILE: stick-install.sh
+#        USAGE: sudo scripts/stick-install.sh /dev/sd...  ( Gerät/USB-Stick der benutzt werden soll )
 #		- ( ausführen im live-build-Verzeichnis )
 #  DESCRIPTION: bringt das live-image.iso (vorzugsweise FSFW-UNI-Stick_${FSFW_UNI_STICK_VERSION}_KDE_stretch-amd64.hybrid.iso) auf einen USB-Stick
 #		bootet mit grub2 -
