@@ -6,6 +6,8 @@ repo_root() {
 
 cd_repo_root() {
         echo "current dir: " $(pwd)
+        cd `dirname "${0}"`
+        echo "now at $(pwd), finding repo root"
         ROOT=$(repo_root)
         cd "${ROOT}"
 }
