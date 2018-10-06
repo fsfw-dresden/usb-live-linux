@@ -68,6 +68,8 @@ del_paketlist() {
 
 create_paketlist() { echo "Packetlisten werden erstellt."
 
+echo "# angeg. Paketname 	Inst.gr.	Kurzbeschreibung"
+
 while read line 
 do 
     line=${line%%"  -"*}
@@ -104,9 +106,17 @@ do
     ;;
     "- :x:")
         echo ${line##*"  "} >> ${PAKETPATH}/${liste// /_}
+        echo ":x:	${line##*"  "}"
+#		dpkg-query -W -f='${binary:Package} \t${Installed-Size} \t${binary:Summary}\n' ${line##*"  "}
+		apt-cache show ${line##*"  "} | grep -e "Installed-Size:" -e "Description-de:"
+		echo ""
     ;;
     "- :+1:")
         echo "# ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+        echo ":+1:	${line##*"  "}"
+#		dpkg-query -W -f='${binary:Package} \t${Installed-Size} \t${binary:Summary}\n' ${line##*"  "}
+		apt-cache show ${line##*"  "} | grep -e "Installed-Size:" -e "Description-de:"
+		echo ""
     ;;
     "- :+1: :x:")
         echo "## ${line##*"  "} wird alternativ mittels extra-installation über packages.chroot installiert" >> ${PAKETPATH}/${liste// /_}
@@ -115,6 +125,10 @@ do
     ;;
     "- :o:")
         echo "## ${line##*"  "}" >> ${PAKETPATH}/${liste// /_}
+        echo ":o:	${line##*"  "}"
+#		dpkg-query -W -f='${binary:Package} \t${Installed-Size} \t${binary:Summary}\n' ${line##*"  "}
+		apt-cache show ${line##*"  "} | grep -e "Installed-Size:" -e "Description-de:"
+		echo ""
     ;;
     "- [x]")
         # Kommentarzeilen mit beginnent mit "#" in *.list.binary benötigen patch in 
