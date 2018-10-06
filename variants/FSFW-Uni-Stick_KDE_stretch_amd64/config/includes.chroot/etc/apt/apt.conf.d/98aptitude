@@ -1,0 +1,13 @@
+aptitude::Pkg-Display-Limit "!~v~U!?version(FORBIDDEN)!~ahold|~N";
+aptitude::ProblemResolver::Allow-Break-Holds "true";
+aptitude::ProblemResolver::Non-Default-Level "10000";
+aptitude::UI::Default-Grouping "status,pattern(~A),section(subdir,passthrough)";
+aptitude::UI::Default-Preview-Sorting "installsize";
+aptitude::UI::Description-Visible-By-Default "false";
+# aptitude::UI::Flat-View-As-First-View "true";
+aptitude::UI::HelpBar "false";
+aptitude::UI::Menubar-Autohide "true";
+aptitude::UI::Minibuf-Prompts "false";
+aptitude::UI::Package-Display-Format "%r %c%a%M %s %p %t %S %i %D/%I %v > %V %Z";
+aptitude::UI::Package-Status-Format "%d %P @%t";
+aptitude::UI::Preview-Limit "!(~akeep~i)";
