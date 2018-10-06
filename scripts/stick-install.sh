@@ -715,7 +715,7 @@ echo "System prüft - sind alle benötigten Software-pakete vorhanden."
 # ${DEVICE} vorhanden ?
 if [ -z "$1" ]; then
 	echo "  Skript wird abgebrochen. Es ist kein Ziel (Speichergerät) vorhanden "
-	echo "  Bitte ein Speichergerät angeben (z.B sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdb ) "
+	echo "  Bitte ein Speichergerät angeben (z.B sudo scripts/stick-install.sh /dev/sdb ) "
 	exit 1
 fi
 
@@ -727,7 +727,7 @@ if [ -z "${LIVE_IMAGE}" ]; then
 		else
 			echo "  Skript wird abgebrochen. Es ist wurde kein Live-Image gefunden "
 			echo "  Live-Image erstellen oder angeben."
-			echo "  (z.B sudo ../tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdb live-image.iso ) "
+			echo "  (z.B sudo scripts/stick-install.sh /dev/sdb live-image.iso ) "
 			exit 1
 	fi
 fi
