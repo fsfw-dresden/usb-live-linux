@@ -152,7 +152,7 @@
 - ### :x:  firmware  -- [Firmware](firmware.md)
 
 
-##  Freestyle  --
+##  Staging 2018  --
 
 - ### :x:  staging-2018  -- [Freestyle Paketliste](staging-2018.md)
 
