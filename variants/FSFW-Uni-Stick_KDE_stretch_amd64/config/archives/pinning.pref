@@ -1,6 +1,6 @@
 # see manual apt_preferences(5)
 Package: *
-Pin: release a=stable
+Pin: release a=stable, o=Debian
 Pin-Priority: 510
 
 Package: *
