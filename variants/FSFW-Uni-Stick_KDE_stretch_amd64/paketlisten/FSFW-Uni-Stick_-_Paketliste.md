@@ -75,7 +75,7 @@
 
 - ### :o:  task-gnome-desktop  --
 
-- ### :o:  task-xfce-desktop  --
+- ### :o:  task-xfce-desktop  -- [XFCE Desktop - Windows 95 done right](task-xfce-desktop.md)
 
 - ### :o:  task-cinnamon-desktop  --
 
