@@ -7,9 +7,61 @@
 - :x:  ranger  --	Bester Dateimanager (Text UI)
 - :x:  tig  --		ncurses-based text-mode interface for Git
 - :x:  less  --		world class file viewer
-- :x:  itch  --		Install, update and play indie games
 - :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
+- :x:  chromium  --	aims to build a safer, faster, and more stable internet browsing experience
 
 - ###  System Tools
-- :x:  i7z  --		eports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
+- :x:  haveged  --		userspace entropy daemon
+- :x:  etckeeper  --		tool to let /etc be stored in a git
+- :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
+- :x:  debian-goodies  --	dpigs      - Show which installed packages occupy the most space
+- :x:  testdisk  --	disk/file recovery tool
+- :x:  system-config-printer  --	configure the printing system
+- :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+- :x:  gparted  --	manipulate devices and partition tables
+- :x:  gnome-disk-utility  --	manage and configure disk drives and media
+- :x:  debootstrap  --		used to create a Debian base system from scratch
+- :x:  tuned-gtk  --	tunes system settings dynamically, profile editor
+- :x:  tuned-utils  --	
+- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
+- :x:  icdiff  --	terminal side-by-side colorized word diff
+- :x:  vbindiff  --	visually compare binary files
+- :x:  debsums  --	verification of installed package files against MD5 checksums
 
+- ###  Desktop 2018
+- :x:  guake  --		Drop-down terminal
+- :x:  evince  --		multi-page document viewer
+- :x:  lightning  --		Calendar Extension for Thunderbird
+- :x:  lightning-l10n-de  --		
+- :x:  hunspell-de-de  --		
+- :x:  hyphen-de  --		German hyphenation patterns
+- :x:  nextcloud-client-dolphin  --		
+- :x:  nextcloud-client-nautilus  --		
+- :x:  fusedav  --		mount WebDAV shares
+- :o:  kdeconnect  --		connect smartphones
+- :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
+- :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
+- :x:  fonts-crosextra-carlito  --	metric-compatible with Calibri font
+- :x:  fonts-cabin  --	humanist sans serif font
+- :x:  fonts-ebgaramond  --	EB Garamond OpenType fonts
+- :x:  fonts-hack-otf  --	Typeface designed for source code
+- :x:  fonts-humor-sans  --	Font that looks like handwritten text
+- :x:  fonts-lato  --	"Lato" means "Summer" in Polish
+- :x:  fonts-linuxlibertine  --	
+- :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+- :x:  fonts-opendin  --	
+- :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
+- :x:  fonts-pecita  --	hand-written font that give a natural rendition.
+- :x:  fonts-roboto  --	default font in Android and ChromeOS
+- :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic
+- :x:  fonts-ubuntu  --		developed between 2010-2011. Dalton Maag
+- :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
+- :x:  diffpdf  --	
+- :x:  rss-glx  --	
+- :x:  unicode-screensaver  --	
+- :x:  xscreensaver-gl-extra  --	
+- :x:  pulseaudio-equalizer  --	
+- :x:  ocrmypdf  --	
+- :x:  libreoffice-gtk3  --	
+- :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
+- :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
