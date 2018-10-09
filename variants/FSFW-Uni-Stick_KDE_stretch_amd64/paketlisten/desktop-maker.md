@@ -10,7 +10,7 @@
 
 - ###  CAD
 
-- :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
+- :x:  freecad-daily  -- umfangreiches und vielfältiges Konstruktionsprogramm
 - :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 - :o:  openscad  --	script file based graphical CAD environment
 
