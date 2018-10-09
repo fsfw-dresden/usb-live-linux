@@ -19,7 +19,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 
 mkdir -pv config/includes.chroot/etc/skel
 scripts/copy-docs.sh
-rsync --verbose --archive --copy-links --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel 
+rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel
 
 echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
 
