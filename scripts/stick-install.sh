@@ -35,7 +35,7 @@ LIVE_IMAGE=$2
 LIST_LIVE_IMAGES=($(command ls iso-images/*.iso))
 DEFAULT_LIVE_IMAGE=(${LIST_LIVE_IMAGES[${#LIST_LIVE_IMAGES[@]}-1]})	# letztes erstelltes Image
 KERNEL_VERSION=
-BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current"
+BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current net.ifnames=0"
 BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
 
 DATUM=$(date +%Y-%m-%d)
