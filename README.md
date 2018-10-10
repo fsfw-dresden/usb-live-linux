@@ -1,8 +1,8 @@
 # FSFW-Uni-Stick
 
 **Anmerkung 2018:**
-Die aktuelle Entwicklung findet im [`develop`-Zweig](https://github.com/fsfw-dresden/usb-live-linux/tree/develop) statt!
-Bis zur disjährigen Ausgabeveranstaltung am 18.10. 18:30 Uhr im [POT 81](https://navigator.tu-dresden.de/raum/325501.0090) wird sich dort noch einiges tun. : )
+Die aktuelle Entwicklung findet im [`2018`-Zweig](https://github.com/fsfw-dresden/usb-live-linux/tree/2018) statt!
+Bis zur disjährigen Ausgabeveranstaltung am 18.10. 18:30 Uhr im [POT 81](https://navigator.tu-dresden.de/raum/325501.0090) wird sich dort weiter einiges tun. : )
 ---
 
 Das Projekt "FSFW-Uni-Stick" besteht aus zwei Komponenten (jeweils angepasst auf die Zielgruppe Studierende bzw. den Anwendungsfall Studium):
