@@ -137,7 +137,7 @@ input_abbruch() {
 #
 device_remove() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
-	umount -v ${DEVICE}*
+	umount -v ${DEVICE}?
 	echo "  ----- Hinweis ----- "
  	echo "löschen mit Taste "y" bestätigen"
 	rm -IRv ${TMPDIR}
