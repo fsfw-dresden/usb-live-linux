@@ -18,8 +18,8 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 # === FIXME KILL => auto/clean
 
 mkdir -pv config/includes.chroot/etc/skel
+rsync --archive --copy-links --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel
 scripts/copy-docs.sh
-rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel
 
 echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
 
