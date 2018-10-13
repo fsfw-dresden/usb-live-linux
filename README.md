@@ -8,7 +8,7 @@ Dieses Repo enthält die Skripte und Konfigurationsdateien, die zur Erstellung d
 Momentan (August 2018) wird noch das Tool  *live-build* benutzt. Mittelfristig (2019) ist geplant, das Basis-Image mit `vmdb2` (Nachfolger von `vmdebootstrap`) zu bauen und weitergehende Anpassungen z.B. mittels Ansible-Skripten vorzunehmen. Dabei ist eine Kooperation mit dem [https://github.com/imedias/lernstickAdvanced](Lernstick-Projekt) angestrebt.
 
 **Screenshot vom Desktop (2018-08-18):**
-![Screenshot](doc/desktop-screenshot_2018-08-18_1024x768.png "Screenshot")
+![Screenshot](doc/screenshot-KDE-Desktop-2018-08-18.png "Screenshot")
 
 # Weitere Infos:
 Aktuelle Informationen (u.a. zur Verteilung vor Ort in Dresden) unter: [https://fsfw-dresden.de/uni-stick](https://fsfw-dresden.de/uni-stick).
