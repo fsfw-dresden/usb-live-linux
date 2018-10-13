@@ -56,7 +56,7 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
 ## TeXstudio
 
-Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
+Der hervorragende LaTeX-Editor, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 <!--**Wichtig**: Das ist nur der Editor, die Konfiguration von LaTeX muss noch
 erfolgen. <!-- ToDo [Link auf eine Anleitung](http://fsfw-dresden.de/) -->
