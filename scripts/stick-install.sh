@@ -188,8 +188,8 @@ grub_config_create() { echo "grub.cfg wird erstellt "
 cat <<EOF> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 ## grub.cfg - generiert - $(date)
 
-set timeout=15
-set default=3
+set timeout=3
+set default=0
 
 insmod part_msdos
 insmod ntfs
@@ -247,15 +247,15 @@ cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 menuentry " " { echo
 }
 
-menuentry "Booten von HDD - Rechner von Festplatte starten " {
+menuentry "Boot HDD - Rechner normal von Festplatte starten " {
  set root=(hd1)
  chainloader +1
 }
 
-menuentry "____________________________ Neustart _________________________________" { echo
+menuentry " " { echo
 }
 
-menuentry "Restart - Rechner neu Starten " {
+menuentry "Restart - Rechner neu starten " {
  reboot
 }
 menuentry "Shut Down - Rechner ausschalten " {
@@ -272,7 +272,7 @@ grub_config_insert_toolbox() { echo " Toolbox einfügen "
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
-submenu "--- Toolbox --- " {
+submenu "  [ Untermenü: Werkzeuge ] " {
 
 EOF
 
@@ -372,21 +372,18 @@ grub_config_insert_live_image() {
 
 # Persistence Partition Menüeintrag und persistence.conf anlegen
 if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
-	echo " Persistence option in grub.cfg einfügen "
-	echo ${PERSISTENCE_OPTION} > ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}/persistence.conf
+        echo " Persistence option in grub.cfg einfügen "
+        if [ -e variants/active/persistence.conf ]; then
+                cp -av variants/active/persistence.conf ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}/
+        else
+                echo ${PERSISTENCE_OPTION} > ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}/persistence.conf
+        fi
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
-menuentry " ____________________ Live System + Persistence Mode ____________________ " { echo
-}
-
-menuentry " Geänderte Daten werden auf die Partition dlp-daten geschrieben und bleiben erhalten. " { echo
-}
-menuentry " " { echo
-}
-
-menuentry "${menu_label} - Live System - persistence " {
-    echo -e " \n \n \n Bitte einen kleinen Moment Geduld "
+menuentry "Live-System (${menu_label})" {
+    echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
+    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
@@ -400,16 +397,10 @@ EOF
 fi
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
-menuentry " " { echo
-}
 
-menuentry " _____________________________ Live System _____________________________ " { echo
-}
-menuentry " " { echo
-}
-
-menuentry "${menu_label} - Live System " {
+menuentry "Live-System ohne Persistenz (Änderungen gehen verloren) (${menu_label})" {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
+    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
@@ -423,35 +414,20 @@ EOF
 
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
-menuentry " " { echo
-}
+submenu "  [ Untermenü: Expertenoptionen ]" {
 
-submenu "--- Optionen --- " {
-
-menuentry " ___________________________ toram ___________________________  " { echo
-}
-menuentry " System wird komplett in den Arbeitsspeicher geladen " { echo
-}
-menuentry " " { echo
-}
-
-menuentry "${menu_label} - Live System - toram " {
-    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
+menuentry "Live-System mit Persistenz (Rettungsmodus) (${menu_label})" {
+    echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
+    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
     loopback loop \$isofile
-    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} toram
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} persistence persistence-label=${LABEL_PERSISTENCE_DATEN}
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-menuentry " " { echo
-}
-
-menuentry " _____________________ Live System - rescue mode ____________________ " { echo
-}
-
-menuentry "${menu_label} - Live System (rescue mode) " {
+menuentry "Live-System ohne Persistenz (Rettungsmodus) (${menu_label})" {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     insmod ext2
     insmod part_msdos
@@ -461,8 +437,17 @@ menuentry "${menu_label} - Live System (rescue mode) " {
     initrd (loop)/live/initrd.img${KERNEL_VERSION}
 }
 
-EOF
+menuentry "Live-System *toram* (System komplett in Arbeitsspeicher laden) (${menu_label})" {
+    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
+    insmod ext2
+    insmod part_msdos
+    set isofile=${system_iso}
+    loopback loop \$isofile
+    linux (loop)/live/vmlinuz${KERNEL_VERSION} boot=live findiso=\$isofile ${BOOTOPTIONS} toram
+    initrd (loop)/live/initrd.img${KERNEL_VERSION}
+}
 
+EOF
 
 # submenu Option Ende
 cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
