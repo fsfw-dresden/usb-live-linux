@@ -19,7 +19,7 @@ Microsoft Word, OpenOffice, oder Libreoffice.  In diesen Programmen werden die
 Dokumente gleich so formatiert und angezeigt, wie sie auch später aussehen
 sollen.  LaTeX hingegen ist eher eine *Markup-Sprache*, ähnlich zu HTML: das
 Dokument wird in einer *Textdatei* als reiner Text angegeben, ohne jegliche
-Formatierung (unter Windows sind diest .txt-Dateien).  Die gewünschte
+Formatierung (unter Windows sind dies .txt-Dateien).  Die gewünschte
 Formatierung wird mit bestimmtem Markup, genannt *Makros*, in dieser Textdatei
 kodiert.  Um zum Beispiel einen kurzen Textabschnitt in kursiv zu setzen, wird
 nicht einfach in der Textdatei kursiver Text hinterlegt (was ja auch gar nicht
@@ -54,7 +54,7 @@ in die gewünschte Ausgabe transformieren.
 ## Beispiel 1: Eine Vorlage für Diplomarbeiten
 
 Typischerweise fängt man nicht mit einer leeren Datei, sondern mit einer passenden
-Vorlage an. Von manchen Inistituten werden solche Vorlagen für ihre Studierenden
+Vorlage an. Von manchen Instituten werden solche Vorlagen für ihre Studierenden
 bereitgestellt, z.B. [hier](https://tu-dresden.de/ing/elektrotechnik/rst/studium/downloads)
 vom Institut für Regelungs- und Steuerungstheorie.
 
@@ -65,23 +65,23 @@ von F6 oder durch Klicken auf den grünen Pfeil in ein
 [PDF](../latex-vorlage/abschlussarbeit/muster-diplomarbeit.pdf)
 konvertieren. Mit F7 wird diese Datei dann angezeigt.
 
-Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert.  Das ist
+Vielleicht ist nicht sofort alles klar, was in der Vorlage passiert. Das ist
 nicht schlimm, denn um LaTeX sinnvoll nutzen zu können, muss man nicht alles
-über LaTeX wissen.  Dennoch hilft es, wenn man sich die Datei genauer ansieht
+über LaTeX wissen. Dennoch hilft es, wenn man sich die Datei genauer ansieht
 und mit den Kommandos herumspielt, also Anweisungen verändert und dann neu
 übersetzt.
 
 ## Beispiel 2: Eine Vorlage für Präsentationen
 Mit LaTeX kann man auch relativ einfach eine Präsentation erstellen.
 Insbesondere wenn man keine aufwendigen Animationen will oder wenn man Wert auf ansprechende Darstellung
-von mathematischen Formeln legt ist das die ein sehr Empfehlenswerter Ansatz.
+von mathematischen Formeln legt ist das ein sehr empfehlenswerter Ansatz.
 Um den Einstieg zu erleichtern haben wir auch hierfür eine Vorlage erstellt:
 [Quellcode](../latex-vorlage/praesentation/fsfw-beamer-vorlage.tex),
 [Ergebnis](../latex-vorlage/praesentation/fsfw-beamer-vorlage.pdf).
 
 ## Literatur und Hilfe
 
-Literatur zu LaTeX gibt es reichlich.  Hier wird eine kleine Auswahl von
+Literatur zu LaTeX gibt es reichlich. Hier wird eine kleine Auswahl von
 nützlichen Referenzen angeben:
 
 Im Netz:
