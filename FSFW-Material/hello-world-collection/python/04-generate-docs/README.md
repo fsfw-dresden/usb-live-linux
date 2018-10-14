@@ -1,6 +1,6 @@
 # General Information
 
-The directory `05-generate-docs` is an example for the automatic generation of software documentation
+The directory `04-generate-docs` is an example for the automatic generation of software documentation
 based on docstrings in the source code by means of the tool [Sphinx](http://www.sphinx-doc.org).
 
 The subdirectory `fsfw_demo_package` contains the example code which is to be documented.
