@@ -47,6 +47,8 @@ main() {
 
     # Paketlisten aus markdown konvertieren.
     scripts/md2packagelist.sh variants/${BUILD_VARIANT}/paketlisten/default
+    # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
+    find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -delete
 
     # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
     scripts/extra-install-paket.sh
