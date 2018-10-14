@@ -471,10 +471,11 @@ EOF
 
 	copy_memdisk
 	if [[ ! -e ${TMPDIR}/${LABEL_LIVE}${system_iso} ]]; then
+                find ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos/ -size +1G -exec rm -vi {} \;
 		echo " ${LIVE_IMAGE} -- kopieren --> ${system_iso}"
 		cp ${LIVE_IMAGE} ${TMPDIR}/${LABEL_LIVE}${system_iso} || input_abbruch
 	else
-		echo " ${system_iso} ist vorhanden "
+		echo " ${system_iso} ist bereits vorhanden."
 	fi
 
 }
