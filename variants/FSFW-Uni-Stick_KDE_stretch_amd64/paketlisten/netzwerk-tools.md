@@ -16,7 +16,7 @@
 - :x:  ebtables  --	Verwaltung von Ethernet-Bridge-Frame-Tabellen
 - :x:  dnsmasq-base  -- Kleiner zwischenspeichernder DNS-Proxy und DHCP/TFTP-Server
 - :o:  iproute2  --	Werkzeuge für Netzwerk(verkehrs)kontrolle
-
+- :x:  net-tools  --	ifconfig etc.
 
 
 - ###  Wlan - Tools
@@ -25,3 +25,4 @@
  - :x:  iw  --		Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
 - :x:  rfkill  --	Wlan, Bluetooth & Co. an-/ abschalten
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen
+- :x:  wavemon  --	watch signal and noise levels
