@@ -137,8 +137,9 @@ input_abbruch() {
 #
 device_remove() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
-    umount -v ${DEVICE}${p}? && find ${TMPDIR} -xdev -type d -delete
-    { grep -q ${DEVICE}${p} /proc/mounts && echo "noch gemountet: $(grep ${DEVICE}${p} /proc/mounts)" && exit 1; } || echo "Fertig - Speichergerät (USB Stick) kann entfernt werden"
+    umount -v ${DEVICE}${p}?
+    { grep -q ${DEVICE}${p} /proc/mounts && echo "noch gemountet: $(grep ${DEVICE}${p} /proc/mounts)" && exit 1; } \
+      || { find ${TMPDIR} -xdev -type d -delete; echo "Fertig - Speichergerät (USB Stick) kann entfernt werden"; }
 }
 
 ##################################
