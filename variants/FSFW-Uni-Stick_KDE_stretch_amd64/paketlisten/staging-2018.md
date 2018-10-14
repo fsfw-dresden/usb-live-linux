@@ -27,6 +27,10 @@
 - :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
+- :x:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
+- :x:  iotop  --	displays a table of current I/O usage by processes on the system
+- :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
+- :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal
