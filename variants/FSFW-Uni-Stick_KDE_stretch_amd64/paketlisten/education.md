@@ -20,10 +20,10 @@
 - ###  geography
 
 - :x:  marble  --	Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
-- :o:  josm  --		OpenStreetmap-Editor
+- :x:  josm  --		OpenStreetmap-Editor
 
 [//]: # (Hat sich nicht so richtig bewähren können)
-- :o:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
+- :x:  gosmore  -- OpenStreetmap-Frontend (Viewer mit Sprachausgabe)
 
 - ###  astronomy
 
