@@ -21,11 +21,11 @@
 
 - ###  Konsole
 
-- :x:  brltty  -- Braille-Tool
+- :o:  brltty  -- Braille-Tool
 - :x:  console-braille  -- Fonts and keymaps for reading/typing unicode braille
-- :x:  brltty-espeak  --
-- :x:  brltty-flite  --
-- :x:  brltty-speechd  --
+- :o:  brltty-espeak  --
+- :o:  brltty-flite  --
+- :o:  brltty-speechd  --
 - :x:  speech-dispatcher  -- Common interface to speech synthesizers
 - :x:  speech-dispatcher-festival
 - :x:  freetts  -- FLite basierte Sprachsynthese
