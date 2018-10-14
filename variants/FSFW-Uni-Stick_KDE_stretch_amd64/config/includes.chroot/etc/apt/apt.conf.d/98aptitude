@@ -1,4 +1,5 @@
-aptitude::Pkg-Display-Limit "!~v~U!?version(FORBIDDEN)!~ahold|~N";
+aptitude::Forget-New-On-Update "true";
+aptitude::Pkg-Display-Limit "!~v~U!?version(FORBIDDEN)!~ahold";
 aptitude::ProblemResolver::Allow-Break-Holds "true";
 aptitude::ProblemResolver::Non-Default-Level "10000";
 aptitude::UI::Default-Grouping "status,pattern(~A),section(subdir,passthrough)";
