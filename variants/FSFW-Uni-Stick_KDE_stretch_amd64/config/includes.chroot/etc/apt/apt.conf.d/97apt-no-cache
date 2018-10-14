@@ -1,0 +1,4 @@
+Dir::Cache "";
+Dir::Cache::archives "";
+Dir::Cache::pkgcache "";
+Dir::Cache::srcpkgcache "";
