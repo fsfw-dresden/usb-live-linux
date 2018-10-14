@@ -113,28 +113,34 @@ an freien Programmen, die unter Windows laufen.
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
-Die Ende 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
+Die 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
 beschäftigt sich mit den technischen sowie gesellschaftlichen Aspekten freier
 Software und freien Wissens an der Hochschule.
 
-Neben unserem Ziel, themenspezifische Bildungsangebote mit Hilfe der
-Organisation von Vorträgen, Wissenssammlungen und Veranstaltungen
-bereitzustellen, hat sich die Gruppe auch zur Förderung von sicherer
-Kommunikation und der Nutzungsverbesserung von täglich im universitären Umfeld
-verwendeter Software, wie zum Beispiel LaTeX, ausgesprochen. Darüber hinaus
-bietet die Hochschulgruppe für bereits bestehende verteilte Initiativen eine
-Austauschplattform und Vermittlungsgelegenheit.
+Unsere Ziele sind unter anderem
+
+- Themenspezifische Bildungsangebote (z. B. Workshops) und Veranstaltungen
+- Förderung von sicherer Kommunikation (z. B. Verschlüsselung)
+- Nutzungsverbesserung von relevanter Software (z.B. LaTeX)
+- Austausch und Vernetzung
 
 Mehr Informationen zum Programm der FSFW gibt es in
 unserem [Programmpapier](https://fsfw-dresden.de/programm.html).
 
-Weitere interessante Angebote von uns
+Als Hochschulgruppe leben wir vom individuellen Engagement.
+Wenn Du Dich für unsere Themen interessierst, komm sehr gerne zum
+[Plenum](https://fsfw-dresden.de/#plenum) oder schreibe uns eine [Mail](mailto:kontakt@fsfw-dresden.de)
+Dich erwarten coole Leute, eine Menge Erfahrungen und das Gefühl, etwas bewegen zu können.
+
+Die wichtigsten Links von uns für Euch:
 
 - [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
-- [Anleitung zu Mailverschlüsselung](https://fsfw-dresden.de/gpg)
+- [Ringvorlesung im WiSe18/19](https://fsfw-dresden.de/ringvorlesung) (Freie Software und Freies Wissen als Beruf)
+- [Workshops und Kurse](https://wiki.fsfw-dresden.de/doku.php/doku/vortraege_veranstaltungen_kurse) (git, Python, Mailverschlüsselung, ...)
 - [Blog](https://fsfw-dresden.de/blog)
 - [Newsletter](https://fsfw-dresden.de/newsletter)
+- [Beteiligungsmöglichkeiten](https://fsfw-dresden.de/mitmachen)
 
 
-Die FSFW bedankt sich ganz herzlich bei den StuRä der TU Dresden und der HTW für die
-finanzielle Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick)
+Die FSFW bedankt sich ganz herzlich beim [StuRa der TU Dresden](http://stura.tu-dresden.de/)
+für die für die finanzielle und beim [ZIH](zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
