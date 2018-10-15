@@ -1,0 +1,26 @@
+[connection]
+id=TU Dresden VPN
+type=vpn
+autoconnect=false
+
+[vpn]
+authtype=password
+autoconnect-flags=0
+cacert=/etc/ssl/certs/TU-Dresden-CA.pem
+certsigs-flags=0
+cookie-flags=2
+enable_csd_trojan=no
+gateway=vpn2.zih.tu-dresden.de
+gateway-flags=2
+gwcert-flags=2
+lasthost-flags=0
+pem_passphrase_fsid=no
+protocol=anyconnect
+stoken_source=disabled
+xmlconfig-flags=0
+service-type=org.freedesktop.NetworkManager.openconnect
+
+[vpn-secrets]
+form:main:group_list=TUD-vpn-all
+lasthost=vpn2.zih.tu-dresden.de
+save_passwords=yes
