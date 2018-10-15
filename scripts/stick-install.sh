@@ -42,6 +42,7 @@ DATUM=$(date +%Y-%m-%d)
 
 # für mount ein temporäres Verzeichnis erstellen mktemp /mnt/FSFW-Uni-Stick_XXXXXX
 TMPDIR=$(mktemp -d /mnt/FSFW-Uni-Stick_XXXXXX)			# rm -IRv $(TMPDIR) -- TMPDIR löschen / aufräumen
+trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGINT SIGQUIT SIGTERM
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
@@ -139,7 +140,7 @@ device_remove() {
     echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
     umount -v ${DEVICE}${p}?
     { grep -q ${DEVICE}${p} /proc/mounts && echo "noch gemountet: $(grep ${DEVICE}${p} /proc/mounts)" && exit 1; } \
-      || { find ${TMPDIR} -xdev -type d -delete; echo "Fertig - Speichergerät (USB Stick) kann entfernt werden"; }
+      || { rmdir ${TMPDIR}/*; echo "Fertig - Speichergerät (USB Stick) kann entfernt werden"; }
 }
 
 ##################################
