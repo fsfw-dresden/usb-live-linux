@@ -1,0 +1,17 @@
+[connection]
+id=eduroam
+type=wifi
+permissions=user:user:;
+autoconnect=true
+
+[wifi]
+mode=infrastructure
+ssid=eduroam
+
+[wifi-security]
+auth-alg=open
+key-mgmt=wpa-eap
+
+[802-1x]
+eap=ttls;
+phase2-auth=mschapv2
