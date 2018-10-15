@@ -21,16 +21,18 @@
 - :x:  gparted  --	manipulate devices and partition tables
 - :x:  gnome-disk-utility  --	manage and configure disk drives and media
 - :x:  debootstrap  --		used to create a Debian base system from scratch
-- :x:  tuned-gtk  --	tunes system settings dynamically, profile editor
-- :x:  tuned-utils  --	
+- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
+- :o:  tuned-utils  --	
 - :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
 - :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
-- :x:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
+- :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
 - :x:  iotop  --	displays a table of current I/O usage by processes on the system
 - :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
 - :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
+- :x:  renameutils  --	to make file renaming easier
+- :x:  pipemeter  --	shows the speed of data moving from input to output
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal
