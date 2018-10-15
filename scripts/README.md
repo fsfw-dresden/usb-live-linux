@@ -12,10 +12,10 @@ Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene Images
     * kann in eine Datei oder direkt auf einen USB-Stick (z.B. /dev/sdb) geschrieben werden.
 
 Beispielaufruf mit USB-Stick an /dev/sdc:
-  ` sudo tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc `
+  ` sudo scripts/FSFW_-_USB-Stick_erstellen.sh /dev/sdc `
 
 Standardmäßig wird das zuletzt erstellte Image (../images/FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso) auf das Speicherziel geschrieben.
 Alternativ kann auch eine *.iso Datei explizit als zweites Argument angegeben werden:
 
-  ` sudo tools/FSFW_-_USB-Stick_erstellen.sh /dev/sdc live-image-alternativ.iso `
+  ` sudo scripts/FSFW_-_USB-Stick_erstellen.sh /dev/sdc live-image-alternativ.iso `
 
