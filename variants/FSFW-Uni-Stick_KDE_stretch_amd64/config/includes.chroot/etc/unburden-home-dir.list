@@ -34,4 +34,4 @@ m d .buzzbird/*/Cache buzzbird-cache
 # Other applications' caches
 m f .aptitude/cache aptitude-cache
 m d .googleearth/Cache google-earth-cache
-m d .local/share/akonadi
+m D .local/share/akonadi
