@@ -2,7 +2,7 @@
 
 - ###  firmware  -- wird >> lb config --firmware-chroot false << verwendet, fehlen diese Pakete
 
-- :o:  firmware-linux  --
+- :x:  firmware-linux  --
  - :x:  firmware-linux-free  --
  - :o:  firmware-linux-nonfree  --
   - :x:  firmware-misc-nonfree  --
@@ -12,35 +12,35 @@
 
 - :o:  dahdi-firmware-nonfree  --
 
-- :o:  bluez-firmware  --
-- :o:  atmel-firmware  --
-- :o:  amd64-microcode  --
-- :o:  intel-microcode  --
+- :x:  bluez-firmware  --
+- :x:  atmel-firmware  --
+- :x:  amd64-microcode  --
+- :x:  intel-microcode  --
 
-- :o:  firmware-atheros  --
-- :o:  firmware-bnx2  --
-- :o:  firmware-bnx2x  --
-- :o:  firmware-brcm80211  --
-- :o:  firmware-cavium  --
-- :o:  firmware-crystalhd  --
-- :o:  firmware-intel-sound  --
-- :o:  firmware-intelwimax  --
-- :o:  firmware-ipw2x00  --
+- :x:  firmware-atheros  --
+- :x:  firmware-bnx2  --
+- :x:  firmware-bnx2x  --
+- :x:  firmware-brcm80211  --
+- :x:  firmware-cavium  --
+- :x:  firmware-crystalhd  --
+- :x:  firmware-intel-sound  --
+- :x:  firmware-intelwimax  --
+- :x:  firmware-ipw2x00  --
 - :o:  firmware-ivtv  --
-- :o:  firmware-libertas  --
-- :o:  firmware-myricom  --
-- :o:  firmware-netxen  --
-- :o:  firmware-qlogic  --
-- :o:  firmware-realtek  --
+- :x:  firmware-libertas  --
+- :x:  firmware-myricom  --
+- :x:  firmware-netronome  --
+- :x:  firmware-netxen  --
+- :x:  firmware-qlogic  --
+- :x:  firmware-realtek  --
 - :o:  firmware-samsung  --
 - :o:  firmware-siano  --
-- :o:  firmware-ti-connectivity  --
-- :o:  firmware-zd1211  --
+- :x:  firmware-ti-connectivity  --
+- :x:  firmware-zd1211  --
 
 
 - ###  Firmware für Wlan - Hardware
 
-- [x]  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
-- :o:  firmware-b43-installer  --
+- :x:  firmware-b43-installer  -- installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
 
-- :o:  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
+- :x:  firmware-iwlwifi  -- wird von Thinkpads (getestet mit einem T420) gebraucht
