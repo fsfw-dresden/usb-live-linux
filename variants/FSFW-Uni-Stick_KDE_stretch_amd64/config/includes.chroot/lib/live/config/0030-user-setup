@@ -67,7 +67,7 @@ Config ()
 	# Default password is: live
 	# passwords can be generated with 'echo "live" | mkpasswd -s',
 	# a blank password is 'U6aMy0wojraho'.
-	_PASSWORD="zEi4yhEsg.HE6"
+	_PASSWORD="U6aMy0wojraho"
 
 cat > /tmp/live-config.cfg << EOF
 user-setup passwd/make-user boolean true
