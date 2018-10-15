@@ -45,6 +45,7 @@
 - :x:  nextcloud-client-nautilus  --		
 - :x:  fusedav  --		mount WebDAV shares
 - :o:  kdeconnect  --		connect smartphones
+- :x:  fonts-bebas-neue  --	Flat, rounded style font designed
 - :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
 - :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
 - :x:  fonts-crosextra-carlito  --	metric-compatible with Calibri font
@@ -53,12 +54,14 @@
 - :x:  fonts-hack-otf  --	Typeface designed for source code
 - :x:  fonts-humor-sans  --	Font that looks like handwritten text
 - :x:  fonts-lato  --	"Lato" means "Summer" in Polish
-- :x:  fonts-linuxlibertine  --	
+- :x:  fonts-linuxlibertine  --
+- :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
 - :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
 - :x:  fonts-opendin  --	
 - :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
 - :x:  fonts-pecita  --	hand-written font that give a natural rendition.
-- :x:  fonts-roboto  --	default font in Android and ChromeOS
+- :x:  fonts-roboto  --	default font in Android and ChromeOS, recommended font for … Material Design
+- :x:  fonts-roboto-slab  --	Slab Serif font for the Roboto font family
 - :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic
 - :x:  fonts-ubuntu  --		developed between 2010-2011. Dalton Maag
 - :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
@@ -71,3 +74,4 @@
 - :x:  libreoffice-gtk3  --	
 - :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
+- :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
