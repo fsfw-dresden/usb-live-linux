@@ -38,8 +38,17 @@ lockPref("datareporting.policy.dataSubmissionEnabled", false);
 // Deaktiviert den 'crash reporter'
 lockPref("toolkit.crashreporter.enabled", false);
 
-// keine Pocket-Topstories "Empfohlen von Pocket"
+// keine Pocket-Topstories "Empfohlen von Pocket" o.ä.
+lockPref("extensions.pocket.enabled", false);
+lockPref("browser.toolbarbuttons.introduced.pocket-button", false);
+
+lockPref("browser.library.activity-stream.enabled", false);
 lockPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 lockPref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 lockPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+lockPref("browser.newtabpage.activityy-stream.topSitesCount", 23);
+lockPref("browser.newtabpage.rows", 5);
+lockPref("browser.urlbar.trimURLs", false);
+
+// setze FSFW TU StuRa ZIH Dresden Links
 lockPref("browser.newtabpage.activity-stream.default.sites", "https://www.stura.tu-dresden.de/,https://tu-dresden.de/zih/dienste,https://msx.tu-dresden.de/,https://cloudstore.zih.tu-dresden.de/,https://fsfw-dresden.de/");
