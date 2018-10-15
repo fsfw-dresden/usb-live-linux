@@ -765,7 +765,7 @@ tool=$(dialog \
 	--checklist "\n Welche Tools sollen mit auf den Datenträger ?.\n " 13 65 5 \
     "memtest86+" 		" Tool für Speichertest  	- 1,8 MB " on \
     "hdt" 			" Hardware Test (HDT)    	- 1,3 MB " on \
-    "super-grub2-disk" 		" Toolbox 			-  20 MB " on \
+    "super-grub2-disk" 		" Toolbox 			-  20 MB " off \
     )
 
 # USB-Stick formatieren	-
