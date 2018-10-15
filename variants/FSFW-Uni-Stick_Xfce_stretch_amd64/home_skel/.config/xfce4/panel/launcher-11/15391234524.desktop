@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=FreeCAD Daily
+Comment=Feature based Parametric Modeler
+GenericName=CAD Application
+Exec=freecad-daily --single-instance %U
+Terminal=false
+Type=Application
+Icon=freecad-daily
+Categories=Graphics;Science;Engineering;
+StartupNotify=true
+MimeType=application/x-extension-fcstd;
+X-XFCE-Source=file:///usr/share/applications/freecad-daily.desktop

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0
+Name=Sweet Home 3D
+GenericName=Interior 2D design application with 3D preview
+GenericName[de]=Innenraumplaner
+Comment=Interior design Java application for quickly choosing and placing furniture on a house 2D plan drawn by the end-user with a 3D preview
+Comment[de]=Innenraumplaner zum Auswählen und Platzieren von Möbeln auf einem 2D-Hausplan mit 3D-Vorschau
+Exec=sweethome3d %U
+Icon=sweethome3d
+StartupNotify=true
+StartupWMClass=com-eteks-sweethome3d-SweetHome3D
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;3DGraphics;
+Keywords=interior;design;2D;3D;home;house;furniture;java;
+X-XFCE-Source=file:///usr/share/applications/sweethome3d.desktop

@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Thunderbird
+Comment=Read/Write Mail/News with Thunderbird
+GenericName=Mail Client
+Exec=/usr/bin/thunderbird %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Version=1.0
+Icon=thunderbird
+Categories=Network;Email;News;GTK;
+MimeType=message/rfc822;x-scheme-handler/mailto;text/calendar;text/x-vcard;
+StartupWMClass=Thunderbird
+StartupNotify=true
+Name[de]=Thunderbird E-Mail und Nachrichten
+Comment[de]=E-Mails und Nachrichten mit Thunderbird lesen und schreiben
+GenericName[de]=E-Mail-Anwendung
+Keywords=EMail;E-mail;Contact;Addressbook;News;
+Keywords[de]=Mail;E-Mail;Newsgroup;Nachrichten;Feed;RSS;Post;News;Usenet;online;lesen;schreiben
+X-XFCE-Source=file:///usr/share/applications/thunderbird.desktop
