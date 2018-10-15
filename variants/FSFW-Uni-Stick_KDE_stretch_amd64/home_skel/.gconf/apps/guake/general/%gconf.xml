@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="window_height_f" mtime="1539577726" type="float" value="75.0715"/>
+	<entry name="window_height" mtime="1539577726" type="int" value="75"/>
+	<entry name="use_scrollbar" mtime="1539577726" type="bool" value="false"/>
+	<entry name="mouse_display" mtime="1539577726" type="bool" value="true"/>
+	<entry name="window_halignment" mtime="1539577726" type="int" value="0"/>
+	<entry name="window_width_f" mtime="1539577726" type="float" value="75.0715"/>
+	<entry name="window_width" mtime="1539577726" type="int" value="75"/>
+	<entry name="window_losefocus" mtime="1539574891" type="bool" value="true"/>
+</gconf>
