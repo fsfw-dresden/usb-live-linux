@@ -32,7 +32,7 @@ LABEL_PERSISTENCE_DATEN=dlp-daten
 PERSISTENCE_OPTION="/ union"
 
 LIVE_IMAGE=$2
-LIST_LIVE_IMAGES=($(command ls iso-images/*.iso))
+LIST_LIVE_IMAGES=($(command ls -Ltr iso-images/*.iso))
 DEFAULT_LIVE_IMAGE=(${LIST_LIVE_IMAGES[${#LIST_LIVE_IMAGES[@]}-1]})	# letztes erstelltes Image
 KERNEL_VERSION=
 BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de vga=current net.ifnames=0 splash"
