@@ -23,6 +23,7 @@
 - :o:  eric  -- Vollständige integrierte Python-Entwicklungsumgebung
 - :+1:  spyder  -- Python-IDE für Wissenschaftler (Python 2)
 - :x:  spyder3  -- Python-IDE für Wissenschaftler (Python 3)
+- :x:  python-rope -- Empfehlung von Spyder3 (Python refactoring library )
 
 - :o:  qtcreator  -- IDE für C++ incl. QT-Framework
 
