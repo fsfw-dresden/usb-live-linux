@@ -42,7 +42,7 @@ DATUM=$(date +%Y-%m-%d)
 
 # für mount ein temporäres Verzeichnis erstellen mktemp /mnt/FSFW-Uni-Stick_XXXXXX
 TMPDIR=$(mktemp -d /mnt/FSFW-Uni-Stick_XXXXXX)			# rm -IRv $(TMPDIR) -- TMPDIR löschen / aufräumen
-trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGINT SIGQUIT SIGTERM
+trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
