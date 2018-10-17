@@ -144,7 +144,7 @@ Die wichtigsten Links von uns für Euch:
 
 
 Die FSFW bedankt sich ganz herzlich beim [StuRa der TU Dresden](https://stura.tu-dresden.de/)
-für die für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
+für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
 
 Empfehlenswerte Dienste des ZIH und des StuRa:
 
