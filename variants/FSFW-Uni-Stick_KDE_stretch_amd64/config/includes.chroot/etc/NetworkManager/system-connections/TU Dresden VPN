@@ -1,6 +1,8 @@
 [connection]
 id=TU Dresden VPN
+uuid=4de32512-617f-4ea0-954d-067c111fddbd
 type=vpn
+permissions=user:user:;
 
 [vpn]
 autoconnect-flags=0
