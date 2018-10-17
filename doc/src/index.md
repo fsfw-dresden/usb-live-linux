@@ -12,6 +12,7 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 - [→Freie Software für Windows](windows.md)
 - [→Python](python.md)
 - [→R](r.md)
+- [WLAN (Eduroam) einrichten](wlan.md)
 
 ## Rechtliches
 Das Linux-Live-System auf dem Stick basiert auf der Distribution
