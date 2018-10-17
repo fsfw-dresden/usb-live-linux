@@ -31,15 +31,6 @@ Neuschreiben hindern würde. Außerdem ist er schneller.
 * Projekt-Link: [Sumatra PDF](http://www.sumatrapdfreader.org/free-pdf-reader.html)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/sumatra_pdf_portable)
 
-
-<!-- todo: LDAP der TU/HS einbinden -->
-
-* portable installiert: 86,2 MB
-* Paket-Größe: 75,5 MB
-* Dokumentation: [Portable TB and Enigmail](https://securityinabox.org//en/guide/thunderbird/windows)
-* Projekt-Link: [Mozilla Thunderbird](https://www.mozilla.org/de/thunderbird/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/internet/thunderbird_portable)
-
 ## Notepad++
 
 Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber
@@ -89,6 +80,7 @@ einfach nach Bedarf nachinstallieren.
 * [Infos zu Python von der FSFW](python.md)
 * [Miniconda Kurz-Info](https://conda.io/docs/glossary.html#miniconda-glossary)
 * [Installer für weitere Distributionen](https://conda.io/miniconda.html)
+* Siehe auch Beispiele in `FSFW-Material/hello-world-collection/python/`
 
 
 ## Inkscape
