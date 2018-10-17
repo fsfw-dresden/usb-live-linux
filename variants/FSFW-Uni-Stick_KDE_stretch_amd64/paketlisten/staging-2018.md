@@ -42,7 +42,8 @@
 - :x:  caca-utils  --	text mode graphics utilities
 
 - ###  Desktop 2018
-- :x:  guake  --		Drop-down terminal
+- :o:  guake  --		Drop-down terminal (GTK)
+- :x:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
 - :x:  lightning  --		Calendar Extension for Thunderbird
 - :x:  lightning-l10n-de  --		
