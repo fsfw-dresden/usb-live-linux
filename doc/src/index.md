@@ -144,3 +144,26 @@ Die wichtigsten Links von uns für Euch:
 
 Die FSFW bedankt sich ganz herzlich beim [StuRa der TU Dresden](https://stura.tu-dresden.de/)
 für die für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
+
+Empfehlenswerte Dienste des ZIH und des StuRa:
+
+- [ZIH: Cloudstore](https://cloudstore.zih.tu-dresden.de/)
+    - Speichern und Austauschen von Dateien (besser als Dropbox etc. (Datenschutz!))
+    - [Detailierte Informationen](https://tu-dresden.de/zih/dienste/service-katalog/zusammenarbeiten-und-forschen/datenaustausch/cloudstore/index)
+- [ZIH: VPN](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/index)
+    - Ermöglicht Zugriff von außen auf TU-Netz
+    - Wichtig, z.B. für Zugriff auf Forschungsliteratur
+- [StuRa: Etherpad](https://pad.stura.tu-dresden.de)
+    - Online-Editor zur gleichzeitigen kollaborativen Text-Bearbeitung
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:etherpad)
+- [StuRa: Kanban](https://kanban.stura.tu-dresden.de/)
+    - Werkzeug zur Gruppen Aufgabenkoordination in Gruppen
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:kanban)
+- [StuRa: Only-Office](https://docs.stura.tu-dresden.de/)
+    - Datenschutzfreundlicher Ersatz für GoogleDocs
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:docs)
+- [StuRa: Share-LaTeX](https://tex.stura.tu-dresden.de/login)
+    - Online-Editor zur gleichzeitigen kollaborativen Bearbeitung von LaTeX-Dokumenten (z.B. Seminararbeiten)
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:sharelatex)
+- Übersicht über alle Dienste des [ZIH](https://tu-dresden.de/zih/die-einrichtung/a-z) und des [StuRa](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:start)
+
