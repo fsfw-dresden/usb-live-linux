@@ -1,16 +1,7 @@
 #!/bin/bash
 
 # Dieses Skript wird beim Start von KDE automatisch ausgeführt.
-
-
-
-#sleep 2
-
-
-# das dolphin-Fenster schließen, durch eine ungünstige Konfiguration am Anfang aufgeht
-# (Das ist inzwischen Überflüssig und kann demnächst gelöscht werden)
-#killall dolphin
-
+sleep 2
 
 # Unsere Startseite laden
-nohup firefox /home/user/FSFW-Material/stick-doku/index.html
+pgrep firefox || nohup firefox ~/FSFW-Material/stick-doku/index.html
