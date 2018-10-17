@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import logging
-import pathlib
+import pathlib2
 import subprocess
 
 
 def resolved_path(s):
-    p = pathlib.Path(s).resolve()
+    p = pathlib2.Path(s).resolve()
     return p
 
 
@@ -46,7 +46,7 @@ def main():
     )
     confirm = input("Type uppercase YES> ")
     if confirm != "YES":
-        print("That’s not a YES. Bailing out.")
+        print("That's not a YES. Bailing out.")
         return 2
 
     size = args.image.stat().st_size
