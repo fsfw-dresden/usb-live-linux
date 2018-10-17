@@ -29,6 +29,7 @@
 - :x:  debsums  --	verification of installed package files against MD5 checksums
 - :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
 - :x:  iotop  --	displays a table of current I/O usage by processes on the system
+- :x:  iftop  --	displays bandwidth usage information on an network interface
 - :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
 - :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 - :x:  renameutils  --	to make file renaming easier
@@ -40,6 +41,9 @@
 - :x:  elinks  --	advanced text-mode WWW browser
 - :x:  beep  --		advanced PC-speaker beeper
 - :x:  caca-utils  --	text mode graphics utilities
+- :x:  lm-sensors  --	hardware health monitoring: read temperature/voltage/fan sensors
+- :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
+- :x:  traceroute  --	displays the route used by IP packets on their way
 
 - ###  Desktop 2018
 - :o:  guake  --		Drop-down terminal (GTK)
@@ -85,3 +89,8 @@
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
 - :x:  poppler-utils  --	command line utilities to manipulate PDFs
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
+- :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
+- :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
+- :x:  powerdevil  --  KDE power settings (& brightness control keys)
+- :x:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
+- :x:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
