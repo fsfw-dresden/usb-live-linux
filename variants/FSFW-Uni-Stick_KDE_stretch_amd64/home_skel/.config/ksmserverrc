@@ -1,0 +1,6 @@
+[General]
+confirmLogout=false
+loginMode=default
+offerShutdown=true
+shutdownType=1
+
