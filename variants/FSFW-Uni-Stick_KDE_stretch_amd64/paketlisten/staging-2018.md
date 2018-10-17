@@ -33,6 +33,13 @@
 - :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 - :x:  renameutils  --	to make file renaming easier
 - :x:  pipemeter  --	shows the speed of data moving from input to output
+- :x:  strace  --	System call tracer
+- :x:  fatrace  --	report system wide file access events
+- :x:  speedometer  --	measure and display the rate of data across a network connection
+- :x:  jdupes  --	identify and delete or link duplicate files
+- :x:  elinks  --	advanced text-mode WWW browser
+- :x:  beep  --		advanced PC-speaker beeper
+- :x:  caca-utils  --	text mode graphics utilities
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal
@@ -75,3 +82,5 @@
 - :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
+- :x:  poppler-utils  --	command line utilities to manipulate PDFs
+- :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
