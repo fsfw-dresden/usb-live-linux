@@ -147,6 +147,8 @@ für die für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die
 
 Empfehlenswerte Dienste des ZIH und des StuRa:
 
+- [ZIH: Erstsemester-Info](https://tu-dresden.de/zih/dienste/service-desk/ese)
+    - Übersichtsseite speziell für Erstsemester
 - [ZIH: Cloudstore](https://cloudstore.zih.tu-dresden.de/)
     - Speichern und Austauschen von Dateien (besser als Dropbox etc. (Datenschutz!))
     - [Detailierte Informationen](https://tu-dresden.de/zih/dienste/service-katalog/zusammenarbeiten-und-forschen/datenaustausch/cloudstore/index)
