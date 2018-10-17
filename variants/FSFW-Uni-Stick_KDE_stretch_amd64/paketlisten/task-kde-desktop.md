@@ -44,7 +44,7 @@
 - :x:  kio-extras  --  Extra functionality for kioslaves - wird benötigt für Vorschau Hintergrundbilder
 
 [//]: # (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
-- :x:  kmail  --	Vollständiger grafischer E-Mail-Client
+- :o:  kmail  --	Vollständiger grafischer E-Mail-Client
 - :x:  knotes  --	Programm für Haftnotizen (sticky notes)
 - :x:  kopete  --	Instant-Messaging- und Chat-Anwendung
 - :x:  korganizer  --	Kalender und persönliche Terminverwaltung
