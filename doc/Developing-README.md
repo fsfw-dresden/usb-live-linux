@@ -18,6 +18,17 @@
 * __iso-images__ -- hier landen die fertigen Boot-Images
 * __scripts__ -- diverse Skripte zum Erstellen des Sticks siehe [scripts/README.md](../scripts/README.md)
 
+## Images:
+Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene Images
+* das Linux-Live-Image als boot- & brennbare ISO; Ergebnis von `lb build`, z.B. **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
+* das Image des kompletten Sticks wird dann mit dem Skript **stick-install.sh** erstellt
+    * bis zu drei Partitionen:
+        * Live-System (ext4) mit Live-System.iso u ggf. weitere Tools wie memtest86+, Hardware Test (HDT) und super-grub2-disk
+        * Windows-Daten (FAT32) mit PortableApps-Sammlung hilfreicher Windows-Software
+        * Persistence-Daten (Nutzerdaten sowie Änderungen am System, zusätzliche Programme)
+    * Boot-Loader (GRUB), konfiguriert um die live.iso zu finden und zu starten
+    * kann in eine Datei oder direkt auf einen USB-Stick (z.B. /dev/sdb) geschrieben werden.
+
 # Kurzanleitung zum Erstellen und Testen des FSFW-Uni-Stick
 
 ## Erstellen mittels live-build
