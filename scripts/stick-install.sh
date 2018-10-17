@@ -35,7 +35,7 @@ LIVE_IMAGE=$2
 LIST_LIVE_IMAGES=($(command ls -Ltr iso-images/*.iso))
 DEFAULT_LIVE_IMAGE=(${LIST_LIVE_IMAGES[${#LIST_LIVE_IMAGES[@]}-1]})	# letztes erstelltes Image
 KERNEL_VERSION=
-BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 splash"
+BOOTOPTIONS="components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 quiet splash"
 BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single"
 
 DATUM=$(date +%Y-%m-%d)
@@ -384,7 +384,7 @@ cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Live-System (${menu_label})" {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
+    echo -e "(je nach USB-Stick braucht das System bis zu 3min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
