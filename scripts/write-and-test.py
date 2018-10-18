@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import logging
-import pathlib2
+import pathlib
 import subprocess
 
 
 def resolved_path(s):
-    p = pathlib2.Path(s).resolve()
+    p = pathlib.Path(s).resolve()
     return p
 
 
