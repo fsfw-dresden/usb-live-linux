@@ -16,7 +16,8 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 
 ## Rechtliches
 Das Linux-Live-System auf dem Stick basiert auf der Distribution
-[Debian stable](https://www.debian.org/) und enthält nur freie Software.
+[Debian stable](https://www.debian.org/) und enthält freie Software (und einige
+herstellereigene Treiberprogramme, z.B. für die verschiedenen WLAN-Chipsätze).
 Der Quellcode zu allen Programmen kann entweder von [debian](https://www.debian.org/)
 oder auf [Nachfrage](mailto:kontakt@fsfw-dresden.de) über uns bezogen werden.
 
