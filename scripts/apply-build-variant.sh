@@ -8,4 +8,4 @@ BUILD_VARIANT=$(readlink variants/active)
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 ln -svf ../variants/${BUILD_VARIANT}/auto/config auto/config
-rsync -avP variants/${BUILD_VARIANT}/config/ config/
+rsync -avP variants/${BUILD_VARIANT}/system-config/ config/

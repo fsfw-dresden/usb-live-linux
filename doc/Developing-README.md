@@ -6,11 +6,10 @@
 * __config__    -- Arbeitsverzeichnis von live-build
 * __variants__    -- verschiedene Varianten zum auswählen
    - __FSFW-Uni-Stick_KDE_stretch_amd64__ -- aktuelle stabile Debian-Version
-      - __doc__ -- spezielle Doku und Hinweise für diese Konfigurationsvariante
+      - __doc__ -- ggf. spezielle Doku und Hinweise für diese Konfigurationsvariante
       - __paketlisten__ -- Paketlisten (symlink default => Hauptpaketliste)
-      - __config__ -- live-build Konfiguration
-      - __home_skel__ -- Vorkonfiguration für Benutzer
-   - __FSFW-Uni-Stick_KDE_jessie_amd64__ -- oldstable
+      - __user-config__ -- Vorkonfiguration für Benutzer
+      - __system-config__ -- live-build Konfiguration
 * __doc__
    - __latex-vorlagen__ -- Vorlagen für Latex (eigenes Repo)
    - __src__ -- markdown-Vorlagen für Erstellung der HTML Doku (.md wird auf github formatiert angezeigt)

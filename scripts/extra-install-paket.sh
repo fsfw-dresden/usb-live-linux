@@ -31,15 +31,15 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -s variants/${BUILD_VARIANT}/config/packages.chroot/${paket} ];
+			if [ -s variants/${BUILD_VARIANT}/system-config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
-				if [ ! -d variants/${BUILD_VARIANT}/config/packages.chroot/ ]; then
-				 mkdir -p variants/${BUILD_VARIANT}/config/packages.chroot/
-				 echo " variants/${BUILD_VARIANT}/config/packages.chroot/ erstellt"
+				if [ ! -d variants/${BUILD_VARIANT}/system-config/packages.chroot/ ]; then
+				 mkdir -p variants/${BUILD_VARIANT}/system-config/packages.chroot/
+				 echo " variants/${BUILD_VARIANT}/system-config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O variants/${BUILD_VARIANT}/config/packages.chroot/${paket}
+				${DOWNLOAD} ${paket_quelle} -O variants/${BUILD_VARIANT}/system-config/packages.chroot/${paket}
 				echo "${paket} - geholt "
 			fi
 		fi
@@ -56,7 +56,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 done
 
 echo " extra-install_paket.sh -- config aktuallisieren.."
-rsync -avP variants/${BUILD_VARIANT}/config/ config/
+rsync -avP variants/${BUILD_VARIANT}/system-config/ config/
 echo " extra-install_paket.sh -- config aktuallisiert fertig."
 
 

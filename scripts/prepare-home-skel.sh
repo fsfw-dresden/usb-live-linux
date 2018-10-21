@@ -18,7 +18,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 # === FIXME KILL => auto/clean
 
 mkdir -pv config/includes.chroot/etc/skel
-rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/home_skel/ config/includes.chroot/etc/skel
+rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
 scripts/copy-docs.sh
 rsync -vaih FSFW-Material/ config/includes.chroot/etc/skel/FSFW-Material/
 
