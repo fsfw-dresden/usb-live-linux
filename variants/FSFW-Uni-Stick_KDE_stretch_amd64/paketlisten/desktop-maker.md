@@ -5,6 +5,7 @@
 - :x:  blender  --	Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
 - :+1:  makehuman  --	Modelling of 3-Dimensional humanoid characters - ab stretch
 - :x:  sweethome3d  --	Interior 2D design application with 3D preview (java)
+- :+1:  sweethome3d-furniture  -- Sweet Home 3D Furniture Library
 - :+1:  sweethome3d-furniture-editor  -- Sweet Home 3D Furniture Library Editor
 - :+1:  sweethome3d-textures-editor  --  Sweet Home 3D Textures Library Editor
 
