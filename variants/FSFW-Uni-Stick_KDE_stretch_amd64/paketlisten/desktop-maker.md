@@ -24,4 +24,5 @@
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-51-gf22be37d-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-51-gf22be37d-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll; kann gut mit Inkscape (Vektorgrafikprogramm) kombiniert werden
+-  :+1:  Inkscape  -- Vektorgrafikprogramm, praktisch zur Erstellung von Lasercutschnittvorlagen, kann mit VisiCut per Addon erweitert werden
