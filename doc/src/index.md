@@ -65,6 +65,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
   LaTeX-Dokumente; eine kleine Einführung in die Arbeit mit LaTeX findet
   ihr [→hier](latex.md).
 - [LibreOffice][], eine freie Alternative zu Microsoft Office
+- [FreeCAD][], eine Python/Qt-basierte freie 3D-CAD-Platform (mit Architektur-Werkzeugen, Finite-Elemente, Robotik- & Fluidsimulation) im Aufbau
 - [GNU Octave][], eine freie Alternative zu Matlab
 - [R-Studio][], grafisches Frontend für [R][] (mächtiges Werkzeug für Statistik und Datenmodellierung, siehe auch: [extra Doku](r.md))
 - [geogebra][], ein interaktives Geometrieprogramm
@@ -88,6 +89,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [TeXLive]: https://www.tug.org/texlive/
 [qucs]: http://qucs.sourceforge.net/
 [Inkscape]: https://inkscape.org/en/
+[FreeCAD]: https://www.freecadweb.org/
 [GNU Octave]: https://www.gnu.org/software/octave/
 [R-Studio]: https://www.rstudio.com/
 [R]: https://cran.r-project.org/
