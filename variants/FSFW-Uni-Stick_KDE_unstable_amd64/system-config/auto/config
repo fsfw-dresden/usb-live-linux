@@ -2,7 +2,7 @@
 
 set -e
 
-DISTRIBUTION=stretch
+DISTRIBUTION=unstable
 DESKTOP=KDE
 FSFW_UNI_STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
