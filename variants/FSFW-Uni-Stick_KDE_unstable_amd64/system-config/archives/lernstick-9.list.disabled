@@ -1,0 +1,23 @@
+# Lernstick specific packages
+deb http://packages.lernstick.ch/lernstick lernstick-9 main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9 main contrib non-free
+
+# Backports done by the Lernstick team of other packages
+deb http://packages.lernstick.ch/lernstick lernstick-9-backports main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9-backports main contrib non-free
+
+# Third party packages
+deb http://packages.lernstick.ch/lernstick lernstick-9-thirdparty main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9-thirdparty main contrib non-free
+
+# Staging packages (distribution set to "not automatic")
+deb http://packages.lernstick.ch/lernstick lernstick-9-staging main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9-staging main contrib non-free
+
+# Staging distribution for third party packages (distribution set to "not automatic")
+deb http://packages.lernstick.ch/lernstick lernstick-9-thirdparty-staging main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9-thirdparty-staging main contrib non-free
+
+# Staging distribution for backports (set to "not automatic")
+deb http://packages.lernstick.ch/lernstick lernstick-9-backports-staging main contrib non-free
+deb-src http://packages.lernstick.ch/lernstick lernstick-9-backports-staging main contrib non-free

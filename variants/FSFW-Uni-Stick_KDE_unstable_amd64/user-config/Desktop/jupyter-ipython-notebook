@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=~/bin/jupyter_start_script.sh
+GenericName=Jupyter/IPython Notebook
+Icon=text-x-python
+Name=Jupyter/IPython Notebook
+Type=Application
+Terminal=True
