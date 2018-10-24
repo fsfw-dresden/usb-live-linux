@@ -4,7 +4,7 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$(readlink variants/active)
+BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 ln -svf ../variants/${BUILD_VARIANT}/system-config/auto/config auto/config

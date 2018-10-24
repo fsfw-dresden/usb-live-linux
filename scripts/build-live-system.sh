@@ -18,7 +18,7 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$(readlink variants/active)
+BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 [ -d "variants/${BUILD_VARIANT}" ] || { echo "FAIL: variants/active not symlink pointing to valid config variant"; exit 1; }

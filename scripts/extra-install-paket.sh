@@ -8,7 +8,7 @@
 . "$(dirname "${0}")/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$(readlink variants/active)
+BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
