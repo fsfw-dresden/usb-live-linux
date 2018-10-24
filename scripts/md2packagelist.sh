@@ -18,7 +18,7 @@
 #==========================================
 . "$(dirname "${0}")/functions.sh"
 ROOT=$(repo_root)
-TARGET_PATH=${ROOT}/system-config/package-lists
+TARGET_PATH=${ROOT}/config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
 
