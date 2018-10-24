@@ -13,11 +13,11 @@ Pin-Priority: 510
 
 Package: *
 Pin: release a=testing, o=Debian
-Pin-Priority: 508
+Pin-Priority: 510
 
 Package: *
 Pin: release a=unstable, o=Debian
-Pin-Priority: 508
+Pin-Priority: 510
 
 Package: *
 Pin: release a=experimental, o=Debian

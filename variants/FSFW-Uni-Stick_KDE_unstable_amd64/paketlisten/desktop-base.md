@@ -9,14 +9,10 @@
   - :x:  xserver-xorg  --
   - :x:  x11-utils  -- Hilfsprogramme für X11
 
-[//]: # ohne mesa kein blender
-   - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
-  - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
-  - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers
-
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)
  - :x:  xserver-xorg-video-intel  -- X.Org-X-Server -- Grafikkartentreiber für Intel i8xx, i9xx
+ - :x:  xserver-xorg-video-qxl  --  for QXL video device (SPICE-compatible KVM/Qemu emulator)
 
  - :o:  xfonts-utils  --
   - :x:  gsfonts-x11  --

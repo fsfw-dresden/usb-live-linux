@@ -22,7 +22,6 @@
 - :x:  firmware-bnx2x  --
 - :x:  firmware-brcm80211  --
 - :x:  firmware-cavium  --
-- :x:  firmware-crystalhd  --
 - :x:  firmware-intel-sound  --
 - :x:  firmware-intelwimax  --
 - :x:  firmware-ipw2x00  --
