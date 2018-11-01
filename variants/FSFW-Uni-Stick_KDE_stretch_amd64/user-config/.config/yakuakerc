@@ -1,9 +1,6 @@
 [Appearance]
 Skin=legacy
 
-[AutoOpen]
-PollMouse=true
-
 [Shortcuts]
 view-full-screen=F11
 
