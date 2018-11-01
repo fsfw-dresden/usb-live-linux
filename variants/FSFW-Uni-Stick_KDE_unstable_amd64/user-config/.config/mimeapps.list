@@ -1,0 +1,4 @@
+[Default Applications]
+text/css=org.kde.kate.desktop;
+text/markdown=org.kde.kate.desktop;
+text/x-csrc=org.kde.kate.desktop;
