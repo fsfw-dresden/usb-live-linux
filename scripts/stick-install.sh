@@ -200,7 +200,7 @@ insmod iso9660
 insmod font
 
 function load_video {
-  if [ x$feature_all_video_module = xy ]; then
+  if [ x\$feature_all_video_module = xy ]; then
     insmod all_video
   else
 #    insmod efi_gop
