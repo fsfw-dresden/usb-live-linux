@@ -19,11 +19,11 @@ lb config noauto \
     --bootloader "syslinux,grub-efi" \
     --system live \
     --updates=false --backports=false --security=false \
-    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
-    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
+    --parent-mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://localhost:3142/ftp.de.debian.org/debian/ \
     --parent-mirror-binary http://ftp.de.debian.org/debian/ \
-    --mirror-chroot http://ftp.de.debian.org/debian/ \
-    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-chroot http://localhost:3142/ftp.de.debian.org/debian/ \
+    --mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
     --mirror-binary http://ftp.de.debian.org/debian/ \
     --debootstrap-options "--include=apt-transport-https,ca-certificates,openssl,aptitude,eatmydata,ncdu" \
     --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 console=ttyS0" \
