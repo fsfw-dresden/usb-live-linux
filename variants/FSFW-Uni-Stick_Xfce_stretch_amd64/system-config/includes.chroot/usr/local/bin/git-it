@@ -1,0 +1,9 @@
+#!/bin/bash -xv
+type hr && type git-mtime && type tig || { echo "this mechanism needs custom tools hr, git-mtime & package tig"; exit 1; }
+uri=${1}
+dir=${2};
+[ -z ${dir} ] && dir=$(echo ${uri%/}|perl -pe 's|.*/(.*?)(.git)*$|\1|');
+{
+    [ -d ${dir} ] || git clone --recursive --progress ${uri} ${dir}
+} && hr && ( cd ${dir} && git mtime && command ls --color=always -lht --time-style=long-iso | less -Sr && echo && read -n1 -p "Press any key" && tig )
+
