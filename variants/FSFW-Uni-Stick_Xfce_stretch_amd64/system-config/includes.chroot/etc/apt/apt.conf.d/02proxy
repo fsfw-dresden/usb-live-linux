@@ -1,0 +1,1 @@
+Acquire::http::Proxy "localhost:3142";

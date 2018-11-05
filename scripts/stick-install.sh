@@ -40,9 +40,10 @@ BOOTOPTIONS_RESCUE="components memtest noapic noapm nodma nomce nolapic nomodese
 
 DATUM=$(date +%Y-%m-%d)
 
-# für mount ein temporäres Verzeichnis erstellen mktemp /mnt/FSFW-Uni-Stick_XXXXXX
-TMPDIR=$(mktemp -d /mnt/FSFW-Uni-Stick_XXXXXX)			# rm -IRv $(TMPDIR) -- TMPDIR löschen / aufräumen
-trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
+# für mount ein temporäres Verzeichnis erstellen mktemp /tmp/FSFW-Uni-Stick_XXXXXX
+TMPDIR=$(mktemp --tmpdir -d FSFW-Uni-Stick_XXXXXX)
+# falls das geklappt hat, das Verzeichnis beim Terminieren wieder löschen, sonst kaputt.
+[ -z $TMPDIR ] && "echo Verzeichnis in /tmp/ konnte nicht angelegt werden" && exit 1 || trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
