@@ -83,6 +83,7 @@
 - :x:  diffpdf  --	
 - :x:  rss-glx  --	
 - :x:  unicode-screensaver  --	
+- :x:  xscreensaver  --	modular screen saver and locker for X11
 - :x:  xscreensaver-gl-extra  --	
 - :x:  pulseaudio-equalizer  --	
 - :x:  ocrmypdf  --	
@@ -98,3 +99,4 @@
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
 - :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
 - :x:  qgis  --		Qt-based Geographic Information System
+- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
