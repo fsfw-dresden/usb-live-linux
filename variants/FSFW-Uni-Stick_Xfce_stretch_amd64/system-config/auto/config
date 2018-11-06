@@ -18,15 +18,15 @@ lb config noauto \
     --source false \
     --bootloader "syslinux,grub-efi" \
     --system live \
-    --updates true --backports=true --security=true \
-    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
-    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
-    --parent-mirror-chroot-security http://security.debian.org/ \
+    --updates=true --backports=true --security=true \
+    --parent-mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://localhost:3142/ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot-security http://localhost:3142/security.debian.org/ \
     --parent-mirror-binary http://ftp.de.debian.org/debian/ \
     --parent-mirror-binary-security http://security.debian.org/ \
-    --mirror-chroot http://ftp.de.debian.org/debian/ \
-    --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
-    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-chroot http://localhost:3142/ftp.de.debian.org/debian/ \
+    --mirror-chroot-security http://localhost:3142/ftp.de.debian.org/debian-security/ \
+    --mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
     --mirror-binary http://ftp.de.debian.org/debian/ \
     --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
     --debootstrap-options "--include=apt-transport-https,ca-certificates,openssl,aptitude,ncdu" \
