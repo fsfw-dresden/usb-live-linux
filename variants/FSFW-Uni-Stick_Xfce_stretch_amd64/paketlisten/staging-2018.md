@@ -44,16 +44,17 @@
 - :x:  lm-sensors  --	hardware health monitoring: read temperature/voltage/fan sensors
 - :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
 - :x:  traceroute  --	displays the route used by IP packets on their way
+- :x:  anacron  --	periodic command scheduler for systems not running continuously.
 
 - ###  Desktop 2018
-- :o:  guake  --		Drop-down terminal (GTK)
-- :x:  yakuake  --		Drop-down terminal (KDE)
+- :x:  guake  --		Drop-down terminal (GTK)
+- :o:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
 - :x:  lightning  --		Calendar Extension for Thunderbird
 - :x:  lightning-l10n-de  --		
 - :x:  hunspell-de-de  --		
 - :x:  hyphen-de  --		German hyphenation patterns
-- :x:  nextcloud-client-dolphin  --		
+- :o:  nextcloud-client-dolphin  --		
 - :x:  nextcloud-client-nautilus  --		
 - :x:  fusedav  --		mount WebDAV shares
 - :o:  kdeconnect  --		connect smartphones
@@ -91,6 +92,6 @@
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
 - :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
 - :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
-- :x:  powerdevil  --  KDE power settings (& brightness control keys)
-- :x:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
-- :x:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
+- :o:  powerdevil  --  KDE power settings (& brightness control keys)
+- :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
+- :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
