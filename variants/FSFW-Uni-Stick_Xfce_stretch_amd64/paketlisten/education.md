@@ -2,24 +2,24 @@
 
 - ###  Sprache - languages
 
-- :x:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
+- :o:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
 - :x:  goldendict  --	Wörterbuch und Lexikon
 - :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
 
 [//]: # (- :o:  openteacher  -- eine weitere Sprachlernsoftware - nicht in stretch - nur in unstable / sid)
-- :x:  parley  --	Vokabeltrainer für den KDE-Desktop
+- :o:  parley  --	Vokabeltrainer für den KDE-Desktop
 
 [//]: # (- :+1:  anki  -- Vokabeltrainer mit Unterstützung von asiatischen Schriftzeichen, LaTeX, Audioaufnahmen und Bildern und optionaler Onlinesync - nicht in stretch - nur in unstable / sid )
 
 - ###  chemistry
 
-- :x:  kalzium  --	Periodensystem und Chemiewerkzeuge
-- :x:  kalzium-data  -- Daten für kalzium
+- :o:  kalzium  --	Periodensystem und Chemiewerkzeuge
+- :o:  kalzium-data  -- Daten für kalzium
 - :+1:  scilab  --	matrixbasierte Wissenschaftssoftwaresuite
 
 - ###  geography
 
-- :x:  marble  --	Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
+- :x:  marble-qt  --	Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :o:  josm  --		OpenStreetmap-Editor
 
 [//]: # (Hat sich nicht so richtig bewähren können)

@@ -9,4 +9,4 @@
 - :o:  geogebra-kde  -- KDE integration layer for GeoGebra (entfernt: nur KDE thumbnailer for the GeoGebra file format)
 - :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm
 - :+1:  kmplot  --	Mathematischer Funktionsplotter für KDE
-- :x:  fraqtive  -- Fraktalgenerator
+- :o:  fraqtive  -- Fraktalgenerator

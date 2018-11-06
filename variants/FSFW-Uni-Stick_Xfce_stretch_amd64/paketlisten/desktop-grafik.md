@@ -22,8 +22,8 @@
 
 - ###  Fotoverwaltung
 
-- :x:  digikam  -- Full-Featured Fotoverwaltung für KDE
+- :o:  digikam  -- Full-Featured Fotoverwaltung für KDE
 - :+1:  digikam-doc  --
 - :+1:  kipi-plugins  -- Grafikbibliothek für KDEs Digikam
-- :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
+- :1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 

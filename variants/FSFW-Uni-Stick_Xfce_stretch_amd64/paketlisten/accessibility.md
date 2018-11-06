@@ -6,7 +6,7 @@
 - :o: :-1:  # espeakup  -- Sprachsynthese mit Schwierigkeiten
 - :x:  flite  -- Laufzeit-Sprachsynthese auf Basis von Festival-Lite
 - :o:  libttspico-utils  -- Sprachsysthese aus dem Non-Free- Repo
-- :x:  jovie  -- Sprachausgabe
+- :o:  jovie  -- Sprachausgabe
 - :x:  espeak  --  Sprachausgabe
 - :o:  mbrola  -- Sprachsynthese (unfrei)
 - :o:  mbrola-de4
@@ -36,9 +36,9 @@
 
 - ###  KDE-Desktop -- für den KDE-Desktop
 
-- :x:  kdeaccessibility  -- Barrierereduzierung für gehandicapte Anwender
-- :x:  kvkbd  -- Oncreen-Keyboard
-- :x:  kmouth  -- Frontend für Sprachausgabe
+- :o:  kdeaccessibility  -- Barrierereduzierung für gehandicapte Anwender
+- :o:  kvkbd  -- Oncreen-Keyboard
+- :o:  kmouth  -- Frontend für Sprachausgabe
 
 
 - ###  Gnome-Desktop & Derivate
