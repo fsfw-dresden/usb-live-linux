@@ -101,19 +101,19 @@
 
 ##  Education - Science  --  Bildung und Wissenschaft
 
-- ### :o:  texlive  -- [LaTex Toolbox](texlive.md)  - Dokumenten Satzprogramm
+- ### :x:  texlive  -- [LaTex Toolbox](texlive.md)  - Dokumenten Satzprogramm
 
 - ### :x:  science  -- [Wissenschaft](science.md) - Literaturverwaltung - social-science
 
-- ### :o:  mathematics  --  [Mathematiksoftware für die Lehre](mathematics.md) -
+- ### :x:  mathematics  --  [Mathematiksoftware für die Lehre](mathematics.md) -
 
-- ### :o:  python-scientific  --  [Python](python-scientific.md) - für wissenschaftliches Arbeiten
+- ### :x:  python-scientific  --  [Python](python-scientific.md) - für wissenschaftliches Arbeiten
 
 - ### :x:  statistik  --  [Statistik Programme](statistik.md) - für statistische Berechnungen und Grafiken
 
-- ### :o:  education  -- [Programme fürs Lernen](education.md) - Sprache - languages - chemistry - geography - astronomy
+- ### :x:  education  -- [Programme fürs Lernen](education.md) - Sprache - languages - chemistry - geography - astronomy
 
-- ### :o:  electronics  -- [Elektronik](electronics.md) - Schaltplanentwurf - Schaltungssimulation - Funksignalverarbeitung - Logic analyzer und protocol decoder software
+- ### :x:  electronics  -- [Elektronik](electronics.md) - Schaltplanentwurf - Schaltungssimulation - Funksignalverarbeitung - Logic analyzer und protocol decoder software
 
 
 ##  Programmierung Softwareentwicklung  --
@@ -122,7 +122,7 @@
 
 - ### :x:  programmieren-tools  -- [Tools fürs Programmieren](programmieren-tools.md) - Compiler - Tools - Revisions-Kontroll-Systeme - UML-Tools
 
-- ### :o:  programmieren-ide  --  [Programmier IDEs](programmieren-ide.md) - Editoren - Programmierumgebungen - Java - arduino - scratch
+- ### :x:  programmieren-ide  --  [Programmier IDEs](programmieren-ide.md) - Editoren - Programmierumgebungen - Java - arduino - scratch
 
 
 ##  Terminal Tools  --
