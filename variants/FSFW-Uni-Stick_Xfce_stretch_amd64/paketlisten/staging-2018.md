@@ -95,3 +95,4 @@
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
 - :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
+- :x:  qgis  --		Qt-based Geographic Information System
