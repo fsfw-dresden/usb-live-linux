@@ -45,6 +45,8 @@
 - :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
 - :x:  traceroute  --	displays the route used by IP packets on their way
 - :x:  anacron  --	periodic command scheduler for systems not running continuously.
+- :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
+- :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal (GTK)
