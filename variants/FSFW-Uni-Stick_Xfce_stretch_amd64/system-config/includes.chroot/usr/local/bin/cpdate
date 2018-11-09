@@ -1,0 +1,7 @@
+#!/bin/bash
+[ -e "$@" ] && name=${@%.*} && ext=.${@##*.} && {
+    [ -n "$name" ] || {
+        name=$@ && ext=
+    }
+} && cp -avi "$@" "${name}_$(date -r "$@" +'%F_%H:%M')${ext}"
+
