@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gconf>
 	<entry name="style" mtime="1539719762" type="string">
-		<stringvalue>Hack 14</stringvalue>
+		<stringvalue>Hack 11</stringvalue>
 	</entry>
 	<entry name="palette_name" mtime="1539719972" type="string">
 		<stringvalue>Tango</stringvalue>
