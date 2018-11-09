@@ -198,6 +198,8 @@ insmod ntfs
 insmod ext2
 insmod iso9660
 insmod font
+insmod play
+play 960 440 1 0 4 440 1
 
 function load_video {
   if [ x\$feature_all_video_module = xy ]; then
