@@ -3,7 +3,7 @@
 - ###  Sprache - languages
 
 - :o:  kwordquiz  --	Lernkarten-Lernprogramm für KDE -- TODO: benötigt noch gut Vokabellisten für Latein, Englisch, Spanisch, Italienisch
-- :x:  goldendict  --	Wörterbuch und Lexikon
+- :o:  goldendict  --	Wörterbuch und Lexikon
 - :+1:  goldendict-wordnet  -- optionales Wörterbuch für goldendict
 
 [//]: # (- :o:  openteacher  -- eine weitere Sprachlernsoftware - nicht in stretch - nur in unstable / sid)
@@ -15,7 +15,8 @@
 
 - :o:  kalzium  --	Periodensystem und Chemiewerkzeuge
 - :o:  kalzium-data  -- Daten für kalzium
-- :+1:  scilab  --	matrixbasierte Wissenschaftssoftwaresuite
+- :x:  scilab  --	matrixbasierte Wissenschaftssoftwaresuite
+- :x:  scilab-plotlib  --	plotting capabilities in the Scilab language. Plotlib functions matches the one from Matlab
 
 - ###  geography
 
@@ -28,7 +29,7 @@
 - ###  astronomy
 
 [//]: # (Dies zieht mit stellarium-data eine 112 MB großes Paket als Abhängigkeit nach)
-- :x:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
+- :o:  stellarium  -- Desktop-Planetarium (Himmelsansichten und Sternzeichen)
 
 [//]: # (- :+1:  celestia-gnome  -- Desktop-Planetarium (Fotorelistische Planetenansichten) - nicht in stretch - nur in unstable / sid )
 

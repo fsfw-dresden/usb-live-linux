@@ -100,3 +100,14 @@
 - :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
 - :x:  qgis  --		Qt-based Geographic Information System
 - :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+- :x:  kicad  --	Electronic design software: suite of programs for the creation of printed circuit boards
+- :x:  kicad-footprints  --	footprint is a drawing of the physical component including its land pattern (e.g. the layout of pads on the circuit board
+- :x:  kicad-symbols  --	schematic symbols
+- :x:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
+- :x:  openmodelica  --	Modelica modeling, compilation and simulation environment
+- :x:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
+- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
+- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
+- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
+- :x:  vim-airline-themes  --	themable vim status bar + themes
+- :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
