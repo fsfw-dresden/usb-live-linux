@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=org.kde.kwordquiz.desktop,org.kde.kdeconnect.kcm.desktop,indicator-kdeconnect.desktop,goldendict.desktop,tuned-gui.desktop
+recent=
 button-title=start
 button-icon=emblem-generic
 button-single-row=false
