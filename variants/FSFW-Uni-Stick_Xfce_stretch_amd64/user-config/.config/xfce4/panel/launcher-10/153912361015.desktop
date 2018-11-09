@@ -1,11 +1,12 @@
 [Desktop Entry]
-Name=Ring
-Comment=Ring is a secured and distributed communication software.
-Exec=gnome-ring %u
-Icon=ring
-StartupNotify=true
+Version=1.0
+Name=Telegram Desktop
+Comment=Official desktop version of Telegram messaging app
+Exec=telegram-desktop -- %u
+Icon=telegram
 Terminal=false
+StartupWMClass=TelegramDesktop
 Type=Application
-Categories=GNOME;GTK;Network;Telephony;
-Keywords=chat;talk;im;message;voip;
-X-XFCE-Source=file:///usr/share/applications/gnome-ring.desktop
+Categories=Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+X-XFCE-Source=file:///usr/share/applications/telegramdesktop.desktop
