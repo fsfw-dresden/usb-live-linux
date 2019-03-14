@@ -49,6 +49,7 @@
 - :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
 - :x:  ripgrep  --	line-oriented search tool that recursively searches
 - :x:  wcalc  --	command-line scientific calculator
+- :x:  fd-find  --	user-friendly alternative to find
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal (GTK)
