@@ -17,8 +17,8 @@
 - :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
 - :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging
 
-- :x:  ring  -- Secure and distributed voice, video and chat platform - desktop client
-- :x:  ring-daemon  -- daemon
+- :o:  ring  -- Secure and distributed voice, video and chat platform - desktop client
+- :o:  ring-daemon  -- daemon
 
-- :+1: :x:  [ring] (https://dl.ring.cx/ring-manual/debian_9/ring_amd64.deb)  --	Ring for GNU/LINUX aktuelles build
-- :+1: :x:  [ring] (https://dl.ring.cx/ring-manual/debian_9/ring-daemon_amd64.deb)  --	Ring for GNU/LINUX aktuelles build
+- :+1: :o:  [ring] (https://dl.ring.cx/ring-manual/debian_9/ring_amd64.deb)  --	Ring for GNU/LINUX aktuelles build
+- :+1: :o:  [ring] (https://dl.ring.cx/ring-manual/debian_9/ring-daemon_amd64.deb)  --	Ring for GNU/LINUX aktuelles build
