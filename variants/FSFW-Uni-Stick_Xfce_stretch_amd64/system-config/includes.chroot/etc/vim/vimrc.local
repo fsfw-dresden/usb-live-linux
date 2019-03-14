@@ -1,0 +1,71 @@
+if !isdirectory("/var/lib/vim/temp")
+  call mkdir("/var/lib/vim/temp", "p")
+  call setfperm("/var/lib/vim/temp", "rwxrwxrwx")
+endif
+set directory=/var/lib/vim/temp//
+set backupdir=/var/lib/vim/temp//
+set undodir=/var/lib/vim/temp//
+set undofile
+"call pathogen#infect()
+set background=dark
+set hlsearch
+"set verbosefile=/var/lib/vim/debug.log
+highlight NonText ctermfg=0
+highlight IncSearch term=reverse ctermfg=0 ctermbg=9 cterm=NONE guifg=Black guibg=Red gui=NONE
+"guifg=bg
+
+" Quitting
+noremap q :quit<CR>
+noremap <F4> :quitall<CR>
+nnoremap QQ :quitall!<CR>
+nnoremap <silent> <F12> :Exp<CR>
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F6> :Hexmode<CR>
+nmap <F3> :set wrap!<CR>
+map <silent> <unique> <F2> :ToggleSpaceHi<CR>
+let g:spacehi_tabcolor="ctermfg=White ctermbg=Blue guifg=White guibg=Red"
+let g:spacehi_spacecolor="ctermfg=Black ctermbg=Cyan guifg=Blue guibg=Yellow"
+
+set pastetoggle=<F3>
+noremap <C-U> :earlier 1f<CR>
+
+nnoremap - :Switch<cr>
+noremap p P
+noremap P p
+map <C-D> <C-A>
+map <C-E> <C-W>
+map <C-L> :TlistToggle<CR>
+map <C-J> :N<CR>
+map <C-K> :n<CR>
+imap <S-Tab> <C-V><Tab>
+
+" swap word forward/backward search
+set langmap=#*,*#
+
+" Buffers menu
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+
+set noautoindent "don't copy indentation from previous line
+set copyindent "copy indentation from previous line, preserve tabs
+set preserveindent
+set expandtab
+filetype indent on
+set modeline
+set ignorecase
+set smartcase
+set showcmd
+set hidden
+set title
+set history=1000
+set scrolloff=5
+set nowrap
+set shortmess=atI
+set clipboard+=unnamed
+set matchtime=6
+set laststatus=2
+" Show extended Statusline, displaying the ASCII or Unicode value of the char
+" under the cursor in hex... if powerline not active
+set statusline=[%v,%l/%L\ (%p%%)]:[%F]%<:%y%m%r%h%w:[\%{strftime(\"\%y-\%m-\%d\",getftime(expand(\"\%\%\")))}]%=char\ 0x%02B,\ buffer%a
+
