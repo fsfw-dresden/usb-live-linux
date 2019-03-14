@@ -201,6 +201,8 @@ insmod font
 insmod play
 play 960 440 1 0 4 440 1
 
+search --set=root --label ${LABEL_LIVE}
+
 function load_video {
   if [ x\$feature_all_video_module = xy ]; then
     insmod all_video
