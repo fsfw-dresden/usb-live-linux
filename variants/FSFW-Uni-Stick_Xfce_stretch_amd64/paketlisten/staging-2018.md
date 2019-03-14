@@ -116,3 +116,5 @@
 - :x:  vim-airline-themes  --	themable vim status bar + themes
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 - :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :x:  fortunes  --		fortune cookies
+- :x:  fortunes-de  --		
