@@ -7,7 +7,7 @@
 - :o: :-1:  vimhelp-de  --	Dokumentationsdateien deutsche Übersetzung
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
-- :+1:  tmux  --	Terminal-Multiplexer
+- :x:  tmux  --	Terminal-Multiplexer
 - :+1:  sm  -- Zeigt einen kurzen Text bildschirmfüllend an
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 - :x:  htop  -- interaktive Prozessübersicht für die Konsole

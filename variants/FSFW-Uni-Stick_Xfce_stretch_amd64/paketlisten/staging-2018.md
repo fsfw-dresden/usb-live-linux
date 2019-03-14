@@ -47,6 +47,8 @@
 - :x:  anacron  --	periodic command scheduler for systems not running continuously.
 - :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
 - :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+- :x:  ripgrep  --	line-oriented search tool that recursively searches
+- :x:  wcalc  --	command-line scientific calculator
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal (GTK)
@@ -86,11 +88,13 @@
 - :x:  xscreensaver  --	modular screen saver and locker for X11
 - :x:  xscreensaver-gl-extra  --	
 - :x:  pulseaudio-equalizer  --	
+- :x:  pavucontrol  --	PulseAudio Volume Control
 - :x:  ocrmypdf  --	
 - :x:  libreoffice-gtk3  --	
 - :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
+- :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
 - :x:  poppler-utils  --	command line utilities to manipulate PDFs
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
 - :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
@@ -105,9 +109,10 @@
 - :x:  kicad-symbols  --	schematic symbols
 - :x:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
 - :x:  openmodelica  --	Modelica modeling, compilation and simulation environment
-- :x:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
+- :o:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
 - :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
 - :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
 - :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
 - :x:  vim-airline-themes  --	themable vim status bar + themes
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
+- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
