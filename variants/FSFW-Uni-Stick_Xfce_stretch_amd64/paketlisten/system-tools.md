@@ -5,7 +5,6 @@
 - :x:  dselect  --	Oberfläche für die Debian-Paketverwaltung
 - :x:  fbset  --	Framebuffer-Geräte einstellen
 - :x:  hdparm  --	Festplattenparameter einstellen
-- :x:  localepurge  --	Freigeben von Festplattenplatz durch Entfernen nicht benötigter Lokalisierungen
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
 - :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
 - :o:  gpart  --	Partitionierungsprogramm (Konsolenvariante)
