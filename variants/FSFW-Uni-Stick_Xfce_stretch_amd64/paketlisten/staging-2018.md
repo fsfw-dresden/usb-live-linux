@@ -58,8 +58,8 @@
 - :x:  lightning-l10n-de  --		
 - :x:  hunspell-de-de  --		
 - :x:  hyphen-de  --		German hyphenation patterns
-- :o:  nextcloud-client-dolphin  --		
-- :x:  nextcloud-client-nautilus  --		
+- :o:  dolphin-nextcloud  --		
+- :x:  nautilus-nextcloud  --		
 - :x:  fusedav  --		mount WebDAV shares
 - :o:  kdeconnect  --		connect smartphones
 - :x:  fonts-bebas-neue  --	Flat, rounded style font designed
