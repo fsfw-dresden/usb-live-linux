@@ -3,6 +3,8 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="IconThemeName" type="string" value="Adwaita"/>
+    <property name="EnableEventSounds" type="bool" value="true"/>
+    <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
     <property name="Antialias" type="int" value="1"/>
