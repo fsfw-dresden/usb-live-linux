@@ -6,8 +6,9 @@
     <value type="int" value="1"/>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=12;x=544;y=750"/>
-      <property name="length" type="uint" value="75"/>
       <property name="position-locked" type="bool" value="true"/>
+      <property name="length-adjust" type="bool" value="false"/>
+      <property name="length" type="uint" value="100"/>
       <property name="size" type="uint" value="34"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
@@ -20,6 +21,7 @@
         <value type="int" value="12"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
+        <value type="int" value="13"/>
         <value type="int" value="6"/>
         <value type="int" value="5"/>
         <value type="int" value="2"/>
@@ -63,11 +65,6 @@
       <property name="show-meridiem" type="bool" value="false"/>
     </property>
     <property name="plugin-6" type="string" value="systray">
-      <property name="names-visible" type="array">
-        <value type="string" value="guake"/>
-        <value type="string" value="goldendict"/>
-        <value type="string" value="nextcloud"/>
-      </property>
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
       </property>
@@ -104,5 +101,8 @@
       </property>
     </property>
     <property name="plugin-12" type="string" value="separator"/>
+    <property name="plugin-13" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
   </property>
 </channel>
