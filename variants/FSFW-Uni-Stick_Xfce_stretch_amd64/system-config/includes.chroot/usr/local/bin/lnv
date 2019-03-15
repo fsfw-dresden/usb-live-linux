@@ -1,0 +1,8 @@
+#!/bin/bash -xv
+# create a symlink with full path imploded to basename, f.e. usr--local--bin--lnv
+# can take a target directory as second parameter
+path=$(realpath -s "${1}")
+target=${2-.}
+name=${path#/}
+name=${name////--}
+[ -e "${path}" ] && [ -d "${target}" ] && ln -svi "${path}" "${target}"/"${name}"
