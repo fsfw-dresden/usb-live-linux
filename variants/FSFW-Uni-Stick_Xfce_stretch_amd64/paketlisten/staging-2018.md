@@ -50,6 +50,7 @@
 - :x:  ripgrep  --	line-oriented search tool that recursively searches
 - :x:  wcalc  --	command-line scientific calculator
 - :x:  fd-find  --	user-friendly alternative to find
+- :x:  dstat  --	versatile resource statistics tool
 
 - ###  Desktop 2018
 - :x:  guake  --		Drop-down terminal (GTK)
