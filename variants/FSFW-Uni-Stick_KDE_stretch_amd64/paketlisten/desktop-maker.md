@@ -13,8 +13,9 @@
 - :x:  freecad-daily  -- umfangreiches und vielfältiges Konstruktionsprogramm
 - :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 - :o:  openscad  --	script file based graphical CAD environment
+- :+1: openmodelica-1.13 -- Modellierungs- und Simulationsumgebung (Repoangaben siehe: https://openmodelica.org/download/download-linux
 
-
+)
 - ###  Maker Tools  -- 3D Tools - G-Code
 
 - :o:  printrun  -- 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software
