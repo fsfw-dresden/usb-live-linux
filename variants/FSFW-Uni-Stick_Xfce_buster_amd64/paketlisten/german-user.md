@@ -6,7 +6,7 @@
 - :x:  wngerman  --
 - :x:  ingerman  --
 - :x:  aspell-de  --
-- :x:  aspell-de-alt  --
+- :x:  aspell-de-1901  --	Traditional German dictionary
 - :+1:  hunspell  -- weitere Rechtschreibkorrektur
 
 - :x:  util-linux-locales  --

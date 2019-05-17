@@ -12,7 +12,6 @@
 [//]: # ohne mesa kein blender
    - :x:  mesa-utils  -- Mesa-GL-Hilfsprogramme
   - :x:  libgl1-mesa-dri  -- 	Freie Implementierung der OpenGL-Schnittstelle
-  - :x:  libegl1-mesa-drivers  -- free implementation of the EGL API -- hardware drivers
 
  - :x:  xserver-xorg-input-all  -- X.org-X-Server -- Metapaket für Eingabegeräte-Treiber
  - :x:  xserver-xorg-video-all  -- alle Grafik-Treiber (10 MB)

@@ -16,7 +16,6 @@
 - :o:  kalzium  --	Periodensystem und Chemiewerkzeuge
 - :o:  kalzium-data  -- Daten für kalzium
 - :x:  scilab  --	matrixbasierte Wissenschaftssoftwaresuite
-- :x:  scilab-plotlib  --	plotting capabilities in the Scilab language. Plotlib functions matches the one from Matlab
 
 - ###  geography
 

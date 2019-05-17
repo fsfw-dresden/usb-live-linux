@@ -12,7 +12,6 @@
 - :+1:  libreoffice-help-de  --	Deutsche Hilfe
 - :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
-- :x:  libreoffice-zotero-integration  -- Libreoffice-Erweiterung zur Organisation und gemeinsamen Nutzung Ihrer Forschungsunterlagen
 - :x:  libreoffice-evolution  -- Unterstützung für Evolution-Adressbücher
 
 - :o:  libreoffice-gnome  --	GNOME-Integration

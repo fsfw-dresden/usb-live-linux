@@ -9,8 +9,8 @@
 - :x:  gdb-minimal  --		minmaler GNU-Debugger
 - :o:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 - :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
-- :x:  gfortran  -- GNU-Fortran-95-Compiler
-- :x:  gnat-6  --		GNU Ada compiler
+- :x:  gfortran  --		GNU-Fortran-95-Compiler
+- :x:  gnat  --			GNU Ada compiler
 
 - ###  Revisions-Kontroll-Systeme
 
