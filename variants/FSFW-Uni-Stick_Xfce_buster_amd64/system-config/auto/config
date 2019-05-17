@@ -2,7 +2,7 @@
 
 set -e
 
-DISTRIBUTION=stretch
+DISTRIBUTION=buster
 DESKTOP=Xfce
 FSFW_UNI_STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 

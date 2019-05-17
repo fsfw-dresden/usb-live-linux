@@ -1,2 +1,2 @@
-deb http://build.openmodelica.org/apt stretch nightly
-# deb-src http://build.openmodelica.org/apt stretch nightly
+deb http://build.openmodelica.org/apt buster nightly
+# deb-src http://build.openmodelica.org/apt buster nightly
