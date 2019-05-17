@@ -1,0 +1,5 @@
+#!/bin/bash
+# try to regenerate original URL from file name (reverse wa).
+file="$*"
+[[ "$file" =~ .www. ]] && suffix="${file##*.}" && file="${file%www.*}" && file="www.${file%.*}.${suffix}"
+echo $file|sed -r 's+^(.*/)*+http://+;s+--+/+g'

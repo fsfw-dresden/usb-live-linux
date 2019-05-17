@@ -1,2 +1,2 @@
 #!/bin/sh
-/bin/lsblk --output MODEL,NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT
+/bin/lsblk --output MODEL,NAME,SIZE,FSTYPE,LABEL,MOUNTPOINT $@

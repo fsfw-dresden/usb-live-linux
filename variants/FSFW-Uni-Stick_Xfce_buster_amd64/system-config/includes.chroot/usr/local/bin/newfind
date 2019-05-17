@@ -1,0 +1,23 @@
+#!/bin/bash
+# finds new files in the current directory
+# (created or modified within x minutes)
+
+if [ ! -z $1 ]; then
+    min=$1;
+else
+    min=20;
+fi;
+echo "Files $(color red)modified$(color off) within $min minutes:";
+{
+    for i in $(seq 4);
+    do
+        find -xdev -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -mmin +0 -mmin -${min} -print0 | sed 's|^./||;s|\x00./|\x00|g';
+    done
+} | xargs -0r ls -lahdtr --color=always;
+echo -e "\nFiles $(color cyan)created$(color off) in last $min minutes:";
+{
+    for i in $(seq 4);
+    do
+        find -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -cmin +0 -cmin -${min} -mmin +${min} -print0 | sed 's|^./||;s|\x00./|\x00|g';
+    done
+} | xargs -0r ls -lahdtcr --color=always

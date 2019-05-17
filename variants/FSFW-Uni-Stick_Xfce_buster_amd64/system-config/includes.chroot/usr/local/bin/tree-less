@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 # depends tput ncurses-bin tree
 # following lines from my /etc/profile.d/less-termcaps.sh
 TERM=${TERM:-linux}
@@ -22,7 +22,7 @@ LESS_TERMCAP_ZW=$(tput rsupm)
 export LESS_TERMCAP_ZZ=$(tput sgr0) # reset: do not litter 'env' output
 
 # from my /etc/profile.d/less-options.sh
-LESS="-SRiMJj.2~ --shift 5"
+export LESS="-SRiMJj.2~ --shift 5"
 
 [ ! -e "$1" ] && par=$1 && shift || par=;
 [ -z "$1" ] && dir=$(pwd) || dir=$(realpath "$@");

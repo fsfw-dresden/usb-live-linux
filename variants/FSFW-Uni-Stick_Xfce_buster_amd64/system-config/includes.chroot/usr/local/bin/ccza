@@ -1,0 +1,2 @@
+#!/bin/sh
+ccze -A -o nolookups "$@"
