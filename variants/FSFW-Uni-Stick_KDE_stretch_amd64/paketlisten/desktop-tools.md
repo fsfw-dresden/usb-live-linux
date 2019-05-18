@@ -10,3 +10,6 @@
 - ###  Key Werkzeug  --
 
 - :x:  gnome-keyring  --  GNOME Schlüsselbund-Dienste (Daemon und Werkzeuge)
+
+- ### E-Bookverwaltung  --
+- :+1:  Calibre  -- dein digitales Bücherregal mit Reader und Unterstützung beinahe aller Datei-Formate für e-Books. Er konvertiert auch unter

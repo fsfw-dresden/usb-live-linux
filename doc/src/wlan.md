@@ -1,4 +1,4 @@
-# WLAN (Eduroam) einrichten
+# WLAN (Eduroam) einrichten (2018er Stick-Version: KDE)
 
 An der TU Dresden gibt es flächendeckend WLAN. Relevant für die Allgemeinheit sind davon zwei:
 "eduroam" und "VPN/Web". Beide werden vom ZIH betrieben.
