@@ -119,4 +119,10 @@
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 - :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
 - :x:  fortunes  --		fortune cookies
-- :x:  fortunes-de  --		
+- :x:  fortunes-de  --		Glückskekse
+- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
+- :x:  nmap  --		utility for network exploration or security auditing
+- :x:  ccze  --		robust and modular log coloriser
+
+
+
