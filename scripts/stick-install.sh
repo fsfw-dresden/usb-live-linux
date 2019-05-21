@@ -389,7 +389,7 @@ cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Live-System (${menu_label})" {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-    echo -e "(je nach USB-Stick braucht das System bis zu 3min zum Starten)"
+    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
@@ -406,7 +406,7 @@ cat <<EOF>> ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg
 
 menuentry "Live-System ohne Persistenz (Änderungen gehen verloren) (${menu_label})" {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
+    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
@@ -424,7 +424,7 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
 
 menuentry "Live-System mit Persistenz (Rettungsmodus) (${menu_label})" {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-    echo -e "(je nach USB-Stick braucht das System bis zu 2min zum Starten)"
+    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     insmod ext2
     insmod part_msdos
     set isofile=${system_iso}
