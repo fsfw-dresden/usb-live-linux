@@ -124,7 +124,7 @@ if [ ! -f ${TMPDIR}/${LABEL_LIVE}/boot/img/memdisk ]; then cp /usr/lib/syslinux/
 #
 input_abbruch() {
 	echo "  --  Es ist ein Fehler aufgetreten "
-	echo " Möchten sie weiter fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
+	echo " Wenn Sie dennoch fortfahren möchten, geben Sie >> y << gefolgt von der Eingabetaste ein; Abbruch mit jeder anderen Taste ... : "
 	read FEHLER
 		if [ ! "$FEHLER" == 'y' ]; then
 			echo "Skript wird abgebrochen "
@@ -479,7 +479,7 @@ input_partition_layout() {
 	# Part-größe $(( Live-Image-Größe * 100 / Stick-Größe )) ## in %
 	# echo $(( ${size_live_system_min} * 100 / ${size_device} ))
 
-# Soll eine WINDOS-Partition (vfat) angelegt werden ? - Welche Größe MB oder % von USB-Stick-Größe
+# Soll eine WINDOWS-Partition (vfat) angelegt werden ? - Welche Größe MB oder % von USB-Stick-Größe
 
 dialog --stdout --yesno "Soll eine Partition für Windows-Daten angelegt werden ?" 6 60
 # Ja = 0 -- Nein = 1
@@ -497,7 +497,7 @@ p_persistence_daten=$?
 # dialog --stdout --msgbox "Partition Windows = ${p_windows_daten}" 5 30
 # dialog --stdout --msgbox "Partition Persistence = ${p_persistence_daten}" 5 30
 
-# ==== Patitionsgröße Live-Image festlegen ======
+# ==== Partitionsgröße Live-Image festlegen ======
 
 #   Persistence Partition und Windows Daten Partition ja
 
@@ -579,7 +579,7 @@ do
 done
 
 
-# ==== Patitionsgröße Windos Daten festlegen ======
+# ==== Partitionsgröße Windows Daten festlegen ======
 
 if [[ $(( ${p_windows_daten} + ${p_persistence_daten} )) -eq 0 ]]; then
 	# dialog --stdout --msgbox "Partition Windows + Partition Persistence" 0 0
@@ -659,7 +659,7 @@ if [[ ${p_persistence_daten} -eq 0 ]]; then
 		rel_size_persistence_daten=$(( 100 - ${rel_size_live_system} - ${rel_size_windows_daten} ))
 		dialog --title "${size_device} MB Gesamtgröße" \
 		--backtitle "Größe Persistence Partition" \
-		--msgbox "\n Größe der Patition für Persistence Daten beträgt $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB.\n\n " 8 64
+		--msgbox "\n Größe der Partition für Persistence Daten beträgt $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB.\n\n " 8 64
 	else
 		dialog --stdout --msgbox " Für eine Persistence Daten Partition\n\n ist nicht mehr genügend Speicher verfügbar "  8 48
 	fi
@@ -696,7 +696,7 @@ echo "System prüft - sind alle benötigten Software-pakete vorhanden."
 		dpkg -l 2>/dev/null | grep -q ${paket}
 		if [[ $? -eq 1 ]]; then
 			echo "Das Paket >> $paket << ist nicht installiert"
-			echo "Instalieren sie es mit"
+			echo "Installieren Sie es mit"
 			echo "		sudo apt-get install $paket "
 			exit 1
 		fi
@@ -704,8 +704,8 @@ echo "System prüft - sind alle benötigten Software-pakete vorhanden."
 
 # ${DEVICE} vorhanden ?
 if [ -z "$1" ]; then
-	echo "  Skript wird abgebrochen. Es ist kein Ziel (Speichergerät) vorhanden "
-	echo "  Bitte ein Speichergerät angeben (z.B sudo scripts/stick-install.sh /dev/sdb ) "
+	echo "  Skript wird abgebrochen. Es ist kein Ziel (Speichergerät) vorhanden. "
+	echo "  Bitte ein Speichergerät angeben (z.B. sudo scripts/stick-install.sh /dev/sdb ) "
 	exit 1
 fi
 
@@ -715,9 +715,9 @@ if [ -z "${LIVE_IMAGE}" ]; then
 			# echo "${DEFAULT_LIVE_IMAGE} ist vorhanden"
 			LIVE_IMAGE=${DEFAULT_LIVE_IMAGE}
 		else
-			echo "  Skript wird abgebrochen. Es ist wurde kein Live-Image gefunden "
+			echo "  Skript wird abgebrochen. Es wurde kein Live-Image gefunden. "
 			echo "  Live-Image erstellen oder angeben."
-			echo "  (z.B sudo scripts/stick-install.sh /dev/sdb live-image.iso ) "
+			echo "  (z.B. sudo scripts/stick-install.sh /dev/sdb live-image.iso ) "
 			exit 1
 	fi
 fi
@@ -733,7 +733,7 @@ unset size_device
 size_device=($(lsblk -b -n --output SIZE ${DEVICE}))
 size_device=$(( ${size_device[0]} / 1024 / 1024))
 
-# echo "  ${size_device} werden vom verwendet Speichergerät >> ${DEVICE} << bereitgestellt "
+# echo "  ${size_device} werden vom verwendeten Speichergerät >> ${DEVICE} << bereitgestellt "
 dialog --title "Gesamtgröße verfügbarer Speicher" \
 --backtitle "Speicher der zur Verfügung steht " \
 --msgbox "\n\
@@ -757,7 +757,7 @@ dialog --title "Speicher den das Live-System benötigt" \
 		und Tools benötigt\n " 0 0
 
 if [[ "${size_device}" -lt "${size_live_system_min}" ]]; then
-#	echo "  Das Speichergerät hat nicht genügend Kapazität um das System zu erstellende "
+#	echo "  Das Speichergerät hat nicht genügend Kapazität um das System zu erstellen. "
 #	echo "  Skript wird abgebrochen."
 	dialog --stdout --msgbox "\nDas Speichergerät hat nicht genügend Kapazität um das System zu erstellende. Das Skript wird abgebrochen. \n " 8 60
 	exit 1
@@ -795,7 +795,7 @@ if [[ $? -eq 0 ]]; then
 			--backtitle "${DEVICE} wird neu formatiert" \
 			--yesno "\n\
 		Partition Live-System = $(( ${rel_size_live_system} * ${size_device} / 100)) MB. \n\n\
-		Partition Windows Daten = $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB. \n\n\
+		Partition Windows-Daten = $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB. \n\n\
 		Partition Persistence = $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB. \n " 0 0
 
 		if [[ $? -eq 0 ]]; then
@@ -807,7 +807,7 @@ if [[ $? -eq 0 ]]; then
 			parted -s --align=opt ${DEVICE} mkpart primary fat32 0% ${rel_size_windows_daten}%
 			parted -s ${DEVICE} align-check optimal ${partition}
 			mkfs.vfat -F32 -n ${LABEL_WINDOWS_DATEN} ${DEVICE}${p}${partition}
-			echo " Windos Daten Partition ${partition} - ${LABEL_WINDOWS_DATEN} angelegt "
+			echo " Windows-Daten-Partition ${partition} - ${LABEL_WINDOWS_DATEN} angelegt "
 			partition=$(( ${partition} + 1 ))
 			fi
 		# Live-System Partition anlegen
@@ -816,7 +816,7 @@ if [[ $? -eq 0 ]]; then
 		parted -s ${DEVICE} set ${partition} boot on
 		parted -s ${DEVICE} align-check optimal ${partition}
 		mkfs.ext2 -m 0 -L ${LABEL_LIVE} ${DEVICE}${p}${partition}
-			echo " Live Image Partition ${partition} - ${LABEL_LIVE} angelegt "
+			echo " Live-Image-Partition ${partition} - ${LABEL_LIVE} angelegt "
 		partition=$(( ${partition} + 1 ))
 			# Persistence Daten Partition anlegen
 			if [[ ${p_persistence_daten} -eq 0 ]] && [[ ${rel_size_persistence_daten} -gt 0 ]]; then
@@ -824,7 +824,7 @@ if [[ $? -eq 0 ]]; then
 			parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${rel_size_windows_daten} + ${rel_size_live_system} ))% 100%
 			parted -s ${DEVICE} align-check optimal ${partition}
 			mkfs.ext4 -m 0 -L ${LABEL_PERSISTENCE_DATEN} ${DEVICE}${p}${partition}
-			echo " Persistence Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
+			echo " Persistence-Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
 			fi
 		  else
 			check_input_abbruch
@@ -842,22 +842,22 @@ if [[ $? -eq 0 ]]; then
 		partition=$(( ${partition} + 1 ))
 		case "${label}" in
 		${LABEL_LIVE})
-			echo " ${label} Patition ${partition} vorhanden "
+			echo " ${label} Partition ${partition} vorhanden "
 			live_partition=${partition}
 			echo
 		  ;;
 		${LABEL_WINDOWS_DATEN})
-			echo " ${label} Patition ${partition} vorhanden "
+			echo " ${label} Partition ${partition} vorhanden "
 			echo
 		  ;;
 		${LABEL_PERSISTENCE_DATEN})
-			echo " ${label} Patition ${partition} vorhanden "
+			echo " ${label} Partition ${partition} vorhanden "
 			persistence_partition=${partition}
 			echo
 		  ;;
 
 		*)
-			echo " Patition - ${label} - kann nicht benutzt werden "
+			echo " Partition - ${label} - kann nicht benutzt werden "
 			input_abbruch
 		  ;;
 
@@ -867,19 +867,19 @@ if [[ $? -eq 0 ]]; then
 #		echo " ${live_partition} Partition wird für das Live-System verwendet. "
 
 	  if [[ -z ${live_partition} ]]; then
-		echo " Es gibt keine Partition die für das Live-System nutzbar ist. "
-		echo " Das Speichergerät sollt neu formatiert werden. "
+		echo " Es gibt keine Partition, die für das Live-System nutzbar ist. "
+		echo " Das Speichergerät sollte neu formatiert werden. "
 		exit 1
 	     else
 		echo " ${live_partition} Partition wird für das Live-System verwendet. "
 	  fi
 
 	  if [[ -z ${persistence_partition} ]]; then
-		echo " Es gibt keine Persistence Partition die nutzbar ist. "
+		echo " Es gibt keine Persistence-Partition die nutzbar ist. "
 		echo " Das Speichergerät sollte neu formatiert werden. "
 		input_abbruch
 	     else
-		echo " ${persistence_partition} Partition wird für Persistence Partition verwendet. "
+		echo " ${persistence_partition} Partition wird für Persistence-Partition verwendet. "
 	  fi
 fi
 
