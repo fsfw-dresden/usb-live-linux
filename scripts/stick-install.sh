@@ -163,6 +163,9 @@ device_mount() {
 
 	mount ${DEVICE}${p}${live_partition} ${TMPDIR}/${LABEL_LIVE} || input_abbruch
 
+    mkdir -pv ${TMPDIR}/${LABEL_WINDOWS_DATEN}
+    mount ${DEVICE}${p}${windaten_partition} ${TMPDIR}/${LABEL_WINDOWS_DATEN} || input_abbruch
+
     if [[ $(lsblk -n --output LABEL ${DEVICE} | grep ${LABEL_PERSISTENCE_DATEN} ) = ${LABEL_PERSISTENCE_DATEN} ]]; then
 	echo " Persistence Partition wird eingebunden "
 	  if [ ! -d ${TMPDIR}/${LABEL_PERSISTENCE_DATEN} ]; then mkdir ${TMPDIR}/${LABEL_PERSISTENCE_DATEN}; fi
@@ -848,6 +851,7 @@ if [[ $? -eq 0 ]]; then
 		  ;;
 		${LABEL_WINDOWS_DATEN})
 			echo " ${label} Partition ${partition} vorhanden "
+                        windaten_partition=${partition}
 			echo
 		  ;;
 		${LABEL_PERSISTENCE_DATEN})
