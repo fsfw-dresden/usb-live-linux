@@ -149,7 +149,7 @@ device_remove() {
 #
 device_name_test() {
     echo ":::$DEVICE"
-    [[ ${DEVICE} =~ /dev/nbd|/dev/loop ]] && p=p || p=""
+    [[ ${DEVICE} =~ /dev/nbd|/dev/loop ]] && p="p" || p=""
 }
 
 #################################
@@ -725,10 +725,8 @@ if [ -z "${LIVE_IMAGE}" ]; then
 	fi
 fi
 
-echo "  Das Live-Image >> ${LIVE_IMAGE##*/} << wird verwendet "
-
-echo "System erfolgreich überprüft."
-
+echo "  Das Live-Image >> ${LIVE_IMAGE##*/} << wird verwendet. "
+ls -lah "${LIVE_IMAGE}"
 
 # Größe des Sticks feststellen - Größe Ausgeben
 
@@ -750,14 +748,13 @@ dialog --title "Gesamtgröße verfügbarer Speicher" \
 
 size_live_system=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
 size_live_system_min=$((${size_live_system%%M *}+40))
-# echo "  $(size_live_system_min)MB werden mindestens für das Live-Images >> ${LIVE_IMAGE##*/} << und Tools benötigt "
 
 dialog --title "Speicher den das Live-System benötigt" \
 --backtitle "Speicher Live-System" \
 --msgbox "\n\
 		${size_live_system_min} MB werden mindestens für das Live-Image\n\n\
 			>> ${LIVE_IMAGE##*/} << \n\n\
-		und Tools benötigt\n " 0 0
+		und Tools benötigt.\n " 0 0
 
 if [[ "${size_device}" -lt "${size_live_system_min}" ]]; then
 #	echo "  Das Speichergerät hat nicht genügend Kapazität um das System zu erstellen. "
