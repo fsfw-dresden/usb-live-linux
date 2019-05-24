@@ -179,10 +179,11 @@ device_mount() {
 #
 grub_install() {
     if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/grub ]; then
-        echo "grub-install wird ausführt - Bitte warten "
-        grub-install --no-floppy --force --removable --root-directory=${TMPDIR}/${LABEL_LIVE} ${DEVICE}
+        echo "grub-install wird ausführt - Bitte warten.. "
+        grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${TMPDIR}/${LABEL_LIVE} ${DEVICE}
+        grub-install --target=x86_64-efi --recheck --removable --efi-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN} --root-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN}
     else
-        echo " Grub bereites installiert. "
+        echo " Grub bereits installiert. "
     fi
 }
 
@@ -888,13 +889,11 @@ main() {
 
     grub_install
 
-    echo " Datein / Verzeichnise anlegen"
-
     if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/boot-isos; echo "${TMPDIR}/${LABEL_LIVE}/boot/boot-isos angelegt "; fi
     if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/img ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/img; echo "${TMPDIR}/${LABEL_LIVE}/boot/img angelegt "; fi
 
     if [[ ! -e ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
-        cp variants/active/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
+        cp -a variants/active/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/
     fi || input_abbruch
 
     grub_config_create
@@ -905,11 +904,15 @@ main() {
 
     grub_config_append_zusatz_menu
 
+    # copy grub config also to first partition (for EFI boot)
+    cp -a ${TMPDIR}/${LABEL_LIVE}/boot/grub/grub.cfg ${TMPDIR}/${LABEL_WINDOWS_DATEN}/boot/grub/
+    cp -a variants/active/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_WINDOWS_DATEN}/boot/grub/
+
     device_remove
 
 }
 
 # ====== Ende ===============
-#
+
 main "${@}" | tee ${LOG_FILE}
 
