@@ -43,7 +43,7 @@ DATUM=$(date +%Y-%m-%d)
 # für mount ein temporäres Verzeichnis erstellen mktemp /tmp/FSFW-Uni-Stick_XXXXXX
 TMPDIR=$(mktemp --tmpdir -d FSFW-Uni-Stick_XXXXXX)
 # falls das geklappt hat, das Verzeichnis beim Terminieren wieder löschen, sonst kaputt.
-[ -z $TMPDIR ] && "echo Verzeichnis in /tmp/ konnte nicht angelegt werden" && exit 1 || trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
+[ -z $TMPDIR ] && echo "Verzeichnis in /tmp/ konnte nicht angelegt werden" && exit 1 || trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 
