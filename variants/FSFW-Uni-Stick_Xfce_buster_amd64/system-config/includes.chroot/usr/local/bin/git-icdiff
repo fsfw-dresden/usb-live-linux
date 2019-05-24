@@ -1,0 +1,3 @@
+#!/bin/sh -xv
+type icdiff || { echo "this mechanism needs package icdiff"; exit 1; }
+command git difftool --no-prompt --extcmd=icdiff "${@}"
