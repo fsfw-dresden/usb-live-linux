@@ -692,17 +692,18 @@ echo " DEFAULT_LIVE_IMAGE = ${DEFAULT_LIVE_IMAGE} "
 
 # System auf benötigte Software / Pakete prüfen
 
-echo "System prüft - sind alle benötigten Software-pakete vorhanden."
-    for paket in "sudo" "grub2" "parted" "dosfstools" "gzip" "syslinux-common" "wget" "dialog" "util-linux" # "Test-Paket"
-	do
-#		echo " ${paket} überprüfen "
-		if dpkg -s ${paket}|grep 'not installed'; then
-			echo "Das Paket >> $paket << ist nicht installiert"
-			echo "Installieren Sie es mit"
-			echo "		sudo apt-get install $paket "
-			exit 1
-		fi
-    done
+echo "Es wird geprüft, ob alle benötigten Software-Pakete vorhanden sind..."
+for paket in "sudo" "grub-common" "parted" "dosfstools" "gzip" "syslinux-common" "wget" "dialog" "util-linux" # "Test-Paket"
+do
+	if dpkg -s ${paket}|grep -q 'ok installed'; then
+		echo " + ${paket} gefunden "
+	else
+		echo "Das Paket >> $paket << ist nicht installiert!"
+		echo "Installieren Sie es bitte mit"
+		echo "		(sudo) apt install $paket "
+		exit 1
+	fi
+done
 
 # ${DEVICE} vorhanden ?
 if [ -z "$1" ]; then
