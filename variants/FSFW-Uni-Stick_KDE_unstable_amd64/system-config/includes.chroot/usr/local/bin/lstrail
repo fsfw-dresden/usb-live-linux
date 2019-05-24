@@ -1,0 +1,10 @@
+#!/bin/bash
+# list directory on each level of a (deep) subfolder
+path=$(realpath -s "${@-.}");
+[ -z "$path" ] && path="${@-.}"
+until [ -z "$path" ]; do
+    echo -en "$path\00";
+    [ "$path" = "${path%/*}" ] && break
+    path=${path%/*};
+done | xargs -0 --no-run-if-empty ls -lahd --time-style=long-iso --color=always
+

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[de_DE]=
+Comment=
+Exec=rstudio
+GenericName[de_DE]=R-Studio (Grafische Benutzerschnittstelle zu R)
+GenericName=R-Studio (Grafische Benutzerschnittstelle zu R)
+Icon=/usr/lib/rstudio/rstudio.png
+MimeType=
+Name[de_DE]=R-Studio
+Name=R-Studio
+Path=
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

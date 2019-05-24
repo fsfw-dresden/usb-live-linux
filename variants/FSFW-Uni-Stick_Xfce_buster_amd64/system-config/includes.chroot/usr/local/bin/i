@@ -1,0 +1,23 @@
+#!/bin/bash
+# run command for each argument
+if [[ $# -ge 2 ]]; then
+{
+    OLDIFS=$IFS;
+    IFS=;
+    oicmd=$1;
+    shift;
+    for param in "$@";
+    do
+        IFS=$OLDIFS;
+        [[ "$oicmd" =~ "PAR" ]] && icmd=$oicmd || icmd="$oicmd PAR";
+        param=${param/\'/\'\\\'\'};
+        icmd=${icmd//PAR/\'${param}\'};
+        cmdstr=${icmd//$\{param\}/${param}};
+        echo "$(color cyan)${cmdstr}$(color off):" 1>&2;
+        eval "${icmd}";
+        echo "$(color yellow)_______________________________$(color off)" 1>&2;                                                                               
+    done
+}
+else
+        echo "usage is 'i {command} parameter1 [parameter2] […]'"
+fi

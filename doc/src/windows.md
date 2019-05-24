@@ -31,19 +31,6 @@ Neuschreiben hindern würde. Außerdem ist er schneller.
 * Projekt-Link: [Sumatra PDF](http://www.sumatrapdfreader.org/free-pdf-reader.html)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/office/sumatra_pdf_portable)
 
-## Thunderbird
-
-Ein bekannter und vielfältig einsetzbarer E-Mail-Client von Mozilla, im
-Verhalten und Umfang ähnlich zu Microsoft-Outlook oder Apple Mail.
-
-<!-- todo: LDAP der TU/HS einbinden -->
-
-* portable installiert: 86,2 MB
-* Paket-Größe: 75,5 MB
-* Dokumentation: [Portable TB and Enigmail](https://securityinabox.org//en/guide/thunderbird/windows)
-* Projekt-Link: [Mozilla Thunderbird](https://www.mozilla.org/de/thunderbird/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/internet/thunderbird_portable)
-
 ## Notepad++
 
 Ein freier Texteditor für Windows als Ersatz für das klassische Notepad, aber
@@ -56,15 +43,14 @@ mit vielen Funktionen und Unterstützungen vor allem für Programmierer.
 
 ## TeXstudio
 
-Der hervorragende LaTeX-Editors, der auf der Linux-Partition dieses Sticks
+Der hervorragende LaTeX-Editor, der auf der Linux-Partition dieses Sticks
 verfügbar ist.  Eine freie Alternative zu WinEdit oder TeXnicCenter.
 <!--**Wichtig**: Das ist nur der Editor, die Konfiguration von LaTeX muss noch
 erfolgen. <!-- ToDo [Link auf eine Anleitung](http://fsfw-dresden.de/) -->
 
 Damit ihr mit TeXstudio vernünftig arbeiten könnt, braucht ihr aber noch eine
 LaTeX-Distribution.  Wir empfehlen [TeX Live](https://www.tug.org/texlive/),
-siehe auch unsere [ausführlichere Beschreibung](latex.md) von LaTeX auf dem
-Linux-Teil dieses Sticks.
+welches auch auf dem Stick bereit liegt.
 
 * Paket-Größe: 52,1 MB
 * Hersteller-Link: [texstudio.org](http://www.texstudio.org/)
@@ -88,22 +74,14 @@ Ein vielseitiges kleines Wiki für den eigenen Desktop zum speichern von Notizen
 ## Python (Miniconda)
 
 Installer für die Conda-Python-Distribution. Aus dieser Basis-Installation heraus kann man andere Python-Pakete,
-[z. B. für wissenschaftliches Rechnen](https://scipy.org/) oder [coole Grafiken](http://matplotlib.org/gallery/index.html)
+[z.B. für wissenschaftliches Rechnen](https://scipy.org/) oder [coole Grafiken](http://matplotlib.org/gallery/index.html)
 einfach nach Bedarf nachinstallieren.
 
 * [Infos zu Python von der FSFW](python.md)
 * [Miniconda Kurz-Info](https://conda.io/docs/glossary.html#miniconda-glossary)
 * [Installer für weitere Distributionen](https://conda.io/miniconda.html)
+* Siehe auch Beispiele in `FSFW-Material/hello-world-collection/python/`
 
-## GIMP
-
-Ein hochqualitatives Programm zur Bildbearbeitung, vergleichbar mit Adobe
-Photoshop.  Läuft auf GNU/Linux, OSX, und Windows.
-
-* portable installiert: 313 MB
-* Paket-Größe: 75,6 MB
-* Projekt-Link: [gimp.org](https://www.gimp.org/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/graphics_pictures/gimp_portable)
 
 ## Inkscape
 
@@ -133,14 +111,6 @@ Unterstützt zahlreiche Standardformate.
 * Hersteller-Link: [fixounet](http://fixounet.free.fr/avidemux/)
 * Paket von: [PortableApps.com](http://portableapps.com/apps/music_video/avidemux-portable)
 
-## Firefox
-
-Der wohl am meisten genutzte freie Web-Browser.
-
-* portable installiert: 190 MB
-* Paket-Größe: 83 MB
-* Projekt-Link: [Firefox bei Mozilla](https://www.mozilla.org/de/firefox/products/)
-* Paket von: [PortableApps.com](http://portableapps.com/apps/internet/firefox_portable)
 
 ## VLC Media Player
 
@@ -248,13 +218,17 @@ es gibt noch eine ganze Reihe weiterer ausgezeichneter freier Software, die unte
 
 Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn vielleicht sind sie ja dennoch etwas für euch:
 
+
+* [GIMP](http://portableapps.com/apps/graphics_pictures/gimp_portable) Programm zur Bildbearbeitung, vergleichbar mit Adobe Photoshop.
+    * Projekt-Link mit Doku: [gimp.org](https://www.gimp.org/)
+
 * [Darktable](https://www.darktable.org/), ein Bildbearbeitungsprogramm ähnlich zu Adobe Photoshop
 
 * [avidemux](http://fixounet.free.fr/avidemux/),
   [auch portabel](http://portableapps.com/apps/music_video/avidemux-portable), Ein freier Video-Editor zum Schneiden, Filtern, und Kodieren von Filmen.  Unterstützt zahlreiche Standardformate.
 
 * [GNU Octave](https://www.gnu.org/software/octave/), eine freie Ersatz
-  für Matlab.
+  für Matlab. (Ist unter Linux installiert).
 
 * [Enigmail](https://www.enigmail.net/), ein Thunderbird-Plugin zur
   Verschlüsselung von E-Mails.  Dazu gibt es auch eine

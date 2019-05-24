@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Categories=Office;Publishing;
+Exec=cd ~/FSFW-Material/latex-vorlage/abschlussarbeit; texstudio muster-diplomarbeit.tex
+GenericName=LaTeX Editor
+Comment=LaTeX development environment
+Keywords=editor;latex;pdflatex;xelatex;lualatex;context;bibtex;
+Icon=texstudio
+MimeType=text/x-tex;
+Name=TeXstudio mit FSFW LaTeX Vorlage
+StartupNotify=false
+Terminal=false
+Type=Application
+

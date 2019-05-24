@@ -1,0 +1,51 @@
+#!/bin/bash
+# convenience script to show information about debian
+# packages in a nice, colourful, human-readable way
+
+{ type dpkg-query && type apt-cache; } >/dev/null || { echo "this mechanism needs dpkg and apt. You even on debian?"; exit 1; }
+{ type ccze && type sed && type du && type less; } >/dev/null || { echo "this mechanism needs ccze, sed, coreutils and less."; exit 1; }
+
+dpkg-info()
+{
+    for pkg in $*;
+    do
+        {
+            #echo ${pkg}
+            #COLUMNS=$(tput cols)
+            {
+                dpkg-query -s ${pkg} 2>/dev/null && echo
+            } | ccze -A -o nolookups && {
+                IFS=${IFS/ /}
+                list=($(dpkg -L ${pkg} 3>/dev/null | sed "s|^[^/]*||"|tail --lines=+2)) &&
+                [ ${#list[*]} -gt 0 ] &&
+                for item in ${list[@]};
+                do
+                    {
+                        #echo $item
+                        [ -L "${item}" ] && [ ! -d $(realpath "${item}") ] && 
+                        links=("${links[@]}" "${item}") ||
+                        [ -f "${item}" ] &&
+                        files=("${files[@]}" "${item}") ||
+                        dirs=("${dirs[@]}" "${item}")
+                    }
+                done
+                [ ${#files[@]} -gt 0 ] &&
+                echo "package ${pkg} contains:" &&
+                echo -n "$(du -hc ${files[@]} | sed -nr "s/(.*)\s+total/\1/p") in ${#files[@]} $(ngettext 'file' 'files' ${#files[@]})" &&
+                { [ ${#links[@]} -eq 0 ] || echo -n " and ${#links[@]} $(ngettext 'symbolic link' 'symbolic links' ${#links[@]})"; } &&
+                echo " within ${#dirs[@]} $(ngettext 'directory' 'directories' ${#dirs[@]})" &&
+                ls --color=always -lahd --time-style=+" %^a %F %R" "${list[@]}"
+                debsums -s ${pkg}
+            } 2>&1
+            echo
+            {
+                apt-cache showsrc ${pkg} &&
+                apt-cache show ${pkg} &&
+                apt-cache policy ${pkg}
+            } | ccze -A -o nolookups
+        } | less -SRiM~ --shift 1 -PM"dpkg -l ${pkg}: ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB%..%t"
+    done
+}
+
+dpkg-info $*
+#type dpkg-info

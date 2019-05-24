@@ -1,0 +1,2 @@
+# set GUI alarm bell volume, pitch and duration
+xset b 10 80 200 &

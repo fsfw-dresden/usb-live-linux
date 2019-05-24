@@ -1,0 +1,128 @@
+##  Staging 2018
+
+- ###  Noch einzusortieren
+
+- :x:  aptitude  --	Anständiger Paketmanager (Text UI)
+- :o:  sysdig  --	Mächtiges Systemanalysewerkzeug
+- :x:  ranger  --	Bester Dateimanager (Text UI)
+- :x:  tig  --		ncurses-based text-mode interface for Git
+- :x:  less  --		world class file viewer
+- :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
+- :x:  chromium  --	aims to build a safer, faster, and more stable internet browsing experience
+
+- ###  System Tools
+- :x:  haveged  --		userspace entropy daemon
+- :x:  etckeeper  --		tool to let /etc be stored in a git
+- :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
+- :x:  debian-goodies  --	dpigs      - Show which installed packages occupy the most space
+- :x:  testdisk  --	disk/file recovery tool
+- :x:  system-config-printer  --	configure the printing system
+- :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+- :x:  gparted  --	manipulate devices and partition tables
+- :x:  gnome-disk-utility  --	manage and configure disk drives and media
+- :x:  debootstrap  --		used to create a Debian base system from scratch
+- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
+- :o:  tuned-utils  --	
+- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
+- :x:  icdiff  --	terminal side-by-side colorized word diff
+- :x:  vbindiff  --	visually compare binary files
+- :x:  debsums  --	verification of installed package files against MD5 checksums
+- :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
+- :x:  iotop  --	displays a table of current I/O usage by processes on the system
+- :x:  iftop  --	displays bandwidth usage information on an network interface
+- :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
+- :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
+- :x:  renameutils  --	to make file renaming easier
+- :x:  pipemeter  --	shows the speed of data moving from input to output
+- :x:  strace  --	System call tracer
+- :x:  fatrace  --	report system wide file access events
+- :x:  speedometer  --	measure and display the rate of data across a network connection
+- :x:  jdupes  --	identify and delete or link duplicate files
+- :x:  elinks  --	advanced text-mode WWW browser
+- :x:  beep  --		advanced PC-speaker beeper
+- :x:  caca-utils  --	text mode graphics utilities
+- :x:  lm-sensors  --	hardware health monitoring: read temperature/voltage/fan sensors
+- :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
+- :x:  traceroute  --	displays the route used by IP packets on their way
+- :x:  anacron  --	periodic command scheduler for systems not running continuously.
+- :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
+- :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+- :x:  ripgrep  --	line-oriented search tool that recursively searches
+- :x:  wcalc  --	command-line scientific calculator
+- :x:  fd-find  --	user-friendly alternative to find
+- :x:  dstat  --	versatile resource statistics tool
+
+- ###  Desktop 2018
+- :x:  guake  --		Drop-down terminal (GTK)
+- :o:  yakuake  --		Drop-down terminal (KDE)
+- :x:  evince  --		multi-page document viewer
+- :x:  lightning  --		Calendar Extension for Thunderbird
+- :x:  lightning-l10n-de  --		
+- :x:  hunspell-de-de  --		
+- :x:  hyphen-de  --		German hyphenation patterns
+- :o:  dolphin-nextcloud  --		
+- :x:  nautilus-nextcloud  --		
+- :x:  fusedav  --		mount WebDAV shares
+- :o:  kdeconnect  --		connect smartphones
+- :x:  fonts-bebas-neue  --	Flat, rounded style font designed
+- :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
+- :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
+- :x:  fonts-crosextra-carlito  --	metric-compatible with Calibri font
+- :x:  fonts-cabin  --	humanist sans serif font
+- :x:  fonts-ebgaramond  --	EB Garamond OpenType fonts
+- :x:  fonts-hack-otf  --	Typeface designed for source code
+- :x:  fonts-humor-sans  --	Font that looks like handwritten text
+- :x:  fonts-lato  --	"Lato" means "Summer" in Polish
+- :x:  fonts-linuxlibertine  --
+- :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
+- :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+- :x:  fonts-opendin  --	
+- :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
+- :x:  fonts-pecita  --	hand-written font that give a natural rendition.
+- :x:  fonts-roboto  --	default font in Android and ChromeOS, recommended font for … Material Design
+- :x:  fonts-roboto-slab  --	Slab Serif font for the Roboto font family
+- :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic
+- :x:  fonts-ubuntu  --		developed between 2010-2011. Dalton Maag
+- :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
+- :x:  diffpdf  --	
+- :x:  rss-glx  --	
+- :x:  unicode-screensaver  --	
+- :x:  xscreensaver  --	modular screen saver and locker for X11
+- :x:  xscreensaver-gl-extra  --	
+- :x:  pulseaudio-equalizer  --	
+- :x:  pavucontrol  --	PulseAudio Volume Control
+- :x:  ocrmypdf  --	
+- :x:  libreoffice-gtk3  --	
+- :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
+- :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
+- :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
+- :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
+- :x:  poppler-utils  --	command line utilities to manipulate PDFs
+- :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
+- :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
+- :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
+- :o:  powerdevil  --  KDE power settings (& brightness control keys)
+- :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
+- :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
+- :x:  qgis  --		Qt-based Geographic Information System
+- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+- :x:  kicad  --	Electronic design software: suite of programs for the creation of printed circuit boards
+- :x:  kicad-footprints  --	footprint is a drawing of the physical component including its land pattern (e.g. the layout of pads on the circuit board
+- :x:  kicad-symbols  --	schematic symbols
+- :x:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
+- :x:  openmodelica  --	Modelica modeling, compilation and simulation environment
+- :o:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
+- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
+- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
+- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
+- :x:  vim-airline-themes  --	themable vim status bar + themes
+- :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
+- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :x:  fortunes  --		fortune cookies
+- :x:  fortunes-de  --		Glückskekse
+- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
+- :x:  nmap  --		utility for network exploration or security auditing
+- :x:  ccze  --		robust and modular log coloriser
+
+
+

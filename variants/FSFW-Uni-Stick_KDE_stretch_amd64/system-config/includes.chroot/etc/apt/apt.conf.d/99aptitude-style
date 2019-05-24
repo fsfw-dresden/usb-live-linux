@@ -1,0 +1,16 @@
+# reference: https://aptitude.alioth.debian.org/doc/en/ch02s05s03.html
+# defined in: /usr/src/repositories/cwidget/src/cwidget/toplevel.cc
+Aptitude::UI::Styles {
+	DisabledMenuEntry {fg black; bg cyan; set dim;};
+	DownloadProgress {fg cyan; bg yellow;};
+	Header {fg white; bg cyan; set bold;};
+	HighlightedMenuBar {fg white; bg cyan; set bold,reverse;};
+	HighlightedMenuEntry {fg white; bg cyan; set bold,reverse;};
+	MenuBar {fg white; bg cyan; set bold;};
+	MenuBorder {fg white; bg cyan; set bold;};
+	MenuEntry {fg white; bg cyan;};
+	MultiplexTab {fg white; bg cyan;};
+	MultiplexTabHighlighted {fg cyan; bg white;};
+	Progress {fg cyan; bg yellow;};
+	Status {fg white; bg cyan; set bold;};
+};

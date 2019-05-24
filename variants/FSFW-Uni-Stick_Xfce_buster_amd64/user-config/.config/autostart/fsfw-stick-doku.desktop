@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=Script
+Type=Application
+Exec=sh -c 'pgrep firefox || nohup firefox ~/FSFW-Material/stick-doku/index.html'
+Terminal=false
+StartupNotify=false

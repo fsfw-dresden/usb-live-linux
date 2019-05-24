@@ -12,10 +12,12 @@ Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
 - [→Freie Software für Windows](windows.md)
 - [→Python](python.md)
 - [→R](r.md)
+- [WLAN (Eduroam) einrichten](wlan.md)
 
 ## Rechtliches
 Das Linux-Live-System auf dem Stick basiert auf der Distribution
-[Debian stable](https://www.debian.org/) und enthält nur freie Software.
+[Debian stable](https://www.debian.org/) und enthält freie Software (und einige
+herstellereigene Treiberprogramme, z.B. für die verschiedenen WLAN-Chipsätze).
 Der Quellcode zu allen Programmen kann entweder von [debian](https://www.debian.org/)
 oder auf [Nachfrage](mailto:kontakt@fsfw-dresden.de) über uns bezogen werden.
 
@@ -63,6 +65,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
   LaTeX-Dokumente; eine kleine Einführung in die Arbeit mit LaTeX findet
   ihr [→hier](latex.md).
 - [LibreOffice][], eine freie Alternative zu Microsoft Office
+- [FreeCAD][], eine Python/Qt-basierte freie 3D-CAD-Platform (mit Architektur-Werkzeugen, Finite-Elemente, Robotik- & Fluidsimulation) im Aufbau
 - [GNU Octave][], eine freie Alternative zu Matlab
 - [R-Studio][], grafisches Frontend für [R][] (mächtiges Werkzeug für Statistik und Datenmodellierung, siehe auch: [extra Doku](r.md))
 - [geogebra][], ein interaktives Geometrieprogramm
@@ -86,6 +89,7 @@ Genauer gesagt ist unter anderem folgendes auf dem Stick drauf:
 [TeXLive]: https://www.tug.org/texlive/
 [qucs]: http://qucs.sourceforge.net/
 [Inkscape]: https://inkscape.org/en/
+[FreeCAD]: https://www.freecadweb.org/
 [GNU Octave]: https://www.gnu.org/software/octave/
 [R-Studio]: https://www.rstudio.com/
 [R]: https://cran.r-project.org/
@@ -113,28 +117,59 @@ an freien Programmen, die unter Windows laufen.
 
 ## Über die Hochschulgruppe für freie Software und freies Wissen
 
-Die Ende 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
+Die 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
 beschäftigt sich mit den technischen sowie gesellschaftlichen Aspekten freier
 Software und freien Wissens an der Hochschule.
 
-Neben unserem Ziel, themenspezifische Bildungsangebote mit Hilfe der
-Organisation von Vorträgen, Wissenssammlungen und Veranstaltungen
-bereitzustellen, hat sich die Gruppe auch zur Förderung von sicherer
-Kommunikation und der Nutzungsverbesserung von täglich im universitären Umfeld
-verwendeter Software, wie zum Beispiel LaTeX, ausgesprochen. Darüber hinaus
-bietet die Hochschulgruppe für bereits bestehende verteilte Initiativen eine
-Austauschplattform und Vermittlungsgelegenheit.
+Unsere Ziele sind unter anderem
+
+- Themenspezifische Bildungsangebote (z. B. Workshops) und Veranstaltungen
+- Förderung von sicherer Kommunikation (z. B. Verschlüsselung)
+- Nutzungsverbesserung von relevanter Software (z.B. LaTeX)
+- Austausch und Vernetzung
 
 Mehr Informationen zum Programm der FSFW gibt es in
 unserem [Programmpapier](https://fsfw-dresden.de/programm.html).
 
-Weitere interessante Angebote von uns
+Als Hochschulgruppe leben wir vom individuellen Engagement.
+Wenn Du Dich für unsere Themen interessierst, komm sehr gerne zum
+[Plenum](https://fsfw-dresden.de/#plenum) oder schreibe uns eine [Mail](mailto:kontakt@fsfw-dresden.de)
+Dich erwarten coole Leute, eine Menge Erfahrungen und das Gefühl, etwas bewegen zu können.
+
+Die wichtigsten Links von uns für Euch:
 
 - [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
-- [Anleitung zu Mailverschlüsselung](https://fsfw-dresden.de/gpg)
+- [Ringvorlesung im WiSe18/19](https://fsfw-dresden.de/ringvorlesung) (Freie Software und Freies Wissen als Beruf)
+- [Workshops und Kurse](https://wiki.fsfw-dresden.de/doku.php/doku/vortraege_veranstaltungen_kurse) (git, Python, Mailverschlüsselung, ...)
 - [Blog](https://fsfw-dresden.de/blog)
 - [Newsletter](https://fsfw-dresden.de/newsletter)
+- [Beteiligungsmöglichkeiten](https://fsfw-dresden.de/mitmachen)
 
 
-Die FSFW bedankt sich ganz herzlich bei den StuRä der TU Dresden und der HTW für die
-finanzielle Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick)
+Die FSFW bedankt sich ganz herzlich beim [StuRa der TU Dresden](https://stura.tu-dresden.de/)
+für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
+
+Empfehlenswerte Dienste des ZIH und des StuRa:
+
+- [ZIH: Erstsemester-Info](https://tu-dresden.de/zih/dienste/service-desk/ese)
+    - Übersichtsseite speziell für Erstsemester
+- [ZIH: Cloudstore](https://cloudstore.zih.tu-dresden.de/)
+    - Speichern und Austauschen von Dateien (besser als Dropbox etc. (Datenschutz!))
+    - [Detailierte Informationen](https://tu-dresden.de/zih/dienste/service-katalog/zusammenarbeiten-und-forschen/datenaustausch/cloudstore/index)
+- [ZIH: VPN](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/index)
+    - Ermöglicht Zugriff von außen auf TU-Netz
+    - Wichtig, z.B. für Zugriff auf Forschungsliteratur
+- [StuRa: Etherpad](https://pad.stura.tu-dresden.de)
+    - Online-Editor zur gleichzeitigen kollaborativen Text-Bearbeitung
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:etherpad)
+- [StuRa: Kanban](https://kanban.stura.tu-dresden.de/)
+    - Werkzeug zur Gruppen Aufgabenkoordination in Gruppen
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:kanban)
+- [StuRa: Only-Office](https://docs.stura.tu-dresden.de/)
+    - Datenschutzfreundlicher Ersatz für GoogleDocs
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:docs)
+- [StuRa: Share-LaTeX](https://tex.stura.tu-dresden.de/login)
+    - Online-Editor zur gleichzeitigen kollaborativen Bearbeitung von LaTeX-Dokumenten (z.B. Seminararbeiten)
+    - [Detail-Infos](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:sharelatex)
+- Übersicht über alle Dienste des [ZIH](https://tu-dresden.de/zih/die-einrichtung/a-z) und des [StuRa](https://wiki.stura.tu-dresden.de/doku.php?id=allgemein:dienste:start)
+

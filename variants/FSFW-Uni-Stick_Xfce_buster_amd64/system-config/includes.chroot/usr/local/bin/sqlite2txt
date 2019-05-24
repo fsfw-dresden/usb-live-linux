@@ -1,0 +1,2 @@
+#!/bin/bash
+[ -f "$@" ] && file="$@"; dumpsqlite3 "$file" > "${file}.sql"

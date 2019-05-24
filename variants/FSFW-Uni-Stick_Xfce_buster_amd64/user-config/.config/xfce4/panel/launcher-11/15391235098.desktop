@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Jami
+Comment=Jami is a secured and distributed communication software.
+Exec=gnome-ring %u
+Icon=jami
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Network;Telephony;
+Keywords=chat;talk;im;message;voip;
+X-XFCE-Source=file:///usr/share/applications/gnome-ring.desktop

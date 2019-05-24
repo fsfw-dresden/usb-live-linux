@@ -1,0 +1,4 @@
+[Keyboard]
+KeyboardRepeating=true
+RepeatDelay=250
+RepeatRate=35

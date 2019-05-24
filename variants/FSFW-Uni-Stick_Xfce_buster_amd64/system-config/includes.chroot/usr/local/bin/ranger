@@ -1,0 +1,4 @@
+#!/bin/sh
+# overcome sensible-pager fork loop
+. /etc/profile
+exec /usr/bin/ranger $*

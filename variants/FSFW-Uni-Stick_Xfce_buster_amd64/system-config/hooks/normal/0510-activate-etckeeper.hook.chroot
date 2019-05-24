@@ -1,0 +1,6 @@
+#!/bin/sh
+git config --system user.name system
+git config --system user.email root@localhost
+cd /etc
+git reset hosts
+etckeeper commit "Initial commit"

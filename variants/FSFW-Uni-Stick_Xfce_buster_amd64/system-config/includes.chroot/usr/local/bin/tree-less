@@ -1,0 +1,29 @@
+#!/bin/bash
+# depends tput ncurses-bin tree
+# following lines from my /etc/profile.d/less-termcaps.sh
+TERM=${TERM:-linux}
+LESS_TERMCAP_us=$(tput bold; tput setaf 5) # underline start: bold, magenta
+LESS_TERMCAP_ue=$(tput sgr0) # underline end: norm
+
+LESS_TERMCAP_so=$(tput bold; tput rev; tput setaf 2; tput setab 0) # standout mode start: bright green, reverse
+LESS_TERMCAP_se=$(tput rmso; tput sgr0) # standout mode end: reset
+
+LESS_TERMCAP_mb=$(tput bold; tput setaf 5) # blinking start: bold, magenta
+LESS_TERMCAP_md=$(tput bold; tput setaf 6) # bold mode start: bold, cyan
+LESS_TERMCAP_me=$(tput sgr0) # mode end: reset
+
+LESS_TERMCAP_mr=$(tput rev)
+LESS_TERMCAP_mh=$(tput dim; tput setab 5)
+LESS_TERMCAP_ZN=$(tput ssubm)
+LESS_TERMCAP_ZV=$(tput rsubm)
+LESS_TERMCAP_ZO=$(tput ssupm)
+LESS_TERMCAP_ZW=$(tput rsupm)
+
+export LESS_TERMCAP_ZZ=$(tput sgr0) # reset: do not litter 'env' output
+
+# from my /etc/profile.d/less-options.sh
+export LESS="-SRiMJj.2~ --shift 5"
+
+[ ! -e "$1" ] && par=$1 && shift || par=;
+[ -z "$1" ] && dir=$(pwd) || dir=$(realpath "$@");
+cat <(tree -hDC --dirsfirst --timefmt '%F' $par "$dir"|sed -r 's/([^.])\.\//\1/') <(du -sh "$dir") | less

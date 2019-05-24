@@ -1,0 +1,24 @@
+#!/bin/bash
+git log --name-only --date=iso --reverse --pretty=format:%at "$@"\
+| perl -00ln -e '($d,@f)=split/\n/;$d{$_}=$d for grep{-e}@f' \
+             -e '}{utime undef,$d{$_},$_ for keys%d'
+
+recursive_touch() {
+#  echo $1
+#  sleep 1
+
+  while IFS= read -r -d '' dir; do
+  #find -name '.git*' -prune -o -type d -print0 | while read -d $'\0' dir; do
+    [ -d "${dir}" ] && recursive_touch "${dir}"
+  done < <(find "${1}" -mindepth 1 -maxdepth 1 -name '.git*' -prune -o -type d -print0)
+#  color red
+  touch -r "$(find "${1}" -mindepth 1 -maxdepth 1 -name '.git*' -prune -o -print0|xargs -0 ls -1artd|tail -1)" "${1}"
+#  color off
+# find -name '.git*' -prune -o -type d 
+#  -exec sh -c 'touch -r $(ls -1artd {}/ | tail -1) {}' \;
+}
+#set -xv
+#echo "'$IFS'"
+recursive_touch ./
+#echo "'$IFS'"
+set +xv

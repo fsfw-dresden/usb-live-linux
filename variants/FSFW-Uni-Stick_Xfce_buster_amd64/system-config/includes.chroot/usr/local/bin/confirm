@@ -1,0 +1,9 @@
+#!/bin/bash -xv
+{
+    read -n1 -sp "Really execute \"$*\"? [y/any]" -r input;
+    echo;
+    if [ "$input" == "y" ]; then
+        eval $*;
+    fi
+}
+

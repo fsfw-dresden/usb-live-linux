@@ -1,0 +1,14 @@
+[Appearance]
+Skin=legacy
+
+[Shortcuts]
+view-full-screen=F11
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+DynamicTabTitles=true
+Height=60
+KeepOpen=false
+KeepOpenAfterLastSessionCloses=true
