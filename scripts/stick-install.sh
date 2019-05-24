@@ -19,7 +19,7 @@
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
-# vim:ts=4:sw=4:expandtab
+# vim:ts=4:sts=4:sw=4:expandtab
 #
 # TODO: LANG testen und fals nicht vorhanden auf C (en) stellen -- verschiedene Sprachen unterstützen de, en ....
 . "`dirname "${0}"`/functions.sh"
@@ -715,13 +715,13 @@ main() {
     # ${LIVE_IMAGE} vorhanden ?
     if [ -z "${LIVE_IMAGE}" ]; then
         if [ -n "${DEFAULT_LIVE_IMAGE}" ] && [ -s "${DEFAULT_LIVE_IMAGE}" ]; then
-                # echo "${DEFAULT_LIVE_IMAGE} ist vorhanden"
-                LIVE_IMAGE=${DEFAULT_LIVE_IMAGE}
-            else
-                echo "  Skript wird abgebrochen. Es wurde kein Live-Image gefunden. "
-                echo "  Live-Image erstellen oder angeben."
-                echo "  (z.B. sudo scripts/stick-install.sh /dev/sdb live-image.iso ) "
-                exit 1
+            # echo "${DEFAULT_LIVE_IMAGE} ist vorhanden"
+            LIVE_IMAGE=${DEFAULT_LIVE_IMAGE}
+        else
+            echo "  Skript wird abgebrochen. Es wurde kein Live-Image gefunden. "
+            echo "  Live-Image erstellen oder angeben."
+            echo "  (z.B. sudo scripts/stick-install.sh /dev/sdb live-image.iso ) "
+            exit 1
         fi
     fi
 
@@ -736,8 +736,8 @@ main() {
 
     # echo "  ${size_device} werden vom verwendeten Speichergerät >> ${DEVICE} << bereitgestellt "
     dialog --title "Gesamtgröße verfügbarer Speicher" \
-    --backtitle "Speicher der zur Verfügung steht " \
-    --msgbox "\n\
+        --backtitle "Speicher der zur Verfügung steht " \
+        --msgbox "\n\
   ${size_device} MB werden vom verwendet Speichergerät\n\n\
       >> ${DEVICE} <<  bereitgestellt\n " 0 0
 
@@ -750,8 +750,8 @@ main() {
     size_live_system_min=$((${size_live_system%%M *}+40))
 
     dialog --title "Speicher den das Live-System benötigt" \
-    --backtitle "Speicher Live-System" \
-    --msgbox "\n\
+        --backtitle "Speicher Live-System" \
+        --msgbox "\n\
   ${size_live_system_min} MB werden mindestens für das Live-Image\n\n\
       >> ${LIVE_IMAGE##*/} << \n\n\
   und Tools benötigt.\n " 0 0
@@ -768,9 +768,9 @@ main() {
         --stdout --backtitle "Toolbox - System-Auswahl"  \
         --title " Tool - Auswahl " \
         --checklist "\n Welche Tools sollen mit auf den Datenträger ?.\n " 13 65 5 \
-        "memtest86+"         " Tool für Speichertest      - 1,8 MB " on \
-        "hdt"             " Hardware Test (HDT)        - 1,3 MB " on \
-        "super-grub2-disk"         " Toolbox             -  20 MB " off \
+  "memtest86+"         " Tool für Speichertest      - 1,8 MB " on \
+  "hdt"             " Hardware Test (HDT)        - 1,3 MB " on \
+  "super-grub2-disk"         " Toolbox             -  20 MB " off \
         )
 
     # USB-Stick formatieren    -
@@ -794,94 +794,91 @@ main() {
             dialog --stdout --title "${size_device} MB Gesamtgröße" \
                 --backtitle "${DEVICE} wird neu formatiert" \
                 --yesno "\n\
-  Partition Live-System = $(( ${rel_size_live_system} * ${size_device} / 100)) MB. \n\n\
-  Partition Windows-Daten = $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB. \n\n\
-  Partition Persistence = $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB. \n " 0 0
+  Partition Windows-Daten: $(( ${rel_size_windows_daten} * ${size_device} / 100)) MB. \n\n\
+  Partition Live-System: $(( ${rel_size_live_system} * ${size_device} / 100)) MB. \n\n\
+  Partition Persistence: $(( ${rel_size_persistence_daten} * ${size_device} / 100)) MB. \n " 0 0
 
             if [[ $? -eq 0 ]]; then
-            device_name_test
-            partition=1
-            parted -s ${DEVICE} mklabel msdos
+                device_name_test
+                current_partition=1
+                parted -s ${DEVICE} mklabel msdos || input_abbruch
+
                 # Windows Daten Partition anlegen
                 if [[ ${p_windows_daten} -eq 0 ]] && [[ ${rel_size_windows_daten} -gt 0 ]]; then
-                parted -s --align=opt ${DEVICE} mkpart primary fat32 0% ${rel_size_windows_daten}%
-                parted -s ${DEVICE} align-check optimal ${partition}
-                mkfs.vfat -F32 -n ${LABEL_WINDOWS_DATEN} ${DEVICE}${p}${partition}
-                echo " Windows-Daten-Partition ${partition} - ${LABEL_WINDOWS_DATEN} angelegt "
-                partition=$(( ${partition} + 1 ))
+                    parted -s --align=opt ${DEVICE} mkpart primary fat32 0% ${rel_size_windows_daten}%
+                    parted -s ${DEVICE} align-check optimal ${current_partition}
+                    mkfs.vfat -F32 -n ${LABEL_WINDOWS_DATEN} ${DEVICE}${p}${current_partition}
+                    echo " Windows-Daten-Partition ${partition} - ${LABEL_WINDOWS_DATEN} angelegt "
+                    windaten_partition=${current_partition}
+                    current_partition=$(( ${current_partition} + 1 ))
                 fi
-            # Live-System Partition anlegen
-            live_partition=${partition}
-            parted -s --align=opt ${DEVICE} mkpart primary ext2 $(( 0 + ${rel_size_windows_daten} ))% $(( ${rel_size_windows_daten} + ${rel_size_live_system} ))%
-            parted -s ${DEVICE} set ${partition} boot on
-            parted -s ${DEVICE} align-check optimal ${partition}
-            mkfs.ext2 -m 0 -L ${LABEL_LIVE} ${DEVICE}${p}${partition}
-                echo " Live-Image-Partition ${partition} - ${LABEL_LIVE} angelegt "
-            partition=$(( ${partition} + 1 ))
+
+                # Live-System Partition anlegen
+                live_partition=${current_partition}
+                parted -s --align=opt ${DEVICE} mkpart primary ext2 $(( 0 + ${rel_size_windows_daten} ))% $(( ${rel_size_windows_daten} + ${rel_size_live_system} ))%
+                parted -s ${DEVICE} set ${current_partition} boot on
+                parted -s ${DEVICE} align-check optimal ${current_partition}
+                mkfs.ext2 -m 0 -L ${LABEL_LIVE} ${DEVICE}${p}${current_partition}
+                echo " Live-Image-Partition ${current_partition} - ${LABEL_LIVE} angelegt "
+                current_partition=$(( ${current_partition} + 1 ))
+
                 # Persistence Daten Partition anlegen
                 if [[ ${p_persistence_daten} -eq 0 ]] && [[ ${rel_size_persistence_daten} -gt 0 ]]; then
-                persistence_partition=${partition}
-                parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${rel_size_windows_daten} + ${rel_size_live_system} ))% 100%
-                parted -s ${DEVICE} align-check optimal ${partition}
-                mkfs.ext4 -m 0 -L ${LABEL_PERSISTENCE_DATEN} ${DEVICE}${p}${partition}
-                echo " Persistence-Partition ${partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
+                    persistence_partition=${current_partition}
+                    parted -s --align=opt ${DEVICE} mkpart primary ext4 $(( 0 + ${rel_size_windows_daten} + ${rel_size_live_system} ))% 100%
+                    parted -s ${DEVICE} align-check optimal ${current_partition}
+                    mkfs.ext4 -m 0 -L ${LABEL_PERSISTENCE_DATEN} ${DEVICE}${p}${current_partition}
+                    echo " Persistence-Partition ${current_partition} - ${LABEL_PERSISTENCE_DATEN} angelegt "
                 fi
-              else
+            else
                 check_input_abbruch
             fi
-          else
-            check_input_abbruch
-          fi
-
-
         else
-            dialog --stderr --msgbox "\n Weiter ohne neu zu formatieren. \n " 0 0
-            part_labels=$(lsblk -n --output LABEL ${DEVICE} )
-            partition=0
-            for label in ${part_labels}; do
-                partition=$(( ${partition} + 1 ))
-                case "${label}" in
-                ${LABEL_LIVE})
-                    echo " ${label} Partition ${partition} vorhanden "
-                    live_partition=${partition}
-                    echo
-                  ;;
-                ${LABEL_WINDOWS_DATEN})
-                    echo " ${label} Partition ${partition} vorhanden "
-                                windaten_partition=${partition}
-                    echo
-                  ;;
-                ${LABEL_PERSISTENCE_DATEN})
-                    echo " ${label} Partition ${partition} vorhanden "
-                    persistence_partition=${partition}
-                    echo
-                  ;;
+            check_input_abbruch
+        fi
 
-                *)
-                    echo " Partition - ${label} - kann nicht benutzt werden "
-                    input_abbruch
-                  ;;
 
-                esac
+    else
+        dialog --stderr --msgbox "\n Weiter ohne neu zu formatieren. \n " 0 0
+        part_labels=$(lsblk -n --output LABEL ${DEVICE} )
+        partition=0
+        for label in ${part_labels}; do
+            partition=$(( ${partition} + 1 ))
+            case "${label}" in
+            ${LABEL_LIVE})
+                echo " ${label} Partition ${partition} vorhanden "
+                live_partition=${partition}
+                ;;
+            ${LABEL_WINDOWS_DATEN})
+                echo " ${label} Partition ${partition} vorhanden "
+                            windaten_partition=${partition}
+                ;;
+            ${LABEL_PERSISTENCE_DATEN})
+                echo " ${label} Partition ${partition} vorhanden "
+                persistence_partition=${partition}
+                ;;
+            *)
+                echo " Partition - ${label} - kann nicht benutzt werden "
+                input_abbruch
+                ;;
+            esac
+        done
 
-             done
-    #        echo " ${live_partition} Partition wird für das Live-System verwendet. "
-
-          if [[ -z ${live_partition} ]]; then
+        if [[ -z ${live_partition} ]]; then
             echo " Es gibt keine Partition, die für das Live-System nutzbar ist. "
             echo " Das Speichergerät sollte neu formatiert werden. "
             exit 1
-             else
+        else
             echo " ${live_partition} Partition wird für das Live-System verwendet. "
-          fi
+        fi
 
-          if [[ -z ${persistence_partition} ]]; then
+        if [[ -z ${persistence_partition} ]]; then
             echo " Es gibt keine Persistence-Partition die nutzbar ist. "
             echo " Das Speichergerät sollte neu formatiert werden. "
             input_abbruch
-             else
+        else
             echo " ${persistence_partition} Partition wird für Persistence-Partition verwendet. "
-          fi
+        fi
     fi
 
     echo " Gerät ist aktuell so partitioniert: "
