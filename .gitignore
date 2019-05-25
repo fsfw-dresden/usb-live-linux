@@ -2,6 +2,7 @@ doc/html/*.html
 
 images/*
 
+.apt-http-proxy
 .lock
 
 # from previous FSFW-Uni-Stick dir

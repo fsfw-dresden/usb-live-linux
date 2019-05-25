@@ -6,7 +6,6 @@ DISTRIBUTION=buster
 DESKTOP=Xfce
 FSFW_UNI_STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
-#    --apt-http-proxy "http://127.0.0.1:3142/" \
 lb config noauto \
     --distribution ${DISTRIBUTION} \
     --architectures amd64 \
@@ -45,6 +44,11 @@ lb config noauto \
     --firmware-chroot false \
 	"${@}"
 
+# use hidden marker file to enable proxying over local apt-cacher-ng instance
+if [ -e .apt-http-proxy ]; then
+    lb config noauto --apt-http-proxy http://127.0.0.1:3142/
+fi
+
 
 # für minimal
 #    --debootstrap-options --variant=minbase \		## funktioniert nicht
@@ -61,8 +65,8 @@ nbranch=${nbranch////_}			# ersetze von / in _
 nbranch=${nbranch//-/_}			# ersetze von - in _
 
 if [[ ! "${nbranch}" = "master" ]]; then
-lb config noauto \
-    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
+    lb config noauto \
+        --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
 	"${@}"
 fi
 
