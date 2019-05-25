@@ -39,9 +39,9 @@ dpkg-info()
             } 2>&1
             echo
             {
-                apt-cache showsrc ${pkg} &&
-                apt-cache show ${pkg} &&
                 apt-cache policy ${pkg}
+                apt-cache show ${pkg}
+                apt-cache showsrc ${pkg}
             } | ccze -A -o nolookups
         } | less -SRiM~ --shift 1 -PM"dpkg -l ${pkg}: ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB%..%t"
     done
