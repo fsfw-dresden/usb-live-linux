@@ -1,5 +1,8 @@
 #!/bin/bash
-# depends tput ncurses-bin tree
+# display a directory and all its content
+
+{ type tput && less && tree; } >/dev/null || { echo "this mechanism needs tput, tree and less."; exit 1; }
+
 # following lines from my /etc/profile.d/less-termcaps.sh
 TERM=${TERM:-linux}
 LESS_TERMCAP_us=$(tput bold; tput setaf 5) # underline start: bold, magenta

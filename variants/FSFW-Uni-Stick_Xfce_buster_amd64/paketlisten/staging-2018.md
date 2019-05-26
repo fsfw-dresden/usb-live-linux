@@ -127,4 +127,5 @@
 - :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
 - :x:  meld  --		graphical diff … recursive  directory diffs
 - :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
+- :x:  tree  --		recursive directory listing: depth indented colorized listing of files
 
