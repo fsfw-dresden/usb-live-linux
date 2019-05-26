@@ -4,8 +4,6 @@
     email = user@localhost
     
 # Anpassungen, um die Benutzbarkeit von git auf dem uni-stick-live-system zu erhöhen
-[core]
-    editor = kate -n
 [color]
     diff  = auto
     status= auto
