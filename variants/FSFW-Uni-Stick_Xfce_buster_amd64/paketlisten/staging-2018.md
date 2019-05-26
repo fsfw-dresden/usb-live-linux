@@ -52,7 +52,7 @@
 - :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
 
-- ###  Desktop 2018
+- ###  Desktop 2019
 - :x:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
@@ -123,6 +123,8 @@
 - :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
 - :x:  nmap  --		utility for network exploration or security auditing
 - :x:  ccze  --		robust and modular log coloriser
-
-
+- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
+- :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
+- :x:  meld  --		graphical diff … recursive  directory diffs
+- :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
 

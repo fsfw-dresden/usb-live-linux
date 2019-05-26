@@ -2,7 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="IconThemeName" type="string" value="Adwaita"/>
+    <property name="ThemeName" type="string" value="Adapta-Nokto"/>
+    <property name="IconThemeName" type="string" value="Papirus-Dark"/>
     <property name="EnableEventSounds" type="bool" value="true"/>
     <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
