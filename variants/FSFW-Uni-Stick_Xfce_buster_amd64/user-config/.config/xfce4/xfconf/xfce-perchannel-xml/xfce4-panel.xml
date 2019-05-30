@@ -9,7 +9,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="length-adjust" type="bool" value="false"/>
       <property name="length" type="uint" value="100"/>
-      <property name="size" type="uint" value="34"/>
+      <property name="size" type="uint" value="42"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="8"/>
