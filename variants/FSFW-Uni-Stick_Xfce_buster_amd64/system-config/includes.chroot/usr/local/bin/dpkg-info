@@ -13,6 +13,7 @@ dpkg-info()
             #echo ${pkg}
             #COLUMNS=$(tput cols)
             {
+                apt-cache policy ${pkg} && echo
                 dpkg-query -s ${pkg} 2>/dev/null && echo
             } | ccze -A -o nolookups && {
                 IFS=${IFS/ /}
@@ -30,20 +31,19 @@ dpkg-info()
                     }
                 done
                 [ ${#files[@]} -gt 0 ] &&
-                echo "package ${pkg} contains:" &&
-                echo -n "$(du -hc ${files[@]} | sed -nr "s/(.*)\s+total/\1/p") in ${#files[@]} $(ngettext 'file' 'files' ${#files[@]})" &&
+                echo -ne "package ${pkg} contains:\t " &&
+                { echo -n "$(du -hc ${files[@]} | sed -nr "s/(.*)\s+total/\1iB/p") in ${#files[@]} $(ngettext 'file' 'files' ${#files[@]})" &&
                 { [ ${#links[@]} -eq 0 ] || echo -n " and ${#links[@]} $(ngettext 'symbolic link' 'symbolic links' ${#links[@]})"; } &&
-                echo " within ${#dirs[@]} $(ngettext 'directory' 'directories' ${#dirs[@]})" &&
+                echo " within ${#dirs[@]} $(ngettext 'directory' 'directories' ${#dirs[@]})"; } | ccze -A -o nolookups && echo &&
                 ls --color=always -lahd --time-style=+" %^a %F %R" "${list[@]}"
                 debsums -s ${pkg}
             } 2>&1
             echo
             {
-                apt-cache policy ${pkg}
                 apt-cache show ${pkg}
                 apt-cache showsrc ${pkg}
             } | ccze -A -o nolookups
-        } | less -SRiM~ --shift 1 -PM"dpkg -l ${pkg}: ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB%..%t"
+        } | less -SRiM~ --shift 1 -PM"debian package info\: ${pkg}, ?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END)"
     done
 }
 
