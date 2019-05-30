@@ -10,7 +10,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 mkdir -pv config/includes.chroot/etc/skel
 rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
 scripts/copy-docs.sh
-rsync -vaih FSFW-Material/ config/includes.chroot/etc/skel/FSFW-Material/
+ln -sv  /usr/local/share/doc/FSFW-Dresden config/includes.chroot/etc/skel/FSFW-Material
 
 echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
 

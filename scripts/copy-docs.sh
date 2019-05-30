@@ -19,13 +19,15 @@ do
     echo "Datei geschrieben:" $TARGETFILE
 done
 
-mkdir -pv config/includes.chroot/etc/skel/FSFW-Material/stick-doku
-rsync -avP doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku/
+DOC_PATH=usr/local/share/doc/FSFW-Dresden
+mkdir -pv config/includes.chroot/${DOC_PATH}/stick-doku
+rsync -avP doc/html/ config/includes.chroot/${DOC_PATH}/stick-doku/
+rsync -vaih FSFW-Material/ config/includes.chroot/${DOC_PATH}/
 
 # Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo:
 # <https://github.com/fsfw-dresden/latex-vorlagen>.
 git submodule update --init --recursive
-rsync -avP --exclude=.git* doc/latex-vorlagen/ config/includes.chroot/etc/skel/FSFW-Material/latex-vorlage
+rsync -avP --exclude=.git* doc/latex-vorlagen/ config/includes.chroot/${DOC_PATH}/latex-vorlage
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 
