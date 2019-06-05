@@ -128,4 +128,16 @@
 - :x:  meld  --		graphical diff … recursive  directory diffs
 - :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
 - :x:  tree  --		recursive directory listing: depth indented colorized listing of files
-
+- :x:  sct  --		set screen color temperature - reduce or increase blue light
+- :x:  remmina  --		remote desktop client
+- :x:  remmina-plugin-vnc  --		VNC plugin for Remmina
+- :x:  remmina-plugin-nx  --		NX plugin for Remmina
+- :x:  remmina-plugin-rdp  --		RDP plugin for Remmina
+- :x:  remmina-plugin-spice  --		Spice plugin for Remmina
+- :x:  pmount  --		mount removable devices as normal user
+- :x:  toilet  --		prints text using large characters made of smaller characters
+- :x:  dlocate  --		speed up finding out which package a file belongs to (i.e. a very fast dpkg -S)
+- :x:  mosh  --		Mobile shell that supports roaming and intelligent local echo
+- :x:  kdeconnect  --		integrate linux desktop with android smartphone
+- :x:  tmux-themepack-jimeh  --		basic theme and powerline themes for tmux
+- :x:  fonts-powerline  --		font which provides symbols used by Powerline
