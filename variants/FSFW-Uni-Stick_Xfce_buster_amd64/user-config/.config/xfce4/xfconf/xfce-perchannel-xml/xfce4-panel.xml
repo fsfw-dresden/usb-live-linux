@@ -69,7 +69,7 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
       </property>
-      <property name="size-max" type="uint" value="22"/>
+      <property name="size-max" type="uint" value="36"/>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
     <property name="plugin-4" type="string" value="weather"/>
