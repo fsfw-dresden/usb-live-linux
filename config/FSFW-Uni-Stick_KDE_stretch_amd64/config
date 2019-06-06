@@ -38,7 +38,7 @@ lb config noauto \
     --apt apt \
     --apt-indices false \
     --apt-recommends false \
-    --initramfs live-boot \
+    --initramfs system-boot \
     --initsystem systemd \
     --firmware-chroot false \
 	"${@}"
