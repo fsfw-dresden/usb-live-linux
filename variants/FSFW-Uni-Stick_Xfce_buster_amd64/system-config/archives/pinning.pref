@@ -11,6 +11,10 @@ Package: *
 Pin: release a=experimental, o=Debian
 Pin-Priority: 499
 
+Package: telegram-desktop
+Pin: release a=experimental, o=Debian
+Pin-Priority: 500
+
 #Package: *
 #Pin: origin /deb.multimedia/
 #Pin-Priority: 509
