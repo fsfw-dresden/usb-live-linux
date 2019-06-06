@@ -1,0 +1,49 @@
+#!/bin/bash
+
+debug=
+verbose=
+[ "$1" == "-v" ] && shift && verbose=1
+
+# we want full interactive shell functionality
+[ -f /etc/profile ] && source /etc/profile
+[ -f /etc/bash/bash_aliases ] && source /etc/bash/bash_aliases
+shopt -s expand_aliases extglob globstar
+
+[ $debug ] && echo "\$@='$@'" >&2
+[ $debug ] && echo "\$*='$*'" >&2
+[ $debug ] && set -xv
+
+_get_first_arg() { echo "$1"|sed -r 's/(^[-[:alnum:]]+).*/\1/'; }
+[ $debug ] && echo "#######_get_first_arg \$1 = $(_get_first_arg $*)"
+[ $debug ] && echo "#######_get_first_arg \$1 = $(_get_first_arg $@)"
+[ $debug ] && echo "\$1 = $1"
+[ $debug ] && echo "\$2 = $2"
+[ $debug ] && echo "\$3 = $3"
+# get the unescaped, pristine shell command
+cmd=$(echo $(tmux display-message -p '#{pane_start_command}')|sed -r 's|^tmux-pane-wrap (-v *)*"*||;s|"*(; tmux-pane-respawn-prompt *)*||g')
+
+exe=$(_get_first_arg ${@})
+
+[ $verbose ] && echo "command: $(color cyan)${cmd}$(color off) ($(type ${exe}|head -1))" >&2
+[ $verbose ] && echo "@dir: $(color yellow)$(pwd)$(color off) @time: $(color yellow)$(date)$(color off)" >&2
+[ $verbose ] && echo
+tmux select-pane -T "${cmd}"
+#tmux display-message "foo : ${cmd}"
+#tmux display-message '#{pane_start_command}'
+
+# save command history
+[ $verbose ] && echo "$cmd" >>~/.bash_history.tmux
+
+[ $debug ] && set -xv
+
+starttime=$(date +%s)
+[ $debug ] && type -t $exe
+case $(type -t $exe) in
+  file) if [ $verbose ]; then eval "${@}"; else exec "${@}"; fi;;
+  *)    eval "${*}";;
+esac
+EXIT_STATUS=$?
+echo
+runtime=$(formattime $(($(date +%s)-$starttime)))
+printf "$(color cyan)${cmd//%/%%}$(color off) exited after $(color yellow)${runtime}\n$(color $([ $EXIT_STATUS -eq 0 ] && echo green || echo red))exit status $EXIT_STATUS$(color off) at $(color yellow)$(date)$(color off)\n" >&2
+#printf "$(color $([ $EXIT_STATUS -eq 0 ] && echo green || echo red))exit status $EXIT_STATUS$(color off) from $(color cyan)%s$(color off) exited at $(color yellow)%s $(color cyan)(runtime ${runtime} seconds)$(color off)\n" "${cmd}" "$(date)" >&2

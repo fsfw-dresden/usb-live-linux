@@ -1,0 +1,7 @@
+#!/bin/bash
+{
+  read -sn1 -p "[r] to respawn, [any] other key to exit"
+  case $REPLY in
+    r) eval printf -- '\\n%.s' {1..$(tput lines)}; tmux respawn-pane -k;;
+  esac
+}
