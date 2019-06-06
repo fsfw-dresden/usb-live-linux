@@ -4,6 +4,6 @@ set -e
 
 lb clean noauto "${@}"
 
-rm -f config/binary config/bootstrap config/chroot config/common config/source config/build
+rm -f config/binary config/bootstrap config/chroot config/common config/source config/build config/system
 rm -rf ./cache/bootstrap ./cache/contents.chroot ./config/hooks
-rm -f build.log fsfw-build-script.log 
+rm -f *build.log
