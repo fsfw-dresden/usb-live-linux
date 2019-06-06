@@ -103,7 +103,12 @@ echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausfü
 # sudo chown -R ${USER}:${USER} ./config
 
 # live-build config generieren und FSFW_UNI_Stick_*.iso bauen
-sudo lb build
+# sudo lb build
+
+sudo lb config "${@}" 2>&1 | tee config_build.log
+sudo lb bootstrap "${@}" 2>&1 | tee bootstrap_build.log
+sudo lb chroot "${@}" 2>&1 | tee chroot_build.log
+sudo lb binary "${@}" 2>&1 | tee binary_build.log
 
 # Benutzerberechtigung ändern 
 echo "Benutzerberechtigung ändern "
@@ -142,7 +147,6 @@ mv ./FSFW-Uni-Stick*.iso ../images/
 
 }
 
-
-main_function 2>&1 | tee -a fsfw-build-script.log
+main_function 2>&1 | tee fsfw-build-script.log
 
 
