@@ -5,8 +5,7 @@
 # Paketlisten nach extra-install Paketen durchsuchen und download nach config/packages.chroot/*
 #
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "extra-install_paket.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} "
+echo "extra-install_paket.sh  FSFW-Uni-Stick: varant PATH = ${CONFIG_PATH}  -- variant = ${FSFW_UNI_STICK_CONFIG} "
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 PAKET_LISTEN=($(ls ./config/package-lists/*))
@@ -28,15 +27,15 @@ for paket_liste in ${PAKET_LISTEN[@]}
 
 		if [ -n "${paket}" ]; then
 			 echo "download = ${paket}"
-			if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket} ];
+			if [ -e ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket} ];
 			  then
 				echo "${paket} - verfügbar "
 			  else
-				if [ ! -d ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ ]; then
-				 mkdir -p ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/
-				 echo " ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ erstellt"
+				if [ ! -d ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ ]; then
+				 mkdir -p ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/
+				 echo " ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/ erstellt"
 				fi
-				${DOWNLOAD} ${paket_quelle} -O ../config/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket}
+				${DOWNLOAD} ${paket_quelle} -O ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/packages.chroot/${paket}
 				echo "${paket} - geholt "
 			fi
 		fi
@@ -53,7 +52,7 @@ for paket_liste in ${PAKET_LISTEN[@]}
 done
 
 echo " extra-install_paket.sh -- system_config  aktuallisieren  "
-rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config
+rsync -avP ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/ config
 echo " extra-install_paket.sh --system_config  aktuallisiert fertig."
 
 
