@@ -58,13 +58,13 @@ fi
 sudo lb clean
 
 # System Configuration einspielen
-../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 
 # Paketlisten generieren
- if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then
-	 echo " ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)  wird ausgeführt "
-	 ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)
+ if [ -e ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then
+	 echo " ./auto/paketliste $(cat ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste)  wird ausgeführt "
+	 ./auto/paketliste $(cat ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste)
 	else
 	 ./auto/paketliste
 	 echo " ./auto/paketliste wird ausgeführt "
@@ -74,20 +74,20 @@ sudo lb clean
 
 # TODO:
 #script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
-../tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # Doku bauen und verteilen
 
 # TODO: 
 #script doku_create.sh		# ../html/*  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
-../tools/doku_create.sh
+$(repo_root)/tools/doku_create.sh
 
 # FSFW user config erstellen
 # in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
 
 echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
 
-../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
 # sudo lb config
@@ -107,12 +107,12 @@ sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
 
 # Image ins Verzeichnis images verschieben
 
-  if [ ! -d ../images/ ]; then
-	 mkdir -p ../images/
+  if [ ! -d $(repo_root)/images/ ]; then
+	 mkdir -p $(repo_root)/images/
 	 echo " Verzeichnis images erstellt."
   fi 
 
-mv ./FSFW-Uni-Stick*.iso ../images/
+mv ./FSFW-Uni-Stick*.iso $(repo_root)/images/
 
 # TODO:
 # USB-Stick erstellen - Speichergerät partitionieren,formatieren - FSFW_UNI_Stick_*.iso schreiben
