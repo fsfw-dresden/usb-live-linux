@@ -49,12 +49,12 @@ variant_path_set() {
     fi
 
 
-
-
     # Test ob Verzeichnis existiert
 
     if [[ -d "${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}" ]]; then
 	    echo "FSFW-Uni-Stick config:      ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- wird verwendet"
+	    export CONFIG_PATH
+	    export FSFW_UNI_STICK_CONFIG
 	else
 	    echo "FSFW-Uni-Stick config:      ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- existiert nicht"
 	    exit
