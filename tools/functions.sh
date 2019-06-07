@@ -23,34 +23,40 @@ check_program_exists() {
 variant_path_set() {
     BUILD_PATH=$PWD
 
-    echo "FSFW-Uni-Stick build PATH: $PWD "
+    echo "FSFW-Uni-Stick build PATH:  \$PWD == $PWD "
+    echo "FSFW-Uni-Stick ROOT PATH:   \$(repo_root) == $(repo_root) "
 
     CONFIG_PATH_DEFAULT="../config"
-    FSFW_UNI_STICK_CONFIG_DEFAULT=$(basename "$(readlink ${CONFIG_PATH_DEFAULT}/default)")
+    FSFW_UNI_STICK_CONFIG_DEFAULT=$(basename $(readlink ${CONFIG_PATH_DEFAULT}/default))
 
     FSFW_UNI_STICK_CONFIG=$(basename "$1")
     CONFIG_PATH=$(dirname "$1")
 
-    echo "FSFW-Uni-Stick config PATH: ${CONFIG_PATH} " 
-    echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
-
 
     if [[ ${CONFIG_PATH} == "." ]]; then
-	CONFIG_PATH=${CONFIG_PATH_DEFAULT}
-	echo "FSFW-Uni-Stick config PATH: ${CONFIG_PATH} " 
+	    CONFIG_PATH=${CONFIG_PATH_DEFAULT}
+	    echo "FSFW-Uni-Stick config PATH: \${CONFIG_PATH} == ${CONFIG_PATH} "
+	else
+	    echo "FSFW-Uni-Stick config PATH: \${CONFIG_PATH} == ${CONFIG_PATH} " 
+
     fi
 
     if [[ -z ${FSFW_UNI_STICK_CONFIG} ]]; then
-	FSFW_UNI_STICK_CONFIG=${FSFW_UNI_STICK_CONFIG_DEFAULT}
-	echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
+	    FSFW_UNI_STICK_CONFIG=${FSFW_UNI_STICK_CONFIG_DEFAULT}
+	    echo "FSFW-Uni-Stick config:      \${FSFW_UNI_STICK_CONFIG} == ${FSFW_UNI_STICK_CONFIG} "
+	else
+	    echo "FSFW-Uni-Stick config:      \${FSFW_UNI_STICK_CONFIG} == ${FSFW_UNI_STICK_CONFIG} "
     fi
+
+
+
 
     # Test ob Verzeichnis existiert
 
     if [[ -d "${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}" ]]; then
-	    echo "FSFW-Uni-Stick config: ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- wird verwendet"
+	    echo "FSFW-Uni-Stick config:      ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- wird verwendet"
 	else
-	    echo "FSFW-Uni-Stick config: ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- existiert nicht"
+	    echo "FSFW-Uni-Stick config:      ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG} -- existiert nicht"
 	    exit
     fi
 }
