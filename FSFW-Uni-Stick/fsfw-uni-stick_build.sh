@@ -34,23 +34,14 @@
 #	Windows Programme copieren ( auf WIN-DATEN Partition )
 #
 #
-
-FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_stretch_amd64"
-
-FSFW_UNI_STICK_CONFIG=$1
-echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
-
-# TUDO: testen ob Verzeichnis und config vorhanden existieren
-
-if [[ -z ${FSFW_UNI_STICK_CONFIG} ]]; then
-    FSFW_UNI_STICK_CONFIG=${FSFW_UNI_STICK_CONFIG_DEFAULT}
-    echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
-fi
+. $(git rev-parse --show-toplevel)/tools/functions.sh
 
 
 # Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
 # deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
 main_function() {
+
+variant_path_set ${@}
 
 # Hinweis bzgl. benötigter superuser-Rechete
 
@@ -105,10 +96,10 @@ echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausfü
 # live-build config generieren und FSFW_UNI_Stick_*.iso bauen
 # sudo lb build
 
-sudo lb config "${@}" 2>&1 | tee config_build.log
-sudo lb bootstrap "${@}" 2>&1 | tee bootstrap_build.log
-sudo lb chroot "${@}" 2>&1 | tee chroot_build.log
-sudo lb binary "${@}" 2>&1 | tee binary_build.log
+sudo lb config 2>&1 | tee config_build.log
+sudo lb bootstrap 2>&1 | tee bootstrap_build.log
+sudo lb chroot 2>&1 | tee chroot_build.log
+sudo lb binary 2>&1 | tee binary_build.log
 
 # Benutzerberechtigung ändern 
 echo "Benutzerberechtigung ändern "
@@ -147,6 +138,6 @@ mv ./FSFW-Uni-Stick*.iso ../images/
 
 }
 
-main_function 2>&1 | tee fsfw-build-script.log
+main_function ${@} 2>&1 | tee fsfw-build-script.log
 
 
