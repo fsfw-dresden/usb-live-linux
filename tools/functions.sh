@@ -25,8 +25,8 @@ variant_path_set() {
 
     echo "FSFW-Uni-Stick build PATH: $PWD "
 
-    FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_stretch_amd64"
     CONFIG_PATH_DEFAULT="../config"
+    FSFW_UNI_STICK_CONFIG_DEFAULT=$(basename "$(readlink ${CONFIG_PATH_DEFAULT}/default)")
 
     FSFW_UNI_STICK_CONFIG=$(basename "$1")
     CONFIG_PATH=$(dirname "$1")
