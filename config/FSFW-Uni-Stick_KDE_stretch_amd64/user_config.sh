@@ -5,7 +5,6 @@
 # erstellten der user Konfiguration aus Vorlagen von config/${FSFW_UNI_STICK_CONFIG}/user_config/src/...".
 #
 
-FSFW_UNI_STICK_CONFIG=$1
 echo "user_config.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
 
 # z.B. spezielle Doku bzw. abweichende Optionen je nach Desktop
@@ -17,6 +16,6 @@ echo "user_config.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} "
 
 echo "../tools/fsfw-user_config.sh ${FSFW_UNI_STICK_CONFIG} ausführen "
 
-../tools/fsfw-user_config.sh "${FSFW_UNI_STICK_CONFIG}"
+../tools/fsfw-user_config.sh
 
 # ---------------

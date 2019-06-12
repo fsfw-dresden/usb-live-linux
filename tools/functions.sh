@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 repo_root() {
         git rev-parse --show-toplevel
 }
@@ -26,7 +25,7 @@ variant_path_set() {
     echo "FSFW-Uni-Stick build PATH:  \$PWD == $PWD "
     echo "FSFW-Uni-Stick ROOT PATH:   \$(repo_root) == $(repo_root) "
 
-    CONFIG_PATH_DEFAULT="../config"
+    CONFIG_PATH_DEFAULT="$(repo_root)/config"
     FSFW_UNI_STICK_CONFIG_DEFAULT=$(basename $(readlink ${CONFIG_PATH_DEFAULT}/default))
 
     FSFW_UNI_STICK_CONFIG=$(basename "$1")

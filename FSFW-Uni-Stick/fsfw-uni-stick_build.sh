@@ -6,17 +6,17 @@
 #        	Nutzung variabler configurationen möglich
 #		alle Schritte in diesem Skript können auch einzeln ausgeführt werden 
 #
-#      VERSION: 0.0.3
+#      VERSION: 0.0.4
 #      OPTIONS: TUDO: = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
-#		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_jessie_amd64 (default)
+#		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_buster_amd64 (default)
 #
-#        NOTES: für - live-build - Debian jessie / Debian stretch - LANG=de_DE.UTF-8
+#        NOTES: für - open-infrastructure-system-* (live-build) - Debian jessie / Debian stretch / Debian buster - LANG=de_DE.UTF-8
 #               
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 2018-04-16
+#     REVISION: 2019-06-12
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
@@ -58,13 +58,13 @@ fi
 sudo lb clean
 
 # System Configuration einspielen
-$(repo_root)/tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/fsfw-uni-stick_system-config.sh
 
 
 # Paketlisten generieren
- if [ -e ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then
-	 echo " ./auto/paketliste $(cat ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste)  wird ausgeführt "
-	 ./auto/paketliste $(cat ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketliste)
+ if [ -e ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default ]; then
+	 echo " ./auto/paketliste ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/$(readlink ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default)  wird ausgeführt "
+	 ./auto/paketliste ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/$(readlink ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default)
 	else
 	 ./auto/paketliste
 	 echo " ./auto/paketliste wird ausgeführt "
@@ -74,7 +74,7 @@ $(repo_root)/tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
 
 # TODO:
 #script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
-$(repo_root)/tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/extra-install_paket.sh
 
 # Doku bauen und verteilen
 
@@ -87,7 +87,7 @@ $(repo_root)/tools/doku_create.sh
 
 echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
 
-$(repo_root)/tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/fsfw-uni-stick_user-config.sh
 
 # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
 # sudo lb config
@@ -135,6 +135,12 @@ mv ./FSFW-Uni-Stick*.iso $(repo_root)/images/
 # make Checksums (PGP, MD5, SHA256, SHA512)
 # create Torrent with Webseed
 # create Magnet Link
+
+
+# exportierte Variablen löschen
+
+unset CONFIG_PATH
+unset FSFW_UNI_STICK_CONFIG
 
 }
 

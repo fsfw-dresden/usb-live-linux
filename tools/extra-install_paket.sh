@@ -2,10 +2,16 @@
 #
 # Skript erstellt gerdg-dd@gmx.de 2016-10-21
 #
+#	VERSION: 0.0.4
+#
+#	CREATED: 2016-10-21
+#      REVISION: 2019-06-12
+
+#
 # Paketlisten nach extra-install Paketen durchsuchen und download nach config/packages.chroot/*
 #
 
-echo "extra-install_paket.sh  FSFW-Uni-Stick: varant PATH = ${CONFIG_PATH}  -- variant = ${FSFW_UNI_STICK_CONFIG} "
+echo "extra-install_paket.sh  FSFW-Uni-Stick: variant PATH = ${CONFIG_PATH}  -- variant = ${FSFW_UNI_STICK_CONFIG} "
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
 PAKET_LISTEN=($(ls ./config/package-lists/*))

@@ -2,17 +2,20 @@
 #
 # Skript erstellt gerdg-dd@gmx.de 2017-09-13
 #
+#	VERSION: 0.0.4
+#
+#	CREATED: 2017-09-13
+#      REVISION: 2019-06-12
+
+#
 # passende System config aktivieren -
 
-FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_jessie_amd64"
-
-FSFW_UNI_STICK_CONFIG=$1
-echo "config_links.sh  FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
+echo "FSFW-Uni-Stick System config: variant PATH = ${CONFIG_PATH}  -- variant = ${FSFW_UNI_STICK_CONFIG} "
 
 # link nach config/auto/config erstelen 
 
 rm ./auto/config
-ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
+ln -s ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
 
 # aufräumen 
 # - ist config/includes.chroot/*  vorhanden --> löschen
@@ -52,7 +55,7 @@ ln -s ../../config/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
 # system_config übernehmen
 
 echo " system_config ${FSFW_UNI_STICK_CONFIG} schreiben "
-rsync -avP ../config/${FSFW_UNI_STICK_CONFIG}/system_config/ config
+rsync -avP ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/ config
 echo " system_config  configuration fertig."
 
 
