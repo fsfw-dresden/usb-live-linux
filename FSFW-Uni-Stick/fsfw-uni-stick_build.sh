@@ -23,7 +23,7 @@
 
 # TODO: Skript Installation auf benötigte Pakete testen
 
-# 	sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu live-build live-config-systemd live-boot
+# 	sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu open-infrastructure-system-boot open-infrastructure-system-build open-infrastructure-system-config open-infrastructure-system-images
 
 # Dialog welche Aufgaben sollen eredigt werden ? - default alle ?
 #
@@ -62,9 +62,9 @@ $(repo_root)/tools/fsfw-uni-stick_system-config.sh
 
 
 # Paketlisten generieren
- if [ -e ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default ]; then
-	 echo " ./auto/paketliste ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/$(readlink ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default)  wird ausgeführt "
-	 ./auto/paketliste ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/$(readlink ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/paketlisten/default)
+ if [ -e ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default ]; then
+	 echo " ./auto/paketliste ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)  wird ausgeführt "
+	 ./auto/paketliste ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)
 	else
 	 ./auto/paketliste
 	 echo " ./auto/paketliste wird ausgeführt "
@@ -73,7 +73,7 @@ $(repo_root)/tools/fsfw-uni-stick_system-config.sh
 # extra Pakete holen
 
 # TODO:
-#script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
+#script extra-install_paket.sh 	# Paketlisten nach extra-install Paketen durchsuchen und download nach config/packages.chroot/*
 $(repo_root)/tools/extra-install_paket.sh
 
 # Doku bauen und verteilen
@@ -85,7 +85,7 @@ $(repo_root)/tools/doku_create.sh
 # FSFW user config erstellen
 # in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
 
-echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
+echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_VARIANT}"  ausführen "
 
 $(repo_root)/tools/fsfw-uni-stick_user-config.sh
 
@@ -139,8 +139,8 @@ mv ./FSFW-Uni-Stick*.iso $(repo_root)/images/
 
 # exportierte Variablen löschen
 
-unset CONFIG_PATH
-unset FSFW_UNI_STICK_CONFIG
+unset VARIANT_PATH
+unset FSFW_UNI_STICK_VARIANT
 
 }
 

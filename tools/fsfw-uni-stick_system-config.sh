@@ -10,12 +10,12 @@
 #
 # passende System config aktivieren -
 
-echo "FSFW-Uni-Stick System config: variant PATH = ${CONFIG_PATH}  -- variant = ${FSFW_UNI_STICK_CONFIG} "
+echo "FSFW-Uni-Stick System config: variant PATH = ${VARIANT_PATH}  -- variant = ${FSFW_UNI_STICK_VARIANT} "
 
 # link nach config/auto/config erstelen 
 
 rm ./auto/config
-ln -s ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
+ln -s ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/config ./auto/config
 
 # aufräumen 
 # - ist config/includes.chroot/*  vorhanden --> löschen
@@ -54,8 +54,8 @@ ln -s ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/config ./auto/config
 
 # system_config übernehmen
 
-echo " system_config ${FSFW_UNI_STICK_CONFIG} schreiben "
-rsync -avP ${CONFIG_PATH}/${FSFW_UNI_STICK_CONFIG}/system_config/ config
+echo " system_config ${FSFW_UNI_STICK_VARIANT} schreiben "
+rsync -avP ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/system_config/ config
 echo " system_config  configuration fertig."
 
 

@@ -1,8 +1,8 @@
 # FSFW-Uni-Stick
 Das Projekt "FSFW-Uni-Stick" besteht aus zwei Komponenten (jeweils angepasst auf die Zielgruppe Studierende bzw. den Anwendungsfall Studium):
 
-* Live-Linux System mit [vielen Anwendungen](config/FSFW-Uni-Stick_KDE_stretch_amd64/doc/FSFW-Uni-Stick_-_Paketliste.md)
-* Zusammenstellung von [Programmen für Windows](config/FSFW-Uni-Stick_KDE_stretch_amd64/doc/src/windows.md)
+* Live-Linux System mit [vielen Anwendungen](variants/FSFW-Uni-Stick_KDE_stretch_amd64/doc/FSFW-Uni-Stick_-_Paketliste.md)
+* Zusammenstellung von [Programmen für Windows](variants/FSFW-Uni-Stick_KDE_stretch_amd64/doc/src/windows.md)
 
 Weitere Infos: [https://fsfw-dresden.de/uni-stick](https://fsfw-dresden.de/uni-stick).
 

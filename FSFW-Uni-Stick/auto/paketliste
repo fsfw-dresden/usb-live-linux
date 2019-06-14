@@ -18,7 +18,7 @@
 
 PAKETLISTE=$@
 REPO_ROOT=$(git rev-parse --show-toplevel)
-DEFAULT_PAKETLISTE=$(readlink ${REPO_ROOT}/config/default/paketlisten/default)
+DEFAULT_PAKETLISTE=$(readlink ${REPO_ROOT}/variants/default/paketlisten/default)
 PAKETPATH=./config/package-lists
 
 DATUM=$(date +%Y-%m-%d)
@@ -87,7 +87,7 @@ do
             # echo "# dummy" >> ${PAKETPATH}/${liste// /_}
             
             echo "Paketliste -- ${PAKETPATH}/${liste// /_} -- wurde angelegt "
-            echo "" >> ${PAKETPATH}/${liste// /_}
+            echo "# " >> ${PAKETPATH}/${liste// /_}
         fi
     ;;
     "- ###")
@@ -127,8 +127,22 @@ do
 #               echo "##  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${listeb// /_}
 #               echo "" >> ${PAKETPATH}/${listeb// /_}
 #       fi
+        if [[ -w ${PAKETPATH}/${listeb// /_} ]]; then
+            echo " ${PAKETPATH}/${listeb// /_} wird erweitert "
+        else
+            echo "#  Paketliste erstellt - ${DATUM}" > ${PAKETPATH}/${listeb// /_}
+            echo >> ${PAKETPATH}/${listeb// /_}
+            
+            # sicherstellen, dass mindestens ein Kommentar in der Liste steht, sonst verschluckt sich eins der weiteren skripte von lb build
+            # echo "# dummy" >> ${PAKETPATH}/${liste// /_}
+            
+            echo "Paketliste -- ${PAKETPATH}/${listeb// /_} -- wurde angelegt "
+            echo "# " >> ${PAKETPATH}/${listeb// /_}
+        fi
+
+
         echo ${line##*"  "} >> ${PAKETPATH}/${listeb// /_}
-        echo "Paketliste -- ${PAKETPATH}/${listeb// /_} -- wurde angelegt "
+#        echo "Paketliste -- ${PAKETPATH}/${listeb// /_} -- wurde angelegt "
     ;;
 #    "- [ ]")
 #       if [[ ! -f ${PAKETPATH}/${listeb// /_} ]]; then 

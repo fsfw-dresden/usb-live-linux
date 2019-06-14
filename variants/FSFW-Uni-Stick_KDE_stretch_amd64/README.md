@@ -2,13 +2,13 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 # Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
-(getestet auf Debian "stretch"  - 2018-08-17)
+(getestet auf Debian "buster"  - 2019-06-14)
 
 ## Erstellen
 
-Wichtigste Komponente im Build-Prozess ist das Paket `live-build`, außerdem werden weitere Pakete benötigt:
+Wichtigste Komponente im Build-Prozess ist das Paket `open-infrastructure-system-build`, außerdem werden weitere Pakete benötigt:
 
-    $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync
+    $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync open-infrastructure-system-*
 
 
 Herunterladen der benötigeten Dateien
@@ -48,7 +48,7 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
   
 * Benutzerberechtigung ändern (bisher gehört die .iso-Datei root)
 
-  ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_*_jessie-amd64.hybrid.iso ` 
+  ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_*.iso ` 
 
  
 ## Live-Image in einer virtuell Maschine testen
