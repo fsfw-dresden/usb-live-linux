@@ -32,7 +32,7 @@ dpkg-info()
                 done
                 [ ${#files[@]} -gt 0 ] &&
                 echo -ne "package ${pkg} contains:\t " &&
-                { echo -n "$(du -hc ${files[@]} | sed -nr "s/(.*)\s+total/\1iB/p") in ${#files[@]} $(ngettext 'file' 'files' ${#files[@]})" &&
+                { echo -n "$(LANG=C du -hc ${files[@]} | sed -nr "s/(.*)\s+total/\1iB/p") in ${#files[@]} $(ngettext 'file' 'files' ${#files[@]})" &&
                 { [ ${#links[@]} -eq 0 ] || echo -n " and ${#links[@]} $(ngettext 'symbolic link' 'symbolic links' ${#links[@]})"; } &&
                 echo " within ${#dirs[@]} $(ngettext 'directory' 'directories' ${#dirs[@]})"; } | ccze -A -o nolookups && echo &&
                 ls --color=always -lahd --time-style=+" %^a %F %R" "${list[@]}"
