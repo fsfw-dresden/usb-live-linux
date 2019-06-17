@@ -1,4 +1,4 @@
-##  Staging 2018
+##  Staging
 
 - ###  Noch einzusortieren
 
@@ -10,7 +10,6 @@
 - :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
 - :x:  chromium  --	aims to build a safer, faster, and more stable internet browsing experience
 
-- ###  System Tools
 - :x:  haveged  --		userspace entropy daemon
 - :x:  etckeeper  --		tool to let /etc be stored in a git
 - :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
@@ -52,7 +51,6 @@
 - :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
 
-- ###  Desktop 2019
 - :x:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
