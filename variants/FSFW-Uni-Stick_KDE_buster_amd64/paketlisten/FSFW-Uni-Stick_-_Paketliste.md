@@ -30,7 +30,7 @@
 >
 >		`$ sudo apt-get install Paketname `
 >
-> - :+1: :x:  [Paket vorschlag] (http://download-path-paket.deb)  -- ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
+> - :+1: :x:  [Paket vorschlag](http://download-path-paket.deb)  -- ist leider nicht in den Repros verfügbar, wird aber alternativ installiert
 >		- Beschreibung / Erklärungen 
 >		- Extra Installation da nicht im Repro verfügbar
 >		- Quelle: 
