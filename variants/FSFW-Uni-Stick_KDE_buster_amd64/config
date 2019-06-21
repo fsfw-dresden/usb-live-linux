@@ -29,8 +29,8 @@ lb config noauto \
     --mirror-bootstrap http://ftp.de.debian.org/debian/ \
     --mirror-binary http://ftp.de.debian.org/debian/ \
     --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
-    --debootstrap-options "--include=apt-transport-https,ca-certificates,openssl,gnupg,ncdu" \
-    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de gfxpayload=vga=current" \
+    --debootstrap-options "--include=gnupg --variant=minbase" \
+    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de vga=current" \
     --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
     --keyring-packages "debian-keyring deb-multimedia-keyring" \
     --chroot-filesystem squashfs \
@@ -47,10 +47,9 @@ lb config noauto \
 
 # für minimal
 #
-#    --debootstrap-options --variant=minbase \		## funktioniert nicht
+#    --debootstrap-options --variant=minbase \		##
 #    --apt-indices false \
 #    --apt-recommends false \			
-#    --firmware-chroot false \
 #    --memtest none \
 
 
