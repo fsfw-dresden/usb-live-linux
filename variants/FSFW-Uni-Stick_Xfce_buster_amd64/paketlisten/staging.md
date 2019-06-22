@@ -139,3 +139,16 @@
 - :x:  kdeconnect  --		integrate linux desktop with android smartphone
 - :x:  tmux-themepack-jimeh  --		basic theme and powerline themes for tmux
 - :x:  fonts-powerline  --		font which provides symbols used by Powerline
+- :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
+- :x:  zram-tools  --		set up compressed swap space
+- :x:  smem  --		reports on memory usage
+- :x:  sct  --		change the screen color temperature via xrandr
+- :x:  dialog  --		dialog boxes from shell scripts
+- :x:  blueman  --		GTK+ bluetooth management utility
+- :x:  pulseaudio-module-bluetooth  --		enables PulseAudio to work with bluetooth devices
+- :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
+- :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
+- :x:  gthumb  --		advanced image viewer and browser
+- :x:  luksipc  --		convert (unencrypted) block devices to (encrypted) LUKS devices in-place
+- :x:  davfs2  --		mount a WebDAV resource as a regular file system
+- :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion
