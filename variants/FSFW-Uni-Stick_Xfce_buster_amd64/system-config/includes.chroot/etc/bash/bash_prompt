@@ -1,0 +1,27 @@
+#!/bin/bash
+if [ -z "$ZSH_VERSION" ] && ${use_color}; then
+  ltred='\e[1;31m'
+  ltgreen='\e[1;32m'
+  ltblue='\e[1;34m'
+  ltcyan='\e[1;36m'
+  red='\e[0;31m'
+  green='\e[0;32m'
+  blue='\e[0;34m'
+  cyan='\e[0;36m'
+  yellow='\e[1;33m'
+  gray='\e[1;30m'
+  default='\e[0m'
+  BASH_NEST_LEVEL=$([ $SHLVL -gt 1 ] && printf "%*s" $((${SHLVL}-1)) " ")
+  PS1=""
+  PS1+="${BASH_NEST_LEVEL}" # indent subshells.
+  PS1+="$([ ${EUID} -eq 0 ] && echo -en "\[${ltred}\]" || echo -en "\[${ltgreen}\]")\u" # color user green, root red
+  PS1+="@\H:" # host
+  PS1+="\l/" # tty num
+# PS1+="\[${yellow}\]ADB\[${ltred}\]/" # android shell
+  PS1+="\j \[${ltcyan}\]"'$PWD ' # sub jobs, full path.
+  PS1+='$([ $? -eq 0 ] && echo -en "\[${green}\]" || echo -en "\[${red}\]")'"\$ \[${default}\]" # indicate last exit status.
+  PS1+="\[\e7\e[1A\e["'$((COLUMNS-20))'"G${gray} \D{%F %T} ${default}\e8\]" # save cursor position, put timestamp to the right, restore position
+  export PS1
+else
+  export PS1='\u@\h $PWD # ' # jejune prompt
+fi

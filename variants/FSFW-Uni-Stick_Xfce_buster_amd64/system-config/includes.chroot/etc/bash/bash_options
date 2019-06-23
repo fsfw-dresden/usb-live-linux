@@ -1,0 +1,10 @@
+#!/bin/bash
+shopt -s checkjobs
+shopt -s globstar
+shopt -s extglob
+shopt -s nocaseglob
+shopt -s histappend
+shopt -s histreedit
+shopt -s cdspell
+shopt -s no_empty_cmd_completion
+set -o physical

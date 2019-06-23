@@ -1,0 +1,20 @@
+#!/bin/bash
+export HISTSIZE=1000000
+export HISTCONTROL="ignoreboth:erasedups"
+export HISTIGNORE="fg:bg:ls:curdirremove:l"
+
+history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+_bash_history_sync() {
+  builtin history -a
+  HISTFILESIZE=$HISTFILESIZE
+  builtin history -c
+  builtin history -r
+}
+
+if [[ ! $PROMPT_COMMAND =~ _bash_history_sync ]]; then
+  export PROMPT_COMMAND="${PROMPT_COMMAND:-:} ; _bash_history_sync 2>/dev/null"
+fi
