@@ -7,4 +7,4 @@ RequiresMountsFor=/run
 Type=oneshot
 ExecStart=/bin/mkdir -p '/run%f'
 ExecStart=/bin/mount -t tmpfs -o noatime tmpfs '/run%f'
-ExecStart=/bin/mkdir -p '/run%f/w' '/run%f/u'
+ExecStart=/bin/mkdir -p '/run%f/work' '/run%f/rw'

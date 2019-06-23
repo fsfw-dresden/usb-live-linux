@@ -8,7 +8,7 @@ After=pre-overlay@%p.service
 What=overlay
 Type=overlay
 Where=%f
-Options=lowerdir=%f,upperdir=/run%f/u,workdir=/run%f/w
+Options=lowerdir=%f,upperdir=/run%f/rw,workdir=/run%f/work
 
 [Install]
 WantedBy=local-fs.target
