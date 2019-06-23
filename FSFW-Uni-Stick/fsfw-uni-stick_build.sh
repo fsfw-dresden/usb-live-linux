@@ -103,7 +103,7 @@ sudo lb binary 2>&1 | tee binary_build.log
 
 # Benutzerberechtigung ändern 
 echo "Benutzerberechtigung ändern "
-sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
+sudo chown ${USER}:${USER} ./*.iso
 
 # Image ins Verzeichnis images verschieben
 
@@ -112,7 +112,7 @@ sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
 	 echo " Verzeichnis images erstellt."
   fi 
 
-mv ./FSFW-Uni-Stick*.iso $(repo_root)/images/
+mv ./*.iso $(repo_root)/images/
 
 # TODO:
 # USB-Stick erstellen - Speichergerät partitionieren,formatieren - FSFW_UNI_Stick_*.iso schreiben
