@@ -63,11 +63,11 @@ $(repo_root)/tools/fsfw-uni-stick_system-config.sh
 
 # Paketlisten generieren
  if [ -e ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default ]; then
-	 echo " ./auto/paketliste ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)  wird ausgeführt "
-	 ./auto/paketliste ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)
+	 echo " ../tools/md2package-lists.sh ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)  wird ausgeführt "
+	 $(repo_root)/tools/md2package-lists.sh ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)
 	else
-	 ./auto/paketliste
-	 echo " ./auto/paketliste wird ausgeführt "
+	 $(repo_root)/tools/md2package-lists.sh
+	 echo " ../tools/md2package-lists.sh wird ausgeführt "
  fi
 
 # extra Pakete holen

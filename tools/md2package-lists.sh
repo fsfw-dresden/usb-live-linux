@@ -1,17 +1,17 @@
 #!/bin/bash
 #===========================================
-#         FILE: paketliste
-#        USAGE: auto/paketliste - ( ausführen im build-Verzeichnis )
+#         FILE: md2package-lists.sh
+#        USAGE: ../tools/md2package-lists.sh - ( ausführen im build-Verzeichnis )
 #  DESCRIPTION: erstellen der Paketlisten aus der Doku Paketliste
 #        
-#      VERSION: 0.0.4
+#      VERSION: 0.0.5
 #      OPTIONS: PAKETLISTE-1 PAKETLISTE-2 ....  # ohne Option (Default) $1 = FSFW_UNI_Stick_-_Paketliste.md
 #        NOTES: für - open-infrastructure-system-* (live-build) Debian jessie / Debian stretch / Debian buster
 #               - es können mehrere PAKETLISTEN kombiniert werden.
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-08-22
-#     REVISION: 2019-06-12
+#     REVISION: 2019-07-02
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
