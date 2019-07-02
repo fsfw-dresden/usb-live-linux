@@ -62,9 +62,9 @@ variant_config_set
 variant_system_config_sync
 
 # Paketlisten generieren
- if [ -e ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default ]; then
-	 echo " ../tools/md2package-lists.sh ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)  wird ausgeführt "
-	 $(repo_root)/tools/md2package-lists.sh ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default)
+ if [ -e ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default ]; then
+	 echo " ../tools/md2package-lists.sh ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default)  wird ausgeführt "
+	 $(repo_root)/tools/md2package-lists.sh ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default)
 	else
 	 $(repo_root)/tools/md2package-lists.sh
 	 echo " ../tools/md2package-lists.sh wird ausgeführt "
@@ -85,7 +85,7 @@ $(repo_root)/tools/doku_create.sh
 # FSFW user config erstellen
 # in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
 
-echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_VARIANT}"  ausführen "
+echo " ../tools/fsfw-uni-stick_user-config.sh "${BUILD_VARIANT}"  ausführen "
 
 $(repo_root)/tools/fsfw-uni-stick_user-config.sh
 
@@ -140,7 +140,7 @@ mv ./*.iso $(repo_root)/images/
 # exportierte Variablen löschen
 
 unset VARIANT_PATH
-unset FSFW_UNI_STICK_VARIANT
+unset BUILD_VARIANT
 
 }
 

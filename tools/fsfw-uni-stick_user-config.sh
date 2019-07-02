@@ -7,11 +7,11 @@
 #	CREATED: 2017-09-13
 #      REVISION: 2019-06-12
 #
-# erstellten der user Konfiguration aus variants/${FSFW_UNI_STICK_VARIANT}/user_config/*  
+# erstellten der user Konfiguration aus variants/${BUILD_VARIANT}/user_config/*  
 # und schreibt sie nach "config/includes.chroot/etc/skel/" und "config/includes.chroot/etc/..."
 #
 
-echo "fsfw-uni-stick_user_config -  FSFW-Uni-Stick: variant PATH = ${VARIANT_PATH}  -- variant = ${FSFW_UNI_STICK_VARIANT} "
+echo "fsfw-uni-stick_user_config -  FSFW-Uni-Stick: variant PATH = ${VARIANT_PATH}  -- variant = ${BUILD_VARIANT} "
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 # aufräumen ( ist ../home/user vorhanden wird die config nicht aus ../etc/skel übernommen)
@@ -20,18 +20,18 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 	 echo " config/includes.chroot/home gelöscht"
   fi 
 
-# ist skript ../../variants/${FSFW_UNI_STICK_VARIANT}/user_config.sh vorhanden dann ausführen
+# ist skript ../../variants/${BUILD_VARIANT}/user_config.sh vorhanden dann ausführen
 
- if [ -x ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/user_config.sh ]; then
-	 ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/user_config.sh
-	 echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/user_config.sh  wird ausgeführt "
+ if [ -x ${VARIANT_PATH}/${BUILD_VARIANT}/user_config.sh ]; then
+	 ${VARIANT_PATH}/${BUILD_VARIANT}/user_config.sh
+	 echo " ${VARIANT_PATH}/${BUILD_VARIANT}/user_config.sh  wird ausgeführt "
 	else
-	 echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/user_config.sh  nicht vorhanden "
+	 echo " ${VARIANT_PATH}/${BUILD_VARIANT}/user_config.sh  nicht vorhanden "
  fi
 
 echo " user_config  schreiben "
 
-rsync -avP --exclude=src/ ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/user_config/ config/includes.chroot/etc/skel 
+rsync -avP --exclude=src/ ${VARIANT_PATH}/${BUILD_VARIANT}/user_config/ config/includes.chroot/etc/skel 
 
 echo " user_config  configuration fertig."
 

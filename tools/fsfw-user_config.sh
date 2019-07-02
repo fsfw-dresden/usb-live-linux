@@ -11,7 +11,7 @@
 # und schreibt sie nach "../config/includes.chroot/..."
 #
 
-echo "fsfw-user_config.sh - FSFW-Uni-Stick: variant PATH = ${VARIANT_PATH}  -- variant = ${FSFW_UNI_STICK_VARIANT} "
+echo "fsfw-user_config.sh - FSFW-Uni-Stick: variant PATH = ${VARIANT_PATH}  -- variant = ${BUILD_VARIANT} "
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 
@@ -30,24 +30,24 @@ echo "FSFW Material/Doku bauen und verteilen"
 
 # TODO: allgemeine Doku zu Progammen oder Funkionen des Live Systems --> doku_create.sh
 
-if [ ! -d ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html ]; then
-				 mkdir -p ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html
-				 echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html erstellt"
+if [ ! -d ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html ]; then
+				 mkdir -p ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html
+				 echo " ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html erstellt"
 	else
-				 echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html vorhanden "
+				 echo " ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html vorhanden "
 fi
 
-dlist_md=(${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/src/*.md)
+dlist_md=(${VARIANT_PATH}/${BUILD_VARIANT}/doc/src/*.md)
 
 echo " dlist_md = ${dlist_md[@]##*/} "
 
 for f in ${dlist_md[@]##*/} ; 
    do
 #    TARGETFILE="../doc/html/${f%%.md}.html"
-    TARGETFILE="${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html/${f%%.md}.html"
+    TARGETFILE="${VARIANT_PATH}/${BUILD_VARIANT}/doc/html/${f%%.md}.html"
 
 # TODO: Fehler, falls Paket pandoc nicht installiert ist -> Programmverfügbarkeit vorher testen
-    cmd="pandoc --standalone --template ${REPO_ROOT}/doc/build-script/fsfw-template.html ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/src/${f} -o $TARGETFILE"
+    cmd="pandoc --standalone --template ${REPO_ROOT}/doc/build-script/fsfw-template.html ${VARIANT_PATH}/${BUILD_VARIANT}/doc/src/${f} -o $TARGETFILE"
 
 echo " cmd = ${cmd}"
 
@@ -73,7 +73,7 @@ if [ ! -d config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ ]; then
 fi 
 
 rsync -avP ${REPO_ROOT}/doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
-rsync -avP ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
+rsync -avP ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
 
 
 # doc/latex-vorlage  übernehmen

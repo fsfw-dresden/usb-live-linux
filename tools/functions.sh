@@ -26,9 +26,9 @@ variant_path_set() {
     echo "FSFW-Uni-Stick ROOT PATH:   \$(repo_root) == $(repo_root) "
 
     VARIANT_PATH_DEFAULT="$(repo_root)/variants"
-    FSFW_UNI_STICK_VARIANT_DEFAULT=$(basename $(readlink ${VARIANT_PATH_DEFAULT}/default))
+    BUILD_VARIANT_DEFAULT=$(basename $(readlink ${VARIANT_PATH_DEFAULT}/default))
 
-    FSFW_UNI_STICK_VARIANT=$(basename "$1")
+    BUILD_VARIANT=$(basename "$1")
     VARIANT_PATH=$(dirname "$1")
 
 
@@ -40,22 +40,22 @@ variant_path_set() {
 
     fi
 
-    if [[ -z ${FSFW_UNI_STICK_VARIANT} ]]; then
-	    FSFW_UNI_STICK_VARIANT=${FSFW_UNI_STICK_VARIANT_DEFAULT}
-	    echo "FSFW-Uni-Stick config:      \${FSFW_UNI_STICK_VARIANT} == ${FSFW_UNI_STICK_VARIANT} "
+    if [[ -z ${BUILD_VARIANT} ]]; then
+	    BUILD_VARIANT=${BUILD_VARIANT_DEFAULT}
+	    echo "FSFW-Uni-Stick config:      \${BUILD_VARIANT} == ${BUILD_VARIANT} "
 	else
-	    echo "FSFW-Uni-Stick config:      \${FSFW_UNI_STICK_VARIANT} == ${FSFW_UNI_STICK_VARIANT} "
+	    echo "FSFW-Uni-Stick config:      \${BUILD_VARIANT} == ${BUILD_VARIANT} "
     fi
 
 
     # Test ob Verzeichnis existiert
 
-    if [[ -d "${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}" ]]; then
-	    echo "FSFW-Uni-Stick config:      ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT} -- wird verwendet"
+    if [[ -d "${VARIANT_PATH}/${BUILD_VARIANT}" ]]; then
+	    echo "FSFW-Uni-Stick config:      ${VARIANT_PATH}/${BUILD_VARIANT} -- wird verwendet"
 	    export VARIANT_PATH
-	    export FSFW_UNI_STICK_VARIANT
+	    export BUILD_VARIANT
 	else
-	    echo "FSFW-Uni-Stick config:      ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT} -- existiert nicht"
+	    echo "FSFW-Uni-Stick config:      ${VARIANT_PATH}/${BUILD_VARIANT} -- existiert nicht"
 	    exit
     fi
 }
@@ -63,13 +63,13 @@ variant_path_set() {
 
 variant_config_set() {
     rm ./auto/config
-    ln -s ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/config ./auto/config
-    echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/config  aktiviert "
+    ln -s ${VARIANT_PATH}/${BUILD_VARIANT}/config ./auto/config
+    echo " ${VARIANT_PATH}/${BUILD_VARIANT}/config  aktiviert "
 }
 
 variant_system_config_sync() {
-    echo " system_config variant = ${FSFW_UNI_STICK_VARIANT} aktualliesieren "
-    rsync -avP ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/system_config/ config
+    echo " system_config variant = ${BUILD_VARIANT} aktualliesieren "
+    rsync -avP ${VARIANT_PATH}/${BUILD_VARIANT}/system_config/ config
     echo " system_config  aktuallisiert fertig."
 }
 
