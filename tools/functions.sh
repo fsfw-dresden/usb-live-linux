@@ -59,3 +59,17 @@ variant_path_set() {
 	    exit
     fi
 }
+
+
+variant_config_set() {
+    rm ./auto/config
+    ln -s ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/config ./auto/config
+    echo " ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/config  aktiviert "
+}
+
+variant_system_config_sync() {
+    echo " system_config variant = ${FSFW_UNI_STICK_VARIANT} aktualliesieren "
+    rsync -avP ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/system_config/ config
+    echo " system_config  aktuallisiert fertig."
+}
+

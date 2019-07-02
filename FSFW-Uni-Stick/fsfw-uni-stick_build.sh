@@ -36,7 +36,6 @@
 #
 . $(git rev-parse --show-toplevel)/tools/functions.sh
 
-
 # Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
 # deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
 main_function() {
@@ -57,9 +56,10 @@ fi
 # live-build Umgebung aufräumen
 sudo lb clean
 
-# System Configuration einspielen
-$(repo_root)/tools/fsfw-uni-stick_system-config.sh
+# set build config - System Configuration einspielen
 
+variant_config_set
+variant_system_config_sync
 
 # Paketlisten generieren
  if [ -e ${VARIANT_PATH}/${FSFW_UNI_STICK_VARIANT}/paketlisten/default ]; then
