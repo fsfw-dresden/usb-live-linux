@@ -15,8 +15,10 @@ rm -f config/binary \
 
 rm -rf cache/bootstrap
 rm -rfv cache/contents.chroot \
-  config/hooks \
+  config/apt/* \
   config/archives/* \
   config/bootloaders/* \
-  config/packages*/* \
+  config/hooks/* \
   config/includes*/* \
+  config/packages*/* \
+  config/templates/* 
