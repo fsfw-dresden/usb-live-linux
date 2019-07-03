@@ -158,6 +158,7 @@
 - :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
 - :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
 - :x:  catfish  --		file searching tool
-- :x:  nemo  --		filo manager
+- :x:  nemo  --		file manager
 - :x:  nemo-fileroller  --		create and extract archives
 - :x:  nemo-nextcloud  --		integrates the Nextcloud web service
+- :x:  cinnamon-l10n  --		translation files for nemo et al.
