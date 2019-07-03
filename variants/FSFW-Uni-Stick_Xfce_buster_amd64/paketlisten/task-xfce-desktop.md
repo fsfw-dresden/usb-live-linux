@@ -17,7 +17,7 @@
 - :x:  xfce4-panel  --		multi-functional panel
 - :x:  xfce4-cpufreq-plugin  --		displays the current frequency of the CPU, in GHz or MHz
 - :x:  xfce4-power-manager-plugins  --		control brightness etc
-- :x:  xfce4-places-plugin  --		quick access to folders, documents and removable media
+- :o:  xfce4-places-plugin  --		quick access to folders, documents and removable media
 - :x:  xfce4-pulseaudio-plugin  --		control pulseaudio
 - :x:  xfce4-sensors-plugin  --		hardware sensors plugin for the Xfce4 panel
 - :x:  xfce4-weather-plugin  --		weather information plugin for the Xfce4 panel

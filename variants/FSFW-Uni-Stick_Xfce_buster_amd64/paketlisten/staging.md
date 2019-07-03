@@ -59,7 +59,7 @@
 - :x:  hunspell-de-de  --		
 - :x:  hyphen-de  --		German hyphenation patterns
 - :o:  dolphin-nextcloud  --		
-- :x:  nautilus-nextcloud  --		
+- :o:  nautilus-nextcloud  --		
 - :x:  fusedav  --		mount WebDAV shares
 - :o:  kdeconnect  --		connect smartphones
 - :x:  fonts-bebas-neue  --	Flat, rounded style font designed
@@ -157,3 +157,7 @@
 - :x:  tumbler  --		D-Bus thumbnailing service
 - :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
 - :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
+- :x:  catfish  --		file searching tool
+- :x:  nemo  --		filo manager
+- :x:  nemo-fileroller  --		create and extract archives
+- :x:  nemo-nextcloud  --		integrates the Nextcloud web service
