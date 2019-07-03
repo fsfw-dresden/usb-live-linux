@@ -64,26 +64,5 @@ echo " cmd = ${cmd}"
     echo "Datei geschrieben:" $TARGETFILE
 done
 
-# TODO: *.hlml  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
-
-
-if [ ! -d config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ ]; then
-	 mkdir -p config/includes.chroot/etc/skel/FSFW-Material/stick-doku/
-	 echo " config/includes.chroot/etc/skel/FSFW-Material/stick-doku/ erstellt"
-fi 
-
-rsync -avP ${REPO_ROOT}/doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
-rsync -avP ${VARIANT_PATH}/${BUILD_VARIANT}/doc/html/ config/includes.chroot/etc/skel/FSFW-Material/stick-doku
-
-
-# doc/latex-vorlage  übernehmen
-
-# Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo: 
-# <https://github.com/fsfw-dresden/latex-vorlagen>.
-
-git submodule update --init --recursive
-
-rsync -avP --exclude=.git* ${REPO_ROOT}/doc/latex-vorlagen/ config/includes.chroot/etc/skel/FSFW-Material/latex-vorlage
-
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 
