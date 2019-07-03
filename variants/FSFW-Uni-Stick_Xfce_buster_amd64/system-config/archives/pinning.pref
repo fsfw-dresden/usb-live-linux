@@ -11,7 +11,7 @@ Package: *
 Pin: release a=experimental, o=Debian
 Pin-Priority: 499
 
-Package: telegram-desktop
+Package: telegram-desktop calamares
 Pin: release a=experimental, o=Debian
 Pin-Priority: 500
 

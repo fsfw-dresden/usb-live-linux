@@ -116,6 +116,7 @@
 - :x:  vim-airline-themes  --	themable vim status bar + themes
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 - :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :x:  qalc  --			command line version of Qalculate!
 - :x:  fortunes  --		fortune cookies
 - :x:  fortunes-de  --		Glückskekse
 - :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
@@ -152,3 +153,7 @@
 - :x:  luksipc  --		convert (unencrypted) block devices to (encrypted) LUKS devices in-place
 - :x:  davfs2  --		mount a WebDAV resource as a regular file system
 - :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion
+- :x:  gnome-font-viewer  --		preview fonts
+- :x:  tumbler  --		D-Bus thumbnailing service
+- :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
+- :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
