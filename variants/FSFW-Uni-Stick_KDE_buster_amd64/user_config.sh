@@ -14,11 +14,6 @@ echo "user_config.sh - FSFW-Uni-Stick: variant PATH = ${VARIANT_PATH}  -- varian
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
 
-echo "../tools/fsfw-user_config.sh ${FSFW_UNI_STICK_CONFIG} ausführen "
-
-${REPO_ROOT}/tools/fsfw-user_config.sh
-
-
 # z.B. spezielle Doku bzw. abweichende Optionen je nach Desktop
 
 FSFW_DOC_PATH=usr/local/share/doc/FSFW-Dresden
