@@ -29,17 +29,21 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 	 echo " ${VARIANT_PATH}/${BUILD_VARIANT}/user_config.sh  nicht vorhanden "
  fi
 
+# aus config/includes.chroot/etc/skel wird späteres /home/live/ Verzeichnis
+
 echo " user_config  schreiben "
 
 rsync -avP --exclude=src/ ${VARIANT_PATH}/${BUILD_VARIANT}/user_config/ config/includes.chroot/etc/skel 
 
 echo " user_config  configuration fertig."
 
+
 # git-versionsnummer / link --> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
 #
 
-echo " FSFW_UNI_STICK_VERSION = $(${REPO_ROOT}/tools/calc-version-number.sh) " > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
+echo "schreibe git-versionsnummer & URL in HOME/.version_fsfw-uni-stick"
 
-echo " git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)" >> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
+echo "FSFW_UNI_STICK_VERSION = $(${REPO_ROOT}/tools/calc-version-number.sh) " > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
+echo "git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD))" >> config/includes.chroot/etc/skel/.version_fsfw-uni-stick
 
 echo " fsfw-uni-stick_user_config.sh  beendet "
