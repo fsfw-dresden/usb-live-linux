@@ -1,3 +1,6 @@
+### TODO
+- Upgrades? c.f. https://tails.boum.org/blueprint/Endless_upgrades/ https://github.com/rauc/rauc/
+
 ### aus fsfw-uni-stick_build.sh
 
 2016-10-21 13:22 gerdg-dd 092a2a1 # TODO: Skript Installation auf benötigte Pakete testen
