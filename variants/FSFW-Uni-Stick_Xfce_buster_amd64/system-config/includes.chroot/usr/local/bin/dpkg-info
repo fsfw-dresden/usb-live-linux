@@ -7,13 +7,11 @@
 
 dpkg-info()
 {
-    for pkg in $*;
+    for pkg in ${@};
     do
         {
-            #echo ${pkg}
-            #COLUMNS=$(tput cols)
             {
-                apt-cache policy ${pkg} && echo
+                apt-cache policy ${pkg} 2>&1 && echo
                 dpkg-query -s ${pkg} 2>/dev/null && echo
             } | ccze -A -o nolookups && {
                 IFS=${IFS/ /}
@@ -22,8 +20,7 @@ dpkg-info()
                 for item in ${list[@]};
                 do
                     {
-                        #echo $item
-                        [ -L "${item}" ] && [ ! -d $(realpath "${item}") ] && 
+                        [ -L "${item}" ] && [ ! -d $(realpath "${item}" 2>/dev/null) ] &&
                         links=("${links[@]}" "${item}") ||
                         [ -f "${item}" ] &&
                         files=("${files[@]}" "${item}") ||
@@ -47,5 +44,4 @@ dpkg-info()
     done
 }
 
-dpkg-info $*
-#type dpkg-info
+dpkg-info ${@}
