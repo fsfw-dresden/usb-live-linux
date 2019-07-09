@@ -162,3 +162,35 @@
 - :x:  nemo-fileroller  --		create and extract archives
 - :x:  nemo-nextcloud  --		integrates the Nextcloud web service
 - :x:  cinnamon-l10n  --		translation files for nemo et al.
+- :x:  progress  --		Coreutils Progress Viewer
+- :x:  tuptime  --		report historical system real time
+- :x:  smart-notifier  --		graphical hard disk health status notifier
+- :x:  dmidecode  --		SMBIOS/DMI table decoder
+- :x:  ncdu  --		ncurses disk usage viewer
+- :x:  psmisc  --		utilities that use the proc file system
+- :x:  lsof  --		utility to list open files
+- :x:  f2fs-tools  --		Tools for Flash-Friendly File System
+- :x:  atool  --		tool for managing file archives of various types
+- :x:  mediainfo  --		command-line utility for reading information from audio/video files
+- :x:  nethogs  --		Net top tool grouping bandwidth per process
+- :x:  dnsutils  --		Clients provided with BIND
+- :x:  whois  --		intelligent WHOIS client
+- :x:  linux-cpupower  --		CPU power management tools for Linux
+- :x:  percol  --		interactive selection for UNIX pipes
+- :x:  consolation  --		linux console pointer support for copy-paste
+- :x:  unoconv  --		converter between LibreOffice document formats
+- :x:  caca-utils  --		text mode graphics utilities
+- :x:  elinks  --		advanced text-mode WWW browser
+- :x:  w3m  --		WWW browsable pager with excellent tables/frames support
+- :x:  highlight  --		Universal source code to formatted text converter
+- :x:  exiftool  --		read and write meta information in multimedia files
+- :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
+- :x:  ssh-audit  --		tool for ssh server auditing
+- :x:  vim-scripts  --		plugins for vim, adding bells and whistles
+- :x:  stress  --		impose load on and stress test a computer system
+- :x:  weston  --		reference implementation of a wayland compositor
+- :x:  google-earth-pro-stable  --		Explore, search and discover the planet
+- :x:  mixxx  --		Digital Disc Jockey Interface
+- :x:  key-mon  --		show live keyboard and mouse status
+- :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
+- :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
