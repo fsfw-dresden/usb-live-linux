@@ -90,6 +90,7 @@ user_pref("signon.importedFromSqlite", true);
 user_pref("storage.vacuum.last.index", 0);
 user_pref("storage.vacuum.last.places.sqlite", 1477943425);
 user_pref("toolkit.startup.last_success", 1477946099);
+user_pref("toolkit.storage.synchronous", 0);
 user_pref("toolkit.telemetry.cachedClientID", "ae22e065-71a9-4c6e-851b-42982df1030d");
 user_pref("toolkit.telemetry.previousBuildID", "20160921204512");
 user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
