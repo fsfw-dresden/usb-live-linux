@@ -5,9 +5,10 @@
 - :x:  lightdm  --		Einfaches grafisches Login-Programm
 - :x:  lightdm-gtk-greeter  --  Einfaches grafisches Login-Programm (GTK+-Anmeldefenster) LightDM
 
-- :o:  xfce4  --		too much
+- :x:  xfce4  --		not much
 
 - :x:  gtk2-engines-xfce  --	theme engine for Xfce
+- :x:  gtk3-engines-xfce  --	theme engine for Xfce
 - :x:  xfce4-session  --		Xfce4 Session Manager
 - :x:  xfdesktop4  --		xfce desktop background, icons and root menu manager
 - :x:  xfwm4  --		window manager of the Xfce project
@@ -22,6 +23,8 @@
 - :x:  xfce4-sensors-plugin  --		hardware sensors plugin for the Xfce4 panel
 - :x:  xfce4-weather-plugin  --		weather information plugin for the Xfce4 panel
 - :x:  xfce4-whiskermenu-plugin  --		application launcher for Xfce
+- :x:  xfce4-indicator-plugin  --		display information from various applications consistently
+- :x:  xfce4-clipman-plugin  --		clipboard history
 
 - ###  Netzwerk
 

@@ -9,7 +9,7 @@
 - :x:  less  --		world class file viewer
 - :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
 - :x:  chromium  --	aims to build a safer, faster, and more stable internet browsing experience
-
+- :x:  chromium-sandbox  --	setuid security sandbox for chromium
 - :x:  haveged  --		userspace entropy daemon
 - :x:  etckeeper  --		tool to let /etc be stored in a git
 - :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
@@ -95,7 +95,7 @@
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
 - :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
-- :x:  poppler-utils  --	command line utilities to manipulate PDFs
+- :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
 - :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
 - :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
