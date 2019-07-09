@@ -50,7 +50,7 @@
 - :x:  wcalc  --	command-line scientific calculator
 - :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
-
+- :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
 - :x:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
