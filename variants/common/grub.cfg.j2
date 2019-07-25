@@ -1,4 +1,4 @@
-## grub.cfg - generiert - {{ date }}
+## grub.cfg - generiert - {{ DATE }}
 
 set timeout=3
 set default=0
@@ -11,7 +11,7 @@ insmod font
 insmod play
 play 960 440 1 0 4 440 1
 
-search --set=root --label FSFW-Uni-Stick
+search --set=root --label {{ LABEL }}
 
 function load_video {
   if [ x$feature_all_video_module = xy ]; then
@@ -53,9 +53,9 @@ menuentry "Live-System ({{ STICK_VERSION }})" {
     echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     insmod ext2
     insmod part_msdos
-    set isofile=/boot/iso/{{ STICK_ISO }}
+    set isofile=/boot/{{ STICK_ISO }}
     loopback loop $isofile
-    linux (loop)/live/vmlinuz boot=live findiso=$isofile components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 quiet splash persistence 
+    linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence
     initrd (loop)/live/initrd.img
 }
 
@@ -65,9 +65,9 @@ menuentry "Live-System ohne Persistenz (Änderungen gehen verloren) ({{ STICK_VE
     echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     insmod ext2
     insmod part_msdos
-    set isofile=/boot/iso/{{ STICK_ISO }}
+    set isofile=/boot/{{ STICK_ISO }}
     loopback loop $isofile
-    linux (loop)/live/vmlinuz boot=live findiso=$isofile components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 quiet splash
+    linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }}
     initrd (loop)/live/initrd.img
 }
 
@@ -79,9 +79,9 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
       echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
       insmod ext2
       insmod part_msdos
-      set isofile=/boot/iso/{{ STICK_ISO }}
+      set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
-      linux (loop)/live/vmlinuz boot=live findiso=$isofile components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 quiet splash persistence persistence-label=dlp-daten
+      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
       initrd (loop)/live/initrd.img
   }
 
@@ -89,9 +89,9 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
       echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
       insmod ext2
       insmod part_msdos
-      set isofile=/boot/iso/{{ STICK_ISO }}
+      set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
-      linux (loop)/live/vmlinuz boot=live findiso=$isofile components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
+      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
       initrd (loop)/live/initrd.img
   }
 
@@ -99,15 +99,34 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
       echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
       insmod ext2
       insmod part_msdos
-      set isofile=/boot/iso/{{ STICK_ISO }}
+      set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
-      linux (loop)/live/vmlinuz boot=live findiso=$isofile components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin vga=current net.ifnames=0 quiet splash toram
+      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} toram
       initrd (loop)/live/initrd.img
   }
 
 }
 
 submenu "  [ Untermenü: Werkzeuge ] " {
+{% if MEMTEST is defined %}
+  menuentry "Memory test (memtest86+) iso " {
+    linux16 /boot/memdisk iso
+    initrd16 /boot/memtest86+-5.01.iso
+  }
+{%- endif %}
+{% if HDT is defined %}
+  menuentry "Hardware Test (HDT) " {
+    linux16 /boot/memdisk iso
+    initrd16 /boot/hdt-0.5.2.iso
+  }
+{%- endif %}
+{% if SUPERGRUB2ISO is defined %}
+  menuentry "Super Grub2 Disk " {
+    loopback loop {{ SUPERGRUB2ISO }}
+    root=(loop)
+    configfile /boot/grub/loopback.cfg
+  }
+{%- endif %}
 
   menuentry "lspci - Hardware Infos " {
     lspci
