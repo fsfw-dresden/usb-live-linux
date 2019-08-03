@@ -1,0 +1,2 @@
+#!/bin/sh
+[ ! -e /var/lib/vim/temp ] && mkdir -p /var/lib/vim/temp && chmod a+rwx /var/lib/vim/temp
