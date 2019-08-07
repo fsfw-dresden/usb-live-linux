@@ -46,7 +46,9 @@ lb config noauto \
 
 # use hidden marker file to enable proxying over local apt-cacher-ng instance
 if [ -e .apt-http-proxy ]; then
-    lb config noauto --apt-http-proxy http://127.0.0.1:3142/ --cache-packages false
+    lb config noauto --apt-http-proxy http://127.0.0.1:3142/ --cache-packages false \
+        --parent-mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
+        --mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/
 fi
 
 
