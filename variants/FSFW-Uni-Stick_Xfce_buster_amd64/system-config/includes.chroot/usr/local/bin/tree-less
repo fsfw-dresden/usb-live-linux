@@ -1,7 +1,7 @@
 #!/bin/bash
 # display a directory and all its content
 
-{ type tput && less && tree; } >/dev/null || { echo "this mechanism needs tput, tree and less."; exit 1; }
+{ type tput && type less && type tree; } >/dev/null || { echo "this mechanism needs tput, tree and less."; exit 1; }
 
 # following lines from my /etc/profile.d/less-termcaps.sh
 TERM=${TERM:-linux}
