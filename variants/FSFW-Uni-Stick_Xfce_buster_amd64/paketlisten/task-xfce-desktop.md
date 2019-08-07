@@ -15,6 +15,8 @@
 - :x:  libxfce4ui-utils  --		xfce4-about
 - :x:  xfce4-power-manager  --		power manager for Xfce desktop
 - :x:  xfce4-notifyd  --		simple, visually-appealing notification daemon for Xfce
+- :x:  xfce4-terminal  --		lightweight and easy to use terminal emulator for X11
+- :x:  xfce4-screenshooter  --		take desktop, rectangles or selected window screenshots
 - :x:  xfce4-panel  --		multi-functional panel
 - :x:  xfce4-cpufreq-plugin  --		displays the current frequency of the CPU, in GHz or MHz
 - :x:  xfce4-power-manager-plugins  --		control brightness etc
@@ -25,6 +27,8 @@
 - :x:  xfce4-whiskermenu-plugin  --		application launcher for Xfce
 - :x:  xfce4-indicator-plugin  --		display information from various applications consistently
 - :x:  xfce4-clipman-plugin  --		clipboard history
+- :x:  xfce4-xkb-plugin  --		keyboard layout switch plugin for the Xfce4 panel
+- :x:  xfce4-timer-plugin  --		timer plugin for Xfce panel
 
 - ###  Netzwerk
 
