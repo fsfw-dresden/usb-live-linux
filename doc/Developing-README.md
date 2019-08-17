@@ -5,7 +5,7 @@
 * __auto__    -- Autokonfiguration für live-build
 * __config__    -- Arbeitsverzeichnis von live-build
 * __variants__    -- verschiedene Varianten zum auswählen
-   - __FSFW-Uni-Stick_KDE_stretch_amd64__ -- aktuelle stabile Debian-Version
+   - __FSFW-Uni-Stick_Xfce_buster_amd64__ -- aktuelle stabile Debian-Version
       - __doc__ -- ggf. spezielle Doku und Hinweise für diese Konfigurationsvariante
       - __paketlisten__ -- Paketlisten (symlink default => Hauptpaketliste)
       - __user-config__ -- Vorkonfiguration für Benutzer
