@@ -73,3 +73,28 @@ variant_system_config_sync() {
     echo " system_config  aktuallisiert fertig."
 }
 
+
+check_program_installed() {
+	for paket in ${@}
+	do
+	    if ! dpkg --list | grep -q "ii  ${paket}" ; then
+		paket_not_installed="${paket_not_installed} ${paket}"
+	    fi
+	done
+
+	if [ -n "${paket_not_installed}" ]; then
+	    echo "Paket >> ${paket_not_installed} << ist nicht installiert!"
+            echo "Installieren erfolgt mit"
+            echo "   (sudo) apt install ${paket_not_installed} "
+	    echo " Möchten sie jetzt mit der Installation fortfahren geben sie >> y << ein und die Eingabetaste, Abbruch mit jeder anderen Taste ... : "
+	    read TASTE
+		if [ ! "$TASTE" = "y" ] ; then
+		    echo "Skript wird abgebrochen "
+		    exit 1
+		fi
+
+	    sudo apt install ${paket_not_installed}
+
+	fi
+
+}
