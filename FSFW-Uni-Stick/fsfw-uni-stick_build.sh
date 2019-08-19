@@ -20,11 +20,7 @@
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
-
-# TODO: Skript Installation auf benötigte Pakete testen
-
-# 	sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu open-infrastructure-system-boot open-infrastructure-system-build open-infrastructure-system-config open-infrastructure-system-images
-
+#
 # Dialog welche Aufgaben sollen eredigt werden ? - default alle ?
 #
 #	FSFW_UNI_Stick_*.iso bauen (CD-Image)
@@ -35,6 +31,14 @@
 #
 #
 . $(git rev-parse --show-toplevel)/tools/functions.sh
+
+
+# Skript Installation auf benötigte Pakete testen
+
+PAKET_INSTALLED_LIST="sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu open-infrastructure-system-boot open-infrastructure-system-build open-infrastructure-system-config open-infrastructure-system-images"
+
+check_program_installed ${PAKET_INSTALLED_LIST}
+
 
 # Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
 # deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
