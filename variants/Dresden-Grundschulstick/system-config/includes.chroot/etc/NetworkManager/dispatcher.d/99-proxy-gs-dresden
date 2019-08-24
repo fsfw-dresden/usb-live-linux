@@ -1,0 +1,70 @@
+#!/bin/bash -xv
+
+INTERFACE="${1}"
+STATUS="${2}"
+
+PAC_URL="http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi"
+TAG="proxy-gs-dresden"
+RUSER_UID=1000
+
+disable_proxy_pac() {
+        logger -t ${TAG} "disabling proxy-pac"
+        gsettings set org.gnome.system.proxy mode none
+        gsettings set org.gnome.system.proxy autoconfig-url ""
+        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy mode none
+        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy autoconfig-url ""
+        sed -i '/user_pref("network.proxy.type", 2);/d' /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
+        sed -i '/user_pref("network.proxy.autoconfig_url", "http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi");/d' /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
+        rm /etc/profile.d/${TAG}.sh
+        rm /etc/apt/apt.conf.d/99${TAG}
+        rm /etc/chromium.d/${TAG}
+}
+# logger -t ${TAG} "${INTERFACE}: ${STATUS} (${CONNECTION_UUID})"
+# logger -t ${TAG} "$(env|grep -i domain|sort)"
+case "${STATUS}" in
+	up|dhcp4-change)
+		if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
+                        logger -t ${TAG} "enabling proxy-pac"
+                        PROXY_URL=$(wget -qO - http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
+
+                        # proxy properties in network-manager
+                        logger -t ${TAG} "$(nmcli --fields proxy connection show ${CONNECTION_UUID})"
+                        nmcli connection modify "${CONNECTION_UUID}" proxy.method auto
+                        nmcli connection modify "${CONNECTION_UUID}" proxy.pac-url ${PAC_URL}
+#                        nmcli connection modify "${CONNECTION_UUID}" proxy.method manual
+#                        nmcli connection modify "${CONNECTION_UUID}" proxy.http-proxy "${PROXY_URL}"
+                        logger -t ${TAG} "$(nmcli --fields proxy connection show ${CONNECTION_UUID})"
+
+                        # modify gtk application settings
+                        gsettings set org.gnome.system.proxy mode auto
+                        gsettings set org.gnome.system.proxy autoconfig-url ${PAC_URL}
+                        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy mode auto
+                        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy autoconfig-url ${PAC_URL}
+
+                        # give chromium the auto proxy
+                        echo 'export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --proxy-pac-url='${PAC_URL}'"' > /etc/chromium.d/${TAG}
+
+                        # debian tools shall work with proxy
+                        echo "Acquire::http::proxy \"http://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
+                        echo "Acquire::https::proxy \"https://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
+                        echo "Acquire::ftp::proxy \"ftp://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
+
+                        # FIXME: firefox should pick this up from network-manager
+                        echo 'user_pref("network.proxy.type", 2);' >> /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
+                        echo 'user_pref("network.proxy.autoconfig_url", "http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi");' >> /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
+
+                        git config --system http.proxy "http://${PROXY_URL}"
+                        git config --system https.proxy "https://${PROXY_URL}"
+
+                        # shell env
+                        echo "export http_proxy=http://${PROXY_URL}" >> /etc/profile.d/${TAG}.sh
+                        echo "export HTTP_PROXY=http://${PROXY_URL}" >> /etc/profile.d/${TAG}.sh
+                else
+                        disable_proxy_pac
+		fi
+		;;
+	down)
+                disable_proxy_pac
+		;;
+esac
+

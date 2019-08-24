@@ -1,0 +1,26 @@
+loc_name=Dresden, Sachsen
+lat=51.049329
+lon=13.738144
+msl=120
+timezone=Europe/Berlin
+cache_file_max_age=172800
+power_saving=true
+units_temperature=0
+units_pressure=0
+units_windspeed=0
+units_precipitation=0
+units_altitude=0
+model_apparent_temperature=0
+round=true
+single_row=true
+tooltip_style=1
+forecast_layout=0
+forecast_days=7
+scrollbox_animate=false
+theme_dir=/usr/share/xfce4/weather/icons/liquid
+show_scrollbox=true
+scrollbox_lines=1
+scrollbox_color=#000000000000
+scrollbox_use_color=false
+label0=3
+

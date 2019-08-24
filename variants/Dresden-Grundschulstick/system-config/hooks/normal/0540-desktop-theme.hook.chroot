@@ -1,0 +1,2 @@
+#!/bin/sh
+update-alternatives --set desktop-theme /usr/share/desktop-base/debian-edu-buster-theme
