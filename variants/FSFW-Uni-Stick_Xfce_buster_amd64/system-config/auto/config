@@ -4,7 +4,8 @@ set -e
 
 DISTRIBUTION=buster
 DESKTOP=Xfce
-FSFW_UNI_STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
+STICK_NAME=FSFW-Uni-Stick
+STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \
@@ -13,7 +14,7 @@ lb config noauto \
     --binary-images iso-hybrid \
     --linux-packages linux-image \
     --linux-flavours "amd64" \
-    --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
+    --image-name ${STICK_NAME}_${STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
     --cache-packages true \
     --source false \
     --bootloader "syslinux,grub-efi" \
@@ -68,7 +69,7 @@ nbranch=${nbranch//-/_}			# ersetze von - in _
 
 if [[ ! "${nbranch}" = "master" ]]; then
     lb config noauto \
-        --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
+        --image-name ${STICK_NAME}_${STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
 	"${@}"
 fi
 
