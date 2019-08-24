@@ -192,3 +192,13 @@
 - :x:  key-mon  --		show live keyboard and mouse status
 - :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
 - :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
+- :x:  tipp10  --		touch typing software
+- :x:  simple-scan  --		easy-to-use Scanning Utility
+- :x:  zulip  --		productive team chat
+- :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown
+- :x:  unattended-upgrades  --		automatic installation of security upgrades
+- :x:  python3-software-properties  --		manage the repositories that you install software from
+- :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
+- :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
+- :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+- ### :x:  games  -- [Games -- Entertainment for the young](games.md)
