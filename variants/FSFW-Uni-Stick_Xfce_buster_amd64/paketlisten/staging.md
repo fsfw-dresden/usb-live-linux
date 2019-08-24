@@ -8,7 +8,7 @@
 - :x:  tig  --		ncurses-based text-mode interface for Git
 - :x:  less  --		world class file viewer
 - :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
-- :x:  chromium  --	aims to build a safer, faster, and more stable internet browsing experience
+- :x:  chromium-l10n  --	aims to build a safer, faster, and more stable internet browsing experience + translation
 - :x:  chromium-sandbox  --	setuid security sandbox for chromium
 - :x:  haveged  --		userspace entropy daemon
 - :x:  etckeeper  --		tool to let /etc be stored in a git
@@ -51,7 +51,7 @@
 - :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
 - :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
-- :x:  guake  --		Drop-down terminal (GTK)
+- :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
 - :x:  evince  --		multi-page document viewer
 - :x:  lightning  --		Calendar Extension for Thunderbird
@@ -60,8 +60,6 @@
 - :x:  hyphen-de  --		German hyphenation patterns
 - :o:  dolphin-nextcloud  --		
 - :o:  nautilus-nextcloud  --		
-- :x:  fusedav  --		mount WebDAV shares
-- :o:  kdeconnect  --		connect smartphones
 - :x:  fonts-bebas-neue  --	Flat, rounded style font designed
 - :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
 - :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
@@ -97,7 +95,7 @@
 - :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
 - :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
-- :o:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
+- :x:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
 - :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
