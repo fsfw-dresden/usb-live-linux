@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -e /sys/class/dmi/id/product_uuid ] && ID=$(sha256sum < /sys/class/dmi/id/product_uuid |cut -c 1-5)
+[ -z "$ID" ] && ID="0"
+
+echo "machine-${ID}" > /etc/hostname
