@@ -1,1 +1,1 @@
-../../FSFW-Uni-Stick_Xfce_buster_amd64/paketlisten/desktop-video-audio.md
+../../base_Xfce_buster_amd64/paketlisten/desktop-video-audio.md

@@ -1,1 +1,1 @@
-../../FSFW-Uni-Stick_Xfce_buster_amd64/paketlisten/terminal-tools.md
+../../base_Xfce_buster_amd64/paketlisten/terminal-tools.md

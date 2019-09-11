@@ -1,1 +1,1 @@
-../../FSFW-Uni-Stick_Xfce_buster_amd64/paketlisten/programmieren-ide.md
+../../base_Xfce_buster_amd64/paketlisten/programmieren-ide.md

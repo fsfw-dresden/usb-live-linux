@@ -1,1 +1,1 @@
-../../FSFW-Uni-Stick_Xfce_buster_amd64/paketlisten/netzwerk-tools.md
+../../base_Xfce_buster_amd64/paketlisten/netzwerk-tools.md
