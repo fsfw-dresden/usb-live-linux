@@ -1,6 +1,12 @@
 #!/bin/sh
 
+# generate a machine-dependent 5-char hex ID
 [ -e /sys/class/dmi/id/product_uuid ] && ID=$(sha256sum < /sys/class/dmi/id/product_uuid |cut -c 1-5)
+
+# fall back to 0
 [ -z "$ID" ] && ID="0"
 
 echo "machine-${ID}" > /etc/hostname
+
+# make subsequent 0020-hostname pick up the new name
+[ -e /var/lib/live/config/hostname ] && rm /var/lib/live/config/hostname
