@@ -152,6 +152,10 @@
 - ### :x:  firmware  -- [Firmware](firmware.md)
 
 
+##  Spiele - Unterhaltsames
+
+- ### :x:  games  -- [Games -- Entertainment for the young](games.md)
+
 ##  Staging  --
 
 - ### :x:  staging  -- [Freestyle Paketliste](staging.md) (sollen nach Testen einsortiert werden)

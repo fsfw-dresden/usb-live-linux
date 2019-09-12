@@ -80,6 +80,8 @@
 - :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic
 - :x:  fonts-ubuntu  --		developed between 2010-2011. Dalton Maag
 - :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
+- :x:  fonts-clear-sans  --		sharp on-screen sans-serif font
+- :x:  fonts-gotico-antiqua  --		15th century types between gothic and roman
 - :x:  diffpdf  --	
 - :x:  rss-glx  --	
 - :x:  unicode-screensaver  --	
@@ -201,3 +203,58 @@
 - :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
 - :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
 - :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+- :x:  dislocker  --		read/write encrypted BitLocker volumes
+- :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
+- :x:  dict  --		dictionary client
+- :x:  dictd  --		dictionary server
+- :x:  dict-bouvier  --		
+- :x:  dict-de-en  --		German-English translation dictionary for dictd
+- :x:  dict-devil  --		
+- :x:  dict-easton  --		
+- :x:  dict-elements  --		
+- :x:  dict-foldoc  --		
+- :x:  dict-freedict-ara-eng  --		
+- :x:  dict-freedict-deu-eng  --		
+- :x:  dict-freedict-deu-fra  --		
+- :x:  dict-freedict-deu-ita  --		
+- :x:  dict-freedict-deu-nld  --		
+- :x:  dict-freedict-deu-pol  --		
+- :x:  dict-freedict-deu-por  --		
+- :x:  dict-freedict-deu-rus  --		
+- :x:  dict-freedict-deu-spa  --		
+- :x:  dict-freedict-eng-ara  --		
+- :x:  dict-freedict-eng-deu  --		
+- :x:  dict-freedict-eng-ell  --		
+- :x:  dict-freedict-eng-fra  --		
+- :x:  dict-freedict-eng-hin  --		
+- :x:  dict-freedict-eng-jpn  --		
+- :x:  dict-freedict-eng-lat  --		
+- :x:  dict-freedict-eng-nld  --		
+- :x:  dict-freedict-eng-pol  --		
+- :x:  dict-freedict-eng-rus  --		
+- :x:  dict-freedict-eng-spa  --		
+- :x:  dict-freedict-eng-swh  --		
+- :x:  dict-freedict-fra-deu  --		
+- :x:  dict-freedict-fra-eng  --		
+- :x:  dict-freedict-hin-eng  --		
+- :x:  dict-freedict-ita-deu  --		
+- :x:  dict-freedict-ita-eng  --		
+- :x:  dict-freedict-jpn-deu  --		
+- :x:  dict-freedict-lat-deu  --		
+- :x:  dict-freedict-lat-eng  --		
+- :x:  dict-freedict-nld-deu  --		
+- :x:  dict-freedict-nld-eng  --		
+- :x:  dict-freedict-pol-deu  --		
+- :x:  dict-freedict-pol-eng  --		
+- :x:  dict-freedict-por-deu  --		
+- :x:  dict-freedict-spa-eng  --		
+- :x:  dict-freedict-swh-eng  --		
+- :x:  dict-freedict-tur-deu  --		
+- :x:  dict-freedict-tur-eng  --		
+- :x:  dict-gazetteer2k  --		
+- :x:  dict-gcide  --		
+- :x:  dict-hitchcock  --		
+- :x:  dict-jargon  --		
+- :x:  dict-moby-thesaurus  --		
+- :x:  dict-vera  --		
+- :x:  dict-wn  --		
