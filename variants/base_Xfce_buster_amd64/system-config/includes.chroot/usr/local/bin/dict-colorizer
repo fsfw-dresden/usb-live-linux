@@ -1,0 +1,75 @@
+#!/usr/bin/perl -w
+use strict;
+use Data::Dumper;
+use Term::ANSIColor;
+
+sub usage() {
+  print "Usage: dict.pl word [database] [strategy]\n";
+  exit(1);
+}
+
+usage() unless (@ARGV > 0);
+
+my ($search, $database, $strategy) = @ARGV;
+my (@dbs, %words, @words);
+#print color("green"). Data::Dumper::Dumper(\@ARGV). color("reset");
+#print color("yellow"), Data::Dumper::Dumper(\%hash), color("reset");
+if(0 && open(DICTPIPE, "dict --formatted --dbs|")) {
+  while(<DICTPIPE>) {
+    if (/^[^\t]*\t\d*\t(\S+)/) {
+      push (@dbs, $1);
+    }
+  }
+  #print color("yellow"), Data::Dumper::Dumper(\@dbs), color("reset");
+  close(DICTPIPE);
+}
+if ($search =~ /[\^\.\*]/) { # regexp term
+  if (open(DICTPIPE, "dict --formatted --match --strategy re '$search' 2>/dev/null|")) {
+    while (<DICTPIPE>) {
+      if (/\W$search/ && /^[^\t]*\t\d*\t\S*\t(.*)/) {
+        unless (exists($words{$1})) {
+          push(@words, $1);
+          $words{$1} = 1;
+        }
+      }
+    }
+  }
+  # print color("cyan"), Data::Dumper::Dumper(\%words), color("reset");
+} else {
+  push(@words, $search);
+}
+# print color("blue"), Data::Dumper::Dumper(\@words), color("reset");
+my %trans;
+foreach my $word (@words) {
+  if(open(DICTPIPE, '-|', 'dict', '--formatted', $word)) {
+  # if(open(DICTPIPE, "dict --formatted '$word' 2>/dev/null|")) {
+    my $i = 0;
+    my $dict = '';
+    while(<DICTPIPE>) {
+      # man dict(1): host<TAB>port<TAB>database1<TAB>database description1
+      if (/^[^\t]*\t\d*\t(\S+)/) {
+        $dict = $1;
+        next;
+      }
+      next unless ($dict);
+      $trans{$dict} = [] unless exists $trans{$dict};
+      push (@{$trans{$dict}}, $_) unless /^\s*$/;
+    }
+    close DICTPIPE;
+  }
+}
+# print color("bright_yellow"), Data::Dumper::Dumper(\%trans), color("reset");
+foreach my $dict (sort(keys(%trans))) {
+  print color("reverse blue"), "[$dict]", color("reset"), "\n";
+  $search =~ /\W*([^\^\.\*\[\]]+)\W*/;
+  my $stripped_search = $1;
+  foreach (@{$trans{$dict}}) {
+    s/\[([^\]]*)\]/'['.color("green").$1.color("reset").']'/gei;
+    s/\{([^\}]*)\}/'{'.color("cyan").$1.color("reset").'}'/gei;
+    s/\<([^\>]*)\>/'<'.color("bright_magenta").$1.color("reset").'>'/gei;
+    s/($stripped_search)/color("bright_yellow").$1.color("reset")/gei;
+    print;
+  }
+  print "\n";
+}
+printf("%sNo matches for '%s' found.%s\n", color("bright_red reverse blink"), $search, color("reset")) unless (%trans);
