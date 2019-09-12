@@ -1,0 +1,31 @@
+#!/bin/bash
+# little tool to fade screen to less blue in the evening
+# activated from /etc/cron.d/night-mode
+# depends on `sct` tool, sudo, cron
+
+[ -e /etc/night-mode.conf ] && source /etc/night-mode.conf
+NIGHT_MODE_LOGGING=${NIGHT_MODE_LOGGING:-1}
+
+CENTIHOUR_FADE_BEGIN=${CENTIHOUR_FADE_BEGIN:-1900}
+CENTIHOUR_FADE_END=${CENTIHOUR_FADE_END:-2200}
+CENTIHOUR_NIGHT_END=${CENTIHOUR_NIGHT_END:-500}
+
+TEMP_FADE_BEGIN=${TEMP_FADE_BEGIN:-6500}
+TEMP_FADE_END=${TEMP_FADE_END:-2000}
+
+HOUR=$(date +%H)
+MIN=$(date +%M)
+
+# set -x
+# date's leading zeroes trick bash into assuming octal numbers, so explicitly demand base 10#
+CENTIHOUR=$((10#$HOUR * 100 + 10#$MIN * 100 / 60))
+if [ $CENTIHOUR -lt $CENTIHOUR_NIGHT_END ] || [ $CENTIHOUR -gt $CENTIHOUR_FADE_END ]; then
+        TEMP=$TEMP_FADE_END
+elif [ $CENTIHOUR -lt $CENTIHOUR_FADE_BEGIN ]; then
+        TEMP=$TEMP_FADE_BEGIN
+else
+        TEMP=$(( TEMP_FADE_BEGIN - (CENTIHOUR - CENTIHOUR_FADE_BEGIN) * (TEMP_FADE_BEGIN - TEMP_FADE_END) / (CENTIHOUR_FADE_END - CENTIHOUR_FADE_BEGIN) ))
+fi
+
+[ $NIGHT_MODE_LOGGING -ge 1 ] && logger -t night-mode "$HOUR:$MIN => CENTIHOUR=$CENTIHOUR => TEMP=$TEMP"
+DISPLAY=:0 sudo -u '#1000' sct $TEMP
