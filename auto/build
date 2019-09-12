@@ -2,4 +2,4 @@
 
 set -e
 
-lb build noauto "${@}" 2>&1 | tee build.log
+lb build noauto "${@}" 2>&1 | tee build_$(date +'%F_%H:%M').log
