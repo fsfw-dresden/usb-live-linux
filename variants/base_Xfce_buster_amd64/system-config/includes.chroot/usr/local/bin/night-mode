@@ -4,6 +4,9 @@
 # depends on `sct` tool, sudo, cron
 
 [ -e /etc/night-mode.conf ] && source /etc/night-mode.conf
+
+[ ${NIGHT_MODE_ENABLED:-0} -ne 1 ] && exit 0
+
 NIGHT_MODE_LOGGING=${NIGHT_MODE_LOGGING:-1}
 
 CENTIHOUR_FADE_BEGIN=${CENTIHOUR_FADE_BEGIN:-1900}
