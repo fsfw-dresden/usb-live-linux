@@ -1,70 +1,74 @@
-#!/bin/bash -xv
+#!/bin/bash
 
 INTERFACE="${1}"
 STATUS="${2}"
 
 PAC_URL="http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi"
-TAG="proxy-gs-dresden"
-RUSER_UID=1000
+TAG="gs-dresden"
 
-disable_proxy_pac() {
-        logger -t ${TAG} "disabling proxy-pac"
-        gsettings set org.gnome.system.proxy mode none
-        gsettings set org.gnome.system.proxy autoconfig-url ""
-        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy mode none
-        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy autoconfig-url ""
-        sed -i '/user_pref("network.proxy.type", 2);/d' /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
-        sed -i '/user_pref("network.proxy.autoconfig_url", "http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi");/d' /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
-        rm /etc/profile.d/${TAG}.sh
-        rm /etc/apt/apt.conf.d/99${TAG}
-        rm /etc/chromium.d/${TAG}
+enable_redsocks() {
+        PROXY_URL=$(wget -qO - http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
+        logger -t ${TAG} "configuring redsocks magic proxy to route via ${PROXY_URL}"
+        [ -z ${PROXY_URL} ] && PROXY_URL="kjs-04.sv.dresden.de:3128" && logger -t ${TAG} -p user.warning "PROXY_URL not found, falling back to ${PROXY_URL}"
+        PROXY_DOMAIN=${PROXY_URL%:*}
+        PROXY_PORT=${PROXY_URL#*:}
+        sed -ri "s/(\tip = )(.*);/\1${PROXY_DOMAIN};/" /etc/redsocks.conf
+        sed -ri "s/(\tport = )(.*);/\1${PROXY_PORT};/" /etc/redsocks.conf
+        logger -t ${TAG} "enabling redsocks magic proxy gateway"
+        systemctl restart redsocks
+        iptables -t nat -N REDSOCKS
+        iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 100.64.0.0/10 -j RETURN
+        iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN
+        iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN
+        iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETURN
+        iptables -t nat -A REDSOCKS -d 198.18.0.0/15 -j RETURN
+        iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
+        iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
+        # local 49.gs.dresden.de subnet
+        iptables -t nat -A REDSOCKS -d 10.157.0.0/16 -j RETURN
+        iptables -t nat -A REDSOCKS -p tcp --dport 80 -j REDIRECT --to-ports 12345
+        iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12346
+        iptables -t nat -A OUTPUT -p tcp -j REDSOCKS
 }
-# logger -t ${TAG} "${INTERFACE}: ${STATUS} (${CONNECTION_UUID})"
-# logger -t ${TAG} "$(env|grep -i domain|sort)"
+
+disable_redsocks() {
+        logger -t ${TAG} "disabling redsocks magic proxy gateway"
+        iptables -t nat -D OUTPUT -p tcp -j REDSOCKS
+        iptables -t nat -F REDSOCKS
+        iptables -t nat -X REDSOCKS
+        systemctl stop redsocks
+}
+
+mount_samba_share() {
+        mkdir -p /media/Tausch-Schueler
+        source /usr/local/.49-gs-dresden.secret
+        mount -t cifs //kserver/Tausch-Schueler /media/Tausch-Schueler -o user=${user},password=${password},uid=1000,gid=1000 \
+          && logger -t ${TAG} "mounted //kserver/Tausch-Schueler on /media/Tausch-Schueler"
+        unset user password
+}
+
+umount_samba_share() {
+        umount -vl /media/Tausch-Schueler && rmdir /media/Tausch-Schueler \
+          && logger -t ${TAG} "unmounted /media/Tausch-Schueler" \
+          || logger -t ${TAG} -p user.warning "WARNING: could not unmount /media/Tausch-Schueler"
+}
+
 case "${STATUS}" in
-	up|dhcp4-change)
-		if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
-                        logger -t ${TAG} "enabling proxy-pac"
-                        PROXY_URL=$(wget -qO - http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
-
-                        # proxy properties in network-manager
-                        logger -t ${TAG} "$(nmcli --fields proxy connection show ${CONNECTION_UUID})"
-                        nmcli connection modify "${CONNECTION_UUID}" proxy.method auto
-                        nmcli connection modify "${CONNECTION_UUID}" proxy.pac-url ${PAC_URL}
-#                        nmcli connection modify "${CONNECTION_UUID}" proxy.method manual
-#                        nmcli connection modify "${CONNECTION_UUID}" proxy.http-proxy "${PROXY_URL}"
-                        logger -t ${TAG} "$(nmcli --fields proxy connection show ${CONNECTION_UUID})"
-
-                        # modify gtk application settings
-                        gsettings set org.gnome.system.proxy mode auto
-                        gsettings set org.gnome.system.proxy autoconfig-url ${PAC_URL}
-                        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy mode auto
-                        sudo -u 1000 DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.gnome.system.proxy autoconfig-url ${PAC_URL}
-
-                        # give chromium the auto proxy
-                        echo 'export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --proxy-pac-url='${PAC_URL}'"' > /etc/chromium.d/${TAG}
-
-                        # debian tools shall work with proxy
-                        echo "Acquire::http::proxy \"http://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
-                        echo "Acquire::https::proxy \"https://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
-                        echo "Acquire::ftp::proxy \"ftp://${PROXY_URL}\";" >> /etc/apt/apt.conf.d/99${TAG}
-
-                        # FIXME: firefox should pick this up from network-manager
-                        echo 'user_pref("network.proxy.type", 2);' >> /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
-                        echo 'user_pref("network.proxy.autoconfig_url", "http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi");' >> /home/user/.mozilla/firefox/fsfw1234.default/prefs.js
-
-                        git config --system http.proxy "http://${PROXY_URL}"
-                        git config --system https.proxy "https://${PROXY_URL}"
-
-                        # shell env
-                        echo "export http_proxy=http://${PROXY_URL}" >> /etc/profile.d/${TAG}.sh
-                        echo "export HTTP_PROXY=http://${PROXY_URL}" >> /etc/profile.d/${TAG}.sh
+        up)
+                # turn on auto-negotiation when speed is below gigabit
+                [ $(ethtool ${INTERFACE} 2>&1|sed -nr 's/.*Speed: ([0-9]+)[^0-9]+$/\1/p') -lt 1000 ] && ethtool --change ${INTERFACE} autoneg on
+                if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
+                        enable_redsocks
+                        mount_samba_share
                 else
-                        disable_proxy_pac
-		fi
-		;;
-	down)
-                disable_proxy_pac
-		;;
+                        disable_redsocks
+                fi
+                ;;
+        down)
+                disable_redsocks
+                umount_samba_share
+                ;;
 esac
-
