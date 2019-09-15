@@ -23,9 +23,17 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap <F6> :Hexmode<CR>
 nmap <F3> :set wrap!<CR>
 map <silent> <unique> <F2> :ToggleSpaceHi<CR>
+
+" plugin settings
 let g:spacehi_tabcolor="ctermfg=White ctermbg=Blue guifg=White guibg=Red"
 let g:spacehi_spacecolor="ctermfg=Black ctermbg=Cyan guifg=Blue guibg=Yellow"
 let g:airline_powerline_fonts = 1
+
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_WinWidth = 50
 
 set pastetoggle=<F3>
 noremap <C-U> :earlier 1f<CR>
