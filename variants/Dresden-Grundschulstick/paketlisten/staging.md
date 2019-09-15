@@ -186,7 +186,9 @@
 - :x:  exiftool  --		read and write meta information in multimedia files
 - :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
 - :x:  ssh-audit  --		tool for ssh server auditing
-- :x:  vim-scripts  --		plugins for vim, adding bells and whistles
+- :x:  vim-scripts  --		Erweiterungen für vim (was man sonst noch so braucht)
+- :x:  vim-pathogen  --		pathogen.vim: install plugins in their own private directories ("bundles")
+- :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
 - :x:  stress  --		impose load on and stress test a computer system
 - :x:  weston  --		reference implementation of a wayland compositor
 - :x:  google-earth-pro-stable  --		Explore, search and discover the planet
@@ -210,7 +212,6 @@
 - :x:  dict-bouvier  --		
 - :x:  dict-de-en  --		German-English translation dictionary for dictd
 - :x:  dict-devil  --		
-- :x:  dict-easton  --		
 - :x:  dict-elements  --		
 - :x:  dict-foldoc  --		
 - :x:  dict-freedict-ara-eng  --		
@@ -236,7 +237,6 @@
 - :x:  dict-freedict-eng-swh  --		
 - :x:  dict-freedict-fra-deu  --		
 - :x:  dict-freedict-fra-eng  --		
-- :x:  dict-freedict-hin-eng  --		
 - :x:  dict-freedict-ita-deu  --		
 - :x:  dict-freedict-ita-eng  --		
 - :x:  dict-freedict-jpn-deu  --		
@@ -253,8 +253,38 @@
 - :x:  dict-freedict-tur-eng  --		
 - :x:  dict-gazetteer2k  --		
 - :x:  dict-gcide  --		
-- :x:  dict-hitchcock  --		
 - :x:  dict-jargon  --		
 - :x:  dict-moby-thesaurus  --		
 - :x:  dict-vera  --		
 - :x:  dict-wn  --		
+- :x:  lolcat  --		concatenates files like the UNIX `cat` program, but colors it
+- :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
+- :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
+- :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+- :x:  openprinting-ppds  --		Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
+- :x:  printer-driver-cups-pdf  --		Druckertreiber zur PDF-Erzeugung mittels CUPS
+- :x:  printer-driver-all  --		Druckertreiber-Metapaket
+- :x:  printer-driver-brlaser  --		Druckertreiber für (einige) Brother-Laserdrucker
+- :x:  printer-driver-c2050  --		Druckertreiber für den Lexmark 2050 Color Jetprinter
+- :x:  printer-driver-c2esp  --		Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
+- :x:  printer-driver-cjet  --		Druckertreiber für Canon-LBP-Laserdrucker
+- :x:  printer-driver-dymo  --		Treiber für DYMO-Etikettendrucker
+- :x:  printer-driver-escpr  --		Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
+- :x:  printer-driver-foo2zjs  --		Druckertreiber für auf ZjStream basierende Drucker
+- :x:  printer-driver-fujixerox  --		Druckertreiber für Fuji-Xerox-Drucker
+- :x:  printer-driver-gutenprint  --		Druckertreiber für CUPS (Gutenprint basierend)
+- :x:  printer-driver-hpcups  --		HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
+- :x:  printer-driver-hpijs  --		HP Linux Printing and Imaging - Druckertreiber (hpijs)
+- :x:  hpijs-ppds  --		HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
+- :x:  printer-driver-m2300w  --		Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
+- :x:  printer-driver-min12xxw  --		Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+- :x:  printer-driver-pnm2ppa  --		Druckertreiber für HP-GDI-Drucker
+- :x:  printer-driver-postscript-hp  --		Beschreibungen von HP-PostScript-Druckern
+- :x:  printer-driver-ptouch  --		Treiber für »Brother P-touch«-Etikettendrucker
+- :x:  printer-driver-pxljr  --		Druckertreiber für HP Color LaserJet 35xx/36xx
+- :x:  printer-driver-sag-gdi  --		Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
+- :x:  printer-driver-splix  --		Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
+- :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
+- :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+- :x:  xpra  --		tool to detach/reattach running X programs
+- :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
