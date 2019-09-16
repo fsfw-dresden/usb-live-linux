@@ -362,8 +362,6 @@ Dennoch wollen wir euch auf einige dieser Programme aufmerksam machen, denn viel
 
 ## Siehe auch
 
-* [Open Source im Studium](http://www.hostingundservice.de/de/projects/opensource-im-studium/),
-  eine Programmsammlung, die uns unter anderem zu diesem Projekt inspiriert hat.
-* [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler
-  Programme für Windows, von denen die meisten auch Freie Software sind.
+* [Projekt](https://www.hostingundservice.de/projekte/) Open Source im Studium ([ehemalige Seite](https://web.archive.org/web/20161015125259/http://www.hostingundservice.de/de/projects/opensource-im-studium/)), eine Programmsammlung, die uns unter anderem zu diesem Projekt inspiriert hat.
+* [PortableApps.com](http://portableapps.com/apps/), eine Sammlung weiterer portabler Programme für Windows, von denen die meisten auch Freie Software sind.
 * [dudle](https://dudle.inf.tu-dresden.de/), ein Tool für Abstimmungen an der TU Dresden.
