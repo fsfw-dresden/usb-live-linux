@@ -203,7 +203,7 @@
 - :x:  unattended-upgrades  --		automatic installation of security upgrades
 - :x:  python3-software-properties  --		manage the repositories that you install software from
 - :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
-- :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
+- :x:  exfat-dkms  --		exFAT-Treiber mit Schreib- und Lesezugriff (neuere Version)
 - :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
 - :x:  dislocker  --		read/write encrypted BitLocker volumes
 - :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
