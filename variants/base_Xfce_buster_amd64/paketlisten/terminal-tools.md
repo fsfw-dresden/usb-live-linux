@@ -15,6 +15,7 @@
 - :x:  pandoc-citeproc  -- Literaturverwaltungserweiterung für Pandoc
 - :x:  docutils-common  -- weiterer Multiformatkonverter (für Restructured Text)
 - :x:  hopenpgp-tools  -- hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
+- :x:  cmatrix  --	Screen saver for the terminal
 
 - ###  Text Tools
 
