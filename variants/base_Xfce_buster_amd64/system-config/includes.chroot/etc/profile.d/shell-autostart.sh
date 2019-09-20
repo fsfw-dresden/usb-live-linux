@@ -1,25 +1,39 @@
-# Check for interactive bash and that we haven't already been sourced.
-[ -z "$BASH_VERSION" -o -z "$PS1" -o -n "$TMUX" -o -n "$SHELL_AUTOSTART" ] && return
-SHELL_AUTOSTART=1
+# proceed only if shell interactivity flag is set
+case "$-" in
+  *i* )
+    # proceed when not in ranger or tmux and not sourced
+    [ -n "$RANGER_LEVEL" -o -n "$TMUX" -o -n "$SHELL_AUTOSTART" ] && return ;;
+  * ) return ;;
+esac
 
-# depends on color script
+export SHELL_AUTOSTART=1
+
+# depends on /usr/local/bin/color
 COLOR_CYAN=$(color bold cyan)
+COLOR_RED=$(color bold red)
 COLOR_OFF=$(color off)
 
-MSG="${COLOR_CYAN}Within 10 seconds${COLOR_OFF}, press "
-[ $(id -u) -eq 0 ] || MSG+="${COLOR_CYAN}[s]${COLOR_OFF} for a root shell, "
-MSG+="${COLOR_CYAN}[r]${COLOR_OFF} for ranger file browser or ${COLOR_CYAN}[t]${COLOR_OFF} to enter tmux terminal multiplexer or ${COLOR_CYAN}[any other key]${COLOR_OFF} to continue..$(color off)"
+[ $(id -u) -eq 0 ] && SU=1 || SU=
 
-[ $(id -u) -eq 0 ] || { echo "don't panic"|toilet; echo "    This is the command line interface. Computer is waiting for your input."; }|lolcat --animate --speed=120
+MSG="Command line quick-start menu"
+[ -z $SU ] || MSG+=" -- ${COLOR_RED}superuser / system administration mode${COLOR_OFF} active"
+MSG+="\n-----------------------------\n"
+MSG+=" Press \n\t"
+MSG+="${COLOR_CYAN}[r]${COLOR_OFF}\t\t for ranger file browser, \n\t${COLOR_CYAN}[t]${COLOR_OFF}\t\t to enter tmux terminal multiplexer"
+[ -z $SU ] && MSG+=", \n\t${COLOR_CYAN}[s]${COLOR_OFF}\t\t for a superuser / root shell"
+MSG+=" or \n\t${COLOR_CYAN}[any other key]${COLOR_OFF}\t to continue to a regular Bash shell prompt..$(color off)"
+
+ADIOS="\n\n\t... Happy Hacking! : )\n"
+
 echo
-if read -sn1 -t10 -sp "$MSG"; then
+if read -sn1 -sp "$(echo -e $MSG)"; then
   case $REPLY in
     s) echo; [ $(id -u) -eq 0 ] || sudo su -l;;
-    r) echo; ranger;;
-    t) echo; tmux -2 attach-session;;
+    r) echo -e "$ADIOS"; ranger;;
+    t) echo -e "$ADIOS"; tmux -2 attach-session;;
+    *) echo -e "$ADIOS";;
   esac
-else
   echo
+else
   echo "No key pressed.."
 fi
-echo
