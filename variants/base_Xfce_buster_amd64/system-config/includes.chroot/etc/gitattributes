@@ -1,0 +1,13 @@
+# some glob patterns to case-insensitively match file names
+*.[jJ][pP][gG] diff=exif
+*.[jJ][pP][eE][gG] diff=exif
+*.[pP][nN][gG] diff=exif
+*.bin diff=hex
+*.bak diff=hex
+*.db  diff=sqlite3
+*.sqlite  diff=sqlite3
+*.[pP][dD][fF] diff=pdf
+*.[dD][oO][cC][xXmM] diff=docx2txt
+*.[dD][oO][tT][mM] diff=docx2txt
+*.[dD][oO][cCtT] diff=antiword
+*.tex text diff=tex

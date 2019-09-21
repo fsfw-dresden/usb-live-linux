@@ -1,0 +1,55 @@
+[core]
+	editor = vim
+[color]
+	ui = auto
+	diff = auto
+	branch = auto
+	status = auto
+	showbranch = auto
+[color "status"]
+	added = green
+	changed = red bold
+	untracked = magenta bold
+[pretty]
+	shorter = "%C(yellow)%ai %n%C(magenta)%s"
+[tig]
+	ignore-space = all
+	ignore-case = true
+	horizontal-scroll = 20%
+	line-graphics = utf-8
+	commit-order = date
+	wrap-lines = yes
+[pager]
+	difftool = true
+[difftool "icdiff"]
+	cmd = icdiff \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	noprefix = true
+	tool = icdiff
+[diff "antiword"]
+	textconv = antiword -m UTF-8
+[diff "docx2txt"]
+	textconv = docx2txt <
+[diff "exif"]
+	textconv = exiftool
+[diff "hex"]
+	textconv = hexdump -C
+[diff "jsonlz4"]
+	textconv = lz4json %f
+[diff "pandoc"]
+	textconv = pandoc --to=rst
+[diff "pdf"]
+	textconv = sh -c 'pdftotext -layout -enc UTF-8 "$0" -'
+[diff "sqlite3"]
+	textconv = sqlite3 /dev/stdin .dump <
+[alias]
+	ci = commit
+	cia = commit -a
+	di = diff --color-words
+	dt = difftool
+	st = status
+	co = checkout
+	log1 = log --pretty=oneline --abbrev-commit
+	logs = log --stat
