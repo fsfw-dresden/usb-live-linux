@@ -4,7 +4,7 @@ CORES=1
 
 # Specifies the amount of RAM that should be used for zram
 # based on a percentage the total amount of available memory
-PERCENTAGE=42
+PERCENTAGE=65
 
 # Specifies a static amount of RAM that should be used for
 # the ZRAM devices, this is in MiB
