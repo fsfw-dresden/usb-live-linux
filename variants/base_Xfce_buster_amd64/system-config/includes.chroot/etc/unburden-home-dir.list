@@ -1,7 +1,7 @@
 # Generic cache locations
 m D .cache cache
 m D .thumbnails thumbnails
-m D .ccache ccache
+m d .ccache ccache
 
 # Common browser caches
 m d .config/chromium/*/Thumbnails chromium-thumbnails-%1
@@ -33,6 +33,6 @@ m d .buzzbird/*/Cache buzzbird-cache
 
 # Other applications' caches
 m f .aptitude/cache aptitude-cache
-m d .googleearth/Cache google-earth-cache
-m D .local/share/akonadi akonadi
-m D .kde/cache-debian kde-cache
+m D .googleearth/Cache google-earth-cache
+m d .local/share/akonadi akonadi
+m d .kde/cache-debian kde-cache
