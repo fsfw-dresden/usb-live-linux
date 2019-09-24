@@ -32,3 +32,4 @@
 
 [//]: # (- :+1:  celestia-gnome  -- Desktop-Planetarium (Fotorelistische Planetenansichten) - nicht in stretch - nur in unstable / sid )
 
+- :x:  jupyter-notebook  --	Jupyter interactive notebook
