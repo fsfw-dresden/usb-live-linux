@@ -1,9 +1,10 @@
 #!/bin/bash
 # little tool to fade screen to less blue in the evening
-# activated from /etc/cron.d/night-mode
-# depends on `sct` tool, sudo, cron
+# activated from /home/${USER}/.config/systemd/user/night-mode.{timer,service}
+# depends on `sct` tool
 
 [ -e /etc/night-mode.conf ] && source /etc/night-mode.conf
+[ -e ~/.config/night-mode.conf ] && source ~/.config/night-mode.conf
 
 [ ${NIGHT_MODE_ENABLED:-0} -ne 1 ] && exit 0
 
@@ -31,4 +32,4 @@ else
 fi
 
 [ $NIGHT_MODE_LOGGING -ge 1 ] && logger -t night-mode "$HOUR:$MIN => CENTIHOUR=$CENTIHOUR => TEMP=$TEMP"
-DISPLAY=:0 sudo -u '#1000' sct $TEMP
+sct $TEMP
