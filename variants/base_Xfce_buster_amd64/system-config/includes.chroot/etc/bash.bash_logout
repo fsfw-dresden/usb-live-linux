@@ -8,6 +8,5 @@
 # Or maybe you want to leave a thoughtful note.
 #fortune
 
-local COLOR
 [ "$(id -u)" != "0" ] && COLOR="cyan" || COLOR="red"
 timeout 5 cmatrix -bsC $COLOR
