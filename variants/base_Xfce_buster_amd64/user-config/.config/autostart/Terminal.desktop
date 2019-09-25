@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+Comment=Xfce-Terminal in drop-down mode
+Exec=xfce4-terminal --drop-down
