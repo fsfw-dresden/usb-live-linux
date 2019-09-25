@@ -57,9 +57,9 @@ main() {
     # FSFW_UNI_Stick_*.iso bauen
     sudo lb build
 
-    sudo chown -c ${USER}:${USER} ./FSFW-Uni-Stick*.iso
+    sudo chown -c ${USER}:${USER} ./${BUILD_VARIANT}*.*
 
-    mkdir -pv iso-images && mv -iv ./FSFW-Uni-Stick*.iso iso-images/
+    mkdir -pv iso-images && mv -iv ./${BUILD_VARIANT}*.* iso-images/
 
 }
 
