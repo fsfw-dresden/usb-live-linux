@@ -23,7 +23,6 @@
 - :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
 - :o:  tuned-utils  --	
 - :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
-- :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
 - :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S

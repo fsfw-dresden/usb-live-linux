@@ -24,6 +24,7 @@
 - :x:  docx2txt  --		Convert Microsoft OOXML files to plain text
 - :x:  antiword  --		Converts MS Word files to text, PS, PDF and XML
 - :x:  icdiff  --	terminal side-by-side colorized word diff
+- :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
 
 - ###  Grafik Tools
 

@@ -4,7 +4,9 @@
 
 - :x:  dia  --		umfangreiches Diagrammerstellungsprogramm
 - :x:  inkscape  --	Vektorbasiertes Zeichenprogramm
- - :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
+- :x:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
+- :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
+- :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
 - :x:  scribus  --	DTP-Programm
 - :+1:  scribus-template  -- Vorlagen
 

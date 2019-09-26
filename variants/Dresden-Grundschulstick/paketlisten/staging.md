@@ -2,35 +2,24 @@
 
 - ###  Noch einzusortieren
 
+- ### Terminal-Environment
 - :x:  aptitude  --	Anständiger Paketmanager (Text UI)
 - :o:  sysdig  --	Mächtiges Systemanalysewerkzeug
 - :x:  ranger  --	Bester Dateimanager (Text UI)
 - :x:  tig  --		ncurses-based text-mode interface for Git
 - :x:  less  --		world class file viewer
-- :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
-- :x:  chromium-l10n  --	aims to build a safer, faster, and more stable internet browsing experience + translation
-- :x:  chromium-sandbox  --	setuid security sandbox for chromium
-- :x:  haveged  --		userspace entropy daemon
-- :x:  etckeeper  --		tool to let /etc be stored in a git
 - :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
 - :x:  debian-goodies  --	dpigs      - Show which installed packages occupy the most space
 - :x:  testdisk  --	disk/file recovery tool
-- :x:  system-config-printer  --	configure the printing system
-- :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
-- :x:  gparted  --	manipulate devices and partition tables
-- :x:  gnome-disk-utility  --	manage and configure disk drives and media
 - :x:  debootstrap  --		used to create a Debian base system from scratch
-- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
-- :o:  tuned-utils  --	
 - :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
-- :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
 - :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
+- :x:  dlocate  --		speed up finding out which package a file belongs to (i.e. a very fast dpkg -S)
 - :x:  iotop  --	displays a table of current I/O usage by processes on the system
 - :x:  iftop  --	displays bandwidth usage information on an network interface
 - :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
-- :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 - :x:  renameutils  --	to make file renaming easier
 - :x:  pipemeter  --	shows the speed of data moving from input to output
 - :x:  strace  --	System call tracer
@@ -43,23 +32,233 @@
 - :x:  lm-sensors  --	hardware health monitoring: read temperature/voltage/fan sensors
 - :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
 - :x:  traceroute  --	displays the route used by IP packets on their way
-- :x:  anacron  --	periodic command scheduler for systems not running continuously.
-- :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
-- :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
 - :x:  ripgrep  --	line-oriented search tool that recursively searches
 - :x:  wcalc  --	command-line scientific calculator
 - :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
 - :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
-- :o:  guake  --		Drop-down terminal (GTK)
-- :o:  yakuake  --		Drop-down terminal (KDE)
+- :x:  ocrmypdf  --	
+- :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
+- :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
+- :x:  vim-airline-themes  --	themable vim status bar + themes
+- :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
+- :x:  qalc  --			command line version of Qalculate!
+- :x:  fortunes  --		fortune cookies
+- :x:  fortunes-de  --		Glückskekse
+- :x:  nmap  --		utility for network exploration or security auditing
+- :x:  ccze  --		robust and modular log coloriser
+- :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
+- :x:  tree  --		recursive directory listing: depth indented colorized listing of files
+- :x:  pmount  --		mount removable devices as normal user
+- :x:  toilet  --		prints text using large characters made of smaller characters
+- :x:  mosh  --		Mobile shell that supports roaming and intelligent local echo
+- :x:  tmux-themepack-jimeh  --		basic theme and powerline themes for tmux
+- :x:  fonts-powerline  --		font which provides symbols used by Powerline
+- :x:  zram-tools  --		set up compressed swap space
+- :x:  smem  --		reports on memory usage
+- :x:  dialog  --		dialog boxes from shell scripts
+- :x:  luksipc  --		convert (unencrypted) block devices to (encrypted) LUKS devices in-place
+- :x:  progress  --		Coreutils Progress Viewer
+- :x:  tuptime  --		report historical system real time
+- :x:  dmidecode  --		SMBIOS/DMI table decoder
+- :x:  ncdu  --		ncurses disk usage viewer
+- :x:  psmisc  --		utilities that use the proc file system
+- :x:  lsof  --		utility to list open files
+- :x:  f2fs-tools  --		Tools for Flash-Friendly File System
+- :x:  atool  --		tool for managing file archives of various types
+- :x:  mediainfo  --		command-line utility for reading information from audio/video files
+- :x:  nethogs  --		Net top tool grouping bandwidth per process
+- :x:  dnsutils  --		client programs related to DNS (dig, nslookup, nsupdate)
+- :x:  whois  --		intelligent WHOIS client
+- :x:  linux-cpupower  --		CPU power management tools for Linux
+- :x:  percol  --		interactive selection for UNIX pipes
+- :x:  consolation  --		linux console pointer support for copy-paste
+- :x:  unoconv  --		converter between LibreOffice document formats
+- :x:  caca-utils  --		text mode graphics utilities
+- :x:  elinks  --		advanced text-mode WWW browser
+- :x:  w3m  --		WWW browsable pager with excellent tables/frames support
+- :x:  highlight  --		Universal source code to formatted text converter
+- :x:  exiftool  --		read and write meta information in multimedia files
+- :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
+- :x:  ssh-audit  --		tool for ssh server auditing
+- :x:  vim-scripts  --		Erweiterungen für vim (was man sonst noch so braucht)
+- :x:  vim-pathogen  --		pathogen.vim: install plugins in their own private directories ("bundles")
+- :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
+- :x:  stress  --		impose load on and stress test a computer system
+- :x:  davfs2  --		mount a WebDAV resource as a regular file system
+- :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
+- :x:  lolcat  --		concatenates files like the UNIX `cat` program, but colors it
+- :x:  htpdate  --		HTTP based time synchronization tool for firewall blocking the NTP port
+- :x:  curl  --		command line tool for transferring data with URL syntax
+- :x:  httpie  --		CLI, cURL-like tool for humans
+- :x:  antiword  --	Converts MS Word files to text, PS, PDF and XML
+- :x:  boxes  --	textmode box- and comment drawing filter
+- :x:  catdoc  --	text extractor for MS-Office files
+- :x:  cgdb  --	curses-based interface to the GNU Debugger (GDB)
+- :x:  rlwrap  --	Kommandozeilen-Wrapper mit »readline«-Funktionalität (Editieren von Tastatureingaben)
+- :x:  translate-shell  --	Command-line translator using Google Translate, etc.
+- :x:  btscanner  --	ncurses-based scanner for Bluetooth devices
+- :x:  csstidy  --	CSS parser and optimiser
+- :x:  docx2txt  --	Convert Microsoft OOXML files to plain text
+- :x:  dos2unix  --	convert text file line endings between CRLF and LF
+- :x:  gnuit  --	GNU Interactive Tools, a file browser/viewer and process viewer/killer
+- :x:  ncurses-hexedit  --	Edit files/disks in hex, ASCII and EBCDIC
+- :x:  moreutils  --	additional Unix utilities
+- :x:  ne  --	easy-to-use and powerful text editor
+- :x:  pylint  --	Python code static checker and UML diagram generator
+- :x:  shed  --	simple hex editor with a pico-style interface
+- :x:  tidy  --	HTML/XML syntax checker and reformatter
+- :x:  tilde  --	Intuitive text editor for the terminal
+- :x:  tweak  --	Efficient text-mode hex editor
+- :x:  librsvg2-bin  --	command-line and graphical viewers for SVG files
+
+- ### System
+- :x:  haveged  --		userspace entropy daemon
+- :x:  etckeeper  --		tool to let /etc be stored in a git
+- :x:  system-config-printer  --	configure the printing system
+- :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+- :x:  gparted  --	manipulate devices and partition tables
+- :x:  gnome-disk-utility  --	manage and configure disk drives and media
+- :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
+- :x:  anacron  --	periodic command scheduler for systems not running continuously.
+- :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
+- :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+- :x:  pulseaudio-equalizer  --	
+- :o:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
+- :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
+- :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
+- :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
+- :x:  sct  --		set screen color temperature via xrandr - reduce or increase blue light
+- :x:  blueman  --		GTK+ bluetooth management utility
+- :x:  pulseaudio-module-bluetooth  --		enables PulseAudio to work with bluetooth devices
+- :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
+- :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
+- :x:  smart-notifier  --		graphical hard disk health status notifier
+- :x:  unattended-upgrades  --		automatic installation of security upgrades
+- :x:  python3-software-properties  --		manage the repositories that you install software from
+- :x:  exfat-dkms  --		exFAT-Treiber mit Schreib- und Lesezugriff (neuere Version)
+- :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+- :x:  dislocker  --		read/write encrypted BitLocker volumes
+- :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
+- :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
+- :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
+- :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+- :x:  openprinting-ppds  --		Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
+- :x:  bluez-cups  --		Bluetooth printer driver for CUPS
+- :x:  printer-driver-cups-pdf  --		Druckertreiber zur PDF-Erzeugung mittels CUPS
+- :x:  printer-driver-all  --		Druckertreiber-Metapaket
+- :x:  printer-driver-brlaser  --		Druckertreiber für (einige) Brother-Laserdrucker
+- :x:  printer-driver-c2050  --		Druckertreiber für den Lexmark 2050 Color Jetprinter
+- :x:  printer-driver-c2esp  --		Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
+- :x:  printer-driver-cjet  --		Druckertreiber für Canon-LBP-Laserdrucker
+- :x:  printer-driver-dymo  --		Treiber für DYMO-Etikettendrucker
+- :x:  printer-driver-escpr  --		Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
+- :x:  printer-driver-foo2zjs  --		Druckertreiber für auf ZjStream basierende Drucker
+- :x:  printer-driver-fujixerox  --		Druckertreiber für Fuji-Xerox-Drucker
+- :x:  printer-driver-gutenprint  --		Druckertreiber für CUPS (Gutenprint basierend)
+- :x:  printer-driver-hpcups  --		HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
+- :x:  printer-driver-hpijs  --		HP Linux Printing and Imaging - Druckertreiber (hpijs)
+- :x:  hpijs-ppds  --		HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
+- :x:  printer-driver-m2300w  --		Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
+- :x:  printer-driver-min12xxw  --		Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+- :x:  printer-driver-pnm2ppa  --		Druckertreiber für HP-GDI-Drucker
+- :x:  printer-driver-postscript-hp  --		Beschreibungen von HP-PostScript-Druckern
+- :x:  printer-driver-ptouch  --		Treiber für »Brother P-touch«-Etikettendrucker
+- :x:  printer-driver-pxljr  --		Druckertreiber für HP Color LaserJet 35xx/36xx
+- :x:  printer-driver-sag-gdi  --		Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
+- :x:  printer-driver-splix  --		Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
+- :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
+- :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+- :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
+- :x:  auto-apt-proxy  --		automatic detector of common APT proxy settings
+- :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
+- :x:  grub-efi-amd64-signed  --		GRand Unified Bootloader, version 2 (amd64 UEFI signed by Debian, used by shim-signed)
+- :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
+
+- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
+- :o:  tuned-utils  --	
+- :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown
+
+- ### Media
+- :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
+
+- ### Web
+- :x:  chromium-l10n  --	aims to build a safer, faster, and more stable internet browsing experience + translation
+- :x:  chromium-sandbox  --	setuid security sandbox for chromium
+
+- ### Graphical User Interface / Apps
 - :x:  evince  --		multi-page document viewer
+- :x:  diffpdf  --	
 - :x:  lightning  --		Calendar Extension for Thunderbird
 - :x:  lightning-l10n-de  --		
 - :x:  hunspell-de-de  --		
 - :x:  hyphen-de  --		German hyphenation patterns
+- :x:  rss-glx  --	
+- :x:  unicode-screensaver  --	
+- :x:  xscreensaver  --	modular screen saver and locker for X11
+- :x:  xscreensaver-gl-extra  --	
+- :x:  pavucontrol  --	PulseAudio Volume Control
+- :x:  libreoffice-gtk3  --	
+- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
+- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
+- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
+- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
+- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
+- :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
+- :x:  meld  --		graphical diff … recursive  directory diffs
+- :x:  remmina  --		remote desktop client
+- :x:  remmina-plugin-vnc  --		VNC plugin for Remmina
+- :x:  remmina-plugin-nx  --		NX plugin for Remmina
+- :x:  remmina-plugin-rdp  --		RDP plugin for Remmina
+- :x:  remmina-plugin-spice  --		Spice plugin for Remmina
+- :x:  kdeconnect  --		integrate linux desktop with android smartphone
+- :x:  gthumb  --		advanced image viewer and browser
+- :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion
+- :x:  gnome-font-viewer  --		preview fonts
+- :x:  tumbler  --		D-Bus thumbnailing service
+- :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
+- :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
+- :x:  catfish  --		file searching tool
+- :x:  nemo  --		file manager
+- :x:  nemo-fileroller  --		create and extract archives
+- :x:  nemo-nextcloud  --		integrates the Nextcloud web service
+- :x:  cinnamon-l10n  --		translation files for nemo et al.
+- :x:  weston  --		reference implementation of a wayland compositor
+- :x:  google-earth-pro-stable  --		Explore, search and discover the planet
+- :x:  mixxx  --		Digital Disc Jockey Interface
+- :x:  key-mon  --		show live keyboard and mouse status
+- :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
+- :x:  tipp10  --		touch typing software
+- :x:  simple-scan  --		easy-to-use Scanning Utility
+- :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
+- :x:  xpra  --		tool to detach/reattach running X programs
+- :x:  brasero  --	CD/DVD burning application for GNOME
+- :x:  brasero-cdrkit  --	cdrkit extensions for the Brasero burning application
+- :x:  cdrdao  --	records CDs in Disk-At-Once (DAO) mode
+- :x:  cheese  --	tool to take pictures and videos from your webcam
+- :x:  copyq-plugins  --	Advanced clipboard manager with editing and scripting features + Plugins
+- :x:  deepin-music  --	music player with brilliant and tweakful UI
+- :x:  geany-plugins  --	fast and lightweight IDE + plugins
+- :x:  gnome-video-effects-frei0r  --	GNOME Video Effects - frei0r plugins
+- :x:  juffed-plugins  --	Lightweight yet powerful Qt text editor - plugins
+- :x:  lazarus-ide-qt5  --	IDE for Free Pascal - Last Qt version dependency package
+- :x:  libdvdcss2  --	Simple foundation for reading DVDs - runtime libraries
+- :x:  libvte9  --	Terminal emulator widget for GTK+ 2.0 - runtime files
+- :x:  kdenlive  --	non-linear video editor
+- :x:  lives  --	Video Editing system allowing users to edit and create video
+- :x:  minder  --	Mind-mapping application
+- :x:  slowmovideo  --	creates slow-motion videos from your footage
+- :x:  musescore3  --	cross-platform multi-lingual music composition and notation
+
+- :o:  zulip  --		productive team chat
+- :o:  guake  --		Drop-down terminal (GTK)
+- :o:  yakuake  --		Drop-down terminal (KDE)
 - :o:  dolphin-nextcloud  --		
 - :o:  nautilus-nextcloud  --		
+
+- ### Fonts
 - :x:  fonts-bebas-neue  --	Flat, rounded style font designed
 - :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
 - :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
@@ -82,131 +281,25 @@
 - :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
 - :x:  fonts-clear-sans  --		sharp on-screen sans-serif font
 - :x:  fonts-gotico-antiqua  --		15th century types between gothic and roman
-- :x:  diffpdf  --	
-- :x:  rss-glx  --	
-- :x:  unicode-screensaver  --	
-- :x:  xscreensaver  --	modular screen saver and locker for X11
-- :x:  xscreensaver-gl-extra  --	
-- :x:  pulseaudio-equalizer  --	
-- :x:  pavucontrol  --	PulseAudio Volume Control
-- :x:  ocrmypdf  --	
-- :x:  libreoffice-gtk3  --	
-- :x:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
-- :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
-- :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
-- :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
-- :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
-- :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
-- :x:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
-- :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
+- :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
+- :x:  fonts-anonymous-pro  --	fixed width font designed for coders
+
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
 - :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications
-- :o:  qgis  --		Qt-based Geographic Information System
-- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+
+- ### Electronics
 - :o:  kicad  --	Electronic design software: suite of programs for the creation of printed circuit boards
 - :o:  kicad-footprints  --	footprint is a drawing of the physical component including its land pattern (e.g. the layout of pads on the circuit board
 - :o:  kicad-symbols  --	schematic symbols
 - :o:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
+
+- ### Science
 - :o:  openmodelica  --	Modelica modeling, compilation and simulation environment
 - :o:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
-- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
-- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
-- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
-- :x:  vim-airline-themes  --	themable vim status bar + themes
-- :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
-- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
-- :x:  qalc  --			command line version of Qalculate!
-- :x:  fortunes  --		fortune cookies
-- :x:  fortunes-de  --		Glückskekse
-- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
-- :x:  nmap  --		utility for network exploration or security auditing
-- :x:  ccze  --		robust and modular log coloriser
-- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
-- :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
-- :x:  meld  --		graphical diff … recursive  directory diffs
-- :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
-- :x:  tree  --		recursive directory listing: depth indented colorized listing of files
-- :x:  sct  --		set screen color temperature - reduce or increase blue light
-- :x:  remmina  --		remote desktop client
-- :x:  remmina-plugin-vnc  --		VNC plugin for Remmina
-- :x:  remmina-plugin-nx  --		NX plugin for Remmina
-- :x:  remmina-plugin-rdp  --		RDP plugin for Remmina
-- :x:  remmina-plugin-spice  --		Spice plugin for Remmina
-- :x:  pmount  --		mount removable devices as normal user
-- :x:  toilet  --		prints text using large characters made of smaller characters
-- :x:  dlocate  --		speed up finding out which package a file belongs to (i.e. a very fast dpkg -S)
-- :x:  mosh  --		Mobile shell that supports roaming and intelligent local echo
-- :x:  kdeconnect  --		integrate linux desktop with android smartphone
-- :x:  tmux-themepack-jimeh  --		basic theme and powerline themes for tmux
-- :x:  fonts-powerline  --		font which provides symbols used by Powerline
-- :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
-- :x:  zram-tools  --		set up compressed swap space
-- :x:  smem  --		reports on memory usage
-- :x:  sct  --		change the screen color temperature via xrandr
-- :x:  dialog  --		dialog boxes from shell scripts
-- :x:  blueman  --		GTK+ bluetooth management utility
-- :x:  pulseaudio-module-bluetooth  --		enables PulseAudio to work with bluetooth devices
-- :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
-- :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
-- :x:  gthumb  --		advanced image viewer and browser
-- :x:  luksipc  --		convert (unencrypted) block devices to (encrypted) LUKS devices in-place
-- :x:  davfs2  --		mount a WebDAV resource as a regular file system
-- :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion
-- :x:  gnome-font-viewer  --		preview fonts
-- :x:  tumbler  --		D-Bus thumbnailing service
-- :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
-- :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
-- :x:  catfish  --		file searching tool
-- :x:  nemo  --		file manager
-- :x:  nemo-fileroller  --		create and extract archives
-- :x:  nemo-nextcloud  --		integrates the Nextcloud web service
-- :x:  cinnamon-l10n  --		translation files for nemo et al.
-- :x:  progress  --		Coreutils Progress Viewer
-- :x:  tuptime  --		report historical system real time
-- :x:  smart-notifier  --		graphical hard disk health status notifier
-- :x:  dmidecode  --		SMBIOS/DMI table decoder
-- :x:  ncdu  --		ncurses disk usage viewer
-- :x:  psmisc  --		utilities that use the proc file system
-- :x:  lsof  --		utility to list open files
-- :x:  f2fs-tools  --		Tools for Flash-Friendly File System
-- :x:  atool  --		tool for managing file archives of various types
-- :x:  mediainfo  --		command-line utility for reading information from audio/video files
-- :x:  nethogs  --		Net top tool grouping bandwidth per process
-- :x:  dnsutils  --		Clients provided with BIND
-- :x:  whois  --		intelligent WHOIS client
-- :x:  linux-cpupower  --		CPU power management tools for Linux
-- :x:  percol  --		interactive selection for UNIX pipes
-- :x:  consolation  --		linux console pointer support for copy-paste
-- :x:  unoconv  --		converter between LibreOffice document formats
-- :x:  caca-utils  --		text mode graphics utilities
-- :x:  elinks  --		advanced text-mode WWW browser
-- :x:  w3m  --		WWW browsable pager with excellent tables/frames support
-- :x:  highlight  --		Universal source code to formatted text converter
-- :x:  exiftool  --		read and write meta information in multimedia files
-- :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
-- :x:  ssh-audit  --		tool for ssh server auditing
-- :x:  vim-scripts  --		Erweiterungen für vim (was man sonst noch so braucht)
-- :x:  vim-pathogen  --		pathogen.vim: install plugins in their own private directories ("bundles")
-- :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
-- :x:  stress  --		impose load on and stress test a computer system
-- :x:  weston  --		reference implementation of a wayland compositor
-- :x:  google-earth-pro-stable  --		Explore, search and discover the planet
-- :x:  mixxx  --		Digital Disc Jockey Interface
-- :x:  key-mon  --		show live keyboard and mouse status
-- :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
-- :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
-- :x:  tipp10  --		touch typing software
-- :x:  simple-scan  --		easy-to-use Scanning Utility
-- :x:  zulip  --		productive team chat
-- :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown
-- :x:  unattended-upgrades  --		automatic installation of security upgrades
-- :x:  python3-software-properties  --		manage the repositories that you install software from
-- :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
-- :x:  exfat-dkms  --		exFAT-Treiber mit Schreib- und Lesezugriff (neuere Version)
-- :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
-- :x:  dislocker  --		read/write encrypted BitLocker volumes
-- :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
+- :o:  qgis  --		Qt-based Geographic Information System
+
+- ### Dictionaries
 - :x:  dict  --		dictionary client
 - :x:  dictd  --		dictionary server
 - :x:  dict-bouvier  --		
@@ -257,34 +350,4 @@
 - :x:  dict-moby-thesaurus  --		
 - :x:  dict-vera  --		
 - :x:  dict-wn  --		
-- :x:  lolcat  --		concatenates files like the UNIX `cat` program, but colors it
-- :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
-- :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
-- :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
-- :x:  openprinting-ppds  --		Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
-- :x:  printer-driver-cups-pdf  --		Druckertreiber zur PDF-Erzeugung mittels CUPS
-- :x:  printer-driver-all  --		Druckertreiber-Metapaket
-- :x:  printer-driver-brlaser  --		Druckertreiber für (einige) Brother-Laserdrucker
-- :x:  printer-driver-c2050  --		Druckertreiber für den Lexmark 2050 Color Jetprinter
-- :x:  printer-driver-c2esp  --		Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
-- :x:  printer-driver-cjet  --		Druckertreiber für Canon-LBP-Laserdrucker
-- :x:  printer-driver-dymo  --		Treiber für DYMO-Etikettendrucker
-- :x:  printer-driver-escpr  --		Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
-- :x:  printer-driver-foo2zjs  --		Druckertreiber für auf ZjStream basierende Drucker
-- :x:  printer-driver-fujixerox  --		Druckertreiber für Fuji-Xerox-Drucker
-- :x:  printer-driver-gutenprint  --		Druckertreiber für CUPS (Gutenprint basierend)
-- :x:  printer-driver-hpcups  --		HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
-- :x:  printer-driver-hpijs  --		HP Linux Printing and Imaging - Druckertreiber (hpijs)
-- :x:  hpijs-ppds  --		HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
-- :x:  printer-driver-m2300w  --		Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
-- :x:  printer-driver-min12xxw  --		Druckertreiber für KonicaMinolta PagePro 1[234]xxW
-- :x:  printer-driver-pnm2ppa  --		Druckertreiber für HP-GDI-Drucker
-- :x:  printer-driver-postscript-hp  --		Beschreibungen von HP-PostScript-Druckern
-- :x:  printer-driver-ptouch  --		Treiber für »Brother P-touch«-Etikettendrucker
-- :x:  printer-driver-pxljr  --		Druckertreiber für HP Color LaserJet 35xx/36xx
-- :x:  printer-driver-sag-gdi  --		Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
-- :x:  printer-driver-splix  --		Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
-- :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
-- :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
-- :x:  xpra  --		tool to detach/reattach running X programs
-- :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
+
