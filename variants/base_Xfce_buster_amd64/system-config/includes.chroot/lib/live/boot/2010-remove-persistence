@@ -1,0 +1,103 @@
+#!/bin/sh
+
+#set -e
+
+Remove_persistence ()
+{
+	local custom_mounts
+	custom_mounts=${1}
+
+	for _PARAMETER in ${LIVE_BOOT_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-boot.persistence-remove=*|persistence-remove=*)
+				LIVE_PERSISTENCE_REMOVE="${_PARAMETER#*persistence-remove=}"
+				;;
+
+			live-boot.persistence-remove|persistence-remove)
+				LIVE_PERSISTENCE_REMOVE="true"
+				;;
+		esac
+	done
+
+        # persistence-storage = { directory | file | filesystem }
+        # directory:	label = directory name
+        # file:		label = loop backing_file
+        # filesystem:	label = LABEL (dos) or PART_ENTRY_NAME (gpt)
+
+        # examples:
+        # /dev/loop2 /run/live/persistence/loop2 /root union
+        # /run/live/persistence/vda2//linux-userdata/ /run/live/persistence/vda2/linux-userdata/userdata /root/home bind,source=userdata
+        # /dev/vda3 /run/live/persistence/vda3/usr/src /root/usr/src union
+
+        # file:		label = loop backing_file
+        # /dev/loop2	/run/live/persistence/loop2	/root	union
+	# device	source				dest	options
+
+        # directory:	label = directory name
+        # /run/live/persistence/vda2//linux-userdata/	/run/live/persistence/vda2/linux-userdata/userdata	/root/home	bind,source=userdata
+	# device					source							dest		options
+
+        # filesystem:	label = LABEL (dos) or PART_ENTRY_NAME (gpt)
+        # /dev/vda3	/run/live/persistence/vda3/usr/src	/root/usr/src	union
+	# device	source					dest		options
+        # /dev/vda3	/run/live/persistence/vda3/var/lib	/root/var/lib	union
+
+	while read device source dest options # < ${custom_mounts}
+        do
+                NAME=$(basename "${device}")
+                REMOVE="false"
+
+                if [ -d "${device}" ]
+                then
+                        TYPE="directory"
+                elif echo "${device}" | grep -q "^/dev/loop" && [ -e /sys/block/${NAME}/loop/backing_file ]
+                then
+                        TYPE="loop"
+                        NAME=$(basename $(cat /sys/block/${NAME}/loop/backing_file))
+                elif [ -b "${device}" ]
+                then
+                        TYPE="filesystem"
+
+                        # partly taken from probe_for_gpt_name / probe_for_fs_label
+                        gpt_dev="${device}"
+	                if is_active_luks_mapping ${device}
+	                then
+	                        # if $device is an opened luks device, we need to check
+	                        # GPT stuff on the backing device
+	                        gpt_dev=$(get_luks_backing_device "${device}")
+	                fi
+
+	                if is_gpt_device ${gpt_dev}
+	                then
+	                        NAME=$(get_gpt_name ${gpt_dev})
+                        else
+                                NAME=$(blkid -s LABEL -o value $device 2>/dev/null)
+	                fi
+                else
+                        echo "what the hell is this. check it out.."
+                        env|sort
+                        bash
+                fi
+
+                # remove *all* persistence data ..
+                if [ "${LIVE_PERSISTENCE_REMOVE}" = "true" ]
+                then
+                        REMOVE="true"
+                # .. or match only explicitly given labels
+                else
+                        for REMOVE_LABEL in $(echo ${LIVE_PERSISTENCE_REMOVE} | sed -e 's/,/ /g')
+                        do
+                                [ "${REMOVE_LABEL}" = "${NAME}" ] && REMOVE="true"
+                        done
+                fi
+
+                if [ "${REMOVE}" = "true" ]
+                then
+                        echo "reset requested for ${NAME} (${TYPE}): removing data from ${source}"
+                        # specify minimum depth 1 to not match $source itself
+	                find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' | xargs echo rm -rf
+                fi
+	done < ${custom_mounts}
+        read
+}

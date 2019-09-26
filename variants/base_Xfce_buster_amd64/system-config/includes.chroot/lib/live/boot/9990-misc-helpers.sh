@@ -472,6 +472,14 @@ is_supported_fs ()
 	fi
 
 	# Try to look if it is already supported by the kernel
+	# For ntfs, since user space program ntfs-3g will be used. Check ntfs-3g instead of kernel module.
+	if [ "${fstype}" = "ntfs" ]; then
+		if type ntfs-3g >/dev/null 2>&1; then
+			return 0
+		else
+			return 1
+		fi
+	fi
 	if grep -q ${fstype} /proc/filesystems
 	then
 		return 0
@@ -783,7 +791,7 @@ mount_persistence_media ()
 		fi
 	elif [ "${backing}" != "${old_backing}" ]
 	then
-		if ! mount -o move ${old_backing} ${backing} >/dev/null 2>&1
+		if ! mount -o move ${old_backing} ${backing} >/dev/null
 		then
 			[ -z "${probe}" ] && log_warning_msg "Failed to move persistence media ${device}"
 			rmdir "${backing}"
@@ -794,7 +802,7 @@ mount_persistence_media ()
 		then
 			mount_opts="ro,noatime"
 		fi
-		if ! mount -o "remount,${mount_opts}" "${backing}" >/dev/null 2>&1
+		if ! mount -o "remount,${mount_opts}" "${backing}" >/dev/null
 		then
 			log_warning_msg "Failed to remount persistence media ${device} writable"
 			# Don't unmount or rmdir the new mountpoint in this case
@@ -1141,7 +1149,6 @@ find_persistence_media ()
 					fi
 				fi
 				ret="${ret} ${result}"
-				continue
 			fi
 		fi
 

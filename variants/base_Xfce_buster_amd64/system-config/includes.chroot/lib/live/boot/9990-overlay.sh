@@ -298,9 +298,6 @@ setup_unionfs ()
 		fi || panic "mount ${UNIONTYPE} on ${unionmountpoint} failed with option ${unionmountopts}"
 	done
 
-	# Remove persistence depending on boot parameter
-	Remove_persistence
-
 	# Correct the permissions of /:
 	chmod 0755 "${rootmnt}"
 
@@ -310,31 +307,36 @@ setup_unionfs ()
 		chmod 1777 "${rootmnt}"/tmp
 	fi
 
-	# Adding custom persistence
+	# Handle custom persistence
+        local custom_mounts
+        custom_mounts="/tmp/custom_mounts.list"
+        rm -f ${custom_mounts}
+
+        # Gather information about custom mounts from devies detected as overlays
+        get_custom_mounts ${custom_mounts} ${overlay_devices}
+
+        [ -n "${LIVE_BOOT_DEBUG}" ] && cp ${custom_mounts} "/run/live/persistence"
+
+	# Remove persistence depending on boot parameter
+	Remove_persistence ${custom_mounts}
+
+        local used_overlays
+        used_overlays=""
+
 	if [ -n "${PERSISTENCE}" ] && [ -z "${NOPERSISTENCE}" ]
 	then
-		local custom_mounts
-		custom_mounts="/tmp/custom_mounts.list"
-		rm -f ${custom_mounts}
-
-		# Gather information about custom mounts from devies detected as overlays
-		get_custom_mounts ${custom_mounts} ${overlay_devices}
-
-		[ -n "${LIVE_BOOT_DEBUG}" ] && cp ${custom_mounts} "/run/live/persistence"
-
 		# Now we do the actual mounting (and symlinking)
-		local used_overlays
-		used_overlays=""
 		used_overlays=$(activate_custom_mounts ${custom_mounts})
-		rm -f ${custom_mounts}
-
-		# Close unused overlays (e.g. due to missing $persistence_list)
-		for overlay in ${overlay_devices}
-		do
-			if echo ${used_overlays} | grep -qve "^\(.* \)\?${overlay}\( .*\)\?$"
-			then
-				close_persistence_media ${overlay}
-			fi
-		done
 	fi
+
+        rm -f ${custom_mounts}
+
+        # Close unused overlays (e.g. due to missing $persistence_list)
+        for overlay in ${overlay_devices}
+        do
+                if echo ${used_overlays} | grep -qve "^\(.* \)\?${overlay}\( .*\)\?$"
+                then
+                        close_persistence_media ${overlay}
+                fi
+        done
 }
