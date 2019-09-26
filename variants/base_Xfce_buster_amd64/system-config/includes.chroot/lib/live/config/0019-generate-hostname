@@ -2,6 +2,7 @@
 
 # generate a machine-dependent 5-char hex ID
 [ -e /sys/class/dmi/id/product_uuid ] && ID=$(sha256sum < /sys/class/dmi/id/product_uuid |cut -c 1-5)
+[ -e /sys/class/dmi/id/sys_vendor ] && ID=$(cat /sys/class/dmi/id/sys_vendor)
 
 # fall back to 0
 [ -z "$ID" ] && ID="0"
