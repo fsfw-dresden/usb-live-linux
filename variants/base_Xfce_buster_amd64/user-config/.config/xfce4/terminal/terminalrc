@@ -5,3 +5,4 @@ ColorPalette=#000000;#cc0000;#4e9a06;#c4a000;#3465a4;#933682;#06989a;#d3d7cf;#55
 MiscSlimTabs=TRUE
 MiscNewTabAdjacent=TRUE
 FontName=Hack 13
+DropdownHeight=80
