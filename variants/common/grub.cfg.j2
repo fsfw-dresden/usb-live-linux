@@ -5,6 +5,8 @@ set default=0
 
 insmod part_msdos
 insmod ntfs
+insmod fat
+insmod exfat
 insmod ext2
 insmod iso9660
 insmod font
@@ -51,8 +53,6 @@ fi
 menuentry "Live-System ({{ STICK_VERSION }})" {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
     echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-    insmod ext2
-    insmod part_msdos
     set isofile=/boot/{{ STICK_ISO }}
     loopback loop $isofile
     linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence
@@ -63,22 +63,28 @@ menuentry "Live-System ({{ STICK_VERSION }})" {
 menuentry "Live-System ohne Persistenz (Änderungen gehen verloren) ({{ STICK_VERSION }})" {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
     echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-    insmod ext2
-    insmod part_msdos
     set isofile=/boot/{{ STICK_ISO }}
     loopback loop $isofile
     linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }}
     initrd (loop)/live/initrd.img
 }
 
+submenu "  [ Untermenü: Persistenz zurücksetzen ]" {
+
+  menuentry "Systemdateien zurücksetzen (für Updates (Vorsicht BETA!))" {
+      set isofile=/boot/{{ STICK_ISO }}
+      loopback loop $isofile
+      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove=linux-system.img
+      initrd (loop)/live/initrd.img
+  }
+
+}
 
 submenu "  [ Untermenü: Expertenoptionen ]" {
 
   menuentry "Live-System mit Persistenz (Rettungsmodus) ({{ STICK_VERSION }})" {
       echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
       echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-      insmod ext2
-      insmod part_msdos
       set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
       linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
@@ -87,8 +93,6 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
 
   menuentry "Live-System ohne Persistenz (Rettungsmodus) ({{ STICK_VERSION }})" {
       echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-      insmod ext2
-      insmod part_msdos
       set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
       linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
@@ -97,8 +101,6 @@ submenu "  [ Untermenü: Expertenoptionen ]" {
 
   menuentry "Live-System *toram* (System komplett in Arbeitsspeicher laden) ({{ STICK_VERSION }})" {
       echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-      insmod ext2
-      insmod part_msdos
       set isofile=/boot/{{ STICK_ISO }}
       loopback loop $isofile
       linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} toram
