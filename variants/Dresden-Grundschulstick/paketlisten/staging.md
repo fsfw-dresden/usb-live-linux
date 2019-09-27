@@ -121,6 +121,7 @@
 - :x:  gnome-disk-utility  --	manage and configure disk drives and media
 - :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 - :x:  anacron  --	periodic command scheduler for systems not running continuously.
+- :x:  grub-efi-ia32-bin  --	GRand Unified Bootloader, version 2 (EFI-IA32 modules)
 - :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
 - :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
 - :x:  pulseaudio-equalizer  --	
