@@ -1,7 +1,11 @@
 # see man apt_preferences(5)
 Package: *
-Pin: release a=testing, o=Debian
+Pin: release o=Debian Backports
 Pin-Priority: 500
+
+Package: *
+Pin: release a=testing, o=Debian
+Pin-Priority: 499
 
 Package: *
 Pin: release a=unstable, o=Debian
@@ -33,12 +37,4 @@ Pin-Priority: 500
 
 #Package: *
 #Pin: origin /deb.multimedia/
-#Pin-Priority: 509
-#
-#Package: enigmail
-#Pin: release a=testing, o=Debian
-#Pin-Priority: 510
-#
-#Package: octave octave-common
-#Pin: release o=Debian Backports
 #Pin-Priority: 509

@@ -16,6 +16,7 @@ lb config noauto \
     --linux-flavours "amd64" \
     --image-name ${STICK_NAME}_${STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
     --cache-packages true \
+    --cache-stages   false \
     --source false \
     --bootloader "syslinux,grub-efi" \
     --system live \
