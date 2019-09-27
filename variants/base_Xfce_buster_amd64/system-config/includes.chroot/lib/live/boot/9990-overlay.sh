@@ -310,7 +310,7 @@ setup_unionfs ()
 	# Handle custom persistence
         local custom_mounts
         custom_mounts="/tmp/custom_mounts.list"
-        rm -f ${custom_mounts}
+        true > ${custom_mounts}
 
         # Gather information about custom mounts from devies detected as overlays
         get_custom_mounts ${custom_mounts} ${overlay_devices}
