@@ -1,0 +1,13 @@
+[Removed Associations]
+text/plain=vim.desktop;diffuse.desktop;gvim.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop
+text/x-tex=vim.desktop;
+
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+image/jpeg=org.gnome.gThumb.desktop;
+inode/directory=nemo.desktop;
+
+[Default Applications]
+application/pdf=org.gnome.Evince.desktop;
+text/markdown=geany.desktop
+inode/directory=nemo.desktop
