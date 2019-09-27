@@ -1,0 +1,16 @@
+# from https://github.com/imedias/lernstick-config
+# NetworkManager connections are per default restricted to the MAC address used
+# at setup time. This is not what we want on a live system. We want to use the
+# configured network connections on any hardware we are booting on. Therefore we
+# remove the mac-address lines from the system connections config files.
+
+[Unit]
+Description=Removing MAC addresses from NetworkManager connections
+Before=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/find /etc/NetworkManager/system-connections/ -type f -exec sed -i '/mac-address=.*/d' {} \;
+
+[Install]
+WantedBy=NetworkManager.service
