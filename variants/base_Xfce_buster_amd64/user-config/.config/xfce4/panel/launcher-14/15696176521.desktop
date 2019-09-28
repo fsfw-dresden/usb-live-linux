@@ -1,0 +1,34 @@
+[Desktop Entry]
+Name=Files
+Name[de]=Dateien
+Name[de_DE]=Dateien
+Comment=Access and organize files
+Comment[de]=Dateien aufrufen und organisieren
+Comment[de_DE]=Dateien aufrufen und organisieren
+Exec=nemo %U
+Icon=folder
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=GNOME;GTK;Utility;Core;
+MimeType=inode/directory;application/x-gnome-saved-search;
+Actions=open-home;open-computer;open-trash;
+X-XFCE-Source=file:///usr/share/applications/nemo.desktop
+
+[Desktop Action open-home]
+Name=Home
+Name[de]=Persönlicher Ordner
+Name[de_DE]=Persönlicher Ordner
+Exec=nemo %U
+
+[Desktop Action open-computer]
+Name=Computer
+Name[de]=Rechner
+Name[de_DE]=Rechner
+Exec=nemo computer:///
+
+[Desktop Action open-trash]
+Name=Trash
+Name[de]=Papierkorb
+Name[de_DE]=Papierkorb
+Exec=nemo trash:///

@@ -13,9 +13,11 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="8"/>
+        <value type="int" value="16"/>
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
+        <value type="int" value="14"/>
         <value type="int" value="7"/>
         <value type="int" value="4"/>
         <value type="int" value="12"/>
@@ -88,20 +90,19 @@
     <property name="plugin-10" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="153912359513.desktop"/>
-        <value type="string" value="153912360514.desktop"/>
+        <value type="string" value="15696961644.desktop"/>
         <value type="string" value="153912361015.desktop"/>
       </property>
     </property>
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15391234524.desktop"/>
         <value type="string" value="15391234615.desktop"/>
-        <value type="string" value="15391234766.desktop"/>
-        <value type="string" value="15391235098.desktop"/>
-        <value type="string" value="15391235119.desktop"/>
-        <value type="string" value="153912351710.desktop"/>
+        <value type="string" value="15696962811.desktop"/>
+        <value type="string" value="15696962005.desktop"/>
+        <value type="string" value="15696962116.desktop"/>
+        <value type="string" value="15696962187.desktop"/>
+        <value type="string" value="15391234524.desktop"/>
         <value type="string" value="153912354112.desktop"/>
-        <value type="string" value="15391234967.desktop"/>
         <value type="string" value="153912352411.desktop"/>
       </property>
     </property>
@@ -110,6 +111,16 @@
     </property>
     <property name="plugin-13" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+    </property>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15696176521.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-16" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15696235403.desktop"/>
+      </property>
     </property>
   </property>
 </channel>
