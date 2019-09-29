@@ -13,8 +13,10 @@ esac
 
 if [ $LANG = "de_DE.UTF-8" ]
 then
+  echo "	( Taste [F1] zum umschalten )"
   { echo "KEINE PANIK"|toilet --filter border; echo "    Dies ist der Kommandozeilenmodus. Computer wartet auf deine Befehle."; } | lolcat --animate --speed=120
 else
+  echo "	( Press [F1] key to toggle )"
   { echo "don't panic"|toilet --filter border; echo "    This is the command line interface. Computer is waiting for your input."; } | lolcat --animate --speed=120
 fi
 
