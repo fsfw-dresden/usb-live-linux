@@ -175,6 +175,8 @@
 - :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
 - :x:  grub-efi-amd64-signed  --		GRand Unified Bootloader, version 2 (amd64 UEFI signed by Debian, used by shim-signed)
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
+- :x:  vmtouch  --		file system cache diagnostics and control
+- :x:  preload  --		adaptive readahead daemon, predicts what applications users might run
 
 - :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
 - :o:  tuned-utils  --	
@@ -243,7 +245,6 @@
 - :x:  deepin-music  --	music player with brilliant and tweakful UI
 - :x:  geany-plugins  --	fast and lightweight IDE + plugins
 - :x:  gnome-video-effects-frei0r  --	GNOME Video Effects - frei0r plugins
-- :x:  juffed-plugins  --	Lightweight yet powerful Qt text editor - plugins
 - :x:  lazarus-ide-qt5  --	IDE for Free Pascal - Last Qt version dependency package
 - :x:  libdvdcss2  --	Simple foundation for reading DVDs - runtime libraries
 - :x:  libvte9  --	Terminal emulator widget for GTK+ 2.0 - runtime files
@@ -252,8 +253,10 @@
 - :x:  minder  --	Mind-mapping application
 - :x:  slowmovideo  --	creates slow-motion videos from your footage
 - :x:  musescore3  --	cross-platform multi-lingual music composition and notation
+- :x:  zulip  --		productive team chat
+- :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
+- :x:  qt5-style-plugins  --		 Qt 5 extra widget styles (Cleanlooks, Motif, Plastique) and GTK+ 2 platformtheme
 
-- :o:  zulip  --		productive team chat
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
 - :o:  dolphin-nextcloud  --		
@@ -296,6 +299,7 @@
 - :o:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
 
 - ### Science
+- :o:  lyx  --		almost WYSIWYG-frontend for LaTeX
 - :o:  openmodelica  --	Modelica modeling, compilation and simulation environment
 - :o:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
 - :o:  qgis  --		Qt-based Geographic Information System
