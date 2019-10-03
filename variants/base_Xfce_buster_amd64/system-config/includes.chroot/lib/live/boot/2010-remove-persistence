@@ -2,11 +2,8 @@
 
 #set -e
 
-Remove_persistence ()
+Remove_persistence_prepare ()
 {
-	local custom_mounts
-	custom_mounts=${1}
-
 	for _PARAMETER in ${LIVE_BOOT_CMDLINE}
 	do
 		case "${_PARAMETER}" in
@@ -19,6 +16,14 @@ Remove_persistence ()
 				;;
 		esac
 	done
+}
+
+Remove_persistence ()
+{
+        [ -z "${LIVE_PERSISTENCE_REMOVE}" ] && return
+
+	local custom_mounts
+	custom_mounts=${1}
 
         # persistence-storage = { directory | file | filesystem }
         # directory:	label = directory name
@@ -96,8 +101,7 @@ Remove_persistence ()
                 then
                         echo "reset requested for ${NAME} (${TYPE}): removing data from ${source}"
                         # specify minimum depth 1 to not match $source itself
-	                find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' | xargs echo rm -rf
+	                find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' | xargs rm -rf
                 fi
 	done < ${custom_mounts}
-        read
 }

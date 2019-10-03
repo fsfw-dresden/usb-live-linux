@@ -132,8 +132,12 @@ setup_unionfs ()
 	touch /etc/fstab
 	mkdir -p /run/live/overlay
 
+        # parse kernel parameters
+        Remove_persistence_prepare
+
 	# Looking for persistence devices or files
-	if [ -n "${PERSISTENCE}" ] && [ -z "${NOPERSISTENCE}" ]
+	if [ -n "${PERSISTENCE}" ] && [ -z "${NOPERSISTENCE}" ] \
+                || [ -n "${LIVE_PERSISTENCE_REMOVE}" ]
 	then
 
 		if [ -z "${QUICKUSBMODULES}" ]
