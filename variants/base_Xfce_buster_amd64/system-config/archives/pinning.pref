@@ -31,7 +31,7 @@ Pin-Priority: 500
 # Pin-Priority: 500
 
 # up-to-date telegram
-Package: telegram-desktop libc6 libc-bin libc-l10n locales
+Package: telegram-desktop libc6 libc-bin libc-l10n libc-dev-bin libc6-dev locales
 Pin: release a=unstable, o=Debian
 Pin-Priority: 500
 
