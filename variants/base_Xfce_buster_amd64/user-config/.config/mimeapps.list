@@ -2,12 +2,9 @@
 text/plain=vim.desktop;diffuse.desktop;gvim.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop
 text/x-tex=vim.desktop;
 
-[Added Associations]
-application/pdf=org.gnome.Evince.desktop;
-image/jpeg=org.gnome.gThumb.desktop;
-inode/directory=nemo.desktop;
-
 [Default Applications]
 application/pdf=org.gnome.Evince.desktop;
-text/markdown=geany.desktop
+image/jpeg=org.gnome.gThumb.desktop;
+image/svg+xml=inkscape.desktop
 inode/directory=nemo.desktop
+text/markdown=geany.desktop
