@@ -1,4 +1,4 @@
-# from https://github.com/imedias/lernstick-config
+# from https://github.com/imedias/lernstick-config 0822be5ab99b547db70b967d62684be9ec6b01de
 # NetworkManager connections are per default restricted to the MAC address used
 # at setup time. This is not what we want on a live system. We want to use the
 # configured network connections on any hardware we are booting on. Therefore we
