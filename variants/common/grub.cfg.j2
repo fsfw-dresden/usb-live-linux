@@ -78,6 +78,13 @@ submenu "  [ Untermenü: Persistenz zurücksetzen ]" {
       initrd (loop)/live/initrd.img
   }
 
+  menuentry "Userdateien zurücksetzen (für Updates (Vorsicht BETA!))" {
+      set isofile=/boot/{{ STICK_ISO }}
+      loopback loop $isofile
+      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence-remove=linux-userdata
+      initrd (loop)/live/initrd.img
+  }
+
 }
 
 submenu "  [ Untermenü: Expertenoptionen ]" {
