@@ -1,0 +1,25 @@
+[org/gtk/settings/file-chooser]
+sidebar-width=220
+
+[org/nemo/preferences]
+size-prefixes='base-2'
+tooltips-in-list-view=true
+date-format='informal'
+thumbnail-limit=uint64 3145728
+show-full-path-titles=true
+tooltips-in-icon-view=true
+
+[org/nemo/window-state]
+sidebar-width=285
+start-with-sidebar=true
+geometry='1200x750+40+40'
+
+[org/nemo/icon-view]
+default-zoom-level='large'
+default-use-tighter-layout=true
+
+[org/nemo/list-view]
+default-visible-columns=['name', 'size', 'type', 'date_modified', 'mime_type']
+
+[apps/seahorse/listing]
+sidebar-width=320
