@@ -111,6 +111,11 @@
 - :x:  tilde  --	Intuitive text editor for the terminal
 - :x:  tweak  --	Efficient text-mode hex editor
 - :x:  librsvg2-bin  --	command-line and graphical viewers for SVG files
+- :x:  scanmem  --	locate and modify a variable in a running process
+- :x:  bmap-tools  --	flash image files to block devices using the block map
+- :x:  diskscan  --	scan storage media for bad or near failure sectors
+- :x:  f3  --	test real flash memory capacity
+- :x:  ctop  --	text based Linux Containers monitoring tool
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -177,6 +182,8 @@
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
 - :x:  vmtouch  --		file system cache diagnostics and control
 - :x:  preload  --		adaptive readahead daemon, predicts what applications users might run
+- :x:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
+- :x:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
 
 - :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
 - :o:  tuned-utils  --	
@@ -255,7 +262,7 @@
 - :x:  musescore3  --	cross-platform multi-lingual music composition and notation
 - :x:  zulip  --		productive team chat
 - :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
-- :x:  qt5-style-plugins  --		 Qt 5 extra widget styles (Cleanlooks, Motif, Plastique) and GTK+ 2 platformtheme
+- :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
