@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<inkscape
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1">
+  <group
+     id="toolbox"
+     icononly="1"
+     secondary="3"
+     small="3">
+    <group
+       id="tools"
+       icononly="1"
+       small="3" />
+  </group>
+</inkscape>
