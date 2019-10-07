@@ -35,6 +35,11 @@ Package: telegram-desktop libc6 libc-bin libc-l10n libc-dev-bin libc6-dev locale
 Pin: release a=unstable, o=Debian
 Pin-Priority: 500
 
+# inkscape 1.0~beta1+ds-1 (2019-10-07)
+Package: inkscape
+Pin: release a=experimental, o=Debian
+Pin-Priority: 500
+
 #Package: *
 #Pin: origin /deb.multimedia/
 #Pin-Priority: 509
