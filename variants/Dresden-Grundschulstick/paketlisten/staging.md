@@ -86,6 +86,7 @@
 - :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
 - :x:  stress  --		impose load on and stress test a computer system
 - :x:  davfs2  --		mount a WebDAV resource as a regular file system
+- :x:  e2fsprogs-l10n  --	Werkzeuge für ext2-/ext3-/ext4-Dateisysteme - Übersetzungen
 - :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
 - :x:  lolcat  --		concatenates files like the UNIX `cat` program, but colors it
 - :x:  htpdate  --		HTTP based time synchronization tool for firewall blocking the NTP port
@@ -116,6 +117,7 @@
 - :x:  diskscan  --	scan storage media for bad or near failure sectors
 - :x:  f3  --	test real flash memory capacity
 - :x:  ctop  --	text based Linux Containers monitoring tool
+- :x:  xmlstarlet  --	transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -201,14 +203,16 @@
 - :x:  diffpdf  --	
 - :x:  lightning  --		Calendar Extension for Thunderbird
 - :x:  lightning-l10n-de  --		
-- :x:  hunspell-de-de  --		
-- :x:  hyphen-de  --		German hyphenation patterns
+- :x:  hunspell-de-de  --		German dictionary for hunspell (+293 kB)
+- :x:  hyphen-de  --		German hyphenation patterns (+494 kB)
+- :x:  mythes-de  --		German Thesaurus for OpenOffice.org/LibreOffice (+2.663 kB)
 - :x:  rss-glx  --	
 - :x:  unicode-screensaver  --	
 - :x:  xscreensaver  --	modular screen saver and locker for X11
 - :x:  xscreensaver-gl-extra  --	
 - :x:  pavucontrol  --	PulseAudio Volume Control
 - :x:  libreoffice-gtk3  --	
+- :x:  libreoffice-help-de  --	deutsche Hilfe von LibreOffice (+3.706 kB)
 - :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
 - :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
 - :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
@@ -236,7 +240,7 @@
 - :x:  nemo-nextcloud  --		integrates the Nextcloud web service
 - :x:  cinnamon-l10n  --		translation files for nemo et al.
 - :x:  weston  --		reference implementation of a wayland compositor
-- :x:  google-earth-pro-stable  --		Explore, search and discover the planet
+- :x:  google-earth-pro-stable  --		Explore, search and discover the planet (+56,5 MB)
 - :x:  mixxx  --		Digital Disc Jockey Interface
 - :x:  key-mon  --		show live keyboard and mouse status
 - :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
@@ -249,25 +253,26 @@
 - :x:  cdrdao  --	records CDs in Disk-At-Once (DAO) mode
 - :x:  cheese  --	tool to take pictures and videos from your webcam
 - :x:  copyq-plugins  --	Advanced clipboard manager with editing and scripting features + Plugins
-- :x:  deepin-music  --	music player with brilliant and tweakful UI
-- :x:  geany-plugins  --	fast and lightweight IDE + plugins
+- :x:  deepin-music  --	music player with brilliant and tweakful UI (+2.043 kB)
+- :x:  geany-plugins  --	fast and lightweight IDE + plugins (+5.003 kB)
 - :x:  gnome-video-effects-frei0r  --	GNOME Video Effects - frei0r plugins
-- :x:  lazarus-ide-qt5  --	IDE for Free Pascal - Last Qt version dependency package
+- :x:  lazarus-ide-qt5  --	IDE for Free Pascal - Last Qt version dependency package (+15,1 MB)
 - :x:  libdvdcss2  --	Simple foundation for reading DVDs - runtime libraries
 - :x:  libvte9  --	Terminal emulator widget for GTK+ 2.0 - runtime files
-- :x:  kdenlive  --	non-linear video editor
-- :x:  lives  --	Video Editing system allowing users to edit and create video
-- :x:  minder  --	Mind-mapping application
+- :x:  kdenlive  --	non-linear video editor (+>=17,8 MB)
+- :x:  lives  --	Video Editing system allowing users to edit and create video (+3.172 kB)
+- :x:  minder  --	Mind-mapping application (+537 kB)
 - :x:  slowmovideo  --	creates slow-motion videos from your footage
-- :x:  musescore3  --	cross-platform multi-lingual music composition and notation
-- :x:  zulip  --		productive team chat
+- :x:  musescore3  --	cross-platform multi-lingual music composition and notation (+48,4 MB)
+- :x:  zulip  --		productive team chat (+47,4 MB)
 - :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
 - :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
+- :x:  webext-bulk-media-downloader  --	detect and download media resources
+- :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
+- :x:  calibre  --	powerful and easy to use e-book manager (+28,1 MB)
 
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
-- :o:  dolphin-nextcloud  --		
-- :o:  nautilus-nextcloud  --		
 
 - ### Fonts
 - :x:  fonts-bebas-neue  --	Flat, rounded style font designed
