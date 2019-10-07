@@ -1,0 +1,10 @@
+{
+    "domains": [
+        {
+            "icon": "/home/user/.config/Zulip/server-icons/148375806.png",
+            "url": "https://49gs.zulipchat.com",
+            "alias": "49GS",
+            "ignoreCerts": false
+        }
+    ]
+}
