@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=zulip
+Comment=zulipstartup script
+Exec=/opt/Zulip/zulip
+StartupNotify=false
+Terminal=false
