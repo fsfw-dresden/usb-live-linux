@@ -44,12 +44,18 @@ disable_redsocks() {
         systemctl mask redsocks
 }
 
+restore_auto_apt_proxy() {
+        [ -e /etc/apt/apt.conf.d/auto-apt-proxy.conf ] && sed -i 's/^#//' /etc/apt/apt.conf.d/auto-apt-proxy.conf
+}
+
+disable_auto_apt_proxy() {
+        [ -e /etc/apt/apt.conf.d/auto-apt-proxy.conf ] && sed -i '/^[^#]/s/^/#/' /etc/apt/apt.conf.d/auto-apt-proxy.conf
+}
+
 mount_samba_share() {
         mkdir -p /media/Tausch-Schueler
-        source /usr/local/.49-gs-dresden.secret
-        mount -t cifs //kserver/Tausch-Schueler /media/Tausch-Schueler -o user=${user},password=${password},uid=1000,gid=1000 \
+        mount -t cifs //kserver/Tausch-Schueler /media/Tausch-Schueler -o credentials=/usr/local/.49-gs-dresden.secret,uid=1000,gid=1000 \
           && logger -t ${TAG} "mounted //kserver/Tausch-Schueler on /media/Tausch-Schueler"
-        unset user password
 }
 
 umount_samba_share() {
@@ -65,12 +71,15 @@ case "${STATUS}" in
                 if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
                         enable_redsocks
                         mount_samba_share
+                        disable_auto_apt_proxy
                 else
                         disable_redsocks
+                        restore_auto_apt_proxy
                 fi
                 ;;
         down)
-                disable_redsocks
+                restore_auto_apt_proxy
                 umount_samba_share
+                disable_redsocks
                 ;;
 esac
