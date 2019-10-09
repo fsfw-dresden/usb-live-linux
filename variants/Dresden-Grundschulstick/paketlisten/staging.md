@@ -118,6 +118,9 @@
 - :x:  f3  --	test real flash memory capacity
 - :x:  ctop  --	text based Linux Containers monitoring tool
 - :x:  xmlstarlet  --	transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
+- :x:  faketime  --		intercepts various system calls and fake date and time to programs
+- :x:  chntpw  --		NT SAM password recovery utility
+- :x:  inxi  --		system information script
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -270,6 +273,13 @@
 - :x:  webext-bulk-media-downloader  --	detect and download media resources
 - :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
 - :x:  calibre  --	powerful and easy to use e-book manager (+28,1 MB)
+- :x:  krita  --		creative application for raster images (+65.5 MB)
+- :x:  krita-gmic  --		GREYC's Magic for Image Computing - Helper Tool for Krita (+687 kB)
+- :x:  krita-l10n  --		translations for Krita painting program (+2,172 kB)
+- :x:  seahorse  --		front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
+- :x:  childsplay  --		educational games for young children (+30.8 MB)
+- :x:  gramps  --		Familienstammbaum (+7,010 kB)
+- :x:  playitslowly  --		Plays back audio files at a different speed or pitch (+27.7 kB)
 
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
