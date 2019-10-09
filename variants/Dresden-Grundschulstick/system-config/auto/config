@@ -12,7 +12,7 @@ lb config noauto \
     --architectures amd64 \
     --archive-areas "main contrib non-free" \
     --binary-images iso-hybrid \
-    --linux-packages "linux-image linux-headers" \
+    --linux-packages "linux-image" \
     --linux-flavours "amd64" \
     --image-name ${STICK_NAME}_${STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
     --cache-packages true \
