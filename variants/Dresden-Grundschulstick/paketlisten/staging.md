@@ -270,7 +270,6 @@
 - :x:  zulip  --		productive team chat (+47,4 MB)
 - :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
 - :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
-- :x:  webext-bulk-media-downloader  --	detect and download media resources
 - :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
 - :x:  calibre  --	powerful and easy to use e-book manager (+28,1 MB)
 - :x:  krita  --		creative application for raster images (+65.5 MB)
