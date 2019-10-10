@@ -28,7 +28,7 @@ ADIOS="\n\n\t... Happy Hacking! : )\n"
 echo
 if read -sn1 -sp "$(echo -e $MSG)"; then
   case $REPLY in
-    s) echo; [ $(id -u) -eq 0 ] || sudo su -l;;
+    s) echo; [ $(id -u) -eq 0 ] || sudo su -lw DISPLAY,XAUTHORITY,DBUS_SESSION_BUS_ADDRESS,SESSION_MANAGER,SSH_AUTH_SOCK;;
     r) echo -e "$ADIOS"; ranger;;
     t) echo -e "$ADIOS"; tmux -2 attach-session;;
     *) echo -e "$ADIOS";;
