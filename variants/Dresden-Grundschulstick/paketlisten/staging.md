@@ -277,7 +277,12 @@
 - :x:  krita-l10n  --		translations for Krita painting program (+2,172 kB)
 - :x:  seahorse  --		front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
 - :x:  childsplay  --		educational games for young children (+30.8 MB)
-- :x:  gramps  --		Familienstammbaum (+7,010 kB)
+- :x:  gramps  --		Familienstammbaum (+7,010 kB + 876 kB recommends)
+- :x:  gir1.2-gexiv2-0.10  --		recommended by gramps
+- :x:  gir1.2-goocanvas-2.0  --		recommended by gramps
+- :x:  gir1.2-gtkspell3-3.0  --		recommended by gramps
+- :x:  gir1.2-osmgpsmap-1.0  --		recommended by gramps
+- :x:  python3-icu  --		recommended by gramps
 - :x:  playitslowly  --		Plays back audio files at a different speed or pitch (+27.7 kB)
 
 - :o:  guake  --		Drop-down terminal (GTK)
