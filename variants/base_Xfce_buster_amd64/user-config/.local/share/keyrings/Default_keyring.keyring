@@ -1,0 +1,23 @@
+[keyring]
+display-name=Default keyring
+ctime=1570715310
+mtime=0
+lock-on-idle=false
+lock-after=false
+
+[1]
+item-type=0
+display-name=Chrome Safe Storage Control
+secret=The meaning of life
+mtime=1570715310
+ctime=1570715310
+
+[1:attribute0]
+name=explanation
+type=string
+value=Because of quirks in the gnome libsecret API, Chrome needs to store a dummy entry to guarantee that this keyring was properly unlocked. More details at http://crbug.com/660005.
+
+[1:attribute1]
+name=xdg:schema
+type=string
+value=_chrome_dummy_schema_for_unlocking
