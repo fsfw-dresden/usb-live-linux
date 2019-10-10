@@ -1,0 +1,5 @@
+[org/gtk/settings/file-chooser]
+sidebar-width=220
+
+[apps/seahorse/listing]
+sidebar-width=320

@@ -1,0 +1,3 @@
+#!/bin/sh
+# initialize local conf db with keyfiles from /etc/dconf/db/local.d/
+dconf update
