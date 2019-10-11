@@ -36,6 +36,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="string" value="xkill"/>
       <property name="Print" type="string" value="xfce4-screenshooter"/>
       <property name="F1" type="string" value="xfce4-terminal --drop-down"/>
+      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
     </property>
   </property>
   <property name="providers" type="array">
