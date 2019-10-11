@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=GCompris Educational Game
+Name[de]=GCompris-Lernspiel
+GenericName=Educational game
+GenericName[de]=Lernspiel
+Comment=Multi-Activity Educational game for children 2 to 10
+Comment[de]=Lernspiel mit vielen Aktivitäten für Kinder von 2 bis 10 Jahren
+Exec=gcompris-qt
+Icon=gcompris-qt
+Terminal=false
+Type=Application
+Categories=Education;Game;KidsGame;
+StartupNotify=true
+X-DocPath=gcompris/index.html
+X-XFCE-Source=file:///usr/share/applications/org.kde.gcompris.desktop

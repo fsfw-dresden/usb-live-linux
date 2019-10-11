@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name[de]=CD-Spieler
+Name=CD Player
+Comment[de]=CDs abspielen und auslesen
+Comment=Play and extract CDs
+Keywords=CD;play;extract;compact;disc;
+Categories=GNOME;GTK;AudioVideo;Audio;
+Encoding=UTF-8
+Exec=goobox
+Icon[de]=goobox
+Icon=goobox
+MimeType=x-content/audio-cdda;
+StartupNotify=true
+Terminal=false
+Type=Application
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=goobox
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.5.1
+X-GNOME-UsesNotifications=true
+X-XFCE-Source=file:///usr/share/applications/org.gnome.Goobox.desktop

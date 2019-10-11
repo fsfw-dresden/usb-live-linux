@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=gPlanarity
+Comment=Puzzle game involving untangling planar graphs
+Exec=gplanarity
+Icon=gPicon
+Terminal=false
+Type=Application
+Categories=Game;
+StartupNotify=true
+X-XFCE-Source=file:///usr/share/applications/gplanarity.desktop

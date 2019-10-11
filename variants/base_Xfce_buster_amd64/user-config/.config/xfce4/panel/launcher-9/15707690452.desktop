@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Exec=kalzium -qwindowtitle %c
+Icon=kalzium
+X-DocPath=kalzium/index.html
+Comment=KDE Periodic Table of Elements
+Comment[de]=Periodensystem der Elemente
+Terminal=false
+Name=Kalzium
+Name[de]=Kalzium
+GenericName=Periodic Table of Elements
+GenericName[de]=Periodensystem der Elemente
+Categories=Qt;KDE;Education;Science;Chemistry;
+X-XFCE-Source=file:///usr/share/applications/org.kde.kalzium.desktop

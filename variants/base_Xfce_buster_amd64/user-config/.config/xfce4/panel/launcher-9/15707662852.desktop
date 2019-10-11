@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Name=Discover Earth
+GenericName=3D planet viewer
+Comment=Explore, search and discover the planet
+Exec=/opt/google/earth/pro/google-earth-pro %f
+Terminal=false
+MultipleArgs=false
+Icon=google-earth-pro
+Type=Application
+Categories=Application;Network
+MimeType=application/vnd.google-earth.kml+xml;application/vnd.google-earth.kmz;application/earthviewer;application/keyhole
+X-XFCE-Source=file:///usr/share/applications/google-earth-pro.desktop
+Path=
+StartupNotify=false

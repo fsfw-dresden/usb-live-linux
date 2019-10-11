@@ -1,0 +1,28 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=zim %f
+Icon=zim
+StartupNotify=true
+Terminal=false
+Categories=Utility;TextEditor;GTK;
+MimeType=application/x-zim-notebook;text/x-zim-wiki;application/x-gjots;
+Keywords=Text;Editor;Write;Wiki;Notes;Notebook;Journal;
+Name=Zim Desktop Wiki
+Comment=Edit text files "wiki style"
+GenericName=Text Editor
+Name[de]=Zim Desktop Wiki
+Comment[de]=Bearbeite Textdateien im 'Wiki-Stil'
+GenericName[de]=Texteditor
+X-Ayatana-Desktop-Shortcuts=X-QuickNote;X-QuickNoteClipboard;
+X-XFCE-Source=file:///usr/share/applications/zim.desktop
+
+[X-QuickNote Shortcut Group]
+Name=Quick Note
+Exec=zim --plugin quicknote
+TargetEnvironment=Unity
+
+[X-QuickNoteClipboard Shortcut Group]
+Name=Quick Note from Clipboard
+Exec=zim --plugin quicknote input=clipboard
+TargetEnvironment=Unity

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Childsplay
+GenericName=Childsplay
+Comment=Suite of educational games for young children
+Comment[de]=Sammlung mit lehrreichen Spielen für kleine Kinder
+Icon=logo_cp.svg
+Exec=childsplay
+Terminal=false
+StartupNotify=false
+Categories=Application;Game;Education;KidsGame;2DGraphics;
+Keywords=suite;children;games;young;educational;
+X-XFCE-Source=file:///usr/share/applications/childsplay.desktop

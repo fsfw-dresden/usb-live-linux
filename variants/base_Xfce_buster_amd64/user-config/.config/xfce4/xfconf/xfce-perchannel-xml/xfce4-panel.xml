@@ -13,11 +13,12 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="8"/>
-        <value type="int" value="16"/>
-        <value type="int" value="9"/>
-        <value type="int" value="10"/>
-        <value type="int" value="11"/>
         <value type="int" value="14"/>
+        <value type="int" value="10"/>
+        <value type="int" value="9"/>
+        <value type="int" value="11"/>
+        <value type="int" value="16"/>
+        <value type="int" value="25"/>
         <value type="int" value="7"/>
         <value type="int" value="4"/>
         <value type="int" value="12"/>
@@ -25,7 +26,9 @@
         <value type="int" value="15"/>
         <value type="int" value="13"/>
         <value type="int" value="6"/>
+        <value type="int" value="17"/>
         <value type="int" value="5"/>
+        <value type="int" value="18"/>
         <value type="int" value="2"/>
       </property>
     </property>
@@ -72,6 +75,16 @@
       <property name="names-hidden" type="array">
       </property>
       <property name="size-max" type="uint" value="36"/>
+      <property name="names-visible" type="array">
+        <value type="string" value="indicator-keylock"/>
+        <value type="string" value="zwischenablage"/>
+        <value type="string" value="ausklapp-terminal"/>
+        <value type="string" value="xfce-terminal"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="netzwerk-manager-applet"/>
+        <value type="string" value="zulip"/>
+        <value type="string" value="copyq"/>
+      </property>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
     <property name="plugin-4" type="string" value="weather"/>
@@ -83,28 +96,28 @@
     </property>
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15391232531.desktop"/>
-        <value type="string" value="15391232592.desktop"/>
+        <value type="string" value="15707663413.desktop"/>
+        <value type="string" value="15707662852.desktop"/>
+        <value type="string" value="15707690452.desktop"/>
+        <value type="string" value="157077280312.desktop"/>
+        <value type="string" value="15707690763.desktop"/>
+        <value type="string" value="15707691224.desktop"/>
+        <value type="string" value="15707692776.desktop"/>
       </property>
-    </property>
-    <property name="plugin-10" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="153912359513.desktop"/>
-        <value type="string" value="15696961644.desktop"/>
-        <value type="string" value="153912361015.desktop"/>
-      </property>
+      <property name="arrow-position" type="uint" value="5"/>
     </property>
     <property name="plugin-11" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15391234615.desktop"/>
-        <value type="string" value="15696962811.desktop"/>
         <value type="string" value="15696962005.desktop"/>
         <value type="string" value="15696962116.desktop"/>
+        <value type="string" value="157077203911.desktop"/>
         <value type="string" value="15696962187.desktop"/>
-        <value type="string" value="15391234524.desktop"/>
+        <value type="string" value="15696962811.desktop"/>
         <value type="string" value="153912354112.desktop"/>
         <value type="string" value="153912352411.desktop"/>
       </property>
+      <property name="arrow-position" type="uint" value="5"/>
     </property>
     <property name="plugin-12" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
@@ -119,7 +132,35 @@
     </property>
     <property name="plugin-16" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="15696235403.desktop"/>
+        <value type="string" value="15707661882.desktop"/>
+        <value type="string" value="15707662151.desktop"/>
+        <value type="string" value="15707664364.desktop"/>
+        <value type="string" value="15707678893.desktop"/>
+        <value type="string" value="157077403213.desktop"/>
+      </property>
+      <property name="arrow-position" type="uint" value="5"/>
+    </property>
+    <property name="plugin-10" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15707679321.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-17" type="string" value="notification-plugin"/>
+    <property name="plugin-18" type="string" value="screenshooter"/>
+    <property name="plugin-25" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15707693089.desktop"/>
+        <value type="string" value="15707693008.desktop"/>
+        <value type="string" value="157076947810.desktop"/>
+        <value type="string" value="15707691485.desktop"/>
+        <value type="string" value="15707692987.desktop"/>
+      </property>
+      <property name="arrow-position" type="uint" value="5"/>
+    </property>
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="max-texts-in-history" type="uint" value="15"/>
+        <property name="show-qr-code" type="bool" value="true"/>
       </property>
     </property>
   </property>

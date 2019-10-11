@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+TryExec=marble-qt
+Exec=marble-qt %F
+Name=Marble
+Name[de]=Marble
+GenericName=Virtual Globe
+GenericName[de]=Virtueller Globus
+Comment=Navigation and Maps
+Comment[de]=Navigation und Karten
+Icon=marble
+Terminal=false
+Categories=Qt;KDE;Education;Geoscience;Geography;Science;
+X-DocPath=marble/index.html
+X-XFCE-Source=file:///usr/share/applications/org.kde.marble-qt.desktop
