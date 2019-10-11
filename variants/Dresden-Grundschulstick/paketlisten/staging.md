@@ -121,6 +121,7 @@
 - :x:  faketime  --		intercepts various system calls and fake date and time to programs
 - :x:  chntpw  --		NT SAM password recovery utility
 - :x:  inxi  --		system information script
+- :x:  sqlite3  --		Command line interface for SQLite 3
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -255,11 +256,11 @@
 - :x:  brasero-cdrkit  --	cdrkit extensions for the Brasero burning application
 - :x:  cdrdao  --	records CDs in Disk-At-Once (DAO) mode
 - :x:  cheese  --	tool to take pictures and videos from your webcam
-- :x:  copyq-plugins  --	Advanced clipboard manager with editing and scripting features + Plugins
 - :x:  deepin-music  --	music player with brilliant and tweakful UI (+2.043 kB)
 - :x:  geany-plugins  --	fast and lightweight IDE + plugins (+5.003 kB)
 - :x:  gnome-video-effects-frei0r  --	GNOME Video Effects - frei0r plugins
-- :x:  lazarus-ide-qt5  --	IDE for Free Pascal - Last Qt version dependency package (+15,1 MB)
+- :x:  lazarus-2.0  --	IDE for Free Pascal (Delphi-likesion) (+>130 MB)
+- :x:  fpc  --	Free Pascal Compiler
 - :x:  libdvdcss2  --	Simple foundation for reading DVDs - runtime libraries
 - :x:  libvte9  --	Terminal emulator widget for GTK+ 2.0 - runtime files
 - :x:  kdenlive  --	non-linear video editor (+>=17,8 MB)
@@ -284,6 +285,9 @@
 - :x:  gir1.2-osmgpsmap-1.0  --		recommended by gramps
 - :x:  python3-icu  --		recommended by gramps
 - :x:  playitslowly  --		Plays back audio files at a different speed or pitch (+27.7 kB)
+- :x:  goobox  --		CD player and ripper with GNOME 3 integration
+- :x:  geogebra-classic  -- Dynamische Mathematiksoftware für die Lehre (+48,7 MB, geogebra.net repo)
+- :x:  geogebra-classic-tutorials  -- offline version of the GeoGebra Classic Tutorials (+24,6 MB, geogebra.net repo)
 
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)
@@ -301,6 +305,7 @@
 - :x:  fonts-linuxlibertine  --
 - :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
 - :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+- :x:  fonts-open-sans  --	humanist sans serif typeface
 - :x:  fonts-opendin  --	
 - :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
 - :x:  fonts-pecita  --	hand-written font that give a natural rendition.

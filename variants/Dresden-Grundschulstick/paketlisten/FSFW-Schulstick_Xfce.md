@@ -96,7 +96,7 @@
 
 - ### :x:  desktop-grafik  -- [Programme für Grafik und Bildverarbeitung](desktop-grafik.md) - Bildbearbeitung - Fotoverwaltung - DTP - Vetktor Zeichenprogramm
 
-- ### :x:  desktop-maker  --  [Maker Tools](desktop-maker.md) -  3D Modellierung - Rendering - CAD - 3D Tools - G-Code - LaserCut
+- ### :o:  desktop-maker  --  [Maker Tools](desktop-maker.md) -  3D Modellierung - Rendering - CAD - 3D Tools - G-Code - LaserCut
 
 
 ##  Education - Science  --  Bildung und Wissenschaft
@@ -107,7 +107,7 @@
 
 - ### :o:  mathematics  --  [Mathematiksoftware für die Lehre](mathematics.md) -
 
-- ### :o:  python-scientific  --  [Python](python-scientific.md) - für wissenschaftliches Arbeiten
+- ### :x:  python-scientific  --  [Python](python-scientific.md) - für wissenschaftliches Arbeiten
 
 - ### :o:  statistik  --  [Statistik Programme](statistik.md) - für statistische Berechnungen und Grafiken
 
