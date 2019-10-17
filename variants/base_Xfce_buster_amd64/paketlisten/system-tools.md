@@ -35,7 +35,7 @@
 [//]: # (Carsten: printer-driver-cups-pdf will während des Bauens ein root-Passwort eingegeben haben)
 - :-1:  printer-driver-cups-pdf  -- Drucker Treiber zur PDF-Erzeugung
 
-- [x]  openssh-server  -- Ermöglicht Zugriff von Außen, hilfreich für die Entwicklung des Live-Systems
+- [o]  openssh-server  -- Ermöglicht Zugriff von Außen, hilfreich für die Entwicklung des Live-Systems
 
 
 - ###  kernel
