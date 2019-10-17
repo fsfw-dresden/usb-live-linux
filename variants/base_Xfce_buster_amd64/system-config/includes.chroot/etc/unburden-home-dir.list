@@ -35,4 +35,5 @@ m d .buzzbird/*/Cache buzzbird-cache
 m f .aptitude/cache aptitude-cache
 m D .googleearth/Cache google-earth-cache
 m d .local/share/akonadi akonadi
+m D .local/share/marble marble
 m d .kde/cache-debian kde-cache
