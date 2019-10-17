@@ -9,7 +9,7 @@ case "$-" in
 esac
 
 # needs lolcat and toilet
-[ -x /usr/games/lolcat ] && [ -x /usr/bin/toilet ] || exit
+[ -x /usr/games/lolcat ] && [ -x /usr/bin/toilet ] || return
 
 if [ $LANG = "de_DE.UTF-8" ]
 then
