@@ -160,7 +160,6 @@
     <property name="clipman" type="empty">
       <property name="settings" type="empty">
         <property name="max-texts-in-history" type="uint" value="15"/>
-        <property name="show-qr-code" type="bool" value="true"/>
       </property>
     </property>
   </property>
