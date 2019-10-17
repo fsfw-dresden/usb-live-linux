@@ -1,0 +1,5 @@
+log-scale: yes
+line-display: one-line-both
+use-bytes: yes
+port-display: on
+port-resolution: yes
