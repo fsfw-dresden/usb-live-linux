@@ -1,0 +1,7 @@
+[qt] # Qt interface
+# Ask for network policy at start (boolean)
+qt-privacy-ask=0
+
+[core] # core program
+# Allow metadata network access (boolean)
+metadata-network-access=1
