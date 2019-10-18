@@ -1,0 +1,13 @@
+#!/bin/sh
+# imported from TAILS dae2b939b2503a97501ac0d2d4294dde134d3f0e
+# config/chroot_local-includes/lib/live/config/8000-rootpw
+
+for X in $(cat /proc/cmdline); do
+    case ${X} in
+        rootpw=*)
+            PW=${X#rootpw=}
+            usermod -p $(echo ${PW} | mkpasswd -s) root
+            exit 0
+            ;;
+    esac
+done
