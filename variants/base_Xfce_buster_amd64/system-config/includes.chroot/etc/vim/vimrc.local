@@ -43,6 +43,7 @@ noremap p P
 noremap P p
 map <C-D> <C-A>
 map <C-E> <C-W>
+map <C-G> :echo expand('%:p ') strftime('%t (%F %T)', getftime(expand('%')))<CR>
 map <C-L> :TlistToggle<CR>
 map <C-J> :N<CR>
 map <C-K> :n<CR>
@@ -78,3 +79,4 @@ set laststatus=2
 " under the cursor in hex... if powerline not active
 set statusline=[%v,%l/%L\ (%p%%)]:[%F]%<:%y%m%r%h%w:[\%{strftime(\"\%y-\%m-\%d\",getftime(expand(\"\%\%\")))}]%=char\ 0x%02B,\ buffer%a
 
+set nofsync
