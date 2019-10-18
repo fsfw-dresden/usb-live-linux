@@ -1,0 +1,3 @@
+#!/bin/sh
+vim-addon-manager --system-wide install bufexplorer detectindent taglist
+mkdir -pv /var/lib/vim/addons/bundle/ && cd /var/lib/vim/addons/bundle/ && git clone git://github.com/jpalardy/spacehi.vim.git
