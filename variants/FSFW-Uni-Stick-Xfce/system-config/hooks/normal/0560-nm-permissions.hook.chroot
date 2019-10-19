@@ -1,0 +1,3 @@
+#!/bin/sh
+# fix permissions for /etc/NetworkManager/system-connections/*
+chmod -c 600 /etc/NetworkManager/system-connections/*
