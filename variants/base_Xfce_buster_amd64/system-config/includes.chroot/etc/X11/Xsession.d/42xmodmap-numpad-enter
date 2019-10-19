@@ -1,0 +1,2 @@
+# make numpad enter emit return key event
+xmodmap -e "keysym KP_Enter = Return"
