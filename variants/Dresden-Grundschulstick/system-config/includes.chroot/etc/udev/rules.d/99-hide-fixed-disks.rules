@@ -1,0 +1,1 @@
+ATTRS{removable}=="0", ENV{UDISKS_IGNORE}="1"
