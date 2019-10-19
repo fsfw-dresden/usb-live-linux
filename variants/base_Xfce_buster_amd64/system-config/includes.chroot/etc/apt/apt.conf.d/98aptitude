@@ -1,4 +1,4 @@
-aptitude::Forget-New-On-Update "true";
+# aptitude::Forget-New-On-Update "true";
 aptitude::Pkg-Display-Limit "!~v~U!?version(FORBIDDEN)!~ahold|~N";
 aptitude::ProblemResolver::Allow-Break-Holds "true";
 aptitude::ProblemResolver::Non-Default-Level "10000";
