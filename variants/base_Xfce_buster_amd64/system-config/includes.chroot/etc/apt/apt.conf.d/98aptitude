@@ -12,3 +12,4 @@ aptitude::UI::Minibuf-Prompts "false";
 aptitude::UI::Package-Display-Format "%r %c%a%M %s %p %t %S %i %D/%I %v > %V %Z";
 aptitude::UI::Package-Status-Format "%d %P @%t";
 aptitude::UI::Preview-Limit "!(~akeep~i)";
+aptitude::UI::Prompt-On-Exit "false";
