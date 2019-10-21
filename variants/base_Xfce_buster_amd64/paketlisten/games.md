@@ -44,7 +44,6 @@
 - :x:  mu-cade  --		physics centipede invasion, smashup waggly shmup (5.509 kB)
 - :x:  transcend  --		retro-style, abstract 2D shooter (250 kB)
 - :x:  klavaro  --		Flexibles Schreibmaschinen-Lernprogramm (769 kB)
-- :x:  brutalchess  --		3D-Schach-Spiel mit reflektierenden Schachfiguren (490 kB)
 - :x:  aisleriot  --		Sammlung von GNOME-Patiencen (8.522 kB)
 - :x:  kdegames  --		Spiele aus dem offiziellen KDE-Veröffentlichung (126 MB)
 - :x:  gnome-games  --		Spiele für die GNOME-Arbeitsoberfläche (28,7 MB)

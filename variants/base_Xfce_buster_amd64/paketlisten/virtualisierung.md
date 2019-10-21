@@ -3,6 +3,8 @@
 - ###  Virtualisierung
 
 - :x:  qemu-kvm  --	Vollständige Virtualisierung auf x86-Hardware
+- :x:  qemu-system-gui  --	graphical user interface (currently GTK) and audio backends (+97,8 kB)
+- :x:  qemu-utils  --	QEMU-Werkzeuge qemu-img, qemu-io, qemu-nbd (+964 kB)
 - :x:  kvmtool  --	ist ein leichtes Tool für das Hosting KVM Gästen
 
 - :x:  virt-manager  -- Desktopanwendung zur Verwaltung virtueller Maschinen
