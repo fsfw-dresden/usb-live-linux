@@ -11,7 +11,8 @@ insmod ext2
 insmod iso9660
 insmod font
 insmod play
-play 960 440 1 0 4 440 1
+# play tempo [pitch1 duration1] [pitch2 duration2] ...
+play 1320 64 1 0 4 64 1 0 0 128 1
 
 search --set=root --label {{ LABEL }}
 
