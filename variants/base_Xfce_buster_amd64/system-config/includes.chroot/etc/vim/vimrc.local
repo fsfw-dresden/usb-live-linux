@@ -6,7 +6,7 @@ set directory=/var/lib/vim/temp//
 set backupdir=/var/lib/vim/temp//
 set undodir=/var/lib/vim/temp//
 set undofile
-"call pathogen#infect()
+call pathogen#infect()
 set background=dark
 set hlsearch
 "set verbosefile=/var/lib/vim/debug.log
