@@ -1,5 +1,9 @@
 # Default settings for earlyoom. This file is sourced by /bin/sh from
 # /etc/init.d/earlyoom or by systemd from earlyoom.service.
 
-# Options to pass to earlyoom
-EARLYOOM_ARGS="-r 60 -m 2 -s 2 --avoid 'Xorg'"
+EARLYOOM_ARGS="-r 60 -m 2 -s 100 --avoid 'Xorg' -N 'sudo -u \'#1000\' DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 notify-send'"
+# -r 60: check every minute
+# -m 2: trigger when available memory falls below 2%
+# -s 100: ignore swap
+# --avoid 'Xorg': do not kill the GUI / X11 server
+# -N ...: show notification message on live user desktop
