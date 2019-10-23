@@ -66,20 +66,46 @@ umount_samba_share() {
 
 case "${STATUS}" in
         up)
-                # turn on auto-negotiation when speed is below gigabit
-                [ $(ethtool ${INTERFACE} 2>&1|sed -nr 's/.*Speed: ([0-9]+)[^0-9]+$/\1/p') -lt 1000 ] && ethtool --change ${INTERFACE} autoneg on
+                # turn on ethernet auto-negotiation when speed is detected and below 1 gigabit
+                ETH_SPEED=$(ethtool ${INTERFACE} 2>&1|sed -nr 's/.*Speed: ([0-9]+)[^0-9]+$/\1/p')
+                [ -n "${ETH_SPEED}" ] && [ ${ETH_SPEED} -lt 1000 ] && ethtool --change ${INTERFACE} autoneg on
+
+                # detect school proxy
                 if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
+                        # set up redsocks traffic redirector
                         enable_redsocks
+
+                        # mount student network share
                         mount_samba_share
+
+                        # apt auto proxy detection too slow in school
                         disable_auto_apt_proxy
+
+                # not in school network?
                 else
+                        # unset redsocks traffic redirector
                         disable_redsocks
+
+                        # restore apt auto proxy detection
                         restore_auto_apt_proxy
                 fi
+
+                # start zulip as default live user (terrible hack to prevent display of connection error)
+                sudo -u '#1000' DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 /opt/Zulip/zulip &
+
                 ;;
         down)
+                # terminate zulip on disconnection
+                pkill zulip
+
+                # restore apt auto proxy detection
                 restore_auto_apt_proxy
+
+                # disconnect student network share
                 umount_samba_share
+
+                # unset redsocks traffic redirector
                 disable_redsocks
+
                 ;;
 esac
