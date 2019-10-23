@@ -228,7 +228,7 @@
 - :x:  sweethome3d  --		Interior 2D design application with 3D preview
 - :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
 - :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
-- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
+- :o:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
 - :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
 - :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
 - :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
