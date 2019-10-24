@@ -5,12 +5,17 @@
    version="1">
   <group
      id="toolbox"
-     icononly="1"
-     secondary="3"
-     small="3">
+     secondary="0"
+     small="0">
     <group
        id="tools"
-       icononly="1"
-       small="3" />
+       small="0" />
+  </group>
+  <group
+     id="window">
+    <group
+       id="task"
+       taskset="0" />
   </group>
 </inkscape>
+
