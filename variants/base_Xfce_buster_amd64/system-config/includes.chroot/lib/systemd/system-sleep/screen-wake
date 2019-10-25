@@ -1,0 +1,10 @@
+#!/bin/sh
+# fix for black screen after system suspend / resume (xfce vs logind?)
+# posted by Lawrence Ong (lawrence-ong) on 2014-07-30 at
+# https://bugs.launchpad.net/ubuntu/+source/xfce4-power-manager/+bug/1259339/comments/31
+
+case $1 in
+  post)
+    sudo -u '#1000' DISPLAY=:0 /usr/bin/xrandr --auto
+    ;;
+esac
