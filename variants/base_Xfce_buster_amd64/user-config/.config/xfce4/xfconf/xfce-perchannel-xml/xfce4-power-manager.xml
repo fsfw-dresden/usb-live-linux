@@ -16,7 +16,7 @@
     <property name="critical-power-action" type="uint" value="1"/>
     <property name="handle-brightness-keys" type="bool" value="true"/>
     <property name="lid-action-on-ac" type="uint" value="1"/>
-    <property name="logind-handle-lid-switch" type="bool" value="true"/>
+    <property name="logind-handle-lid-switch" type="bool" value="false"/>
     <property name="lid-action-on-battery" type="uint" value="1"/>
   </property>
 </channel>
