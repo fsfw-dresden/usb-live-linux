@@ -1,6 +1,6 @@
 doc/html/*.html
 
-images/*
+iso-images
 
 .apt-http-proxy
 .lock
