@@ -468,7 +468,7 @@ footer ul#imagecredit li {
 
 footer p.version {
     margin: 0.5rem 1rem;
-    padding-left 0.5rem;
+    padding-left: 0.5rem;
     font-size: 0.8rem;
 }
 
@@ -586,3 +586,4 @@ a:hover > .fa {
 	filter: invert(100%);
 }
 
+/* vim: set tw=4 ts=4 sw=4: */
