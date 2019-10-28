@@ -346,6 +346,15 @@ a:focus:visited {
     clear: both;
 }
 
+/* expand layout beyond 960px on wide screens */
+@media (min-width: 1025px) {
+    #banner-container,
+    #content-container,
+    #navigation-area {
+        max-width: 75%;
+    }
+}
+
 /********** special rules for themen.html **********/
 
 #content-container section .imageheader {
