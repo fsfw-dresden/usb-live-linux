@@ -355,6 +355,66 @@ a:focus:visited {
     }
 }
 
+/********** special rules for schulstick.html **********/
+
+.subtitle {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* target only the first list following a header with the .grid class */
+.grid + ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-auto-rows: 1fr;
+    grid-gap: 15px;
+}
+
+.grid + ul > li {
+    background: grey;
+    border: 3px solid grey;
+    border-radius: 0.7em;
+}
+
+.grid + ul > li > a {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    padding: 6px;
+	height: 100%;
+	box-sizing: border-box;
+    border-radius: 0.4em;
+    border: 1px solid grey;
+    filter: grayscale(100%);
+    transition: filter 500ms;
+}
+
+.grid + ul > li:hover > a,
+.grid + ul > li:active > a,
+.grid + ul > li:focus > a {
+    color: white;
+    border-color: white;
+    filter: none;
+}
+
+.grid + ul > li > a img {
+    display: block;
+    width: 100%;
+}
+
+img.inline {
+    height: 1.5em;
+    vertical-align: bottom;
+}
+
+img.app {
+    vertical-align: middle;
+}
+
 /********** special rules for themen.html **********/
 
 #content-container section .imageheader {
