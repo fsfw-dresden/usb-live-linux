@@ -11,7 +11,7 @@ mkdir -pv config/includes.chroot/etc/skel
 for link in variants/${BUILD_VARIANT}/inherit/*; do
   rsync --verbose --archive --stats --info=progress2 ${link}/user-config/ config/includes.chroot/etc/skel/
 done
-rsync --verbose --archive --stats --info=progress2 variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
+rsync --verbose --archive --stats --info=progress2 --checksum variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
 scripts/copy-docs.sh
 ln -sv  /usr/local/share/doc/FSFW-Dresden config/includes.chroot/etc/skel/FSFW-Material
 

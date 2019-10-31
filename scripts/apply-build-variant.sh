@@ -13,4 +13,4 @@ for link in variants/${BUILD_VARIANT}/inherit/*; do
   rsync -avP ${link}/system-config/ config/
 done
 
-rsync -avP variants/${BUILD_VARIANT}/system-config/ config/
+rsync -avPc variants/${BUILD_VARIANT}/system-config/ config/
