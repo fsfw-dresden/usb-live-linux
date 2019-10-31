@@ -36,4 +36,5 @@ m f .aptitude/cache aptitude-cache
 m D .googleearth/Cache google-earth-cache
 m d .local/share/akonadi akonadi
 m D .local/share/marble marble
+m D .config/Riot/Cache riot-cache
 m d .kde/cache-debian kde-cache
