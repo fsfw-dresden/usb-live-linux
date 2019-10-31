@@ -24,6 +24,8 @@ nnoremap <F6> :Hexmode<CR>
 nmap <F3> :set wrap!<CR>
 map <silent> <unique> <F2> :ToggleSpaceHi<CR>
 
+let mapleader=" "
+
 " plugin settings
 let g:spacehi_tabcolor="ctermfg=White ctermbg=Blue guifg=White guibg=Red"
 let g:spacehi_spacecolor="ctermfg=Black ctermbg=Cyan guifg=Blue guibg=Yellow"
