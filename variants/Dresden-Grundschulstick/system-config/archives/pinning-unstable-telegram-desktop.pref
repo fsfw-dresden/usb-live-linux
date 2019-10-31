@@ -1,0 +1,9 @@
+# telegram-desktop 1.8.15-1 (20191016)
+Package: telegram-desktop
+Pin: origin /snapshot.debian.org/
+Pin-Priority: 500
+
+# up-to-date telegram - dependencies (worked 2019-10-31)
+Package: libc6 libc-bin libc-l10n libc-dev-bin libc6-dev locales
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
