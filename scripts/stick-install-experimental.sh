@@ -2,17 +2,22 @@
 # ad-hoc live stick installation script
 # BETA status
 # Kein Backup
-# Kein Mitleid
+# KEIN MITLEID
 
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-pause() {
-  true && return
-  echo
-  read -n1 -p "Press [q] to quit, [any other] key to proceed.."
-  [ "$REPLY" = "q" ] && exit 0
-}
+PAUSE=0
+if [ $PAUSE -eq 1 ]
+then
+        debug_pause() {
+            echo
+            read -n1 -p "Press [q] to quit, [any other] key to proceed.."
+            [ "$REPLY" = "q" ] && exit 0
+        }
+else
+        debug_pause() { echo; }
+fi
 
 select_target_device() {
     OPTIONS=()
@@ -73,9 +78,9 @@ echo "LIVE_IMAGE=${LIVE_IMAGE}"
 # no device no play
 [ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 3
 
-
+# any partitions on the device? => show the layout
 [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -gt 0 ] && parted --script ${DEVICE} print free
-pause
+debug_pause
 
 # --script ?
 set -x
@@ -83,55 +88,57 @@ set -x
 # create conventional DOS partition table
 parted  ${DEVICE} mklabel msdos
 
-# create an EFI boot partition
-#parted --align=opt  ${DEVICE} mkpart primary fat32 0 256
+# create an EFI boot & data exchange partition
 parted  --align=optimal ${DEVICE} mkpart primary fat32 0% 10%
-#parted ${DEVICE} name 1 EFIBOOT # msdos disk labels do not support partition names.
+
+# msdos disk labels do not support partition names, only gpt
+#parted ${DEVICE} name 1 EFIBOOT
+
 parted  ${DEVICE} set 1 boot on
-##parted  ${DEVICE} set 1 esp on
+
+# do not set both!
+#parted  ${DEVICE} set 1 esp on
 #parted  ${DEVICE} set 1 hidden on
-# do not set both! parted  ${DEVICE} set 1 hidden on
 
-# create the main live-system partition and a 1GiB data partition
-parted  --align=optimal -- ${DEVICE} mkpart primary ext4 10% 50%
-#parted  --align=optimal -- ${DEVICE} mkpart primary btrfs 1% 50%
+# create the main live-system partition
+parted  --align=optimal -- ${DEVICE} mkpart primary ext4 10% 100%
 parted  ${DEVICE} set 2 hidden on
-# ntfs/fuse is tOo0Oo SLOW!
-#parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 50% 100%
-##parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 256MiB 100%
 
-# create only an ext4 part
-#parted  --align=optimal -- ${DEVICE} mkpart primary ext4 256MiB 100%
+# ntfs/fuse is tOo0Oo SLOW! => maybe exfat some day.
+#parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 50% 100%
 
 # write out all changes to disk
 time sync
 
-# now reread the partition table
-partprobe ${DEVICE}
-partprobe --summary ${DEVICE}
-parted ${DEVICE} align-check minimal 2
-parted ${DEVICE} align-check optimal 2
-# parted ${DEVICE} align-check minimal 3
-# parted ${DEVICE} align-check optimal 3
-parted ${DEVICE} print free
+MAIN_LABEL=live-system
 
-# the EFI boot partition needs to be FAT32
-#mkfs.vfat -vn EFIBOOT -F 32 ${DEVICE}${p}1
-mkfs.vfat -vn DEBIAN-LIVE -F 32 ${DEVICE}${p}1
+{
+    # now reread the partition table
+    partprobe ${DEVICE}
+    partprobe --summary ${DEVICE}
+    parted ${DEVICE} align-check minimal 2
+    parted ${DEVICE} align-check optimal 2
+    parted ${DEVICE} print free
 
-# the live system main storage partition
-LABEL=live-system
-mkfs.ext4 -L ${LABEL} ${DEVICE}${p}2
-#mkfs.btrfs -L ${LABEL} ${DEVICE}${p}2
-#mkfs.exfat -n ${LABEL} ${DEVICE}${p}2
-# mkfs.ntfs --fast --label ${LABEL} ${DEVICE}${p}2
+    # the EFI boot partition needs to be FAT32 which
+    # is perfect for file exchange with inferior OSs
+    mkfs.vfat -vn SCHULSTICK -F 32 ${DEVICE}${p}1
 
-# the user data partition
-#mkfs.ext4 -L linux-userdata ${DEVICE}${p}3
-#mkfs.ntfs --fast --label linux-userdata ${DEVICE}${p}3
-#mkfs.ext4 -L linux-systemdata ${DEVICE}${p}3
+    # the live system main storage partition
+    mkfs.ext4 -L ${MAIN_LABEL} ${DEVICE}${p}2
 
-pause
+    # ext4 is less speed hiccups
+    #mkfs.btrfs -L ${MAIN_LABEL} ${DEVICE}${p}2
+    #mkfs.ntfs --fast --label ${MAIN_LABEL} ${DEVICE}${p}2
+    #mkfs.exfat -n ${MAIN_LABEL} ${DEVICE}${p}2
+
+    # the user data partition that was considered
+    #mkfs.ext4 -L linux-userdata ${DEVICE}${p}3
+    #mkfs.ntfs --fast --label linux-userdata ${DEVICE}${p}3
+    #mkfs.ext4 -L linux-systemdata ${DEVICE}${p}3
+} |& ccze -A -o nolookups
+
+debug_pause
 
 MOUNTDIR=/media
 EFIBOOT=${MOUNTDIR}/efiboot
@@ -151,11 +158,12 @@ mount -v ${DEVICE}${p}2 ${MAINSTORE}
 
 # install the grub bootloader for different platforms
 # takes 19 seconds
-time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
+time grub-install --verbose --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE} |& tee /media/grub-install-$(date "+%F__%R").i386-pc.log | ccza
 # takes 15 seconds
-#time grub-install --target=i386-efi --no-uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+time grub-install --verbose --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").i386-efi.log | ccza
 # takes 16 seconds
-time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+# --uefi-secure-boot is default btw
+time grub-install --verbose --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").x86_64-efi.log | ccza
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
@@ -164,52 +172,96 @@ time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --recheck --
 
 # fill in grub.cfg template variables
 export DATE=$(date)
-export LABEL
+export MAIN_LABEL
 export STICK_ISO=$(basename ${LIVE_IMAGE})
 export STICK_VERSION=$(echo ${STICK_ISO}|sed 's/[_-]/ /g;s/\..*//')
 export HDT=0
 #export MEMTEST=1
-# export BOOTOPTIONS="locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin utc=no vga=current net.ifnames=0 persistence-label=linux-userdata,linux-systemconfig.img,linux-systemdata.img,linux-system.img persistence-encryption=none,luks persistence-storage=directory,file,filesystem quiet splash"
-#export BOOTOPTIONS="locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin utc=no vga=current net.ifnames=0 persistence-label=linux-userdata,linux-systemconfig.img,linux-systemdata.img,linux-system.img persistence-encryption=none,luks persistence-storage=directory,file,filesystem mitigations=off live-boot.debug _console=ttyS0"
-export BOOTOPTIONS="locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin utc=no vga=current net.ifnames=0 persistence-label=linux-userdata,linux-systemconfig,linux-systemdata,linux-system persistence-encryption=none,luks persistence-storage=directory,file,filesystem mitigations=off live-boot.debug console=ttyS0 splash"
-#export BOOTOPTIONS="locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin utc=no vga=current net.ifnames=0 persistence-label=EigeneDateien,linux-systemconfig,linux-systemdata,linux-system persistence-encryption=none,luks persistence-storage=directory,file,filesystem mitigations=off live-boot.debug console=ttyS0 splash"
-#export BOOTOPTIONS="locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin utc=no vga=current net.ifnames=0 persistence-label=EigeneDateien,linux-systemconfig,linux-systemdata,linux-system persistence-encryption=none,luks persistence-storage=directory,file,filesystem mitigations=off quiet splash"
 
-# generate grub config from jinja template using j2 (not in debian yet; pip install j2cli)
+# start constructing kernel command line
+BOOTOPTIONS=""
+
+# languages to support
+BOOTOPTIONS+="locales=de_DE.UTF-8,en_GB.UTF-8 "
+
+BOOTOPTIONS+="keyboard-layouts=de "
+BOOTOPTIONS+="timezone=Europe/Berlin "
+
+# let kernel keep the current grafix mode
+BOOTOPTIONS+="vga=current "
+
+# preserve oldschool interfaces eth0 wlan0 etc.
+BOOTOPTIONS+="net.ifnames=0 "
+
+# list the persistence subdivisions we created
+BOOTOPTIONS+="persistence-label=linux-userdata,linux-systemconfig,linux-systemdata,linux-system "
+
+# accepted encrypted & unencrypted persistence volumes
+BOOTOPTIONS+="persistence-encryption=none,luks "
+
+# if the label name matches, a persistence volume can be a directory, and image file or partition
+BOOTOPTIONS+="persistence-storage=directory,file,filesystem "
+
+# turn off spectre & co. security mitigations for a nice speed boost
+BOOTOPTIONS+="mitigations=off "
+
+# debug logging of the live-boot scripts
+# BOOTOPTIONS+="live-boot.debug "
+
+# redirect console output to virtual serial port for debugging in qemu
+# BOOTOPTIONS+="console=ttyS0 "
+
+# enable root login
+BOOTOPTIONS+="rootpw=Risiko "
+
+# disallow risky administration tasks without password
+BOOTOPTIONS+="noroot "
+
+# don't scare the meek: silence the boot noise
+BOOTOPTIONS+="quiet "
+
+# show a friendly boot screen
+BOOTOPTIONS+="splash"
+
+export BOOTOPTIONS
+echo "'$BOOTOPTIONS'"
+
+# generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
 j2 variants/common/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
-# teh glorious merch
+# teh glorious FSFW merch
 cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
 
 # copy the memdisk bootloader
 if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
 
 # mark all files on the EFI partition as hidden system files
+# so it can be used for data exchange with other systems
 fatattr +hs ${EFIBOOT}/*
 
-# takes x seconds
+# these might become image files on an exfat partition
 #time truncate --size=1G ${MAINSTORE}/linux-userdata.img
-# time truncate --size=128M ${MAINSTORE}/linux-systemconfig.img
+#time truncate --size=128M ${MAINSTORE}/linux-systemconfig.img
 #time truncate --size=256M ${MAINSTORE}/linux-systemdata.img
 #time truncate --size=1G ${MAINSTORE}/linux-system.img
 
 #time mkfs.ext4 -m 0 -L userdata ${MAINSTORE}/linux-userdata.img
-# time mkfs.ext4 -m 0 -L systemconfig ${MAINSTORE}/linux-systemconfig.img
+#time mkfs.ext4 -m 0 -L systemconfig ${MAINSTORE}/linux-systemconfig.img
 #time mkfs.ext4 -m 0 -L systemdata ${MAINSTORE}/linux-systemdata.img
 #time mkfs.ext4 -m 0 -L system ${MAINSTORE}/linux-system.img
 
-#mount -v ${MAINSTORE}/linux-userdata.img ${USERDATA}
-# mkdir -pv ${MAINSTORE}/EigeneDateien
-# mount -v --bind ${MAINSTORE}/EigeneDateien ${USERDATA}
-# mount -v ${MAINSTORE}/linux-systemconfig.img ${SYSTEMCONFIG}
+# "linux-userdata" vs "EigeneDateien"
+mkdir -pv ${MAINSTORE}/linux-userdata
+mount -v --bind ${MAINSTORE}/linux-userdata ${USERDATA}
+
 mkdir -pv ${MAINSTORE}/linux-systemconfig
 mount -v --bind ${MAINSTORE}/linux-systemconfig ${SYSTEMCONFIG}
+
 mkdir -pv ${MAINSTORE}/linux-systemdata
 mount -v --bind ${MAINSTORE}/linux-systemdata ${SYSTEMDATA}
+
 mkdir -pv ${MAINSTORE}/linux-system
 mount -v --bind ${MAINSTORE}/linux-system ${SYSTEM}
-mkdir -pv ${MAINSTORE}/EigeneDateien
-mount -v --bind ${MAINSTORE}/EigeneDateien ${USERDATA}
 
 #mount -v ${MAINSTORE}/linux-systemdata.img ${SYSTEMDATA}
 #mount -v ${DEVICE}${p}3 ${SYSTEMDATA}
@@ -224,17 +276,27 @@ echo "/etc/cups source=printer-configuration" >  ${SYSTEMCONFIG}/persistence.con
 echo "/etc/NetworkManager/system-connections source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
 
 # systemdata persistence: stuff
-echo "/var/lib union" >  ${SYSTEMDATA}/persistence.conf
-echo "/usr/src union" >>  ${SYSTEMDATA}/persistence.conf
+echo "/var/lib union,source=var-lib" >  ${SYSTEMDATA}/persistence.conf
+echo "/usr/src union,source=usr-src" >>  ${SYSTEMDATA}/persistence.conf
 
 # system persistence: to be !DELETED! before update
-echo "/ union,source=root" >  ${SYSTEM}/persistence.conf
-echo "/etc bind,source=etc" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/apt union,source=var--lib--apt" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/aptitude union,source=var--lib--aptitude" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/dlocate union,source=var--lib--dlocate" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/dpkg union,source=var--lib--dpkg" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/live union,source=var--lib--live" >>  ${SYSTEM}/persistence.conf
+echo "/ union,source=rootfs" >  ${SYSTEM}/persistence.conf
+
+# binding etc gives full git ability from outside
+# echo "/etc bind,source=etc" >>  ${SYSTEM}/persistence.conf
+
+# union mount for etc allows shipping hotfixes
+echo "/etc union,source=etc" >>  ${SYSTEM}/persistence.conf
+
+# example hotfix 2019-10-22--0
+# mkdir -pv ${SYSTEM}/etc/rw/skel/.mozilla/firefox/fsfw1234.default
+# echo 'user_pref("browser.search.widget.inNavBar", true);' > ${SYSTEM}/etc/rw/skel/.mozilla/firefox/fsfw1234.default/user.js
+
+echo "/var/lib/apt union,source=var-lib-apt" >>  ${SYSTEM}/persistence.conf
+echo "/var/lib/aptitude union,source=var-lib-aptitude" >>  ${SYSTEM}/persistence.conf
+echo "/var/lib/dlocate union,source=var-lib-dlocate" >>  ${SYSTEM}/persistence.conf
+echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
+echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
 
 # now actually copy the stick image
 mkdir -pv ${MAINSTORE}/boot
@@ -245,7 +307,7 @@ time cp -avi "${LIVE_IMAGE}" ${MAINSTORE}/boot/
 #fatattr +hs ${MAINSTORE}/{boot,*.img}
 
 echo "everything done, unmounting ${DEVICE}.."
-pause
+debug_pause
 
 time umount -v ${USERDATA}
 time umount -v ${SYSTEMCONFIG}
