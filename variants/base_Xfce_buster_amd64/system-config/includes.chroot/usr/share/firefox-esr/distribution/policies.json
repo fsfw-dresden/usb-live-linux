@@ -1,0 +1,47 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": true,
+    "ExtensionSettings": {
+      "dragselectlinktext@kestrel": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "jid1-KdTtiCj6wxVAFA@jetpack": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi",
+        "installation_mode": "normal_installed"
+      }
+    },
+    "Homepage": {
+      "StartPage": "none"
+    },
+    "NewTabPage": false,
+    "OfferToSaveLogins": false,
+    "OfferToSaveLoginsDefault": false,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "Permissions": {
+      "Notifications": {
+        "BlockNewRequests": true
+      }
+    },
+    "Preferences": {
+      "browser.tabs.warnOnClose": false,
+      "datareporting.policy.dataSubmissionPolicyBypassNotification": true,
+      "extensions.getAddons.showPane": false,
+      "media.gmp-gmpopenh264.enabled": true,
+      "ui.key.menuAccessKeyFocuses": true
+    },
+    "PromptForDownloadLocation": true,
+    "SearchBar": "separate"
+  }
+}
