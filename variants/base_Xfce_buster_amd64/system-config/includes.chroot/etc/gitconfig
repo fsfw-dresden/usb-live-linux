@@ -1,11 +1,14 @@
 [core]
 	editor = vim
 [color]
-	ui = auto
-	diff = auto
-	branch = auto
-	status = auto
-	showbranch = auto
+	ui = always
+	diff = always
+	branch = always
+	status = always
+	showbranch = always
+[color "diff"]
+	new = green bold
+	old = yellow bold
 [color "status"]
 	added = green
 	changed = red bold
@@ -36,8 +39,10 @@
 	textconv = exiftool
 [diff "hex"]
 	textconv = hexdump -C
+[diff "json"]
+	textconv = jq .
 [diff "jsonlz4"]
-	textconv = lz4json %f
+	textconv = sh -c 'lz4jsoncat "$0"|jq .'
 [diff "pandoc"]
 	textconv = pandoc --to=rst
 [diff "pdf"]
@@ -53,3 +58,6 @@
 	co = checkout
 	log1 = log --pretty=oneline --abbrev-commit
 	logs = log --stat
+[url "git@github.com:"]
+        pushInsteadOf = https://github.com/
+        pushInsteadOf = git://github.com/
