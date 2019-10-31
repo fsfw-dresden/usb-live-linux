@@ -127,6 +127,21 @@
 - :x:  gdebi  --		Einfaches Programm für Betrachtung und Installation von deb-Dateien (+176 kB)
 - :x:  mlocate  --		Dateien anhand ihrer Namen schnell im Dateisystem finden
 - :x:  cruft-ng  --		finds anything that shouldn't be there, but is & anything that should be there, but isn't
+- :x:  xdotool  --		X11-Tastatur- und Mauseingaben-Ereignisse generieren, Fenster bewegen, deren Größe verändern usw (+88,5 kB)
+- :x:  xsel  --		Kommandozeilenwerkzeug für den Zugriff auf Zwischenablage und Auswahlpuffer von X (+20,5 kB)
+- :x:  hwinfo  --		Informationen über die im System installierte Hardware
+- :x:  pinfo  --		user-friendly, console-based viewer for Info documents
+- :x:  entr  --		Event Notify Test Runner (entr) runs commands when files change (detected through kqueue/inotify kernel interface)
+- :x:  clonezilla  --		bare metal backup and recovery of disk drives
+- :x:  partclone  --		clone and restore a partition
+- :x:  efitools  --		Tools to manipulate EFI secure boot keys and signatures
+- :x:  brightnessctl  --		small utility to control the brightness of screen and LEDs
+- :x:  fatattr  --		control attributes on a FAT filesystem
+- :x:  unrar  --		Unarchiver for .rar files (+111 kB)
+- :x:  zip  --		Archiver for .zip files (+234 kB)
+- :x:  syslinux-utils  --		auxiliary utilities (+98,4 kB)
+- :x:  lz4  --		very fast lossless compression, used by firefox to compress settings files (f.e. search.json.mozlz4)
+- :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -195,6 +210,9 @@
 - :x:  vmtouch  --		file system cache diagnostics and control
 - :x:  preload  --		adaptive readahead daemon, predicts what applications users might run
 - :x:  qttranslations5-l10n  --		translations for Qt 5 (+1.501 kB)
+- :x:  syslinux-common  --		suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
+- :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
+- :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
 
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
@@ -337,6 +355,7 @@
 - :x:  fonts-gotico-antiqua  --		15th century types between gothic and roman
 - :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
 - :x:  fonts-anonymous-pro  --	fixed width font designed for coders
+- :x:  fonts-stix  --		Scientific and Technical Information eXchange fonts (+590 kB)
 
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
