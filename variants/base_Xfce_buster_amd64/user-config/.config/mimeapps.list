@@ -1,5 +1,5 @@
 [Removed Associations]
-text/plain=vim.desktop;diffuse.desktop;gvim.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop
+text/plain=vim.desktop;diffuse.desktop;gvim.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;calibre-gui.desktop
 text/x-tex=vim.desktop;
 
 [Default Applications]
@@ -9,6 +9,7 @@ image/svg+xml=inkscape.desktop
 inode/directory=nemo.desktop
 x-scheme-handler/trash=nemo.desktop
 text/markdown=geany.desktop
+text/plain=geany.desktop
 text/html=firefox-esr.desktop
 x-scheme-handler/http=firefox-esr.desktop
 x-scheme-handler/https=firefox-esr.desktop
