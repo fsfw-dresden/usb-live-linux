@@ -14,6 +14,7 @@ COLOR_RED=$(color bold red)
 COLOR_OFF=$(color off)
 
 [ $(id -u) -eq 0 ] && SU=1 || SU=
+[ -e /etc/sudoers.d/live ] && SUDO="sudo" || SUDO=
 
 MSG="Command line quick-start menu"
 [ -z $SU ] || MSG+=" -- ${COLOR_RED}superuser / system administration mode${COLOR_OFF} active"
@@ -28,7 +29,7 @@ ADIOS="\n\n\t... Happy Hacking! : )\n"
 echo
 if read -sn1 -sp "$(echo -e $MSG)"; then
   case $REPLY in
-    s) echo; [ $(id -u) -eq 0 ] || sudo su -lw DISPLAY,XAUTHORITY,DBUS_SESSION_BUS_ADDRESS,SESSION_MANAGER,SSH_AUTH_SOCK;;
+    s) echo; [ $(id -u) -eq 0 ] || ${SUDO} su -lw DISPLAY,XAUTHORITY,DBUS_SESSION_BUS_ADDRESS,SESSION_MANAGER,SSH_AUTH_SOCK;;
     r) echo -e "$ADIOS"; ranger;;
     t) echo -e "$ADIOS"; tmux -2 attach-session;;
     *) echo -e "$ADIOS";;
