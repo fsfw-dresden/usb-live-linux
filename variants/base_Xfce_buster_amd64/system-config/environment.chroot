@@ -1,0 +1,2 @@
+# transparently disable fsync and friends to speed up build
+LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libeatmydata.so
