@@ -1,0 +1,4 @@
+# up-to-date rstudio dependencies (worked 2019-10-31)
+Package: libc6 libc6-i386 libc6-dev libc-bin libc-l10n libc-dev-bin libc6-dev locales libstdc++6
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500

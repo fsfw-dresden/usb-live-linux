@@ -4,6 +4,6 @@ Pin: origin /snapshot.debian.org/
 Pin-Priority: 500
 
 # up-to-date telegram - dependencies (worked 2019-10-31)
-Package: libc6 libc-bin libc-l10n libc-dev-bin libc6-dev locales
+Package: libc6 libc-bin libc-l10n libc-dev-bin libc6-dev locales libstdc++6
 Pin: release a=unstable, o=Debian
 Pin-Priority: 500

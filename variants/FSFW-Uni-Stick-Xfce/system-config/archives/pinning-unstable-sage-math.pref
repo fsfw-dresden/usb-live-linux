@@ -1,4 +1,4 @@
 # up-to-date sagemath
-Package: sagemath* libbrial-groebner3 libbrial3 libc6 libec5 gcc-9-base libgomp1 libpynac18py3 fflas-ffpack maxima-sage maxima-sage-share python3-cypari2 python3-scipy python3-sphinx ecl python3-brial python3-sphinx libgc-dev libc6-dev fflas-ffpack-common libc-dev-bin libgivaro9 libgivaro-dev libjs-sphinxdoc sphinx-common 
+Package: sagemath* libbrial-groebner3 libbrial3 libc6 libstdc++6 libec5 gcc-9-base libgomp1 libpynac18py3 fflas-ffpack maxima-sage maxima-sage-share python3-cypari2 python3-scipy python3-sphinx ecl python3-brial python3-sphinx libgc-dev libc6-dev fflas-ffpack-common libc-dev-bin libgivaro9 libgivaro-dev libjs-sphinxdoc sphinx-common
 Pin: release a=unstable, o=Debian
 Pin-Priority: 500
