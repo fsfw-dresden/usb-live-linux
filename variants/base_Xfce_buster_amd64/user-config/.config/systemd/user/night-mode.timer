@@ -5,4 +5,4 @@ Description=automatic night mode (timer)
 OnCalendar=*-*-* *:*:42
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target
