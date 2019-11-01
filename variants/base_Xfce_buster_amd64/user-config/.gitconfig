@@ -1,4 +1,4 @@
 # User-Konfiguration, damit git commit ohne Fehlermeldung funktioniert
 [user]
-    name = unknown-uni-stick-user
+    name = anonymous-user
     email = user@localhost
