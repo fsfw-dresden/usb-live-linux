@@ -35,7 +35,7 @@ Init ()
 {
 	# Checking if package is installed or already configured
 	if [ ! -e /var/lib/dpkg/info/user-setup.list ] || \
-	   [ -e /var/lib/live/config/user-setup ]
+	   [ -e /var/lib/live/config/user-setup -a -d "/home/${LIVE_USERNAME}" ]
 	then
 		exit 0
 	fi
@@ -48,7 +48,14 @@ Config ()
 	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
-		exit 0
+                # username exists but home directory absent?
+	        if [ ! -d "/home/${LIVE_USERNAME}" ]
+                then
+                        # remove user so it can be re-added
+                        deluser ${LIVE_USERNAME}
+                else
+		        exit 0
+                fi
 	fi
 
 	# Adjust formating of groups

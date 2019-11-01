@@ -73,9 +73,20 @@ cat > /etc/adjtime << EOF
 0
 LOCAL
 EOF
+                        # prevent "System clock time unset or jumped
+                        # backwards, restoring from recorded timestamp"
+                        # oh Lennart
+                        pgrep systemd-timesyncd && SYSD=1
+                        TIMEFILE=/var/lib/systemd/timesync/clock
+
+                        [ -e $TIMEFILE ] && rm -v $TIMEFILE
+                        [ "$SYSD" = "1" ] && systemctl stop systemd-timesyncd
+
                         # tell kernel to set the timezone and
                         # reset the system clock to local time
 			hwclock --systz --localtime
+
+                        [ "$SYSD" = "1" ] && systemctl start systemd-timesyncd
 			;;
 	esac
 
