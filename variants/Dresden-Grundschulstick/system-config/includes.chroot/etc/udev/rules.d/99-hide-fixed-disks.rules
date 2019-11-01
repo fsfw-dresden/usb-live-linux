@@ -1,1 +1,3 @@
-ATTRS{removable}=="0", ENV{UDISKS_IGNORE}="1"
+# one of these is überflüssig
+SUBSYSTEMS!="usb", ATTRS{removable}=="0", ENV{UDISKS_IGNORE}="1"
+ENV{ID_BUS}!="usb", ATTRS{removable}=="0", ENV{UDISKS_IGNORE}="1"
