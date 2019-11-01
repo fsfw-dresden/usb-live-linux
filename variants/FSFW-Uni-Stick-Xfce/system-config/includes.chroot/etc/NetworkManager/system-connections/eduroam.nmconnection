@@ -15,5 +15,6 @@ key-mgmt=wpa-eap
 [802-1x]
 ca-cert=/etc/ssl/certs/TU-Dresden-CA.pem
 eap=peap;
+identity=<ZIH-Login>@tu-dresden.de
 password-flags=1
 phase2-auth=mschapv2
