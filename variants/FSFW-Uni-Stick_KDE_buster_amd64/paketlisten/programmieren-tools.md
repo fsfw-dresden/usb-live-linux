@@ -29,4 +29,3 @@
 - :x:  umbrello  --	einfaches UML-Tool für den KDE-Desktop
 - :x:  plantuml  --	text-to-UML converter
 
-

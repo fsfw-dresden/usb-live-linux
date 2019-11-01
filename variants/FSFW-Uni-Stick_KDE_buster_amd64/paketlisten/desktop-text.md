@@ -11,6 +11,7 @@
 
 - ###  PDF-Tools
 
+- :x:  evince  --	Dokumentenbetrachter für PostScript und PDF
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
 - :x:  diffpdf  --	grafischer PDF-Vergleicher
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
@@ -19,4 +20,5 @@
 - :x:  pdfresurrect  -- zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
 - :x:  pdfchain  --	Grafische Benutzeroberfläche für das PDF Tool Kit
 
+- :x:  gscan2pdf  --	Grafische Oberfläche zum Erstellen von PDFs oder DjVus aus gescannten Dokumenten
 

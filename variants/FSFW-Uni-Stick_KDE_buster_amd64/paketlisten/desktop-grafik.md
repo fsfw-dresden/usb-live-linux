@@ -20,10 +20,12 @@
 
 - :x:  xsane  --	Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
 
+- :x:  qtqr  --		Qt frontend for QR code generator and decoder
+
 - ###  Fotoverwaltung
 
 - :x:  digikam  -- Full-Featured Fotoverwaltung für KDE
 - :+1:  digikam-doc  --
 - :+1:  kipi-plugins  -- Grafikbibliothek für KDEs Digikam
-- :+1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
+- :x:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
 

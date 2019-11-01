@@ -2,8 +2,6 @@
 
 - ###  python scientific
 
-[//]: # (Carsten: IPython wird separat via HOOK installiert. Ist deutlich aktueller)
-
 - :x:  ipython3  -- Erweiterte interaktive Python-3-Shell 
 - :x:  python3-sympy  -- Python-Computeralgebrasystem (CAS)
 - :x:  python3-numpy  -- Numerical Python adds a fast array facility to the Python language

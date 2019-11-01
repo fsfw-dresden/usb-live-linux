@@ -9,7 +9,7 @@
 
 - :x:  mate-desktop-environment-core
 
-- :o:  atril  --		MATE-Dokumentenbetrachter
+- :x:  atril  --		MATE-Dokumentenbetrachter
 - :o:  engrampa  --		MATE-Archivmanager 
 - :o:  eom  --			Bildbetrachter Eye of MATE 
 - :o:  ffmpegthumbnailer  --	Schnelles und leichtgewichtiges Programm für Video-Miniaturansichten 
@@ -25,9 +25,10 @@
 - :o:  mate-user-guide  --	Documentation for MATE Desktop
 - :x:  mate-utils  --		Hilfsprogramme für den MATE-Desktop 
 - :o:  mate-menus  --		MATE-Implementierung der freedesktop-Menüspezifikation
-- :o:  pluma  --		Offizieller Texteditor der Arbeitsumgebung MATE 
+- :x:  pluma  --		Offizieller Texteditor der Arbeitsumgebung MATE 
 
 - :x:  mate-themes  --		Official themes for the MATE desktop
+- :x:  mate-backgrounds  --	Hintergründen, die in der MATE Desktop-Umgebung enthalten sind
 
 - :x:  mate-indicator-applet  -- MATE panel indicator applet
 - :x:  mate-sensors-applet  --  Verschiedene Applets für die GNOME-Leiste - Daten
@@ -43,15 +44,15 @@
 
 - :x:  gwakeonlan  --		wakes up your machines using Wake on LAN
 
-- ###  remmina-stetch-backports
+- ###  remmina
 
-- :o:  remmina  --		GTK+ Remote Desktop Client
-- :o:  remmina-plugin-exec  --	EXEC plugin for Remmina 
+- :x:  remmina  --		GTK+ Remote Desktop Client
+- :x:  remmina-plugin-exec  --	EXEC plugin for Remmina 
 - :o:  remmina-plugin-gnome  --	GNOME plugin for remmina remote desktop client -- nicht in buster
-- :o:  remmina-plugin-nx  --    NX plugin for Remmina
-- :o:  remmina-plugin-rdp  --	RDP plugin for Remmina
-- :o:  remmina-plugin-secret  --	Secret plugin for Remmina
-- :o:  remmina-plugin-spice  --	Spice plugin for Remmina
-- :o:  remmina-plugin-vnc  --	VNC plugin for Remmina
-- :o:  remmina-plugin-xdmcp  --	XDMCP plugin for Remmina
+- :x:  remmina-plugin-nx  --    NX plugin for Remmina
+- :x:  remmina-plugin-rdp  --	RDP plugin for Remmina
+- :x:  remmina-plugin-secret  --	Secret plugin for Remmina
+- :x:  remmina-plugin-spice  --	Spice plugin for Remmina
+- :x:  remmina-plugin-vnc  --	VNC plugin for Remmina
+- :x:  remmina-plugin-xdmcp  --	XDMCP plugin for Remmina
 

@@ -17,13 +17,13 @@
 
 - ###  Maker Tools  -- 3D Tools - G-Code 
 
-- :o:  printrun  --	3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software
-- :o:  slic3r  --	G-code generator for 3D printers
-- :o:  meshlab  --	System for processing and editing triangular meshes
+- :x:  printrun  --	3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software
+- :x:  slic3r  --	G-code generator for 3D printers
+- :x:  meshlab  --	System for processing and editing triangular meshes
 - :+1: :o:  [Meshroom](https://github.com/alicevision/meshroom/releases/download/v2018.1.0/Meshroom-2018.1.0-linux.tar.gz)  -- Photogrammetrie-Werkzeug
 
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-77-g840df7cc-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.8-99-g0a2ae54b-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
 - :x:  potrace  -- utility to transform bitmaps into vector graphics -- wird von VisiCut benötigt

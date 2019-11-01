@@ -5,7 +5,7 @@
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
 >  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
->  ` $ sudo ./auto/paketliste `   --  im live-build-Verzeichnis ausführen
+>  ` $ sudo ./auto/paketliste `   --  im build-Verzeichnis ausführen
 >
 >
 > ##  Syntax für die Paketlisten
@@ -131,7 +131,7 @@
 
 - ### :x:  system-tools  -- [System Tools](system-tools.md)
 
-- ### :x:  german-user  -- [German User](german-user.md)  -- System Tools - Deutsche Sprachpakete
+- ### :x:  german-user  -- [German User](german-user.md) - System Tools - Deutsche Sprachpakete
 
 
 ##  System-Tools  --  Virtualisierung - Netzwerk
@@ -145,9 +145,9 @@
 
 ##  System Tools  --
 
-- ### :x:  live  -- [LIVE-System](live.md) - System Pakete werden fürs Live-System benöttigt
-
 - ### :x:  recommends  -- [Recommends](recommends.md) - Pakete die installiert werden sollten wenn > lb config --apt-recommends < verwendet wird
 
-- ### :x:  firmware  -- [Firmware](firmware.md)
+- ### :x:  firmware  -- [Firmware](firmware.md) -
+
+- ### :x:  live  -- [LIVE-System](live.md) - System Pakete werden fürs Live-System benötigt
 

@@ -8,7 +8,7 @@
 - :+1:  vim-scripts  --	Erweiterungen für vim
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 - :+1:  tmux  --	Terminal-Multiplexer 
-- :x:  sm  -- Zeigt einen kurzen Text bildschirmfüllend an
+- :x:  sm  -- 		Zeigt einen kurzen Text bildschirmfüllend an
 - :o:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 - :x:  htop  -- interaktive Prozessübersicht für die Konsole
 - :o:  pandoc  -- Multiformatkonverter

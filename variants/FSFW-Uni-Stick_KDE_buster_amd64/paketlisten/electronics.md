@@ -14,8 +14,8 @@
 
 
 [//]: # (Dieses Paket zieht mit Kicad-common einen 420 MB Koloss als Abhängigkeit nach.)
-- :+1:  kicad  -- 	Entwurf von Schaltplänen und Platinen
-- :+1:  kicad-doc-de  -- 
+- :x:  kicad  -- 	Entwurf von Schaltplänen und Platinen
+- :x:  kicad-doc-de  -- 
 - :+1:  fritzing  --	Benutzerfreundliche Elektronikentwicklungssoftware
 - :+1:  pcb  --		Programm zur Entwicklung gedruckter Schaltungen
 - :+1:  qelectrotech  -- 	Editor für elektrische Schaltpläne
