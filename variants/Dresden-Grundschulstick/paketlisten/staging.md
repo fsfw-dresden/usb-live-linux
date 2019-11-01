@@ -142,6 +142,7 @@
 - :x:  syslinux-utils  --		auxiliary utilities (+98,4 kB)
 - :x:  lz4  --		very fast lossless compression, used by firefox to compress settings files (f.e. search.json.mozlz4)
 - :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
+- :x:  make  --		utility for directing compilation
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon
@@ -322,6 +323,7 @@
 - :x:  libnotify-bin  --	Sendet Benachrichtigungen an die Arbeitsfläche
 - :x:  asunder  --		graphical audio CD ripper and encoder (+373 kB)
 - :x:  materia-gtk-theme  --	Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)	
+- :x:  marble-qt  --    Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 
 - :o:    --		
 - :o:  webcamoid  --		full featured webcam capture application, can do a lot of funny things (+9,328 kB)

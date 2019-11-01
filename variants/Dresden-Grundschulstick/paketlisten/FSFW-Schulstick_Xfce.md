@@ -111,7 +111,7 @@
 
 - ### :o:  statistik  --  [Statistik Programme](statistik.md) - für statistische Berechnungen und Grafiken
 
-- ### :x:  education  -- [Programme fürs Lernen](education.md) - Sprache - languages - chemistry - geography - astronomy
+- ### :o:  education  -- [Programme fürs Lernen](education.md) - Sprache - languages - chemistry - geography - astronomy
 
 - ### :o:  electronics  -- [Elektronik](electronics.md) - Schaltplanentwurf - Schaltungssimulation - Funksignalverarbeitung - Logic analyzer und protocol decoder software
 
