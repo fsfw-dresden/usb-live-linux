@@ -1,0 +1,679 @@
+{
+  "version": 1,
+  "buildID": "20191022215001",
+  "appVersion": "68.2.0",
+  "locale": "de-DE",
+  "visibleDefaultEngines": [
+    "google-b-1-e",
+    "amazon-de",
+    "bing",
+    "ddg",
+    "ebay-de",
+    "ecosia",
+    "leo_ende_de",
+    "wikipedia-de"
+  ],
+  "metaData": {
+    "searchDefaultExpir": 1572532860013,
+    "current": "wokisu",
+    "hash": "1GSxfrrRmHCMXCk5MhsF2FbHDIkVa96Sqj93Mi7l+Ik="
+  },
+  "engines": [
+    {
+      "_name": "Google",
+      "_shortName": "google-b-1-e",
+      "_loadPath": "[other]addEngineWithDetails:google@search.mozilla.org",
+      "description": "Google Search",
+      "__searchForm": "https://www.google.com/search?client=firefox-b-1-e&q={searchTerms}",
+      "_iconURL": "moz-extension://ae882ac4-0104-4c22-b15d-3248d1ce623f/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://ae882ac4-0104-4c22-b15d-3248d1ce623f/favicon.ico"
+      },
+      "_metaData": {
+        "order": 13,
+        "alias": "g"
+      },
+      "_urls": [
+        {
+          "template": "https://www.google.com/search",
+          "rels": [],
+          "resultDomain": "www.google.com",
+          "params": [
+            {
+              "name": "client",
+              "value": "firefox-b-1-e"
+            },
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            }
+          ]
+        },
+        {
+          "template": "https://www.google.com/complete/search?client=firefox&q={searchTerms}",
+          "rels": [],
+          "resultDomain": "www.google.com",
+          "type": "application/x-suggestions+json",
+          "params": []
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "google@search.mozilla.org"
+    },
+    {
+      "_name": "Amazon.de",
+      "_shortName": "amazon-de",
+      "_loadPath": "[other]addEngineWithDetails:amazon@search.mozilla.org",
+      "description": "Amazon.de Suche",
+      "__searchForm": "https://www.amazon.de/",
+      "_iconURL": "moz-extension://1f7abb0b-e37b-4ad4-8dd3-a8ae38eaacd3/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://1f7abb0b-e37b-4ad4-8dd3-a8ae38eaacd3/favicon.ico"
+      },
+      "_metaData": {
+        "order": 11,
+        "alias": "am"
+      },
+      "_urls": [
+        {
+          "template": "https://www.amazon.de/exec/obidos/external-search/",
+          "rels": [],
+          "resultDomain": "www.amazon.de",
+          "params": [
+            {
+              "name": "field-keywords",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "ie",
+              "value": "{inputEncoding}"
+            },
+            {
+              "name": "mode",
+              "value": "blended"
+            },
+            {
+              "name": "tag",
+              "value": "firefox-de-21"
+            },
+            {
+              "name": "sourceid",
+              "value": "Mozilla-search"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "amazon@search.mozilla.org"
+    },
+    {
+      "_name": "Bing",
+      "_shortName": "bing",
+      "_loadPath": "[other]addEngineWithDetails:bing@search.mozilla.org",
+      "description": "Bing. Search by Microsoft.",
+      "__searchForm": "https://www.bing.com/search?q={searchTerms}&pc=MOZI",
+      "_iconURL": "moz-extension://d6371a87-29a0-4130-bfa9-56e833d37101/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://d6371a87-29a0-4130-bfa9-56e833d37101/favicon.ico"
+      },
+      "_metaData": {
+        "order": 10,
+        "alias": null,
+        "hidden": true
+      },
+      "_urls": [
+        {
+          "template": "https://www.bing.com/search",
+          "rels": [],
+          "resultDomain": "www.bing.com",
+          "params": [
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "pc",
+              "value": "MOZI"
+            },
+            {
+              "name": "form",
+              "value": "MOZCON",
+              "purpose": "contextmenu"
+            },
+            {
+              "name": "form",
+              "value": "MOZSBR",
+              "purpose": "searchbar"
+            },
+            {
+              "name": "form",
+              "value": "MOZSPG",
+              "purpose": "homepage"
+            },
+            {
+              "name": "form",
+              "value": "MOZLBR",
+              "purpose": "keyword"
+            },
+            {
+              "name": "form",
+              "value": "MOZTSB",
+              "purpose": "newtab"
+            }
+          ]
+        },
+        {
+          "template": "https://www.bing.com/osjson.aspx",
+          "rels": [],
+          "resultDomain": "www.bing.com",
+          "type": "application/x-suggestions+json",
+          "params": [
+            {
+              "name": "query",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "form",
+              "value": "OSDJAS"
+            },
+            {
+              "name": "language",
+              "value": "{moz:locale}"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "bing@search.mozilla.org"
+    },
+    {
+      "_name": "DuckDuckGo",
+      "_shortName": "ddg",
+      "_loadPath": "[other]addEngineWithDetails:ddg@search.mozilla.org",
+      "description": "Search DuckDuckGo",
+      "__searchForm": "https://duckduckgo.com/?q={searchTerms}",
+      "_iconURL": "moz-extension://46d37160-9c17-4334-947c-470a12702de0/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://46d37160-9c17-4334-947c-470a12702de0/favicon.ico"
+      },
+      "_metaData": {
+        "order": 7,
+        "alias": "ddg"
+      },
+      "_urls": [
+        {
+          "template": "https://duckduckgo.com/",
+          "rels": [],
+          "resultDomain": "duckduckgo.com",
+          "params": [
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "t",
+              "value": "ffcm",
+              "purpose": "contextmenu"
+            },
+            {
+              "name": "t",
+              "value": "ffab",
+              "purpose": "keyword"
+            },
+            {
+              "name": "t",
+              "value": "ffsb",
+              "purpose": "searchbar"
+            },
+            {
+              "name": "t",
+              "value": "ffhp",
+              "purpose": "homepage"
+            },
+            {
+              "name": "t",
+              "value": "ffnt",
+              "purpose": "newtab"
+            }
+          ]
+        },
+        {
+          "template": "https://ac.duckduckgo.com/ac/",
+          "rels": [],
+          "resultDomain": "ac.duckduckgo.com",
+          "type": "application/x-suggestions+json",
+          "params": [
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "type",
+              "value": "list"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "ddg@search.mozilla.org"
+    },
+    {
+      "_name": "eBay",
+      "_shortName": "ebay-de",
+      "_loadPath": "[other]addEngineWithDetails:ebay@search.mozilla.org",
+      "description": "eBay - Online auctions",
+      "__searchForm": "https://www.ebay.de/",
+      "_iconURL": "moz-extension://cf21fec3-e01e-43cb-8f63-fbfa9ba4b9dd/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://cf21fec3-e01e-43cb-8f63-fbfa9ba4b9dd/favicon.ico"
+      },
+      "_metaData": {
+        "order": 12,
+        "hidden": true,
+        "alias": null
+      },
+      "_urls": [
+        {
+          "template": "https://rover.ebay.com/rover/1/707-53477-19255-0/1",
+          "rels": [],
+          "resultDomain": "rover.ebay.com",
+          "params": [
+            {
+              "name": "ff3",
+              "value": "4"
+            },
+            {
+              "name": "toolid",
+              "value": "20004"
+            },
+            {
+              "name": "campid",
+              "value": "5338192028"
+            },
+            {
+              "name": "customid",
+              "value": ""
+            },
+            {
+              "name": "mpre",
+              "value": "https://www.ebay.de/sch/{searchTerms}"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "ebay@search.mozilla.org"
+    },
+    {
+      "_name": "Ecosia",
+      "_shortName": "ecosia",
+      "_loadPath": "[other]addEngineWithDetails:ecosia@search.mozilla.org",
+      "description": "Search Ecosia",
+      "__searchForm": "https://www.ecosia.org/",
+      "_iconURL": "moz-extension://b31c0917-be71-4627-8c17-8946ea642bcd/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://b31c0917-be71-4627-8c17-8946ea642bcd/favicon.ico"
+      },
+      "_metaData": {
+        "hidden": false,
+        "alias": "e",
+        "order": 6
+      },
+      "_urls": [
+        {
+          "template": "https://www.ecosia.org/search",
+          "rels": [],
+          "resultDomain": "www.ecosia.org",
+          "params": [
+            {
+              "name": "tt",
+              "value": "mzl"
+            },
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            }
+          ]
+        },
+        {
+          "template": "https://ac.ecosia.org/autocomplete",
+          "rels": [],
+          "resultDomain": "ac.ecosia.org",
+          "type": "application/x-suggestions+json",
+          "params": [
+            {
+              "name": "type",
+              "value": "list"
+            },
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "ecosia@search.mozilla.org"
+    },
+    {
+      "_name": "LEO Eng-Deu",
+      "_shortName": "leo_ende_de",
+      "_loadPath": "[other]addEngineWithDetails:leo_ende_de@search.mozilla.org",
+      "description": "Deutsch-Englisch Wörterbuch von LEO",
+      "__searchForm": "https://dict.leo.org/",
+      "_iconURL": "moz-extension://e3e06236-0b59-4d43-9536-5b97d3201b33/favicon.png",
+      "_iconMapObj": {
+        "{}": "moz-extension://e3e06236-0b59-4d43-9536-5b97d3201b33/favicon.png"
+      },
+      "_metaData": {
+        "order": 9,
+        "alias": "en"
+      },
+      "_urls": [
+        {
+          "template": "https://dict.leo.org/englisch-deutsch/{searchTerms}",
+          "rels": [],
+          "resultDomain": "dict.leo.org",
+          "params": []
+        },
+        {
+          "template": "https://dict.leo.org/dictQuery/m-query/conf/ende/query.conf/strlist.json",
+          "rels": [],
+          "resultDomain": "dict.leo.org",
+          "type": "application/x-suggestions+json",
+          "params": [
+            {
+              "name": "q",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "sort",
+              "value": "PLa"
+            },
+            {
+              "name": "shortQuery",
+              "value": "undefined"
+            },
+            {
+              "name": "noDescription",
+              "value": "undefined"
+            },
+            {
+              "name": "noQueryURLs",
+              "value": "undefined"
+            }
+          ]
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "leo_ende_de@search.mozilla.org"
+    },
+    {
+      "_name": "Wikipedia (de)",
+      "_shortName": "wikipedia-de",
+      "_loadPath": "[other]addEngineWithDetails:wikipedia@search.mozilla.org",
+      "description": "Wikipedia, die freie Enzyklopädie",
+      "__searchForm": "https://de.wikipedia.org/wiki/Spezial:Suche?search={searchTerms}&sourceid=Mozilla-search",
+      "_iconURL": "moz-extension://e0bb1c16-71d2-43bf-b6c9-6695f54beb8a/favicon.ico",
+      "_iconMapObj": {
+        "{}": "moz-extension://e0bb1c16-71d2-43bf-b6c9-6695f54beb8a/favicon.ico"
+      },
+      "_metaData": {
+        "order": 8,
+        "alias": "wp"
+      },
+      "_urls": [
+        {
+          "template": "https://de.wikipedia.org/wiki/Spezial:Suche",
+          "rels": [],
+          "resultDomain": "de.wikipedia.org",
+          "params": [
+            {
+              "name": "search",
+              "value": "{searchTerms}"
+            },
+            {
+              "name": "sourceid",
+              "value": "Mozilla-search"
+            }
+          ]
+        },
+        {
+          "template": "https://de.wikipedia.org/w/api.php?action=opensearch&search={searchTerms}",
+          "rels": [],
+          "resultDomain": "de.wikipedia.org",
+          "type": "application/x-suggestions+json",
+          "params": []
+        }
+      ],
+      "_isBuiltin": true,
+      "queryCharset": "UTF-8",
+      "extensionID": "wikipedia@search.mozilla.org"
+    },
+    {
+      "_name": "blinde-kuh.de",
+      "_shortName": "blinde-kuhde",
+      "_loadPath": "[https]mycroftproject.com/blinde-kuhde.xml",
+      "description": "blinde-kuh.de - Die Suchmaschine für Kinder",
+      "__searchForm": "http://www.blinde-kuh.de",
+      "_iconURL": "data:image/x-icon;base64,AAABAAIAICAQAAAAAADoAgAAJgAAABAQEAAAAAAAKAEAAA4DAAAoAAAAIAAAAEAAAAABAAQAAAAAAIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAABwAAAHAAAAAAAAAAAAAAcHcAAABwAAAAAAAAAAAAdwB3d3dwAAAAAAAAAAAAAHAAd3iIdwAAAAAAAAAAAAAAAHiIiHcAAAAAAAAAAAAAAAAHj/93AAAAAAAAAAAAAAAAB4//dwAAAAAAAAAAAAAAAAeP+AcAAAAAAAAAAAAAAAAHj/gHAAAAAAAAAAAAAAAAB4/4BwAAAAAAAAAAAAAAAAeP9wcAAAAAAAAAAAAAAAAHj/cHAAAAAAAAAAAAAAAAB4/3BwAAAAAAAAAABwAAAHiP+AAAAAAAAAAHdwAAAACIj/gAd3dwAAAAcHcAAAAHiIj4AAB3cHAAAABwAAAAB4+P+HAAB3AAcAAAAAAAAHj///hwAAAAAAAAAAAAAAeI///4hwAAAAAHAAAAAAAHj////4cAAAAAAABwBwcAeP//+P+AAAcABwAAAAAAB3j4iIiIgAAAAAAAAAAAAAB4iIiIiAAAAAAAAAAAAAAAh4iIiIAAAAAAAAAAAAAAAAiIiIiAAAAAAAAAAAAAAAAAiIiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////gB///4Af//8AH//8AD///AA///gAP//4AD//+AA///gAP//wAD//8AA///AAP//wAD//8AA//+AAP/4AAAH8AAAAfAAAABgAAAAYAAAACAAAABwgAHg/+AB///wA///8Af///gH///8H////////////8oAAAAEAAAACAAAAABAAQAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAAAACAAIAAgIAAAICAgADAwMAAAAD/AAD/AAAA//8A/wAAAP8A/wD//wAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAAABwd3cAAAAAAAB4hwAAAAAAAAj3AAAAAAAACPAAAAAAAAAI8AAAAAAAAAjwAAAABwAAiPB3cAAHAACI9wBwcAAACP/4AAAAcAB///gAAAAAAHiIgAAAAAAACIiAAAAAAAAAAAAAAA//8AAP//AAD+DwAA+B8AAPgfAAD4HwAA8B8AAPAfAADwHwAAwAMAAIAAAACAAAAAkBkAAPg/AAD8PwAA//8AAA==",
+      "_metaData": {
+        "loadPathHash": "aUVC4VBVpgJO0SyIz4by5ie9RromGyRdw1lszROJk38=",
+        "order": 3,
+        "updateexpir": 1572823126008,
+        "alias": "bk"
+      },
+      "_urls": [
+        {
+          "template": "http://www.blinde-kuh.de/bksearch.cgi",
+          "rels": [],
+          "resultDomain": "www.blinde-kuh.de",
+          "method": "POST",
+          "params": [
+            {
+              "name": "query",
+              "value": "{searchTerms}"
+            }
+          ]
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/blindekuh_de.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "WINDOWS-1251",
+      "_readOnly": false
+    },
+    {
+      "_name": "Qwant Junior",
+      "_shortName": "qwant-junior",
+      "_loadPath": "[https]mycroftproject.com/qwant-junior.xml",
+      "description": "Moteur de recherche français sans tracking",
+      "__searchForm": "https://www.qwantjunior.com",
+      "_iconURL": "data:image/x-icon;base64,/9j/4AAQSkZJRgABAQEASABIAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAQABADAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQII/8QAFgEBAQEAAAAAAAAAAAAAAAAABQYD/9oADAMBAAIQAxAAAAHRJKUJAm40riM7/8QAGRAAAgMBAAAAAAAAAAAAAAAAAwQCBRQV/9oACAEBAAEFAtBnGlGzwsDqvV1hhl0v/8QAHREAAgICAwEAAAAAAAAAAAAAAQIAAwQTITFRcf/aAAgBAwEBPwHWlFau/JaLc281P9EF2PkY4ru4dej6PIaTu2gz/8QAIBEAAgICAAcAAAAAAAAAAAAAAgMAARETBBIhIjJhof/aAAgBAgEBPwEibxLSWsuWh+xKjBffefcBZA3p43Nla9eJ/8QAIRAAAgEDAwUAAAAAAAAAAAAAAQMCAAQREhMxIkFCUWH/2gAIAQEABj8CapR2oKODLnNNs7jEuncWwDkU24shG4S8gzTM40n2Kjd7nholDHb5X//EABsQAQACAwEBAAAAAAAAAAAAAAEAESFBcVFh/9oACAEBAAE/Iarx1lnsJcWgpWekfpPGyYlrciwwOcvs5dn/2gAMAwEAAgADAAAAEFNP/8QAHREBAAEFAQEBAAAAAAAAAAAAAREAIUFRYTFxof/aAAgBAwEBPxBP8RQ8jS73+dqK5ckMnl+lSSlQCSSRaS8NROLCJjjhn7X/xAAdEQEBAAIDAAMAAAAAAAAAAAABEQAxIUFRYYHR/9oACAECAQE/EKg2CyqdxdTXB83rOiOFSv0YlUbX0Z17cKVytv7n/8QAGxABAQADAQEBAAAAAAAAAAAAAREAITFRQWH/2gAIAQEAAT8QA7V6kUFJIndd/MdhKAHXwRAJfXzKxfGRlJsdkBWc45yvFJENojd2OrzP/9k=",
+      "_metaData": {
+        "loadPathHash": "jrn2qsecGE9VKFmwn/JAsYvWT4DYpi1O+vNIAigrBU0=",
+        "order": 5,
+        "updateexpir": 1572823236445,
+        "alias": "qj"
+      },
+      "_urls": [
+        {
+          "template": "https://www.qwantjunior.com/?q={searchTerms}",
+          "rels": [],
+          "resultDomain": "www.qwantjunior.com",
+          "params": []
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/qwant-junior.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    },
+    {
+      "_name": "YouTube",
+      "_shortName": "youtube",
+      "_loadPath": "[https]mycroftproject.com/youtube.xml",
+      "description": "YouTube - Videos",
+      "__searchForm": "https://www.youtube.com/index",
+      "_iconURL": "data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAD/EAAA/0AAAP9AAAD/cAAA/4AAAP+AAAD/gAAA/4AAAP+AAAD/QAAA/0AAAP8Q////AP///wD///8AAAD/YAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/2D///8AAAD/MAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/MAAA/1AAAP//AAD//wAA//8AAP//AAD//wAA//8QEP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/2AAAP+AAAD//wAA//8AAP//AAD//wAA//8AAP//4OD//1BQ//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP+AAAD/gAAA//8AAP//AAD//wAA//8AAP//AAD/////////////wMD//yAg//8AAP//AAD//wAA//8AAP//AAD/gAAA/4AAAP//AAD//wAA//8AAP//AAD//wAA/////////////7Cw//8gIP//AAD//wAA//8AAP//AAD//wAA/4AAAP+AAAD//wAA//8AAP//AAD//wAA//8AAP//4OD//0BA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP+AAAD/UAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD/YAAA/zAAAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/zD///8AAAD/YAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/2D///8A////AP///wAAAP8QAAD/QAAA/0AAAP+AAAD/gAAA/4AAAP+AAAD/gAAA/4AAAP9AAAD/QAAA/xD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//8AAP//AADAAwAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAMADAAD//wAA//8AAA==",
+      "_metaData": {
+        "loadPathHash": "OpWtGTzJvBIN3Oj8AKjxxDW1uU+hVWTKybQDXYE5pPI=",
+        "order": 14,
+        "updateexpir": 1572901735050,
+        "alias": "y"
+      },
+      "_urls": [
+        {
+          "template": "https://www.youtube.com/results?search_query={searchTerms}&search=Search",
+          "rels": [],
+          "resultDomain": "www.youtube.com",
+          "params": []
+        },
+        {
+          "template": "https://suggestqueries.google.com/complete/search?output=firefox&ds=yt&q={searchTerms}",
+          "rels": [],
+          "resultDomain": "suggestqueries.google.com",
+          "type": "application/x-suggestions+json",
+          "params": []
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/youtube.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    },
+    {
+      "_name": "wokisu",
+      "_shortName": "wokisu",
+      "_loadPath": "[https]mycroftproject.com/wokisu.xml",
+      "description": "Kindersuchmaschine / Suchmaschine für Kinder",
+      "__searchForm": "https://www.wokisu.de/suchmaschine/",
+      "_iconURL": "data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAB3RJTUUH4QIHEjMuwcQWvwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAK5SURBVHjahZNbSBRhFMf/M65KrnbxtplZrZJCiZi0USAKZWVFEtRTKQVlPfRgDz1UYpQVEhGRj1kqQVqhXcxL9ZK5Id42XNQwUdRdMcNVd3fWvcxlT9+EymJKf/gxMHPO/3znzPk4LBMRbWWPfMbuBVT1ML4xqjmOm8FqYslnGQKDvLWdJBQ8Iee5Z+RrMtOCfjGOBebwAckVagVGuPRlELJpDGGFkdBe0EF63wu5f0IN28hoZLHFK1Veku91F8mdJlIKNCQX6cn7vJ296w4MkRjZai6n9kzzcwN4dV1LQ+3gElKBHfvhbygDn30e/igDPJVWhBzaiebMVJQN2LEnKhS30iItUaF8mmpQTI9P3qW4FCgGPYJGXEBNCbjbJniqfoKmnAjOTYXUOgg+di0EQyIqo2NhFmTUZsbmq8f/IF+MJnGyihxtIO94KSlXEsnvnF46r0NU6J55htxlTeQ48IDcH/to85tx9dMjDWtjL6/fBe6HHRrdQXCaGEC7Hlx45NKMIoJ51E14YDhuQFZSDOri45A6LeHvb2YuVrJZSLl/hKTRFyT05RK5Zmm5BuwiJbCqSe8slNc6ReMudY7UrRq8XQwSZz+RwxhMQlcyeUdvEPklkv0+ahm5SabfRtreYCFBdAb6PuIXtgxsCPANX4InuQaWLaXgQmKhuAfRZi2HqHhQP5mCHN0aNA4VYV6yLXbXwy2sbr800xAu2+pQLykYsRsRwQx4BMEtz2DftpfIM0bjaHwYTkWXIEN3GkkbssdYXjq3uEh+n7Xabc6CoH8Im9+HZL8TmnVZMNpaYPdOwBtyDZtCLfg+cRmF6c2yNjgqh92Lr4HbWCHNtpDLlEFCZyJ5hq+yGYgkKyJ9Hr1D5d2Z9LT3BI05OuifVQ4wOcOYo9VlZRwOzOH+c50zGXZGL6Njpev8BzUk9emgxqmoAAAAAElFTkSuQmCC",
+      "_metaData": {
+        "loadPathHash": "6C0A2JD6K/qrh0JJR5QveUBEFVhKTSYuEHiodACyH70=",
+        "order": 1,
+        "updateexpir": 1572931342590,
+        "alias": "wo"
+      },
+      "_urls": [
+        {
+          "template": "https://www.wokisu.de/suchmaschine/search.php?query_t={searchTerms}&search=1",
+          "rels": [],
+          "resultDomain": "www.wokisu.de",
+          "params": []
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/wokisu.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    },
+    {
+      "_name": "find-das-bild.de",
+      "_shortName": "find-das-bildde",
+      "_loadPath": "[https]mycroftproject.com/find-das-bildde.xml",
+      "description": "Bildersuche für Kinder",
+      "__searchForm": "http://www.find-das-bild.de/",
+      "_iconURL": "data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAmVBMVEVHcExOf6pQfqdPfKlQfafdXT9plbR1n7xUgKlNgapJbbZeia5Sf6hZha3oWS9Oe6hrlrlPf6fXQx7wiGrlSx7ja0qPaXPXSSTrRxSezN6h0eKv3+tgpZ2BrMeT3Oum1uSVwdWG3Oxkrsln0+eEscimz96Euc54qsLJ6vFJp3e22OW64OyCy95rqbE7xd53tcxds4xGmIxTpJP7M9qBAAAAGXRSTlMAJIJKbjD9/q0XB+aOz/5V6zrMzHak66MZvkSBcwAAALFJREFUGJVVztcSgjAQheEAIQlNQLEsmNB7U9//4QyQccb/br+bPQghZBsuY3poI5XGHFpx6riWuj0KSZKMNWG72KxKZWPXDUTfwAjitSgKqOshczQJbgXFUi5lLrKY+BJYBmvZ5WWeNzHFBzRCiElM7QE6h7l/fd59PwMxJIQBtM+9qvG2v7bL03gPCN6HWazdhiVAb1fzEN2hnFMP308XU633MTYsZJ5/opISoX+JHl9Kgg/0T07GcwAAAABJRU5ErkJggg==",
+      "_metaData": {
+        "loadPathHash": "BjxOsGqwHefKKh2QI14HN32yZtO3nE6Gv2BZP+l6uCg=",
+        "order": 4,
+        "updateexpir": 1573057174770,
+        "alias": "fdb"
+      },
+      "_urls": [
+        {
+          "template": "http://www.find-das-bild.de/suche/?tx_fdbgallery_fdbgallery[searchWord]={searchTerms}",
+          "rels": [],
+          "resultDomain": "www.find-das-bild.de",
+          "params": []
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/find-das-bild-de.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    },
+    {
+      "_name": "fragFINN.de",
+      "_shortName": "fragfinnde",
+      "_loadPath": "[https]mycroftproject.com/fragfinnde.xml",
+      "description": "die Suchmaschine für Kinder",
+      "__searchForm": "https://www.fragfinn.de/",
+      "_iconURL": "data:image/x-icon;base64,R0lGODlhEAAQAPcbAMfPD+Hkj+3ux9baUPPz5ubpqM7TLN7ibuPmmPX11fr668vSH+7wwtXXRvHy2OvswOLjgenpl+bokff3//LzydreX+3usM7VL87UKcnQFuzspPn5/NLYQM/WNuLmlenpm/X16evst+Dkc/n53+ToouLkfv399djdVPz86+rrtt/hd83TJvPz3+/w0dXZRu7vz/f27+3uvsjPEuXlitjaV+nprOTmnczSIdDVMNXZQtPXOeXmggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAEAAQAAAIcgAnCBxIsGDBDS0cOHgRYUCHGQYnZACQAIDFixUMAhBxQMNFiwsMugCAQsJHABwMtgAwwCIHAwAygDDI4uKHiAQJXAyAc6CDjxlkyIz44KTFGxELGAWwImIHoytgRPx4oqfAjxCtfrxgdUIMGhUsbIgYEAA7",
+      "_metaData": {
+        "loadPathHash": "obCXGo9S0Acn8n+4+L1M/e3ZBbC0kgpuXp20VKeP6Lw=",
+        "order": 2,
+        "updateexpir": 1573057215884,
+        "alias": "ff"
+      },
+      "_urls": [
+        {
+          "template": "https://www.fragfinn.de/?s&q={searchTerms}",
+          "rels": [],
+          "resultDomain": "www.fragfinn.de",
+          "params": []
+        },
+        {
+          "template": "https://mycroftproject.com/updateos.php/id0/fragfinnde.xml",
+          "rels": [
+            "self"
+          ],
+          "resultDomain": "mycroftproject.com",
+          "type": "application/opensearchdescription+xml",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "_hasPreferredIcon": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    }
+  ]
+}
