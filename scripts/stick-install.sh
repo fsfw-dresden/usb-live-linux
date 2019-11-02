@@ -181,7 +181,8 @@ grub_install() {
     if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/grub ]; then
         echo "grub-install wird ausführt - Bitte warten.. "
         grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${TMPDIR}/${LABEL_LIVE} ${DEVICE}
-        grub-install --target=x86_64-efi --no-uefi-secure-boot --recheck --removable --efi-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN} --root-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN}
+        grub-install --target=i386-efi --recheck --removable --force-extra-removable --efi-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN} --root-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN}
+        grub-install --target=x86_64-efi --recheck --removable --force-extra-removable --efi-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN} --root-directory=${TMPDIR}/${LABEL_WINDOWS_DATEN}
     else
         echo " Grub bereits installiert. "
     fi
