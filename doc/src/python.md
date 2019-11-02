@@ -17,13 +17,14 @@ für die man sonst separate Spezialprogramme wie Matlab, Maple oder
 Labview bräuchte. Das spart Einarbeitungsaufwand und Lizenzkosten.
 
 
-## IPython Notebook
+## IPython und Jupyter Notebook
 
 Python lässt sich sehr gut interaktiv nutzen, gewissermaßen als
-extrem leistungsstarker Taschenrechner. Dazu gibt es zwei Möglichkeiten:
+extrem leistungsstarker Taschenrechner. Dazu gibt es zwei Möglichkeiten,
+Beide sind aus dem Terminal (auch Konsole genannt, aufrufbar mit `F1`) zu starten:
 
-1. IPython auf der Konsole (Befehl: `ipython`)
-2. IPython Notebook (via Jupyter)
+1. IPython auf der Konsole (Befehl: `ipython3`)
+2. Jupyter Notebook mit Python Kernel (Befehl: `jupyter notebook`)
 
 Der Befehl `jupyter notebook`  startet lokal einen Server, sodass man dann
 über die URL [http://localhost:8888/](http://localhost:8888/) auf die
