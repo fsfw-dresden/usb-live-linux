@@ -1,4 +1,4 @@
-# WLAN (Eduroam) einrichten (2018er Stick-Version: KDE)
+# WLAN (Eduroam) einrichten (Stick-Version: KDE)
 
 An der TU Dresden gibt es flächendeckend WLAN. Relevant für die Allgemeinheit sind davon zwei:
 "eduroam" und "VPN/Web". Beide werden vom ZIH betrieben.
@@ -25,6 +25,21 @@ Damit kann die Konfiguration des Netzwerks vorgenommen werden:
 
 
 Mehr Informationen zum eduroam gibt es beim [ZIH](https://tu-dresden.de/zih/dienste/service-katalog/arbeitsumgebung/zugang_datennetz/index/#section-1-1).
+
+
+Die wichtigsten Einstellungen:
+
+
+- Sicherheit:  WPA2/AES
+- EAP-Type: EAP-TTLS
+- Anonyme Identität: eduroam@tu-dresden.de
+- CA-Zertifikat: [T-TeleSec GlobalRoot Class 2](https://tu-dresden.de/zih/dienste/ressourcen/dateien/rootcert.crt)
+- Innere Autorisierugsmethode: PAP
+- Benutzername: <ZIH-Login>@tu-dresden.de
+- Passwort: <ZIH-WLAN-Passwort>
+- IP-Vergabe: automatisch per DHCP
+
+
 
 ## VPN/Web (Plan B)
 
