@@ -14,7 +14,7 @@ done
 rsync --verbose --archive --stats --info=progress2 --checksum variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
 
 # copy FSFW-Material & latex-vorlagen
-rsync -vaih FSFW-Material/ config/includes.chroot/etc/skel/
+rsync -vaih FSFW-Material config/includes.chroot/etc/skel/
 # Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo:
 # <https://github.com/fsfw-dresden/latex-vorlagen>.
 git submodule update --init --recursive
