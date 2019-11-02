@@ -1,12 +1,12 @@
 # Der Uni-Stick der FSFW
 
-Der Uni-Stick der Hochschulgruppe für Freie Software und Freies Wissen ist ein
-Projekt, um euch ohne viel Aufwand die Möglichkeiten zum Einsatz freier Software
-in eurem Studium aufzuzeigen.  Was genau auf dem Stick drauf ist, wozu es euch
-nützlich sein kann, und warum wir das eigentlich alles machen, wollen wir euch
-im folgenden ein wenig erläutern.
+Der Uni-Stick der Hochschulgruppe für [Freie Software und Freies Wissen](https://fsfw-dresden.de)
+ist ein Projekt, um euch ohne viel Aufwand die Möglichkeiten zum Einsatz Freier Software
+(oft auch „Open Source Software“ genannt) in eurem Studium aufzuzeigen.
+Was genau auf dem Stick drauf ist, wozu es euch nützlich sein kann,
+und warum wir das eigentlich alles machen, wollen wir euch im Folgenden ein wenig erläutern.
 
-Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden
+Vertiefte Informationen sind dabei auf den folgenden Seiten zu finden:
 
 - [→LaTeX](latex.md)
 - [→Freie Software für Windows](windows.md)
@@ -33,7 +33,7 @@ erlauben, die Funktionsweise der Programme zu verstehen oder sie zu verändern.
 Das hat eine Reihe von negativen Folgen, von denen [Anbieterabhängigkeit][1] nur
 eine ist.  Manchmal lässt sich das nicht vermeiden, wie zum Beispiel bei
 hochwertigen CAD-Programmen.  Andererseits gibt es viele funktionsfähige *freie*
-Programme, die sich für den Alltag im Studium genauso gut wie ihre proprietären
+Programme, die sich für den Alltag im Studium mindestens genauso gut wie ihre proprietären
 Gegenstücke eignen.  Diese Programme sind nicht nur kostenlos, sie dürfen auch
 in ihrer Funktionsweise untersucht, verändert, und weitergegeben werden.  Das
 erlaubt unter anderem Nachvollziehbarkeit, schnelle Beseitigung von Fehlern, und
@@ -115,7 +115,7 @@ Aber auch wenn ihr unter Windows arbeiten wollt/müsst, kann euch
 dieser Stick nützlich sein: auf ihm findet ihr ebenfalls eine [→große Auswahl](windows.md)
 an freien Programmen, die unter Windows laufen.
 
-## Über die Hochschulgruppe für freie Software und freies Wissen
+## Über die Hochschulgruppe für [Freie Software und Freies Wissen](https://fsfw-dresden.de)
 
 Die 2014 gegründete Hochschulgruppe “Freie Software, Freies Wissen” (FSFW)
 beschäftigt sich mit den technischen sowie gesellschaftlichen Aspekten freier
@@ -138,15 +138,15 @@ Dich erwarten coole Leute, eine Menge Erfahrungen und das Gefühl, etwas bewegen
 
 Die wichtigsten Links von uns für Euch:
 
-- [Monatliche Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
-- [Ringvorlesung im WiSe18/19](https://fsfw-dresden.de/ringvorlesung) (Freie Software und Freies Wissen als Beruf)
+- [REgelmäßige Sprechstunde](https://fsfw-dresden.de/sprechstunde) (Für Fragen zu [LaTeX](latex.md), dem Uni-Stick und anderer freier Software)
+
 - [Workshops und Kurse](https://wiki.fsfw-dresden.de/doku.php/doku/vortraege_veranstaltungen_kurse) (git, Python, Mailverschlüsselung, ...)
 - [Blog](https://fsfw-dresden.de/blog)
 - [Newsletter](https://fsfw-dresden.de/newsletter)
 - [Beteiligungsmöglichkeiten](https://fsfw-dresden.de/mitmachen)
 
 
-Die FSFW bedankt sich ganz herzlich beim [StuRa der TU Dresden](https://stura.tu-dresden.de/)
+Die FSFW bedankt sich herzlich beim [StuRa der HTW Dresden](https://www.stura.htw-dresden.de/), [StuRa der TU Dresden](https://stura.tu-dresden.de/)
 für die finanzielle und beim [ZIH](https://zih.tu-dresden.de) für die technische Unterstützung des [Uni-Stick-Projekts](https://fsfw-dresden.de/uni-stick).
 
 Empfehlenswerte Dienste des ZIH und des StuRa:
