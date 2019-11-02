@@ -63,7 +63,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-5" type="string" value="clock">
-      <property name="mode" type="uint" value="4"/>
+      <property name="mode" type="uint" value="3"/>
       <property name="tooltip-format" type="string" value="%A %d %B %Y"/>
       <property name="show-seconds" type="bool" value="true"/>
       <property name="flash-separators" type="bool" value="false"/>
