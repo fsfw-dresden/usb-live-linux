@@ -2,6 +2,6 @@
 Version=1.0
 Name=Script
 Type=Application
-Exec=sh -c 'pgrep firefox || nohup firefox ~/FSFW-Material/stick-doku/index.html'
+Exec=sh -c 'pgrep firefox || nohup firefox /usr/local/share/doc/FSFW-Dresden/index.html'
 Terminal=false
 StartupNotify=false
