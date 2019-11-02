@@ -47,6 +47,9 @@ main() {
     # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
     scripts/extra-install-paket.sh
 
+    # copy FSFW docs
+    scripts/copy-docs.sh /usr/local/share/doc/FSFW-Dresden
+
     # live user home skeleton erstellen
     scripts/prepare-home-skel.sh
 

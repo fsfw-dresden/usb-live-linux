@@ -3,7 +3,8 @@
 cd_repo_root
 
 BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
-echo "Live-Stick ${0} ${BUILD_VARIANT}" 
+DOC_PATH=${1:-/usr/local/share/doc/FSFW}
+echo "Live-Stick ${0} ${DOC_PATH} ${BUILD_VARIANT}" 
 echo "FSFW Material/Doku bauen und verteilen"
 
 check_program_exists pandoc || exit 1
@@ -19,15 +20,8 @@ do
     echo "Datei geschrieben:" $TARGETFILE
 done
 
-DOC_PATH=usr/local/share/doc/FSFW-Dresden
-mkdir -pv config/includes.chroot/${DOC_PATH}/stick-doku
-rsync -avP doc/html/ config/includes.chroot/${DOC_PATH}/stick-doku/
-rsync -vaih FSFW-Material/ config/includes.chroot/${DOC_PATH}/
-
-# Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo:
-# <https://github.com/fsfw-dresden/latex-vorlagen>.
-git submodule update --init --recursive
-rsync -avP --exclude=.git* doc/latex-vorlagen/ config/includes.chroot/${DOC_PATH}/latex-vorlage
+mkdir -pv config/includes.chroot/${DOC_PATH#/}
+rsync -avP doc/html/ config/includes.chroot/${DOC_PATH#/}/
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 
