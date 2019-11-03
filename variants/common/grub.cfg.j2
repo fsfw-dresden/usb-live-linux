@@ -51,7 +51,7 @@ else
 fi
 
 
-menuentry "Live-System ({{ STICK_VERSION }})" {
+menuentry "Live-System ({{ STICK_VERSION }} mit Persistenz)" {
     echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
     echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
     set isofile=/boot/{{ STICK_ISO }}
@@ -60,6 +60,18 @@ menuentry "Live-System ({{ STICK_VERSION }})" {
     initrd (loop)/live/initrd.img
 }
 
+menuentry " " {
+  echo
+}
+
+menuentry "Live-System Failsafe (falls normales Starten nicht funktioniert) ({{ STICK_VERSION }})" {
+    echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
+    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
+    set isofile=/boot/{{ STICK_ISO }}
+    loopback loop $isofile
+    linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
+    initrd (loop)/live/initrd.img
+}
 
 menuentry "Live-System ohne Gedächtnis (Änderungen gehen verloren) ({{ STICK_VERSION }})" {
     echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
@@ -100,15 +112,6 @@ submenu "  [ Untermenü: Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 }
 
 submenu "  [ Untermenü: Expertenoptionen ]" {
-
-  menuentry "Live-System mit Persistenz (falls normales Starten nicht funktioniert) ({{ STICK_VERSION }})" {
-      echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-      echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-      set isofile=/boot/{{ STICK_ISO }}
-      loopback loop $isofile
-      linux (loop)/live/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
-      initrd (loop)/live/initrd.img
-  }
 
   menuentry "Live-System mit Persistenz (Rettungsmodus) ({{ STICK_VERSION }})" {
       echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
