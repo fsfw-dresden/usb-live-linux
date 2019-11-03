@@ -83,13 +83,28 @@ echo "LIVE_IMAGE=${LIVE_IMAGE}"
 debug_pause
 
 # --script ?
-set -x
+#set -x
+
+# ad-hoc calculation of partition sizes
+mb_size_stick=16000
+mb_size_space_buffer=750
+
+mb_size_partition_fat32=4000
+rel_size_partition_fat32=$((100 * mb_size_partition_fat32/mb_size_stick))
+
+size_live_system=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
+size_live_system=${size_live_system%%M *}
+mb_size_live_system=$((size_live_system * 2**10 / 10**3))
+rel_size_partition_iso=$((100 * (mb_size_live_system ) / mb_size_stick))
+rel_size_partition_iso=$((100 * (mb_size_live_system + mb_size_space_buffer) / mb_size_stick + 1))
+
+offset_start_partition_persistence=$((rel_size_partition_fat32 + rel_size_partition_iso))
 
 # create conventional DOS partition table
 parted  ${DEVICE} mklabel msdos
 
 # create an EFI boot & data exchange partition
-parted  --align=optimal ${DEVICE} mkpart primary fat32 0% 10%
+parted  --align=optimal ${DEVICE} mkpart primary fat32 0% ${rel_size_partition_fat32}%
 
 # msdos disk labels do not support partition names, only gpt
 #parted ${DEVICE} name 1 EFIBOOT
@@ -101,8 +116,11 @@ parted  ${DEVICE} set 1 boot on
 #parted  ${DEVICE} set 1 hidden on
 
 # create the main live-system partition
-parted  --align=optimal -- ${DEVICE} mkpart primary ext4 10% 100%
+parted  --align=optimal -- ${DEVICE} mkpart primary ext2 ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
 parted  ${DEVICE} set 2 hidden on
+
+parted  --align=optimal -- ${DEVICE} mkpart primary ext4 ${offset_start_partition_persistence}% 100%
+parted  ${DEVICE} set 3 hidden on
 
 # ntfs/fuse is tOo0Oo SLOW! => maybe exfat some day.
 #parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 50% 100%
@@ -118,6 +136,8 @@ MAIN_LABEL=live-system
     partprobe --summary ${DEVICE}
     parted ${DEVICE} align-check minimal 2
     parted ${DEVICE} align-check optimal 2
+    parted ${DEVICE} align-check minimal 3
+    parted ${DEVICE} align-check optimal 3
     parted ${DEVICE} print free
 
     # the EFI boot partition needs to be FAT32 which
@@ -125,7 +145,10 @@ MAIN_LABEL=live-system
     mkfs.vfat -vn SCHULSTICK -F 32 ${DEVICE}${p}1
 
     # the live system main storage partition
-    mkfs.ext4 -L ${MAIN_LABEL} ${DEVICE}${p}2
+    mkfs.ext2 -L ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
+
+    # persistence storage
+    mkfs.ext4 -L live-memory ${DEVICE}${p}3
 
     # ext4 is less speed hiccups
     #mkfs.btrfs -L ${MAIN_LABEL} ${DEVICE}${p}2
@@ -133,7 +156,6 @@ MAIN_LABEL=live-system
     #mkfs.exfat -n ${MAIN_LABEL} ${DEVICE}${p}2
 
     # the user data partition that was considered
-    #mkfs.ext4 -L linux-userdata ${DEVICE}${p}3
     #mkfs.ntfs --fast --label linux-userdata ${DEVICE}${p}3
     #mkfs.ext4 -L linux-systemdata ${DEVICE}${p}3
 } |& ccze -A -o nolookups
@@ -142,28 +164,29 @@ debug_pause
 
 MOUNTDIR=/media
 EFIBOOT=${MOUNTDIR}/efiboot
-MAINSTORE=${MOUNTDIR}/mainstore
+ISOSTORE=${MOUNTDIR}/isostore
+PERSISTENCESTORE=${MOUNTDIR}/persistencestore
 USERDATA=${MOUNTDIR}/userdata
 SYSTEMCONFIG=${MOUNTDIR}/systemconfig
 SYSTEMDATA=${MOUNTDIR}/systemdata
 SYSTEM=${MOUNTDIR}/system
 
 # create mount directories
-mkdir -pv ${EFIBOOT} ${MAINSTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
+mkdir -pv ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
 
 # mount the partitions
 mount -v ${DEVICE}${p}1 ${EFIBOOT}
-mount -v ${DEVICE}${p}2 ${MAINSTORE}
-#mount -v ${DEVICE}${p}3 ${USERDATA}
+mount -v ${DEVICE}${p}2 ${ISOSTORE}
+mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 
 # install the grub bootloader for different platforms
 # takes 19 seconds
-time grub-install --verbose --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE} |& tee /media/grub-install-$(date "+%F__%R").i386-pc.log | ccza
+time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE} |& tee /media/grub-install-$(date "+%F__%R").i386-pc.log | ccza
 # takes 15 seconds
-time grub-install --verbose --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").i386-efi.log | ccza
+time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").i386-efi.log | ccza
 # takes 16 seconds
 # --uefi-secure-boot is default btw
-time grub-install --verbose --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").x86_64-efi.log | ccza
+time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").x86_64-efi.log | ccza
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
@@ -251,17 +274,17 @@ fatattr +hs ${EFIBOOT}/*
 #time mkfs.ext4 -m 0 -L system ${MAINSTORE}/linux-system.img
 
 # "linux-userdata" vs "EigeneDateien"
-mkdir -pv ${MAINSTORE}/linux-userdata
-mount -v --bind ${MAINSTORE}/linux-userdata ${USERDATA}
+mkdir -pv ${PERSISTENCESTORE}/linux-userdata
+mount -v --bind ${PERSISTENCESTORE}/linux-userdata ${USERDATA}
 
-mkdir -pv ${MAINSTORE}/linux-systemconfig
-mount -v --bind ${MAINSTORE}/linux-systemconfig ${SYSTEMCONFIG}
+mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
+mount -v --bind ${PERSISTENCESTORE}/linux-systemconfig ${SYSTEMCONFIG}
 
-mkdir -pv ${MAINSTORE}/linux-systemdata
-mount -v --bind ${MAINSTORE}/linux-systemdata ${SYSTEMDATA}
+mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
+mount -v --bind ${PERSISTENCESTORE}/linux-systemdata ${SYSTEMDATA}
 
-mkdir -pv ${MAINSTORE}/linux-system
-mount -v --bind ${MAINSTORE}/linux-system ${SYSTEM}
+mkdir -pv ${PERSISTENCESTORE}/linux-system
+mount -v --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 
 #mount -v ${MAINSTORE}/linux-systemdata.img ${SYSTEMDATA}
 #mount -v ${DEVICE}${p}3 ${SYSTEMDATA}
@@ -299,8 +322,8 @@ echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
 
 # now actually copy the stick image
-mkdir -pv ${MAINSTORE}/boot
-time cp -avi "${LIVE_IMAGE}" ${MAINSTORE}/boot/
+mkdir -pv ${ISOSTORE}/boot
+time cp -aviL "${LIVE_IMAGE}" ${ISOSTORE}/boot/
 
 # mark boot dir and image files on main partition as hidden system files
 #fatattr +hs ${MAINSTORE}/{boot,linux-*}
@@ -314,7 +337,8 @@ time umount -v ${SYSTEMCONFIG}
 time umount -v ${SYSTEMDATA}
 time umount -v ${SYSTEM}
 time umount -v ${EFIBOOT}
-time umount -v ${MAINSTORE}
-rmdir -v ${EFIBOOT} ${MAINSTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
+time umount -v ${ISOSTORE}
+time umount -v ${PERSISTENCESTORE}
+rmdir -v ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
 
 # vim:ts=4:sts=4:sw=4:expandtab
