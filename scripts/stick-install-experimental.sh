@@ -238,7 +238,7 @@ BOOTOPTIONS+="mitigations=off "
 BOOTOPTIONS+="rootpw=Risiko "
 
 # disallow risky administration tasks without password
-BOOTOPTIONS+="noroot "
+#BOOTOPTIONS+="noroot "
 
 # don't scare the meek: silence the boot noise
 BOOTOPTIONS+="quiet "
