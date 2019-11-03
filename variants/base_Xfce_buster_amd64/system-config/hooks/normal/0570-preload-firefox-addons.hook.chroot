@@ -1,0 +1,16 @@
+#!/bin/sh
+# pre-download extensions to avoid stupid welcome tabs
+
+# what didn't work is setting this in /etc/firefox-esr/syspref.js :
+# pref("capability.policy.default.browser.runtime.onInstalled.addListener", "noAccess");
+
+EXTDIR=/etc/skel/.mozilla/firefox/fsfw1234.default/extensions/
+mkdir -pv ${EXTDIR}
+
+# the one-off dirty way
+curl --location --output "${EXTDIR}/dragselectlinktext@kestrel.xpi" 'https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi'
+curl --location --output "${EXTDIR}/jid1-KdTtiCj6wxVAFA@jetpack.xpi" 'https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi'
+curl --location --output "${EXTDIR}/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi" 'https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi'
+
+# a better way to get the URLs (when we have the time to finish) could be
+# jq .policies.ExtensionSettings /usr/share/firefox-esr/distribution/policies.json | ...
