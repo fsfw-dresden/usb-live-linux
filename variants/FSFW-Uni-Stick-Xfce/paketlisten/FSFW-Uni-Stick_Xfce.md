@@ -159,4 +159,5 @@
 ##  Staging  --
 
 - ### :x:  staging  -- [Freestyle Paketliste](staging.md) (sollen nach Testen einsortiert werden)
+- :x:  riot-web  --		feature-rich client for Matrix.org
 
