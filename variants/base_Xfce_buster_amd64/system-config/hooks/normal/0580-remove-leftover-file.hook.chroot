@@ -1,0 +1,3 @@
+#!/bin/sh
+# remove left-over package list
+[ -e /root/packages.chroot ] && rm /root/packages.chroot
