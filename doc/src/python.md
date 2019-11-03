@@ -47,6 +47,7 @@ um den Einstieg in die Python-Programmierung zu erleichtern.
 
 - [Python Dokumentation](http://docs.python-guide.org/en/latest/)
 - [Pythonkurs für Ingenieur*innen an der TU](http://www.tu-dresden.de/pythonkurs)
+- [Python Einführungs-Workshop der FSFW](https://fsfw-dresden.de/python-ws)
 - [Dresdner Python User Group](http://pydresden.org/)
 - [http://learnpython.org/](http://learnpython.org/)
 - [http://www.pythontutor.com/](http://www.pythontutor.com/)
