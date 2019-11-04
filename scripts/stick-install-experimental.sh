@@ -55,6 +55,19 @@ select_live_iso() {
     DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT LIVE SYSTEM ISO" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
 }
 
+select_fat_label() {
+    OPTIONS=()
+    for LABEL in SCHULSTICK UNISTICK
+    do
+        OPTIONS+=( ${LABEL} "" )
+    done
+    TEXT="Please choose the label for the FAT32 / windows-visible exchange partition"
+    HEIGHT=25
+    WIDTH=120
+    MENUHEIGHT=20
+    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT PARTITION LABEL" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+}
+
 # target DEVICE can be given as first parameter or interactively selected
 [ -b "$1" ] && DEVICE=$1 || DEVICE=$(select_target_device)
 #clear -x
@@ -74,6 +87,9 @@ grep -s "^${DEVICE}" /proc/mounts && echo "partition(s) on $(color bold red)${DE
 [ -e "$2" ] && LIVE_IMAGE=$2 || LIVE_IMAGE=$(select_live_iso)
 #clear -x
 echo "LIVE_IMAGE=${LIVE_IMAGE}"
+
+FAT_LABEL=$(select_fat_label)
+echo "FAT_LABEL=${FAT_LABEL}"
 
 # no device no play
 [ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 3
@@ -142,7 +158,7 @@ MAIN_LABEL=live-system
 
     # the EFI boot partition needs to be FAT32 which
     # is perfect for file exchange with inferior OSs
-    mkfs.vfat -vn SCHULSTICK -F 32 ${DEVICE}${p}1
+    mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
 
     # the live system main storage partition
     mkfs.ext2 -L ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
