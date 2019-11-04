@@ -21,13 +21,20 @@ Cmdline ()
 				;;
 		esac
 	done
+
+        # If not explicitly given, auto-detect
+	if [ -n "${LIVE_UTC}" ]
+	then
+		LIVE_UTC="auto"
+	fi
+
 }
 
 Init ()
 {
 	# Checking if package is installed
 	if [ ! -e /var/lib/dpkg/info/util-linux.list ] || \
-	   [ -e /var/lib/live/config/util-linux ]
+	   [ "${LIVE_UTC}" != "auto" -a -e /var/lib/live/config/util-linux ]
 	then
 		exit 0
 	fi
@@ -38,11 +45,6 @@ Init ()
 Config ()
 {
 	rm -f /etc/rc?.d/*hwclock*
-
-	if [ -n "${LIVE_UTC}" ]
-	then
-		LIVE_UTC="auto"
-	fi
 
 	if [ "${LIVE_UTC}" = "auto" ] && [ -x /usr/bin/os-prober ]
 	then
