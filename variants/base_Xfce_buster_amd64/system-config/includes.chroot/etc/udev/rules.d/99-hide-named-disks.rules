@@ -1,2 +1,3 @@
 ENV{ID_FS_LABEL}=="live-system", ENV{UDISKS_IGNORE}="1"
+ENV{ID_FS_LABEL}=="live-memory", ENV{UDISKS_IGNORE}="1"
 ENV{ID_FS_LABEL}=="persistence", ENV{UDISKS_IGNORE}="1"
