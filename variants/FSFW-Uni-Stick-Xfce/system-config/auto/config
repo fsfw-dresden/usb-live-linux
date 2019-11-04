@@ -4,7 +4,7 @@ set -e
 
 DISTRIBUTION=buster
 DESKTOP=Xfce
-STICK_NAME=FSFW-Uni-Stick
+STICK_NAME=FSFW-Uni-Stick-Xfce
 STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
 lb config noauto \
