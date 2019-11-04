@@ -68,6 +68,19 @@ select_fat_label() {
     DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT PARTITION LABEL" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
 }
 
+select_hotfix() {
+    OPTIONS=( "none" "" )
+    for HOTFIX in $(command ls -Lt overlay-hotfixes/)
+    do
+        OPTIONS+=(${HOTFIX} "($(find overlay-hotfixes/${HOTFIX} -type f|wc -l) files)")
+    done
+    TEXT="Please choose the hotfix to be added ${DEVICE}"
+    HEIGHT=25
+    WIDTH=120
+    MENUHEIGHT=20
+    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT HOTFIX" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+}
+
 # target DEVICE can be given as first parameter or interactively selected
 [ -b "$1" ] && DEVICE=$1 || DEVICE=$(select_target_device)
 #clear -x
@@ -344,6 +357,12 @@ time cp -aviL "${LIVE_IMAGE}" ${ISOSTORE}/boot/
 # mark boot dir and image files on main partition as hidden system files
 #fatattr +hs ${MAINSTORE}/{boot,linux-*}
 #fatattr +hs ${MAINSTORE}/{boot,*.img}
+
+HOTFIX=$(select_hotfix)
+if [ "${HOTFIX}" != "none" ]
+then
+    cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
+fi
 
 echo "everything done, unmounting ${DEVICE}.."
 debug_pause
