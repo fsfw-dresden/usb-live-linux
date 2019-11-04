@@ -20,6 +20,8 @@ rsync -vaih FSFW-Material config/includes.chroot/etc/skel/
 git submodule update --init --recursive
 rsync -avP --exclude=.git* doc/latex-vorlagen/ config/includes.chroot/etc/skel/FSFW-Material/latex-vorlagen
 
+ln -sv /usr/local/share/doc/FSFW config/includes.chroot/etc/skel/FSFW-Material/stick-doku
+
 echo "schreibe git-versionsnummer & URL in HOME/.version-live-stick"
 
 echo "STICK_VERSION = $(scripts/calc-version-number.sh)" > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
