@@ -212,13 +212,13 @@ mount -v ${DEVICE}${p}2 ${ISOSTORE}
 mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 
 # install the grub bootloader for different platforms
-# takes 19 seconds
-time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE} |& tee /media/grub-install-$(date "+%F__%R").i386-pc.log | ccza
-# takes 15 seconds
-time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").i386-efi.log | ccza
-# takes 16 seconds
+# takes ~19 seconds
+time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
+# takes ~15 seconds
+time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+# takes ~16 seconds
 # --uefi-secure-boot is default btw
-time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} |& tee /media/grub-install-$(date "+%F__%R").x86_64-efi.log | ccza
+time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
