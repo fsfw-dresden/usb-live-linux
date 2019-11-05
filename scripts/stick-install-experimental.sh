@@ -241,9 +241,13 @@ BOOTOPTIONS+="locales=de_DE.UTF-8,en_GB.UTF-8 "
 
 BOOTOPTIONS+="keyboard-layouts=de "
 BOOTOPTIONS+="timezone=Europe/Berlin "
+BOOTOPTIONS+="utc=auto "
 
 # let kernel keep the current grafix mode
 BOOTOPTIONS+="vga=current "
+
+# hide ACPI BIOS ERRORS
+BOOTOPTIONS+="loglevel=3 "
 
 # preserve oldschool interfaces eth0 wlan0 etc.
 BOOTOPTIONS+="net.ifnames=0 "
