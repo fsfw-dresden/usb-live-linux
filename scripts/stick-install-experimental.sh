@@ -294,9 +294,14 @@ cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-ba
 # copy the memdisk bootloader
 if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
 
+# hide files in linux file manager
+echo "boot" > ${EFIBOOT}/.hidden
+echo "EFI" >> ${EFIBOOT}/.hidden
+echo "System Volume Information" >> ${EFIBOOT}/.hidden
+
 # mark all files on the EFI partition as hidden system files
 # so it can be used for data exchange with other systems
-fatattr +hs ${EFIBOOT}/*
+fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
 # these might become image files on an exfat partition
 #time truncate --size=1G ${MAINSTORE}/linux-userdata.img
