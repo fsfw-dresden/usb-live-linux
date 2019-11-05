@@ -104,6 +104,9 @@ echo "LIVE_IMAGE=${LIVE_IMAGE}"
 FAT_LABEL=$(select_fat_label)
 echo "FAT_LABEL=${FAT_LABEL}"
 
+HOTFIX=$(select_hotfix)
+echo "HOTFIX=${HOTFIX}"
+
 # no device no play
 [ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 3
 
@@ -358,7 +361,6 @@ time cp -aviL "${LIVE_IMAGE}" ${ISOSTORE}/boot/
 #fatattr +hs ${MAINSTORE}/{boot,linux-*}
 #fatattr +hs ${MAINSTORE}/{boot,*.img}
 
-HOTFIX=$(select_hotfix)
 if [ "${HOTFIX}" != "none" ]
 then
     cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
