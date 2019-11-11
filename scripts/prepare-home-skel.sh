@@ -1,5 +1,5 @@
 #!/bin/sh
-# aus config/includes.chroot/etc/skel wird späteres /home/live/ Verzeichnis
+# aus config/includes.chroot/etc/skel wird späteres /home/user/ Verzeichnis
 
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
@@ -24,7 +24,11 @@ ln -sv /usr/local/share/doc/FSFW-Dresden config/includes.chroot/etc/skel/FSFW-Ma
 
 echo "schreibe git-versionsnummer & URL in HOME/.version-live-stick"
 
-echo "STICK_VERSION = $(scripts/calc-version-number.sh)" > config/includes.chroot/etc/skel/.version_fsfw-uni-stick
-echo "git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)" >> config/includes.chroot/etc/skel/.version-live-stick
+{
+  echo "this live-stick ISO was built $(date '+%F %R')"
+  echo "stick-version $(scripts/calc-version-number.sh)"
+  echo "git-revision $(git rev-parse master)"
+  echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)"
+} > config/includes.chroot/etc/skel/.version-live-stick
 
 echo "${0} beendet"
