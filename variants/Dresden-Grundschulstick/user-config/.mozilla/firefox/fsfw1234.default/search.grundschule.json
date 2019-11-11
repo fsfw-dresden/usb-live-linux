@@ -20,6 +20,28 @@
   },
   "engines": [
     {
+      "_name": "Debian packages",
+      "_shortName": "debsearch",
+      "_loadPath": "[distribution]/searchplugins/common/debsearch.xml",
+      "description": "Debian packages name search",
+      "__searchForm": "http://packages.debian.org/",
+      "_iconURL": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAJnKAACZygHjkaQiAAAAB3RJTUUH1gsYEToVv17oJgAAAXpJREFUOMuN0s+LjWEUB/DPvabrR9EYpVFkoWbxFv+ADE2JxSkLUVLKQmo2FvYUKzulqVmQSMpSvck0Slmyms2xYMNCoiaFGsqPzfPk7XZv5rs57/e83+/3OefpASnuGY0UD3odch5fKtk3LF1IMVfJq1K3pZjq42mKY/jWaFelmBx35FoNT7E1xRr0S2Ox0W7CIWi0X7E3xUR1v+4knUxxdNQRcymmhvvdTWdwGyu41mg/d923Uix2+KMUlyrZmOJ0+d5dbyTFUhUc7zgHpW5J8aGu+acz04kU0/iB2SpYTnG4CJZxBhsa7dvukG/8DymejOr3hkR9XMVl/MISPmEHjhTZDdxstP8CivEgHuNco23HTDHAC+zB/ka72i//DuAOpqs5xWSKCyVcikGj/YlT+F7fZw3YhYdFUDGPu432d+GbS92OZ1U0Uer7YujiPq6keFcMMynOYqHRzo/a7/q4m143UsymeF6fzHrQGxO0ExfxEiuN9uO4gL9fqYR9Njj9WAAAAABJRU5ErkJggg==",
+      "_metaData": {
+        "hidden": true
+      },
+      "_urls": [
+        {
+          "template": "http://packages.debian.org/search?keywords={searchTerms}&searchon=names&suite=all&section=all&sourceid=mozilla-search",
+          "rels": [],
+          "resultDomain": "packages.debian.org",
+          "params": []
+        }
+      ],
+      "_isBuiltin": false,
+      "queryCharset": "UTF-8",
+      "_readOnly": false
+    },
+    {
       "_name": "Google",
       "_shortName": "google-b-1-e",
       "_loadPath": "[other]addEngineWithDetails:google@search.mozilla.org",
@@ -30,6 +52,7 @@
         "{}": "moz-extension://ae882ac4-0104-4c22-b15d-3248d1ce623f/favicon.ico"
       },
       "_metaData": {
+        "hidden": true,
         "order": 13,
         "alias": "g"
       },
@@ -72,6 +95,7 @@
         "{}": "moz-extension://1f7abb0b-e37b-4ad4-8dd3-a8ae38eaacd3/favicon.ico"
       },
       "_metaData": {
+        "hidden": true,
         "order": 11,
         "alias": "am"
       },
