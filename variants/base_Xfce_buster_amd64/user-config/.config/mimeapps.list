@@ -1,15 +1,42 @@
+# the spec for the "Shared MIME-info Database" has no mechanism to let application specify priorities
+# thus manually list the wanted file type associations here, hoping to have caught all of the relevant ones
+
 [Removed Associations]
 text/plain=vim.desktop;diffuse.desktop;gvim.desktop;libreoffice-writer.desktop;okularApplication_txt.desktop;calibre-gui.desktop
-text/x-tex=vim.desktop;
+text/x-tex=vim.desktop
 
 [Default Applications]
-application/pdf=org.gnome.Evince.desktop;
-image/jpeg=org.gnome.gThumb.desktop;
+application/epub+zip=calibre-ebook-viewer.desktop
+application/ogg=audacious.desktop
+application/pdf=org.gnome.Evince.desktop
+application/postscript=org.gnome.Evince.desktop;inkscape.desktop
+application/vnd.debian.binary-package=gdebi.desktop
+application/vnd.ms-word.document.macroenabled.12=libreoffice-writer.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
+application/xhtml+xml=firefox-esr.desktop
+application/xhtml_xml=firefox-esr.desktop
+audio/mp3=audacious.desktop
+audio/mp4=audacious.desktop
+audio/mpeg2=audacious.desktop
+audio/mpeg3=audacious.desktop
+image/bmp=org.gnome.gThumb.desktop
+image/gif=org.gnome.gThumb.desktop
+image/jpeg=org.gnome.gThumb.desktop
+image/jpeg=org.gnome.gThumb.desktop
+image/png=org.gnome.gThumb.desktop
 image/svg+xml=inkscape.desktop
+image/tiff=org.gnome.gThumb.desktop
 inode/directory=nemo.desktop
-x-scheme-handler/trash=nemo.desktop
+text/html=firefox-esr.desktop
 text/markdown=geany.desktop
 text/plain=geany.desktop
-text/html=firefox-esr.desktop
+text/rtf=libreoffice-writer.desktop
+text/x-c++=geany.desktop
+text/x-c=geany.desktop
+text/x-makefile=geany.desktop
+text/x-markdown=geany.desktop
 x-scheme-handler/http=firefox-esr.desktop
 x-scheme-handler/https=firefox-esr.desktop
+x-scheme-handler/trash=nemo.desktop
