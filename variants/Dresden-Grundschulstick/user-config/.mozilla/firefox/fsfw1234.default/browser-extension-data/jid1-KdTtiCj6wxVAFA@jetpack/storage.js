@@ -119,6 +119,14 @@
       "isEnabledInContextMenu": true
     },
     {
+      "type": "custom",
+      "name": "Mediathek",
+      "searchUrl": "https://mediathekviewweb.de/#query={searchTerms}",
+      "iconUrl": "https://api.faviconkit.com/mediathekviewweb.de/64",
+      "isEnabled": true,
+      "isEnabledInContextMenu": true
+    },
+    {
       "type": "browser",
       "name": "YouTube",
       "iconUrl": "https://api.faviconkit.com/www.youtube.com/64",
