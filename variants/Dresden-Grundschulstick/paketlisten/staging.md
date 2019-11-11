@@ -143,6 +143,10 @@
 - :x:  lz4  --		very fast lossless compression, used by firefox to compress settings files (f.e. search.json.mozlz4)
 - :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
 - :x:  make  --		utility for directing compilation
+- :x:  libcdio-utils  --		small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
+- :x:  udftools  --		tools for UDF filesystems and DVD/CD-R(W) drives
+- :x:  gpart  --		Guess PC disk partition table, find lost partitions
+- :x:  foremost  --		recover lost files based on their headers, footers, and internal data structures
 
 - ### System
 - :x:  haveged  --		userspace entropy daemon

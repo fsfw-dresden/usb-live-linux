@@ -138,7 +138,7 @@
 
 - ### :x:  datenbanken  -- [Datenbanken](datenbanken.md) -
 
-- ### :x:  virtualisierung  -- [Virtualisierung](virtualisierung.md) -
+- ### :o:  virtualisierung  -- [Virtualisierung](virtualisierung.md) -
 
 - ### :x:  netzwerk-tools  -- [Netzwerk Tools](netzwerk-tools.md) - Netzwerkanalyse - Verwaltung - Werkzeuge - Wlan -
 
