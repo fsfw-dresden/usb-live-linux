@@ -97,14 +97,16 @@ grep -s "^${DEVICE}" /proc/mounts && echo "partition(s) on $(color bold red)${DE
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
 
 # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
-[ -e "$2" ] && LIVE_IMAGE=$2 || LIVE_IMAGE=$(select_live_iso)
+[ -e "iso-images/$2" ] && LIVE_IMAGE="iso-images/$2" || LIVE_IMAGE=$(select_live_iso)
 #clear -x
 echo "LIVE_IMAGE=${LIVE_IMAGE}"
 
-FAT_LABEL=$(select_fat_label)
+# FAT_LABEL can be given as third parameter - or interactively selected
+[ -n "$3" ] && FAT_LABEL=$3 || FAT_LABEL=$(select_fat_label)
 echo "FAT_LABEL=${FAT_LABEL}"
 
-HOTFIX=$(select_hotfix)
+# set HOTFIX environment variable to "none" to skip selection
+[ -z ${HOTFIX} ] && HOTFIX=$(select_hotfix)
 echo "HOTFIX=${HOTFIX}"
 
 # no device no play
@@ -132,33 +134,36 @@ rel_size_partition_iso=$((100 * (mb_size_live_system + mb_size_space_buffer) / m
 
 offset_start_partition_persistence=$((rel_size_partition_fat32 + rel_size_partition_iso))
 
+# [ -e /run/udev/queue ] && rm -v /run/udev/queue && echo "prevented udevadm settle hang by #####"
+[ -e /run/udev/queue ] && echo "prevent udevadm settle hang by #####"
+
 # create conventional DOS partition table
-parted  ${DEVICE} mklabel msdos
+parted --script ${DEVICE} mklabel msdos
 
 # create an EFI boot & data exchange partition
-parted  --align=optimal ${DEVICE} mkpart primary fat32 0% ${rel_size_partition_fat32}%
+parted --script --align=optimal ${DEVICE} mkpart primary fat32 0% ${rel_size_partition_fat32}%
 
 # msdos disk labels do not support partition names, only gpt
 #parted ${DEVICE} name 1 EFIBOOT
 
-parted  ${DEVICE} set 1 boot on
+parted ${DEVICE} set 1 boot on
 
 # do not set both!
-#parted  ${DEVICE} set 1 esp on
-#parted  ${DEVICE} set 1 hidden on
+#parted ${DEVICE} set 1 esp on
+#parted ${DEVICE} set 1 hidden on
 
 # create the main live-system partition
-parted  --align=optimal -- ${DEVICE} mkpart primary ext2 ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
-parted  ${DEVICE} set 2 hidden on
+parted --script --align=optimal -- ${DEVICE} mkpart primary ext2 ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
+parted ${DEVICE} set 2 hidden on
 
-parted  --align=optimal -- ${DEVICE} mkpart primary ext4 ${offset_start_partition_persistence}% 100%
-parted  ${DEVICE} set 3 hidden on
+parted --script --align=optimal -- ${DEVICE} mkpart primary ext4 ${offset_start_partition_persistence}% 100%
+parted ${DEVICE} set 3 hidden on
 
 # ntfs/fuse is tOo0Oo SLOW! => maybe exfat some day.
 #parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 50% 100%
 
 # write out all changes to disk
-time sync
+#time sync
 
 MAIN_LABEL=live-system
 
@@ -194,7 +199,24 @@ MAIN_LABEL=live-system
 
 debug_pause
 
-MOUNTDIR=/media
+trap_remove_mountdir() { rmdir ${MOUNTDIR}; }
+trap_remove_mountsubdirs() { rmdir ${MOUNTDIR}/*; }
+trap_umount_persistence() {
+    time umount -v ${USERDATA}
+    time umount -v ${SYSTEMCONFIG}
+    time umount -v ${SYSTEMDATA}
+    time umount -v ${SYSTEM}
+}
+trap_umount_partitions() {
+    time umount -v ${EFIBOOT}
+    time umount -v ${ISOSTORE}
+    time umount -v ${PERSISTENCESTORE}
+}
+
+# create a temporary directory to hold the mounts
+MOUNTDIR=$(mktemp --tmpdir --directory stick-install.XXXX)
+trap "trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+
 EFIBOOT=${MOUNTDIR}/efiboot
 ISOSTORE=${MOUNTDIR}/isostore
 PERSISTENCESTORE=${MOUNTDIR}/persistencestore
@@ -205,20 +227,23 @@ SYSTEM=${MOUNTDIR}/system
 
 # create mount directories
 mkdir -pv ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
+trap "trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # mount the partitions
 mount -v ${DEVICE}${p}1 ${EFIBOOT}
 mount -v ${DEVICE}${p}2 ${ISOSTORE}
 mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 
+trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+
 # install the grub bootloader for different platforms
 # takes ~19 seconds
-time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
+time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE} &
 # takes ~15 seconds
-time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} &
 # takes ~16 seconds
 # --uefi-secure-boot is default btw
-time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT} &
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
@@ -331,6 +356,8 @@ mount -v --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 #mount -v ${DEVICE}${p}3 ${SYSTEMDATA}
 #mount -v ${MAINSTORE}/linux-system.img ${SYSTEM}
 
+trap "trap_umount_persistence; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+
 # home persistence
 #echo "/home/user bind,source=." > ${USERDATA}/persistence.conf
 echo "/home bind,source=." > ${USERDATA}/persistence.conf
@@ -378,13 +405,6 @@ fi
 echo "everything done, unmounting ${DEVICE}.."
 debug_pause
 
-time umount -v ${USERDATA}
-time umount -v ${SYSTEMCONFIG}
-time umount -v ${SYSTEMDATA}
-time umount -v ${SYSTEM}
-time umount -v ${EFIBOOT}
-time umount -v ${ISOSTORE}
-time umount -v ${PERSISTENCESTORE}
-rmdir -v ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
+# unmounts done by traps
 
 # vim:ts=4:sts=4:sw=4:expandtab
