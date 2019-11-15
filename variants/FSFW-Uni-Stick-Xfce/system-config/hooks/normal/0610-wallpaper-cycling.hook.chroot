@@ -15,7 +15,8 @@ repeat_str() {
 shopt -s nullglob
 
 LIST=( $(repeat_str 5 /usr/share/desktop-base/fsfw-theme/wallpaper/contents/images/1280x800.svg) )
-LIST=( ${LIST[@]} $(repeat_str 5 /usr/share/desktop-base/futureprototype-theme/wallpaper/contents/images/1920x1200.svg) )
+LIST=( ${LIST[@]} $(repeat_str 3 /usr/share/desktop-base/futureprototype-theme/wallpaper-withlogo/contents/images/1920x1200.svg) )
+LIST=( ${LIST[@]} $(repeat_str 2 /usr/share/desktop-base/debian-edu-buster-theme/wallpaper/contents/images/1920x1200.svg) )
 LIST=( ${LIST[@]} /usr/share/backgrounds/mate/nature/* )
 
 NUM=0
