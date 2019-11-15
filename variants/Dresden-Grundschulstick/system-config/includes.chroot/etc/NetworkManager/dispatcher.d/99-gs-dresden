@@ -44,14 +44,6 @@ disable_redsocks() {
         systemctl mask redsocks
 }
 
-restore_auto_apt_proxy() {
-        [ -e /etc/apt/apt.conf.d/auto-apt-proxy.conf ] && sed -i 's/^#//' /etc/apt/apt.conf.d/auto-apt-proxy.conf
-}
-
-disable_auto_apt_proxy() {
-        [ -e /etc/apt/apt.conf.d/auto-apt-proxy.conf ] && sed -i '/^[^#]/s/^/#/' /etc/apt/apt.conf.d/auto-apt-proxy.conf
-}
-
 mount_samba_share() {
         mkdir -p /media/Tausch-Schueler
         mount -t cifs //kserver/Tausch-Schueler /media/Tausch-Schueler -o credentials=/usr/local/.49-gs-dresden.secret,uid=1000,gid=1000 \
@@ -78,16 +70,10 @@ case "${STATUS}" in
                         # mount student network share
                         mount_samba_share
 
-                        # apt auto proxy detection too slow in school
-                        disable_auto_apt_proxy
-
                 # not in school network?
                 else
                         # unset redsocks traffic redirector
                         disable_redsocks
-
-                        # restore apt auto proxy detection
-                        restore_auto_apt_proxy
                 fi
 
                 # start zulip as default live user (terrible hack to prevent display of connection error)
@@ -97,9 +83,6 @@ case "${STATUS}" in
         down)
                 # terminate zulip on disconnection
                 pkill zulip
-
-                # restore apt auto proxy detection
-                restore_auto_apt_proxy
 
                 # disconnect student network share
                 umount_samba_share
