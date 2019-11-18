@@ -302,7 +302,7 @@
 - :x:  minder  --	Mind-mapping application (+537 kB)
 - :x:  slowmovideo  --	creates slow-motion videos from your footage
 - :x:  musescore3  --	cross-platform multi-lingual music composition and notation (+48,4 MB)
-- :x:  zulip  --		productive team chat (+47,4 MB)
+- :o:  zulip  --		productive team chat (+47,4 MB)
 - :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
 - :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 - :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
@@ -328,6 +328,7 @@
 - :x:  asunder  --		graphical audio CD ripper and encoder (+373 kB)
 - :x:  materia-gtk-theme  --	Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)	
 - :x:  marble-qt  --    Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
+- :x:  marble-plugins  --    various plugins for the Marble desktop globe
 
 - :o:    --		
 - :o:  webcamoid  --		full featured webcam capture application, can do a lot of funny things (+9,328 kB)
@@ -380,54 +381,54 @@
 - :o:  qgis  --		Qt-based Geographic Information System
 
 - ### Dictionaries
-- :x:  dict  --		dictionary client
-- :x:  dictd  --		dictionary server
-- :x:  dict-bouvier  --		
-- :x:  dict-de-en  --		German-English translation dictionary for dictd
-- :x:  dict-devil  --		
-- :x:  dict-elements  --		
-- :x:  dict-foldoc  --		
-- :x:  dict-freedict-ara-eng  --		
-- :x:  dict-freedict-deu-eng  --		
-- :x:  dict-freedict-deu-fra  --		
-- :x:  dict-freedict-deu-ita  --		
-- :x:  dict-freedict-deu-nld  --		
-- :x:  dict-freedict-deu-pol  --		
-- :x:  dict-freedict-deu-por  --		
-- :x:  dict-freedict-deu-rus  --		
-- :x:  dict-freedict-deu-spa  --		
-- :x:  dict-freedict-eng-ara  --		
-- :x:  dict-freedict-eng-deu  --		
-- :x:  dict-freedict-eng-ell  --		
-- :x:  dict-freedict-eng-fra  --		
-- :x:  dict-freedict-eng-hin  --		
-- :x:  dict-freedict-eng-jpn  --		
-- :x:  dict-freedict-eng-lat  --		
-- :x:  dict-freedict-eng-nld  --		
-- :x:  dict-freedict-eng-pol  --		
-- :x:  dict-freedict-eng-rus  --		
-- :x:  dict-freedict-eng-spa  --		
-- :x:  dict-freedict-eng-swh  --		
-- :x:  dict-freedict-fra-deu  --		
-- :x:  dict-freedict-fra-eng  --		
-- :x:  dict-freedict-ita-deu  --		
-- :x:  dict-freedict-ita-eng  --		
-- :x:  dict-freedict-jpn-deu  --		
-- :x:  dict-freedict-lat-deu  --		
-- :x:  dict-freedict-lat-eng  --		
-- :x:  dict-freedict-nld-deu  --		
-- :x:  dict-freedict-nld-eng  --		
-- :x:  dict-freedict-pol-deu  --		
-- :x:  dict-freedict-pol-eng  --		
-- :x:  dict-freedict-por-deu  --		
-- :x:  dict-freedict-spa-eng  --		
-- :x:  dict-freedict-swh-eng  --		
-- :x:  dict-freedict-tur-deu  --		
-- :x:  dict-freedict-tur-eng  --		
-- :x:  dict-gazetteer2k  --		
-- :x:  dict-gcide  --		
-- :x:  dict-jargon  --		
-- :x:  dict-moby-thesaurus  --		
-- :x:  dict-vera  --		
-- :x:  dict-wn  --		
+- :o:  dict  --		dictionary client
+- :o:  dictd  --		dictionary server
+- :o:  dict-bouvier  --		
+- :o:  dict-de-en  --		German-English translation dictionary for dictd
+- :o:  dict-devil  --		
+- :o:  dict-elements  --		
+- :o:  dict-foldoc  --		
+- :o:  dict-freedict-ara-eng  --		
+- :o:  dict-freedict-deu-eng  --		
+- :o:  dict-freedict-deu-fra  --		
+- :o:  dict-freedict-deu-ita  --		
+- :o:  dict-freedict-deu-nld  --		
+- :o:  dict-freedict-deu-pol  --		
+- :o:  dict-freedict-deu-por  --		
+- :o:  dict-freedict-deu-rus  --		
+- :o:  dict-freedict-deu-spa  --		
+- :o:  dict-freedict-eng-ara  --		
+- :o:  dict-freedict-eng-deu  --		
+- :o:  dict-freedict-eng-ell  --		
+- :o:  dict-freedict-eng-fra  --		
+- :o:  dict-freedict-eng-hin  --		
+- :o:  dict-freedict-eng-jpn  --		
+- :o:  dict-freedict-eng-lat  --		
+- :o:  dict-freedict-eng-nld  --		
+- :o:  dict-freedict-eng-pol  --		
+- :o:  dict-freedict-eng-rus  --		
+- :o:  dict-freedict-eng-spa  --		
+- :o:  dict-freedict-eng-swh  --		
+- :o:  dict-freedict-fra-deu  --		
+- :o:  dict-freedict-fra-eng  --		
+- :o:  dict-freedict-ita-deu  --		
+- :o:  dict-freedict-ita-eng  --		
+- :o:  dict-freedict-jpn-deu  --		
+- :o:  dict-freedict-lat-deu  --		
+- :o:  dict-freedict-lat-eng  --		
+- :o:  dict-freedict-nld-deu  --		
+- :o:  dict-freedict-nld-eng  --		
+- :o:  dict-freedict-pol-deu  --		
+- :o:  dict-freedict-pol-eng  --		
+- :o:  dict-freedict-por-deu  --		
+- :o:  dict-freedict-spa-eng  --		
+- :o:  dict-freedict-swh-eng  --		
+- :o:  dict-freedict-tur-deu  --		
+- :o:  dict-freedict-tur-eng  --		
+- :o:  dict-gazetteer2k  --		
+- :o:  dict-gcide  --		
+- :o:  dict-jargon  --		
+- :o:  dict-moby-thesaurus  --		
+- :o:  dict-vera  --		
+- :o:  dict-wn  --		
 
