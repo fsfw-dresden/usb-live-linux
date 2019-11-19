@@ -1,0 +1,5 @@
+# security release of thunderbird 68.2.2-1~deb10u1
+# breaks enigmail from stable
+Package: enigmail
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
