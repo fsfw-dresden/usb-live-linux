@@ -97,7 +97,7 @@ grep -s "^${DEVICE}" /proc/mounts && echo "partition(s) on $(color bold red)${DE
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
 
 # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
-[ -e "iso-images/$2" ] && LIVE_IMAGE="iso-images/$2" || LIVE_IMAGE=$(select_live_iso)
+[ -f "iso-images/$2" ] && LIVE_IMAGE="iso-images/$2" || LIVE_IMAGE=$(select_live_iso)
 #clear -x
 echo "LIVE_IMAGE=${LIVE_IMAGE}"
 
