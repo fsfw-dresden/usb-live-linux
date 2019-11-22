@@ -271,9 +271,6 @@ BOOTOPTIONS+="utc=auto "
 # let kernel keep the current grafix mode
 BOOTOPTIONS+="vga=current "
 
-# hide ACPI BIOS ERRORS
-BOOTOPTIONS+="loglevel=3 "
-
 # preserve oldschool interfaces eth0 wlan0 etc.
 BOOTOPTIONS+="net.ifnames=0 "
 
@@ -303,6 +300,9 @@ BOOTOPTIONS+="rootpw=Risiko "
 
 # don't scare the meek: silence the boot noise
 BOOTOPTIONS+="quiet "
+
+# hide ACPI BIOS ERRORS
+BOOTOPTIONS+="loglevel=3 "
 
 # show a friendly boot screen
 BOOTOPTIONS+="splash"
