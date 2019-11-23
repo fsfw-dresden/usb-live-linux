@@ -1,0 +1,46 @@
+#!/bin/sh
+# Always run Google Earth from this shell script and not
+# Google Earth directly! This script makes sure the app looks
+# in the right place for libraries that might also be installed
+# elsewhere on your system.
+#
+# Ryan C. Gordon,  Thu Jul 20 14:32:33 PDT 2006
+
+# Function to find the real directory a program resides in.
+FindPath()
+{
+    fullpath="`echo $1 | grep /`"
+    if [ "$fullpath" = "" ]; then
+        oIFS="$IFS"
+        IFS=:
+        for path in $PATH
+        do if [ -x "$path/$1" ]; then
+               if [ "$path" = "" ]; then
+                   path="."
+               fi
+               fullpath="$path/$1"
+               break
+           fi
+        done
+        IFS="$oIFS"
+    fi
+    if [ "$fullpath" = "" ]; then
+        fullpath="$1"
+    fi
+
+    # Is the sed/ls magic portable?
+    if [ -L "$fullpath" ]; then
+        #fullpath="`ls -l "$fullpath" | awk '{print $11}'`"
+        fullpath=`ls -l "$fullpath" |sed -e 's/.* -> //' |sed -e 's/\*//'`
+    fi
+    dirname $fullpath
+}
+
+script_path=$(FindPath $0);
+
+cd $script_path;
+
+# following is a hotfix for unbreaking the search functionality,
+# c.f. https://support.google.com/earth/thread/10088759?msgid=18922305
+export LC_NUMERIC=en_US.UTF-8
+LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./googleearth-bin "$@"
