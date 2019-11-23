@@ -35,10 +35,8 @@ select_target_device() {
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
-    HEIGHT=25
-    WIDTH=120
-    MENUHEIGHT=20
-    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT LIVE SYSTEM TARGET DEVICE" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+    TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
+    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_live_iso() {
@@ -49,10 +47,8 @@ select_live_iso() {
         OPTIONS+=(${ISO} "${SIZESTR} $(date --date=@$(stat --dereference --format='%Y' "${ISO}") "+%F %_H:%M:%S")")
     done
     TEXT="Please choose the live system to be installed on ${DEVICE}"
-    HEIGHT=25
-    WIDTH=120
-    MENUHEIGHT=20
-    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT LIVE SYSTEM ISO" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+    TITLE="SELECT LIVE SYSTEM ISO"
+    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_fat_label() {
@@ -62,10 +58,8 @@ select_fat_label() {
         OPTIONS+=( ${LABEL} "" )
     done
     TEXT="Please choose the label for the FAT32 / windows-visible exchange partition"
-    HEIGHT=25
-    WIDTH=120
-    MENUHEIGHT=20
-    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT PARTITION LABEL" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+    TITLE="SELECT PARTITION LABEL"
+    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_hotfix() {
@@ -75,10 +69,8 @@ select_hotfix() {
         OPTIONS+=(${HOTFIX} "($(find overlay-hotfixes/${HOTFIX} -type f|wc -l) files)")
     done
     TEXT="Please choose the hotfix to be added ${DEVICE}"
-    HEIGHT=25
-    WIDTH=120
-    MENUHEIGHT=20
-    DIALOGRC=<(echo -e "tag_key_color = tag_color\ntag_key_selected_color = tag_selected_color") dialog --stdout --title "SELECT HOTFIX" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MENUHEIGHT} "${OPTIONS[@]}"
+    TITLE="SELECT HOTFIX"
+    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 # target DEVICE can be given as first parameter or interactively selected
