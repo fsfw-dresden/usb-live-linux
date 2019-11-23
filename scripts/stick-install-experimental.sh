@@ -89,20 +89,20 @@ grep -s "^${DEVICE}" /proc/mounts && echo "partition(s) on $(color bold red)${DE
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
 
 # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
-[ -f "iso-images/$2" ] && LIVE_IMAGE="iso-images/$2" || LIVE_IMAGE=$(select_live_iso)
+[ -f "iso-images/$2" ] && LIVE_IMAGE="iso-images/$2" || [ -f "$2" ] && LIVE_IMAGE="$2" || LIVE_IMAGE=$(select_live_iso)
 #clear -x
 echo "LIVE_IMAGE=${LIVE_IMAGE}"
+
+# no ISO no burn
+[ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 2
 
 # FAT_LABEL can be given as third parameter - or interactively selected
 [ -n "$3" ] && FAT_LABEL=$3 || FAT_LABEL=$(select_fat_label)
 echo "FAT_LABEL=${FAT_LABEL}"
 
 # set HOTFIX environment variable to "none" to skip selection
-[ -z ${HOTFIX} ] && HOTFIX=$(select_hotfix)
+[ -z ${HOTFIX} ] && HOTFIX=$(select_hotfix) || HOTFIX="none"
 echo "HOTFIX=${HOTFIX}"
-
-# no device no play
-[ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 3
 
 # any partitions on the device? => show the layout
 [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -gt 0 ] && parted --script ${DEVICE} print free
