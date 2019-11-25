@@ -1,11 +1,12 @@
 #!/bin/bash
-# ad-hoc live stick installation script
+# next-generation live stick installation script
 # BETA status
 # Kein Backup
 # KEIN MITLEID
 
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
+check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools dialog ccze
 
 PAUSE=0
 if [ $PAUSE -eq 1 ]
@@ -191,6 +192,8 @@ MAIN_LABEL=live-system
 
 debug_pause
 
+# CLEAN-UP TRAPS
+# once set, these will fire on script exit or abortionq
 trap_remove_mountdir() { rmdir ${MOUNTDIR}; }
 trap_remove_mountsubdirs() { rmdir ${MOUNTDIR}/*; }
 trap_umount_persistence() {
@@ -207,6 +210,8 @@ trap_umount_partitions() {
 
 # create a temporary directory to hold the mounts
 MOUNTDIR=$(mktemp --tmpdir --directory stick-install.XXXX)
+
+# exit TRAP: at this point, only the temporary mountdir to clean up
 trap "trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 EFIBOOT=${MOUNTDIR}/efiboot
@@ -219,6 +224,8 @@ SYSTEM=${MOUNTDIR}/system
 
 # create mount directories
 mkdir -pv ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG} ${SYSTEMDATA} ${SYSTEM}
+
+# exit TRAP: also remove the created sub directories
 trap "trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # mount the partitions
@@ -226,6 +233,7 @@ mount -v ${DEVICE}${p}1 ${EFIBOOT}
 mount -v ${DEVICE}${p}2 ${ISOSTORE}
 mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 
+# exit TRAP: add unmounting storage as first step to the clean-up trap queue
 trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # install the grub bootloader for different platforms
@@ -305,13 +313,13 @@ echo "'$BOOTOPTIONS'"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
 j2 variants/common/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
-# teh glorious FSFW merch
+# copy bootloader background image — teh glorious FSFW merch!
 cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
 
 # copy the memdisk bootloader
 if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
 
-# hide files in linux file manager
+# hide files on first partition in linux file manager
 echo "boot" > ${EFIBOOT}/.hidden
 echo "EFI" >> ${EFIBOOT}/.hidden
 echo "System Volume Information" >> ${EFIBOOT}/.hidden
@@ -348,6 +356,7 @@ mount -v --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 #mount -v ${DEVICE}${p}3 ${SYSTEMDATA}
 #mount -v ${MAINSTORE}/linux-system.img ${SYSTEM}
 
+# set up the exit trap to unmount theses bind-mounted persistence directories
 trap "trap_umount_persistence; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # home persistence
