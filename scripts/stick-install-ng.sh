@@ -5,6 +5,7 @@
 # KEIN MITLEID
 
 . "`dirname "${0}"`/functions.sh"
+. "`dirname "${0}"`/functions.bash"
 cd_repo_root
 check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools dialog ccze
 
@@ -82,9 +83,8 @@ echo "DEVICE=${DEVICE}"
 # no device no play
 [ -z ${DEVICE} ] && echo "no DEVICE chosen, cannot continue" >&2 && exit 2
 
-# COLOR_RED=""
 # proceed only if selected device is not mounted
-grep -s "^${DEVICE}" /proc/mounts && echo "partition(s) on $(color bold red)${DEVICE} currently mounted$(color off), not continuing!" >&2 && exit 1
+grep -s "^${DEVICE}" /proc/mounts && echo -e "partition(s) on ${COLOR_RED}${DEVICE} currently mounted${COLOR_OFF}, not continuing!" >&2 && exit 1
 
 # loop devices have a different naming scheme (loop3p1 vs sdc1)
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
