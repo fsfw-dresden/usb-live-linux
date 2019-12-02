@@ -11,8 +11,8 @@
 [Unit]
 Description=Journal tail on %I
 Documentation=man:journalctl(1)
-After=systemd-user-sessions.service plymouth-quit-wait.service systemd-journald.service
-After=rc-local.service
+# After=systemd-user-sessions.service plymouth-quit-wait.service systemd-journald.service
+# After=rc-local.service
 
 # On systems without virtual consoles, don't start any getty. (Note
 # that serial gettys are covered by serial-getty@.service, not this
@@ -39,4 +39,4 @@ IgnoreSIGPIPE=no
 Environment=LANG= LANGUAGE= LC_CTYPE= LC_NUMERIC= LC_TIME= LC_COLLATE= LC_MONETARY= LC_MESSAGES= LC_PAPER= LC_NAME= LC_ADDRESS= LC_TELEPHONE= LC_MEASUREMENT= LC_IDENTIFICATION=
 
 [Install]
-Alias=getty.target.wants/journal@tty12.service
+Alias=basic.target.wants/journal@tty12.service
