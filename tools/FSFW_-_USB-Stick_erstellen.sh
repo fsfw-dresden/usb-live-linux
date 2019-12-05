@@ -124,24 +124,23 @@ input_abbruch() {
     read FEHLER
     if [ ! "$FEHLER" == 'y' ]; then
         echo "Skript wird abgebrochen "
-         if [[ -n $(grep ${DEVICE} /proc/mounts) ]]; then
-           echo "noch gemountet: $(grep ${DEVICE}${p} /proc/mounts)"
            device_remove
-         fi
         exit 1
     fi
 }
-
-
 
 
 ##################################
 # Funktion: Speichergerät / USB-Stick freigeben
 #
 device_remove() {
-    echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
-    umount -v ${DEVICE}*
+    if [[ -n $(grep ${DEVICE} /proc/mounts) ]]; then
+        echo "noch gemountet: $(grep ${DEVICE}${p} /proc/mounts)"
+        echo " Gerät ${DEVICE} wird wieder freigegeben - Bitte warten "
+        umount -v ${DEVICE}*
+    fi
     echo "  ----- Hinweis ----- "
+    echo " ${TMPDIR}) sollte wieder gelöscht werden."
     echo "löschen mit Taste "y" bestätigen"
     rm -IRv ${TMPDIR}
     echo "Fertig - Speichergerät (USB Stick) kann entfernt werden "
@@ -742,8 +741,9 @@ main() {
     # Größe des Sticks feststellen - Größe Ausgeben
 
     unset size_device
-    size_device=($(lsblk -b -n --output SIZE ${DEVICE}))
-    size_device=$(( ${size_device[0]} / 1024 / 1024))
+    size_device=($(lsblk -b -n --output SIZE ${DEVICE})) || input_abbruch  # lsblk: /dev/nbd: not a block device
+#    if [[ $? -gt 0 ]]; then input_abbruch ;fi
+    size_device=$(( ${size_device[0]} / 1024 / 1024)) 
 
     # echo "  ${size_device} werden vom verwendeten Speichergerät >> ${DEVICE} << bereitgestellt "
     dialog --title "Gesamtgröße verfügbarer Speicher" \
@@ -905,10 +905,9 @@ main() {
     if [ ! -d ${TMPDIR}/${LABEL_LIVE}/boot/img ]; then mkdir ${TMPDIR}/${LABEL_LIVE}/boot/img; echo "${TMPDIR}/${LABEL_LIVE}/boot/img angelegt "; fi
 
     if [[ ! -e ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png ]] ; then
-	cp ../doc/default_config/system_config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
+	cp ../variants/default/system_config/bootloaders/grub-pc/fsfw-background_640x480.png ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
       #${DOWNLOAD} https://wiki.fsfw-dresden.de/lib/exe/fetch.php/playground/beispiele/media/bilder/fsfw-background_640x480.png -O ${TMPDIR}/${LABEL_LIVE}/boot/grub/fsfw-background_640x480.png
-    fi 
-    input_abbruch
+    fi || input_abbruch
 
     grub_config_create
 
