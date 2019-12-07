@@ -132,12 +132,12 @@ setup_unionfs ()
 	touch /etc/fstab
 	mkdir -p /run/live/overlay
 
-        # parse kernel parameters
-        Remove_persistence_prepare
+	# parse kernel parameters
+	Remove_persistence_prepare
 
 	# Looking for persistence devices or files
 	if [ -n "${PERSISTENCE}" ] && [ -z "${NOPERSISTENCE}" ] \
-                || [ -n "${LIVE_PERSISTENCE_REMOVE}" ]
+		|| [ -n "${LIVE_PERSISTENCE_REMOVE}" ]
 	then
 
 		if [ -z "${QUICKUSBMODULES}" ]
@@ -312,20 +312,21 @@ setup_unionfs ()
 	fi
 
 	# Handle custom persistence
-        local custom_mounts
-        custom_mounts="/tmp/custom_mounts.list"
-        true > ${custom_mounts}
+	local custom_mounts
+	custom_mounts="/tmp/custom_mounts.list"
+	touch ${custom_mounts}
+	
 
-        # Gather information about custom mounts from devies detected as overlays
-        get_custom_mounts ${custom_mounts} ${overlay_devices}
+	# Gather information about custom mounts from devices detected as overlays
+	get_custom_mounts ${custom_mounts} ${overlay_devices}
 
-        [ -n "${LIVE_BOOT_DEBUG}" ] && cp ${custom_mounts} "/run/live/persistence"
+	[ -n "${LIVE_BOOT_DEBUG}" ] && mkdir -p "/run/live/persistence" && cp ${custom_mounts} "/run/live/persistence/"
 
 	# Remove persistence depending on boot parameter
 	Remove_persistence ${custom_mounts}
 
-        local used_overlays
-        used_overlays=""
+	local used_overlays
+	used_overlays=""
 
 	if [ -n "${PERSISTENCE}" ] && [ -z "${NOPERSISTENCE}" ]
 	then
@@ -333,14 +334,14 @@ setup_unionfs ()
 		used_overlays=$(activate_custom_mounts ${custom_mounts})
 	fi
 
-        rm -f ${custom_mounts}
+	rm -f ${custom_mounts}
 
-        # Close unused overlays (e.g. due to missing $persistence_list)
-        for overlay in ${overlay_devices}
-        do
-                if echo ${used_overlays} | grep -qve "^\(.* \)\?${overlay}\( .*\)\?$"
-                then
-                        close_persistence_media ${overlay}
-                fi
-        done
+	# Close unused overlays (e.g. due to missing $persistence_list)
+	for overlay in ${overlay_devices}
+	do
+		if echo ${used_overlays} | grep -qve "^\(.* \)\?${overlay}\( .*\)\?$"
+		then
+			close_persistence_media ${overlay}
+		fi
+	done
 }

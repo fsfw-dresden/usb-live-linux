@@ -20,88 +20,86 @@ Remove_persistence_prepare ()
 
 Remove_persistence ()
 {
-        [ -z "${LIVE_PERSISTENCE_REMOVE}" ] && return
+	[ -z "${LIVE_PERSISTENCE_REMOVE}" ] && return 0
 
 	local custom_mounts
 	custom_mounts=${1}
 
-        # persistence-storage = { directory | file | filesystem }
-        # directory:	label = directory name
-        # file:		label = loop backing_file
-        # filesystem:	label = LABEL (dos) or PART_ENTRY_NAME (gpt)
+	# EXAMPLE entries from get_custom_mounts()
+	# with persistence-storage = { filesystem | file | directory }
 
-        # examples:
-        # /dev/loop2 /run/live/persistence/loop2 /root union
-        # /run/live/persistence/vda2//linux-userdata/ /run/live/persistence/vda2/linux-userdata/userdata /root/home bind,source=userdata
-        # /dev/vda3 /run/live/persistence/vda3/usr/src /root/usr/src union
-
-        # file:		label = loop backing_file
-        # /dev/loop2	/run/live/persistence/loop2	/root	union
-	# device	source				dest	options
-
-        # directory:	label = directory name
-        # /run/live/persistence/vda2//linux-userdata/	/run/live/persistence/vda2/linux-userdata/userdata	/root/home	bind,source=userdata
-	# device					source							dest		options
-
-        # filesystem:	label = LABEL (dos) or PART_ENTRY_NAME (gpt)
-        # /dev/vda3	/run/live/persistence/vda3/usr/src	/root/usr/src	union
+	# filesystem:
 	# device	source					dest		options
-        # /dev/vda3	/run/live/persistence/vda3/var/lib	/root/var/lib	union
+	# /dev/vda3	/run/live/persistence/vda3/var/lib	/root/var/lib	union
+
+	# file:
+	# device	source				dest	options
+	# /dev/loop2	/run/live/persistence/loop2	/root	union
+
+	# directory:
+	# device					source							dest		options
+	# /run/live/persistence/vda2//linux-userdata/	/run/live/persistence/vda2/linux-userdata/userdata	/root/home	bind,source=userdata
 
 	while read device source dest options # < ${custom_mounts}
-        do
-                NAME=$(basename "${device}")
-                REMOVE="false"
+	do
+		BASENAME=$(basename "${device}")
+		REMOVE="false"
 
-                if [ -d "${device}" ]
-                then
-                        TYPE="directory"
-                elif echo "${device}" | grep -q "^/dev/loop" && [ -e /sys/block/${NAME}/loop/backing_file ]
-                then
-                        TYPE="loop"
-                        NAME=$(basename $(cat /sys/block/${NAME}/loop/backing_file))
-                elif [ -b "${device}" ]
-                then
-                        TYPE="filesystem"
+		if [ -d "${device}" ]
+		then
+			# directory:	label = directory name
+			LABEL=${BASENAME}
+			TYPE="directory"
+		elif echo "${device}" | grep -q "^/dev/loop" && [ -e /sys/block/${BASENAME}/loop/backing_file ]
+		then
+			# file:		label = loop backing_file name
+			TYPE="file (loop device)"
+			LABEL=$(basename $(cat /sys/block/${BASENAME}/loop/backing_file))
+		elif [ -b "${device}" ]
+		then
+			# filesystem:	label = LABEL (dos partition table) or PART_ENTRY_NAME (gpt)
+			TYPE="filesystem"
 
-                        # partly taken from probe_for_gpt_name / probe_for_fs_label
-                        gpt_dev="${device}"
-	                if is_active_luks_mapping ${device}
-	                then
-	                        # if $device is an opened luks device, we need to check
-	                        # GPT stuff on the backing device
-	                        gpt_dev=$(get_luks_backing_device "${device}")
-	                fi
+			# partly taken from probe_for_gpt_name / probe_for_fs_label
+			gpt_dev="${device}"
+			if is_active_luks_mapping ${device}
+			then
+				# if $device is an opened luks device, we need to check
+				# GPT stuff on the backing device
+				gpt_dev=$(get_luks_backing_device "${device}")
+			fi
 
-	                if is_gpt_device ${gpt_dev}
-	                then
-	                        NAME=$(get_gpt_name ${gpt_dev})
-                        else
-                                NAME=$(blkid -s LABEL -o value $device 2>/dev/null)
-	                fi
-                else
-                        echo "what the hell is this. check it out.."
-                        env|sort
-                        bash
-                fi
+			if is_gpt_device ${gpt_dev}
+			then
+				LABEL=$(get_gpt_name ${gpt_dev})
+			else
+				LABEL=$(blkid -s LABEL -o value $device 2>/dev/null)
+			fi
+		fi
 
-                # remove *all* persistence data ..
-                if [ "${LIVE_PERSISTENCE_REMOVE}" = "true" ]
-                then
-                        REMOVE="true"
-                # .. or match only explicitly given labels
-                else
-                        for REMOVE_LABEL in $(echo ${LIVE_PERSISTENCE_REMOVE} | sed -e 's/,/ /g')
-                        do
-                                [ "${REMOVE_LABEL}" = "${NAME}" ] && REMOVE="true"
-                        done
-                fi
+		# data removal from all persistence volumes ? ..
+		if [ "${LIVE_PERSISTENCE_REMOVE}" = "true" ]
+		then
+			REMOVE="true"
+		else
+			# .. or match only explicitly given labels
+			for REMOVE_LABEL in $(echo ${LIVE_PERSISTENCE_REMOVE} | sed -e 's/,/ /g')
+			do
+				[ "${REMOVE_LABEL}" = "${LABEL}" ] && REMOVE="true"
+			done
+		fi
 
-                if [ "${REMOVE}" = "true" ]
-                then
-                        echo "reset requested for ${NAME} (${TYPE}): removing data from ${source}"
-                        # specify minimum depth 1 to not match $source itself
-	                find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' -print0 | xargs -0 rm -rf
-                fi
+		if [ "${REMOVE}" = "true" ]
+		then
+			# remove /root prefix to destination paths, annotating rootfs special case
+			dest=${dest#/root}
+			dest=${dest:-rootfs /}
+
+			SIZE=$(numfmt --to=iec-i --format '%.1f' $(find "${source}" -mindepth 1 -path "${source}/persistence.conf" -prune -o -type f -printf '%s\n' | awk '{size += $1} END {print 0 + size}'))
+			# specify find minimum depth = 1 to not match and remove ${source} itself
+			find "${source}" -mindepth 1 -path "${source}/persistence.conf" -prune -o -delete
+			# alternative cmd: find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' -print0 | xargs -0 rm -rf
+			echo "reset requested of '${LABEL}' persistence for '${dest}': removed ${SIZE}Byte of data from ${TYPE} mounted at '${source}'"
+		fi
 	done < ${custom_mounts}
 }
