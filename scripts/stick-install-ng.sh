@@ -196,16 +196,16 @@ debug_pause
 # once set, these will fire on script exit or abortionq
 trap_remove_mountdir() { rmdir ${MOUNTDIR}; }
 trap_remove_mountsubdirs() { rmdir ${MOUNTDIR}/*; }
-trap_umount_persistence() {
-    time umount -v ${USERDATA}
-    time umount -v ${SYSTEMCONFIG}
-    time umount -v ${SYSTEMDATA}
-    time umount -v ${SYSTEM}
+trap_umount_persistencedirs() {
+    umount ${USERDATA}
+    umount ${SYSTEMCONFIG}
+    umount ${SYSTEMDATA}
+    umount ${SYSTEM}
 }
 trap_umount_partitions() {
-    time umount -v ${EFIBOOT}
-    time umount -v ${ISOSTORE}
-    time umount -v ${PERSISTENCESTORE}
+    umount ${EFIBOOT}
+    umount ${ISOSTORE}
+    umount ${PERSISTENCESTORE}
 }
 
 # create a temporary directory to hold the mounts
@@ -357,7 +357,7 @@ mount -v --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 #mount -v ${MAINSTORE}/linux-system.img ${SYSTEM}
 
 # set up the exit trap to unmount theses bind-mounted persistence directories
-trap "trap_umount_persistence; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # home persistence
 #echo "/home/user bind,source=." > ${USERDATA}/persistence.conf
@@ -403,7 +403,7 @@ then
     cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
 fi
 
-echo "everything done, unmounting ${DEVICE}.."
+echo "[ OK ] writing ${STICK_ISO} to ${DEVICE} COMPLETED, unmounting.."
 debug_pause
 
 # unmounts done by traps
