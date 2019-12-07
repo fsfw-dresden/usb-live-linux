@@ -7,12 +7,12 @@ cd_repo_root
 BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-ln -svf ../variants/${BUILD_VARIANT}/system-config/auto/config auto/config
+ln -sf ../variants/${BUILD_VARIANT}/system-config/auto/config auto/config
 
-[ -d variants/common/system-config/ ] && rsync -avP variants/common/system-config/ config/
+[ -d variants/common/system-config/ ] && rsync -a variants/common/system-config/ config/
 
 for link in variants/${BUILD_VARIANT}/inherit/*; do
-  rsync -avP ${link}/system-config/ config/
+  rsync -a ${link}/system-config/ config/
 done
 
-rsync -avPc variants/${BUILD_VARIANT}/system-config/ config/
+rsync -ac variants/${BUILD_VARIANT}/system-config/ config/
