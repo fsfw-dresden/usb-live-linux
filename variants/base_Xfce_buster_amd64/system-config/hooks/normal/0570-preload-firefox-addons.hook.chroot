@@ -7,10 +7,9 @@
 EXTDIR=/etc/skel/.mozilla/firefox/fsfw1234.default/extensions/
 mkdir -pv ${EXTDIR}
 
-# the one-off dirty way
-curl --location --output "${EXTDIR}/dragselectlinktext@kestrel.xpi" 'https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi'
-curl --location --output "${EXTDIR}/jid1-KdTtiCj6wxVAFA@jetpack.xpi" 'https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi'
-curl --location --output "${EXTDIR}/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi" 'https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi'
-
-# a better way to get the URLs (when we have the time to finish) could be
-# jq .policies.ExtensionSettings /usr/share/firefox-esr/distribution/policies.json | ...
+POLICIES=/usr/share/firefox-esr/distribution/policies.json
+for extension in $(jq  -r '.policies.ExtensionSettings|keys|.[]' ${POLICIES});
+do
+        URL=$(jq -r '.policies.ExtensionSettings."'${extension}'".install_url' ${POLICIES})
+        curl --location --remote-time --output "${EXTDIR}/${extension}.xpi" "${URL}"
+done
