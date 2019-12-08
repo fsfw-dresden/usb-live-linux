@@ -109,21 +109,22 @@ echo "HOTFIX=${HOTFIX}"
 [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -gt 0 ] && parted --script ${DEVICE} print free
 debug_pause
 
-# --script ?
-#set -x
+# get partition size in Byte
+size_stick=$(blockdev --getsize64 ${DEVICE})
 
-# ad-hoc calculation of partition sizes
-mb_size_stick=16000
-mb_size_space_buffer=750
+# >~ 114 MB for the filesystem gods
+size_space_buffer=$((1024 * 1024 * 350))
 
-mb_size_partition_fat32=4000
-rel_size_partition_fat32=$((100 * mb_size_partition_fat32/mb_size_stick))
+# 5000MB: for windows portableapps etc.
+size_partition_fat32=$((1024 * 1024 * 5000))
+rel_size_partition_fat32=$((100 * size_partition_fat32 / size_stick))
 
-size_live_system=$(ls --dereference --size --block-size=M ${LIVE_IMAGE})
-size_live_system=${size_live_system%%M *}
-mb_size_live_system=$((size_live_system * 2**10 / 10**3))
-rel_size_partition_iso=$((100 * (mb_size_live_system ) / mb_size_stick))
-rel_size_partition_iso=$((100 * (mb_size_live_system + mb_size_space_buffer) / mb_size_stick + 1))
+# get ISO live image size in Byte
+size_live_system=$(stat --format=%s ${LIVE_IMAGE})
+
+# calculate a proportion of space
+rel_size_partition_iso=$((100 * (size_live_system ) / size_stick))
+rel_size_partition_iso=$((100 * (size_live_system + size_space_buffer) / size_stick + 1))
 
 offset_start_partition_persistence=$((rel_size_partition_fat32 + rel_size_partition_iso))
 
