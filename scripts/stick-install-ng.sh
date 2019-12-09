@@ -148,16 +148,9 @@ parted ${DEVICE} set 1 boot on
 
 # create the main live-system partition
 parted --script --align=optimal -- ${DEVICE} mkpart primary ext2 ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
-parted ${DEVICE} set 2 hidden on
 
+# create the persistence partition
 parted --script --align=optimal -- ${DEVICE} mkpart primary ext4 ${offset_start_partition_persistence}% 100%
-parted ${DEVICE} set 3 hidden on
-
-# ntfs/fuse is tOo0Oo SLOW! => maybe exfat some day.
-#parted  --align=optimal -- ${DEVICE} mkpart primary ntfs 50% 100%
-
-# write out all changes to disk
-#time sync
 
 MAIN_LABEL=live-system
 
@@ -297,7 +290,10 @@ BOOTOPTIONS+="mitigations=off "
 BOOTOPTIONS+="rootpw=Risiko "
 
 # disallow risky administration tasks without password
-#BOOTOPTIONS+="noroot "
+if [ "${FAT_LABEL}" = "SCHULSTICK" ]
+then
+        BOOTOPTIONS+="noroot "
+fi
 
 # don't scare the meek: silence the boot noise
 BOOTOPTIONS+="quiet "
@@ -320,9 +316,13 @@ cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-ba
 # copy the memdisk bootloader
 if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
 
+# init empty qemu EFI bios file so it can be hidden
+touch ${EFIBOOT}/NvVars
+
 # hide files on first partition in linux file manager
 echo "boot" > ${EFIBOOT}/.hidden
 echo "EFI" >> ${EFIBOOT}/.hidden
+echo "NvVars" >> ${EFIBOOT}/.hidden
 echo "System Volume Information" >> ${EFIBOOT}/.hidden
 
 # mark all files on the EFI partition as hidden system files
