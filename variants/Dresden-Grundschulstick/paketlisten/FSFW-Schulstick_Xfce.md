@@ -159,4 +159,5 @@
 ##  Staging  --
 
 - ### :x:  staging  -- [Freestyle Paketliste](staging.md) (sollen nach Testen einsortiert werden)
+- :x:  zulip  --		productive team chat (+47,4 MB)
 

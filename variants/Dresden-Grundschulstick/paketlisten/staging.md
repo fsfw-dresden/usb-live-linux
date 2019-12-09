@@ -302,7 +302,6 @@
 - :x:  minder  --	Mind-mapping application (+537 kB)
 - :x:  slowmovideo  --	creates slow-motion videos from your footage
 - :x:  musescore3  --	cross-platform multi-lingual music composition and notation (+48,4 MB)
-- :o:  zulip  --		productive team chat (+47,4 MB)
 - :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
 - :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 - :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
@@ -363,6 +362,7 @@
 - :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
 - :x:  fonts-anonymous-pro  --	fixed width font designed for coders
 - :x:  fonts-stix  --		Scientific and Technical Information eXchange fonts (+590 kB)
+- :x:  fonts-bwht  --		Six handwritten fonts created for the Because We Had To project (+110 kB)
 
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
