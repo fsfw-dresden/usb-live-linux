@@ -7,7 +7,7 @@
 . "`dirname "${0}"`/functions.sh"
 . "`dirname "${0}"`/functions.bash"
 cd_repo_root
-check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools dialog ccze
+check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools libcdio-utils dialog ccze
 
 PAUSE=0
 if [ $PAUSE -eq 1 ]
@@ -164,6 +164,9 @@ MAIN_LABEL=live-system
     parted ${DEVICE} align-check optimal 3
     parted ${DEVICE} print free
 
+    sfdisk --part-type ${DEVICE} 2 0
+    sfdisk --part-type ${DEVICE} 3 0
+
     # the EFI boot partition needs to be FAT32 which
     # is perfect for file exchange with inferior OSs
     mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
@@ -238,6 +241,10 @@ time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --re
 # takes ~16 seconds
 # --uefi-secure-boot is default btw
 time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+
+# extract kernel and init ramdisk from ISO
+iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
+iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ${LIVE_IMAGE}
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
