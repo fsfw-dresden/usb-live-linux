@@ -91,19 +91,27 @@
      transform="translate(0,-93.799983)"
      id="layer1">
     <rect
-       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       transform="scale(1,-1)"
+       y="-296.99997"
+       x="0"
+       height="203.2"
+       width="361.42084"
+       id="rect866"
+       style="fill:#2cabb7;fill-opacity:1;stroke-width:0.27181929" />
+    <rect
+       style="color:#000000;overflow:visible;opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect6974"
-       width="105.56875"
-       height="105.56875"
-       x="213.96596"
-       y="167.22601" />
+       width="94.37149"
+       height="94.37149"
+       x="210.56886"
+       y="172.82465" />
     <path
        id="path6972"
        d="M -373.88719,258.35883 H 756.36277"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.13229167;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
     <g
        id="g135558"
-       transform="matrix(3.5959986,0,0,3.5958888,-355.86999,-198.08223)"
+       transform="matrix(3.5959986,0,0,3.5958888,-364.86587,-198.08223)"
        style="stroke-width:0.2780911">
       <path
          id="path4546"
