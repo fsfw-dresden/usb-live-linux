@@ -14,9 +14,9 @@
     "wikipedia-de"
   ],
   "metaData": {
-    "searchDefaultExpir": 1572532860013,
-    "current": "wokisu",
-    "hash": "1GSxfrrRmHCMXCk5MhsF2FbHDIkVa96Sqj93Mi7l+Ik="
+    "searchDefaultExpir": 1576314681940,
+    "current": "fragFINN.de",
+    "hash": "Zn1MRMW4e9OnERjkmd990YboFdcUxgL8P1FIhpyCT8s="
   },
   "engines": [
     {
@@ -682,15 +682,6 @@
           "template": "https://www.fragfinn.de/?s&q={searchTerms}",
           "rels": [],
           "resultDomain": "www.fragfinn.de",
-          "params": []
-        },
-        {
-          "template": "https://mycroftproject.com/updateos.php/id0/fragfinnde.xml",
-          "rels": [
-            "self"
-          ],
-          "resultDomain": "mycroftproject.com",
-          "type": "application/opensearchdescription+xml",
           "params": []
         }
       ],
