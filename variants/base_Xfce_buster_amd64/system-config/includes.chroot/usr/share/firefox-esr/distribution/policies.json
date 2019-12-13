@@ -20,6 +20,12 @@
         "installation_mode": "normal_installed"
       }
     },
+    "FirefoxHome": {
+      "Highlights": false,
+      "Pocket": false,
+      "Snippets": false,
+      "TopSites": false
+    },
     "Homepage": {
       "StartPage": "none"
     },
