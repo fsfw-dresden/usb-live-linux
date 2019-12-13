@@ -45,7 +45,6 @@
 - :x:  transcend  --		retro-style, abstract 2D shooter (250 kB)
 - :x:  klavaro  --		Flexibles Schreibmaschinen-Lernprogramm (769 kB)
 - :x:  aisleriot  --		Sammlung von GNOME-Patiencen (8.522 kB)
-- :x:  kdegames  --		Spiele aus dem offiziellen KDE-Veröffentlichung (126 MB)
 - :x:  gnome-games  --		Spiele für die GNOME-Arbeitsoberfläche (28,7 MB)
 - :x:  kajongg  --		Klassisches Spiel Mahjongg (<19,0 MB)
 - :x:  stellarium  --		Echtzeit-Generator für fotorealistische Himmelsansichten (205 MB)
@@ -69,3 +68,43 @@
 - :x:  minuet  --		(Teil von kdeedu)
 - :x:  parley  --		(Teil von kdeedu)
 - :x:  step  --		(Teil von kdeedu)
+
+- :o:  kdegames  --	Spiele aus dem offiziellen KDE-Veröffentlichung (126 MB)
+- :o:  bomber  --	arcade spaceship game
+- :o:  granatier  --	Bomberman clone
+- :o:  killbots  --	port of the classic BSD console game robots
+- :o:  kmines  --	minesweeper game
+- :o:  knavalbattle  --	battleship board game
+- :o:  konquest  --	simple turn-based strategy game
+- :o:  kreversi  --	reversi board game
+- :o:  ksirk  --	Risk strategy game
+- :o:  kspaceduel  --	SpaceWar! arcade game
+- :x:  bovo  --		gomoku (five in line) board game
+- :x:  kapman  --	Pac-Man clone
+- :x:  katomic  --	atomix puzzle game
+- :x:  kblackbox  --	Black Box puzzle game
+- :x:  kblocks  --	falling blocks game
+- :x:  kbounce  --	Jezzball arcade game
+- :x:  kbreakout  --	ball and paddle game
+- :x:  kdiamond  --	three-in-a-row game
+- :x:  kfourinline  --	Connect Four game
+- :x:  kgoldrunner  --	Lode Runner arcade game
+- :x:  kigo  --		go game
+- :x:  kiriki  --	Yahtzee dice game
+- :x:  kjumpingcube  --	simple tactical game
+- :x:  klickety  --	SameGame puzzle game
+- :x:  klines  --	color lines game
+- :x:  kmahjongg  --	mahjongg solitaire game
+- :x:  knetwalk  --	wire puzzle game
+- :x:  kolf  --		miniature golf game
+- :x:  kollision  --	simple ball dodging game
+- :x:  kpat  --		solitaire card games
+- :x:  kshisen  --	Shisen-Sho solitaire game
+- :x:  ksnakeduel  --	snake race game
+- :x:  ksquares  --	Dots and Boxes game
+- :x:  ksudoku  --	Sudoku puzzle game and solver
+- :x:  ktuberling  --	stamp drawing toy
+- :x:  kubrick  --	game based on Rubik's Cube
+- :x:  lskat  --	Lieutnant Skat card game
+- :x:  palapeli  --	jigsaw puzzle game
+- :x:  picmi  --	Number logic game
