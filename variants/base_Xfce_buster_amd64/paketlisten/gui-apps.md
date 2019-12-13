@@ -1,0 +1,106 @@
+##  Staging
+
+- ### Graphical User Interface / Apps
+- :x:  chromium-l10n  --	aims to build a safer, faster, and more stable internet browsing experience + translation
+- :x:  chromium-sandbox  --	setuid security sandbox for chromium
+- :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
+- :x:  evince  --		multi-page document viewer
+- :x:  diffpdf  --	
+- :x:  lightning  --		Calendar Extension for Thunderbird
+- :x:  lightning-l10n-de  --		
+- :x:  hunspell-de-de  --		German dictionary for hunspell (+293 kB)
+- :x:  hyphen-de  --		German hyphenation patterns (+494 kB)
+- :x:  mythes-de  --		German Thesaurus for OpenOffice.org/LibreOffice (+2.663 kB)
+- :x:  rss-glx  --	
+- :x:  unicode-screensaver  --	
+- :x:  xscreensaver  --	modular screen saver and locker for X11
+- :x:  xscreensaver-data-extra  --	Extra screen saver modules
+- :x:  xscreensaver-gl-extra  --	3D (OpenGL) screen saver modules
+- :x:  pavucontrol  --	PulseAudio Volume Control
+- :x:  libreoffice-gtk3  --	
+- :x:  libreoffice-help-de  --	deutsche Hilfe von LibreOffice (+3.706 kB)
+- :x:  sweethome3d  --		Interior 2D design application with 3D preview
+- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
+- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
+- :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
+- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
+- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
+- :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
+- :x:  meld  --		graphical diff … recursive  directory diffs
+- :x:  remmina  --		remote desktop client
+- :x:  remmina-plugin-vnc  --		VNC plugin for Remmina
+- :x:  remmina-plugin-nx  --		NX plugin for Remmina
+- :x:  remmina-plugin-rdp  --		RDP plugin for Remmina
+- :x:  remmina-plugin-spice  --		Spice plugin for Remmina
+- :x:  kdeconnect  --		integrate linux desktop with android smartphone
+- :x:  gthumb  --		advanced image viewer and browser
+- :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion
+- :x:  gnome-font-viewer  --		preview fonts
+- :x:  tumbler  --		D-Bus thumbnailing service
+- :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments
+- :x:  calamares-settings-debian  --		Debian theme and settings for the Calamares Installer (which this also pulls in)
+- :x:  catfish  --		file searching tool
+- :x:  nemo  --		file manager
+- :x:  nemo-fileroller  --		create and extract archives
+- :x:  nemo-nextcloud  --		integrates the Nextcloud web service
+- :x:  cinnamon-l10n  --		translation files for nemo et al.
+- :x:  weston  --		reference implementation of a wayland compositor
+- :x:  google-earth-pro-stable  --		Explore, search and discover the planet (+56,5 MB)
+- :x:  mixxx  --		Digital Disc Jockey Interface
+- :x:  key-mon  --		show live keyboard and mouse status
+- :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
+- :x:  tipp10  --		touch typing software
+- :x:  simple-scan  --		easy-to-use Scanning Utility
+- :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)
+- :x:  xpra  --		tool to detach/reattach running X programs
+- :x:  brasero  --	CD/DVD burning application for GNOME
+- :x:  brasero-cdrkit  --	cdrkit extensions for the Brasero burning application
+- :x:  cdrdao  --	records CDs in Disk-At-Once (DAO) mode
+- :x:  cheese  --	tool to take pictures and videos from your webcam
+- :x:  audacious  --		small and fast audio player which supports lots of formats (+1.803 kB)
+- :x:  clementine  --		modern music player and library organizer (+5.968 kB)
+- :x:  geany-plugins  --	fast and lightweight IDE + plugins (+5.003 kB)
+- :x:  gnome-video-effects-frei0r  --	GNOME Video Effects - frei0r plugins
+- :x:  lazarus-2.0  --	IDE for Free Pascal (Delphi-likesion) (+>130 MB)
+- :x:  fpc  --	Free Pascal Compiler
+- :x:  libdvdcss2  --	Simple foundation for reading DVDs - runtime libraries
+- :x:  libvte9  --	Terminal emulator widget for GTK+ 2.0 - runtime files
+- :x:  kdenlive  --	non-linear video editor (+>=17,8 MB)
+- :x:  ffplay  --	simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
+- :x:  lives  --	Video Editing system allowing users to edit and create video (+3.172 kB)
+- :x:  minder  --	Mind-mapping application (+537 kB)
+- :x:  slowmovideo  --	creates slow-motion videos from your footage
+- :x:  musescore3  --	cross-platform multi-lingual music composition and notation (+48,4 MB)
+- :x:  qt5ct  --		Qt5 Configuration Utility (theme, font, icons, etc.)
+- :x:  qt5-style-plugins  --		 Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
+- :x:  webext-ublock-origin  --	general-purpose lightweight ads, malware, trackers blocker (Web Extension)
+- :x:  calibre  --	powerful and easy to use e-book manager (+28,1 MB)
+- :x:  krita  --		creative application for raster images (+65.5 MB)
+- :x:  krita-gmic  --		GREYC's Magic for Image Computing - Helper Tool for Krita (+687 kB)
+- :x:  krita-l10n  --		translations for Krita painting program (+2,172 kB)
+- :x:  seahorse  --		front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
+- :x:  childsplay  --		educational games for young children (+30.8 MB)
+- :x:  gramps  --		Familienstammbaum (+7,010 kB + 876 kB recommends)
+- :x:  gir1.2-gexiv2-0.10  --		recommended by gramps
+- :x:  gir1.2-goocanvas-2.0  --		recommended by gramps
+- :x:  gir1.2-gtkspell3-3.0  --		recommended by gramps
+- :x:  gir1.2-osmgpsmap-1.0  --		recommended by gramps
+- :x:  python3-icu  --		recommended by gramps
+- :x:  playitslowly  --		Plays back audio files at a different speed or pitch (+27.7 kB)
+- :x:  goobox  --		CD player and ripper with GNOME 3 integration
+- :x:  geogebra-classic  -- Dynamische Mathematiksoftware für die Lehre (+48,7 MB, geogebra.net repo)
+- :x:  geogebra-classic-tutorials  -- offline version of the GeoGebra Classic Tutorials (+24,6 MB, geogebra.net repo)
+- :x:  mkchromecast-pulseaudio  --	Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
+- :x:  libnotify-bin  --	Sendet Benachrichtigungen an die Arbeitsfläche
+- :x:  asunder  --		graphical audio CD ripper and encoder (+373 kB)
+- :x:  materia-gtk-theme  --	Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)	
+- :x:  marble-qt  --    Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
+- :x:  marble-plugins  --    various plugins for the Marble desktop globe
+
+- :o:    --		
+- :o:  pulseeffects  --		advanced system-wide equalizer for PulseAudio
+- :o:  webcamoid  --		full featured webcam capture application, can do a lot of funny things (+9,328 kB)
+- :o:  guake  --		Drop-down terminal (GTK)
+- :o:  yakuake  --		Drop-down terminal (KDE)

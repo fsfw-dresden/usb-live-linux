@@ -1,0 +1,34 @@
+##  Staging
+- ### Fonts
+- :x:  fonts-bebas-neue  --	Flat, rounded style font designed
+- :x:  fonts-croscore  --	metrically compatible with Arial, Courier New and Times New Roman
+- :x:  fonts-crosextra-caladea  --	metric-compatible with the Cambria font
+- :x:  fonts-crosextra-carlito  --	metric-compatible with Calibri font
+- :x:  fonts-cabin  --	humanist sans serif font
+- :x:  fonts-ebgaramond  --	EB Garamond OpenType fonts
+- :x:  fonts-hack-otf  --	Typeface designed for source code
+- :x:  fonts-humor-sans  --	Font that looks like handwritten text
+- :x:  fonts-lato  --	"Lato" means "Summer" in Polish
+- :x:  fonts-linuxlibertine  --
+- :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
+- :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+- :x:  fonts-noto-color-emoji  --	color emoji font used on "stock" Android devices (+7.572 kB)
+- :x:  fonts-open-sans  --	humanist sans serif typeface
+- :x:  fonts-opendin  --	Open DIN font
+- :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
+- :x:  fonts-pecita  --	hand-written font that give a natural rendition.
+- :x:  fonts-roboto  --	default font in Android and ChromeOS, recommended font for … Material Design
+- :x:  fonts-roboto-slab  --	Slab Serif font for the Roboto font family
+- :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic
+- :x:  fonts-ubuntu  --		developed between 2010-2011. Dalton Maag
+- :x:  fonts-yanone-kaffeesatz  --	reminiscent of 1920s coffee house typography
+- :x:  fonts-clear-sans  --		sharp on-screen sans-serif font
+- :x:  fonts-gotico-antiqua  --		15th century types between gothic and roman
+- :x:  fonts-cantarell  --		contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
+- :x:  fonts-anonymous-pro  --	fixed width font designed for coders
+- :x:  fonts-stix  --		Scientific and Technical Information eXchange fonts (+590 kB)
+- :x:  fonts-bwht  --		Six handwritten fonts created for the Because We Had To project (+110 kB)
+
+- :o:  powerdevil  --  KDE power settings (& brightness control keys)
+- :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
+- :o:  gtk2-engines-oxygen  --	Oxygen widget theme for GTK+-based applications

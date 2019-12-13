@@ -1,0 +1,78 @@
+##  Staging
+
+- ### System
+- :x:  haveged  --		userspace entropy daemon
+- :x:  etckeeper  --		tool to let /etc be stored in a git
+- :x:  system-config-printer  --	configure the printing system
+- :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+- :x:  gparted  --	manipulate devices and partition tables
+- :x:  gnome-disk-utility  --	manage and configure disk drives and media
+- :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
+- :x:  anacron  --	periodic command scheduler for systems not running continuously.
+- :x:  grub-efi-ia32-bin  --	GRand Unified Bootloader, version 2 (EFI-IA32 modules)
+- :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
+- :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+- :x:  pulseaudio-equalizer  --	
+- :o:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
+- :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
+- :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
+- :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
+- :x:  sct  --		set screen color temperature via xrandr - reduce or increase blue light
+- :x:  blueman  --		GTK+ bluetooth management utility
+- :x:  pulseaudio-module-bluetooth  --		enables PulseAudio to work with bluetooth devices
+- :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
+- :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
+- :x:  smart-notifier  --		graphical hard disk health status notifier
+- :x:  unattended-upgrades  --		automatic installation of security upgrades
+- :x:  python3-software-properties  --		manage the repositories that you install software from
+- :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
+- :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+- :x:  dislocker  --		read/write encrypted BitLocker volumes
+- :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
+- :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
+- :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
+- :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+- :x:  openprinting-ppds  --		Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
+- :x:  bluez-cups  --		Bluetooth printer driver for CUPS
+- :x:  printer-driver-cups-pdf  --		Druckertreiber zur PDF-Erzeugung mittels CUPS
+- :x:  printer-driver-all  --		Druckertreiber-Metapaket
+- :x:  printer-driver-brlaser  --		Druckertreiber für (einige) Brother-Laserdrucker
+- :x:  printer-driver-c2050  --		Druckertreiber für den Lexmark 2050 Color Jetprinter
+- :x:  printer-driver-c2esp  --		Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
+- :x:  printer-driver-cjet  --		Druckertreiber für Canon-LBP-Laserdrucker
+- :x:  printer-driver-dymo  --		Treiber für DYMO-Etikettendrucker
+- :x:  printer-driver-escpr  --		Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
+- :x:  printer-driver-foo2zjs  --		Druckertreiber für auf ZjStream basierende Drucker
+- :x:  printer-driver-fujixerox  --		Druckertreiber für Fuji-Xerox-Drucker
+- :x:  printer-driver-gutenprint  --		Druckertreiber für CUPS (Gutenprint basierend)
+- :x:  printer-driver-hpcups  --		HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
+- :x:  printer-driver-hpijs  --		HP Linux Printing and Imaging - Druckertreiber (hpijs)
+- :x:  hpijs-ppds  --		HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
+- :x:  printer-driver-m2300w  --		Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
+- :x:  printer-driver-min12xxw  --		Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+- :x:  printer-driver-pnm2ppa  --		Druckertreiber für HP-GDI-Drucker
+- :x:  printer-driver-postscript-hp  --		Beschreibungen von HP-PostScript-Druckern
+- :x:  printer-driver-ptouch  --		Treiber für »Brother P-touch«-Etikettendrucker
+- :x:  printer-driver-pxljr  --		Druckertreiber für HP Color LaserJet 35xx/36xx
+- :x:  printer-driver-sag-gdi  --		Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
+- :x:  printer-driver-splix  --		Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
+- :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
+- :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+- :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
+- :x:  auto-apt-proxy  --		automatic detector of common APT proxy settings
+- :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
+- :x:  grub-efi-amd64-signed  --		GRand Unified Bootloader, version 2 (amd64 UEFI signed by Debian, used by shim-signed)
+- :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
+- :x:  qemu-guest-agent  --	Guest-side qemu-system agent (+255 kB)
+- :x:  vmtouch  --		file system cache diagnostics and control
+- :x:  preload  --		adaptive readahead daemon, predicts what applications users might run
+- :x:  qttranslations5-l10n  --		translations for Qt 5 (+1.501 kB)
+- :x:  syslinux-common  --		suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
+- :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
+- :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
+
+- :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
+- :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
+- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
+- :o:  tuned-utils  --	
+- :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown

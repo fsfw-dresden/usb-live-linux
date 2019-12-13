@@ -158,6 +158,11 @@
 
 ##  Staging  --
 
-- ### :x:  staging  -- [Freestyle Paketliste](staging.md) (sollen nach Testen einsortiert werden)
+- ### :o:  electro-science  -- [](electro-science.md)
+- ### :o:  dictionaries  -- [](dictionaries.md)
+- ### :x:  fonts  -- [](fonts.md)
+- ### :x:  gui-apps  -- [](gui-apps.md)
+- ### :x:  system  -- [](system.md)
+- ### :x:  terminal-environment  -- [](terminal-environment.md)
 - :x:  zulip  --		productive team chat (+47,4 MB)
 

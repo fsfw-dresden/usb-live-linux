@@ -1,0 +1,53 @@
+##  Staging
+- ### Dictionaries
+- :o:  dict  --		dictionary client
+- :o:  dictd  --		dictionary server
+- :o:  dict-bouvier  --		
+- :o:  dict-de-en  --		German-English translation dictionary for dictd
+- :o:  dict-devil  --		
+- :o:  dict-elements  --		
+- :o:  dict-foldoc  --		
+- :o:  dict-freedict-ara-eng  --		
+- :o:  dict-freedict-deu-eng  --		
+- :o:  dict-freedict-deu-fra  --		
+- :o:  dict-freedict-deu-ita  --		
+- :o:  dict-freedict-deu-nld  --		
+- :o:  dict-freedict-deu-pol  --		
+- :o:  dict-freedict-deu-por  --		
+- :o:  dict-freedict-deu-rus  --		
+- :o:  dict-freedict-deu-spa  --		
+- :o:  dict-freedict-eng-ara  --		
+- :o:  dict-freedict-eng-deu  --		
+- :o:  dict-freedict-eng-ell  --		
+- :o:  dict-freedict-eng-fra  --		
+- :o:  dict-freedict-eng-hin  --		
+- :o:  dict-freedict-eng-jpn  --		
+- :o:  dict-freedict-eng-lat  --		
+- :o:  dict-freedict-eng-nld  --		
+- :o:  dict-freedict-eng-pol  --		
+- :o:  dict-freedict-eng-rus  --		
+- :o:  dict-freedict-eng-spa  --		
+- :o:  dict-freedict-eng-swh  --		
+- :o:  dict-freedict-fra-deu  --		
+- :o:  dict-freedict-fra-eng  --		
+- :o:  dict-freedict-ita-deu  --		
+- :o:  dict-freedict-ita-eng  --		
+- :o:  dict-freedict-jpn-deu  --		
+- :o:  dict-freedict-lat-deu  --		
+- :o:  dict-freedict-lat-eng  --		
+- :o:  dict-freedict-nld-deu  --		
+- :o:  dict-freedict-nld-eng  --		
+- :o:  dict-freedict-pol-deu  --		
+- :o:  dict-freedict-pol-eng  --		
+- :o:  dict-freedict-por-deu  --		
+- :o:  dict-freedict-spa-eng  --		
+- :o:  dict-freedict-swh-eng  --		
+- :o:  dict-freedict-tur-deu  --		
+- :o:  dict-freedict-tur-eng  --		
+- :o:  dict-gazetteer2k  --		
+- :o:  dict-gcide  --		
+- :o:  dict-jargon  --		
+- :o:  dict-moby-thesaurus  --		
+- :o:  dict-vera  --		
+- :o:  dict-wn  --		
+

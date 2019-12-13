@@ -1,0 +1,147 @@
+##  Staging
+
+- ### Terminal-Environment
+- :x:  aptitude  --	Anständiger Paketmanager (Text UI)
+- :o:  sysdig  --	Mächtiges Systemanalysewerkzeug
+- :x:  ranger  --	Bester Dateimanager (Text UI)
+- :x:  tig  --		ncurses-based text-mode interface for Git
+- :x:  less  --		world class file viewer
+- :x:  i7z  --		reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
+- :x:  debian-goodies  --	dpigs      - Show which installed packages occupy the most space
+- :x:  testdisk  --	disk/file recovery tool
+- :x:  debootstrap  --		used to create a Debian base system from scratch
+- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
+- :x:  vbindiff  --	visually compare binary files
+- :x:  debsums  --	verification of installed package files against MD5 checksums
+- :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
+- :x:  dlocate  --		speed up finding out which package a file belongs to (i.e. a very fast dpkg -S)
+- :x:  iotop  --	displays a table of current I/O usage by processes on the system
+- :x:  iftop  --	displays bandwidth usage information on an network interface
+- :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
+- :x:  renameutils  --	to make file renaming easier
+- :x:  pipemeter  --	shows the speed of data moving from input to output
+- :x:  strace  --	System call tracer
+- :x:  ltrace  --	trace library calls in dynamically linked programs
+- :x:  fatrace  --	report system wide file access events
+- :x:  speedometer  --	measure and display the rate of data across a network connection
+- :x:  jdupes  --	identify and delete or link duplicate files
+- :x:  elinks  --	advanced text-mode WWW browser
+- :x:  beep  --		advanced PC-speaker beeper
+- :x:  caca-utils  --	text mode graphics utilities
+- :x:  lm-sensors  --	hardware health monitoring: read temperature/voltage/fan sensors
+- :x:  acpitool  --	command line ACPI client (battery status, thermal status, …)
+- :x:  traceroute  --	displays the route used by IP packets on their way
+- :x:  ripgrep  --	line-oriented search tool that recursively searches
+- :x:  wcalc  --	command-line scientific calculator
+- :x:  fd-find  --	user-friendly alternative to find
+- :x:  dstat  --	versatile resource statistics tool
+- :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
+- :x:  ocrmypdf  --	
+- :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
+- :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
+- :x:  vim-airline-themes  --	themable vim status bar + themes
+- :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
+- :x:  qalc  --			command line version of Qalculate!
+- :x:  fortunes  --		fortune cookies
+- :x:  fortunes-de  --		Glückskekse
+- :x:  nmap  --		utility for network exploration or security auditing
+- :x:  ccze  --		robust and modular log coloriser
+- :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
+- :x:  tree  --		recursive directory listing: depth indented colorized listing of files
+- :x:  pmount  --		mount removable devices as normal user
+- :x:  toilet  --		prints text using large characters made of smaller characters
+- :x:  mosh  --		Mobile shell that supports roaming and intelligent local echo
+- :x:  tmux-themepack-jimeh  --		basic theme and powerline themes for tmux
+- :x:  fonts-powerline  --		font which provides symbols used by Powerline
+- :x:  zram-tools  --		set up compressed swap space
+- :x:  smem  --		reports on memory usage
+- :x:  dialog  --		dialog boxes from shell scripts
+- :x:  luksipc  --		convert (unencrypted) block devices to (encrypted) LUKS devices in-place
+- :x:  progress  --		Coreutils Progress Viewer
+- :x:  tuptime  --		report historical system real time
+- :x:  dmidecode  --		SMBIOS/DMI table decoder
+- :x:  ncdu  --		ncurses disk usage viewer
+- :x:  psmisc  --		utilities that use the proc file system
+- :x:  lsof  --		utility to list open files
+- :x:  f2fs-tools  --		Tools for Flash-Friendly File System
+- :x:  atool  --		tool for managing file archives of various types
+- :x:  mediainfo  --		command-line utility for reading information from audio/video files
+- :x:  nethogs  --		Net top tool grouping bandwidth per process
+- :x:  dnsutils  --		client programs related to DNS (dig, nslookup, nsupdate)
+- :x:  whois  --		intelligent WHOIS client
+- :x:  linux-cpupower  --		CPU power management tools for Linux
+- :x:  percol  --		interactive selection for UNIX pipes
+- :x:  consolation  --		linux console pointer support for copy-paste
+- :x:  unoconv  --		converter between LibreOffice document formats
+- :x:  caca-utils  --		text mode graphics utilities
+- :x:  elinks  --		advanced text-mode WWW browser
+- :x:  w3m  --		WWW browsable pager with excellent tables/frames support
+- :x:  highlight  --		Universal source code to formatted text converter
+- :x:  exiftool  --		read and write meta information in multimedia files
+- :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
+- :x:  ssh-audit  --		tool for ssh server auditing
+- :x:  vim-scripts  --		Erweiterungen für vim (was man sonst noch so braucht)
+- :x:  vim-pathogen  --		pathogen.vim: install plugins in their own private directories ("bundles")
+- :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
+- :x:  stress  --		impose load on and stress test a computer system
+- :x:  davfs2  --		mount a WebDAV resource as a regular file system
+- :x:  e2fsprogs-l10n  --	Werkzeuge für ext2-/ext3-/ext4-Dateisysteme - Übersetzungen
+- :x:  btrfs-progs  --		Checksumming Copy on Write Filesystem utilities
+- :x:  lolcat  --		concatenates files like the UNIX `cat` program, but colors it
+- :x:  htpdate  --		HTTP based time synchronization tool for firewall blocking the NTP port
+- :x:  curl  --		command line tool for transferring data with URL syntax
+- :x:  httpie  --		CLI, cURL-like tool for humans
+- :x:  antiword  --	Converts MS Word files to text, PS, PDF and XML
+- :x:  boxes  --	textmode box- and comment drawing filter
+- :x:  catdoc  --	text extractor for MS-Office files
+- :x:  cgdb  --	curses-based interface to the GNU Debugger (GDB)
+- :x:  rlwrap  --	Kommandozeilen-Wrapper mit »readline«-Funktionalität (Editieren von Tastatureingaben)
+- :x:  translate-shell  --	Command-line translator using Google Translate, etc.
+- :x:  btscanner  --	ncurses-based scanner for Bluetooth devices
+- :x:  csstidy  --	CSS parser and optimiser
+- :x:  docx2txt  --	Convert Microsoft OOXML files to plain text
+- :x:  dos2unix  --	convert text file line endings between CRLF and LF
+- :x:  gnuit  --	GNU Interactive Tools, a file browser/viewer and process viewer/killer
+- :x:  ncurses-hexedit  --	Edit files/disks in hex, ASCII and EBCDIC
+- :x:  moreutils  --	additional Unix utilities
+- :x:  ne  --	easy-to-use and powerful text editor
+- :x:  pylint  --	Python code static checker and UML diagram generator
+- :x:  shed  --	simple hex editor with a pico-style interface
+- :x:  tidy  --	HTML/XML syntax checker and reformatter
+- :x:  tilde  --	Intuitive text editor for the terminal
+- :x:  tweak  --	Efficient text-mode hex editor
+- :x:  librsvg2-bin  --	command-line and graphical viewers for SVG files
+- :x:  scanmem  --	locate and modify a variable in a running process
+- :x:  bmap-tools  --	flash image files to block devices using the block map
+- :x:  diskscan  --	scan storage media for bad or near failure sectors
+- :x:  f3  --	test real flash memory capacity
+- :x:  ctop  --	text based Linux Containers monitoring tool
+- :x:  xmlstarlet  --	transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
+- :x:  faketime  --		intercepts various system calls and fake date and time to programs
+- :x:  chntpw  --		NT SAM password recovery utility
+- :x:  inxi  --		system information script
+- :x:  sqlite3  --		Command line interface for SQLite 3
+- :x:  lz4json  --		unpack lz4json files, usually generated by Mozilla programs
+- :x:  gdebi  --		Einfaches Programm für Betrachtung und Installation von deb-Dateien (+176 kB)
+- :x:  mlocate  --		Dateien anhand ihrer Namen schnell im Dateisystem finden
+- :x:  cruft-ng  --		finds anything that shouldn't be there, but is & anything that should be there, but isn't
+- :x:  xdotool  --		X11-Tastatur- und Mauseingaben-Ereignisse generieren, Fenster bewegen, deren Größe verändern usw (+88,5 kB)
+- :x:  xsel  --		Kommandozeilenwerkzeug für den Zugriff auf Zwischenablage und Auswahlpuffer von X (+20,5 kB)
+- :x:  hwinfo  --		Informationen über die im System installierte Hardware
+- :x:  pinfo  --		user-friendly, console-based viewer for Info documents
+- :x:  entr  --		Event Notify Test Runner (entr) runs commands when files change (detected through kqueue/inotify kernel interface)
+- :x:  clonezilla  --		bare metal backup and recovery of disk drives
+- :x:  partclone  --		clone and restore a partition
+- :x:  efitools  --		Tools to manipulate EFI secure boot keys and signatures
+- :x:  brightnessctl  --		small utility to control the brightness of screen and LEDs
+- :x:  fatattr  --		control attributes on a FAT filesystem
+- :x:  unrar  --		Unarchiver for .rar files (+111 kB)
+- :x:  zip  --		Archiver for .zip files (+234 kB)
+- :x:  syslinux-utils  --		auxiliary utilities (+98,4 kB)
+- :x:  lz4  --		very fast lossless compression, used by firefox to compress settings files (f.e. search.json.mozlz4)
+- :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
+- :x:  make  --		utility for directing compilation
+- :x:  libcdio-utils  --		small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
+- :x:  udftools  --		tools for UDF filesystems and DVD/CD-R(W) drives
+- :x:  gpart  --		Guess PC disk partition table, find lost partitions
+- :x:  foremost  --		recover lost files based on their headers, footers, and internal data structures

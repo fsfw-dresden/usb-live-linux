@@ -158,5 +158,9 @@
 
 ##  Staging  --
 
-- ### :x:  staging  -- [Freestyle Paketliste](staging.md) (sollen nach Testen einsortiert werden)
-
+- ### :x:  electro-science  -- [](electro-science.md)
+- ### :o:  dictionaries  -- [](dictionaries.md)
+- ### :x:  fonts  -- [](fonts.md)
+- ### :x:  gui-apps  -- [](gui-apps.md)
+- ### :x:  system  -- [](system.md)
+- ### :x:  terminal-environment  -- [](terminal-environment.md)
