@@ -7,7 +7,7 @@
 - :x:  inkscape-tutorials  --	collection of hands-on tutorials (2.2MiB kompr., nur testing)
 - :x:  inkscape-open-symbols  --	Open source SVG symbol sets (1.6MB kompr.)
 - :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
-- :x:  scribus-ng  --	DTP-Programm
+- :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
 
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
@@ -27,6 +27,8 @@
 - :x:  icc-profiles-free  -- Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
 
 - :x:  xsane  --	Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
+- :x:  fraqtive  --	Zeichnet Mandelbrot- und Julia-Fraktale
+- :x:  mandelbulber2  --	3D fractal renderer and animator
 
 - ###  Fotoverwaltung
 
