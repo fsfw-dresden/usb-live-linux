@@ -2,6 +2,7 @@
 
 set timeout=3
 set default=0
+set isofile=/boot/{{ STICK_ISO }}
 
 insmod part_msdos
 insmod ntfs
@@ -52,9 +53,6 @@ fi
 
 
 menuentry "Live-System ({{ STICK_VERSION }} mit Persistenz)" {
-    echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-    set isofile=/boot/{{ STICK_ISO }}
     linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence
     initrd /boot/initrd.img
 }
@@ -64,17 +62,11 @@ menuentry " " {
 }
 
 menuentry "Live-System Failsafe (falls normales Starten nicht funktioniert) ({{ STICK_VERSION }})" {
-    echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-    set isofile=/boot/{{ STICK_ISO }}
     linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
     initrd /boot/initrd.img
 }
 
 menuentry "Live-System ohne Gedächtnis (Änderungen gehen verloren) ({{ STICK_VERSION }})" {
-    echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-    echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-    set isofile=/boot/{{ STICK_ISO }}
     linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }}
     initrd /boot/initrd.img
 }
@@ -83,55 +75,50 @@ menuentry " " {
   echo
 }
 
-submenu "  [ Untermenü: Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
+submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 
   menuentry "Alle Änderungen am Stick zurücksetzen (!löscht ALLE geänderten Dateien!)" {
-      set isofile=/boot/{{ STICK_ISO }}
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove
       initrd /boot/initrd.img
   }
 
   menuentry "Systemdateien zurücksetzen (bei Updates)" {
-      set isofile=/boot/{{ STICK_ISO }}
-      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence-remove=linux-system
+      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove=linux-system
       initrd /boot/initrd.img
   }
 
-  menuentry "Userdateien zurücksetzen (evtl. zu Reparatur - !löscht alle Dokumente!)" {
-      set isofile=/boot/{{ STICK_ISO }}
+  menuentry "Userdateien löschen (zur Reparatur - !löscht Home-Verzeichnis ink. Dokumente!)" {
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove=linux-userdata
       initrd /boot/initrd.img
   }
 
 }
 
-submenu "  [ Untermenü: Expertenoptionen ]" {
+submenu "  [ Expertenoptionen ]" {
 
-  menuentry "Live-System mit Persistenz (Rettungsmodus) ({{ STICK_VERSION }})" {
-      echo -e " \n \n \n Bitte einen kleinen Moment Geduld.."
-      echo -e "(je nach USB-Stick braucht das System bis zu 5min zum Starten)"
-      set isofile=/boot/{{ STICK_ISO }}
-      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
+  menuentry "Live-System Rettungsmodus (mit Persistenz) ({{ STICK_VERSION }})" {
+      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single persistence
       initrd /boot/initrd.img
   }
 
-  menuentry "Live-System ohne Persistenz (Rettungsmodus) ({{ STICK_VERSION }})" {
-      echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-      set isofile=/boot/{{ STICK_ISO }}
+  menuentry "Live-System Rettungsmodus (ohne Persistenz) ({{ STICK_VERSION }})" {
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
       initrd /boot/initrd.img
   }
 
-  menuentry "Live-System *toram* (System komplett in Arbeitsspeicher laden) ({{ STICK_VERSION }})" {
-      echo -e " \n \n \n  Bitte einen kleinen Moment Geduld "
-      set isofile=/boot/{{ STICK_ISO }}
+  menuentry "Live-System komplett in Arbeitsspeicher laden (ohne Persistenz) ({{ STICK_VERSION }})" {
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} toram
+      initrd /boot/initrd.img
+  }
+
+  menuentry "Live-System debuggen (mit Persistenz) ({{ STICK_VERSION }})" {
+      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} debug console=ttyS0 persistence
       initrd /boot/initrd.img
   }
 
 }
 
-submenu "  [ Untermenü: Werkzeuge ] " {
+submenu "  [ Werkzeuge ] " {
 {% if MEMTEST is defined %}
   menuentry "Memory test (memtest86+) iso " {
     linux16 /boot/memdisk iso
