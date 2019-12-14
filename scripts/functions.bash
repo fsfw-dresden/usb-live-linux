@@ -23,7 +23,7 @@ check_dependencies() {
     do
          dpkg -s ${DEP} | grep -qs "Status:.*installed" || { DEPS+=( ${DEP} ); echo "${DEP} missing"; }
     done
-    [ ${#DEPS[@]} -eq 0 ] && echo "[✅] all dependencies present (hooray)" && return
+    [ ${#DEPS[@]} -eq 0 ] && echo "[ ✅ ] all dependencies present (hooray)" && return
     read -n1 -p "press [i] to run \`apt install ${DEPS[@]}\` and proceed, [any other] key to exit the script.."
     [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || echo "dependencies ${DEPS[@]} not installed, aborting"; exit 1
 }

@@ -84,7 +84,7 @@ echo "DEVICE=${DEVICE}"
 [ -z ${DEVICE} ] && echo "no DEVICE chosen, cannot continue" >&2 && exit 2
 
 # proceed only if selected device is not mounted
-grep -s "^${DEVICE}" /proc/mounts && echo -e "partition(s) on ${COLOR_RED}${DEVICE} currently mounted${COLOR_OFF}, not continuing!" >&2 && exit 1
+grep -s "^${DEVICE}" /proc/mounts && print_warn "partition(s) on ${DEVICE} currently mounted, not continuing!" >&2 && exit 1
 
 # loop devices have a different naming scheme (loop3p1 vs sdc1)
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
@@ -112,6 +112,8 @@ debug_pause
 # get partition size in Byte
 size_stick=$(blockdev --getsize64 ${DEVICE})
 
+print_info "calculating partition sizes for $(numfmt --to=iec-i --suffix B ${size_stick}) storage device"
+
 # >~ 114 MB for the filesystem gods
 size_space_buffer=$((1024 * 1024 * 350))
 
@@ -129,63 +131,50 @@ rel_size_partition_iso=$((100 * (size_live_system + size_space_buffer) / size_st
 offset_start_partition_persistence=$((rel_size_partition_fat32 + rel_size_partition_iso))
 
 # [ -e /run/udev/queue ] && rm -v /run/udev/queue && echo "prevented udevadm settle hang by #####"
-[ -e /run/udev/queue ] && echo "prevent udevadm settle hang by #####"
+# here be dragons
+#[ -e /run/udev/queue ] && echo "prevent udevadm settle hang by #####"
 
-# create conventional DOS partition table
+print_info "creating conventional DOS partition table.."
 parted --script ${DEVICE} mklabel msdos
 
 # create an EFI boot & data exchange partition
 parted --script --align=optimal ${DEVICE} mkpart primary fat32 0% ${rel_size_partition_fat32}%
-
-# msdos disk labels do not support partition names, only gpt
-#parted ${DEVICE} name 1 EFIBOOT
-
 parted ${DEVICE} set 1 boot on
-
-# do not set both!
-#parted ${DEVICE} set 1 esp on
-#parted ${DEVICE} set 1 hidden on
+print_info "created 0 - ${rel_size_partition_fat32}% fat32 data exchange / EFI boot partition"
 
 # create the main live-system partition
-parted --script --align=optimal -- ${DEVICE} mkpart primary ext2 ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
+parted --script --align=optimal -- ${DEVICE} mkpart primary ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
+print_info "created ${rel_size_partition_fat32}% - ${offset_start_partition_persistence}% live system partition (will be formatted ext2)"
 
 # create the persistence partition
-parted --script --align=optimal -- ${DEVICE} mkpart primary ext4 ${offset_start_partition_persistence}% 100%
+parted --script --align=optimal -- ${DEVICE} mkpart primary ${offset_start_partition_persistence}% 95%
+print_info "created ${offset_start_partition_persistence}% - 95% persistence partition (will be formatted f2fs)"
 
 MAIN_LABEL=live-system
 
-{
-    # now reread the partition table
-    partprobe ${DEVICE}
-    partprobe --summary ${DEVICE}
-    parted ${DEVICE} align-check minimal 2
-    parted ${DEVICE} align-check optimal 2
-    parted ${DEVICE} align-check minimal 3
-    parted ${DEVICE} align-check optimal 3
-    parted ${DEVICE} print free
+print_info "rereading partition table and checking partition alignment"
+partprobe --summary ${DEVICE}
+parted ${DEVICE} print free
+parted ${DEVICE} align-check minimal 2
+parted ${DEVICE} align-check optimal 2
+parted ${DEVICE} align-check minimal 3
+parted ${DEVICE} align-check optimal 3
 
-    sfdisk --part-type ${DEVICE} 2 0
-    sfdisk --part-type ${DEVICE} 3 0
+print_info "setting 2nd + 3rd partition to type 0 / empty because.. Windows 10"
+sfdisk --part-type ${DEVICE} 2 0
+sfdisk --part-type ${DEVICE} 3 0
 
-    # the EFI boot partition needs to be FAT32 which
-    # is perfect for file exchange with inferior OSs
-    mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
+print_info "creating filesystems"
+# the EFI boot partition needs to be FAT32 which
+# is perfect for file exchange with inferior OSs
+mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
 
-    # the live system main storage partition
-    mkfs.ext2 -L ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
+# the live system main storage partition
+mkfs.ext2 -FL ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
 
-    # persistence storage
-    mkfs.ext4 -L live-memory ${DEVICE}${p}3
-
-    # ext4 is less speed hiccups
-    #mkfs.btrfs -L ${MAIN_LABEL} ${DEVICE}${p}2
-    #mkfs.ntfs --fast --label ${MAIN_LABEL} ${DEVICE}${p}2
-    #mkfs.exfat -n ${MAIN_LABEL} ${DEVICE}${p}2
-
-    # the user data partition that was considered
-    #mkfs.ntfs --fast --label linux-userdata ${DEVICE}${p}3
-    #mkfs.ext4 -L linux-systemdata ${DEVICE}${p}3
-} |& ccze -A -o nolookups
+# persistence storage
+#mkfs.ext4 -L live-memory ${DEVICE}${p}3
+mkfs.f2fs -fd 5 -l live-memory ${DEVICE}${p}3
 
 debug_pause
 
@@ -200,9 +189,9 @@ trap_umount_persistencedirs() {
     umount ${SYSTEM}
 }
 trap_umount_partitions() {
-    umount ${EFIBOOT}
-    umount ${ISOSTORE}
-    umount ${PERSISTENCESTORE}
+    umount -v ${DEVICE}${p}1
+    umount -v ${DEVICE}${p}2
+    umount -v ${DEVICE}${p}3
 }
 
 # create a temporary directory to hold the mounts
@@ -225,7 +214,7 @@ mkdir -pv ${EFIBOOT} ${ISOSTORE} ${PERSISTENCESTORE} ${USERDATA} ${SYSTEMCONFIG}
 # exit TRAP: also remove the created sub directories
 trap "trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
-# mount the partitions
+print_info "mounting partitions"
 mount -v ${DEVICE}${p}1 ${EFIBOOT}
 mount -v ${DEVICE}${p}2 ${ISOSTORE}
 mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
@@ -233,16 +222,14 @@ mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 # exit TRAP: add unmounting storage as first step to the clean-up trap queue
 trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
-# install the grub bootloader for different platforms
-# takes ~19 seconds
-time grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
-# takes ~15 seconds
-time grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
-# takes ~16 seconds
+print_info "installing grub bootloader for i386-pc, i386-efi and x86_64-efi platform to ${DEVICE}"
+print_info "(should take 5-20 seconds each)"
+grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
+grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
 # --uefi-secure-boot is default btw
-time grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
 
-# extract kernel and init ramdisk from ISO
+print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
 iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
 iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ${LIVE_IMAGE}
 
@@ -251,7 +238,7 @@ iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ${LIVE_IMAGE}
 #URL_MEMTEST_ISO=http://www.memtest.org/download/5.01/memtest86+-5.01.iso        #.gz
 #URL_SUPERGRUB2_ISO=https://sourceforge.net/projects/supergrub2/files/2.02s9/super_grub2_disk_2.02s9/super_grub2_disk_hybrid_2.02s9.iso
 
-# fill in grub.cfg template variables
+print_info "filling in grub.cfg template variables"
 export DATE=$(date)
 export MAIN_LABEL
 export STICK_ISO=$(basename ${LIVE_IMAGE})
@@ -296,10 +283,10 @@ BOOTOPTIONS+="mitigations=off "
 # enable root login
 BOOTOPTIONS+="rootpw=Risiko "
 
-# disallow risky administration tasks without password
 if [ "${FAT_LABEL}" = "SCHULSTICK" ]
 then
-        BOOTOPTIONS+="noroot "
+    # disallow risky administration tasks without password
+    BOOTOPTIONS+="noroot "
 fi
 
 # don't scare the meek: silence the boot noise
@@ -312,12 +299,13 @@ BOOTOPTIONS+="loglevel=3 "
 BOOTOPTIONS+="splash"
 
 export BOOTOPTIONS
-echo "'$BOOTOPTIONS'"
+print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
+print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common/grub.cfg.j2"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
 j2 variants/common/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
-# copy bootloader background image — teh glorious FSFW merch!
+print_info "copying bootloader background image — teh glorious FSFW merch!"
 cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
 
 # copy the memdisk bootloader
@@ -326,49 +314,34 @@ if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFI
 # init empty qemu EFI bios file so it can be hidden
 touch ${EFIBOOT}/NvVars
 
-# hide files on first partition in linux file manager
+print_info "hiding files on first partition in linux file manager"
 echo "boot" > ${EFIBOOT}/.hidden
 echo "EFI" >> ${EFIBOOT}/.hidden
 echo "NvVars" >> ${EFIBOOT}/.hidden
 echo "System Volume Information" >> ${EFIBOOT}/.hidden
 
-# mark all files on the EFI partition as hidden system files
-# so it can be used for data exchange with other systems
+print_info "marking files on the EFI partition as hidden system files"
+print_info "(so it can better be used for data exchange with other systems)"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
-# these might become image files on an exfat partition
-#time truncate --size=1G ${MAINSTORE}/linux-userdata.img
-#time truncate --size=128M ${MAINSTORE}/linux-systemconfig.img
-#time truncate --size=256M ${MAINSTORE}/linux-systemdata.img
-#time truncate --size=1G ${MAINSTORE}/linux-system.img
+print_info "preparing persistence volumes"
 
-#time mkfs.ext4 -m 0 -L userdata ${MAINSTORE}/linux-userdata.img
-#time mkfs.ext4 -m 0 -L systemconfig ${MAINSTORE}/linux-systemconfig.img
-#time mkfs.ext4 -m 0 -L systemdata ${MAINSTORE}/linux-systemdata.img
-#time mkfs.ext4 -m 0 -L system ${MAINSTORE}/linux-system.img
-
-# "linux-userdata" vs "EigeneDateien"
 mkdir -pv ${PERSISTENCESTORE}/linux-userdata
-mount -v --bind ${PERSISTENCESTORE}/linux-userdata ${USERDATA}
+mount --bind ${PERSISTENCESTORE}/linux-userdata ${USERDATA}
 
 mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
-mount -v --bind ${PERSISTENCESTORE}/linux-systemconfig ${SYSTEMCONFIG}
+mount --bind ${PERSISTENCESTORE}/linux-systemconfig ${SYSTEMCONFIG}
 
 mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
-mount -v --bind ${PERSISTENCESTORE}/linux-systemdata ${SYSTEMDATA}
+mount --bind ${PERSISTENCESTORE}/linux-systemdata ${SYSTEMDATA}
 
 mkdir -pv ${PERSISTENCESTORE}/linux-system
-mount -v --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
-
-#mount -v ${MAINSTORE}/linux-systemdata.img ${SYSTEMDATA}
-#mount -v ${DEVICE}${p}3 ${SYSTEMDATA}
-#mount -v ${MAINSTORE}/linux-system.img ${SYSTEM}
+mount --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 
 # set up the exit trap to unmount theses bind-mounted persistence directories
 trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # home persistence
-#echo "/home/user bind,source=." > ${USERDATA}/persistence.conf
 echo "/home bind,source=." > ${USERDATA}/persistence.conf
 
 # systemconfig persistence: network connections and printer configuration
@@ -388,30 +361,22 @@ echo "/ union,source=rootfs" >  ${SYSTEM}/persistence.conf
 # union mount for etc allows shipping hotfixes
 echo "/etc union,source=etc" >>  ${SYSTEM}/persistence.conf
 
-# example hotfix 2019-10-22--0
-# mkdir -pv ${SYSTEM}/etc/rw/skel/.mozilla/firefox/fsfw1234.default
-# echo 'user_pref("browser.search.widget.inNavBar", true);' > ${SYSTEM}/etc/rw/skel/.mozilla/firefox/fsfw1234.default/user.js
-
 echo "/var/lib/apt union,source=var-lib-apt" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/aptitude union,source=var-lib-aptitude" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/dlocate union,source=var-lib-dlocate" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
 
-# now actually copy the stick image
+print_info "now copying $(numfmt --to=iec-i --suffix B ${size_live_system}) live ISO image to ${DEVICE}${p}2:/boot"
 mkdir -pv ${ISOSTORE}/boot
-time cp -aviL "${LIVE_IMAGE}" ${ISOSTORE}/boot/
-
-# mark boot dir and image files on main partition as hidden system files
-#fatattr +hs ${MAINSTORE}/{boot,linux-*}
-#fatattr +hs ${MAINSTORE}/{boot,*.img}
+rsync --times --inplace --info=progress2 --human-readable --verbose "${LIVE_IMAGE}" ${ISOSTORE}/boot/
 
 if [ "${HOTFIX}" != "none" ]
 then
     cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
 fi
 
-echo "[ OK ] writing ${STICK_ISO} to ${DEVICE} COMPLETED, unmounting.."
+echo -e "[ ${COLOR_GREEN}OK${COLOR_OFF} ] installing ${STICK_ISO} to ${DEVICE} ${COLOR_GREEN}COMPLETED${COLOR_OFF}, unmounting.."
 debug_pause
 
 # unmounts done by traps
