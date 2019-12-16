@@ -5,4 +5,5 @@
 #
 # You must run update-initramfs(8) to effect this change.
 
+crc32
 f2fs
