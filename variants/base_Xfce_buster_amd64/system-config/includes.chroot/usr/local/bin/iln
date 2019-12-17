@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """interactive symlink editor"""
 
 import readline, sys, pprint, os, termcolor
@@ -10,7 +10,7 @@ def prompt(hint, default=''):
     readline.parse_and_bind('tab: complete')
     #readline.set_completer(path_completer)
     try:
-        return raw_input(hint)
+        return input(hint)
     finally:
         # """ always unset startup hook. """
         readline.set_startup_hook()

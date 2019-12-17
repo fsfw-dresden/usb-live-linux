@@ -145,3 +145,4 @@
 - :x:  udftools  --		tools for UDF filesystems and DVD/CD-R(W) drives
 - :x:  gpart  --		Guess PC disk partition table, find lost partitions
 - :x:  foremost  --		recover lost files based on their headers, footers, and internal data structures
+- :x:  python3-termcolor  --		ANSII Color formatting for output in terminal
