@@ -57,6 +57,7 @@
       <property name="flat-buttons" type="bool" value="false"/>
       <property name="include-all-workspaces" type="bool" value="true"/>
       <property name="show-wireframes" type="bool" value="false"/>
+      <property name="grouping" type="uint" value="1"/>
     </property>
     <property name="plugin-15" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
