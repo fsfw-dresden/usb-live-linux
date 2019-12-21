@@ -4,8 +4,8 @@
 # Kein Backup
 # KEIN MITLEID
 
-. "`dirname "${0}"`/functions.sh"
-. "`dirname "${0}"`/functions.bash"
+. "$(dirname $(realpath "${0}"))/functions.sh"
+. "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
 check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools libcdio-utils dialog ccze
 
