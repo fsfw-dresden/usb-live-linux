@@ -1,4 +1,0 @@
-#!/bin/sh
-# we want to have the gnome-keyring-daemon in Xfce as well - otherwise,
-# network-manager might not show password entry for wifi networks!
-sed -i '/^OnlyShowIn=GNOME;Unity;MATE;$/d' /etc/xdg/autostart/gnome-keyring-*.desktop
