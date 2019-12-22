@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# More Mirrors:
+# http://files.kde.org/marble/newstuff/maps/
+# http://kde-applicationdata.mirrors.omnilance.com/marble/newstuff/maps/
+# http://mirrors.dotsrc.org/kde-applicationdata/marble/newstuff/maps/
+BASEURL="http://ftp5.gwdg.de/pub/linux/kde/extrafiles/marble/newstuff/maps"
+MAPS=""
+MAPS+="agnese1544 "
+MAPS+="behaim1492 "
+MAPS+="blackmarble "
+MAPS+="climatezones "
+MAPS+="hondius1630 "
+MAPS+="mitchell1866 "
+MAPS+="opencyclemap "
+MAPS+="opentopomap "
+MAPS+="public-transport "
+MAPSDIR="/usr/share/marble/data/maps"
+
+cd /tmp
+for MAP in ${MAPS}
+do
+        FILE="${MAP}-marblemap.zip"
+        wget -SNv "${BASEURL}/${FILE}" && unzip -nd "${MAPSDIR}" "${FILE}" && rm -v ${FILE}
+        # increase maximum zoom level for "Earth at Night 2012" map
+        sed -i 's/1500/1800/' "${MAPSDIR}/blackmarble/blackmarble.dgml"
+done
