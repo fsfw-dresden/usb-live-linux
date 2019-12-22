@@ -1,0 +1,3 @@
+#!/bin/sh
+# this will apply Breeze Snow white cursor theme on lightdm, too
+update-alternatives --set x-cursor-theme /etc/X11/cursors/Breeze_Snow.theme
