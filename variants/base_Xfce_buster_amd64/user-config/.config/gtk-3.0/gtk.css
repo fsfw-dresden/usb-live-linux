@@ -1,0 +1,26 @@
+/* These customizations fight thin scrollbars esp. in Adapta theme */
+
+/* This will match firefox, but not GTK programs with overlay scrollbars */
+scrollbar:not(.overlay-indicator) {
+    -GtkScrollbar-has-backward-stepper: 1;
+    -GtkScrollbar-has-forward-stepper: 1;
+}
+
+/* WE THE PEOPLE demand bigger scrollbars! */
+scrollbar slider {
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 8px;
+}
+
+/* Override adapta nokto eta magic */
+scrollbar.vertical slider, scrollbar.vertical.fine-tune slider { min-width: 16px; min-height: 32px; }
+scrollbar.horizontal slider, scrollbar.horizontal.fine-tune slider { min-height: 16px; min-width: 32px; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider { min-width: 16px; }
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider { min-height: 16px; }                       
+
+@keyframes slow_down_vert { from { min-width: 16px; }
+  to { min-width: 24px; } }
+@keyframes slow_down_horz { from { min-height: 16px; }
+  to { min-height: 24px; } }
+
