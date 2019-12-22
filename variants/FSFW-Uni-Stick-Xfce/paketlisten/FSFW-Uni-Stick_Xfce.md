@@ -165,4 +165,5 @@
 - ### :x:  system  -- [](system.md)
 - ### :x:  terminal-environment  -- [](terminal-environment.md)
 - :x:  riot-web  --		feature-rich client for Matrix.org
+- :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
