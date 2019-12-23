@@ -117,8 +117,16 @@ print_info "calculating partition sizes for $(numfmt --to=iec-i --suffix B ${siz
 # >~ 114 MB for the filesystem gods
 size_space_buffer=$((1024 * 1024 * 350))
 
-# 5000MB: for windows portableapps etc.
-size_partition_fat32=$((1024 * 1024 * 5000))
+if [ "${FAT_LABEL}" = "SCHULSTICK" ]
+then
+    # 2000MB: space for exchange, no portableapps yet
+    size_mb_partition_fat32=2000
+else
+    # 5000MB: for windows portableapps etc.
+    size_mb_partition_fat32=5000
+fi
+
+size_partition_fat32=$((1024 * 1024 * size_mb_partition_fat32))
 rel_size_partition_fat32=$((100 * size_partition_fat32 / size_stick))
 
 # get ISO live image size in Byte
