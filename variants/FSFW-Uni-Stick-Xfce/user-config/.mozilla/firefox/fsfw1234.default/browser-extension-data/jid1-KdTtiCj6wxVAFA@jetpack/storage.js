@@ -18,7 +18,7 @@
   "popupAnimationDuration": 100,
   "popupBackgroundColor": "#FFFFFF",
   "popupBorderRadius": 2,
-  "popupDelay": 100,
+  "popupDelay": 300,
   "popupDisableCommand": "Ctrl+Shift+U",
   "popupHighlightColor": "#3399FF",
   "popupItemBorderRadius": 0,
