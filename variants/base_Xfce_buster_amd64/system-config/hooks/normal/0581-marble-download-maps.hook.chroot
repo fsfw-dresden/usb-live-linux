@@ -23,5 +23,5 @@ do
         FILE="${MAP}-marblemap.zip"
         wget -SNv "${BASEURL}/${FILE}" && unzip -nd "${MAPSDIR}" "${FILE}" && rm -v ${FILE}
         # increase maximum zoom level for "Earth at Night 2012" map
-        sed -i 's/1500/1800/' "${MAPSDIR}/blackmarble/blackmarble.dgml"
+        sed -i 's/1500/1800/' "${MAPSDIR}/earth/blackmarble/blackmarble.dgml"
 done
