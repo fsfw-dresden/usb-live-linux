@@ -1,0 +1,4 @@
+# more current blender (fixed 2019-12-25)
+Package: blender* libc-bin libc6 libc6-dev libc-dev-bin libopencolorio* libopenimageio*
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
