@@ -15,7 +15,7 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 
-. "`dirname "${0}"`/functions.sh"
+. "$(dirname $(realpath "${0}"))/functions.sh"
 cd_repo_root
 
 BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
