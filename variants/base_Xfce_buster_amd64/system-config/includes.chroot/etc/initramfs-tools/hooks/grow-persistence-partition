@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# Copy utilities needed by 0050-grow-persistence-partition live-boot hook to initramfs
+
+if [ "$1" = "prereqs" ]; then exit 0; fi
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /usr/bin/partx
+copy_exec /sbin/sfdisk
+copy_exec /sbin/resize.f2fs
