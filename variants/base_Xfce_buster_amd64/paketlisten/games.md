@@ -90,6 +90,7 @@
 - :x:  kfourinline  --	Connect Four game
 - :x:  kgoldrunner  --	Lode Runner arcade game
 - :x:  kigo  --		go game
+- :x:  gnugo  --	go engine for kigo
 - :x:  kiriki  --	Yahtzee dice game
 - :x:  kjumpingcube  --	simple tactical game
 - :x:  klickety  --	SameGame puzzle game
