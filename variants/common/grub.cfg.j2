@@ -75,6 +75,7 @@ menuentry " " {
 
 submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 
+  set isofile=/boot/{{ STICK_ISO }}
   menuentry "Alle Änderungen am Stick zurücksetzen (!löscht ALLE geänderten Dateien!)" {
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove
       initrd /boot/initrd.img
@@ -94,6 +95,7 @@ submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 
 submenu "  [ Expertenoptionen ]" {
 
+  set isofile=/boot/{{ STICK_ISO }}
   menuentry "Live-System Rettungsmodus (mit Persistenz) ({{ STICK_VERSION }})" {
       linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single persistence
       initrd /boot/initrd.img
