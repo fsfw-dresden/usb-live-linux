@@ -52,7 +52,7 @@ Live ()
 		else
 			if [ -x /usr/bin/memdiskfind ]
 			then
-				if ! MEMDISK=$(/usr/bin/memdiskfind)
+				if MEMDISK=$(/usr/bin/memdiskfind)
 				then
 					# We found a memdisk, set up phram
 					# Sometimes "modprobe phram" can not successfully create /dev/mtd0.
