@@ -70,6 +70,7 @@
 - :x:  syslinux-common  --		suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
 - :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
 - :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
+- :x:  profile-sync-daemon  --	manage your browsers profile in RAM, periodically syncing it back to disk (reduce flash writes & latency)
 
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
