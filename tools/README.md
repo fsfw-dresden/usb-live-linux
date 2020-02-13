@@ -15,7 +15,7 @@ Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene relevante Ima
 
 # Stick-Image erstellen
 
-(getestet auf Debian stretch - LANG=de_DE.UTF-8 - 2018-08-20)
+(getestet auf Debian buster - LANG=de_DE.UTF-8 - 2019-09-14)
 
 Das Skript **FSFW_-_USB-Stick_erstellen.sh** eignet sich, um die im live-build erstellte **FSFW-Uni-Stick_*_KDE_stretch-amd64.hybrid.iso**
 auf ein Speichermedium z.B USB-Stick oder in ein Image zu bringen.

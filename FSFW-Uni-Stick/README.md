@@ -2,13 +2,13 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 # Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
-(getestet auf Debian "stretch"  - 2018-08-20)
+(getestet auf Debian "buster"  - 2019-06-06)
 
 ## Erstellen
 
-Wichtigste Komponente im Build-Prozess ist das Paket `live-build`, außerdem werden weitere Pakete benötigt:
+Wichtigste Komponenten im Build-Prozess sind die Pakete `open-infrastructure-system-*`, außerdem werden weitere Pakete benötigt:
 
-    $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync
+    $ sudo apt-get update && sudo apt-get install open-infrastructure-system-* pandoc python3 perl sudo wget rsync
 
 
 Herunterladen der benötigeten Dateien
@@ -48,14 +48,14 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
   
 * Benutzerberechtigung ändern (bisher gehört die .iso-Datei root)
 
-  ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_*_stretch-amd64.hybrid.iso `  und nach ../images verschieben
+  ` $ sudo chown ${USER}:${USER} FSFW-Uni-Stick_*_-amd64.hybrid.iso `  und nach ../images verschieben
 
  
 ## Live-Image in einer virtuell Maschine testen
 
 * Image mittels kvm (Kernel-based Virtual Machine) bzw. qemu testen
 
-  ` $ kvm -m 2048 -cdrom ../images/FSFW-Uni-Stick_*_stretch-amd64.hybrid.iso `
+  ` $ kvm -m 2048 -cdrom ../images/FSFW-Uni-Stick_*_-amd64.hybrid.iso `
 
   * Option -m (Speicher in MB, der vom Gastsystem benutzt wird) -- kann auch größer gewählt werden, je nachdem wieviel Arbeitsspeicher dein Rechner hat
   

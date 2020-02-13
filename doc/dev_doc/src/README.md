@@ -15,7 +15,7 @@ Dieses Verzeichnis enthält technische Dokumentation mit der Zielgruppe Entwickl
 ## Übersicht Verzeichnisse - Inhalt 
 
 * __FSFW-Uni-Stick__	-- hier wird der Stick erstellt - ( ausführen von ./fsfw-uni-stick_build.sh )
-* __config__
+* __variants__
    - __FSFW-Uni-Stick_KDE_stretch_amd64__ -- config zum erstellen einer Variante
       - __doc__ -- Paketlisten und spezielle Doku und Hinweise für diese Konfigurationsvariante
         - __src__ --	hier sind die *.md - Vorlagen für die Erstellung der *.html Doku ( *.md Dateien werden auf github direkt angezeigt)

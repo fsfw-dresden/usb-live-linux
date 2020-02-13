@@ -1,0 +1,26 @@
+[Appmenu Style]
+Style=InApplication
+
+[General]
+Name=Oxygen
+XftAntialias=true
+XftHintStyle=hintmedium
+XftSubPixel=none
+shadeSortColumn=true
+
+[Icons]
+Theme=oxygen
+
+[KDE]
+LookAndFeelPackage=org.kde.oxygen
+ShowIconsInMenuItems=true
+ShowIconsOnPushButtons=true
+contrast=7
+widgetStyle=oxygen
+
+[Toolbar style]
+ToolButtonStyle=TextBesideIcon
+ToolButtonStyleOtherToolbars=TextBesideIcon
+
+[Translations]
+LANGUAGE=de:en_GB:en_US

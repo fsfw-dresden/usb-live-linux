@@ -6,25 +6,21 @@
 #        	Nutzung variabler configurationen möglich
 #		alle Schritte in diesem Skript können auch einzeln ausgeführt werden 
 #
-#      VERSION: 0.0.3
+#      VERSION: 0.0.4
 #      OPTIONS: TUDO: = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
-#		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_jessie_amd64 (default)
+#		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_buster_amd64 (default)
 #
-#        NOTES: für - live-build - Debian jessie / Debian stretch - LANG=de_DE.UTF-8
+#        NOTES: für - open-infrastructure-system-* (live-build) - Debian jessie / Debian stretch / Debian buster - LANG=de_DE.UTF-8
 #               
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 2018-04-16
+#     REVISION: 2019-06-12
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
-
-# TODO: Skript Installation auf benötigte Pakete testen
-
-# 	sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu live-build live-config-systemd live-boot
-
+#
 # Dialog welche Aufgaben sollen eredigt werden ? - default alle ?
 #
 #	FSFW_UNI_Stick_*.iso bauen (CD-Image)
@@ -34,23 +30,21 @@
 #	Windows Programme copieren ( auf WIN-DATEN Partition )
 #
 #
+. $(git rev-parse --show-toplevel)/tools/functions.sh
 
-FSFW_UNI_STICK_CONFIG_DEFAULT="FSFW-Uni-Stick_KDE_stretch_amd64"
 
-FSFW_UNI_STICK_CONFIG=$1
-echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
+# Skript Installation auf benötigte Pakete testen
 
-# TUDO: testen ob Verzeichnis und config vorhanden existieren
+PAKET_INSTALLED_LIST="sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu open-infrastructure-system-boot open-infrastructure-system-build open-infrastructure-system-config open-infrastructure-system-images"
 
-if [[ -z ${FSFW_UNI_STICK_CONFIG} ]]; then
-    FSFW_UNI_STICK_CONFIG=${FSFW_UNI_STICK_CONFIG_DEFAULT}
-    echo "FSFW-Uni-Stick config: ${FSFW_UNI_STICK_CONFIG} " 
-fi
+check_program_installed ${PAKET_INSTALLED_LIST}
 
 
 # Der eigentliche Skript-Inhalt liegt innerhalb der folgenden Funktion
 # deren Ausgabe kann dann gleichzeitig in ein Dateien und nach stdout geleitet werden
 main_function() {
+
+variant_path_set ${@}
 
 # Hinweis bzgl. benötigter superuser-Rechete
 
@@ -66,57 +60,63 @@ fi
 # live-build Umgebung aufräumen
 sudo lb clean
 
-# System Configuration einspielen
-../tools/fsfw-uni-stick_system-config.sh "${FSFW_UNI_STICK_CONFIG}"
+# set build config - System Configuration einspielen
 
+variant_config_set
+variant_system_config_sync
 
 # Paketlisten generieren
- if [ -e ../config/${FSFW_UNI_STICK_CONFIG}/paketliste ]; then
-	 echo " ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)  wird ausgeführt "
-	 ./auto/paketliste $(cat ../config/${FSFW_UNI_STICK_CONFIG}/paketliste)
+ if [ -e ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default ]; then
+	 echo " ../tools/md2package-lists.sh ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default)  wird ausgeführt "
+	 $(repo_root)/tools/md2package-lists.sh ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/$(readlink ${VARIANT_PATH}/${BUILD_VARIANT}/paketlisten/default)
 	else
-	 ./auto/paketliste
-	 echo " ./auto/paketliste wird ausgeführt "
+	 $(repo_root)/tools/md2package-lists.sh
+	 echo " ../tools/md2package-lists.sh wird ausgeführt "
  fi
 
 # extra Pakete holen
 
 # TODO:
-#script extra-install_paket.sh 	# Paketlisten nach extra-instell Pakenten durchsuchen und download nach config/packages.chroot/*
-../tools/extra-install_paket.sh "${FSFW_UNI_STICK_CONFIG}"
+#script extra-install_paket.sh 	# Paketlisten nach extra-install Paketen durchsuchen und download nach config/packages.chroot/*
+$(repo_root)/tools/extra-install_paket.sh
 
 # Doku bauen und verteilen
 
 # TODO: 
 #script doku_create.sh		# ../html/*  --> ../../FSFW-Uni-Stick/config/includes.chroot/var/www/
-../tools/doku_create.sh
+$(repo_root)/tools/doku_create.sh
 
 # FSFW user config erstellen
 # in multiconfig neue Aufteilung der user configuration  -- alt  ../tools/fsfw-user_config.sh (erstellt nur noch fsfw-user spezifische Teile)
 
-echo " ../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"  ausführen "
+echo " ../tools/fsfw-uni-stick_user-config.sh "${BUILD_VARIANT}"  ausführen "
 
-../tools/fsfw-uni-stick_user-config.sh "${FSFW_UNI_STICK_CONFIG}"
+$(repo_root)/tools/fsfw-uni-stick_user-config.sh
 
 # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt 
 # sudo lb config
 # sudo chown -R ${USER}:${USER} ./config
 
 # live-build config generieren und FSFW_UNI_Stick_*.iso bauen
-sudo lb build
+# sudo lb build
+
+sudo lb config 2>&1 | tee config_build.log
+sudo lb bootstrap 2>&1 | tee bootstrap_build.log
+sudo lb chroot 2>&1 | tee chroot_build.log
+sudo lb binary 2>&1 | tee binary_build.log
 
 # Benutzerberechtigung ändern 
 echo "Benutzerberechtigung ändern "
-sudo chown ${USER}:${USER} ./FSFW-Uni-Stick*.iso
+sudo chown ${USER}:${USER} ./*.iso
 
 # Image ins Verzeichnis images verschieben
 
-  if [ ! -d ../images/ ]; then
-	 mkdir -p ../images/
+  if [ ! -d $(repo_root)/images/ ]; then
+	 mkdir -p $(repo_root)/images/
 	 echo " Verzeichnis images erstellt."
   fi 
 
-mv ./FSFW-Uni-Stick*.iso ../images/
+mv ./*.iso $(repo_root)/images/
 
 # TODO:
 # USB-Stick erstellen - Speichergerät partitionieren,formatieren - FSFW_UNI_Stick_*.iso schreiben
@@ -140,9 +140,14 @@ mv ./FSFW-Uni-Stick*.iso ../images/
 # create Torrent with Webseed
 # create Magnet Link
 
+
+# exportierte Variablen löschen
+
+unset VARIANT_PATH
+unset BUILD_VARIANT
+
 }
 
-
-main_function 2>&1 | tee -a fsfw-build-script.log
+main_function ${@} 2>&1 | tee fsfw-build-script.log
 
 
