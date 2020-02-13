@@ -2,13 +2,17 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 # Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
-(getestet auf Debian "buster"  - 2019-06-06)
+(getestet auf Debian "buster"  - 2020-02-12)
 
 ## Erstellen
 
 Wichtigste Komponenten im Build-Prozess sind die Pakete `live-build`, außerdem werden weitere Pakete benötigt:
 
     $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync
+
+## Achtung bei Fehlermeldungen siehe auch:
+
+* [hotfix debian-live](../doc/live-build_hotfix/README.md)
 
 
 Herunterladen der benötigeten Dateien
