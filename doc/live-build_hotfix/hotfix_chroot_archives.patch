@@ -1,0 +1,28 @@
+--- /usr/lib/live/build/chroot_archives	2019-03-11 10:05:40.000000000 +0000
++++ ./hotfix_chroot_archives	2020-02-13 12:07:40.686390848 +0000
+@@ -253,6 +253,25 @@
+ 				done
+ 			fi
+ 
++			# Check local archive keys
++			if Find_files config/archives/*.key || \
++			   Find_files config/archives/*.key.chroot
++			then
++				for FILE in config/archives/*.key \
++					    config/archives/*.key.chroot
++				do
++					if [ -e "${FILE}" ]
++					then
++						if grep -q "PGP PUBLIC KEY BLOCK" "${FILE}"
++						then
++							cp ${FILE} chroot/etc/apt/trusted.gpg.d/$(basename ${FILE}).asc
++						else
++							cp ${FILE} chroot/etc/apt/trusted.gpg.d/$(basename ${FILE}).gpg
++						fi
++					fi
++				done
++			fi
++
+ 			if Find_files chroot/root/packages/*.deb
+ 			then
+ 				# If we bootstrapped a minimal chroot, we need
