@@ -21,6 +21,8 @@
 - :o:  ebtables  --	Verwaltung von Ethernet-Bridge-Frame-Tabellen 
 - :o:  iproute2  --	Werkzeuge für Netzwerk(verkehrs)kontrolle
 
+- :x:  wakeonlan  --	Sendet »magische Pakete« zu »Wake-on-LAN«-fähigen Ethernet-Adaptern
+
 
 - ###  Wlan - Tools
 
