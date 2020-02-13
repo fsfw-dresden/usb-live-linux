@@ -11,7 +11,7 @@ Dieses Repo enthält
 * Konfigurationsdateien,
 
 die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
-Das erstellte System basiert derzeit (Stand 06-2019) auf Debian-Live open-infrastructure-system-* , Desktop: kde, Architektur: amd64, Kernel: 4.19.
+Das erstellte System basiert derzeit (Stand 06-2019) auf Debian-Live , Desktop: kde, Architektur: amd64, Kernel: 4.19.
 
 
 **Screenshot vom Desktop: 2018-08-18 **

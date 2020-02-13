@@ -6,9 +6,9 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 ## Erstellen
 
-Wichtigste Komponenten im Build-Prozess sind die Pakete `open-infrastructure-system-*`, außerdem werden weitere Pakete benötigt:
+Wichtigste Komponenten im Build-Prozess sind die Pakete `live-build`, außerdem werden weitere Pakete benötigt:
 
-    $ sudo apt-get update && sudo apt-get install open-infrastructure-system-* pandoc python3 perl sudo wget rsync
+    $ sudo apt-get update && sudo apt-get install live-build pandoc python3 perl sudo wget rsync
 
 
 Herunterladen der benötigeten Dateien

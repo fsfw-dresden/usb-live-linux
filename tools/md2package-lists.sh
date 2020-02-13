@@ -6,7 +6,7 @@
 #        
 #      VERSION: 0.0.5
 #      OPTIONS: PAKETLISTE-1 PAKETLISTE-2 ....  # ohne Option (Default) $1 = FSFW_UNI_Stick_-_Paketliste.md
-#        NOTES: für - open-infrastructure-system-* (live-build) Debian jessie / Debian stretch / Debian buster
+#        NOTES: für - live-build Debian jessie / Debian stretch / Debian buster
 #               - es können mehrere PAKETLISTEN kombiniert werden.
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de

@@ -46,4 +46,3 @@ do
 done
 
 echo "FSFW Doku-Erstellung fertig."
-

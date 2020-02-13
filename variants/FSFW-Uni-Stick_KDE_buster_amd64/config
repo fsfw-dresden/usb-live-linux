@@ -14,8 +14,10 @@ lb config noauto \
     --linux-packages linux-image \
     --linux-flavours "amd64" \
     --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
+    --cache-indices false \
     --cache-packages true \
     --source false \
+    --debian-installer false \
     --bootloader "syslinux,grub-efi" \
     --system live \
     --updates true --backports=true --security=true \
@@ -35,13 +37,14 @@ lb config noauto \
     --keyring-packages "debian-keyring deb-multimedia-keyring" \
     --chroot-filesystem squashfs \
     --binary-filesystem ext2 \
-    --initramfs system-boot \
+    --initramfs live-boot \
     --apt-source-archives false \
     --apt apt \
     --apt-indices false \
     --apt-recommends false \
     --initsystem systemd \
     --firmware-chroot false \
+    --firmware-binary true \
 	"${@}"
 
 
@@ -64,6 +67,4 @@ lb config noauto \
     --image-name FSFW-Uni-Stick_${FSFW_UNI_STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
 	"${@}"
 fi
-
-
 

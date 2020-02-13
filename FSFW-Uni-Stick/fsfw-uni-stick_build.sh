@@ -11,7 +11,7 @@
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
 #		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_buster_amd64 (default)
 #
-#        NOTES: für - open-infrastructure-system-* (live-build) - Debian jessie / Debian stretch / Debian buster - LANG=de_DE.UTF-8
+#        NOTES: für - live-build - Debian jessie / Debian stretch / Debian buster - LANG=de_DE.UTF-8
 #               
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
@@ -35,7 +35,7 @@
 
 # Skript Installation auf benötigte Pakete testen
 
-PAKET_INSTALLED_LIST="sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu open-infrastructure-system-boot open-infrastructure-system-build open-infrastructure-system-config open-infrastructure-system-images"
+PAKET_INSTALLED_LIST="sudo grub2 parted dosfstools gzip syslinux-common wget dialog util-linux pandoc qemu live-build live-boot live-config live-config-systemd "
 
 check_program_installed ${PAKET_INSTALLED_LIST}
 
@@ -149,5 +149,3 @@ unset BUILD_VARIANT
 }
 
 main_function ${@} 2>&1 | tee fsfw-build-script.log
-
-
