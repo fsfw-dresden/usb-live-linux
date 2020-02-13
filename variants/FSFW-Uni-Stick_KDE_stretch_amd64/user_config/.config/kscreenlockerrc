@@ -1,6 +1,0 @@
-[Daemon]
-Autolock=false
-LockOnResume=false
-
-[Greeter]
-Theme=org.kde.oxygen
