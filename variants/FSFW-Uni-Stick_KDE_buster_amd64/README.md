@@ -2,7 +2,7 @@ Das Verzeichnis **FSF-Uni-Stick** enthält die wesentlichen Dateien, um das Linu
 
 # Kurzanleitung zum Erstellen und Testen des Live-Linux Images für den FSFW-Uni-Stick
 
-(getestet auf Debian "buster"  - 2019-06-19)
+(getestet auf Debian "buster"  - 2020-02-14)
 
 ## Erstellen
 
@@ -14,6 +14,10 @@ Wichtigste Komponente im Build-Prozess ist das Paket `live-build`, außerdem wer
 Herunterladen der benötigeten Dateien
 
   ` $ git clone https://github.com/fsfw-dresden/usb-live-linux.git `
+
+alternativ
+
+  ` $ git clone -b branchname https://github.com/fsfw-dresden/usb-live-linux.git `
 
 In das Arbeitsverzeichnis wechseln
 
@@ -32,9 +36,9 @@ Dieses Skript führt im Wesentlichen folgende Schritte aus:
 
 * Paketlisten generieren - extra Pakete holen
 
-  ` $ auto/paketliste `
+  ` $ ../tools/md2package-lists.sh `
 
-  ` $ ../tools/extra-install_paket.sh	`
+  ` $ ../tools/extra-install_paket.sh `
 
 * FSFW Doku im HTML-Format erzeugen, user config anpassen (optional)
 
