@@ -177,16 +177,16 @@ if    [[ -z "$@" ]]; then
     else
         # Sollen vorhandene Paketlisten gelöscht werden ?
         echo " $@ wurde ausgewählt" 
-                echo " Es sollen neue Packetlisten generiert werden ! "
-                echo " Möchten Sie alle vorhandenen Paketlisten vorher löschen ? "
-                echo " Geben sie >> y << ein und die Eingabetaste. "
-                echo " "
-                echo " Die vorhanden Pakeklisten erweitern - mit jeder anderen Taste. "
-                read NEUE_LISTEN
-                if [ "$NEUE_LISTEN" == 'y' ]; then
-                    echo " Listen löschen "
+#                echo " Es sollen neue Paketlisten generiert werden ! "
+#                echo " Möchten Sie alle vorhandenen Paketlisten vorher löschen ? "
+#                echo " Geben sie >> y << ein und die Eingabetaste. "
+#                echo " "
+#                echo " Die vorhanden Paketlisten erweitern - mit jeder anderen Taste. "
+#                read NEUE_LISTEN
+#                if [ "$NEUE_LISTEN" == 'y' ]; then
+                    echo " Paketlisten löschen "
                     del_paketlist
-                fi
+#                fi
         for paketliste in $@
             do
             PAKETLISTE=${paketliste}
@@ -200,6 +200,3 @@ fi
 
 echo "##############################"
 # echo "Paketlisten-Erstellung fertig."
-
-
-
