@@ -21,7 +21,7 @@ do
 done
 
 mkdir -pv config/includes.chroot/${DOC_PATH#/}
-rsync -avP doc/html/ config/includes.chroot/${DOC_PATH#/}/
+rsync -aP doc/html/ config/includes.chroot/${DOC_PATH#/}/
 
 echo "FSFW Doku-Erstellung und Verteilung fertig."
 

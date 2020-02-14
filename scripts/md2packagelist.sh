@@ -1,4 +1,4 @@
-#!/bin/bash -xv
+#!/bin/bash
 #===========================================
 #         FILE: md2packagelist
 #        USAGE: auto/md2packagelist - ( ausführen im live-build-Verzeichnis )
