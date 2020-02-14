@@ -77,7 +77,7 @@ variant_system_config_sync() {
 check_program_installed() {
 	for paket in ${@}
 	do
-	    if ! dpkg --list | grep -q "ii  ${paket}" ; then
+	    if ! dpkg --list | grep -qF "ii  ${paket} " ; then
 		paket_not_installed="${paket_not_installed} ${paket}"
 	    fi
 	done
