@@ -1,11 +1,11 @@
 [//]: # (Das ist ein Markdown-Kommentar; Text wird nicht gerendert)
-[//]: # (Carsten: Vorschlag: wir können diese Syntax nutzen, um Kommentare in die Liste zu schreiben, ohne die Markdown-Synax zu zerstören.)
-
 
 # Paketliste für FSFW UNI Stick (USB-Live-Stick) 
 
->  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste
->  ` $ sudo ./auto/paketliste `   --  im build-Verzeichnis ausführen
+>  zum automatisierten erstellen der Paketlisten aus dieser Doku Paketliste --  im live-build-Verzeichnis ausführen
+>  ` rechner:~/usb-live-linux/FSFW-Uni-Stick$ . ../tools/functions.sh  `
+>  ` rechner:~/usb-live-linux/FSFW-Uni-Stick$ . ../tools/functions.sh & variant_path_set ~/usb-live-linux/variants/FSFW-Uni-Stick__KDE_buster_amd64  `
+>  ` rechner:~/usb-live-linux/FSFW-Uni-Stick$ . ../tools/md2package-list.sh ~/usb-live-linux/variants/FSFW-Uni-Stick__KDE_buster_amd64/paketlisten/default `
 >
 >
 > ##  Syntax für die Paketlisten
@@ -79,10 +79,6 @@
 
 - ### :o:  task-cinnamon-desktop  --
 
-##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
-
-- ### :o:  accessibility  -- [Software zur Barrierereduzierung](accessibility.md) - Accessibility-Paketliste 
-
 
 ##  Desktop office  -- Büroprogrammsammlung - E-Mail - Browser - Editor - Tabellenkalkulation - Zeichenprogramm - Präsentation - Datenbank
 
@@ -125,15 +121,6 @@
 - ### :x:  programmieren-ide  --  [Programmier IDEs](programmieren-ide.md) - Editoren - Programmierumgebungen - Java - arduino - scratch
 
 
-##  Terminal Tools  --
-
-- ### :x:  terminal-tools  -- [Terminal Tools](terminal-tools.md) - Programme die keine Grafische Oberfläche benötigen
-
-- ### :x:  system-tools  -- [System Tools](system-tools.md)
-
-- ### :x:  german-user  -- [German User](german-user.md) - System Tools - Deutsche Sprachpakete
-
-
 ##  System-Tools  --  Virtualisierung - Netzwerk
 
 - ### :x:  datenbanken  -- [Datenbanken](datenbanken.md) - 
@@ -143,7 +130,28 @@
 - ### :x:  netzwerk-tools  -- [Netzwerk Tools](netzwerk-tools.md) - Netzwerkanalyse - Verwaltung - Werkzeuge - Wlan -
 
 
-##  System Tools  --
+##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
+
+- ### :o:  accessibility  -- [Software zur Barrierereduzierung](accessibility.md) - Accessibility-Paketliste 
+
+
+##  terminal accessibility  -- Barrierereduzierung für Anwender mit Handicap
+
+- ### :o:  terminal-accessibility  -- [Software zur Barrierereduzierung](terminal-accessibility.md) - Accessibility-Paketliste 
+
+
+##  terminal tools  --
+
+- ### :x:  terminal-tools  -- [Terminal Tools](terminal-tools.md) - Programme die keine Grafische Oberfläche benötigen
+
+- ### :x:  german-user  -- [German User](german-user.md) - System Tools - Deutsche Sprachpakete
+
+
+##  system tools  --
+
+- ### :x:  system-tools  -- [System Tools](system-tools.md)
+
+- ### :x:  server-tools  -- [Server Tools](server-tools.md)
 
 - ### :x:  recommends  -- [Recommends](recommends.md) - Pakete die installiert werden sollten wenn > lb config --apt-recommends < verwendet wird
 

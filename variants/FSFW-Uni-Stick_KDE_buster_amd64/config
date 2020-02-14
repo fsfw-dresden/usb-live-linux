@@ -4,6 +4,26 @@ set -e
 
 DISTRIBUTION=buster
 DESKTOP=KDE
+
+LIVE_HOSTNAME=fsfw-live
+
+LIVE_LOCALES=de_DE.UTF-8,en_US.UTF-8,en_GB.UTF-8
+LIVE_TIMEZONE=Europe/Berlin
+
+LIVE_USERNAME=user
+LIVE_CONFIG_NOAUTOLOGIN="false"
+LIVE_CONFIG_NOROOT="false"
+LIVE_USER_DEFAULT_GROUPS=audio,cdrom,dip,floppy,video,plugdev,netdev,powerdev,scanner,bluetooth,fuse,users,sudo,lpadmin,debian-tor
+
+LIVE_KEYBOARD_MODEL=pc105
+LIVE_KEYBOARD_LAYOUTS=de
+LIVE_KEYBOARD_OPTIONS=""
+LIVE_KEYBOARD_VARIANTS=""
+
+LIVE_WLAN_DRIVER=""
+LIVE_XORG_DRIVER=""
+LIVE_CONFIG_DEBUG="true"
+
 FSFW_UNI_STICK_VERSION="$(echo "$(../tools/calc-version-number.sh)")"
 
 lb config noauto \
@@ -32,7 +52,7 @@ lb config noauto \
     --mirror-binary http://ftp.de.debian.org/debian/ \
     --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
     --debootstrap-options "--include=gnupg --variant=minbase" \
-    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de vga=current" \
+    --bootappend-live "boot=live components" \
     --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
     --keyring-packages "debian-keyring deb-multimedia-keyring" \
     --chroot-filesystem squashfs \
@@ -47,15 +67,6 @@ lb config noauto \
     --firmware-binary true \
 	"${@}"
 
-
-# für minimal
-#
-#    --debootstrap-options --variant=minbase \		##
-#    --apt-indices false \
-#    --apt-recommends false \			
-#    --memtest none \
-
-
 # Branchname im Image-Nammen setzen
 
 nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
@@ -68,3 +79,19 @@ lb config noauto \
 	"${@}"
 fi
 
+# live config nach config/includes.chroot/etc/live/config.conf.d/system.conf  schreiben
+
+# teste ob Verzeichnis existiert - wenn nein  --> erstellen
+if [ ! -d config/includes.chroot/etc/live/config.conf.d ] ; then
+    mkdir -p  config/includes.chroot/etc/live/config.conf.d
+fi
+
+# config/includes.chroot/etc/live/config.conf.d/system.conf	erstellen
+
+for livevar in ${!LIVE_*}
+    do
+	if [ -n "${!livevar}" ]
+	    then
+		echo "${livevar}=${!livevar}" >> config/includes.chroot/etc/live/config.conf.d/system-live-config.conf
+	fi
+    done
