@@ -1,0 +1,25 @@
+--- /lib/live/build/chroot_archives	2019-02-02 10:32:44.000000000 +0000
++++ ./hotfix_chroot_archives	2020-02-14 08:00:46.236676594 +0000
+@@ -253,6 +253,22 @@
+ 				done
+ 			fi
+ 
++			# Check local archive keys
++			if Find_files config/archives/*.key || \
++			   Find_files config/archives/*.key.chroot
++			then
++				for FILE in config/archives/*.key \
++					    config/archives/*.key.chroot
++				do
++					if [ -e "${FILE}" ]
++					then
++						cp ${FILE} chroot/root
++						Chroot chroot "apt-key add /root/$(basename ${FILE})"
++						rm -f chroot/root/$(basename ${FILE})
++					fi
++				done
++			fi
++
+ 			if Find_files chroot/root/packages/*.deb
+ 			then
+ 				# If we bootstrapped a minimal chroot, we need
