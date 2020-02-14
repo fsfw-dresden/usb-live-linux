@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  schedule:
+    - cron: "30 13 * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build this
+      run: |
+        sh -xv scripts/build-live-system.sh
