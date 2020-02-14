@@ -69,7 +69,7 @@ variant_config_set() {
 
 variant_system_config_sync() {
     echo " system_config variant = ${BUILD_VARIANT} aktualliesieren "
-    rsync -avP ${VARIANT_PATH}/${BUILD_VARIANT}/system_config/ config
+    rsync -avP ${VARIANT_PATH}/${BUILD_VARIANT}/system_config*/ config
     echo " system_config  aktuallisiert fertig."
 }
 

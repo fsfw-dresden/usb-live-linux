@@ -4,9 +4,10 @@
 #        USAGE: ./fsfw-uni-stick_build.sh - ( ausführen im live-build-Verzeichnis )
 #  DESCRIPTION: erstellen des FSFW-Uni-Stick
 #        	Nutzung variabler configurationen möglich
+#        USAGE: ./fsfw-uni-stick_build.sh path/uni-stick_variante - ( ausführen im live-build-Verzeichnis )
 #		alle Schritte in diesem Skript können auch einzeln ausgeführt werden 
 #
-#      VERSION: 0.0.4
+#      VERSION: 0.0.5
 #      OPTIONS: TUDO: = DEVICE=/dev/sd... Gerät/USB-Stick der benutzt werden soll
 #		     (zu formatierendes Gerät/Device .z.B.: /dev/sdb )
 #		$1 TUDO: -c (--config) build-configuration  .z.B.: FSFW-Uni-Stick_KDE_buster_amd64 (default)
@@ -16,7 +17,7 @@
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 2019-06-12
+#     REVISION: 2020-02-14
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
