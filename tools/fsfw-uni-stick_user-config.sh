@@ -46,7 +46,7 @@ echo "git-revision = https://github.com/fsfw-dresden/usb-live-linux/tree/$(git r
 
 echo "user_config  schreiben "
 
-rsync -avP --exclude=src/ ${VARIANT_PATH}/${BUILD_VARIANT}/user_config/ config/includes.chroot/etc/skel 
+rsync -avP --exclude=src/ ${VARIANT_PATH}/${BUILD_VARIANT}/user_config*/ config/includes.chroot/etc/skel 
 
 echo "user_config  configuration fertig."
 
