@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /usr/share/initramfs-tools/hook-functions
+
+if [ -x "/lib/cryptsetup/askpass" ]; then
+        copy_exec /lib/cryptsetup/askpass
+fi
+
+if [ -x "/sbin/cryptsetup" ]; then
+        copy_exec /sbin/cryptsetup
+fi
+
+exit 0
