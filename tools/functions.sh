@@ -63,9 +63,16 @@ variant_path_set() {
 
 variant_config_set() {
     rm ./auto/config
-    ln -s ${VARIANT_PATH}/${BUILD_VARIANT}/config ./auto/config
-    echo " ${VARIANT_PATH}/${BUILD_VARIANT}/config  aktiviert "
+    if [[ ${VARIANT_PATH} == "../variants" ]]; then
+	    ln -s ../${VARIANT_PATH}/${BUILD_VARIANT}/config ./auto/config
+	    echo " ../${VARIANT_PATH}/${BUILD_VARIANT}/config  aktiviert "
+	else
+	    ln -s ${VARIANT_PATH}/${BUILD_VARIANT}/config ./auto/config
+	    echo " ${VARIANT_PATH}/${BUILD_VARIANT}/config  aktiviert "
+    fi
+
 }
+
 
 variant_system_config_sync() {
     echo " system_config variant = ${BUILD_VARIANT} aktualliesieren "
