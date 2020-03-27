@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 31,
+  "addons": [
+    {
+      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
+      "syncGUID": "{abf4ab46-f776-4513-bca1-3796906c6c0e}",
+      "version": "1.43.4",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": null,
+      "optionsType": null,
+      "optionsBrowserStyle": true,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Bitwarden - Free Password Manager",
+        "description": "A secure and free password manager for all of your devices.",
+        "creator": "Bitwarden Inc.",
+        "homepageURL": "https://bitwarden.com",
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1585295362000,
+      "updateDate": 1585300901000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": true,
+      "strictCompatibility": true,
+      "locales": [],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": "42.0",
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": false,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "tabs",
+          "contextMenus",
+          "storage",
+          "unlimitedStorage",
+          "clipboardRead",
+          "clipboardWrite",
+          "idle",
+          "webRequest",
+          "webRequestBlocking"
+        ],
+        "origins": [
+          "http://*/*",
+          "https://*/*",
+          "file:///*"
+        ]
+      },
+      "icons": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "96": "images/icon96.png",
+        "128": "images/icon128.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "app-profile",
+        "method": "sideload"
+      },
+      "recommendationState": {
+        "validNotAfter": 1742871659000,
+        "validNotBefore": 1585083659000,
+        "states": [
+          "recommended"
+        ]
+      },
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B446900e4-71c2-419f-a6a7-df9c091e268b%7D.xpi!/",
+      "location": "app-profile"
+    },
+    {
+      "id": "dragselectlinktext@kestrel",
+      "syncGUID": "{98ea68f3-9a3a-441a-9b59-a525be569f3d}",
+      "version": "1.5.4",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": "options/options.html",
+      "optionsType": 5,
+      "optionsBrowserStyle": true,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Drag-Select Link Text",
+        "description": "Select link text with easy mouse gestures.",
+        "creator": "Kestrel",
+        "homepageURL": "https://github.com/nkestrel/dragselectlinktext",
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1516785624000,
+      "updateDate": 1585300901000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/dragselectlinktext@kestrel.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": true,
+      "strictCompatibility": true,
+      "locales": [
+        {
+          "name": "Drag-Select Link Text",
+          "description": "Select link text with easy mouse gestures.",
+          "creator": "Kestrel",
+          "homepageURL": "https://github.com/nkestrel/dragselectlinktext",
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "en"
+          ]
+        }
+      ],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": "55.0",
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": false,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "storage"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "icons": {
+        "48": "icons/icon48.png",
+        "96": "icons/icon96.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "app-profile",
+        "method": "sideload"
+      },
+      "recommendationState": null,
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/dragselectlinktext@kestrel.xpi!/",
+      "location": "app-profile"
+    },
+    {
+      "id": "jid1-KdTtiCj6wxVAFA@jetpack",
+      "syncGUID": "{633598ad-68d1-45fc-83ea-74d16896a59b}",
+      "version": "3.41.2",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": "settings/settings.html",
+      "optionsType": 3,
+      "optionsBrowserStyle": true,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Swift Selection Search",
+        "description": "Swiftly access your search engines in a popup panel when you select text in a webpage. Context search menu also included!",
+        "creator": null,
+        "homepageURL": "https://github.com/CanisLupus/swift-selection-search",
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1585295362000,
+      "updateDate": 1585300901000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/jid1-KdTtiCj6wxVAFA@jetpack.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": true,
+      "strictCompatibility": true,
+      "locales": [],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": "63.0",
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": false,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "clipboardWrite",
+          "contextMenus",
+          "storage",
+          "webNavigation",
+          "webRequest",
+          "webRequestBlocking"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "icons": {
+        "48": "icons/icon48.png",
+        "96": "icons/icon96.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "app-profile",
+        "method": "sideload"
+      },
+      "recommendationState": {
+        "validNotAfter": 1742740012000,
+        "validNotBefore": 1584952012000,
+        "states": [
+          "recommended"
+        ]
+      },
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/jid1-KdTtiCj6wxVAFA@jetpack.xpi!/",
+      "location": "app-profile"
+    }
+  ]
+}
