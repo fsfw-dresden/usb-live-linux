@@ -1,5 +1,6 @@
 [Unit]
 Description=automatic night mode: from blue to red color shift to protect sleep quality
+Requires=display-manager.service
 
 [Service]
 Type=oneshot
