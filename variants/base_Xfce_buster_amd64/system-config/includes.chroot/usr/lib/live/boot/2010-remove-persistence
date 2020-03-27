@@ -95,9 +95,9 @@ Remove_persistence ()
 			dest=${dest#/root}
 			dest=${dest:-rootfs /}
 
-			SIZE=$(numfmt --to=iec-i --format '%.1f' $(find "${source}" -mindepth 1 -path "${source}/persistence.conf" -prune -o -type f -printf '%s\n' | awk '{size += $1} END {print 0 + size}'))
+			SIZE=$(numfmt --to=iec-i --format '%.1f' $(find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -type f -printf '%s\n' | awk '{size += $1} END {print 0 + size}'))
 			# specify find minimum depth = 1 to not match and remove ${source} itself
-			find "${source}" -mindepth 1 -path "${source}/persistence.conf" -prune -o -delete
+			find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -delete
 			# alternative cmd: find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' -print0 | xargs -0 rm -rf
 			echo "reset requested of '${LABEL}' persistence for '${dest}': removed ${SIZE}Byte of data from ${TYPE} mounted at '${source}'"
 		fi

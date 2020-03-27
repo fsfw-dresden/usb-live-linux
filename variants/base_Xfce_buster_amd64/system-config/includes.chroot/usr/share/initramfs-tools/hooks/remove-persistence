@@ -1,0 +1,9 @@
+#!/bin/sh -e
+# Copy utilities needed by 2010-remove-persistence live-boot hook to initramfs
+
+if [ "$1" = "prereqs" ]; then exit 0; fi
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /usr/bin/find
+copy_exec /usr/bin/numfmt
