@@ -1,4 +1,4 @@
-# Programma für Android Smartphones / Tablets
+# Programme für Android Smartphones / Tablets
 
 [F-Droid](https://f-droid.org/), der Prototy eines App Store für Android besteht
 aus Freier Software für vielerlei Anwendungsfälle.
