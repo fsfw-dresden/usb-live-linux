@@ -9,8 +9,6 @@
 - :o: :-1:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :x:  libreoffice-impress  --  Präsentation
-- :+1:  libreoffice-help-de  --	Deutsche Hilfe
-- :x:  libreoffice-l10n-de  --	Deutsches Sprachpaket
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
 - :x:  libreoffice-evolution  -- Unterstützung für Evolution-Adressbücher
 

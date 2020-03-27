@@ -1,6 +1,8 @@
 ##  Staging
 
 - ### System
+- :x:  util-linux-locales  --
+- :x:  gettext  --		GNU-Internationalisierungswerkzeuge
 - :x:  haveged  --		userspace entropy daemon
 - :x:  etckeeper  --		tool to let /etc be stored in a git
 - :x:  system-config-printer  --	configure the printing system

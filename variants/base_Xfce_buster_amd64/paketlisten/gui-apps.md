@@ -7,10 +7,6 @@
 - :x:  evince  --		multi-page document viewer
 - :x:  diffpdf  --	
 - :x:  lightning  --		Calendar Extension for Thunderbird
-- :x:  lightning-l10n-de  --		
-- :x:  hunspell-de-de  --		German dictionary for hunspell (+293 kB)
-- :x:  hyphen-de  --		German hyphenation patterns (+494 kB)
-- :x:  mythes-de  --		German Thesaurus for OpenOffice.org/LibreOffice (+2.663 kB)
 - :x:  rss-glx  --	
 - :x:  unicode-screensaver  --	
 - :x:  xscreensaver  --	modular screen saver and locker for X11
@@ -18,7 +14,6 @@
 - :x:  xscreensaver-gl-extra  --	3D (OpenGL) screen saver modules
 - :x:  pavucontrol  --	PulseAudio Volume Control
 - :x:  libreoffice-gtk3  --	
-- :x:  libreoffice-help-de  --	deutsche Hilfe von LibreOffice (+3.706 kB)
 - :x:  sweethome3d  --		Interior 2D design application with 3D preview
 - :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
 - :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)
