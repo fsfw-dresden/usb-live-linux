@@ -11,7 +11,7 @@ cd_repo_root
 BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c"
+DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c -e content_disposition=off"
 PAKET_LISTEN=($(command ls config/package-lists/*))
 
 echo "Extra Paket-Installation für packages.chroot vorbereiten."
