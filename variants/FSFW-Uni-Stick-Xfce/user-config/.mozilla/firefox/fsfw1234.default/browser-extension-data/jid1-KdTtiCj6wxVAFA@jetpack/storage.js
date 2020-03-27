@@ -116,7 +116,7 @@
       "type": "browser",
       "name": "Twitter",
       "iconUrl": "https://api.faviconkit.com/twitter.com/64",
-      "searchUrl": "https://twitter.com/search/realtime?q={searchTerms}",
+      "searchUrl": "https://twitter.com/search?q={searchTerms}",
       "isEnabled": true,
       "isEnabledInContextMenu": true
     },
@@ -124,7 +124,7 @@
       "type": "browser",
       "name": "Google News",
       "iconUrl": "https://api.faviconkit.com/news.google.com/64",
-      "searchUrl": "https://news.google.com/search?q={searchTerms}&hl=en-SG&gl=SG&ceid=SG%3Aen",
+      "searchUrl": "https://news.google.com/search?q={searchTerms}",
       "isEnabled": true,
       "isEnabledInContextMenu": true
     },
