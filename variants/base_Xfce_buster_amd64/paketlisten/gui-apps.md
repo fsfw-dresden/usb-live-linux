@@ -93,6 +93,7 @@
 - :x:  materia-gtk-theme  --	Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)	
 - :x:  marble-qt  --    Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :x:  marble-plugins  --    various plugins for the Marble desktop globe
+- :x:  anydesk  --		remote desktop software (non-free)
 
 - :o:    --		
 - :o:  pulseeffects  --		advanced system-wide equalizer for PulseAudio

@@ -10,7 +10,8 @@
 - :x:  debian-goodies  --	dpigs      - Show which installed packages occupy the most space
 - :x:  testdisk  --	disk/file recovery tool
 - :x:  debootstrap  --		used to create a Debian base system from scratch
-- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform
+- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform (pulls in adb, fastboot)
+- :x:  scrcpy  --		display and control of Android devices via adb
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
 - :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S
@@ -116,6 +117,7 @@
 - :x:  diskscan  --	scan storage media for bad or near failure sectors
 - :x:  f3  --	test real flash memory capacity
 - :x:  ctop  --	text based Linux Containers monitoring tool
+- :x:  usbtop  --	show bandwidth on USB buses and devices
 - :x:  xmlstarlet  --	transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
 - :x:  faketime  --		intercepts various system calls and fake date and time to programs
 - :x:  chntpw  --		NT SAM password recovery utility
@@ -127,7 +129,20 @@
 - :x:  cruft-ng  --		finds anything that shouldn't be there, but is & anything that should be there, but isn't
 - :x:  xdotool  --		X11-Tastatur- und Mauseingaben-Ereignisse generieren, Fenster bewegen, deren Größe verändern usw (+88,5 kB)
 - :x:  xsel  --		Kommandozeilenwerkzeug für den Zugriff auf Zwischenablage und Auswahlpuffer von X (+20,5 kB)
+- :x:  xrestop  --		X11 server resource usage monitor
 - :x:  hwinfo  --		Informationen über die im System installierte Hardware
+- :x:  hw-probe  --		check operability of computer hardware and upload result to the Linux hardware database
+- :x:  alsa-utils  --		Utilities for configuring and using ALSA
+- :x:  i2c-tools  --		set of I2C tools
+- :x:  vulkan-tools  --		provides utilities for Vulkan, including vulkaninfo
+- :x:  vainfo  --		Video Acceleration (VA) API for Linux -- info program
+- :x:  vdpauinfo  --		Video Decode and Presentation API for Unix (vdpauinfo utility)
+- :x:  sysstat  --		system performance tools (iostat etc)
+- :x:  memtester  --		userspace utility for testing the memory subsystem for faults
+- :x:  cpuid  --		dump x86 CPUID information
+- :x:  edid-decode  --		decode the binary EDID information from monitors
+- :x:  read-edid  --		hardware information-gathering tool for VESA PnP monitors
+- :x:  xinput  --		Runtime configuration and test of XInput devices
 - :x:  pinfo  --		user-friendly, console-based viewer for Info documents
 - :x:  entr  --		Event Notify Test Runner (entr) runs commands when files change (detected through kqueue/inotify kernel interface)
 - :x:  clonezilla  --		bare metal backup and recovery of disk drives
@@ -146,3 +161,5 @@
 - :x:  gpart  --		Guess PC disk partition table, find lost partitions
 - :x:  foremost  --		recover lost files based on their headers, footers, and internal data structures
 - :x:  python3-termcolor  --		ANSII Color formatting for output in terminal
+- :x:  debram  --		catalog of available shell commands
+- :x:  nyancat  --		animated poptart cat in your terminal

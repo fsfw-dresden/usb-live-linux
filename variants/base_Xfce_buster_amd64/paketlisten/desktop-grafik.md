@@ -29,6 +29,8 @@
 - :x:  xsane  --	Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
 - :x:  fraqtive  --	Zeichnet Mandelbrot- und Julia-Fraktale
 - :x:  mandelbulber2  --	3D fractal renderer and animator
+- :x:  structure-synth  --	generating 3D structures by specifying a design grammar
+- :x:  sunflow  --	rendering system for photo-realistic image synthesis (for structure-synth)
 
 - ###  Fotoverwaltung
 

@@ -21,9 +21,10 @@
 
 - :x:  printrun  -- 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software (+13,5 MB)
 - :x:  slic3r  -- G-code generator for 3D printers (+4 MB)
+- :x:  cura  --	GUI G-code generator for 3D printers
 - :+1: :o:  [Meshroom](https://github.com/alicevision/meshroom/releases/download/v2018.1.0/Meshroom-2018.1.0-linux.tar.gz)  -- Photogrammetrie-Werkzeug
 
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-16-gb498e3a1-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-41-ge370801a-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll

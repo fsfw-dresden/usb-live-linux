@@ -25,6 +25,7 @@
 - :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
 - :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
 - :x:  smart-notifier  --		graphical hard disk health status notifier
+- :x:  python-gi  --		smart-notifier dependency
 - :x:  unattended-upgrades  --		automatic installation of security upgrades
 - :x:  python3-software-properties  --		manage the repositories that you install software from
 - :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
@@ -73,6 +74,8 @@
 - :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
 - :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
 - :x:  profile-sync-daemon  --	manage your browsers profile in RAM, periodically syncing it back to disk (reduce flash writes & latency)
+- :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
+- :x:  tlp  --		Spart Akku-Strom auf Laptops 
 
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)

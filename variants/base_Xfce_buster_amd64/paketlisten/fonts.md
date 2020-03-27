@@ -12,6 +12,7 @@
 - :x:  fonts-linuxlibertine  --
 - :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
 - :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+- :x:  fonts-noto-cjk  --	font families for Traditional Chinese, Simplified Chinese, Japanese and Korean (+54.3 MB)
 - :x:  fonts-noto-color-emoji  --	color emoji font used on "stock" Android devices (+7.572 kB)
 - :x:  fonts-open-sans  --	humanist sans serif typeface
 - :x:  fonts-opendin  --	Open DIN font
@@ -28,6 +29,7 @@
 - :x:  fonts-anonymous-pro  --	fixed width font designed for coders
 - :x:  fonts-stix  --		Scientific and Technical Information eXchange fonts (+590 kB)
 - :x:  fonts-bwht  --		Six handwritten fonts created for the Because We Had To project (+110 kB)
+- :x:  fonts-ferrite-core  --		geometric shaped font lending it a futurist look
 
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
