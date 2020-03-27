@@ -130,7 +130,7 @@ size_partition_fat32=$((1024 * 1024 * size_mb_partition_fat32))
 rel_size_partition_fat32=$((100 * size_partition_fat32 / size_stick))
 
 # get ISO live image size in Byte
-size_live_system=$(stat --format=%s ${LIVE_IMAGE})
+size_live_system=$(stat --dereference --format=%s ${LIVE_IMAGE})
 
 # calculate a proportion of space
 rel_size_partition_iso=$((100 * (size_live_system ) / size_stick))
@@ -377,7 +377,7 @@ echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
 
 print_info "now copying $(numfmt --to=iec-i --suffix B ${size_live_system}) live ISO image to ${DEVICE}${p}2:/boot"
 mkdir -pv ${ISOSTORE}/boot
-rsync --times --inplace --info=progress2 --human-readable --verbose "${LIVE_IMAGE}" ${ISOSTORE}/boot/
+rsync --times --inplace --info=progress2 --human-readable --verbose --copy-links "${LIVE_IMAGE}" ${ISOSTORE}/boot/
 
 if [ "${HOTFIX}" != "none" ]
 then
