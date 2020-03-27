@@ -42,5 +42,6 @@ cd $script_path;
 
 # following is a hotfix for unbreaking the search functionality,
 # c.f. https://support.google.com/earth/thread/10088759?msgid=18922305
+# 2020-03-27: not yet fixed in google-earth-pro-stable 7.3.2.5815-r0
 export LC_NUMERIC=en_US.UTF-8
 LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./googleearth-bin "$@"
