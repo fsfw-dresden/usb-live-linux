@@ -1,3 +1,0 @@
-#!/bin/sh -xv
-type qcmd || { echo "this mechanism needs package renameutils"; exit 1; }
-command qcmd -A --format=destination-only --command="/usr/lib/git-core/git-mv" "${@}"
