@@ -309,9 +309,9 @@ BOOTOPTIONS+="splash"
 export BOOTOPTIONS
 print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
-print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common/grub.cfg.j2"
+print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common_bootloader/grub.cfg.j2"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
-j2 variants/common/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
+j2 variants/common_bootloader/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
 print_info "copying bootloader background image — teh glorious FSFW merch!"
 cp -av variants/base_Xfce_buster_amd64/system-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
