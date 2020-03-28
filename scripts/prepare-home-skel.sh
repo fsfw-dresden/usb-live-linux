@@ -10,7 +10,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 mkdir -pv config/includes.chroot/etc/skel
 for DIR in variants/${BUILD_VARIANT}/inherit/* variants/${BUILD_VARIANT}; do
   USER_SKEL=${DIR}/user-config
-  [ -d ${USER_SKEL} ] && rsync --archive --stats --info=progress2 --checksum ${USER_SKEL} config/includes.chroot/etc/skel/
+  [ -d ${USER_SKEL} ] && rsync --archive --stats --info=progress2 --checksum ${USER_SKEL}/ config/includes.chroot/etc/skel/
 done
 
 # copy FSFW-Material & latex-vorlagen
