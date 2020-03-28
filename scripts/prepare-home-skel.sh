@@ -8,10 +8,10 @@ BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 mkdir -pv config/includes.chroot/etc/skel
-for link in variants/${BUILD_VARIANT}/inherit/*; do
-  rsync --archive --stats --info=progress2 ${link}/user-config/ config/includes.chroot/etc/skel/
+for DIR in variants/${BUILD_VARIANT}/inherit/* variants/${BUILD_VARIANT}; do
+  USER_SKEL=${DIR}/user-config
+  [ -d ${USER_SKEL} ] && rsync --archive --stats --info=progress2 --checksum ${USER_SKEL} config/includes.chroot/etc/skel/
 done
-rsync --archive --stats --info=progress2 --checksum variants/${BUILD_VARIANT}/user-config/ config/includes.chroot/etc/skel/
 
 # copy FSFW-Material & latex-vorlagen
 rsync -aih FSFW-Material config/includes.chroot/etc/skel/
