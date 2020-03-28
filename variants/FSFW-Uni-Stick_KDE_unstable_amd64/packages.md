@@ -61,7 +61,7 @@
 
 ##  Programmierung Softwareentwicklung  --
 
-- ### :x:  programmiersprache  -- [Programmiersprachen](../common_package-lists/progammiersprache.md) - PHP - Java
+- ### :x:  programmiersprache  -- [Programmiersprachen](../common_package-lists/programmiersprache.md) - PHP - Java
 
 - ### :x:  programmieren-tools  -- [Tools fürs Programmieren](../common_package-lists/programmieren-tools.md) - Compiler - Tools - Revisions-Kontroll-Systeme - UML-Tools
 
