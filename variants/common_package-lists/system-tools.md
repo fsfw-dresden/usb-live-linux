@@ -6,6 +6,7 @@
 - :x:  fbset  --	Framebuffer-Geräte einstellen
 - :x:  hdparm  --	Festplattenparameter einstellen
 - :x:  cryptsetup  --	Unterstützung für Festplattenverschlüsselung - Startskripte
+- :x:  cryptsetup-initramfs  --	Festplattenverschlüsselung - initramfs integration
 - :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
 - :o:  gpart  --	Partitionierungsprogramm (Konsolenvariante)
 - :x:  discover  --	Hardware-Erkennungs-System
