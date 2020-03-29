@@ -30,18 +30,21 @@ for paket_liste in ${PAKET_LISTEN[@]}
 		paket=${paket/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert)
 
 		if [ -n "${paket}" ]; then
-			 echo "download = ${paket}"
-			if [ -s variants/${BUILD_VARIANT}/system-config/packages.chroot/${paket} ];
-			  then
-				echo "${paket} - verfügbar "
-			  else
-				if [ ! -d variants/${BUILD_VARIANT}/system-config/packages.chroot/ ]; then
-				 mkdir -p variants/${BUILD_VARIANT}/system-config/packages.chroot/
-				 echo " variants/${BUILD_VARIANT}/system-config/packages.chroot/ erstellt"
-				fi
-				${DOWNLOAD} ${paket_quelle} -O variants/${BUILD_VARIANT}/system-config/packages.chroot/${paket}
-				echo "${paket} - geholt "
+			mkdir -pv {cache,config}/packages.chroot
+			if [ -f cache/packages.chroot/${paket} ]; then
+				echo "${paket} im cache verfügbar"
+			else
+				echo "downloade ${paket}"
+				${DOWNLOAD} ${paket_quelle} -O cache/packages.chroot/${paket}.partial \
+					&& echo "${paket} - geholt" \
+					|| { echo "Download fehlgeschlagen"; exit 1; }
+				TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
+				trap "rm -r /tmp/deb-pkg-check-???" EXIT SIGHUP SIGQUIT SIGTERM
+				dpkg-deb --extract cache/packages.chroot/${paket}.partial ${TMPDIR} \
+					|| { echo "${paket} kaputt?"; exit 2; }
+				mv -v cache/packages.chroot/${paket}{.partial,}
 			fi
+			cp -a {cache,config}/packages.chroot/${paket}
 		fi
 
 	    ;;
@@ -54,10 +57,5 @@ for paket_liste in ${PAKET_LISTEN[@]}
 	done < ${paket_liste}
 
 done
-
-echo " extra-install_paket.sh -- config aktuallisieren.."
-rsync -avP variants/${BUILD_VARIANT}/system-config/ config/
-echo " extra-install_paket.sh -- config aktuallisiert fertig."
-
 
 echo "Fertig - Extra Paket-Installation für packages.chroot vorbereitet."
