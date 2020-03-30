@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Discover Earth
+Name=Earth
 GenericName=3D planet viewer
 Comment=Explore, search and discover the planet
 Exec=/opt/google/earth/pro/google-earth-pro %f
