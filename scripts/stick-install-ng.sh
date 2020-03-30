@@ -375,8 +375,8 @@ trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubd
 echo "/home bind,source=." > ${USERDATA}/persistence.conf
 
 # systemconfig persistence: network connections and printer configuration
-echo "/etc/cups source=printer-configuration" >  ${SYSTEMCONFIG}/persistence.conf
-echo "/etc/NetworkManager/system-connections source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
+echo "/etc/cups union,source=printer-configuration" >  ${SYSTEMCONFIG}/persistence.conf
+echo "/etc/NetworkManager/system-connections union,source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
 
 # systemdata persistence: stuff
 echo "/var/lib union,source=var-lib" >  ${SYSTEMDATA}/persistence.conf
