@@ -259,6 +259,84 @@
       },
       "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/jid1-KdTtiCj6wxVAFA@jetpack.xpi!/",
       "location": "app-profile"
+    },
+    {
+      "id": "tineye@ideeinc.com",
+      "syncGUID": "{4b5e0504-4f4f-4861-a105-f87c463a4a80}",
+      "version": "1.4.1",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": "options.html",
+      "optionsType": 5,
+      "optionsBrowserStyle": true,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "TinEye Reverse Image Search",
+        "description": "This is the official TinEye Firefox extension. Find out where an image came from, how it's used, or find higher resolution versions.",
+        "creator": null,
+        "homepageURL": "https://tineye.com",
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1585527484000,
+      "updateDate": 1585527484000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3343022/tineye_reverse_image_search-1.4.1-fx.xpi",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": false,
+      "strictCompatibility": true,
+      "locales": [],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": null,
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": true,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "activeTab",
+          "contextMenus",
+          "storage"
+        ],
+        "origins": []
+      },
+      "icons": {
+        "16": "tineye16.png",
+        "48": "tineye48.png",
+        "128": "tineye128.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "enterprise-policy"
+      },
+      "recommendationState": {
+        "validNotAfter": 1720558268000,
+        "validNotBefore": 1562770268000,
+        "states": [
+          "recommended"
+        ]
+      },
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi!/",
+      "location": "app-profile"
     }
   ]
 }
