@@ -352,6 +352,8 @@ print_info "marking files on the EFI partition as hidden system files"
 print_info "(so it can better be used for data exchange with other systems)"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
+cp -av variants/common_FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
+
 print_info "preparing persistence volumes"
 
 mkdir -pv ${PERSISTENCESTORE}/linux-userdata
