@@ -94,12 +94,20 @@ Remove_persistence ()
 			# remove /root prefix to destination paths, annotating rootfs special case
 			dest=${dest#/root}
 			dest=${dest:-rootfs /}
+			echo "reset requested of '${LABEL}' persistence for '${dest}'"
 
-			SIZE=$(numfmt --to=iec-i --format '%.1f' $(find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -type f -printf '%s\n' | awk '{size += $1} END {print 0 + size}'))
-			# specify find minimum depth = 1 to not match and remove ${source} itself
-			find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -delete
-			# alternative cmd: find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' -print0 | xargs -0 rm -rf
-			echo "reset requested of '${LABEL}' persistence for '${dest}': removed ${SIZE}Byte of data from ${TYPE} mounted at '${source}'"
+                        if [ -d "${source}" ]
+                        then
+                                # specify find minimum depth = 1 to not match and remove ${source} itself
+                                SIZE_BYTE=$(find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -type f -printf '%s\n' | awk '{size += $1} END {print 0 + size}')
+                                SIZE_STR=$(numfmt --to=iec-i --format '%.1f' ${SIZE_BYTE})
+                                NUM=$(find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -printf 'x'|wc -c)
+                                find "${source}" -mindepth 1 -not -path "${source}/persistence.conf" -delete
+                                # alternative cmd: find "${source}" -mindepth 1 -maxdepth 1 -not -name 'persistence.conf' -print0 | xargs -0 rm -rf
+                                echo "removed ${NUM} files and folders with ${SIZE_STR}Byte of data from ${TYPE} mounted at '${source}'"
+                        else
+                                echo "${source} does not (yet) exist, skipping empty persistence path.."
+                        fi
 		fi
 	done < ${custom_mounts}
 }
