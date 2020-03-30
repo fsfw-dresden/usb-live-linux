@@ -52,7 +52,7 @@
         "{}": "moz-extension://ae882ac4-0104-4c22-b15d-3248d1ce623f/favicon.ico"
       },
       "_metaData": {
-        "hidden": true,
+        "hidden": false,
         "order": 13,
         "alias": "g"
       },
