@@ -86,8 +86,8 @@ submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
       initrd /boot/initrd.img
   }
 
-  menuentry "Userdateien löschen (zur Reparatur - !löscht Home-Verzeichnis ink. Dokumente!)" {
-      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove=linux-userdata
+  menuentry "Userdateien löschen (zur Reparatur; erstellt Backup auf Austauschpartition)" {
+      linux /boot/vmlinuz boot=live findiso=$isofile components {{ BOOTOPTIONS }} persistence persistence-remove=linux-userdata backup
       initrd /boot/initrd.img
   }
 

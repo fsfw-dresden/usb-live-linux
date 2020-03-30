@@ -132,6 +132,9 @@ setup_unionfs ()
 	touch /etc/fstab
 	mkdir -p /run/live/overlay
 
+        # now is the time to backup userdata
+        Backup
+
 	# parse kernel parameters
 	Remove_persistence_prepare
 

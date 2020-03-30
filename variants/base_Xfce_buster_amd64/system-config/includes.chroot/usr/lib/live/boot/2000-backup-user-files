@@ -1,0 +1,52 @@
+#!/bin/sh -xv
+# backup updated user data to exchange partition
+
+Backup()
+{
+	for _PARAMETER in ${LIVE_BOOT_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-boot.backup|backup)
+				LIVE_BACKUP="true"
+				;;
+		esac
+	done
+
+	case "${LIVE_BACKUP}" in
+		true)
+			;;
+
+		*)
+			return 0
+			;;
+	esac
+
+        PART2=$(grep -m 1 findiso /proc/mounts | cut -f 1 -d ' ')
+        PART1=${PART2%2}1
+        PART3=${PART2%2}3
+
+        TMPDIR=$(mktemp -d /tmp/BACKUP.XXXXXX)
+        MOUNT1DIR="${TMPDIR}/mount1"
+        MOUNT3DIR="${TMPDIR}/mount3"
+        UPPERDIR="${TMPDIR}/Datensicherung-$(date +%F)"
+        WORKDIR="${TMPDIR}/work"
+        UNIONDIR="${TMPDIR}/union"
+        USERDATADIR="${MOUNT3DIR}/linux-userdata/user"
+
+        mount -vt tmpfs none ${TMPDIR}
+        mkdir -pv ${MOUNT1DIR} ${MOUNT3DIR} ${UPPERDIR} ${WORKDIR} ${UNIONDIR}
+
+        mount -v ${PART1} ${MOUNT1DIR}
+        mount -v ${PART3} ${MOUNT3DIR}
+        if [ -d ${USERDATADIR} ]
+        then
+                mount -vt overlay -o noatime,lowerdir=/run/live/rootfs/filesystem.squashfs/etc/skel,upperdir=${UPPERDIR},workdir=${WORKDIR} overlay ${UNIONDIR}
+                rsync -virch -c --ignore-times --stats ${USERDATADIR}/ ${UNIONDIR}/
+                rsync -via --remove-source-files ${UPPERDIR} ${MOUNT1DIR}/
+                umount -v ${UNIONDIR}
+        else
+                echo "${USERDATADIR} not present, nothing to backup."
+        fi
+        umount -v ${MOUNT3DIR} ${MOUNT1DIR} ${TMPDIR}
+        rmdir ${TMPDIR}
+}
