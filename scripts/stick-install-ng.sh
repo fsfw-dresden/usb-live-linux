@@ -38,7 +38,7 @@ select_target_device() {
     done
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
-    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+    display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_live_iso() {
@@ -50,7 +50,7 @@ select_live_iso() {
     done
     TEXT="Please choose the live system to be installed on ${DEVICE}"
     TITLE="SELECT LIVE SYSTEM ISO"
-    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+    display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_fat_label() {
@@ -61,7 +61,7 @@ select_fat_label() {
     done
     TEXT="Please choose the label for the FAT32 / windows-visible exchange partition"
     TITLE="SELECT PARTITION LABEL"
-    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+    display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 select_hotfix() {
@@ -72,7 +72,22 @@ select_hotfix() {
     done
     TEXT="Please choose the hotfix to be added ${DEVICE}"
     TITLE="SELECT HOTFIX"
-    display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+    display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+}
+
+define_first_partition_size() {
+    TEXT="Please define a size for the first partition, which is FAT32 and used for booting as well as for data exchange. The PortableApps.com packages will also be put here.\nFor the boot files to fit, specify at least 90MiB.\n\n"
+    TEXT+="  ${size_mb_stick} MiB storage device"
+    TEXT+="- ${size_mb_live_system} MiB Live System ISO\n"
+    TEXT+="= $(( size_mb_stick - size_mb_live_system )) MiB space for 1st (boot) & 3rd (persistence) partition\n"
+    TITLE="DEFINE FIRST PARTITION SIZE"
+    INIT=$1
+    display_inputbox "${TITLE}" "${TEXT}" ${INIT}
+}
+
+# thx https://stackoverflow.com/questions/33085008/bash-round-to-nearest-multiple-of-4
+round_int_to_next_multiple_of_16() {
+    echo $(( ($1 + 15 ) / 16 * 16 ))
 }
 
 # target DEVICE can be given as first parameter or interactively selected
@@ -109,34 +124,34 @@ echo "HOTFIX=${HOTFIX}"
 [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -gt 0 ] && parted --script ${DEVICE} print free
 debug_pause
 
-# get partition size in Byte
+# get block device size in MebiByte
 size_stick=$(blockdev --getsize64 ${DEVICE})
+size_mb_stick=$(( size_stick / (1024 * 1024) ))
 
-print_info "calculating partition sizes for $(numfmt --to=iec-i --suffix B ${size_stick}) storage device"
+# get ISO live image size in MebiByte
+size_live_system=$(stat --dereference --format=%s ${LIVE_IMAGE})
+size_mb_live_system=$(( size_live_system / (1024 * 1024) ))
 
-# >~ 114 MB for the filesystem gods
-size_space_buffer=$((1024 * 1024 * 350))
+print_info "figuring out partition sizes for $(numfmt --to=iec-i --suffix B ${size_stick}) storage device"
 
+# >~ 114 MiB for the filesystem gods
+size_mb_space_buffer=150
+
+[ -n "$4" ] && size_mb_partition_fat32=$4 || \
 if [ "${FAT_LABEL}" = "SCHULSTICK" ]
 then
     # 2000MB: space for exchange, no portableapps yet
-    size_mb_partition_fat32=2000
+    size_mb_partition_fat32=$(define_first_partition_size 2000)
 else
     # 5000MB: for windows portableapps etc.
-    size_mb_partition_fat32=5000
+    size_mb_partition_fat32=$(define_first_partition_size 5000)
 fi
 
-size_partition_fat32=$((1024 * 1024 * size_mb_partition_fat32))
-rel_size_partition_fat32=$((100 * size_partition_fat32 / size_stick))
+# try to put partition boundaries on flash cell erasure block boundaries assumed to be 16MiB
+size_mb_partition_fat32=$(round_int_to_next_multiple_of_16 ${size_mb_partition_fat32})
 
-# get ISO live image size in Byte
-size_live_system=$(stat --dereference --format=%s ${LIVE_IMAGE})
-
-# calculate a proportion of space
-rel_size_partition_iso=$((100 * (size_live_system ) / size_stick))
-rel_size_partition_iso=$((100 * (size_live_system + size_space_buffer) / size_stick + 1))
-
-offset_start_partition_persistence=$((rel_size_partition_fat32 + rel_size_partition_iso))
+size_mb_partition_live_image=$(( size_mb_live_system + size_mb_space_buffer ))
+end_mb_partition_live_image=$(round_int_to_next_multiple_of_16 $((size_mb_partition_fat32 + size_mb_partition_live_image)) )
 
 # [ -e /run/udev/queue ] && rm -v /run/udev/queue && echo "prevented udevadm settle hang by #####"
 # here be dragons
@@ -146,23 +161,25 @@ print_info "creating conventional DOS partition table.."
 parted --script ${DEVICE} mklabel msdos
 
 # create an EFI boot & data exchange partition
-parted --script --align=optimal ${DEVICE} mkpart primary fat32 0% ${rel_size_partition_fat32}%
+parted --script --align=optimal ${DEVICE} mkpart primary fat32 2048s ${size_mb_partition_fat32}MiB
 parted ${DEVICE} set 1 boot on
-print_info "created 0 - ${rel_size_partition_fat32}% fat32 data exchange / EFI boot partition"
+print_info "created 0 - ${size_mb_partition_fat32}MiB fat32 data exchange / EFI boot partition"
 
 # create the main live-system partition
-parted --script --align=optimal -- ${DEVICE} mkpart primary ${rel_size_partition_fat32}% ${offset_start_partition_persistence}%
-print_info "created ${rel_size_partition_fat32}% - ${offset_start_partition_persistence}% live system partition (will be formatted ext2)"
+parted --script --align=optimal -- ${DEVICE} mkpart primary ${size_mb_partition_fat32}MiB ${end_mb_partition_live_image}MiB
+print_info "created ${size_mb_partition_fat32}% - ${end_mb_partition_live_image}% live system partition (will be formatted ext2)"
 
-# create the persistence partition
-parted --script --align=optimal -- ${DEVICE} mkpart primary ${offset_start_partition_persistence}% 95%
-print_info "created ${offset_start_partition_persistence}% - 95% persistence partition (will be formatted f2fs)"
+# create a small persistence partition that will be grown on first boot to device limits
+# allows distributing a smaller image file that will fit USB sticks of varying size
+end_mb_partition_persistence=$(( end_mb_partition_live_image + 128 ))
+parted --script --align=optimal -- ${DEVICE} mkpart primary ${end_mb_partition_live_image}MiB ${end_mb_partition_persistence}MiB
+print_info "created ${end_mb_partition_live_image}MiB - ${end_mb_partition_persistence}MiB persistence partition (will be formatted f2fs)"
 
 MAIN_LABEL=live-system
 
 print_info "rereading partition table and checking partition alignment"
 partprobe --summary ${DEVICE}
-parted ${DEVICE} print free
+parted ${DEVICE} unit MiB print free
 parted ${DEVICE} align-check minimal 2
 parted ${DEVICE} align-check optimal 2
 parted ${DEVICE} align-check minimal 3
@@ -232,10 +249,13 @@ trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EX
 
 print_info "installing grub bootloader for i386-pc, i386-efi and x86_64-efi platform to ${DEVICE}"
 print_info "(should take 5-20 seconds each)"
-grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
-grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
-# --uefi-secure-boot is default btw
-grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+time {
+    grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
+    grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+    # --uefi-secure-boot is default btw
+    grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+    sync ${EFIBOOT}
+}
 
 print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
 iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
@@ -376,8 +396,12 @@ echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
 echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
 
 print_info "now copying $(numfmt --to=iec-i --suffix B ${size_live_system}) live ISO image to ${DEVICE}${p}2:/boot"
-mkdir -pv ${ISOSTORE}/boot
-rsync --times --inplace --info=progress2 --human-readable --verbose --copy-links "${LIVE_IMAGE}" ${ISOSTORE}/boot/
+time {
+    mkdir -pv ${ISOSTORE}/boot
+    rsync --times --inplace --info=progress2 --human-readable --copy-links "${LIVE_IMAGE}" ${ISOSTORE}/boot/
+    print_info "synchronizing unwritten data to disk.."
+    sync ${ISOSTORE}/boot/
+}
 
 if [ "${HOTFIX}" != "none" ]
 then

@@ -4,9 +4,9 @@
 # die on error
 set -e
 
-# display_dialog "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+# display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 # OPTIONS = ( "entry name" "description" ... )
-display_dialog() {
+display_menu() {
     TITLE=$1 && shift
     TEXT=$1 && shift
     OPTIONS=( "${@}" )
@@ -18,6 +18,18 @@ display_dialog() {
     DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MAXMENUHEIGHT} "${OPTIONS[@]}"
 }
 
+display_inputbox() {
+    TITLE=$1
+    TEXT=$2
+    INIT=$3
+    # make dialog 80% of terminal width/height
+    WIDTH=$((80 * $(tput cols) / 100))
+    HEIGHT=$((80 * $(tput lines) / 100))
+    MAXMENUHEIGHT=20
+    COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = tag_color" "tag_key_selected_color = tag_selected_color" )
+    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --inputbox "${TEXT}" ${HEIGHT} ${WIDTH} ${INIT}
+}
+
 check_dependencies() {
     for DEP in ${@}
     do
@@ -27,3 +39,5 @@ check_dependencies() {
     read -n1 -p "press [i] to run \`apt install ${DEPS[@]}\` and proceed, [any other] key to exit the script.."
     [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || echo "dependencies ${DEPS[@]} not installed, aborting"; exit 1
 }
+
+# vim:ts=4:sts=4:sw=4:expandtab
