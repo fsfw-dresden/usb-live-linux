@@ -70,7 +70,7 @@ select_hotfix() {
     do
         OPTIONS+=(${HOTFIX} "($(find overlay-hotfixes/${HOTFIX} -type f|wc -l) files)")
     done
-    TEXT="Please choose the hotfix to be added ${DEVICE}"
+    TEXT="Please choose the hotfix to be applied to ${DEVICE}. This is a mechanism to distribute last-minute bug fixes when there is no time to roll an updated ISO."
     TITLE="SELECT HOTFIX"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
@@ -199,7 +199,7 @@ mkfs.ext2 -FL ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
 
 # persistence storage
 #mkfs.ext4 -L live-memory ${DEVICE}${p}3
-mkfs.f2fs -fd 5 -l live-memory ${DEVICE}${p}3
+mkfs.f2fs -fd 5 -l live-memory -O encrypt ${DEVICE}${p}3
 
 debug_pause
 
@@ -280,7 +280,8 @@ BOOTOPTIONS=""
 # languages to support
 BOOTOPTIONS+="locales=de_DE.UTF-8,en_GB.UTF-8 "
 
-BOOTOPTIONS+="keyboard-layouts=de "
+BOOTOPTIONS+="keyboard-layouts=de,us,gr,ru "
+BOOTOPTIONS+="keyboard-variants=nodeadkeys,,, "
 BOOTOPTIONS+="timezone=Europe/Berlin "
 BOOTOPTIONS+="utc=auto "
 
@@ -372,6 +373,7 @@ mount --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
 # home persistence
+# TODO: f2fscrypt add_key -S 0x42
 echo "/home bind,source=." > ${USERDATA}/persistence.conf
 
 # systemconfig persistence: network connections and printer configuration
