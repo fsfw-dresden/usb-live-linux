@@ -167,7 +167,7 @@ print_info "created 0 - ${size_mb_partition_fat32}MiB fat32 data exchange / EFI 
 
 # create the main live-system partition
 parted --script --align=optimal -- ${DEVICE} mkpart primary ${size_mb_partition_fat32}MiB ${end_mb_partition_live_image}MiB
-print_info "created ${size_mb_partition_fat32}% - ${end_mb_partition_live_image}% live system partition (will be formatted ext2)"
+print_info "created ${size_mb_partition_fat32}MiB - ${end_mb_partition_live_image}MiB live system partition (will be formatted ext2)"
 
 # create a small persistence partition that will be grown on first boot to device limits
 # allows distributing a smaller image file that will fit USB sticks of varying size

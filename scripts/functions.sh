@@ -28,11 +28,11 @@ check_program_exists() {
 }
 
 print_info() {
-    printf "[ ℹ️  ] ${COLOR_CYAN}${@}${COLOR_OFF}\n"
+    printf "[ ℹ️  ] ${COLOR_CYAN}${@//%/%%}${COLOR_OFF}\n"
 }
 
 print_warn() {
-    printf "[ ⚠️  ] ${COLOR_RED}${@}${COLOR_OFF}\n"
+    printf "[ ⚠️  ] ${COLOR_RED}${@//%/%%}${COLOR_OFF}\n"
 }
 
 # THANKS https://unix.stackexchange.com/questions/364776/how-to-output-a-date-time-as-20-minutes-ago-or-9-days-ago-etc
