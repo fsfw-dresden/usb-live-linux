@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=AnyDesk remote support
+GenericName=AnyDesk
+X-GNOME-FullName=AnyDesk
+Exec=/usr/bin/anydesk %u
+Icon=anydesk
+Terminal=false
+TryExec=anydesk
+Categories=Network;GTK;
+MimeType=x-scheme-handler/anydesk;
+Name[de_DE]=AnyDesk Fernwartung
+Comment=Fixing issues remotely
+Comment[de]=Probleme aus der Ferne beheben
