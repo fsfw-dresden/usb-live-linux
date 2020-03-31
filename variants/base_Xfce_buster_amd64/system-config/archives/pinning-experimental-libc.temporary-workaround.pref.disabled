@@ -1,0 +1,3 @@
+Package: libc6 libc6-i386 libc6-dev libc-dev-bin libc-bin libc-l10n locales
+Pin: release a=experimental, o=Debian
+Pin-Priority: 500

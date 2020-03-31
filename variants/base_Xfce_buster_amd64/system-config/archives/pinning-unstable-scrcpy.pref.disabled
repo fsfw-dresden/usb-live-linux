@@ -1,0 +1,3 @@
+Package: scrcpy libsdl2-2.0-0
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
