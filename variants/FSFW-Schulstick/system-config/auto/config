@@ -1,0 +1,77 @@
+#!/bin/bash
+
+set -e
+
+DISTRIBUTION=buster
+DESKTOP=Xfce
+STICK_NAME=FSFW-Schulstick
+STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
+
+lb config noauto \
+    --distribution ${DISTRIBUTION} \
+    --architectures amd64 \
+    --archive-areas "main contrib non-free" \
+    --binary-images iso-hybrid \
+    --linux-packages "linux-image linux-headers" \
+    --linux-flavours "amd64" \
+    --image-name ${STICK_NAME}_${STICK_VERSION}_${DESKTOP}_${DISTRIBUTION} \
+    --cache-packages true \
+    --source false \
+    --bootloader "syslinux,grub-efi" \
+    --system live \
+    --updates=true --backports=true --security=true \
+    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot-security http://security.debian.org/ \
+    --parent-mirror-binary http://ftp.de.debian.org/debian/ \
+    --parent-mirror-binary-security http://security.debian.org/ \
+    --mirror-chroot http://ftp.de.debian.org/debian/ \
+    --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
+    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-binary http://ftp.de.debian.org/debian/ \
+    --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
+    --debootstrap-options "--include=ca-certificates,openssl,gnupg,aptitude,ncdu,eatmydata" \
+    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de keyboard-variants=nodeadkeys timezone=Europe/Berlin net.ifnames=0 console=ttyS0 live-boot.debug" \
+    --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
+    --keyring-packages "debian-keyring deb-multimedia-keyring" \
+    --chroot-filesystem squashfs \
+    --binary-filesystem ext2 \
+    --apt-source-archives false \
+    --apt apt \
+    --apt-indices true \
+    --apt-recommends false \
+    --initramfs live-boot \
+    --initsystem systemd \
+    --firmware-chroot false \
+	"${@}"
+
+# use hidden marker file to enable proxying over local apt-cacher-ng instance
+if [ -e .apt-http-proxy ]; then
+    lb config noauto --apt-http-proxy http://127.0.0.1:3142/ --cache-packages false \
+        --parent-mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
+        --mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/
+fi
+
+
+# für minimal
+#    --debootstrap-options --variant=minbase \		## funktioniert nicht
+#    --apt-indices false \
+#    --apt-recommends false \			
+#    --firmware-chroot false \
+#    --memtest none \
+
+
+# Branchname im Image-Nammen setzen
+
+nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
+nbranch=${nbranch////_}			# ersetze von / in _
+nbranch=${nbranch//-/_}			# ersetze von - in _
+
+if [[ ! "${nbranch}" = "master" ]]; then
+    lb config noauto \
+        --image-name ${STICK_NAME}_${STICK_VERSION}__${nbranch}__${DESKTOP}_${DISTRIBUTION} \
+	"${@}"
+fi
+
+
+

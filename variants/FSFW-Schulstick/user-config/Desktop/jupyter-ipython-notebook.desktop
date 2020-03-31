@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=Jupyter/IPython Notebook
+Icon=text-x-python
+URL=http://localhost:8888/tree/FSFW-Material/jupyter-notebooks
