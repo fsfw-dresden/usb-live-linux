@@ -2,7 +2,7 @@
 
 - ### Terminal-Environment
 - :x:  aptitude  --	Anständiger Paketmanager (Text UI)
-- :o:  sysdig  --	Mächtiges Systemanalysewerkzeug
+- :o:  sysdig  --	Mächtiges Systemanalysewerkzeug (pulls in unstable libc6)
 - :x:  ranger  --	Bester Dateimanager (Text UI)
 - :x:  tig  --		ncurses-based text-mode interface for Git
 - :x:  less  --		world class file viewer
@@ -11,7 +11,7 @@
 - :x:  testdisk  --	disk/file recovery tool
 - :x:  debootstrap  --		used to create a Debian base system from scratch
 - :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform (pulls in adb, fastboot)
-- :x:  scrcpy  --		display and control of Android devices via adb
+- :o:  scrcpy  --		display and control of Android devices via adb (pulls in unstable libsdc, libc6)
 - :x:  vbindiff  --	visually compare binary files
 - :x:  debsums  --	verification of installed package files against MD5 checksums
 - :o:  dlocate  --	find files in debian packages: fast alternative to dpkg -L and dpkg -S

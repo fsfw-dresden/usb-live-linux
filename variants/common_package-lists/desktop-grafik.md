@@ -21,7 +21,7 @@
 - :x:  gimp-help-de  --	Dokumentation für GIMP (Deutsch) (+31,8 MB)
 
 - :o:  darktable  --	Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
-- :o:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
+- :x:  rawtherapee  --	Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
 - :x:  icc-profiles  -- high quality ICC color profiles
 - :x:  icc-profiles-free  -- Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
