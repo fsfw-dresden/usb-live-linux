@@ -74,8 +74,13 @@
 - :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
 - :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
 - :x:  profile-sync-daemon  --	manage your browsers profile in RAM, periodically syncing it back to disk (reduce flash writes & latency)
-- :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 - :x:  tlp  --		Spart Akku-Strom auf Laptops 
+- :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
+- :x:  acpi-call-dkms  --		enables you to call ACPI methods
+- :x:  broadcom-sta-dkms  --		Broadcom STA Wireless driver
+- :x:  r8168-dkms  --		r8168 network driver
+- :x:  virtualbox-guest-dkms  --	virtualbox guest addition kernel modules
+- :x:  libblockdev-plugins-all  --	low-level operations with block devices
 
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
