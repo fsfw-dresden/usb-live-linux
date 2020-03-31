@@ -2,9 +2,10 @@
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
-DOC_PATH=${1:-/usr/local/share/doc/FSFW}
-echo "Live-Stick ${0} ${DOC_PATH} ${BUILD_VARIANT}" 
+BUILD_VARIANT=$1
+[ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
+DOC_PATH=${2:-/usr/local/share/doc/FSFW}
+echo "Live-Stick ${0} ${BUILD_VARIANT} ${DOC_PATH}"
 echo "FSFW Material/Doku bauen und verteilen"
 
 check_program_exists pandoc || exit 1

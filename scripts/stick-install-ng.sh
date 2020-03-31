@@ -85,7 +85,7 @@ define_first_partition_size() {
     display_inputbox "${TITLE}" "${TEXT}" ${INIT}
 }
 
-# thx https://stackoverflow.com/questions/33085008/bash-round-to-nearest-multiple-of-4
+# THANKS https://stackoverflow.com/questions/33085008/bash-round-to-nearest-multiple-of-4
 round_int_to_next_multiple_of_16() {
     echo $(( ($1 + 15 ) / 16 * 16 ))
 }

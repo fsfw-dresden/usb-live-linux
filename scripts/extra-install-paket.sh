@@ -8,7 +8,8 @@
 . "$(dirname "${0}")/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$(readlink variants/active); BUILD_VARIANT=${BUILD_VARIANT%/}
+BUILD_VARIANT=$1
+[ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c -e content_disposition=off"
