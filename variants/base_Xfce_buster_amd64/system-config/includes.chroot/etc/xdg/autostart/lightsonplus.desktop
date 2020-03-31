@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=lightsonplus
+Comment=disable the screensaver when playing videos
+TryExec=/usr/local/libexec/lightsonplus/lightson+
+Exec=/usr/local/libexec/lightsonplus/lightson+
+Terminal=false
+NoDisplay=true

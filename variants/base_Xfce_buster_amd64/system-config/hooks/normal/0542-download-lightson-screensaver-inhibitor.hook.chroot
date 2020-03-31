@@ -1,0 +1,2 @@
+#!/bin/sh
+mkdir -pv /usr/local/libexec && cd /usr/local/libexec && git clone https://github.com/devkral/lightsonplus
