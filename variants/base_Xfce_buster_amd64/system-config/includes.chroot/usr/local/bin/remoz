@@ -1,0 +1,5 @@
+#!/bin/bash
+file=$@
+target=${file}.lz4
+
+jq -c . < ${file} | mozlz4 -c > ${target}

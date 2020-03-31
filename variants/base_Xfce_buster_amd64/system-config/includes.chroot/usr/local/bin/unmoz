@@ -1,0 +1,7 @@
+#!/bin/bash
+file=$@
+[[ $file =~ "json.lz4" ]] && target=${file%.lz4} \
+        || { [[ $file =~ "json.mozlz4" ]] && target=${file%.mozlz4}; } \
+        || { target=${file}.json; }
+
+lz4jsoncat $@|jq .>${target}
