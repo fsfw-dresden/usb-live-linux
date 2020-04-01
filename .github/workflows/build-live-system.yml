@@ -17,3 +17,13 @@ jobs:
     - name: build this
       run: |
         sudo sh -xv scripts/build-live-system.sh FSFW-Schulstick
+    - name: publish ISO as artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: iso-image
+        path: iso-images
+    - name: publish build log as well
+      uses: actions/upload-artifact@v1
+      with:
+        name: build.log
+        path: build_*.log
