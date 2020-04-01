@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # verlinkt auto/config-Skript u kopiert config-Ordner aus aktivem Build-Profil
 
 . "`dirname "${0}"`/functions.sh"
@@ -8,12 +8,24 @@ BUILD_VARIANT=$1
 [ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-ln -sf ../variants/${BUILD_VARIANT}/system-config/auto/config auto/config
+# symlink live-build base settings in place (auto/config)
+[ -f variants/${BUILD_VARIANT}/live-build-config/base-settings ] && ln -sf ../variants/${BUILD_VARIANT}/live-build-config/base-settings auto/config
 
-[ -d variants/common/system-config/ ] && rsync -a variants/common/system-config/ config/
+# use an associative array (bash v4+)
+declare -A PATH_MAPPINGS
+PATH_MAPPINGS[package-preferences]="config/archives"
+PATH_MAPPINGS[package-repos]="config/archives"
+PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
+PATH_MAPPINGS[livefs-include]="config/includes.chroot"
+PATH_MAPPINGS[live-build-config]="config"
+PATH_MAPPINGS[user-config]="config/includes.chroot/etc/skel"
 
-for link in variants/${BUILD_VARIANT}/inherit/*; do
-  rsync -a ${link}/system-config/ config/
+# put the configuration fragments where live-build expects them
+for VARIANT in variants/${BUILD_VARIANT}/inherit/* variants/${BUILD_VARIANT}; do
+  for CONFPATH in ${!PATH_MAPPINGS[*]}
+  do
+    TARGET=${PATH_MAPPINGS[${CONFPATH}]}
+    [ -d ${VARIANT}/${CONFPATH} ] && mkdir -p ${TARGET} && rsync --archive --checksum ${VARIANT}/${CONFPATH}/ ${TARGET}/
+  done
+  exit
 done
-
-rsync -ac variants/${BUILD_VARIANT}/system-config/ config/
