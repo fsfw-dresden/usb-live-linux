@@ -12,7 +12,9 @@
 ![Screenshot](../../doc/screenshot-Xfce-Desktop-2020-04-01.png "FSFW-Schulstick mit Xfce-Desktop")
 
 ## Download und Bespielen eines USB-Sticks
-(Sobald die 6.9 GiB Image-Datei hochgeladen ist, wird hier die URL eingetragen ..)
+
+> (Sobald die 6.9 GiB Image-Datei hochgeladen ist, wird hier die URL eingetragen ..)
+
 Die aktuelle Version (FSFW-Schulstick-2020-03-31) basiert auf Debian-Linux 10 (stable, codename »buster«) und dem Xfce-Desktop.
 
 Für die Installation des FSFW-Schulsticks braucht es einen 16GiB-USB-Stick guter Qualität. Weiterhin braucht man ein spezielles Programm, um das Bespielen durchzuführen. Wir empfehlen dafür den [Etcher](https://www.balena.io/etcher/), den es dort für verschiedene Betriebssysteme zum Download gibt.
