@@ -1,0 +1,2 @@
+# even in 2020, qemu creates a fictitious floppy drive by default
+DRIVERS=="floppy", ENV{UDISKS_IGNORE}="1"
