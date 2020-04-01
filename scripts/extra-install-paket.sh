@@ -12,7 +12,7 @@ BUILD_VARIANT=$1
 [ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
-DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress -c -e content_disposition=off"
+DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress --progress=dot:giga -c -e content_disposition=off"
 PAKET_LISTEN=($(command ls config/package-lists/*))
 
 echo "Extra Paket-Installation für packages.chroot vorbereiten."
