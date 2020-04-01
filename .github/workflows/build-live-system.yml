@@ -1,19 +1,19 @@
 name: build-FSFW-Schulstick-ISO
 
 on:
+  # this is only meant temporary; too stressful for github infrastructure
+  push:
   schedule:
-    - cron: "42 * * * *"
+    - cron: "42 23 * * *"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: set up build prerequisites
       run: |
-        sudo apt install debootstrap rsync pandoc
+        sudo apt install debootstrap rsync pandoc debian-archive-keyring
         git clone https://salsa.debian.org/live-team/live-build.git
         cd live-build
         sudo make install
