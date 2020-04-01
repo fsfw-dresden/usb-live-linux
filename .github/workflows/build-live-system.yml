@@ -2,7 +2,7 @@ name: build-FSFW-Schulstick-ISO
 
 on:
   schedule:
-    - cron: "30 * * * *"
+    - cron: "42 * * * *"
 
 jobs:
   build:
