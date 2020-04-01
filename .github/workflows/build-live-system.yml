@@ -2,7 +2,7 @@ name: build-FSFW-Schulstick-ISO
 
 on:
   schedule:
-    - cron: "15 14 * * *"
+    - cron: "30 * * * *"
 
 jobs:
   build:
@@ -13,9 +13,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: set up build prerequisites
       run: |
-        sudo apt install live-build rsync pandoc
+        sudo apt install debootstrap rsync pandoc
+        git clone https://salsa.debian.org/live-team/live-build.git
+        cd live-build
+        sudo make install
     - name: build this
       run: |
+        pwd
         sudo bash -xv scripts/build-live-system.sh FSFW-Schulstick
     - name: publish ISO as artifact
       uses: actions/upload-artifact@v1
