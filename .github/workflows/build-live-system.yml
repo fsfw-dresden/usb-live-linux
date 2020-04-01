@@ -1,4 +1,4 @@
-name: CI
+name: build-FSFW-Schulstick-ISO
 
 on:
   schedule:
@@ -11,6 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: set up build prerequisites
+      run: |
+        sudo apt install live-build rsync pandoc
     - name: build this
       run: |
-        sh -xv scripts/build-live-system.sh
+        sudo sh -xv scripts/build-live-system.sh FSFW-Schulstick
