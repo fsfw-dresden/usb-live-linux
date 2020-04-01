@@ -4,7 +4,7 @@
 
 - ### :x:  desktop-base  -- [Allgemeine Dateien für den Debian-Desktop](../common_package-lists/desktop-base.md)
 
-- ### :x:  desktop-tools  -- [Admin Programme für die Grafische Verwaltung](../common_package-lists/desktop-tools.md)
+- ### :o:  desktop-tools  -- [Admin Programme für die Grafische Verwaltung](../common_package-lists/desktop-tools.md)
 
 - ### :o:  task-kde-desktop  -- [KDE Desktop Umgebung](../common_package-lists/task-kde-desktop.md)
 
@@ -24,7 +24,7 @@
 
 ##  Accessibility  -- Barrierereduzierung für Anwender mit Handicap
 
-- ### :x:  accessibility  -- [Software zur Barrierereduzierung](../common_package-lists/accessibility.md) - Accessibility-Paketliste
+- ### :o:  accessibility  -- [Software zur Barrierereduzierung](../common_package-lists/accessibility.md) - Accessibility-Paketliste
 
 
 ##  Desktop office  -- Büroprogrammsammlung - E-Mail - Browser - Editor - Tabellenkalkulation - Zeichenprogramm - Präsentation - Datenbank
@@ -70,9 +70,9 @@
 
 ##  Terminal Tools  --
 
-- ### :x:  terminal-tools  -- [Terminal Tools](../common_package-lists/terminal-tools.md) - Programme die keine Grafische Oberfläche benötigen
+- ### :o:  terminal-tools  -- [Terminal Tools](../common_package-lists/terminal-tools.md) - Programme die keine Grafische Oberfläche benötigen
 
-- ### :x:  system-tools  -- [System Tools](../common_package-lists/system-tools.md)
+- ### :o:  system-tools  -- [System Tools](../common_package-lists/system-tools.md)
 
 - ### :o:  german-user  -- [German User](../common_package-lists/german-user.md)  -- System Tools - Deutsche Sprachpakete
 - ### :o:  hindi-user  -- [Hindi User](../common_package-lists/hindi-user.md)  -- System Tools - Indische Sprachpakete
@@ -106,7 +106,7 @@
 - ### :o:  dictionaries  -- [](../common_package-lists/dictionaries.md)
 - ### :o:  fonts  -- [](../common_package-lists/fonts.md)
 - ### :o:  gui-apps  -- [](../common_package-lists/gui-apps.md)
-- ### :x:  system  -- [](../common_package-lists/system.md)
+- ### :o:  system  -- [](../common_package-lists/system.md)
 - ### :x:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
 - :o:  riot-web  --		feature-rich client for Matrix.org
 - :o:  zulip  --		productive team chat (+47,4 MB)
