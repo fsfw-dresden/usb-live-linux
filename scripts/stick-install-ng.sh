@@ -7,7 +7,7 @@
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
-check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted dosfstools libcdio-utils dialog ccze
+check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 
 PAUSE=0
 if [ $PAUSE -eq 1 ]
@@ -332,6 +332,7 @@ print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
 print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common_bootloader/grub.cfg.j2"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
+command -v j2 || { print_warn "j2 jinja template tool not found; try installing it: pip3 install j2cli" exit 3; }
 j2 variants/common_bootloader/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
 print_info "copying bootloader background image — teh glorious FSFW merch!"
