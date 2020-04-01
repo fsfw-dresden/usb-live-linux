@@ -2,7 +2,7 @@ name: build-FSFW-Schulstick-ISO
 
 on:
   schedule:
-    - cron: "30 13 * * *"
+    - cron: "15 14 * * *"
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
         sudo apt install live-build rsync pandoc
     - name: build this
       run: |
-        sudo sh -xv scripts/build-live-system.sh FSFW-Schulstick
+        sudo bash -xv scripts/build-live-system.sh FSFW-Schulstick
     - name: publish ISO as artifact
       uses: actions/upload-artifact@v1
       with:
