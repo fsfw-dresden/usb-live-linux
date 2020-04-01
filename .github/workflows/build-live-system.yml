@@ -20,7 +20,7 @@ jobs:
     - name: build this
       run: |
         pwd
-        sudo bash -xv scripts/build-live-system.sh FSFW-Schulstick
+        sudo bash -xv scripts/build-live-system.sh TEST-Ministick
     - name: publish ISO as artifact
       uses: actions/upload-artifact@v1
       with:
