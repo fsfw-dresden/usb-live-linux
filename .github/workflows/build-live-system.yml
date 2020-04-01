@@ -1,8 +1,10 @@
 name: build-FSFW-Schulstick-ISO
 
+# when to trigger building
 on:
-  # this is only meant temporary; too stressful for github infrastructure
+  # on every commit push: this is only meant temporary; too stressful for github infrastructure
   push:
+  # every day at 23:42 UTC
   schedule:
     - cron: "42 23 * * *"
 
@@ -13,19 +15,37 @@ jobs:
     - uses: actions/checkout@v2
     - name: set up build prerequisites
       run: |
-        sudo apt install debootstrap rsync pandoc debian-archive-keyring
+        sudo apt install debootstrap rsync pandoc debian-archive-keyring pigz python3-pip grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
         git clone https://salsa.debian.org/live-team/live-build.git
         cd live-build
+        sed -i 's/comp xz/comp zstd/' scripts/build/binary_rootfs
         sudo make install
-    - name: build this
+        # this worked?
+        grep "comp" /usr/lib/live/build/binary_rootfs
+    - name: nuke free some storage space in container
       run: |
-        pwd
+        # sudo swapoff /swapfile && sudo rm /swapfile
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        df -h $(pwd)
+    - name: build ISO
+      run: |
         sudo bash -xv scripts/build-live-system.sh TEST-Ministick
+    - name: build IMG
+      run: |
+        ISO=iso-images/*.iso
+        sudo pip3 install j2cli
+        sudo bash -xv scripts/img-create-schulstick.sh ${ISO} "/mnt"
+        pigz /mnt/*.img
     - name: publish ISO as artifact
       uses: actions/upload-artifact@v1
       with:
         name: iso-image
         path: iso-images
+    - name: publish IMG as artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: gzipped stick-image
+        path: /mnt/*.img.gz
     - name: publish build log as well
       uses: actions/upload-artifact@v1
       with:
