@@ -36,7 +36,7 @@ truncate --size=${size_gb_disk_image}G ${IMG}
 LOOP=$(losetup --partscan --verbose --show --find ${IMG})
 
 # install ISO onto it
-HOTFIX="none" stick-install ${LOOP} ${ISO} ${FAT_LABEL} ${size_mb_partition_fat32}
+HOTFIX="none" scripts/stick-install.sh ${LOOP} ${ISO} ${FAT_LABEL} ${size_mb_partition_fat32}
 
 # free loop device
 losetup --verbose --detach ${LOOP}
