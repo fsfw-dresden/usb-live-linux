@@ -21,11 +21,12 @@ PATH_MAPPINGS[live-build-config]="config"
 PATH_MAPPINGS[user-config]="config/includes.chroot/etc/skel"
 
 # put the configuration fragments where live-build expects them
-for VARIANT in variants/${BUILD_VARIANT}/inherit/* variants/${BUILD_VARIANT}; do
+for FRAGMENT in variants/${BUILD_VARIANT}/{inherit,features}/* variants/${BUILD_VARIANT}; do
   for CONFPATH in ${!PATH_MAPPINGS[*]}
   do
     TARGET=${PATH_MAPPINGS[${CONFPATH}]}
-    [ -d ${VARIANT}/${CONFPATH} ] && mkdir -p ${TARGET} && rsync --archive --checksum ${VARIANT}/${CONFPATH}/ ${TARGET}/
+    [ -d ${FRAGMENT}/${CONFPATH} ] && mkdir -p ${TARGET} && rsync --archive --checksum ${FRAGMENT}/${CONFPATH}/ ${TARGET}/
   done
-  exit
 done
+
+print_info "configuration fragments applied"
