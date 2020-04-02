@@ -32,26 +32,27 @@ jobs:
     - name: build ISO
       run: |
         sudo bash -xv scripts/build-live-system.sh TEST-Ministick
+        echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
+        echo ::set-env name=BUILDLOG::$(command ls build*.log)
         df -h $(pwd) /mnt
     - name: publish ISO as artifact
       uses: actions/upload-artifact@v1
       with:
-        name: iso-image
-        path: iso-images
+        name: ${{env.ISO}}
+        path: iso-images/${{env.ISO}}
     - name: publish build log as well
       uses: actions/upload-artifact@v1
       with:
         name: build.log
-        path: build_*.log
+        path: ${{env.BUILDLOG}}
     - name: build IMG
       run: |
-        ISO=iso-images/*.iso
         sudo pip3 install j2cli
-        sudo bash -xv scripts/img-create-schulstick.sh ${ISO} "/mnt"
-        pigz /mnt/*.img
+        sudo bash -xv scripts/img-create-schulstick.sh iso-images/${{env.ISO}} "/mnt"
+        echo ::set-env name=IMG::$(cd /mnt; command ls -tr *.img|tail -n 1)
         df -h $(pwd) /mnt
     - name: publish IMG as artifact
       uses: actions/upload-artifact@v1
       with:
-        name: gzipped stick-image
-        path: /mnt/*.img.gz
+        name: ${{env.IMG}}
+        path: /mnt/${{env.IMG}}
