@@ -38,7 +38,7 @@ lb config noauto \
     --binary-filesystem ext2 \
     --apt-source-archives false \
     --apt apt \
-    --apt-indices true \
+    --apt-indices false \
     --apt-recommends false \
     --initramfs live-boot \
     --initsystem systemd \
