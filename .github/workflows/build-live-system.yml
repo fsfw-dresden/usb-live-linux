@@ -15,6 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: set up build prerequisites
       run: |
+        wget http://archive.ubuntu.com/ubuntu/pool/main/s/squashfs-tools/squashfs-tools_4.4-1_amd64.deb
+        sudo dpkg -i *.deb
         sudo apt install debootstrap rsync pandoc debian-archive-keyring pigz python3-pip grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
         git clone https://salsa.debian.org/live-team/live-build.git
         cd live-build
