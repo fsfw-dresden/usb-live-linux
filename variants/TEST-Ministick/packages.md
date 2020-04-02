@@ -2,7 +2,7 @@
 
 ##  Desktop  --
 
-- ### :x:  desktop-base  -- [Allgemeine Dateien für den Debian-Desktop](../common_package-lists/desktop-base.md)
+- ### :o:  desktop-base  -- [Allgemeine Dateien für den Debian-Desktop](../common_package-lists/desktop-base.md)
 
 - ### :o:  desktop-tools  -- [Admin Programme für die Grafische Verwaltung](../common_package-lists/desktop-tools.md)
 
@@ -18,7 +18,7 @@
 
 - ### :o:  task-gnome-desktop  --
 
-- ### :x:  task-xfce-desktop  -- [XFCE Desktop - Windows 95 done right](../common_package-lists/task-xfce-desktop.md)
+- ### :o:  task-xfce-desktop  -- [XFCE Desktop - Windows 95 done right](../common_package-lists/task-xfce-desktop.md)
 
 - ### :o:  task-cinnamon-desktop  --
 
@@ -107,7 +107,7 @@
 - ### :o:  fonts  -- [](../common_package-lists/fonts.md)
 - ### :o:  gui-apps  -- [](../common_package-lists/gui-apps.md)
 - ### :o:  system  -- [](../common_package-lists/system.md)
-- ### :x:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
+- ### :o:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
 - :o:  riot-web  --		feature-rich client for Matrix.org
 - :o:  zulip  --		productive team chat (+47,4 MB)
 
