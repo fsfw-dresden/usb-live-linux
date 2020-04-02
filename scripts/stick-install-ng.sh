@@ -90,6 +90,12 @@ round_int_to_next_multiple_of_16() {
     echo $(( ($1 + 15 ) / 16 * 16 ))
 }
 
+is_f2fs_mountable() {
+    grep -qs f2fs /proc/filesystems && return 0
+    lsmod|grep -qs f2fs  && return 0
+    modprobe -v f2fs || return 1
+}
+
 # target DEVICE can be given as first parameter or interactively selected
 [ -b "$1" ] && DEVICE=$1 || DEVICE=$(select_target_device)
 #clear -x
@@ -216,7 +222,7 @@ trap_umount_persistencedirs() {
 trap_umount_partitions() {
     umount -v ${DEVICE}${p}1
     umount -v ${DEVICE}${p}2
-    umount -v ${DEVICE}${p}3
+    is_f2fs_mountable && umount -v ${DEVICE}${p}3
 }
 
 # create a temporary directory to hold the mounts
@@ -242,7 +248,7 @@ trap "trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTER
 print_info "mounting partitions"
 mount -v ${DEVICE}${p}1 ${EFIBOOT}
 mount -v ${DEVICE}${p}2 ${ISOSTORE}
-mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
+is_f2fs_mountable && mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 
 # exit TRAP: add unmounting storage as first step to the clean-up trap queue
 trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
@@ -356,49 +362,59 @@ fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
 cp -av variants/common_FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
 
-print_info "preparing persistence volumes"
+if is_f2fs_mountable
+then
+    print_info "preparing F2FS persistence volume"
 
-mkdir -pv ${PERSISTENCESTORE}/linux-userdata
-mount --bind ${PERSISTENCESTORE}/linux-userdata ${USERDATA}
+    mkdir -pv ${PERSISTENCESTORE}/linux-userdata
+    mount --bind ${PERSISTENCESTORE}/linux-userdata ${USERDATA}
 
-mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
-mount --bind ${PERSISTENCESTORE}/linux-systemconfig ${SYSTEMCONFIG}
+    mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
+    mount --bind ${PERSISTENCESTORE}/linux-systemconfig ${SYSTEMCONFIG}
 
-mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
-mount --bind ${PERSISTENCESTORE}/linux-systemdata ${SYSTEMDATA}
+    mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
+    mount --bind ${PERSISTENCESTORE}/linux-systemdata ${SYSTEMDATA}
 
-mkdir -pv ${PERSISTENCESTORE}/linux-system
-mount --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
+    mkdir -pv ${PERSISTENCESTORE}/linux-system
+    mount --bind ${PERSISTENCESTORE}/linux-system ${SYSTEM}
 
-# set up the exit trap to unmount theses bind-mounted persistence directories
-trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+    # set up the exit trap to unmount theses bind-mounted persistence directories
+    trap "trap_umount_persistencedirs; trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
-# home persistence
-# TODO: f2fscrypt add_key -S 0x42
-echo "/home bind,source=." > ${USERDATA}/persistence.conf
+    # home persistence
+    # TODO: f2fscrypt add_key -S 0x42
+    echo "/home bind,source=." > ${USERDATA}/persistence.conf
 
-# systemconfig persistence: network connections and printer configuration
-echo "/etc/cups union,source=printer-configuration" >  ${SYSTEMCONFIG}/persistence.conf
-echo "/etc/NetworkManager/system-connections union,source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
+    # systemconfig persistence: network connections and printer configuration
+    echo "/etc/cups union,source=printer-configuration" >  ${SYSTEMCONFIG}/persistence.conf
+    echo "/etc/NetworkManager/system-connections union,source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
 
-# systemdata persistence: stuff
-echo "/var/lib union,source=var-lib" >  ${SYSTEMDATA}/persistence.conf
-echo "/usr/src union,source=usr-src" >>  ${SYSTEMDATA}/persistence.conf
+    # systemdata persistence: stuff
+    echo "/var/lib union,source=var-lib" >  ${SYSTEMDATA}/persistence.conf
+    echo "/usr/src union,source=usr-src" >>  ${SYSTEMDATA}/persistence.conf
 
-# system persistence: to be !DELETED! before update
-echo "/ union,source=rootfs" >  ${SYSTEM}/persistence.conf
+    # system persistence: to be !DELETED! before update
+    echo "/ union,source=rootfs" >  ${SYSTEM}/persistence.conf
 
-# binding etc gives full git ability from outside
-# echo "/etc bind,source=etc" >>  ${SYSTEM}/persistence.conf
+    # binding etc gives full git ability from outside
+    # echo "/etc bind,source=etc" >>  ${SYSTEM}/persistence.conf
 
-# union mount for etc allows shipping hotfixes
-echo "/etc union,source=etc" >>  ${SYSTEM}/persistence.conf
+    # union mount for etc allows shipping hotfixes
+    echo "/etc union,source=etc" >>  ${SYSTEM}/persistence.conf
 
-echo "/var/lib/apt union,source=var-lib-apt" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/aptitude union,source=var-lib-aptitude" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/dlocate union,source=var-lib-dlocate" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
-echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
+    echo "/var/lib/apt union,source=var-lib-apt" >>  ${SYSTEM}/persistence.conf
+    echo "/var/lib/aptitude union,source=var-lib-aptitude" >>  ${SYSTEM}/persistence.conf
+    echo "/var/lib/dlocate union,source=var-lib-dlocate" >>  ${SYSTEM}/persistence.conf
+    echo "/var/lib/dpkg union,source=var-lib-dpkg" >>  ${SYSTEM}/persistence.conf
+    echo "/var/lib/live union,source=var-lib-live" >>  ${SYSTEM}/persistence.conf
+
+    if [ "${HOTFIX}" != "none" ]
+    then
+        cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
+    fi
+else
+    print_warn "f2fs kernel module seems not to be available - all hope now on the 0020-persistence-init.sh hook"
+fi
 
 print_info "now copying $(numfmt --to=iec-i --suffix B ${size_live_system}) live ISO image to ${DEVICE}${p}2:/boot"
 time {
@@ -407,11 +423,6 @@ time {
     print_info "synchronizing unwritten data to disk.."
     sync ${ISOSTORE}/boot/
 }
-
-if [ "${HOTFIX}" != "none" ]
-then
-    cp -av overlay-hotfixes/${HOTFIX}/* ${PERSISTENCESTORE}/
-fi
 
 echo -e "[ ${COLOR_GREEN}OK${COLOR_OFF} ] installing ${STICK_ISO} to ${DEVICE} ${COLOR_GREEN}COMPLETED${COLOR_OFF}, unmounting.."
 debug_pause
