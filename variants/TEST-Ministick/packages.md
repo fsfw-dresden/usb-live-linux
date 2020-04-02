@@ -107,7 +107,7 @@
 - ### :o:  fonts  -- [](../common_package-lists/fonts.md)
 - ### :o:  gui-apps  -- [](../common_package-lists/gui-apps.md)
 - ### :o:  system  -- [](../common_package-lists/system.md)
-- ### :x:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
+- ### :o:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
 - :o:  riot-web  --		feature-rich client for Matrix.org
 - :o:  zulip  --		productive team chat (+47,4 MB)
 
