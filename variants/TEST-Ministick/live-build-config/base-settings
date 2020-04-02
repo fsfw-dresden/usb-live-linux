@@ -4,7 +4,7 @@ set -e
 
 DISTRIBUTION=buster
 DESKTOP=Xfce
-STICK_NAME=FSFW-Ministick
+STICK_NAME=TEST-Ministick
 STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
 lb config noauto \
