@@ -1,8 +1,12 @@
-# Der Freie-Software-Freies-Wissen-Uni-Stick
+# Der Freie-Software-Freies-Wissen-Schul- und Uni-Stick
+
+## neu: der [FSFW Schulstick](variants/FSFW-Schulstick/README.md)  2020 ist **so gut wie** fertig
+
+[…]
 
 Das Projekt "FSFW-Uni-Stick" besteht aus zwei Komponenten (jeweils angepasst auf die Zielgruppe Studierende bzw. den Anwendungsfall Studium):
 
-* ein Debian-Live-Linux-System mit [vielen Anwendungen](variants/FSFW-Uni-Stick_KDE_stretch_amd64/paketlisten/FSFW-Uni-Stick_-_Paketliste.md)
+* ein Debian-Live-Linux-System mit [vielen Anwendungen](variants/FSFW-Uni-Stick-Xfce/packages.md)
 * Zusammenstellung von [Programmen für Windows](doc/src/windows.md)
 
 Dieses Repo enthält die Skripte und Konfigurationsdateien, die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
