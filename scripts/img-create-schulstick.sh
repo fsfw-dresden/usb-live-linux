@@ -20,7 +20,8 @@ select_live_iso_for_image() {
 # ISO can be given as first parameter
 [ -n "${1}" ] && ISO=$1 || ISO="iso-images/$(select_live_iso_for_image)"
 IMG=${ISO##*/}
-IMG=${IMG%%.hybrid.iso}.img
+IMG=${IMG%%.iso}
+IMG=${IMG%%.hybrid}.img
 
 # target directory for image file as second parameter
 [ -n "${2}" ] && IMG=$2/${IMG}

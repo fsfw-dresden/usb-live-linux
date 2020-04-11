@@ -93,7 +93,7 @@ round_int_to_next_multiple_of_16() {
 is_f2fs_mountable() {
     grep -qs f2fs /proc/filesystems && return 0
     lsmod|grep -qs f2fs  && return 0
-    modprobe -v f2fs || return 1
+    modprobe -v f2fs 2>/dev/null || return 1
 }
 
 # target DEVICE can be given as first parameter or interactively selected
@@ -222,7 +222,7 @@ trap_umount_persistencedirs() {
 trap_umount_partitions() {
     umount -v ${DEVICE}${p}1
     umount -v ${DEVICE}${p}2
-    is_f2fs_mountable && umount -v ${DEVICE}${p}3
+    ! is_f2fs_mountable || umount -v ${DEVICE}${p}3
 }
 
 # create a temporary directory to hold the mounts
@@ -259,14 +259,23 @@ time {
     grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
     grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
     # --uefi-secure-boot is default btw
-    apt policy grub2-common | grep -qs "ubuntu" && FORCE_EXTRA= || FORCE_EXTRA="--force-extra-removable"
+    dpkg-query --show grub2-common | grep -qs "ubuntu" && FORCE_EXTRA= || FORCE_EXTRA="--force-extra-removable"
     grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram ${FORCE_EXTRA} --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+    # FIXME: something is twisted wrong with the github build vm
+    # with all grub packages from debian pulled in, it still misnames the EFI folder
+    [ ! -d ${EFIBOOT}/EFI/ubuntu ] || mv -v ${EFIBOOT}/EFI/ubuntu ${EFIBOOT}/EFI/debian
     sync ${EFIBOOT}
 }
 
-print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
-iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
-iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ${LIVE_IMAGE}
+# if the image is tiny, it is a fake image to test the automated build process
+if [ $(stat --dereference --format=%s ${LIVE_IMAGE}) -gt 1024 ]
+then
+    print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
+    iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
+    iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ${LIVE_IMAGE}
+else
+    print_warn "skipping kernel/initrd extraction for fake build test ISO: this will not boot!"
+fi
 
 # Variablen für download url's (hdt.iso , memtest.iso  ....)
 #URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
@@ -339,14 +348,14 @@ print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
 print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common_bootloader/grub.cfg.j2"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
-command -v j2 || { print_warn "j2 jinja template tool not found; try installing it: pip3 install j2cli" exit 3; }
+command -v j2 || { print_warn "j2 jinja template tool not found; try installing it: pip3 install j2cli"; exit 3; }
 j2 variants/common_bootloader/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
 print_info "copying bootloader background image — teh glorious FSFW merch!"
-cp -av features/config_fsfw_grub_theme/live-build-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
+cp -v --preserve=timestamps features/config_fsfw_grub_theme/live-build-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
 
 # copy the memdisk bootloader
-if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -av /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
+if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -v --preserve=timestamps /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
 
 # init empty qemu EFI bios file so it can be hidden
 touch ${EFIBOOT}/NvVars
@@ -361,7 +370,7 @@ print_info "marking files on the EFI partition as hidden system files"
 print_info "(so it can better be used for data exchange with other systems)"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
-cp -av variants/common_FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
+cp -v --preserve=timestamps variants/common_FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
 
 if is_f2fs_mountable
 then
