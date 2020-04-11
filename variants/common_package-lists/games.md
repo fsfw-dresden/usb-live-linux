@@ -49,6 +49,7 @@
 - :x:  kajongg  --		Klassisches Spiel Mahjongg (<19,0 MB)
 - :x:  stellarium  --		Echtzeit-Generator für fotorealistische Himmelsansichten (205 MB)
 - :x:  childsplay  --		Suite mit lehrreichen Spielen für kleine Kinder (30,8 MB)
+- :x:  oneko  -		cat chases the mouse cursor around the screen
 
 - :o:  kdeedu  --		Lernprogramme aus der offiziellen KDE-Veröffentlichung (<198 MB)
 - :x:  artikulate  --		(Teil von kdeedu)

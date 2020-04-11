@@ -9,6 +9,7 @@
 - :x:  gsmartcontrol  --	tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
 - :x:  gparted  --	manipulate devices and partition tables
 - :x:  gnome-disk-utility  --	manage and configure disk drives and media
+- :x:  usermode  --	Graphical tools for user account management tasks (userinfo, usermount and userpasswd)
 - :x:  plymouth-themes  --	boot animation, logger and I/O multiplexer + themes
 - :x:  anacron  --	periodic command scheduler for systems not running continuously.
 - :x:  grub-efi-ia32-bin  --	GRand Unified Bootloader, version 2 (EFI-IA32 modules)

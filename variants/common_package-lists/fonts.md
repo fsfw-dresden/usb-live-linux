@@ -30,6 +30,8 @@
 - :x:  fonts-stix  --		Scientific and Technical Information eXchange fonts (+590 kB)
 - :x:  fonts-bwht  --		Six handwritten fonts created for the Because We Had To project (+110 kB)
 - :x:  fonts-ferrite-core  --		geometric shaped font lending it a futurist look
+- :x:  fonts-tomsontalks  --		comic lettering font created with online comics in mind
+- :x:  fonts-texgyre  --		OpenType fonts based on URW Fonts
 
 - :o:  powerdevil  --  KDE power settings (& brightness control keys)
 - :o:  kde-config-gtk-style-preview  --	KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview

@@ -25,6 +25,9 @@
 - :x:  antiword  --		Converts MS Word files to text, PS, PDF and XML
 - :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
+- :x:  dpkg-repack  --	creates .deb file of an installed package
+- :x:  lnav  --		log file navigator
+- :x:  iptraf-ng  --	Interactive Colorful IP LAN Monitor, generates various network statistics
 
 - ###  Grafik Tools
 
