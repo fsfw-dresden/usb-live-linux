@@ -1,5 +1,0 @@
-#!/bin/sh
-# auto-apt-proxy: good for fast building, but might break fetching
-# package lists in some networks, so disable it after build.
-AAPCONF=/etc/apt/apt.conf.d/auto-apt-proxy.conf 
-[ -e "${AAPCONF}" ] && mv "${AAPCONF}" "${AAPCONF}.disabled"

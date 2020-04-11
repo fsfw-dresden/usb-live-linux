@@ -62,7 +62,6 @@
 - :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
 - :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
 - :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
-- :x:  auto-apt-proxy  --		automatic detector of common APT proxy settings
 - :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
 - :x:  grub-efi-amd64-signed  --		GRand Unified Bootloader, version 2 (amd64 UEFI signed by Debian, used by shim-signed)
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
@@ -84,6 +83,7 @@
 
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
+- :o:  auto-apt-proxy  --		automatic detector of common APT proxy settings
 - :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
 - :o:  tuned-utils  --	
 - :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown
