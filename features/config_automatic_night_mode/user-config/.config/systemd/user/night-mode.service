@@ -1,6 +1,9 @@
 [Unit]
 Description=automatic night mode: from blue to red color shift to protect sleep quality
-Requires=display-manager.service
+# when logging in only on a terminal without a graphical session, the
+# night-mode.service would produce an error message every minute, so require..
+# Requires=graphical-session.target
+# FIXME: distros still haven't enabled this? only default.target active instead..
 
 [Service]
 Type=oneshot
