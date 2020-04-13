@@ -98,7 +98,7 @@ Live ()
 
 	Verify_checksums "${livefs_root}"
 
-	Grow_persistence
+	Prepare_persistence
 
 	if [ "${TORAM}" ]
 	then

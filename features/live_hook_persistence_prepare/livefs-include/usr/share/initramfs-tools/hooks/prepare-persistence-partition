@@ -1,5 +1,5 @@
 #!/bin/sh -e
-# Copy utilities needed by 0050-grow-persistence-partition live-boot hook to initramfs
+# Copy utilities needed by 0050-prepare-persistence-partition live-boot hook to initramfs
 
 if [ "$1" = "prereqs" ]; then exit 0; fi
 
