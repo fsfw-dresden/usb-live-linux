@@ -23,7 +23,7 @@ Cmdline ()
 	done
 
         # If not explicitly given, auto-detect
-	if [ -n "${LIVE_UTC}" ]
+	if [ -z "${LIVE_UTC}" ]
 	then
 		LIVE_UTC="auto"
 	fi
