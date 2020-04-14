@@ -110,4 +110,15 @@
 - ### :o:  terminal-environment  -- [](../common_package-lists/terminal-environment.md)
 - :o:  riot-web  --		feature-rich client for Matrix.org
 - :o:  zulip  --		productive team chat (+47,4 MB)
+- :x:  wget  --		
+- :x:  util-linux  --		
+- :x:  fdisk  --		
+- :x:  f2fs-tools  --		
+- :x:  findutils  --		
+- :x:  coreutils  --		
+- :x:  bzip2  --		
+- :x:  whois  --		
+- :x:  os-prober  --		
+- :x:  ranger  --		
+- :x:  network-manager  --		
 
