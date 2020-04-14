@@ -6,9 +6,9 @@ name: build-FSFW-Schulstick-ISO
 # trigger building
 on:
   # when any release is tagged
-# push:
-#   tags:
-#     - '*'
+  push:
+    tags:
+      - '*'
 
   # every day at 23:42 UTC
 # schedule:
