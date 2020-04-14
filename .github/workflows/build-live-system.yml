@@ -1,7 +1,7 @@
 name: build-FSFW-Schulstick-ISO
 # this is a workflow file for building with github actions
 # unfortunately, the upload size limit is 2GiB currently
-# so no use for the time being
+# so of limited use for the time being?
 
 # trigger building
 on:
@@ -97,15 +97,15 @@ jobs:
         name: build.log
         path: ${{env.BUILDLOG}}
 
-    - name: upload release ISO
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: iso-images/${{env.ISO}}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        draft: true
-        #name: ''
-        prerelease: true
-        allowUpdates: true
+#   - name: upload release ISO to GH release
+#     uses: ncipollo/release-action@v1
+#     with:
+#       artifacts: iso-images/${{env.ISO}}
+#       token: ${{ secrets.GITHUB_TOKEN }}
+#       draft: true
+#       #name: ''
+#       prerelease: true
+#       allowUpdates: true
 
 #   - name: fake ISO, for debugging IMG creation
 #     run: |
@@ -151,12 +151,22 @@ jobs:
 #       name: ${{env.IMG}}
 #       path: /mnt/${{env.IMG}}
 
-    - name: upload release IMG
-      uses: ncipollo/release-action@v1
+#   - name: upload release IMG to GH release
+#     uses: ncipollo/release-action@v1
+#     with:
+#       artifacts: ${{env.IMG}}.gz
+#       token: ${{ secrets.GITHUB_TOKEN }}
+#       draft: true
+#       #name: ''
+#       prerelease: true
+#       allowUpdates: true
+
+    - name: try uploading release IMG to transfer.sh
+      run: |
+        curl --upload-file --verbose ${{env.IMG}}.gz https://transfer.sh/${{env.IMG}}.gz|tee IMG.url
+
+    - name: store URL as job artifact
+      uses: actions/upload-artifact@v1
       with:
-        artifacts: ${{env.IMG}}.gz
-        token: ${{ secrets.GITHUB_TOKEN }}
-        draft: true
-        #name: ''
-        prerelease: true
-        allowUpdates: true
+        name: IMG.url
+        path: IMG.url
