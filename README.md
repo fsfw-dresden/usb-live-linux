@@ -1,6 +1,6 @@
 # Der Freie-Software-Freies-Wissen-Schul- und Uni-Stick
 
-## neu: der [FSFW Schulstick](variants/FSFW-Schulstick/README.md)  2020 ist **so gut wie** fertig
+## neu: der [FSFW Schulstick](variants/FSFW-Schulstick/README.md)  2020 ist **fertig!**
 
 […]
 
