@@ -15,6 +15,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 declare -A PATH_MAPPINGS
 PATH_MAPPINGS[package-preferences]="config/archives"
 PATH_MAPPINGS[package-repos]="config/archives"
+PATH_MAPPINGS[package-include]="config/packages.chroot"
 PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
 PATH_MAPPINGS[livefs-include]="config/includes.chroot"
 PATH_MAPPINGS[live-build-config]="config"
