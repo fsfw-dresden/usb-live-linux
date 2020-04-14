@@ -1,0 +1,1 @@
+- :x:  zotero  --	free, easy-to-use tool to help you collect, organize, cite, and share research
