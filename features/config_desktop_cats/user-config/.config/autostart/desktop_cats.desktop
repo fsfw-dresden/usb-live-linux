@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Desktop Cats
+Comment=have some cute cats chase the mouse cursor
+Exec=/usr/local/bin/desktop-cats.sh
+Terminal=false
+NoDisplay=true
