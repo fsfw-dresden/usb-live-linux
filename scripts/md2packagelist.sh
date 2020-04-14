@@ -33,6 +33,10 @@ convert_markdown_list() {
     fi
     
     echo " ${MARKDOWN_LIST} wird eingelesen"
+
+    # placeholder list: support missing headers in [feature]/packages.md
+    TARGET_LIST_CHROOT=${TARGET_PATH}/uncategorized.list.chroot
+
     while read FULLLINE
     do
         local MARKDOWN_LIST_INCLUDED=$(echo ${FULLLINE}|sed -nr 's|.*]\((.*\.md)\).*|\1|p')

@@ -66,7 +66,7 @@ main() {
     scripts/apply-build-variant.sh ${BUILD_VARIANT}
 
     # Paketlisten aus markdown konvertieren.
-    scripts/md2packagelist.sh variants/${BUILD_VARIANT}/packages.md
+    scripts/md2packagelist.sh variants/${BUILD_VARIANT}{,/features/*}/packages.md
     # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
     find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -delete
 
