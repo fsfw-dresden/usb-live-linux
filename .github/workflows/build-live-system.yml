@@ -1,7 +1,8 @@
 name: build-FSFW-Schulstick-ISO
 # this is a workflow file for building with github actions
 # unfortunately, the upload size limit is 2GiB currently
-# so of limited use for the time being?
+# transfer.sh has limited the size as well : (
+# so no use for the time being?
 
 # trigger building
 on:
@@ -10,7 +11,7 @@ on:
     tags:
       - '*'
 
-  # every day at 23:42 UTC
+# # every day at 23:42 UTC
 # schedule:
 #   - cron: "42 23 * * *"
 
@@ -23,7 +24,7 @@ jobs:
       run: |
         sudo apt install speedometer iotop iftop fatrace ranger ncdu nmon tig
 
-    # this gives us live ssh debugging capability
+#   # this gives us live ssh debugging capability
 #   - name: Setup tmate session
 #     uses: mxschmitt/action-tmate@v2
 
@@ -97,15 +98,16 @@ jobs:
         name: build.log
         path: ${{env.BUILDLOG}}
 
-#   - name: upload release ISO to GH release
-#     uses: ncipollo/release-action@v1
-#     with:
-#       artifacts: iso-images/${{env.ISO}}
-#       token: ${{ secrets.GITHUB_TOKEN }}
-#       draft: true
-#       #name: ''
-#       prerelease: true
-#       allowUpdates: true
+    # FIXME: upload size limit 2GiB!
+    - name: upload release ISO to GH release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: iso-images/${{env.ISO}}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        draft: true
+        #name: ''
+        prerelease: true
+        allowUpdates: true
 
 #   - name: fake ISO, for debugging IMG creation
 #     run: |
@@ -145,28 +147,30 @@ jobs:
         ls -lah . /mnt
         df -h $(pwd) /mnt
 
-#   - name: store IMG as job artifact
-#     uses: actions/upload-artifact@v1
-#     with:
-#       name: ${{env.IMG}}
-#       path: /mnt/${{env.IMG}}
-
-#   - name: upload release IMG to GH release
-#     uses: ncipollo/release-action@v1
-#     with:
-#       artifacts: ${{env.IMG}}.gz
-#       token: ${{ secrets.GITHUB_TOKEN }}
-#       draft: true
-#       #name: ''
-#       prerelease: true
-#       allowUpdates: true
-
-    - name: try uploading release IMG to transfer.sh
-      run: |
-        curl --verbose --upload-file ${{env.IMG}}.gz https://transfer.sh/${{env.IMG}}.gz|tee IMG.url
-
-    - name: store URL as job artifact
+    - name: store IMG as job artifact
       uses: actions/upload-artifact@v1
       with:
-        name: IMG.url
-        path: IMG.url
+        name: ${{env.IMG}}
+        path: /mnt/${{env.IMG}}
+
+    # FIXME: upload size limit 2GiB!
+    - name: upload release IMG to GH release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: ${{env.IMG}}.gz
+        token: ${{ secrets.GITHUB_TOKEN }}
+        draft: true
+        #name: ''
+        prerelease: true
+        allowUpdates: true
+
+#   # transfer.sh says: Due to abuse we've limited max upload size. Thank the pirates!
+#   - name: try uploading release IMG to transfer.sh
+#     run: |
+#       curl --verbose --upload-file ${{env.IMG}}.gz https://transfer.sh/${{env.IMG}}.gz|tee IMG.url
+
+#   - name: store transfer.sh URL as job artifact
+#     uses: actions/upload-artifact@v1
+#     with:
+#       name: IMG.url
+#       path: IMG.url
