@@ -12,6 +12,6 @@
 - :x:  libglib2.0-data  --
 - :x:  locales  --
 - :x:  sgml-base  --
-- :x:  shared-mime-info --
+- :x:  shared-mime-info  --
 - :x:  xdg-user-dirs  --
 - :x:  xml-core  --
