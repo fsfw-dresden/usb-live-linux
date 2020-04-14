@@ -65,6 +65,9 @@ main() {
     # variantenspezifische live-build Konfiguration einspielen
     scripts/apply-build-variant.sh ${BUILD_VARIANT}
 
+    # shell option: remove non-matching file globs
+    shopt -s nullglob
+
     # Paketlisten aus markdown konvertieren.
     scripts/md2packagelist.sh variants/${BUILD_VARIANT}{,/features/*}/packages.md
     # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
