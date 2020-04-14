@@ -163,7 +163,7 @@ jobs:
 
     - name: try uploading release IMG to transfer.sh
       run: |
-        curl --upload-file --verbose ${{env.IMG}}.gz https://transfer.sh/${{env.IMG}}.gz|tee IMG.url
+        curl --verbose --upload-file ${{env.IMG}}.gz https://transfer.sh/${{env.IMG}}.gz|tee IMG.url
 
     - name: store URL as job artifact
       uses: actions/upload-artifact@v1
