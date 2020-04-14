@@ -158,6 +158,12 @@ jobs:
 #       name: ${{env.IMG}}
 #       path: /mnt/${{env.IMG}}
 
+    # desparate and convenient measure
+    - name: upload release IMG to OSEG
+      run: |
+        chmod -c go-r features/temp_upload_key/schulstick-temp-key
+        scp -vrpP 2205 -o StrictHostKeyChecking=no -i features/temp_upload_key/schulstick-temp-key ${{env.IMG}}.bz2 ${{env.IMG}}.bz2.sha256sum marcel@opensourceecology.de:/home/marcel/
+
 #   # FIXME: upload size limit 2GiB!
 #   - name: upload release IMG to GH release
 #     uses: ncipollo/release-action@v1
