@@ -77,6 +77,7 @@
 - :x:  caca-utils  --		text mode graphics utilities
 - :x:  elinks  --		advanced text-mode WWW browser
 - :x:  w3m  --		WWW browsable pager with excellent tables/frames support
+- :x:  w3m-img  --		inline image extension support utilities for w3m; powers image previews in ranger
 - :x:  highlight  --		Universal source code to formatted text converter
 - :x:  exiftool  --		read and write meta information in multimedia files
 - :x:  inotify-tools  --		command-line programs providing a simple interface to inotify
