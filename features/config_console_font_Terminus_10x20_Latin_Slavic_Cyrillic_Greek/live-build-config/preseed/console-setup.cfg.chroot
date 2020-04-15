@@ -1,0 +1,10 @@
+console-setup	console-setup/charmap47	select	UTF-8
+console-setup	console-setup/codeset47	select	. Combined - Latin; Slavic Cyrillic; Greek
+console-setup	console-setup/codesetcode	string	Uni2
+console-setup	console-setup/fontface47	select	Terminus
+console-setup	console-setup/fontsize-fb47	select	10x20 (framebuffer only)
+console-setup	console-setup/fontsize	string	10x20
+console-setup	console-setup/fontsize-text47	select	8x16
+
+# NEEDS to be set to not make dpkg-reconfigure console-setup reset above settings
+console-setup	console-setup/store_defaults_in_debconf_db	boolean	false
