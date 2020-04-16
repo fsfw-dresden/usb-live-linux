@@ -1,0 +1,1 @@
+- :+1: :x:  [rtl8821ce-dkms](http://de.archive.ubuntu.com/ubuntu/pool/universe/r/rtl8821ce/rtl8821ce-dkms_5.5.2.1-0ubuntu3~19.10.1_all.deb)  --	Driver for rtl8821ce wifi chipset
