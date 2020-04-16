@@ -75,6 +75,10 @@ set scrolloff=5
 set nowrap
 set shortmess=atI
 set clipboard+=unnamed
+" use the X11 clipboard if available
+if has ('unnamedplus')
+  set clipboard^=unnamedplus
+endif
 set matchtime=6
 set laststatus=2
 " Show extended Statusline, displaying the ASCII or Unicode value of the char
