@@ -267,8 +267,8 @@ time {
     sync ${EFIBOOT}
 }
 
-# if the image is tiny, it is a fake image to test the automated build process
-if [ $(stat --dereference --format=%s ${LIVE_IMAGE}) -gt 1024 ]
+# if the image is small, it is a test image to short cut an automated build process
+if [ $(stat --dereference --format=%s ${LIVE_IMAGE}) -gt 16777216 ]
 then
     print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
     iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ${LIVE_IMAGE}
