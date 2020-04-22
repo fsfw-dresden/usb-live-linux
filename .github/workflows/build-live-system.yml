@@ -58,7 +58,7 @@ jobs:
         sudo dpkg --remove shim-signed shim-helpers-amd64-signed shim-unsigned shim-signed:amd64
 
         # get all the grub packages from debian
-        time sudo apt --allow-downgrades --verbose-versions install debootstrap rsync pandoc debian-archive-keyring pigz python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+        time sudo apt --allow-downgrades --verbose-versions install debootstrap rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 
         # install a mksquashfs with zstd capability
         wget http://archive.ubuntu.com/ubuntu/pool/main/s/squashfs-tools/squashfs-tools_4.4-1_amd64.deb
@@ -142,8 +142,8 @@ jobs:
         # we want more space for shunting
         [ ! -d chroot ] || sudo rm -rf chroot
 
-        # now multi-core gzip the image to create the release product
-        sudo time pigz --stdout < /mnt/${IMG} > ${IMG}.gz
+        # now multi-core bz2 the image to create the release product
+        sudo time lbzip2 --verbose --stdout < /mnt/${IMG} > ${IMG}.bz2
 
         # log result and free space
         ls -lah . /mnt
