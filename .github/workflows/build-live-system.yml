@@ -30,6 +30,8 @@ jobs:
 
     - name: checkout the usb-live-linux repo
       uses: actions/checkout@v2
+      with:
+        ref: master
 
     - name: set up build prerequisites (i.e. beat the ubuntu with a bent spoon)
       run: |
