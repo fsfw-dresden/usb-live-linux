@@ -145,6 +145,9 @@ jobs:
         # now multi-core bz2 the image to create the release product
         sudo time lbzip2 --verbose --stdout < /mnt/${IMG} > ${IMG}.bz2
 
+        # generate checksum
+        sha256sum ${IMG}.bz2 > ${IMG}.bz2.sha256sum
+
         # log result and free space
         ls -lah . /mnt
         df -h $(pwd) /mnt
