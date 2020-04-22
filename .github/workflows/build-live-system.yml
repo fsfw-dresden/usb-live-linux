@@ -80,12 +80,12 @@ jobs:
         sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
         df -h $(pwd) /mnt
 
-    - name: cache the packages
-      id: cache-packages
-      uses: actions/cache@v1
-      with:
-        path: cache
-        key: ${{ runner.os }}.packages.cache
+#   - name: cache the packages
+#     id: cache-packages
+#     uses: actions/cache@v1
+#     with:
+#       path: cache
+#       key: ${{ runner.os }}.packages.cache
 
     - name: build ISO
       run: |
@@ -100,16 +100,16 @@ jobs:
         name: build.log
         path: ${{env.BUILDLOG}}
 
-    # FIXME: upload size limit 2GiB!
-    - name: upload release ISO to GH release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: iso-images/${{env.ISO}}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        draft: true
-        #name: ''
-        prerelease: true
-        allowUpdates: true
+#   # FIXME: upload size limit 2GiB!
+#   - name: upload release ISO to GH release
+#     uses: ncipollo/release-action@v1
+#     with:
+#       artifacts: iso-images/${{env.ISO}}
+#       token: ${{ secrets.GITHUB_TOKEN }}
+#       draft: true
+#       #name: ''
+#       prerelease: true
+#       allowUpdates: true
 
 #   - name: fake ISO, for debugging IMG creation
 #     run: |
@@ -149,22 +149,22 @@ jobs:
         ls -lah . /mnt
         df -h $(pwd) /mnt
 
-    - name: store IMG as job artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: ${{env.IMG}}
-        path: /mnt/${{env.IMG}}
+#   - name: store IMG as job artifact
+#     uses: actions/upload-artifact@v1
+#     with:
+#       name: ${{env.IMG}}
+#       path: /mnt/${{env.IMG}}
 
-    # FIXME: upload size limit 2GiB!
-    - name: upload release IMG to GH release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: ${{env.IMG}}.gz
-        token: ${{ secrets.GITHUB_TOKEN }}
-        draft: true
-        #name: ''
-        prerelease: true
-        allowUpdates: true
+#   # FIXME: upload size limit 2GiB!
+#   - name: upload release IMG to GH release
+#     uses: ncipollo/release-action@v1
+#     with:
+#       artifacts: ${{env.IMG}}.gz
+#       token: ${{ secrets.GITHUB_TOKEN }}
+#       draft: true
+#       #name: ''
+#       prerelease: true
+#       allowUpdates: true
 
 #   # transfer.sh says: Due to abuse we've limited max upload size. Thank the pirates!
 #   - name: try uploading release IMG to transfer.sh
