@@ -28,7 +28,6 @@
 - :x:  pm-utils  --	Powermanagement
 - :x:  testdisk  --	Datenrettungswerkzeug
 - :x:  dosfstools  --	Programme zum Anlegen und Überprüfen von MS-DOS-FAT-Dateisystemen
-- :x:  earlyoom  --		userspace OOM-killer to avoid unresponsive state caused by swapping
 
 - :x:  cups  --		Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
 - :x:  cups-bsd  --	Common UNIX Printing System(tm) - BSD-Befehle
