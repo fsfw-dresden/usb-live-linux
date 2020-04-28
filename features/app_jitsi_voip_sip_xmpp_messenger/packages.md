@@ -1,0 +1,1 @@
+- :x:  jitsi  --	VoIP and Instant Messaging client (+39,9 MB)

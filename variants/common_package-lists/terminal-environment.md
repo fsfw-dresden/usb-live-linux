@@ -34,7 +34,6 @@
 - :x:  traceroute  --	displays the route used by IP packets on their way
 - :x:  ripgrep  --	line-oriented search tool that recursively searches
 - :x:  wcalc  --	command-line scientific calculator
-- :x:  fd-find  --	user-friendly alternative to find
 - :x:  dstat  --	versatile resource statistics tool
 - :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
 - :x:  ocrmypdf  --	
@@ -164,3 +163,5 @@
 - :x:  python3-termcolor  --		ANSII Color formatting for output in terminal
 - :x:  debram  --		catalog of available shell commands
 - :x:  nyancat  --		animated poptart cat in your terminal
+- :x:  gddrescue  --		GNU data recovery tool
+

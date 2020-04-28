@@ -7,6 +7,4 @@
 
 - ### Science
 - :o:  lyx  --		almost WYSIWYG-frontend for LaTeX
-- :o:  openmodelica  --	Modelica modeling, compilation and simulation environment
-- :o:  omlib-modelicabyexample-0.5.0  --	examples: ThermalControl, RLC, BouncingBall, PulseGenerator, Polynomials, Pendula
 - :o:  qgis  --		Qt-based Geographic Information System

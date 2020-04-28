@@ -1,2 +1,2 @@
 #!/bin/sh
-chmod -c 4755 /opt/Zulip/chrome-sandbox
+chmod -Rc 4755 /opt/Zulip/chrome-sandbox

@@ -2,8 +2,6 @@
 
 - ###  Programme für die Kommunikation
 
-- :x:  firefox-esr  --	Mozilla Firefox Webbrowser               (Größe 100 MB)
-
 - :+1:  evolution  --	 Groupware-Suite mit E-Mail-Client und Organizer
 
 - :x:  thunderbird  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)

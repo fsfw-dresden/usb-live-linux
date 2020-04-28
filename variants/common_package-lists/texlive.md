@@ -42,9 +42,6 @@
 - :+1:  texlive-publishers-doc  --  Doku für texlive-publishers         (Größe 113 MB)
 - :x:  texlive-xetex  --
 - :x:  biber  --		Literaturverw.programm
-- :x:  texstudio  --		LaTeX-Editor - GUI
-- :+1:  texstudio-doc  --
-- :x:  texstudio-l10n  --
 - :+1:  kile  --		KDE basierter LaTeX-Editor
 - :+1:  kile-doc  --
 - :+1:  kile-l10n  --

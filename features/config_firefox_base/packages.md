@@ -1,0 +1,1 @@
+- :x:  firefox-esr  --	Mozilla Firefox web browser - Extended Support Release (ESR) (+47,9 MB)

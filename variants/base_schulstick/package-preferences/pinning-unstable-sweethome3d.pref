@@ -1,3 +1,0 @@
-Package: sweethome3d sweethome3d-furniture
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500

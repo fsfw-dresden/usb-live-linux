@@ -1,3 +1,0 @@
-Package: sweethome3d
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500

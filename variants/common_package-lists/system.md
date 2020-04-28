@@ -32,7 +32,6 @@
 - :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
 - :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
 - :x:  dislocker  --		read/write encrypted BitLocker volumes
-- :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server
 - :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
 - :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
 - :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
@@ -78,7 +77,6 @@
 - :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 - :x:  acpi-call-dkms  --		enables you to call ACPI methods
 - :x:  broadcom-sta-dkms  --		Broadcom STA Wireless driver
-- :x:  r8168-dkms  --		r8168 network driver
 - :x:  virtualbox-guest-dkms  --	virtualbox guest addition kernel modules
 - :x:  libblockdev-plugins-all  --	low-level operations with block devices
 

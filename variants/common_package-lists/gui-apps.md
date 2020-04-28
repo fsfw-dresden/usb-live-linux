@@ -20,7 +20,6 @@
 - :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
 - :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
 - :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
-- :x:  indicator-keylock  --		showing the status of the keyboard lock keys (Caps Lock, Num Lock and Scroll Lock)
 - :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
 - :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design
 - :x:  meld  --		graphical diff … recursive  directory diffs
@@ -42,7 +41,6 @@
 - :x:  nemo-nextcloud  --		integrates the Nextcloud web service
 - :x:  cinnamon-l10n  --		translation files for nemo et al.
 - :x:  weston  --		reference implementation of a wayland compositor
-- :x:  google-earth-pro-stable  --		Explore, search and discover the planet (+56,5 MB)
 - :x:  mixxx  --		Digital Disc Jockey Interface
 - :x:  key-mon  --		show live keyboard and mouse status
 - :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
@@ -85,15 +83,12 @@
 - :x:  python3-icu  --		recommended by gramps
 - :x:  playitslowly  --		Plays back audio files at a different speed or pitch (+27.7 kB)
 - :x:  goobox  --		CD player and ripper with GNOME 3 integration
-- :x:  geogebra-classic  -- Dynamische Mathematiksoftware für die Lehre (+48,7 MB, geogebra.net repo)
-- :x:  geogebra-classic-tutorials  -- offline version of the GeoGebra Classic Tutorials (+24,6 MB, geogebra.net repo)
 - :x:  mkchromecast-pulseaudio  --	Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
 - :x:  libnotify-bin  --	Sendet Benachrichtigungen an die Arbeitsfläche
 - :x:  asunder  --		graphical audio CD ripper and encoder (+373 kB)
 - :x:  materia-gtk-theme  --	Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)	
 - :x:  marble-qt  --    Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)
 - :x:  marble-plugins  --    various plugins for the Marble desktop globe
-- :x:  anydesk  --		remote desktop software (non-free)
 
 - :o:    --		
 - :o:  pulseeffects  --		advanced system-wide equalizer for PulseAudio

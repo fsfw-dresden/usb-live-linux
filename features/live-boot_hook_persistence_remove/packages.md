@@ -1,0 +1,2 @@
+- :x:  coreutils  --	basic file, shell and text manipulation utilities
+- :x:  findutils  --	utilities for finding files--find, xargs
