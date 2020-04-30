@@ -22,7 +22,7 @@ cd_repo_root
 select_build_variant() {
     shopt -s extglob
     OPTIONS=()
-    for VAR in $(command ls -Ltd variants/!(active|base_*|common_*))
+    for VAR in $(command ls -Ltd variants/!(active|base_*|shared))
     do
         NUMFILES=$(find "${VAR}" -type f -printf x | wc -c)
         # THANKS https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory
@@ -30,7 +30,7 @@ select_build_variant() {
         [ -z "${NEWESTFILE}" ] && CHANGESTR="" || CHANGESTR=", last changed $(rel_fmt_low_precision $(stat --format='@%Y' "${NEWESTFILE}"))"
         OPTIONS+=(${VAR#variants/} "(${NUMFILES} files${CHANGESTR})")
     done
-    TEXT="Please choose the variant to build. (Variants starting with base_ or common_ are not listed)"
+    TEXT="Please choose the variant to build. (Variants named base_* or shared are not listed)"
     TITLE="SELECT LIVE SYSTEM BUILD VARIANT"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }

@@ -346,10 +346,10 @@ BOOTOPTIONS+="splash"
 export BOOTOPTIONS
 print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
-print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/common_bootloader/grub.cfg.j2"
+print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/shared/bootloader/grub.cfg.j2"
 # generate grub config from jinja template using j2 (not in debian yet; pip3 install j2cli)
 command -v j2 || { print_warn "j2 jinja template tool not found; try installing it: pip3 install j2cli"; exit 3; }
-j2 variants/common_bootloader/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
+j2 variants/shared/bootloader/grub.cfg.j2 > ${EFIBOOT}/boot/grub/grub.cfg
 
 print_info "copying bootloader background image — teh glorious FSFW merch!"
 cp -v --preserve=timestamps features/config_fsfw_grub_theme/live-build-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
@@ -370,7 +370,7 @@ print_info "marking files on the EFI partition as hidden system files"
 print_info "(so it can better be used for data exchange with other systems)"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
-cp -v --preserve=timestamps variants/common_FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
+cp -v --preserve=timestamps variants/shared/FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
 
 if is_f2fs_mountable
 then
