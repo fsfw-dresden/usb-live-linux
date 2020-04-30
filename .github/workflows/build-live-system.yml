@@ -127,9 +127,6 @@ jobs:
 
     - name: glue up the final live stick IMG
       run: |
-        # need the j2 command to process the grub.cfg.j2
-        sudo pip3 install j2cli
-
         # this should produce a special crafted USB stick image in /mnt
         sudo bash -xv scripts/img-create-schulstick.sh iso-images/${{env.ISO}} "/mnt"
 
