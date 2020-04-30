@@ -25,7 +25,7 @@ DATUM=$(date +%Y-%m-%d)
 # FIXME: 🤮
 convert_markdown_list() {
 
-    MARKDOWN_LIST=$1
+    local MARKDOWN_LIST=$1
     
     if [[ ! -f ${MARKDOWN_LIST} ]]; then
         echo " ${MARKDOWN_LIST} existiert nicht "
