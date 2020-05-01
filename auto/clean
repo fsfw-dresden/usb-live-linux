@@ -25,6 +25,7 @@ rm -rf cache/contents.chroot \
   config/apt/* \
   config/packages.chroot/* \
   config/archives/* \
+  config/base-settings* \
   config/bootloaders/* \
   config/templates/* \
   fsfw-build-script.log 
