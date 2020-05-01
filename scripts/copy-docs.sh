@@ -10,12 +10,16 @@ echo "FSFW Material/Doku bauen und verteilen"
 
 check_program_exists pandoc || exit 1
 
-LIST_MD=(variants/${BUILD_VARIANT}/doc/src/*.md)
-for FILE in ${LIST_MD[@]##*/} ;
-do
-    TARGETFILE="doc/html/${FILE%%.md}.html"
+# fall back to default doc folder if variant has none
+[ -d variants/${BUILD_VARIANT}/doc/src ] && MD_PATH="variants/${BUILD_VARIANT}/doc/src" || MD_PATH="doc/src"
 
-    pandoc --standalone --template doc/src/fsfw-template.html variants/${BUILD_VARIANT}/doc/src/${FILE} -o $TARGETFILE
+LIST_MD=(${MD_PATH}/*.md)
+for FILE in ${LIST_MD[@]} ;
+do
+    TARGETFILE="${FILE##*/}"
+    TARGETFILE="doc/html/${TARGETFILE%%.md}.html"
+
+    pandoc --standalone --template doc/src/fsfw-template.html ${FILE} -o $TARGETFILE
     python3 scripts/convert-md-links.py "$TARGETFILE"
 
     echo "Datei geschrieben:" $TARGETFILE
