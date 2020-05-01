@@ -1,0 +1,14 @@
+#!/bin/sh -e
+lb config noauto \
+    --chroot-filesystem squashfs \
+        "${@}"
+
+#        --chroot-filesystem ext2|ext3|ext4|squashfs|jffs2|none
+#            defines which filesystem  type  should  be  used  for  the  root
+#            filesystem  image.  If you use none, then no filesystem image is
+#            created and the root filesystem content is copied on the  binary
+#            image  filesystem  as  flat  files.  Depending  on  what  binary
+#            filesystem you have chosen, it may not be possible to build with
+#            such  a plain root filesystem, e.g. fat16/fat32 will not work as
+#            linux does not support running directly on them.
+

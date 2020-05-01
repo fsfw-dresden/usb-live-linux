@@ -1,0 +1,11 @@
+#!/bin/sh -e
+lb config noauto \
+    --binary-images iso-hybrid \
+        "${@}"
+
+#        -b|--binary-image iso|iso-hybrid|netboot|tar|hdd
+#            defines  the  image  type to build. By default, for images using
+#            syslinux, this is set to 'iso-hybrid'  to  build  CD/DVD  images
+#            that  may also be used like HDD images, for non-syslinux images,
+#            it defaults to 'iso'.
+

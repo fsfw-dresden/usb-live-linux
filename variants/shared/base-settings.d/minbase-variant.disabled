@@ -1,0 +1,17 @@
+#!/bin/sh -e
+lb config noauto \
+    --debootstrap-options --variant=minbase \
+        "${@}"
+
+#        --debootstrap-options OPTION|"OPTIONS"
+#            passes the given options to debootstrap when setting up the base
+#            system.
+
+#        --variant=minbase|buildd|fakechroot
+#               Name  of  the  bootstrap  script variant to use.  Currently, the
+#               variants supported are minbase,  which  only  includes  required
+#               packages  and  apt;  buildd,  which installs the build-essential
+#               packages and fakechroot, which  installs  the  packages  without
+#               root  privileges.  The default, with no --variant=X argument, is
+#               to create a base Debian installation with all packages of prior‐
+#               ity required and important, including apt.

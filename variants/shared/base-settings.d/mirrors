@@ -1,0 +1,76 @@
+#!/bin/sh -e
+lb config noauto \
+    --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
+    --parent-mirror-chroot-security http://security.debian.org/ \
+    --parent-mirror-binary http://ftp.de.debian.org/debian/ \
+    --parent-mirror-binary-security http://security.debian.org/ \
+    --mirror-chroot http://ftp.de.debian.org/debian/ \
+    --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
+    --mirror-bootstrap http://ftp.de.debian.org/debian/ \
+    --mirror-binary http://ftp.de.debian.org/debian/ \
+    --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
+        "${@}"
+
+#        --mirror-binary URL
+#            sets  the  location of the derivative package mirror that should
+#            end up configured in the final image and which is the one a user
+#            would  see and use. This has not necessarily to be the same that
+#            is used to build the image, e.g. if you use a local  mirror  but
+#            want  to  have an official mirror in the image. This defaults to
+#            'http://deb.debian.org/debian/'.
+
+#        --mirror-binary-security URL
+#            sets the location of the  derivatives  security  package  mirror
+#            that  should end up configured in the final image. This defaults
+#            to 'http://security.debian.org/'.
+
+#        --mirror-bootstrap URL
+#            sets the location of the debian package mirror  that  should  be
+#            used   to  bootstrap  the  derivative  from.  This  defaults  to
+#            'http://deb.debian.org/debian/'.
+
+#        --mirror-chroot URL
+#            sets the location of the debian package mirror that will be used
+#            to  fetch  the  packages of the derivative in order to build the
+#            live system. By default, this is set  to  the  value  of  --mir‐
+#            ror-bootstrap.
+
+#        --mirror-chroot-security URL
+#            sets  the  location  of  the debian security package mirror that
+#            will be used to fetch the packages of the derivative in order to
+#            build  the live system. By default, this points to 'http://secu‐
+#            rity.debian.org/'.
+
+#        --parent-mirror-binary URL
+#            sets  the  location of the debian package mirror that should end
+#            up configured in the final image and which is  the  one  a  user
+#            would  see and use. This has not necessarily to be the same that
+#            is used to build the image, e.g. if you use a local  mirror  but
+#            want  to  have an official mirror in the image. This defaults to
+#            the value of --mirror-binary.
+
+#        --parent-mirror-binary-security URL
+#            sets the location of the debian  security  package  mirror  that
+#            should  end  up  configured in the final image. This defaults to
+#            the value of --mirror-binary-security.
+
+#        -m|--parent-mirror-bootstrap URL
+#            sets the location of the debian package mirror  that  should  be
+#            used  to  bootstrap  from.  This defaults to the value of --mir‐
+#            ror-bootstrap.
+
+#        --parent-mirror-chroot URL
+#            sets the location of the debian package mirror that will be used
+#            to  fetch  the  packages in order to build the live system. This
+#            defaults to the value of --parent-mirror-bootstrap.
+
+#        --parent-mirror-chroot-security URL
+#            sets the location of the debian  security  package  mirror  that
+#            will  be  used  to fetch the packages in order to build the live
+#            system. This defaults to the value of --mirror-chroot-security.
+
+#        --parent-mirror-debian-installer URL
+#            sets the location of the mirror that will be used to  fetch  the
+#            debian  installer  images.  This defaults to the value of --par‐
+#            ent-mirror-chroot.

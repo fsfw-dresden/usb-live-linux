@@ -1,0 +1,35 @@
+#!/bin/sh -e
+# use hidden marker file to enable proxying over local apt-cacher-ng instance
+if [ -e .apt-http-proxy ]; then
+    lb config noauto \
+        --cache-packages false \
+        --apt-http-proxy http://127.0.0.1:3142/ \
+        --mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/ \
+        --parent-mirror-bootstrap http://localhost:3142/ftp.de.debian.org/debian/
+fi
+
+#        --cache-packages true|false
+#            defines  if  downloaded packages files should be cached. This is
+#            true by default. Disabling it does  save  space  consumption  in
+#            your  build directory, but remember that you will cause much un‐
+#            necessary traffic if you do a couple of rebuilds. In general you
+#            should  always  leave  it true, however, in some particular rare
+#            build setups, it can be faster to refetch packages from the net‐
+#            work  mirror,  if  using a local one, rather than to utilize the
+#            local disk.
+
+#        --apt-http-proxy URL
+#            sets  the  HTTP  proxy  to  be  used by apt. By default, this is
+#            empty. Note that this variable is only for the proxy  that  gets
+#            used  by  apt  internally  within the chroot, it is not used for
+#            anything else.
+
+#        --mirror-bootstrap URL
+#            sets the location of the debian package mirror  that  should  be
+#            used   to  bootstrap  the  derivative  from.  This  defaults  to
+#            'http://deb.debian.org/debian/'.
+
+#        -m|--parent-mirror-bootstrap URL
+#            sets the location of the debian package mirror  that  should  be
+#            used  to  bootstrap  from.  This defaults to the value of --mir‐
+#            ror-bootstrap.

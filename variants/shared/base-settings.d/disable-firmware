@@ -1,0 +1,11 @@
+#!/bin/sh -e
+lb config noauto \
+    --firmware-chroot false \
+        "${@}"
+
+#        --firmware-chroot true|false
+#            includes  firmware packages in the live image. Defaults to true.
+#            Beware that some firmware packages are non-free and will only be
+#            included  if  the  non-free  archive  area  is included in --ar‐
+#            chive-areas (and --parent-archive-areas). This  is  particularly
+#            relevant if you want working wifi for instance.

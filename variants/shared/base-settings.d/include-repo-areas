@@ -1,0 +1,12 @@
+#!/bin/sh -e
+lb config noauto \
+    --archive-areas "main contrib non-free" \
+        "${@}"
+
+#        --archive-areas ARCHIVE_AREA|"ARCHIVE_AREAS"
+#            defines which package archive areas (a comma or space  separated
+#            list)  of a debian package archive should be used for configured
+#            debian package mirrors. By default, this is set  to  main  only.
+#            Remember  to  check the licenses of each package with respect to
+#            their redistributability in your juristiction when enabling con‐
+#            trib or non-free with this mechanism.

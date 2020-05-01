@@ -1,0 +1,8 @@
+#!/bin/sh -e
+lb config noauto \
+    --apt apt \
+        "${@}"
+
+#        --apt apt|apt-get|aptitude
+#            defines  if apt-get or aptitude is used to install packages when
+#            building the image. The default is apt.

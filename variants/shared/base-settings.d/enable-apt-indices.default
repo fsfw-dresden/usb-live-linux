@@ -1,0 +1,9 @@
+#!/bin/sh -e
+lb config noauto \
+    --apt-indices true \
+        "${@}"
+
+#        --apt-indices true|false|none
+#            defines if the resulting images should have apt  indices  or  not
+#            and  defaults to true. If set to none, no indices are included at
+#            all.

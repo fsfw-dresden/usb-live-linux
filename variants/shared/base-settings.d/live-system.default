@@ -1,0 +1,8 @@
+#!/bin/sh -e
+lb config noauto \
+    --system live \
+        "${@}"
+
+#        --system live|normal
+#            defines if the resulting system image should be a live system or
+#            a normal, non-live system. Defaults to live.

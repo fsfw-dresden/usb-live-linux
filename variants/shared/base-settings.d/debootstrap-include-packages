@@ -1,0 +1,12 @@
+#!/bin/sh -e
+lb config noauto \
+    --debootstrap-options "--include=ca-certificates,openssl,gnupg,aptitude,ncdu,eatmydata" \
+        "${@}"
+
+#        --debootstrap-options OPTIONS
+#            passes the given options to debootstrap when setting up the  base
+#            system.
+
+#        --include=alpha,beta
+#               Comma  separated list of packages which will be added to down‐
+#               load and extract lists.

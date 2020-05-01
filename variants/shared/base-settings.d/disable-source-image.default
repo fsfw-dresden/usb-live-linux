@@ -1,0 +1,12 @@
+#!/bin/sh -e
+lb config noauto \
+    --source false \
+        "${@}"
+
+#        --source true|false
+#            defines  if  a  corresponding  source  image to the binary image
+#            should be built. By default this is false because most people do
+#            not  require this and it involves downloading quite a few source
+#            packages. However, if you distribute your live image to  others,
+#            you  should make sure you build it with a source image alongside
+#            to help enable you to comply with licensing terms.

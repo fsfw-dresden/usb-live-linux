@@ -1,5 +1,4 @@
 #!/bin/bash
-# verlinkt auto/config-Skript u kopiert config-Ordner aus aktivem Build-Profil
 
 . "`dirname "${0}"`/functions.sh"
 cd_repo_root
@@ -7,9 +6,6 @@ cd_repo_root
 BUILD_VARIANT=$1
 [ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
-
-# symlink live-build base settings in place (auto/config)
-[ -f variants/${BUILD_VARIANT}/live-build-config/base-settings ] && ln -sf ../variants/${BUILD_VARIANT}/live-build-config/base-settings auto/config
 
 # use an associative array (bash v4+)
 declare -A PATH_MAPPINGS
@@ -25,8 +21,13 @@ PATH_MAPPINGS[user-config]="config/includes.chroot/etc/skel"
 for FRAGMENT in variants/${BUILD_VARIANT}/{inherit,features}/* variants/${BUILD_VARIANT}; do
   for CONFPATH in ${!PATH_MAPPINGS[*]}
   do
+    # special case to derefence the base-settings.d symlinks
+    [ ${CONFPATH} == "live-build-config" ] && SYMLINK_OPTION='--copy-links' || SYMLINK_OPTION=''
+
     TARGET=${PATH_MAPPINGS[${CONFPATH}]}
-    [ -d ${FRAGMENT}/${CONFPATH} ] && mkdir -p ${TARGET} && rsync --archive --checksum ${FRAGMENT}/${CONFPATH}/ ${TARGET}/
+    [ -d ${FRAGMENT}/${CONFPATH} ] && \
+        mkdir -p ${TARGET} && \
+        rsync --archive --checksum ${SYMLINK_OPTION} ${FRAGMENT}/${CONFPATH}/ ${TARGET}/
   done
 done
 

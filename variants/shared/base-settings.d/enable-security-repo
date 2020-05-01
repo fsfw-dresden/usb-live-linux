@@ -1,0 +1,8 @@
+#!/bin/sh -e
+lb config noauto \
+    --security=true \
+        "${@}"
+
+#        --security true|false
+#            defines if the security repositories specified  in  the  security
+#            mirror options should be used or not.

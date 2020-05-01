@@ -1,0 +1,26 @@
+#!/bin/sh
+# try to execute split base-settings and exit cleanly on success
+[ -d config/base-settings.d ] && \
+        run-parts --verbose --exit-on-error config/base-settings.d && \
+        exit 0
+
+#       run-parts  runs  all the executable files named within constraints
+#       described below, found in directory directory.   Other  files  and
+#       directories are silently ignored.
+
+#       If neither the --lsbsysinit option nor the --regex option is given
+#       then the names must consist entirely of ASCII  upper-  and  lower-
+#       case letters, ASCII digits, ASCII underscores, and ASCII minus-hy‐
+#       phens.
+
+#       This means files ending with .bak, .disabled or .anything will be
+#       skipped!
+
+# fall back to monolithic settings file
+[ -x config/base-settings ] && \
+        config/base-settings && \
+        exit 0
+
+# fail if neither was found
+echo "No base-settings for 'lb config' were given! Total failure."
+exit 1

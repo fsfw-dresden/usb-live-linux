@@ -1,0 +1,10 @@
+#!/bin/sh -e
+lb config noauto \
+    --initramfs live-boot \
+        "${@}"
+
+#        --initramfs none|live-boot
+#            sets  the name of the package that contains the live system spe‐
+#            cific initramfs modification and defaults  to  live-boot.  Using
+#            'none'  is  useful if the resulting system image should not be a
+#            live image (experimental).

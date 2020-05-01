@@ -1,0 +1,9 @@
+#!/bin/sh -e
+lb config noauto \
+    --keyring-packages "debian-archive-keyring debian-keyring deb-multimedia-keyring" \
+        "${@}"
+
+#        --keyring-packages PACKAGE|"PACKAGES"
+#            sets the keyring package or additional keyring packages (a space
+#            separated   list).   By  default  this  is  set  to  'debian-ar‐
+#            chive-keyring'.

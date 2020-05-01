@@ -1,0 +1,13 @@
+#!/bin/sh -e
+lb config noauto \
+    --cache-packages true \
+        "${@}"
+
+#        --cache-packages true|false
+#            defines  if  downloaded  packages files should be cached which is
+#            true by default. Disabling it does save space consumption in your
+#            build  directory,  but remember that you will cause much unneces‐
+#            sary traffic if you do a  couple  of  rebuilds.  In  general  you
+#            should  always  leave  it  true, however, in some particular rare
+#            build setups, it can be faster to refetch packages from the local
+#            network mirror rather than to utilize the local disk.

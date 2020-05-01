@@ -1,0 +1,18 @@
+#!/bin/sh -e
+lb config noauto \
+    --bootloaders "syslinux,grub-efi" \
+        "${@}"
+
+#        --bootloaders grub-legacy|grub-pc|syslinux|grub-efi|"BOOTLOADERS"
+#            defines which bootloaders to use in the  generated  image.  This
+#            only  has  an  effect if the selected binary image type lets you
+#            choose the bootloader. For example, if you  build  an  ISO  then
+#            syslinux  (or  more precise, isolinux) is always used. Also note
+#            that not all combinations of binary image types and  bootloaders
+#            are supported (lb config will fail to create such an unsupported
+#            configuration and will give a explanation about it). For HDD im‐
+#            ages  on  amd64 and i386, the default is 'syslinux'. This option
+#            supports more than one bootloader  to  be  specified  (space  or
+#            comma  separated)  in order to allow for both BIOS and EFI boot‐
+#            loaders to be included, though note that only one of  each  type
+#            can be used (i.e. do not try to use two BIOS bootloaders).

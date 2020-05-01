@@ -1,0 +1,15 @@
+#!/bin/sh -e
+lb config noauto \
+    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin net.ifnames=0 console=ttyS0 live-config.debug" \
+    --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
+        "${@}"
+
+#        --bootappend-live PARAMETER|"PARAMETERS"
+#            sets  boot parameters specific to debian-live. A complete list of
+#            boot parameters can be found in the  live-boot(7)  and  live-con‐
+#            fig(7) manual pages.
+
+#        --bootappend-live-failsafe PARAMETER|"PARAMETERS"
+#            sets  boot  parameters  specific to debian-live failsafe boot en‐
+#            tries. A complete list of boot parameters can  be  found  in  the
+#            live-boot(7) and live-config(7) manual pages.

@@ -1,0 +1,16 @@
+#!/bin/sh -e
+lb config noauto \
+    --binary-filesystem ext2 \
+        "${@}"
+
+#        --binary-filesystem fat16|fat32|ext2|ext3|ext4|ntfs
+#            defines the filesystem to be used in the image type.  This  only
+#            has  an effect if the selected binary image type lets you choose
+#            a filesystem. For example, for the ISO image type the  resulting
+#            CD/DVD  always has the filesystem ISO9660. When building HDD im‐
+#            ages for USB sticks, multiple filesystem formats are  supported,
+#            thus  this  becomes  applicable to allow selection. Note that it
+#            defaults to 'fat32' on all architectures. Also note that if  you
+#            choose  'fat16' and your resulting binary image gets bigger than
+#            2GB,  the  binary  filesystem  automatically  gets  switched  to
+#            'fat32'.
