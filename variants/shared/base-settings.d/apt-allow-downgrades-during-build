@@ -1,0 +1,10 @@
+#!/bin/sh -e
+lb config noauto \
+    --apt-options "--yes --allow-downgrades" \
+        "${@}"
+
+#        --apt-options OPTION|"OPTIONS"
+#            defines  the default options that will be appended to every apt
+#            call that is made inside chroot during the building of the  im‐
+#            age.  By default, this is set to --yes to allow non-interactive
+#            installation of packages.

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+lb config noauto \
+    --zsync false \
+        "${@}"
+
+#        --zsync true|false
+#            defines whether a file for distributing the  image  in  zsync(1)
+#            format will be generated. Defaults to true.
