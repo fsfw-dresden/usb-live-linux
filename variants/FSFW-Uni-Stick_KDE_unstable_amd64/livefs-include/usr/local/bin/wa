@@ -1,7 +1,0 @@
-#!/bin/bash
-# download file with simplified origin URL as name.
-for URL in $*; do
-    file=$(echo ${URL}|echo -e $(sed -r 's-.*://--;s+/+--+g;s/%/\\x/g;s/ /-/g')|sed 's|/|__|g')
-    [[ "$file" =~ ^www. ]] && suffix="${file##*.}" && file="${file#www.}" && file="${file%.*}.www.${suffix}"
-    wget --server-response --verbose --user-agent="" --output-document="$file" "${URL}"
-done

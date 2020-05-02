@@ -1,3 +1,0 @@
-#!/bin/sh -x
-# Was ist geändert? Was davon => committen? => publizieren? => noch mal
-git status && git add -p; git commit -v && git push -v

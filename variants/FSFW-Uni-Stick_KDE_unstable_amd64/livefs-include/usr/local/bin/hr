@@ -1,3 +1,0 @@
-#!/bin/bash
-# prints a horizontal line of full terminal width
-eval printf -- '-%.s' {1..$(tput cols)}

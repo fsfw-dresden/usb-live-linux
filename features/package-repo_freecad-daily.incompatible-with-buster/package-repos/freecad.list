@@ -1,0 +1,3 @@
+deb http://ppa.launchpad.net/freecad-maintainers/freecad-daily/ubuntu bionic main
+deb http://ppa.launchpad.net/freecad-maintainers/freecad-daily/ubuntu xenial main
+deb http://ppa.launchpad.net/freecad-maintainers/freecad-daily/ubuntu eoan main

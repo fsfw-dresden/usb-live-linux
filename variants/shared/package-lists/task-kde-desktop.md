@@ -60,7 +60,6 @@
 - :x:  sweeper  --	Löschen von Verlauf und temporären Dateien
 - :x:  konqueror  --  Hochentwickelter Dokumentenbetrachter, Webbrowser und Dateimanager
 - :x:  konq-plugins  --	Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser
-- :x:  kpart-webkit  --  KPart für WeKit	- sonst keine Anzeige von *.svg im konqueror
 - :x:  plasma-nm  --    Plasma5-Bibliothek zur Netzwerkverwaltung
 - :x:  skanlite  --	Auf dem KSane-Backend basierendes Scanprogramm für KDE 4
 
@@ -78,7 +77,6 @@
 - :+1:  ktimetracker  -- Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
 
 - :x:  kdiff3  -- Vergleicht und führt zwei oder drei Dateien oder Verzeichnisse zusammen
-- :x:  kdesudo  -- sudo-Oberfläche für KDE
 - :x:  partitionmanager  -- 	KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
 - :x:  filelight  -- Speicherbelegungsvisualisierung
 
