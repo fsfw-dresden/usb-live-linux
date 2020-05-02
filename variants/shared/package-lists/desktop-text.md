@@ -11,7 +11,7 @@
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
 - :x:  diffpdf  --	grafischer PDF-Vergleicher
 - :x:  xournal  --	GTK+-Anwendung für Notizen -- auch in *.pdf
-- :+1: :x:  [xournalpp](https://github.com/xournalpp/xournalpp/releases/download/1.0.17/xournalpp-1.0.17-Debian-buster-x86_64.deb)  --  Weiterentwicklung von Xournal
+- :+1: :x:  [xournalpp](https://github.com/xournalpp/xournalpp/releases/download/1.0.18/xournalpp-1.0.18-Debian-buster-x86_64.deb)  --  Weiterentwicklung von Xournal
 - :x:  pdfgrep  --	grep-artiges Suchprogramm für PDF-Dateien für die Konsole
 - :x:  pdfmod  --	PDF-Bearbeitungsfrontend
 - :x:  pdfresurrect  -- zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
