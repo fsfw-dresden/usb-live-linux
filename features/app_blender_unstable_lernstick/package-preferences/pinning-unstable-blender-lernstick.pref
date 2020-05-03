@@ -1,0 +1,3 @@
+Package: blender blender-data
+Pin: origin /lernstick/
+Pin-Priority: 500
