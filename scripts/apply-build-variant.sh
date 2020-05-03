@@ -25,7 +25,7 @@ apply_fragments() {
     local BASE=${@}
     # print_info "apply_fragments( BASE = ${BASE} )"
 
-    for FRAGMENT in ${BASE}/{inherit,features}/* ${BASE}; do
+    for FRAGMENT in ${BASE}/{inherit,inherits,depends,features}/* ${BASE}; do
         if [ ${FRAGMENT} != ${BASE} ] && [ -d ${FRAGMENT} ]; then
             apply_fragments ${FRAGMENT}
         else
