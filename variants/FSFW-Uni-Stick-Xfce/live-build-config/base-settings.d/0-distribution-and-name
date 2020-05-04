@@ -7,7 +7,7 @@ STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \
-    --image-name ${STICK_NAME}_${STICK_VERSION}_${DISTRIBUTION}_${DESKTOP} \
+    --image-name ${STICK_NAME}_${DESKTOP}_${STICK_VERSION}_${DISTRIBUTION} \
         "${@}"
 
 # Branchname im Image-Nammen setzen
@@ -18,7 +18,7 @@ nbranch=${nbranch//-/_}			# ersetze von - in _
 
 if [[ ! "${nbranch}" = "master" ]]; then
     lb config noauto \
-        --image-name ${STICK_NAME}_${STICK_VERSION}__${nbranch}__${DISTRIBUTION}_${DESKTOP} \
+        --image-name ${STICK_NAME}_${DESKTOP}_${STICK_VERSION}__${nbranch}__${DISTRIBUTION} \
         "${@}"
 fi
 
