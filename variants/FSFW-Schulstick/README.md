@@ -17,8 +17,8 @@ Die aktuelle Version (1368v / 2020-04-22) basiert auf Debian-Linux 10 (stable, c
 
 Für die Installation des FSFW-Schulsticks braucht es einen 16-Gigabyte-USB-Stick guter Qualität. Weiterhin braucht man ein spezielles Programm, um das Bespielen durchzuführen. Wir empfehlen dafür den [Etcher](https://www.balena.io/etcher/), den es dort für verschiedene Betriebssysteme zum Download gibt.
 
-> Image-Datei (7 GiB): [FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2](https://fsfw-sticks.test.opensourceecology.de/FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2)  
-> dazugehörige SHA256-Prüfsumme: [FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2.sha256sum](https://fsfw-sticks.test.opensourceecology.de/FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2.sha256sum)
+> Image-Datei (7 GiB): [FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2](http://ftp.inf.tu-dresden.de/os/FSFW/FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2)  
+> dazugehörige SHA256-Prüfsumme: [FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2.sha256sum](http://ftp.inf.tu-dresden.de/os/FSFW/FSFW-Schulstick_1368v_Xfce_buster-amd64.img.bz2.sha256sum)
 
 Damit einfach die komprimierte Image-Datei auswählen und auf den Stick "flashen". Das Programm verifiziert den erzeugten Stick auch, so dass bei erfolgreich vermeldetem Abschluss der Stick auch funktionieren sollte.
 
