@@ -19,6 +19,11 @@ select_live_iso_for_image() {
 
 # ISO can be given as first parameter
 [ -n "${1}" ] && ISO=$1 || ISO="iso-images/$(select_live_iso_for_image)"
+
+# try to detect stick type from image name
+FAT_LABEL="$(scripts/map-image-name-to-stick-type.sh ${ISO})" || FAT_LABEL="LIVESTICK"
+
+# cut off file ending of ISO and replace with .img
 IMG=${ISO##*/}
 IMG=${IMG%%.iso}
 IMG=${IMG%%.hybrid}.img
@@ -26,12 +31,14 @@ IMG=${IMG%%.hybrid}.img
 # target directory for image file as second parameter
 [ -n "${2}" ] && IMG=$2/${IMG}
 
-FAT_LABEL="SCHULSTICK"
-size_gb_disk_image=10
-size_mb_partition_fat32=1450
+# total size of image in MiB as 4th parameter
+[ -n "${3}" ] && size_mb_disk_image=$3 || size_mb_disk_image=$((10 * 2**10))
+
+# size of boot / data exchange FAT32 partition in MiB as 5th parameter
+[ -n "${4}" ] && size_mb_partition_fat32=$4 || size_mb_partition_fat32=1450
 
 # create image file
-truncate --size=${size_gb_disk_image}G ${IMG}
+truncate --size=${size_mb_disk_image}M ${IMG}
 
 # connect image to loop device
 LOOP=$(losetup --partscan --verbose --show --find ${IMG})

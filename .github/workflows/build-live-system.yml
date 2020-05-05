@@ -128,7 +128,7 @@ jobs:
     - name: glue up the final live stick IMG
       run: |
         # this should produce a special crafted USB stick image in /mnt
-        sudo bash -xv scripts/img-create-schulstick.sh iso-images/${{env.ISO}} "/mnt"
+        sudo bash -xv scripts/create-stick-image.sh iso-images/${{env.ISO}} "/mnt"
 
         # get the image name
         IMG=$(cd /mnt; command ls -tr *.img|tail -n 1)
