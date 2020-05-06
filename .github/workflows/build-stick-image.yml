@@ -12,8 +12,8 @@ on:
       - '*'
 
 # # every day at 23:42 UTC
-# schedule:
-#   - cron: "42 23 * * *"
+  schedule:
+    - cron: "42 23 * * *"
 
 jobs:
   summon:
