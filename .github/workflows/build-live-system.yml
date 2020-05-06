@@ -29,9 +29,9 @@ jobs:
       run: |
         sudo apt install speedometer iotop iftop fatrace ranger ncdu nmon tig
 
-#   # this gives us live ssh debugging capability
-#   - name: Setup tmate session
-#     uses: mxschmitt/action-tmate@v2
+    # this gives us live ssh debugging capability
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v2
 
     - name: checkout the usb-live-linux repo
       uses: actions/checkout@v2
