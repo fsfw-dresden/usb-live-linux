@@ -79,11 +79,11 @@ jobs:
         # install live-build
         sudo make install
 
-    - name: nuke free some storage space in the github action container
-      run: |
-        sudo swapoff /swapfile && sudo rm /swapfile
-        sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
-        df -h $(pwd) /mnt
+#   - name: nuke free some storage space in the github action container
+#     run: |
+#       sudo swapoff /swapfile && sudo rm /swapfile
+#       sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+#       df -h $(pwd) /mnt
 
 #   - name: cache the packages
 #     id: cache-packages
@@ -92,18 +92,18 @@ jobs:
 #       path: cache
 #       key: ${{ runner.os }}.packages.cache
 
-    - name: build ISO
-      run: |
-        sudo bash -x scripts/build-live-system.sh ${{env.BUILD_VARIANT}}
-        echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
-        echo ::set-env name=BUILDLOG::$(command ls build*.log)
-        df -h $(pwd) /mnt
+#   - name: build ISO
+#     run: |
+#       sudo bash -x scripts/build-live-system.sh ${{env.BUILD_VARIANT}}
+#       echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
+#       echo ::set-env name=BUILDLOG::$(command ls build*.log)
+#       df -h $(pwd) /mnt
 
-    - name: store build log as job artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: build.log
-        path: ${{env.BUILDLOG}}
+#   - name: store build log as job artifact
+#     uses: actions/upload-artifact@v1
+#     with:
+#       name: build.log
+#       path: ${{env.BUILDLOG}}
 
 #   # FIXME: upload size limit 2GiB!
 #   - name: upload release ISO to GH release
@@ -116,13 +116,13 @@ jobs:
 #       prerelease: true
 #       allowUpdates: true
 
-#   - name: fake ISO, for debugging IMG creation
-#     run: |
-#       mkdir -pv iso-images
-#       echo foo > iso-images/foo.iso
-#       cp -av /usr/lib/grub-rescue/grub-rescue-cdrom.iso iso-images/foo.iso
-#       echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
-#       df -h $(pwd) /mnt
+    - name: fake ISO, for debugging IMG creation
+      run: |
+        mkdir -pv iso-images
+        echo foo > iso-images/foo.iso
+        cp -av /usr/lib/grub-rescue/grub-rescue-cdrom.iso iso-images/foo.iso
+        echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
+        df -h $(pwd) /mnt
 
 #   - name: store ISO as job artifact
 #     uses: actions/upload-artifact@v1
