@@ -94,7 +94,7 @@ jobs:
 
     - name: build ISO
       run: |
-        sudo bash -xv scripts/build-live-system.sh ${{env.BUILD_VARIANT}}
+        sudo bash -x scripts/build-live-system.sh ${{env.BUILD_VARIANT}}
         echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
         echo ::set-env name=BUILDLOG::$(command ls build*.log)
         df -h $(pwd) /mnt
@@ -133,7 +133,7 @@ jobs:
     - name: glue up the final live stick IMG
       run: |
         # this should produce a special crafted USB stick image in /mnt
-        sudo bash -xv scripts/create-stick-image.sh iso-images/${{env.ISO}} "/mnt"
+        sudo bash -x scripts/create-stick-image.sh iso-images/${{env.ISO}} "/mnt"
 
         # get the image name
         IMG=$(cd /mnt; command ls -tr *.img|tail -n 1)
