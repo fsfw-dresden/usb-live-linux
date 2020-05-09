@@ -13,7 +13,7 @@
 - :x:  freecad  -- umfangreiches und vielfältiges Konstruktionsprogramm
 - :x:  calculix-ccx  -- Three-Dimensional Structural Finite Element Program (+1.906 kB)
 - :x:  povray-examples  -- Persistence of vision raytracer (3D renderer) + sample files (+11,8 MB)
-- :o:  librecad  -- 	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
+- :o:  librecad  --	Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 - :o:  openscad  --	script file based graphical CAD environment
 
 
