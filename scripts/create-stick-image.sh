@@ -1,7 +1,19 @@
-#!/bin/bash -xv
+#!/bin/bash -x
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
+
+# give some rudimentary help if requested
+case "${1}" in
+    "-h")
+        ;&
+    "--help")
+        print_info "usage is ${0} [ISO [TARGETDIRECTORY [TOTALSIZEMB* [FATPARTITIONSIZEMB**]]]]"
+        print_info "   (*) defaults to $((10 * 2**10))"
+        print_info "  (**) defaults to 1450"
+        exit
+        ;;
+esac
 
 select_live_iso_for_image() {
     OPTIONS=()

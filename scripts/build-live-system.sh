@@ -19,6 +19,17 @@
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
 
+# give some rudimentary help if requested
+case "${1}" in
+    "-h")
+        ;&
+    "--help")
+        print_info "usage is ${0} [BUILD_VARIANT]"
+        print_info "If given, BUILD_VARIANT must match a sub-folder or symlink in variants/"
+        exit
+        ;;
+esac
+
 select_build_variant() {
     shopt -s extglob
     OPTIONS=()
