@@ -26,4 +26,12 @@ Damit einfach die komprimierte Image-Datei auswählen und auf den Stick "flashen
 
 Falls Probleme auftreten, ihr eine Funktion vermisst oder eine Idee habt, wie man etwas besser machen kann: einfach hier auf der Github-Projekt-Seite oben unter "Issues" suchen oder einen neuen Fall anlegen.
 
+## Weitere Pläne / Kompetenzen gesucht
 
+- Tutorials, walk-throughs und Challenges für auf dem Stick vorhandene Software
+- Barrierefreiheit
+- Multisprach-System (=> Grub Boot-Menü)
+- international versions (India Africa)
+- Synergien mit dem Lernstick
+- ein eigenes apt-Repositorum
+- …
