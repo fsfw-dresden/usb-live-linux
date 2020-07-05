@@ -1,3 +1,4 @@
-#!/bin/sh -xv
+#!/bin/sh
 type qcmd || { echo "this mechanism needs package renameutils"; exit 1; }
-command qcmd -A --format=destination-only --command="/usr/lib/git-core/git-mv" "${@}"
+git rev-parse --is-inside-work-tree 2>/dev/null && COMMAND="/usr/lib/git-core/git-mv" || COMMAND="mv"
+command qcmd -A --format=destination-only --command=${COMMAND} "${@}"
