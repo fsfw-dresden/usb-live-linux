@@ -79,14 +79,6 @@ main() {
     # shell option: remove non-matching file globs
     shopt -s nullglob
 
-    # Paketlisten aus markdown konvertieren.
-    scripts/md2packagelist.sh variants/${BUILD_VARIANT}{,/features/*}/packages.md
-    # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
-    find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -delete
-
-    # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
-    scripts/extra-install-paket.sh ${BUILD_VARIANT}
-
     # copy FSFW docs
     scripts/copy-docs.sh ${BUILD_VARIANT} /usr/local/share/doc/FSFW-Dresden
 
@@ -96,6 +88,16 @@ main() {
     # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt
     sudo lb config
     sudo chown -Rc ${USER}:${USER} ./config
+
+    # workaround (FIXME): fix relative paths (OUCH)
+    sed -i 's|../shared/package-lists|../../variants/shared/package-lists|g' config/package-lists.markdown/*.md
+    # Paketlisten aus markdown konvertieren.
+    scripts/md2packagelist.sh config/package-lists.markdown/*.md
+    # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
+    find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -delete
+
+    # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
+    scripts/extra-install-paket.sh
 
     # FSFW_UNI_Stick_*.iso bauen
     sudo lb build
