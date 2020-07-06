@@ -8,9 +8,7 @@
 . "$(dirname "${0}")/functions.sh"
 cd_repo_root
 
-BUILD_VARIANT=$1
-[ -n "${BUILD_VARIANT}" ] || { print_warn "ERROR no BUILD_VARIANT parameter given" >&2 && exit 1; }
-echo "Live-Stick ${0} ${BUILD_VARIANT}" 
+echo "Live-Stick ${0}"
 
 DOWNLOAD="wget -nv -T10 --no-http-keep-alive --show-progress --progress=dot:giga -c -e content_disposition=off"
 PAKET_LISTEN=($(command ls config/package-lists/*))
@@ -31,21 +29,21 @@ for paket_liste in ${PAKET_LISTEN[@]}
 		paket=${paket/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert)
 
 		if [ -n "${paket}" ]; then
-			mkdir -pv {cache,config}/packages.chroot
-			if [ -f cache/packages.chroot/${paket} ]; then
+			mkdir -pv cache/packages.extra config/packages.chroot
+			if [ -f cache/packages.extra/${paket} ]; then
 				echo "${paket} im cache verfügbar"
 			else
 				echo "downloade ${paket}"
-				${DOWNLOAD} ${paket_quelle} -O cache/packages.chroot/${paket}.partial \
+				${DOWNLOAD} ${paket_quelle} -O cache/packages.extra/${paket}.partial \
 					&& echo "${paket} - geholt" \
 					|| { echo "Download fehlgeschlagen"; exit 1; }
 				TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
 				trap "rm -r /tmp/deb-pkg-check-???" EXIT SIGHUP SIGQUIT SIGTERM
-				dpkg-deb --extract cache/packages.chroot/${paket}.partial ${TMPDIR} \
+				dpkg-deb --extract cache/packages.extra/${paket}.partial ${TMPDIR} \
 					|| { echo "${paket} kaputt?"; exit 2; }
-				mv -v cache/packages.chroot/${paket}{.partial,}
+				mv -v cache/packages.extra/${paket}{.partial,}
 			fi
-			cp -a {cache,config}/packages.chroot/${paket}
+			cp -a cache/packages.extra/${paket} config/packages.chroot/
 		fi
 
 	    ;;
