@@ -1,12 +1,18 @@
+# generated HTML files
 doc/html/*.html
 
-iso-images
+# image output directory
+iso-images/
 
-.apt-http-proxy
-.lock
-
-# from previous FSFW-Uni-Stick dir
+# live-build work directories and artifacts
 binary/
+cache/
+chroot/
+config/
+source/
+.build/
+.lock
+*.log
 *.iso
 *.img
 *.tar*
@@ -14,19 +20,3 @@ binary/
 *.contents
 *.packages
 *.zsync
-
-.build/
-*.log
-
-auto/config
-
-cache/
-
-chroot/
-chroot.packages.*
-chroot.files
-
-config/*
-
-source/
-
