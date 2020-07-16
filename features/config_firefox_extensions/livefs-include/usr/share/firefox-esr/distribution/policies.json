@@ -8,7 +8,7 @@
     "DontCheckDefaultBrowser": true,
     "ExtensionSettings": {
       "dragselectlinktext@kestrel": {
-        "install_url": "https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/844616/",
         "installation_mode": "normal_installed"
       },
       "jid1-KdTtiCj6wxVAFA@jetpack": {
@@ -20,7 +20,7 @@
         "installation_mode": "normal_installed"
       },
       "tineye@ideeinc.com": {
-        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3343022/tineye_reverse_image_search-1.4.1-fx.xpi",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3343022/",
         "installation_mode": "normal_installed"
       }
     },
