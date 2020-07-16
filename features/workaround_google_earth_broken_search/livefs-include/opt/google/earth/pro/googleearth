@@ -1,47 +1,27 @@
-#!/bin/sh
-# Always run Google Earth from this shell script and not
-# Google Earth directly! This script makes sure the app looks
-# in the right place for libraries that might also be installed
-# elsewhere on your system.
-#
-# Ryan C. Gordon,  Thu Jul 20 14:32:33 PDT 2006
+#!/bin/bash
+# This script configures any environment prerequisites needed by Google Earth.
+# Start Google Earth using this script rather than googleearth-bin directly.
 
-# Function to find the real directory a program resides in.
-FindPath()
-{
-    fullpath="`echo $1 | grep /`"
-    if [ "$fullpath" = "" ]; then
-        oIFS="$IFS"
-        IFS=:
-        for path in $PATH
-        do if [ -x "$path/$1" ]; then
-               if [ "$path" = "" ]; then
-                   path="."
-               fi
-               fullpath="$path/$1"
-               break
-           fi
-        done
-        IFS="$oIFS"
-    fi
-    if [ "$fullpath" = "" ]; then
-        fullpath="$1"
-    fi
+# If you want to use an external copy of GPSBabel, you can specify it here.
+# if [[ -z "$GPSBABEL" ]]; then export GPSBABEL="$(which gpsbabel)"; fi
 
-    # Is the sed/ls magic portable?
-    if [ -L "$fullpath" ]; then
-        #fullpath="`ls -l "$fullpath" | awk '{print $11}'`"
-        fullpath=`ls -l "$fullpath" |sed -e 's/.* -> //' |sed -e 's/\*//'`
-    fi
-    dirname $fullpath
-}
+# If DISPLAY is not set, try to autodetect a value.
+if [[ -z "$DISPLAY" ]]; then
+  echo "WARNING: DISPLAY environment variable is not set."
+  x_displays=(/tmp/.X11-unix/X*)
+  display="${x_displays[0]}"
+  if [[ -e "$display" ]]; then
+    export DISPLAY=":${display/*X/}"
+    echo "        Found ${display}; setting DISPLAY=\"${DISPLAY}\"."
+  else
+    echo "        X11 display not detected; Google Earth may not run correctly."
+  fi
+fi
 
-script_path=$(FindPath $0);
-
-cd $script_path;
-
-# following is a hotfix for unbreaking the search functionality,
+# following is a hotfix for unbreaking the search functionality
+# (i18n messing with GPS coordinate separators)
 # c.f. https://support.google.com/earth/thread/10088759?msgid=18922305
-# 2020-05-01: not yet fixed in google-earth-pro-stable 7.3.3.7692-r0
+# still not fixed in google-earth-pro-stable 7.3.3.7721-r0 (2020-05-26)
 export LC_NUMERIC=en_US.UTF-8
-LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./googleearth-bin "$@"
+
+"$(dirname "$(readlink -f "$0")")/googleearth-bin" "$@"
