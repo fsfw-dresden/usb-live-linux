@@ -1,1 +1,2 @@
+- :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
 - :x:  redsocks  --		TCP connection redirector to a SOCKS or HTTPS proxy server

@@ -1,0 +1,2 @@
+- :x:  os-prober  --		utility to detect other OSes on a set of drives
+- :x:  rsync  --		fast, versatile, remote (and local) file-copying tool

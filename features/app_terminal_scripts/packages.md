@@ -1,0 +1,5 @@
+- :x:  ccze  --		robust and modular log coloriser
+- :x:  debsums  --	verification of installed package files against MD5 checksums
+- :x:  icdiff  --	terminal side-by-side colorized word diff
+- :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
+- :x:  python3-termcolor  --		ANSII Color formatting for output in terminal
