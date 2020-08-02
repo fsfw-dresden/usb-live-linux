@@ -1,1 +1,1 @@
-- :x:  riot-web  --		feature-rich client for Matrix.org (+57,7 MB)
+- :x:  element-desktop  --		feature-rich client for Matrix.org (+57,7 MB)
