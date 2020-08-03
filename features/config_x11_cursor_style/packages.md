@@ -1,0 +1,2 @@
+- :x:  breeze-cursor-theme  --	default cursor theme for the KDE Plasma 5
+

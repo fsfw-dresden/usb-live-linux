@@ -1,0 +1,2 @@
+- :x:  nemo  --		file manager
+

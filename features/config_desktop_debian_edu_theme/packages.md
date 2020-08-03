@@ -1,0 +1,2 @@
+- :x:  debian-edu-artwork  --		collection of images, themes, wallpapers and splash screens for use with Debian Edu
+

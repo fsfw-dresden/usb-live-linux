@@ -1,0 +1,9 @@
+- :x:  antiword  --		Converts MS Word files to text, PS, PDF and XML
+- :x:  bsdmainutils  --	collection of more utilities from FreeBSD (hexdump etc)
+- :x:  docx2txt  --		Convert Microsoft OOXML files to plain text
+- :x:  exiftool  --		read and write meta information in multimedia files
+- :x:  icdiff  --	terminal side-by-side colorized word diff
+- :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
+- :x:  pandoc  --	general markup converter
+- :x:  sqlite3  --		Command line interface for SQLite 3
+- :x:  tig  --		ncurses-based text-mode interface for Git

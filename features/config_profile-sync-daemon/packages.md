@@ -1,0 +1,1 @@
+- :x:  profile-sync-daemon  --	move browser profiles to RAM, periodically syncing it back to disk (reduce flash writes & latency)

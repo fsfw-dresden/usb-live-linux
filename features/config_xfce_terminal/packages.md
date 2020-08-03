@@ -1,0 +1,2 @@
+- :x:  fonts-hack-otf  --	Typeface designed for source code
+- :x:  xfce4-terminal  --		lightweight and easy to use terminal emulator for X11

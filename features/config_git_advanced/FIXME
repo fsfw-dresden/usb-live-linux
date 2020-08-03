@@ -1,0 +1,6 @@
+split this up:
+[include]
+     path = /path/to/foo.inc ; include by absolute path
+     path = foo.inc ; find "foo.inc" relative to the current file
+     path = ~/foo.inc ; find "foo.inc" in your `$HOME` directory
+
