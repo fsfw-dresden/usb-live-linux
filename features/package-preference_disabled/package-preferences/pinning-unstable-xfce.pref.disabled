@@ -1,3 +1,0 @@
-Package: /xfce/ /xfconf/ xfdesktop4* xfwm4 exo-utils libexo-* /thunar/ /cryptsetup/ libc6 libc6-dev libc-dev-bin libc-bin libc-l10n libcrypt1 libcrypt-dev libgcc-s1 locales vala-panel-appmenu-common
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500

@@ -1,3 +1,0 @@
-Package: task-print-service tasksel tasksel-data
-Pin: release a=testing, o=Debian
-Pin-Priority: 1000

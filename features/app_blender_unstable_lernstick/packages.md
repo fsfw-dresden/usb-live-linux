@@ -1,1 +1,0 @@
-- :x:  blender  --	integrated 3d suite for modelling, animation, rendering, post-production, interactive creation and playback (games)

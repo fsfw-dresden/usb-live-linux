@@ -1,4 +1,0 @@
-# more current maker soft (worked 2019-09-16)
-Package: blender* *freecad* printrun libstdc++6 libopencolorio* libopenimageio* gcc-9-base 
-Pin: origin /snapshot.debian.org/
-Pin-Priority: 500
