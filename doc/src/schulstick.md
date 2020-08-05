@@ -212,7 +212,7 @@ Spiele gibt es auf dem Stick viele! Einige empfehlenswerte sind unten in der Lei
 - einfach unten links in der Leiste auf den ![](/usr/share/xfce4/weather/icons/liquid/128/snowsunthunder.png){.inline}Wetterknopf klicken.. (Stadt ändern über rechte Maustaste => Eigenschaften => Ändern)
 - [Wetter | tagesschau.de](https://wetter.tagesschau.de/)
 - direkt für Dresden:
-  - [Vorhersage XL (Multi-Modell) (kachelmannwetter)](https://kachelmannwetter.com/)
+  - [Vorhersage XL (Multi-Modell) (kachelmannwetter)](https://kachelmannwetter.com/de/vorhersage/2935022-dresden/xltrend)
   - [Niederschlagsradar der letzten Stunde](https://www.niederschlagsradar.de/image.ashx?type=regioloop&regio=drs)
   - [komplettes Vorhersagediagramm](http://wetterstationen.meteomedia.de/messnetz/vorhersagegrafik/104870.png)
 
