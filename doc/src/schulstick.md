@@ -11,7 +11,7 @@
 - [Schreibkram		![](/usr/share/icons/Papirus/64x64/apps/de.wolfvollprecht.UberWriter.svg)](#schreibkram)
 - [Malen & Zeichnen	![](/usr/share/icons/Papirus/64x64/apps/mtpaint.svg)](#malen-zeichnen)
 - [Bilder ansehen & bearbeiten	![](/usr/share/icons/Papirus/64x64/apps/photocollage.svg)](#bilder-ansehen-bearbeiten)
-- [Musik hören		![](/usr/share/icons/Papirus/64x64/apps/ocenaudio.svg)](#musik-hören)
+- [Musik hören		![](/usr/share/icons/Papirus/64x64/devices/audio-speakers.svg)](#musik-hören)
 - [Musik machen		![](/usr/share/icons/Papirus/64x64/apps/com.github.torikulhabib.mindi.svg)](#musik-machen)
 - [Ideen festhalten	![](/usr/share/icons/Papirus/64x64/apps/braindump.svg)](#ideen-festhalten)
 - [Rechnen		![](/usr/share/icons/Papirus/64x64/apps/pcbcalculator.svg)](#rechnen)
@@ -211,8 +211,8 @@ Spiele gibt es auf dem Stick viele! Einige empfehlenswerte sind unten in der Lei
 ## Wetter schauen
 - einfach unten links in der Leiste auf den ![](/usr/share/xfce4/weather/icons/liquid/128/snowsunthunder.png){.inline}Wetterknopf klicken.. (Stadt ändern über rechte Maustaste => Eigenschaften => Ändern)
 - [Wetter | tagesschau.de](https://wetter.tagesschau.de/)
-- [Wetter HD | Wetter von kachelmann.](https://kachelmannwetter.com/)
 - direkt für Dresden:
+  - [Vorhersage XL (Multi-Modell) (kachelmannwetter)](https://kachelmannwetter.com/)
   - [Niederschlagsradar der letzten Stunde](https://www.niederschlagsradar.de/image.ashx?type=regioloop&regio=drs)
   - [komplettes Vorhersagediagramm](http://wetterstationen.meteomedia.de/messnetz/vorhersagegrafik/104870.png)
 
