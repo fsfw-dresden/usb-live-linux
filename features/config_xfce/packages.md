@@ -1,0 +1,2 @@
+- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
+- :x:  papirus-icon-theme  --		icon theme, drawing inspiration from Material Design and flat design

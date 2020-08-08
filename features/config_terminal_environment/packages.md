@@ -1,0 +1,2 @@
+- :x:  elinks  --		advanced text-mode WWW browser
+- :x:  cmatrix  --	Screen saver for the terminal

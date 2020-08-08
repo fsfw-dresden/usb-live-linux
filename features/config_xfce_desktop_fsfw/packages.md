@@ -1,0 +1,1 @@
+- :x:  mate-backgrounds  --		set of nature photographs (at /usr/share/backgrounds/mate/nature)

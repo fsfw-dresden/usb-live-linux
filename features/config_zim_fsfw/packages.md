@@ -1,0 +1,1 @@
+- :x:  zim  --		Desktopwiki, welches durch Plugins erweitert werden kann
