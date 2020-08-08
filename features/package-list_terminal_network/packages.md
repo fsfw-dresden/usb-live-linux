@@ -1,0 +1,15 @@
+- :x:  bridge-utils  --		Dienstprogramme für die Konfiguration der Linux-Ethernet-Brücke
+- :x:  ebtables  --		Verwaltung von Ethernet-Bridge-Frame-Tabellen
+- :x:  iftop  --		displays bandwidth usage information on an network interface
+- :x:  iproute2  --		Werkzeuge für Netzwerk(verkehrs)kontrolle
+- :x:  iw  --			Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
+- :x:  netcat-openbsd  --	open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6
+- :x:  nethogs  --		Net top tool grouping bandwidth per process
+- :x:  net-tools  --		ifconfig etc.
+- :x:  nmap  --			utility for network exploration or security auditing
+- :x:  rfkill  --		Wlan, Bluetooth & Co. an-/ abschalten
+- :x:  speedometer  --		measure and display the rate of data across a network connection
+- :x:  ssh-audit  --		tool for ssh server auditing
+- :x:  traceroute  --		Netzwerkanalysetool
+- :x:  wavemon  --		watch signal and noise levels
+- :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen

@@ -1,0 +1,1 @@
+- :x:  gnome-keyring  --  GNOME Schlüsselbund-Dienste (Daemon und Werkzeuge)

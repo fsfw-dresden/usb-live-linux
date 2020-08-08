@@ -1,0 +1,1 @@
+- :x:  qucs-s  --		Quite Universal Circuit Simulator with SPICE

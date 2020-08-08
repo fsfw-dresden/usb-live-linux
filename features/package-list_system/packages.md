@@ -67,7 +67,6 @@
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
 - :x:  qemu-guest-agent  --	Guest-side qemu-system agent (+255 kB)
 - :x:  vmtouch  --		file system cache diagnostics and control
-- :x:  preload  --		adaptive readahead daemon, predicts what applications users might run
 - :x:  qttranslations5-l10n  --		translations for Qt 5 (+1.501 kB)
 - :x:  syslinux-common  --		suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
 - :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
@@ -77,9 +76,10 @@
 - :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 - :x:  acpi-call-dkms  --		enables you to call ACPI methods
 - :x:  broadcom-sta-dkms  --		Broadcom STA Wireless driver
-- :x:  virtualbox-guest-dkms  --	virtualbox guest addition kernel modules
 - :x:  libblockdev-plugins-all  --	low-level operations with block devices
 
+- :o:  preload  --		adaptive readahead daemon, predicts what applications users might run
+- :o:  virtualbox-guest-dkms  --	virtualbox guest addition kernel modules
 - :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
 - :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
 - :o:  auto-apt-proxy  --		automatic detector of common APT proxy settings

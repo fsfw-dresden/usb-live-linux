@@ -2,47 +2,47 @@
 
 - ###  IDEs
 
-- :+1:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
-- :+1:  geany-plugin-addons
-- :+1:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
-- :+1:  geany-plugin-doc  -- weitere API-Dokumentationssuche
-- :+1:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
+- :x:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
+- :x:  geany-plugin-addons
+- :o:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
+- :x:  geany-plugin-doc  -- weitere API-Dokumentationssuche
+- :x:  geany-plugin-gendoc  -- Doku-Generator für Geany (vgl. etwa Doxygen)
 
 [//]: # (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
-- :+1:  geany-plugin-latex  -- LaTeX-Plugin für Geany
+- :x:  geany-plugin-latex  -- LaTeX-Plugin für Geany
 
-- :+1:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
-- :+1:  geany-plugin-pairtaghighlighter
-- :+1:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
-- :+1:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
-- :+1:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
-- :+1:  geany-plugin-vc  -- Geanyplugin für Versionsverwaltungen
-- :+1:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
-- :+1:  geany-plugin-projectorganizer  -- Projektverwaltungsplugin für Geany
+- :o:  geany-plugin-markdown  -- Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
+- :x:  geany-plugin-pairtaghighlighter
+- :x:  geany-plugin-pg  -- GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
+- :x:  geany-plugin-prettyprinter  -- Geanyplugin für hübschere Ausdrucke
+- :x:  geany-plugin-spellcheck  -- Rechtschreibkorrektur für Geany
+- :x:  geany-plugin-vc  -- Geanyplugin für Versionsverwaltungen
+- :x:  geany-plugin-extrasel  -- Blockauswahlmodus für Geany
+- :x:  geany-plugin-projectorganizer  -- Projektverwaltungsplugin für Geany
 
-- :o:  eric  -- Vollständige integrierte Python-Entwicklungsumgebung
-- :+1:  spyder  -- Python-IDE für Wissenschaftler (Python 2)
+- :x:  eric  -- Vollständige integrierte Python-Entwicklungsumgebung
 - :x:  spyder3  -- Python-IDE für Wissenschaftler (Python 3)
-[//]: # (Marcel: gibt's nur im unstable & zieht zu viele Pakete nach für pinning)
-- :+1:  python3-rope  -- Empfehlung von Spyder3 (Python refactoring library)
+- :x:  python3-rope  -- Empfehlung von Spyder3 (Python refactoring library)
 
-- :o:  qtcreator  -- IDE für C++ incl. QT-Framework
+- :x:  qtcreator  -- IDE für C++ incl. QT-Framework
 
 - :x:  swi-prolog  -- deklaratives Programmieren
-- :+1:  swi-prolog-doc
-- :+1:  swi-prolog-java
-- :+1:  swi-prolog-odbc
+- :x:  swi-prolog-doc
+- :x:  swi-prolog-java
+- :x:  swi-prolog-odbc
 
 - :x:  arduino  -- Entwicklungswerkzeuge für das AVR-Entwicklungsboard (Arduino-Boards) für Hobbybastler und andere
+
+- :x:  sqlitebrowser  -- grafisches Datenbankfrontend für Sqlite
 
 - ###  Spielerisch programmieren Lernen
 
 - :x:  scratch  -- Einfach bedienbare Programmierumgebung für Kinder ab 8 Jahren
-- :x:  squeak-plugins-scratch  -- spielerisch programmieren lernen (Erweiterung)
+- :o:  squeak-plugins-scratch  -- spielerisch programmieren lernen (Erweiterung)
 
 - ###  IDEs - Java
 
-- :+1:  jedit  -- weiterer Texteditor, der durch Plugins erweitert werden kann
+- :x:  jedit  -- weiterer Texteditor, der durch Plugins erweitert werden kann
 
 - :o:  eclipse  -- vielseitiger, aber auch schwergewichtiger, Klassiker
 - :o:  eclipse-cdt  -- Eclipse für C++ Programmierung

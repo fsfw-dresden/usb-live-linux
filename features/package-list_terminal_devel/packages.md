@@ -1,0 +1,6 @@
+- :x:  android-sdk-platform-tools  --	Tools for interacting with an Android platform (pulls in adb, fastboot)
+- :x:  bmap-tools  --	flash image files to block devices using the block map
+- :x:  debootstrap  --		used to create a Debian base system from scratch
+- :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
+- :x:  make  --		utility for directing compilation
+- :x:  tig  --		ncurses-based text-mode interface for Git

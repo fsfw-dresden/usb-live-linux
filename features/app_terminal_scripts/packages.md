@@ -3,3 +3,4 @@
 - :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  python3-lz4  --		Python interface to the lz4 compression library (for mozlz4)
 - :x:  python3-termcolor  --		ANSII Color formatting for output in terminal
+- :x:  sqlite3  --		Command line interface for SQLite 3

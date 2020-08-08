@@ -1,0 +1,5 @@
+- :x:  rss-glx  --	
+- :x:  unicode-screensaver  --	
+- :x:  xscreensaver  --	modular screen saver and locker for X11
+- :x:  xscreensaver-data-extra  --	Extra screen saver modules
+- :x:  xscreensaver-gl-extra  --	3D (OpenGL) screen saver modules

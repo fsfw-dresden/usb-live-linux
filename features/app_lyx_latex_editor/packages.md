@@ -1,0 +1,1 @@
+- :x:  lyx  --		almost WYSIWYG-frontend for LaTeX
