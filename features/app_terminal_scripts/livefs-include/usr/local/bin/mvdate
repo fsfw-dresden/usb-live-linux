@@ -1,8 +1,12 @@
-#!/bin/bash
-# append last-modified date and timestamp to a filename
-[ -e "$@" ] && name=${@%.*} && ext=.${@##*.} && {
-    [ -n "$name" ] || {
-        name=$@ && ext=
+#!/bin/bash -x
+# either move or copy given file, appending the
+# last-modified date and timestamp to a filename
+
+[ ${0##*/} = "cpdate" ] && CMD="cp -avi" || CMD="mv -vi"
+
+[ -e "${@}" ] && name=${@%.*} && ext=.${@##*.} && {
+    [ -n "${name}" ] || [ "${ext}" = ".${@}" ] && {
+        name=${@} && ext=
     }
-} && mv -vi "$@" "${name}_$(date -r "$@" +'%F_%H:%M')${ext}"
+} && ${CMD} "${@}" "${name}_$(date -r "${@}" +'%F_%H%Mh')${ext}"
 

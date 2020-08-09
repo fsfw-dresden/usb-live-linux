@@ -1,2 +1,43 @@
-#!/bin/bash -xv
-git status && git add -p; git commit -v && confirm git push -v origin
+#!/bin/bash +x
+
+# display_checklist "${TITLE}" "${TEXT}" "${ITEMS[@]}"
+# ITEMS = ( "entry name" "description" "status" )
+display_checklist() {
+    TITLE=$1 && shift
+    TEXT=$1 && shift
+    ITEMS=( "${@}" )
+    # make dialog xx% of terminal width/height
+    WIDTH=$((90 * $(tput cols) / 100))
+    HEIGHT=$((95 * $(tput lines) / 100))
+    MAXMENUHEIGHT=80
+    COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = (BLACK,WHITE,ON)" "tag_key_selected_color = tag_selected_color" )
+    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --checklist "${TEXT}" ${HEIGHT} ${WIDTH} ${MAXMENUHEIGHT} "${ITEMS[@]}"
+}
+
+
+select_files_to_add() {
+    ITEMS=()
+    while IFS= read -r -d $'\0' FILE;
+    do
+        DATESTR=$(timestr $(stat --format='@%Y' "${FILE}"))
+        TYPE=$(stat --printf="%F" "${FILE}")
+        [[ "${TYPE}" == "regular file" ]] && SIZESTR=$(numfmt --to=iec-i --suffix B $(stat --printf="%s" "${FILE}")) || SIZESTR=
+        ITEMS+=("${FILE}" "${DATESTR}"$'\t'" ${SIZESTR}" off)
+    done < <(git ls-files --others --exclude-standard --directory -z)
+    TEXT="Please choose the untracked files you want to git-add. Time since last modification is on the right side."
+    TITLE="GIT-ADD in $(pwd)"
+    [ ${#ITEMS} -gt 0 ] && display_checklist "${TITLE}" "${TEXT}" "${ITEMS[@]}"
+}
+
+shopt -s extglob
+FILES=$(select_files_to_add)
+#echo ${FILES}|less -SR
+
+[ -n "${FILES}" ] && for FILE in ${FILES};
+do
+        git add --verbose "${FILE}"
+done
+
+clear
+
+git -c color.status=always status | less -SR && git add -p; git commit -v && sudo confirm git push -v origin
