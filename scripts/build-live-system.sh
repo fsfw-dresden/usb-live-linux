@@ -15,6 +15,9 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 
+# exit on error
+set -e
+
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
@@ -89,8 +92,6 @@ main() {
     sudo lb config
     sudo chown -Rc ${USER}:${USER} ./config
 
-    # workaround (FIXME): fix relative paths (OUCH)
-    sed -i 's|../shared/package-lists|../../variants/shared/package-lists|g' config/package-lists.markdown/*.md
     # Paketlisten aus markdown konvertieren.
     scripts/md2packagelist.sh config/package-lists.markdown/*.md
     # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten

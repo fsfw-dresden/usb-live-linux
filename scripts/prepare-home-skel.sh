@@ -24,8 +24,8 @@ echo "schreibe git-versionsnummer & URL in HOME/.version-live-stick"
 {
   echo "this live-stick ISO was built $(date '+%F %R')"
   echo "stick-version $(scripts/calc-version-number.sh)"
-  echo "git-revision $(git rev-parse master)"
-  echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse master)"
+  echo "git-revision $(git rev-parse HEAD)"
+  echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD)"
 } > config/includes.chroot/etc/skel/.version-live-stick
 
 echo "${0} beendet"

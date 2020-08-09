@@ -55,7 +55,7 @@ select_live_iso() {
 
 select_fat_label() {
     OPTIONS=()
-    for LABEL in SCHULSTICK UNISTICK
+    for LABEL in SCHULSTICK MAKERSTICK UNISTICK
     do
         OPTIONS+=( ${LABEL} "" )
     done
@@ -166,8 +166,8 @@ end_mb_partition_live_image=$(round_int_to_next_multiple_of_16 $((size_mb_partit
 print_info "creating conventional DOS partition table.."
 parted --script ${DEVICE} mklabel msdos
 
-# create an EFI boot & data exchange partition
-parted --script --align=optimal ${DEVICE} mkpart primary fat32 2048s ${size_mb_partition_fat32}MiB
+# create an EFI boot & data exchange partition at an offset of 16MiB (to align with page size)
+parted --script --align=optimal ${DEVICE} mkpart primary fat32 32768s ${size_mb_partition_fat32}MiB
 parted ${DEVICE} set 1 boot on
 print_info "created 0 - ${size_mb_partition_fat32}MiB fat32 data exchange / EFI boot partition"
 
@@ -201,7 +201,12 @@ print_info "creating filesystems"
 mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
 
 # the live system main storage partition
-mkfs.ext2 -FL ${MAIN_LABEL} -m 0 ${DEVICE}${p}2
+mkfs.ext4 -FL ${MAIN_LABEL} -O ^has_journal -m 0 -i 1048576 ${DEVICE}${p}2
+# -F: Force create filesystem (unless mounted)
+# -L: set volume label (maximum length 16 bytes)
+# -O: create without journal
+# -m: percentage of blocks reserved for the super-user
+# -i: larger bytes-per-inode ratio > fewer inodes
 
 # persistence storage
 #mkfs.ext4 -L live-memory ${DEVICE}${p}3
@@ -210,7 +215,7 @@ mkfs.f2fs -fd 5 -l live-memory -O encrypt ${DEVICE}${p}3
 debug_pause
 
 # CLEAN-UP TRAPS
-# once set, these will fire on script exit or abortionq
+# once set, these will fire on script exit or abortion
 trap_remove_mountdir() { rmdir ${MOUNTDIR}; }
 trap_remove_mountsubdirs() { rmdir ${MOUNTDIR}/*; }
 trap_umount_persistencedirs() {
