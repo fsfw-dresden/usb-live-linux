@@ -1,0 +1,31 @@
+#!/bin/bash
+
+DISTRIBUTION=buster
+DESKTOP=Xfce
+STICK_NAME=TEST-Ministick
+STICK_VERSION="$(echo "$(scripts/calc-version-number.sh)")"
+
+lb config noauto \
+    --distribution ${DISTRIBUTION} \
+    --image-name ${STICK_NAME}_${STICK_VERSION}_${DISTRIBUTION}_${DESKTOP} \
+        "${@}"
+
+# Branchname im Image-Nammen setzen
+
+nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
+nbranch=${nbranch////_}			# ersetze von / in _
+nbranch=${nbranch//-/_}			# ersetze von - in _
+
+if [[ ! "${nbranch}" = "master" ]]; then
+    lb config noauto \
+        --image-name ${STICK_NAME}_${STICK_VERSION}__${nbranch}__${DISTRIBUTION}_${DESKTOP} \
+        "${@}"
+fi
+
+#        -d|--distribution CODENAME
+#            defines the distribution of the resulting live system. This cur‐
+#            rently defaults to 'buster'. The value 'sid' can be used for De‐
+#            bian unstable.
+
+#        --image-name NAME
+#            sets the base name of the image. Defaults to live-image.
