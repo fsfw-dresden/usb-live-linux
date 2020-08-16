@@ -1,6 +1,13 @@
 #!/bin/sh
+
+# git refuses to operate without user information
 git config --system user.name system
 git config --system user.email root@localhost
+
 cd /etc
+# don't commit user skeleton and chroot hosts file to git
+echo "skel" >> .gitignore
+git reset skel
 git reset hosts
+
 etckeeper commit "Initial commit"
