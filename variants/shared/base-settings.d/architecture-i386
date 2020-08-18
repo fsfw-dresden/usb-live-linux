@@ -1,0 +1,21 @@
+#!/bin/sh -e
+lb config noauto \
+    --architectures i386 \
+    --linux-flavours 686-pae \
+        "${@}"
+
+#        -a|--architectures ARCHITECTURE
+#            defines the architecture of the to be build  image.  By  default,
+#            this is set to the host architecture. Note that you cannot cross‐
+#            build for another architecture if your host system is not able to
+#            execute  binaries for the target architecture natively. For exam‐
+#            ple, building amd64 images on i386 and vice versa is possible  if
+#            you have a 64bit capable i386 processor and the right kernel. But
+#            building powerpc images on an i386 system is not possible.
+
+#        -k|--linux-flavours FLAVOUR|"FLAVOURS"
+#            sets the kernel  flavours  to  be  installed.
+#            Note  that in case you specify more than that
+#            the first will be configured the default ker‐
+#            nel that gets booted.
+

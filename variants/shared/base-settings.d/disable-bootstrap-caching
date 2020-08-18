@@ -1,0 +1,14 @@
+#!/bin/sh -e
+lb config noauto \
+    --cache-stages "" \
+        "${@}"
+
+#        --cache-stages STAGE|"STAGES"
+#            sets which stages should be cached (a comma or space
+#            separated list). By default this is  set  to  'boot‐
+#            strap'.  As  an exception to the normal stage names,
+#            'rootfs' can also be  used  here  which  means  only
+#            cache  the  generated  root  filesystem  in filesys‐
+#            tem.{dir,ext*,squashfs}. This is useful  during  de‐
+#            velopment  if  you  want to rebuild the binary stage
+#            but not regenerate the root filesystem all the time.

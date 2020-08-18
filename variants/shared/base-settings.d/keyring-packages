@@ -1,6 +1,6 @@
 #!/bin/sh -e
 lb config noauto \
-    --keyring-packages "debian-archive-keyring debian-keyring deb-multimedia-keyring" \
+    --keyring-packages "debian-archive-keyring debian-keyring" \
         "${@}"
 
 #        --keyring-packages PACKAGE|"PACKAGES"

@@ -1,8 +1,8 @@
 #!/bin/sh -e
 lb config noauto \
-    --security=true \
+    --security=false \
         "${@}"
 
 #        --security true|false
 #            defines if the security repositories specified  in  the  security
-#            mirror options should be used or not.
+#            mirror options should be used or not. (Enabled by default)
