@@ -1,2 +1,2 @@
 #!/bin/sh
-pip install tuimoji
+pip3 install tuimoji

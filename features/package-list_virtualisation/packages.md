@@ -2,7 +2,7 @@
 
 - ###  Virtualisierung
 
-- :x:  qemu-kvm  --	Vollständige Virtualisierung auf x86-Hardware
+- :x:  qemu-system-x86  --	Vollständige Virtualisierung auf x86-Hardware
 - :x:  ovmf  --	UEFI firmware for 64-bit x86 virtual machines
 - :x:  qemu-system-gui  --	graphical user interface (currently GTK) and audio backends (+97,8 kB)
 - :x:  qemu-utils  --	QEMU-Werkzeuge qemu-img, qemu-io, qemu-nbd (+964 kB)

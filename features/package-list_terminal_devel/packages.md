@@ -4,3 +4,4 @@
 - :x:  eatmydata  --		small LD_PRELOAD library to transparently disable fsync and friends
 - :x:  make  --		utility for directing compilation
 - :x:  tig  --		ncurses-based text-mode interface for Git
+- :x:  setools-gui  --		graphical SELinux policy analysis tool

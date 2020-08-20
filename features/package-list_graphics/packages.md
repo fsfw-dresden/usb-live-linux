@@ -38,4 +38,4 @@
 - :+1:  digikam-doc  --
 - :+1:  kipi-plugins  -- Grafikbibliothek für KDEs Digikam
 - :1:  geeqie  --	Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
-
+- :x:  rapid-photo-downloader  --	download photos and videos from cameras, memory cards, other devices
