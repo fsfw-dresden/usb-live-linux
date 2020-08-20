@@ -11,16 +11,20 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/file/844616/",
         "installation_mode": "normal_installed"
       },
-      "jid1-KdTtiCj6wxVAFA@jetpack": {
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi",
-        "installation_mode": "normal_installed"
-      },
       "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi",
         "installation_mode": "normal_installed"
       },
+      "selection-search@myr1.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3559005",
+        "installation_mode": "normal_installed"
+      },
       "tineye@ideeinc.com": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/file/3343022/",
+        "installation_mode": "normal_installed"
+      },
+      "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3620301/",
         "installation_mode": "normal_installed"
       }
     },

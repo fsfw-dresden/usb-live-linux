@@ -337,6 +337,348 @@
       },
       "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi!/",
       "location": "app-profile"
+    },
+    {
+      "id": "selection-search@myr1.net",
+      "syncGUID": "{ef09941f-73ae-42ce-b366-24e37e845460}",
+      "version": "0.8.56",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": "options/options.html",
+      "optionsType": 3,
+      "optionsBrowserStyle": false,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Selection Search",
+        "description": "Search for the selected text in search engines",
+        "creator": null,
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1596663308000,
+      "updateDate": 1596663308000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/selection-search@myr1.net.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3559005/selection_search-0.8.56-fx.xpi?src=search",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": false,
+      "strictCompatibility": true,
+      "locales": [],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": "63.0",
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": true,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "contextMenus",
+          "storage",
+          "notifications",
+          "clipboardWrite",
+          "tabs"
+        ],
+        "origins": [
+          "<all_urls>",
+          "http://*/*",
+          "https://*/*",
+          "file://*/*",
+          "http://mycroftproject.com/*",
+          "https://mycroftproject.com/*"
+        ]
+      },
+      "icons": {
+        "16": "img/icon16.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "amo",
+        "sourceURL": "https://addons.mozilla.org/en-US/firefox/search/?q=selection%20search&platform=Linux&appver=68.11.0",
+        "method": "amWebAPI"
+      },
+      "recommendationState": null,
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/selection-search@myr1.net.xpi!/",
+      "location": "app-profile"
+    },
+    {
+      "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
+      "syncGUID": "{b0e17189-6b46-4dc1-93d9-648c2b2ad50a}",
+      "version": "6.7",
+      "type": "extension",
+      "loader": null,
+      "optionsURL": "options/options.html",
+      "optionsType": 5,
+      "optionsBrowserStyle": false,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Translate Web Pages",
+        "description": "Translate your page in real time using Google or Yandex.",
+        "creator": null,
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1596666063000,
+      "updateDate": 1596666063000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{036a55b4-5e72-4d05-a06c-cba2dfcc134a}.xpi",
+      "skinnable": false,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3620301/traduzir_paginas_web-6.7-an+fx.xpi?src=dp-btn-primary",
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": false,
+      "strictCompatibility": true,
+      "locales": [
+        {
+          "name": "Translate Web Pages",
+          "description": "Translate your page in real time using Google or Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "en"
+          ]
+        },
+        {
+          "name": "ウェブページを翻訳",
+          "description": "GoogleやYandexを使ってリアルタイムでページを翻訳します。",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "ja"
+          ]
+        },
+        {
+          "name": "Traduire des pages Web",
+          "description": "Traduisez votre page en temps réel à l'aide de Google ou Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "fr"
+          ]
+        },
+        {
+          "name": "Přeložit webové stránky",
+          "description": "Přeložte svou stránku v reálném čase pomocí Google nebo Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "cs"
+          ]
+        },
+        {
+          "name": "Traduci le pagine web",
+          "description": "Traduci la tua pagina in tempo reale utilizzando Google o Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "it"
+          ]
+        },
+        {
+          "name": "वेब पृष्ठों का अनुवाद करें",
+          "description": "Google या Yandex का उपयोग करके वास्तविक समय में अपने पृष्ठ का अनुवाद करें।",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "hi"
+          ]
+        },
+        {
+          "name": "Webseiten übersetzen",
+          "description": "Übersetzen Sie Ihre Seite in Echtzeit mit Google oder Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "de"
+          ]
+        },
+        {
+          "name": "翻译网页",
+          "description": "使用Google或Yandex实时翻译您的页面。",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "zh-CN"
+          ]
+        },
+        {
+          "name": "Перевести веб-страницы",
+          "description": "Переводите страницу в режиме реального времени с помощью Google или Яндекс.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "ru"
+          ]
+        },
+        {
+          "name": "Tłumacz strony internetowe",
+          "description": "Przetłumacz swoją stronę w czasie rzeczywistym za pomocą Google lub Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "pl"
+          ]
+        },
+        {
+          "name": "翻譯網頁",
+          "description": "使用Google或Yandex實時翻譯您的頁面。",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "zh-TW"
+          ]
+        },
+        {
+          "name": "Prevedi web stranice",
+          "description": "Prevedi svoju stranicu u stvarnom vremenu pomoću Googlea ili Yandexa.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "hr"
+          ]
+        },
+        {
+          "name": "Käännä verkkosivut",
+          "description": "Käännä verkkosivu lennossa Googlella tai Yandexilla.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "fi"
+          ]
+        },
+        {
+          "name": "Traduzir páginas da web",
+          "description": "Traduza sua página em tempo real usando o Google ou Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "pt"
+          ]
+        },
+        {
+          "name": "Traducir páginas web",
+          "description": "Traduce tu página en tiempo real usando Google o Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "es"
+          ]
+        },
+        {
+          "name": "Traduzir Páginas Web",
+          "description": "Traduza sua página em tempo real usando o Google ou Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "pt-PT"
+          ]
+        },
+        {
+          "name": "Webpagina's vertalen",
+          "description": "Vertaal uw pagina in realtime met Google of Yandex.",
+          "creator": null,
+          "developers": null,
+          "translators": null,
+          "contributors": null,
+          "locales": [
+            "nl"
+          ]
+        }
+      ],
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org"
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": true,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "storage",
+          "activeTab",
+          "contextMenus"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "icons": {
+        "32": "icons/google-translate-32.png",
+        "64": "icons/google-translate-64.png",
+        "128": "icons/google-translate-128.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "amo",
+        "sourceURL": "https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/",
+        "method": "amWebAPI"
+      },
+      "recommendationState": null,
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B036a55b4-5e72-4d05-a06c-cba2dfcc134a%7D.xpi!/",
+      "location": "app-profile"
     }
   ]
 }
