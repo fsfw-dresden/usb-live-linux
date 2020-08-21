@@ -251,6 +251,29 @@
           "url": "http://packages.debian.org/%s"
         }
       ]
+    },
+    {
+      "name": "Für Kinder",
+      "url": "",
+      "is_submenu": true,
+      "engines": [
+        {
+          "name": "Blinde Kuh",
+          "url": "http://www.blinde-kuh.de/bksearch.cgi?query=%s"
+        },
+        {
+          "name": "fragFINN",
+          "url": "https://www.fragfinn.de/?s&q=%s"
+        },
+        {
+          "name": "Find-das-Bild",
+          "url": "http://www.find-das-bild.de/suche/?tx_fdbgallery_fdbgallery[searchWord]=%s"
+        },
+        {
+          "name": "🇫🇷 Qwant Junior",
+          "url": "https://www.qwantjunior.com/?q=%s"
+        }
+      ]
     }
   ],
   "styleSheet": ".mainmenu > li:first-child input{\n  font-weight: bold;\n  white-space: break-spaces;\n}\n\n/* Prepend descriptive text to search term */\n.mainmenu > li:first-child:before{\n  font-size: 0.9em;\n  content: \"Search phrase: \";\n}\n\n/* reset width from fixed 12em to auto */\n.popup {\n  width: unset;\n}\n\n.popup input {\n  display: block;\n  width: -moz-available;\n}\n\n.popup .mainmenu {\n  max-width: 15%;\n}\n\n/* force links to not wrap into next line */\n.popup a {\n  white-space: nowrap;\n}\n\n/* slight round corners */\n.popup {\n  border-radius: 0.75em;\n}\n\n/* allow engine names to be wider */\n.popup .engine-name {\n  width: unset;\n  max-width: calc(100% - 16px); /* subtract image from container width */\n}\n\n/* WE THE short-sighted PEOPLE like bigger buttons */\n.button {\n  width: 48px;\n  height: 48px;\n  background-image: url(\"chrome://global/skin/icons/search-textbox.svg\") !important;\n  background-size: 75%;\n}",
