@@ -1,12 +1,22 @@
-#!/bin/bash -x
+#!/bin/bash -e
 # either move or copy given file, appending the
 # last-modified date and timestamp to a filename
 
 [ ${0##*/} = "cpdate" ] && CMD="cp -avi" || CMD="mv -vi"
 
-[ -e "${@}" ] && name=${@%.*} && ext=.${@##*.} && {
-    [ -n "${name}" ] || [ "${ext}" = ".${@}" ] && {
-        name=${@} && ext=
-    }
-} && ${CMD} "${@}" "${name}_$(date -r "${@}" +'%F_%H%Mh')${ext}"
+FSPATH=$(dirname "${@}")
+FSOBJECT=$(basename "${@}")
 
+# split off extension(s) at the first dot
+NAME=${FSOBJECT%%.*}
+EXT="${FSOBJECT#*.}"
+
+# if basename doesn't include a dot, reset name and extension
+[ "${EXT}" != "${FSOBJECT}" ] || { NAME=${FSOBJECT} && EXT=""; }
+
+# get the date of last modification and assemble target file name
+DATESTR=$(date --date="$(stat --printf='%y' "${FSPATH}/${FSOBJECT}")" +'%F.%H%Mh')
+TARGET="${FSPATH}/${NAME}.${DATESTR}${EXT:+.${EXT}}"
+
+# do the rename
+${CMD} "${FSPATH}/${FSOBJECT}" "${TARGET}"

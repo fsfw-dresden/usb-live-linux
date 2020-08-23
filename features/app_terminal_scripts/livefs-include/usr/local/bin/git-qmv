@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/sh +x
 # will invoke an editor to edit all filenames given as arguments
 # integrates with git and falls back to conventional mv
 
 type qcmd || { echo "this mechanism needs package renameutils"; exit 1; }
 
-INSIDEGIT=$(git rev-parse --is-inside-work-tree 2>/dev/null; echo $?)
-FILESINGIT=$(git ls-files --error-unmatch "${@}" 2>/dev/null; echo $?)
+INSIDEGIT=$(git rev-parse --is-inside-work-tree >/dev/null 2>&1; echo $?)
+FILESINGIT=$(git ls-files --error-unmatch "${@}" >/dev/null 2>&1; echo $?)
 
-${INSIDEGIT} && ${FILESINGIT} && COMMAND="/usr/lib/git-core/git-mv" || COMMAND="mv"
+[ ${INSIDEGIT} -eq 0 ] && [ ${FILESINGIT} -eq 0 ] && COMMAND="/usr/lib/git-core/git-mv" || COMMAND="mv"
 command qcmd -A --format=destination-only --command=${COMMAND} "${@}"
