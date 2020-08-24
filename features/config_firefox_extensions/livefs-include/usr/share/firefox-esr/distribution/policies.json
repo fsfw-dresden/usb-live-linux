@@ -51,8 +51,6 @@
       "extensions.getAddons.showPane": false,
       "media.gmp-gmpopenh264.enabled": true,
       "ui.key.menuAccessKeyFocuses": true
-    },
-    "PromptForDownloadLocation": true,
-    "SearchBar": "separate"
+    }
   }
 }
