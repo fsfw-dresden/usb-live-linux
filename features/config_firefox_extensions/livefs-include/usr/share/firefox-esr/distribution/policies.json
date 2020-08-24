@@ -23,6 +23,18 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/file/3343022/",
         "installation_mode": "normal_installed"
       },
+      "playbackSpeed@waldemar.b": {
+        "_name": "Playback speed",
+        "_description": "Button to control the speed of media playback",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/3522013/",
+        "installation_mode": "normal_installed"
+      },
+      "{44ec79ad-72a9-471d-962d-49e7e5501d97}": {
+        "_name": "Earth View from Google Earth",
+        "_description": "Experience a beautiful image from Google Earth every time you open a new tab.",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/file/737036/",
+        "installation_mode": "normal_installed"
+      },
       "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
         "install_url": "https://addons.mozilla.org/firefox/downloads/file/3620301/",
         "installation_mode": "normal_installed"

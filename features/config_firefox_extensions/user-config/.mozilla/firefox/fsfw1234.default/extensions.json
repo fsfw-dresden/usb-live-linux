@@ -4,7 +4,7 @@
     {
       "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
       "syncGUID": "{abf4ab46-f776-4513-bca1-3796906c6c0e}",
-      "version": "1.43.4",
+      "version": "1.45.0",
       "type": "extension",
       "loader": null,
       "updateURL": null,
@@ -26,16 +26,15 @@
       "userDisabled": false,
       "appDisabled": false,
       "installDate": 1585295362000,
-      "updateDate": 1585300901000,
+      "updateDate": 1598136444000,
       "applyBackgroundUpdates": 1,
       "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi",
       "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/addon-12533945-latest.xpi",
+      "sourceURI": null,
       "releaseNotesURI": null,
       "softDisabled": false,
       "foreignInstall": true,
       "strictCompatibility": true,
-      "locales": [],
       "targetApplications": [
         {
           "id": "toolkit@mozilla.org",
@@ -83,8 +82,8 @@
         "method": "sideload"
       },
       "recommendationState": {
-        "validNotAfter": 1742871659000,
-        "validNotBefore": 1585083659000,
+        "validNotAfter": 1751299230000,
+        "validNotBefore": 1593511230000,
         "states": [
           "recommended"
         ]
@@ -117,29 +116,15 @@
       "userDisabled": false,
       "appDisabled": false,
       "installDate": 1516785624000,
-      "updateDate": 1585300901000,
+      "updateDate": 1598136444000,
       "applyBackgroundUpdates": 1,
       "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/dragselectlinktext@kestrel.xpi",
       "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/844616/drag_select_link_text-1.5.4-an+fx-windows.xpi",
+      "sourceURI": null,
       "releaseNotesURI": null,
       "softDisabled": false,
       "foreignInstall": true,
       "strictCompatibility": true,
-      "locales": [
-        {
-          "name": "Drag-Select Link Text",
-          "description": "Select link text with easy mouse gestures.",
-          "creator": "Kestrel",
-          "homepageURL": "https://github.com/nkestrel/dragselectlinktext",
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "en"
-          ]
-        }
-      ],
       "targetApplications": [
         {
           "id": "toolkit@mozilla.org",
@@ -178,89 +163,6 @@
       "location": "app-profile"
     },
     {
-      "id": "jid1-KdTtiCj6wxVAFA@jetpack",
-      "syncGUID": "{633598ad-68d1-45fc-83ea-74d16896a59b}",
-      "version": "3.41.2",
-      "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": "settings/settings.html",
-      "optionsType": 3,
-      "optionsBrowserStyle": true,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Swift Selection Search",
-        "description": "Swiftly access your search engines in a popup panel when you select text in a webpage. Context search menu also included!",
-        "creator": null,
-        "homepageURL": "https://github.com/CanisLupus/swift-selection-search",
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1585295362000,
-      "updateDate": 1585300901000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/jid1-KdTtiCj6wxVAFA@jetpack.xpi",
-      "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/swift-selection-search/addon-11484800-latest.xpi",
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": true,
-      "strictCompatibility": true,
-      "locales": [],
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": "63.0",
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": false,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "clipboardWrite",
-          "contextMenus",
-          "storage",
-          "webNavigation",
-          "webRequest",
-          "webRequestBlocking"
-        ],
-        "origins": [
-          "<all_urls>"
-        ]
-      },
-      "icons": {
-        "48": "icons/icon48.png",
-        "96": "icons/icon96.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "app-profile",
-        "method": "sideload"
-      },
-      "recommendationState": {
-        "validNotAfter": 1742740012000,
-        "validNotBefore": 1584952012000,
-        "states": [
-          "recommended"
-        ]
-      },
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/jid1-KdTtiCj6wxVAFA@jetpack.xpi!/",
-      "location": "app-profile"
-    },
-    {
       "id": "tineye@ideeinc.com",
       "syncGUID": "{4b5e0504-4f4f-4861-a105-f87c463a4a80}",
       "version": "1.4.1",
@@ -285,16 +187,15 @@
       "userDisabled": false,
       "appDisabled": false,
       "installDate": 1585527484000,
-      "updateDate": 1585527484000,
+      "updateDate": 1598136444000,
       "applyBackgroundUpdates": 1,
       "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi",
       "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3343022/tineye_reverse_image_search-1.4.1-fx.xpi",
+      "sourceURI": null,
       "releaseNotesURI": null,
       "softDisabled": false,
       "foreignInstall": false,
       "strictCompatibility": true,
-      "locales": [],
       "targetApplications": [
         {
           "id": "toolkit@mozilla.org",
@@ -362,16 +263,15 @@
       "userDisabled": false,
       "appDisabled": false,
       "installDate": 1596663308000,
-      "updateDate": 1596663308000,
+      "updateDate": 1598136444000,
       "applyBackgroundUpdates": 1,
       "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/selection-search@myr1.net.xpi",
       "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3559005/selection_search-0.8.56-fx.xpi?src=search",
+      "sourceURI": null,
       "releaseNotesURI": null,
       "softDisabled": false,
       "foreignInstall": false,
       "strictCompatibility": true,
-      "locales": [],
       "targetApplications": [
         {
           "id": "toolkit@mozilla.org",
@@ -443,204 +343,15 @@
       "userDisabled": false,
       "appDisabled": false,
       "installDate": 1596666063000,
-      "updateDate": 1596666063000,
-      "applyBackgroundUpdates": 1,
+      "updateDate": 1598136444000,
+      "applyBackgroundUpdates": 0,
       "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{036a55b4-5e72-4d05-a06c-cba2dfcc134a}.xpi",
       "skinnable": false,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/file/3620301/traduzir_paginas_web-6.7-an+fx.xpi?src=dp-btn-primary",
+      "sourceURI": null,
       "releaseNotesURI": null,
       "softDisabled": false,
       "foreignInstall": false,
       "strictCompatibility": true,
-      "locales": [
-        {
-          "name": "Translate Web Pages",
-          "description": "Translate your page in real time using Google or Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "en"
-          ]
-        },
-        {
-          "name": "ウェブページを翻訳",
-          "description": "GoogleやYandexを使ってリアルタイムでページを翻訳します。",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "ja"
-          ]
-        },
-        {
-          "name": "Traduire des pages Web",
-          "description": "Traduisez votre page en temps réel à l'aide de Google ou Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "fr"
-          ]
-        },
-        {
-          "name": "Přeložit webové stránky",
-          "description": "Přeložte svou stránku v reálném čase pomocí Google nebo Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "cs"
-          ]
-        },
-        {
-          "name": "Traduci le pagine web",
-          "description": "Traduci la tua pagina in tempo reale utilizzando Google o Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "it"
-          ]
-        },
-        {
-          "name": "वेब पृष्ठों का अनुवाद करें",
-          "description": "Google या Yandex का उपयोग करके वास्तविक समय में अपने पृष्ठ का अनुवाद करें।",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "hi"
-          ]
-        },
-        {
-          "name": "Webseiten übersetzen",
-          "description": "Übersetzen Sie Ihre Seite in Echtzeit mit Google oder Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "de"
-          ]
-        },
-        {
-          "name": "翻译网页",
-          "description": "使用Google或Yandex实时翻译您的页面。",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "zh-CN"
-          ]
-        },
-        {
-          "name": "Перевести веб-страницы",
-          "description": "Переводите страницу в режиме реального времени с помощью Google или Яндекс.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "ru"
-          ]
-        },
-        {
-          "name": "Tłumacz strony internetowe",
-          "description": "Przetłumacz swoją stronę w czasie rzeczywistym za pomocą Google lub Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "pl"
-          ]
-        },
-        {
-          "name": "翻譯網頁",
-          "description": "使用Google或Yandex實時翻譯您的頁面。",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "zh-TW"
-          ]
-        },
-        {
-          "name": "Prevedi web stranice",
-          "description": "Prevedi svoju stranicu u stvarnom vremenu pomoću Googlea ili Yandexa.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "hr"
-          ]
-        },
-        {
-          "name": "Käännä verkkosivut",
-          "description": "Käännä verkkosivu lennossa Googlella tai Yandexilla.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "fi"
-          ]
-        },
-        {
-          "name": "Traduzir páginas da web",
-          "description": "Traduza sua página em tempo real usando o Google ou Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "pt"
-          ]
-        },
-        {
-          "name": "Traducir páginas web",
-          "description": "Traduce tu página en tiempo real usando Google o Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "es"
-          ]
-        },
-        {
-          "name": "Traduzir Páginas Web",
-          "description": "Traduza sua página em tempo real usando o Google ou Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "pt-PT"
-          ]
-        },
-        {
-          "name": "Webpagina's vertalen",
-          "description": "Vertaal uw pagina in realtime met Google of Yandex.",
-          "creator": null,
-          "developers": null,
-          "translators": null,
-          "contributors": null,
-          "locales": [
-            "nl"
-          ]
-        }
-      ],
       "targetApplications": [
         {
           "id": "toolkit@mozilla.org"
@@ -678,6 +389,143 @@
       },
       "recommendationState": null,
       "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B036a55b4-5e72-4d05-a06c-cba2dfcc134a%7D.xpi!/",
+      "location": "app-profile"
+    },
+    {
+      "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
+      "syncGUID": "{f143f8aa-e1ca-48f3-9333-4a8ff5829315}",
+      "version": "2.18.7",
+      "type": "extension",
+      "loader": null,
+      "optionsURL": null,
+      "optionsType": null,
+      "optionsBrowserStyle": true,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Earth View from Google Earth",
+        "description": "Experience a beautiful image from Google Earth every time you open a new tab.",
+        "creator": null,
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1598136445000,
+      "updateDate": 1598136445000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{44ec79ad-72a9-471d-962d-49e7e5501d97}.xpi",
+      "skinnable": false,
+      "sourceURI": null,
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": true,
+      "strictCompatibility": true,
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org"
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": true,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [],
+        "origins": [
+          "https://www.gstatic.com/prettyearth/*"
+        ]
+      },
+      "icons": {
+        "16": "images/icons/icon-16.png",
+        "48": "images/icons/icon-48.png",
+        "128": "images/icons/icon-128.png"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "app-profile",
+        "method": "sideload"
+      },
+      "recommendationState": null,
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B44ec79ad-72a9-471d-962d-49e7e5501d97%7D.xpi!/",
+      "location": "app-profile"
+    },
+    {
+      "id": "playbackSpeed@waldemar.b",
+      "syncGUID": "{149c548a-3727-4fca-83b3-bd7f9822af4c}",
+      "version": "1.4.3",
+      "type": "extension",
+      "loader": null,
+      "updateURL": null,
+      "optionsURL": "options.html",
+      "optionsType": 5,
+      "optionsBrowserStyle": false,
+      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Playback speed",
+        "description": "Control the speed of video playback.",
+        "creator": null,
+        "developers": null,
+        "translators": null,
+        "contributors": null
+      },
+      "visible": true,
+      "active": true,
+      "userDisabled": false,
+      "appDisabled": false,
+      "installDate": 1598136444000,
+      "updateDate": 1598136444000,
+      "applyBackgroundUpdates": 1,
+      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/playbackSpeed@waldemar.b.xpi",
+      "skinnable": false,
+      "sourceURI": null,
+      "releaseNotesURI": null,
+      "softDisabled": false,
+      "foreignInstall": true,
+      "strictCompatibility": true,
+      "targetApplications": [
+        {
+          "id": "toolkit@mozilla.org",
+          "minVersion": "60.0a1",
+          "maxVersion": null
+        }
+      ],
+      "targetPlatforms": [],
+      "signedState": 2,
+      "seen": true,
+      "dependencies": [],
+      "incognito": "spanning",
+      "userPermissions": {
+        "permissions": [
+          "tabs",
+          "activeTab",
+          "storage"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "icons": {
+        "48": "icons/icon.svg"
+      },
+      "iconURL": null,
+      "blocklistState": 0,
+      "blocklistURL": null,
+      "startupData": null,
+      "hidden": false,
+      "installTelemetryInfo": {
+        "source": "app-profile",
+        "method": "sideload"
+      },
+      "recommendationState": null,
+      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/playbackSpeed@waldemar.b.xpi!/",
       "location": "app-profile"
     }
   ]
