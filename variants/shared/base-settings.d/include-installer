@@ -1,0 +1,73 @@
+#!/bin/sh -e
+# This will allow booting directly into the installer from the ISO.
+# NOTE: The preferred method of offering installation is the calamares
+# installer included in the live system. Also, images/sticks created
+# with the stick-install.sh script do not show the installer entries
+# in the boot menu.
+
+# Allegedly, caching of bootstrap stage is necessary for this to work.
+lb config noauto \
+    --cache-stages "bootstrap" \
+        "${@}"
+
+#        --cache-stages STAGE|"STAGES"
+#            sets which stages should be cached (a comma or space
+#            separated list). By default this is  set  to  'boot‐
+#            strap'.
+
+# Remove previous bootstrap cache (necessary when switching
+# between releases, i.e. stable / testing)
+# Disabling would be an option if not using debian-installer.
+rm -rf cache/bootstrap
+
+lb config noauto \
+    --debian-installer live \
+    --debian-installer-gui true \
+    --win32-loader true \
+        "${@}"
+
+#        --debian-installer          cdrom|netinst|netboot|business‐
+#        card|live|none
+#            defines  which  type,  if  any, of the debian-installer
+#            should be included in the resulting  binary  image.  By
+#            default,   no  installer  is  included.  All  available
+#            flavours except live are the  identical  configurations
+#            used  on  the  installer  media produced by regular de‐
+#            bian-cd. When live is chosen, the  live-installer  udeb
+#            is  included  so that debian-installer will behave dif‐
+#            ferent than usual - instead of  installing  the  debian
+#            system from packages from the medium or the network, it
+#            installs the live system to the disk.
+
+#        --debian-installer-gui true|false
+#            defines whether the graphical version of the debian-in‐
+#            staller  should  be  provided  alongside the text based
+#            one. This defaults to true.
+
+#        --win32-loader true|false
+#            defines if win32-loader should be included in the bi‐
+#            nary image or not.
+
+# from http://ftp.debian.org/debian/tools/win32-loader/stable/win32-loader.txt
+#
+# == What is Win32-Loader? ==
+#
+# win32-loader is a component of the Debian-Installer that runs on Windows and
+# has the ability to load the actual installer either from the network or from
+# CD-ROM media (as in the version included in the official CD images).
+#
+# This executable is the standalone flavour, which downloads the Debian
+# Installer from official Debian mirrors.
+#
+# == How does it work? ==
+#
+# After the language choice, the executable prompts the user for some
+# options and tries to get defaults from the Windows environment. It then
+# downloads the Debian installer and kernel from official Debian mirrors. It
+# puts them in a Windows directory and safely modifies the Windows bootloader to
+# enable a choice between the legacy Windows installation and the Debian
+# installer at boot time.
+#
+# On the next reboot, the user can choose to continue the installation of
+# Debian. The installation will be run using the defaults gathered from the
+# runtime analysis and user prompting.
