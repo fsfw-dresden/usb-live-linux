@@ -1,4 +1,7 @@
 #!/bin/sh -e
+# This is REQUIRED when switching target distributions (f.e. stable
+# <=> testing) between builds
+
 lb config noauto \
     --cache-stages " " \
         "${@}"
