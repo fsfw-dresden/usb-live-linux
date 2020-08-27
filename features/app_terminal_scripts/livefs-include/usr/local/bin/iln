@@ -36,6 +36,8 @@ def main():
             print("symbolic link '" + exist_color(link) + "' target changed from '" + exist_color(oldtarget) + "' to '" + exist_color(newtarget) + "'")
         else:
             print("Link not changed.")
+    else:
+        print(exist_color(link) + " is not a symlink.")
 
 if __name__ == '__main__':
     main()
