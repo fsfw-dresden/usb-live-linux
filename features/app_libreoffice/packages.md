@@ -7,7 +7,7 @@
 - :x:  libreoffice-calc  --	Tabellenkalkulation
 - :x:  libreoffice-writer  --	Text-Verarbeitung
 - :x:  libreoffice-math  --	Formel-Editor
-- :x:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
+- :o:  libreoffice-dmaths  --	Verbesserungen für den LibreOffice-Formeleditor
 - :x:  libreoffice-draw  --	Zeichenprogramm
 - :x:  libreoffice-impress  --  Präsentation
 - :x:  libreoffice-java-common  -- architekturunabhängige Dateien der Java-Unterstützung
