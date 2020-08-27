@@ -165,7 +165,7 @@
         },
         {
           "name": "Science: Microsoft Academic",
-          "url": "https://academic.microsoft.com/search?q=%s,
+          "url": "https://academic.microsoft.com/search?q=%s",
           "icon_url": "http://mycroftproject.com/updateos.php/id0/msacademic.ico"
         },
         {
