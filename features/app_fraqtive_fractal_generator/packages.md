@@ -1,0 +1,1 @@
+- :x:  fraqtive  --	dynamic generation of Mandelbrot and Julia fractals
