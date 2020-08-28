@@ -52,7 +52,7 @@
 - :x:  oneko  -		cat chases the mouse cursor around the screen
 
 - :o:  kdeedu  --		Lernprogramme aus der offiziellen KDE-Veröffentlichung (<198 MB)
-- :x:  artikulate  --		(Teil von kdeedu)
+- :o:  artikulate  --		(Teil von kdeedu)
 - :x:  blinken  --		(Teil von kdeedu)
 - :x:  kalgebra  --		(Teil von kdeedu)
 - :x:  kalzium  --		(Teil von kdeedu)
