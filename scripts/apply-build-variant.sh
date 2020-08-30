@@ -11,6 +11,7 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 # use associative arrays (bash v4+)
 declare -A DISABLED_FRAGMENTS
 declare -A FRAGMENTS
+declare -a FRAGMENT_IDS
 declare -A PATH_MAPPINGS
 PATH_MAPPINGS[package-preferences]="config/archives"
 PATH_MAPPINGS[package-repos]="config/archives"
@@ -39,6 +40,7 @@ parse_fragments() {
                 DISABLED_FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
             else
                 FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
+                FRAGMENT_IDS+=( ${FRAGMENT_ID} )
             fi
         fi
     done
@@ -49,7 +51,7 @@ parse_fragments() {
 apply_fragments() {
     FRAGMENT_COUNT=0
 
-    for FRAGMENT_ID in "${!FRAGMENTS[@]}"; do
+    for FRAGMENT_ID in "${FRAGMENT_IDS[@]}"; do
         FRAGMENT_PATH=${FRAGMENTS[${FRAGMENT_ID}]}
 
         if [[ -v DISABLED_FRAGMENTS[${FRAGMENT_ID}] ]]; then
