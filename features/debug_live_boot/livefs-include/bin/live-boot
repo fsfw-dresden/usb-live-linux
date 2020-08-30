@@ -1,0 +1,22 @@
+#!/bin/sh -x
+
+# set -e
+
+# Reading configuration file from filesystem and live-media
+for _FILE in /etc/live/boot.conf /etc/live/boot/*
+do
+	if [ -e "${_FILE}" ]
+	then
+                set -x
+		. "${_FILE}"
+	fi
+done
+
+for _COMPONENT in /lib/live/boot/????-*
+do
+	if [ -e "${_COMPONENT}" ]
+	then
+                set -x
+		. ${_COMPONENT}
+	fi
+done
