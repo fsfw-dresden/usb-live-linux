@@ -1,0 +1,6 @@
+#!/bin/sh
+# Workaround to fix installing Debian packages from Firefox Open-With
+# instead of throwing error "Refusing to render service to dead parents."
+# c.f. https://bugs.launchpad.net/ubuntu/+source/gdebi/+bug/1854588
+
+/usr/share/gdebi/gdebi-gtk "$@"
