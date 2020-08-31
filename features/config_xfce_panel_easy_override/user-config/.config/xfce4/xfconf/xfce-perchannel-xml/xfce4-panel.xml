@@ -9,7 +9,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="length-adjust" type="bool" value="false"/>
       <property name="length" type="uint" value="100"/>
-      <property name="size" type="uint" value="42"/>
+      <property name="size" type="uint" value="38"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="8"/>
@@ -28,7 +28,6 @@
         <value type="int" value="6"/>
         <value type="int" value="17"/>
         <value type="int" value="5"/>
-        <value type="int" value="18"/>
         <value type="int" value="2"/>
       </property>
     </property>
@@ -38,7 +37,7 @@
       <property name="ask-confirmation" type="bool" value="true"/>
       <property name="appearance" type="uint" value="0"/>
       <property name="items" type="array">
-        <value type="string" value="+lock-screen"/>
+        <value type="string" value="-lock-screen"/>
         <value type="string" value="-switch-user"/>
         <value type="string" value="-separator"/>
         <value type="string" value="-suspend"/>
@@ -73,17 +72,16 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
       <property name="names-hidden" type="array">
+        <value type="string" value="xfce-terminal"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="∞"/>
       </property>
       <property name="size-max" type="uint" value="36"/>
       <property name="names-visible" type="array">
         <value type="string" value="indicator-keylock"/>
-        <value type="string" value="zwischenablage"/>
         <value type="string" value="ausklapp-terminal"/>
-        <value type="string" value="xfce-terminal"/>
-        <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="netzwerk-manager-applet"/>
         <value type="string" value="zulip"/>
-        <value type="string" value="copyq"/>
       </property>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
@@ -146,7 +144,6 @@
       </property>
     </property>
     <property name="plugin-17" type="string" value="notification-plugin"/>
-    <property name="plugin-18" type="string" value="screenshooter"/>
     <property name="plugin-25" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15707693089.desktop"/>
