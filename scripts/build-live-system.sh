@@ -63,53 +63,43 @@ echo "Live-Stick ${0} ${BUILD_VARIANT}"
 # ensure the directory exists
 [ -d "variants/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
 
-main() {
-    if [ "$(id -u)" != "0" ]; then
-        echo " "
-        echo "Hinweis: Dieses Skript wird derzeit nicht mit root-Rechten ausgeführt."
-        echo "Diese werden bei Bedarf (ggf. mehrfach) abgefragt."
-        echo " "
-        echo " "
-        sleep 1
-    fi
+if [ "$(id -u)" != "0" ]; then
+    print_warn "ERROR: no super-user privilege, please run as root or with sudo."
+    print_warn "Running this script without sudo is not supported anymore!"
+    exit 3
+fi
 
-    # live-build Umgebung aufräumen; siehe auto/clean
-    sudo lb clean
+# clean up live-build environment using auto/clean script
+lb clean
 
-    # variantenspezifische live-build Konfiguration einspielen
-    scripts/apply-build-variant.sh ${BUILD_VARIANT}
+# generate live-build config for specified variant
+scripts/apply-build-variant.sh ${BUILD_VARIANT}
 
-    # shell option: remove non-matching file globs
-    shopt -s nullglob
+# set shell option: remove non-matching file globs
+shopt -s nullglob
 
-    # copy FSFW docs
-    scripts/copy-docs.sh ${BUILD_VARIANT} /usr/local/share/doc/FSFW-Dresden
+# copy FSFW docs (FIXME: convert into feature)
+scripts/copy-docs.sh ${BUILD_VARIANT} /usr/local/share/doc/FSFW-Dresden
 
-    # live user home skeleton erstellen
-    scripts/prepare-home-skel.sh ${BUILD_VARIANT}
+# generate live-user home directory "skeleton"
+scripts/prepare-home-skel.sh ${BUILD_VARIANT}
 
-    # live-build config generieren -- optionaler Zwischenschritt um config manuell anzupassen - wird sonst von "lb build" mit erledigt
-    sudo lb config
-    sudo chown -Rc ${USER}:${USER} ./config
+# have live-build complete its config
+lb config
 
-    # Paketlisten aus markdown konvertieren.
-    scripts/md2packagelist.sh config/package-lists.markdown/*.md
-    # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
-    find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -delete
+# convert package lists from markdown
+scripts/md2packagelist.sh config/package-lists.markdown/*.md
 
-    # Paketlisten nach out-of-repo Paketen durchsuchen und download nach config/packages.chroot/*
-    scripts/extra-install-paket.sh
+# workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
+find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -print -delete|sed 's/^/WORKAROUND/'
 
-    # FSFW_UNI_Stick_*.iso bauen
-    sudo lb build
+# fetch any external packages specified by URL in package-lists
+scripts/extra-install-paket.sh
 
-    sudo chown -c ${USER}:${USER} ./${BUILD_VARIANT}*.*
+# HACK: modify build script to unlock zstd mksquashfs power
+sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
 
-    mkdir -pv iso-images && mv -iv ./${BUILD_VARIANT}*.* iso-images/
-
-}
-
-
-main 2>&1 | tee -a fsfw-build-script.log
-
-
+# Trigger image build
+lb build && \
+    mkdir -pv iso-images && \
+    mv -iv ./${BUILD_VARIANT}*.* iso-images/

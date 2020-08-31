@@ -258,7 +258,9 @@ is_f2fs_mountable && mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
 # exit TRAP: add unmounting storage as first step to the clean-up trap queue
 trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
 
+GRUB_VERSION=$(dpkg-query --show --showformat='${Version}' grub2-common)
 print_info "installing grub bootloader for i386-pc, i386-efi and x86_64-efi platform to ${DEVICE}"
+print_info "installed grub version seems to be ${GRUB_VERSION} .."
 print_info "(should take 5-20 seconds each)"
 time {
     grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}

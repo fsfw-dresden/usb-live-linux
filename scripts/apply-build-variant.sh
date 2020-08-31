@@ -38,9 +38,11 @@ parse_fragments() {
             if [[ "${FRAGMENT_PATH}" =~ .disable$ ]]; then
                 FRAGMENT_ID=${FRAGMENT_ID%.disable}
                 DISABLED_FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
-            else
+            elif [ ${#FRAGMENTS[${FRAGMENT_ID}]} -eq 0 ]; then
                 FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
                 FRAGMENT_IDS+=( ${FRAGMENT_ID} )
+            else
+                echo "${FRAGMENT_ID} already set from ${#FRAGMENTS[${FRAGMENT_ID}]}, skipping adding for ${FRAGMENT_PATH}"
             fi
         fi
     done
