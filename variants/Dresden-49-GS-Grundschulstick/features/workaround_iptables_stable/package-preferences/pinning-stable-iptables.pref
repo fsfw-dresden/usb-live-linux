@@ -1,0 +1,3 @@
+Package: iptables libiptc0 libxtables12 netbase
+Pin: release a=stable, o=Debian
+Pin-Priority: 600
