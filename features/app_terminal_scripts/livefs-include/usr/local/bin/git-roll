@@ -72,4 +72,4 @@ done
 
 clear
 
-git -c color.status=always status | less -SR && git add -p; git commit -v && sudo confirm git push -v origin
+git -c color.status=always status | less -SR && git add --patch; git commit --verbose && confirm git push --verbose --progress origin
