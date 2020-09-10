@@ -8,6 +8,7 @@ iso-images/
 binary/
 cache/
 chroot/
+chroot*
 config/
 source/
 .build/
