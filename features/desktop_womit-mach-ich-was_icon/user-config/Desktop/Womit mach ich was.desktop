@@ -2,6 +2,6 @@
 Version=1.0
 Type=Link
 Name=Womit mach ich was
-Comment=Willkommen beim FSFW-Schulstick — Was möchtest Du machen?
+Comment=Was möchtest Du machen?
 Icon=kubrick
 URL=/usr/local/share/doc/FSFW-Dresden/schulstick.html
