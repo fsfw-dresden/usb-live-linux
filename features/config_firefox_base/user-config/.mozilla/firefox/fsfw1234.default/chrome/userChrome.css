@@ -1,0 +1,4 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+/* LIST-ALL-TABS - always visible */
+#tabbrowser-tabs ~ #alltabs-button {visibility:visible!important}
