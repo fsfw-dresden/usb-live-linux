@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="39.719" height="30.322" version="1.1" viewBox="0 0 39.719 30.322" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>logo_lernsax</dc:title>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <title>logo_lernsax</title>
+ <rect y="25.33" width="39.719" height="4.992" fill="#347e33"/>
+ <path d="m4.979 0v21.463h29.762v-21.463zm26.072 17.708h-22.382v-13.954h22.382z" fill="#313237"/>
+</svg>
