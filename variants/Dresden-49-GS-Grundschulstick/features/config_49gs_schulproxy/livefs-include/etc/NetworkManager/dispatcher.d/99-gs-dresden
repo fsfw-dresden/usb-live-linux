@@ -7,7 +7,7 @@ PAC_URL="http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi"
 TAG="gs-dresden"
 
 enable_redsocks() {
-        PROXY_URL=$(wget -qO - http://kjs-01.sv.dresden.de/SaferSurf/genpac.cgi|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
+        PROXY_URL=$(wget -qO - ${PAC_URL}|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
         logger -t ${TAG} "configuring redsocks magic proxy to route via ${PROXY_URL}"
         [ -z ${PROXY_URL} ] && PROXY_URL="kjs-04.sv.dresden.de:3128" && logger -t ${TAG} -p user.warning "PROXY_URL not found, falling back to ${PROXY_URL}"
         PROXY_DOMAIN=${PROXY_URL%:*}
@@ -63,7 +63,7 @@ case "${STATUS}" in
                 [ -n "${ETH_SPEED}" ] && [ ${ETH_SPEED} -lt 1000 ] && ethtool --change ${INTERFACE} autoneg on
 
                 # detect school proxy
-                if [[ "${IP4_DOMAINS}" =~ ".gs.dresden.de" ]]; then
+                if [[ "${IP4_DOMAINS}" == *".gs.dresden.de"* ]]; then
                         # set up redsocks traffic redirector
                         enable_redsocks
 
@@ -76,14 +76,11 @@ case "${STATUS}" in
                         disable_redsocks
                 fi
 
-                # start zulip as default live user (terrible hack to prevent display of connection error)
-                sudo -u '#1000' DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus DISPLAY=:0 /opt/Zulip/zulip &
+                # log invocation environment
+                env > /run/NetworkManager--dispatcher.d--99-gs-dresden.env
 
                 ;;
         down)
-                # terminate zulip on disconnection
-                pkill zulip
-
                 # disconnect student network share
                 umount_samba_share
 
