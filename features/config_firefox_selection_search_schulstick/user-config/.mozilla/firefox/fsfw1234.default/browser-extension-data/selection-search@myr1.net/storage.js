@@ -32,7 +32,7 @@
     },
     {
       "name": "Webseiten: DuckDuckGo",
-      "url": "http://duckduckgo.com/?q=%s&km=l&kp=-1&ks=s&kx=o&k1=-1"
+      "url": "http://duckduckgo.com/?q=%s&kp=1&kx=o&k1=-1"
     },
     {
       "name": "Webseiten: Google",
