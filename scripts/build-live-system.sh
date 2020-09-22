@@ -3,9 +3,8 @@
 #         FILE: build-live-system.sh
 #  DESCRIPTION: erstellen des FSFW-Uni-Stick
 #        	Nutzung verschiedener Konfigurationsvarianten möglich
-#		alle Schritte in diesem Skript können auch einzeln ausgeführt werden
 #
-#      VERSION: 0.1.4
+#      VERSION: 0.?.?
 #        NOTES: für - live-build - Debian jessie / Debian stretch - LANG=de_DE.UTF-8
 #
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
@@ -49,7 +48,7 @@ select_build_variant() {
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
-# if a 'active' symlink exists, parse that
+# if an 'active' symlink exists, parse that (DEPRECATED)
 [ -e variants/active ] && BUILD_VARIANT=$(readlink variants/active)
 
 # if a BUILD_VARIANT is given as parameter, prefer that
@@ -68,6 +67,10 @@ if [ "$(id -u)" != "0" ]; then
     print_warn "Running this script without sudo is not supported anymore!"
     exit 3
 fi
+
+print_info "Available live-build versions:"
+apt policy live-build
+print_info "Using live-build $(lb --version), lb command is $(type lb)"
 
 # clean up live-build environment using auto/clean script
 lb clean

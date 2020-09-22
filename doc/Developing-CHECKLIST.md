@@ -1,4 +1,4 @@
-# Hintergrund und Vorgehen
+# FIXME: Outdated
 
 Diese Datei definiert (auszugsweise) das von uns gewünschte Verhalten. Automatisierte Unittests wären deutlich eleganter sind aber technisch zu schwierig.
 Jeder trägt die Programme und Funktionen ein, die er/sie für wichtig hält.

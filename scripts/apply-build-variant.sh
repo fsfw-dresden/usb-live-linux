@@ -42,7 +42,7 @@ parse_fragments() {
                 FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
                 FRAGMENT_IDS+=( ${FRAGMENT_ID} )
             else
-                echo "${FRAGMENT_ID} already set from ${#FRAGMENTS[${FRAGMENT_ID}]}, skipping adding for ${FRAGMENT_PATH}"
+                echo "${FRAGMENT_ID} already set from ${FRAGMENTS[${FRAGMENT_ID}]}, skipping adding for ${FRAGMENT_PATH}"
             fi
         fi
     done
