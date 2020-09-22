@@ -63,7 +63,6 @@
 - :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
 - :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
 - :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
-- :x:  grub-efi-amd64-signed  --		GRand Unified Bootloader, version 2 (amd64 UEFI signed by Debian, used by shim-signed)
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
 - :x:  qemu-guest-agent  --	Guest-side qemu-system agent (+255 kB)
 - :x:  vmtouch  --		file system cache diagnostics and control

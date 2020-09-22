@@ -50,6 +50,7 @@
 - :x:  stellarium  --		Echtzeit-Generator für fotorealistische Himmelsansichten (205 MB)
 - :x:  childsplay  --		Suite mit lehrreichen Spielen für kleine Kinder (30,8 MB)
 - :x:  oneko  -		cat chases the mouse cursor around the screen
+- :x:  frogatto  --		2D platformer game starring a quixotic frog
 
 - :o:  kdeedu  --		Lernprogramme aus der offiziellen KDE-Veröffentlichung (<198 MB)
 - :o:  artikulate  --		(Teil von kdeedu)
