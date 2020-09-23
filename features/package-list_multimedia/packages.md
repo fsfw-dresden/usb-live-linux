@@ -24,10 +24,6 @@
 - :x:  slowmovideo  --	creates slow-motion videos from your footage
 - :x:  smplayer-l10n  -- 	 Qt5 front-end for mplayer + translation
 
-- :x:  csound  -- Soundsynthese und Multieffekt-Prozessor
-- :x:  supercollider  -- algorithmische Soundsynthese
-- :x:  puredata  -- Echtzeit-Musik- & Grafiksystem
-
 - :x:  transcriber  -- Programm zum Transkripieren (z.B. von Interviews)
 
 - ###  Video

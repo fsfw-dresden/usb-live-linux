@@ -1,0 +1,3 @@
+- :x:  csound  -- Soundsynthese und Multieffekt-Prozessor
+- :x:  supercollider  -- algorithmische Soundsynthese
+- :x:  puredata  -- Echtzeit-Musik- & Grafiksystem
