@@ -39,15 +39,19 @@
       "url": "https://dict.leo.org/german-english/%s"
     },
     {
+      "name": "Dictionary: Linguee",
+      "url": "https://www.linguee.de/deutsch-englisch/search?query=%s"
+    },
+    {
       "is_separator": true
     },
     {
-      "name": "Images: Bing",
+      "name": "Images: Bing (comfort)",
       "url": "http://www.bing.de/images/search?q=%s&adlt=off",
       "icon_url": "http://www.bing.com/favicon.ico"
     },
     {
-      "name": "Images: Google",
+      "name": "Images: Google (precise)",
       "url": "http://images.google.de/images?q=%s&safe=off"
     },
     {

@@ -58,6 +58,10 @@
       "url": "https://www.dict.cc/?s=%s"
     },
     {
+      "name": "Wörterbuch: Linguee",
+      "url": "https://www.linguee.de/deutsch-englisch/search?query=%s"
+    },
+    {
       "is_separator": true
     },
     {
