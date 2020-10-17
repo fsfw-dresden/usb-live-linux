@@ -1,3 +1,3 @@
-- :x:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
+- :o:  enigmail   --	GPG-Unterstützung für Thunderbird und Debian Icedove
 - :x:  lightning  --		Calendar Extension for Thunderbird
 - :x:  thunderbird  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)
