@@ -1,2 +1,2 @@
-- :x:  fonts-hack-otf  --	Typeface designed for source code
+- :x:  fonts-ubuntu  --	set of contemporary sans-serif fonts (default fonts for Ubuntu since 2010)
 - :x:  xfce4-terminal  --		lightweight and easy to use terminal emulator for X11
