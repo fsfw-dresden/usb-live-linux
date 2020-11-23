@@ -26,7 +26,6 @@
         <value type="int" value="15"/>
         <value type="int" value="13"/>
         <value type="int" value="6"/>
-        <value type="int" value="17"/>
         <value type="int" value="5"/>
         <value type="int" value="2"/>
       </property>
@@ -143,7 +142,6 @@
         <value type="string" value="15707679321.desktop"/>
       </property>
     </property>
-    <property name="plugin-17" type="string" value="notification-plugin"/>
     <property name="plugin-25" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="15707693089.desktop"/>
