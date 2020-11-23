@@ -1,0 +1,13 @@
+#!/bin/sh -x
+# install appimaged service to auto-integrate applications in appimage format
+
+RELEASEINFO="https://api.github.com/repos/probonopd/go-appimage/releases/tags/continuous"
+
+for APPIMAGE in $(curl "${RELEASEINFO}"|jq -r '.assets[].browser_download_url|select(endswith(".AppImage"))|select(contains("appimaged"))')
+do
+        NAME=${APPIMAGE##*/}
+        NAME=${NAME%%-*}
+        TARGETEXEC=/usr/local/bin/${NAME}
+        curl --location --remote-time --output ${TARGETEXEC} ${APPIMAGE}
+        chmod a+x ${TARGETEXEC}
+done
