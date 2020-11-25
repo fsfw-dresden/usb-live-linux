@@ -1,1 +1,1 @@
-- :x:  adapta-gtk-theme  --		adaptive theme based on Material Design Guidelines
+- :x:  breeze-gtk-theme  --		adaptive theme based on Material Design Guidelines
