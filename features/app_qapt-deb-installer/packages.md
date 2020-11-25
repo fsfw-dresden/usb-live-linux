@@ -1,0 +1,1 @@
+- :x:  qapt-deb-installer  --		tool for installing deb files (resolves and downloads dependencies)
