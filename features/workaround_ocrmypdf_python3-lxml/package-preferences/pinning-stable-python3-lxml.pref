@@ -1,0 +1,6 @@
+# avoid python3-lxml from backports as it requires a newer python
+# and breaks stable ocrmypdf installation (2020-11-25)
+
+Package: python3-lxml
+Pin: release a=buster-backports
+Pin-Priority: 499
