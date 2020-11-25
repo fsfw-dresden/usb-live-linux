@@ -1,0 +1,22 @@
+#!/bin/sh
+# dumps system boot state info
+
+#DATE=$(date +'%F.%H%Mh')
+DATE=$(uptime --since|tr -d ':'| tr ' ' '.')
+
+{
+  systemd-analyze time
+  systemd-analyze critical-chain
+  systemd-analyze blame
+} > /var/log/systemd-analyze.${DATE}.log
+
+systemd-analyze plot > /var/log/systemd-analyze.${DATE}.svg
+
+if [ "${1}" = "-v" ]
+then
+  # big!
+  systemd-analyze dump > /var/log/systemd-analyze.${DATE}.dump
+  systemd-analyze dot > /var/log/systemd-analyze.${DATE}.dependencies.dot
+  systemd-analyze dot --order > /var/log/systemd-analyze.${DATE}.dependencies.only-order.dot
+  systemd-analyze dot --require > /var/log/systemd-analyze.${DATE}.dependencies.only-requirements.dot
+fi
