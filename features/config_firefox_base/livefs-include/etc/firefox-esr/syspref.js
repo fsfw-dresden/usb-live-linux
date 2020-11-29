@@ -1,5 +1,4 @@
 // This file can be used to configure global preferences for Firefox
-// FIXME: split into atomic configs
 
 // Less window decoration = more space for content
 pref("browser.tabs.drawInTitlebar", true);
@@ -28,7 +27,7 @@ pref("findbar.highlightAll", true);
 pref("accessibility.typeaheadfind", false);
 
 // Disable "open with" for files
-// pref("browser.download.forbid_open_with", true);
+pref("browser.download.forbid_open_with", true);
 
 // Do not hide the bloody download button
 pref("browser.download.autohideButton", false);
