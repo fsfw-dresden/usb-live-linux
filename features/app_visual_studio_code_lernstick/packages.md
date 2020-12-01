@@ -1,1 +1,1 @@
-- :x:  code  --	Code editing. Redefined.
+- :x:  visual-studio-codium  --	Code editing. Redefined. Without tracking.
