@@ -1,0 +1,6 @@
+# workaround 2020-12-02: pin newer version of octave-control
+# compatible with upgraded octave 5.2 that entered backports
+
+Package: octave-control
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
