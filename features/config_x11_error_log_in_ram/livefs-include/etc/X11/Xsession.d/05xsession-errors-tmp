@@ -1,2 +1,3 @@
 # reroute xsession-errors to ram
+echo "(!) to reduce disk writing, this output is being redirected to /tmp/.xsession-errors in system RAM"
 exec >> /tmp/.xsession-errors 2>&1
