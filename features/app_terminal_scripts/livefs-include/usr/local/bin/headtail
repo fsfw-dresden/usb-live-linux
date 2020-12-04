@@ -1,0 +1,214 @@
+#!/usr/bin/env python
+
+'''
+NAME
+    ht - (headtail) output the beginning and ending of files
+
+SYNOPSIS
+    ht [OPTION]... [FILE]...
+
+    Print the beginning and ending of each file.
+    Prints '...' for omitted lines.
+    Defaults to first 10 and last 10 lines.
+    Standard input may be specified by - argument.
+    If no files are specified, uses standard input.
+
+    Prints header lines if more than one file.
+        Prints a blank line between output of multiple files.
+
+OPTIONS
+    n is a non-negative integer in the following options,
+    except for the first n in -n n.
+
+    -n, --lines=n, -n n
+        Specify the number of lines from beginning and end of file to print.
+        In the -n n option, the first n is literal, the second is the number.
+
+    --head-lines=n
+        Specify the number of lines from beginning of file to print.
+
+    --tail-lines=n
+        Specify the number of lines from end of file to print.
+
+    -v, --verbose
+        Print headers.
+
+    -q, --quiet, --silent
+        Do not print headers.
+
+    --help
+        Show this and quit.
+
+EXAMPLES
+    ls -ltr ~ | ht -20
+        Shows first 20 and last 20 lines of output of previous command.
+
+    ht --head-lines=1 --tail-lines=3 *.py
+        Shows first line and last three lines of each *.py file.
+
+LICENSE
+
+    Copyright (c) 2016 James Prior, Andrew Kubera
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+'''
+
+from __future__ import print_function
+
+import re
+import sys
+from itertools import islice
+from collections import deque
+from argparse import ArgumentParser
+from os.path import basename
+
+DEFAULT_N_LINES = 10
+
+
+def cli_arg_parser(program_path):
+    '''Returns the command line ArgumentParser object'''
+    parser = ArgumentParser(
+        basename(program_path),
+        description='(headtail) output the beginning and ending of files',
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        '-v', '--verbose',
+        action='store_true',
+        help='Print headers')
+    group.add_argument(
+        '-q', '--quiet',
+        action='store_true',
+        help='Do not print headers.')
+    parser.add_argument(
+        '-n', '--lines',
+        type=int,
+        default=10,
+        help=(
+            'Specify the number of lines '
+            'from beginning and end of file to print. '
+            'In the -n n option, the first n is literal, '
+            'the second is the number.')
+        )
+    parser.add_argument(
+        '--head-lines',
+        type=int,
+        nargs='?',
+        help='Specify the number of lines from beginning of file to print.')
+    parser.add_argument(
+        '--tail-lines',
+        type=int,
+        nargs='?',
+        help='Specify the number of lines from end of file to print.')
+    parser.add_argument(
+        'filenames',
+        type=str,
+        nargs='*',
+        default=['-'],
+        help='''Print the beginning and ending of each file. Prints '...' for
+        omitted lines. Defaults to first 10 and last 10 lines.
+        Standard input may be specified by - argument.
+        If no files are specified, uses standard input.''')
+
+    return parser
+
+
+def do_file(f, n_head_lines, n_tail_lines):
+    f = iter(f)
+    for line in islice(f, n_head_lines):
+        print(line, end='')
+
+    tail_lines = deque(f, n_tail_lines+1)
+    if len(tail_lines) > n_tail_lines:
+        print('...')
+        tail_lines.popleft()
+    for line in tail_lines:
+        print(line, end='')
+
+
+def show_header(show_filename, filename, i):
+    if not show_filename:
+        return
+
+    if i > 0:
+        print()
+    print('==> %s <==' % filename)
+
+
+def normalize_arguments(argv):
+    '''argparse does not handle arguments of the form -X
+    where X is an integer,
+    so this function converts the first argument of form -X
+    to be of the form -nX, which argparse can parse,
+    then returns all the arguments.'''
+
+    # Match the first shorthand lines argument (eg. -3)
+    # and expand to -n flag (-n3).
+    arg_re = re.compile(r'\-[0-9]+')
+    matching_args = (i for i, x in enumerate(argv) if arg_re.match(x))
+    # find first index matching the regex, or None
+    idx = next(matching_args, None)
+    if idx is not None:
+        # we have a match: substitute -X with -nX
+        argv[idx] = '-n' + argv[idx][1:]
+    return argv
+
+
+def parse_arguments(argv):
+    """
+    Normalizes shorthand arguments and sends result to the parser
+    returned by cli_arg_parser().
+    Results from cli_arg_parser() are massaged and returned
+    along with args.filenames.
+    """
+    # program_path, *other_args = argv # Python 3
+    program_path = argv[0]
+    other_args = argv[1:]
+    other_args = normalize_arguments(other_args)
+    args = cli_arg_parser(program_path).parse_args(other_args)
+
+    show_headers = (
+        (len(args.filenames) > 1 or args.verbose)
+        and not args.quiet
+        )
+    n_head_lines = (
+        args.head_lines if args.head_lines is not None else args.lines)
+    n_tail_lines = (
+        args.tail_lines if args.tail_lines is not None else args.lines)
+    return n_head_lines, n_tail_lines, show_headers, args.filenames
+
+
+def main(argv, stdin):
+    n_head_lines, n_tail_lines, show_headers, filenames = parse_arguments(argv)
+
+    for i, filename in enumerate(filenames):
+        if filename == '-':
+            f = stdin
+            filename = 'standard input'
+        else:
+            f = open(filename)
+        show_header(show_headers, filename, i)
+        do_file(f, n_head_lines, n_tail_lines)
+
+
+if __name__ == '__main__':
+    main(sys.argv, sys.stdin)
