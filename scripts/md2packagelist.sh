@@ -74,9 +74,8 @@ convert_markdown_list() {
                 echo "# ${ENTRY}" >> ${TARGET_LIST_CHROOT}
             ;;
             "- :+1: :x:")
-                echo "## ${ENTRY} wird alternativ mittels extra--installation über packages.chroot installiert" >> ${TARGET_LIST_CHROOT}
                 URL=$(echo ${line}|sed -rn 's/.*\((.*)\).*/\1/p')
-                echo "## --extra--installation -->  ${URL}" >> ${TARGET_LIST_CHROOT}
+                echo "# @deb: ${URL}" >> ${TARGET_LIST_CHROOT}
             ;;
             "- :o:")
                 echo "## ${ENTRY}" >> ${TARGET_LIST_CHROOT}

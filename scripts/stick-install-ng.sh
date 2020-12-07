@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # next-generation live stick installation script
 # BETA status
 # Kein Backup
@@ -322,6 +322,9 @@ BOOTOPTIONS+="persistence-encryption=none,luks "
 
 # if the label name matches, a persistence volume can be a directory, and image file or partition
 BOOTOPTIONS+="persistence-storage=directory,file,filesystem "
+
+# only scan removable media for persistence volumes
+BOOTOPTIONS+="persistence-media=removable-usb "
 
 # turn off spectre & co. security mitigations for a nice speed boost
 BOOTOPTIONS+="mitigations=off "

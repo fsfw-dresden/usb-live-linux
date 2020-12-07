@@ -26,6 +26,7 @@ echo "schreibe git-versionsnummer & URL in HOME/.version-live-stick"
   echo "stick-version $(scripts/calc-version-number.sh)"
   echo "git-revision $(git rev-parse HEAD)"
   echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD)"
-} > config/includes.chroot/etc/skel/.version-live-stick
+  echo "(URL will show 404 not found if commit is not in main repository)"
+} > config/includes.chroot/etc/live-stick
 
 echo "${0} beendet"

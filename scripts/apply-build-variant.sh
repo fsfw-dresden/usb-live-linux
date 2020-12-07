@@ -35,8 +35,8 @@ parse_fragments() {
         else
             #print_info "found ${FRAGMENT_PATH} fragment"
             FRAGMENT_ID=${FRAGMENT_PATH##*/}
-            if [[ "${FRAGMENT_PATH}" =~ .disable$ ]]; then
-                FRAGMENT_ID=${FRAGMENT_ID%.disable}
+            if [[ "${FRAGMENT_PATH}" =~ .disable[d$]+ ]]; then
+                FRAGMENT_ID=${FRAGMENT_ID%.disable*}
                 DISABLED_FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
             elif [ ${#FRAGMENTS[${FRAGMENT_ID}]} -eq 0 ]; then
                 FRAGMENTS[${FRAGMENT_ID}]=${FRAGMENT_PATH}
@@ -46,8 +46,6 @@ parse_fragments() {
             fi
         fi
     done
-
-    #print_info "DISABLED_FRAGMENTS=${!DISABLED_FRAGMENTS[@]}"
 }
 
 apply_fragments() {
@@ -90,7 +88,9 @@ apply_fragments() {
             ((++FRAGMENT_COUNT))
         fi
     done
-    print_info "${FRAGMENT_COUNT} configuration fragments applied, ${#DISABLED_FRAGMENTS[@]} skipped."
+    DISABLED_FRAGMENT_COUNT=${#DISABLED_FRAGMENTS[@]}
+    print_info "${FRAGMENT_COUNT} configuration fragments applied, ${DISABLED_FRAGMENT_COUNT} skipped."
+    [ ${DISABLED_FRAGMENT_COUNT} -eq 0 ] || print_info "disabled fragments: ${!DISABLED_FRAGMENTS[@]}"
 }
 
 parse_fragments variants/${BUILD_VARIANT}

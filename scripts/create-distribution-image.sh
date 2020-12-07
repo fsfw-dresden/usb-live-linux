@@ -29,11 +29,37 @@ select_live_iso_for_image() {
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
+# crudely map build variant or iso names to FSFW stick type
+map_image_name_to_stick_type() {
+    # match patterns in a case-insensitive fashion
+    shopt -s nocasematch
+
+    # limited amount of variants => stupid substring match
+    case ${@} in
+        *schul*)
+            echo "SCHULSTICK"
+            ;;
+        *uni*)
+            echo "UNISTICK"
+            ;;
+        *lern*)
+            echo "LERNSTICK"
+            ;;
+        *mini*)
+            echo "MINISTICK"
+            ;;
+        *)
+            echo "couldn't detect variant from string ${@}"
+            exit 1
+            ;;
+    esac
+}
+
 # ISO can be given as first parameter
 [ -n "${1}" ] && ISO=$1 || ISO="iso-images/$(select_live_iso_for_image)"
 
 # try to detect stick type from image name
-FAT_LABEL="$(scripts/map-image-name-to-stick-type.sh ${ISO})" || FAT_LABEL="LIVESTICK"
+FAT_LABEL="$(map_image_name_to_stick_type ${ISO})" || FAT_LABEL="LIVESTICK"
 
 # cut off file ending of ISO and replace with .img
 IMG=${ISO##*/}

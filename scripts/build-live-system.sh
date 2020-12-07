@@ -1,18 +1,14 @@
-#!/bin/bash
+#!/bin/bash +x
 #===========================================
 #         FILE: build-live-system.sh
 #  DESCRIPTION: erstellen des FSFW-Uni-Stick
-#        	Nutzung verschiedener Konfigurationsvarianten möglich
-#
-#      VERSION: 0.?.?
-#        NOTES: für - live-build - Debian jessie / Debian stretch - LANG=de_DE.UTF-8
-#
 #       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
 #      CREATED: 2016-10-21
-#     REVISION: 2018-10-19
 #       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
+
+TARGET_DIR=artifacts
 
 # exit on error
 set -e
@@ -57,6 +53,10 @@ select_build_variant() {
 # if neither, query user to visually select a variant
 [ -n "${BUILD_VARIANT}" ] || BUILD_VARIANT=$(select_build_variant)
 BUILD_VARIANT=${BUILD_VARIANT%/}
+
+# Clear selection dialog from screen
+clear
+
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 # ensure the directory exists
@@ -71,6 +71,9 @@ fi
 print_info "Available live-build versions:"
 apt policy live-build
 print_info "Using live-build $(lb --version), lb command is $(type lb)"
+
+print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
+STARTTIME=$(date +%s)
 
 # clean up live-build environment using auto/clean script
 lb clean
@@ -96,13 +99,24 @@ scripts/md2packagelist.sh config/package-lists.markdown/*.md
 # workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
 find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -print -delete|sed 's/^/WORKAROUND/'
 
-# fetch any external packages specified by URL in package-lists
-scripts/extra-install-paket.sh
+# fetch external deb files specified by URL in package-list
+download_external_deb_packages
 
 # HACK: modify build script to unlock zstd mksquashfs power
 sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
 
 # Trigger image build
-lb build && \
-    mkdir -pv iso-images && \
-    mv -iv ./${BUILD_VARIANT}*.* iso-images/
+lb build \
+    && {
+    print_info "Build SUCCEEDED"
+
+        # Ensure TARGET_DIR exists
+        mkdir -p ${TARGET_DIR}
+
+        # and move generated files there
+        mv -iv ./"${BUILD_VARIANT}"*.* ${TARGET_DIR}/
+
+        } \
+    || print_warn "Build FAILED"
+
+print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"
