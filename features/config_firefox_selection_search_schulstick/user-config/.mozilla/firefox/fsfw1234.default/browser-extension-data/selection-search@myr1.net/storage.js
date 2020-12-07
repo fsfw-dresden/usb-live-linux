@@ -213,7 +213,7 @@
         },
         {
           "name": "Science Hub (DOI)",
-          "url": "https://sci-hub.tw/%s"
+          "url": "https://sci-hub.st/%s"
         },
         {
           "name": "Archive.Org",
