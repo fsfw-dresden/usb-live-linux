@@ -1,0 +1,2 @@
+- :x:  boot-repair  --	Graphical tool to repair boot problems
+- :x:  pastebinit  --	command-line tool to send data to a "pastebin"
