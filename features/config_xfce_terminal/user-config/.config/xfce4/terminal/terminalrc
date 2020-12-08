@@ -4,5 +4,5 @@ ScrollingLines=10000
 ColorPalette=#000000;#cc0000;#4e9a06;#c4a000;#3465a4;#933682;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#739fcf;#ad7fa8;#34e2e2;#eeeeec
 MiscSlimTabs=TRUE
 MiscNewTabAdjacent=TRUE
-FontName=Ubuntu Mono 14
+FontName=Ubuntu Mono 16
 DropdownHeight=80
