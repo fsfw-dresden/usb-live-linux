@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# git refuses to operate without user information
+git config --system user.name system
+git config --system user.email root@localhost
+
+cd /etc
+
+# Purge git repository created through install hook
+etckeeper uninit -f
+
+# Don't commit user skeleton
+echo "skel" >> .gitignore
+
+# Reinitialize repository
+etckeeper init
+
+# Don't leak hosts file and DNS conf to chroot
+git reset hosts hosts.orig resolv.conf resolv.conf.orig
+rm hosts.orig resolv.conf.orig
+
+# Should be clean now
+git commit -m "Initial commit"
