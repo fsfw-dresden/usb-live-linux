@@ -43,7 +43,7 @@ select_target_device() {
 
 select_live_iso() {
     OPTIONS=()
-    for ISO in $(command ls -Lt iso-images/*.iso)
+    for ISO in $(command ls -Lt artifacts/*.iso)
     do
         SIZESTR=$(numfmt --to=iec-i --suffix B $(stat --dereference --format='%s' "${ISO}"))
         OPTIONS+=(${ISO} "${SIZESTR} $(date --date=@$(stat --dereference --format='%Y' "${ISO}") "+%F %_H:%M:%S")")
