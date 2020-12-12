@@ -4,6 +4,18 @@ Although this construct was inspired by the [features folder in tails](https://g
 Each feature can be included by a relative symlink in the features folder of a [variant](../variants).
 Each variant can also define its own private features there instead of sym-linking from this common features folder.
 
+### Mappings of feature folders to live-build config hierarchy
+The folders contained in a feature have been named to make them easily understandable. They will be translated to their target live-build folder when scripts/apply-build-variant.sh is being run in the build process. The path mappings are as follows:
+
+    package-preferences => config/archives
+    package-repos => config/archives
+    package-include => config/packages.chroot
+    livefs-hooks => config/hooks/normal
+    livefs-include => config/includes.chroot
+    live-build-config => config
+    user-config => config/includes.chroot/etc/skel
+    packages.md => (scripts/md2packagelist.sh) => config/package-lists
+
 ### Naming
 The feature names try to be as descriptive and concise as possible.
 
