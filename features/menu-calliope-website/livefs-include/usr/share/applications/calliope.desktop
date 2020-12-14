@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Development;
+Exec=x-www-browser https://www.calliope.cc/
+Icon=calliope_mini
+Name=Calliope Website
+GenericName=The minicomputer for big ideas – Get creative and start coding!
+GenericName[de]=spielerisch und kreativ die Welt der Computer kennenlernen
+Type=Application
