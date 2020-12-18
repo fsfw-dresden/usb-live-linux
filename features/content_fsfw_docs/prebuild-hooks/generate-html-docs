@@ -1,0 +1,27 @@
+#!/bin/sh
+. ../scripts/functions.sh
+check_program_exists pandoc || exit 1
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/doc/FSFW
+SRC_DIR=../doc/src
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+mkdir -pv ${DEST_DIR}
+cp -av ${SRC_DIR}/* ${DEST_DIR}/
+
+for MD_FILE in ${SRC_DIR}/*.md
+do
+    DEST_FILE="${DEST_DIR}/$(basename ${MD_FILE%%.md}).html"
+    TITLE=$(sed -nr '0,/(^[%#]\s+)(.*)/{s//\2/p}' "${MD_FILE}")
+    pandoc --standalone --template ${SRC_DIR}/fsfw-template.html \
+            --metadata "title=${TITLE}" \
+            "${MD_FILE}" --output "${DEST_FILE}"
+    python3 ../scripts/convert-md-links.py "${DEST_FILE}"
+done
+
+# FIXME: separation?
+MATERIAL_DIR=${PREFIX}/usr/local/share/FSFW-Material
+
+mkdir -pv ${MATERIAL_DIR}
+ln -sv ${TARGET_DIR} ${MATERIAL_DIR}/stick-doku

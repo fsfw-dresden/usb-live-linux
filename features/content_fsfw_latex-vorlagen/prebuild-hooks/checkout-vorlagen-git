@@ -1,0 +1,13 @@
+#!/bin/sh
+pwd
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/FSFW-Material/latex-vorlagen
+SRC_DIR=../doc/latex-vorlagen
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+mkdir -pv ${DEST_DIR}
+
+# Hinweis: Zur besseren Sichtbarkeit der LaTeX-Vorlagen leben diese seit Mai 2018 in einem eigenen Repo:
+# <https://github.com/fsfw-dresden/latex-vorlagen>.
+git submodule update --init --recursive
+rsync -aP --exclude=.git* ${SRC_DIR}/ ${DEST_DIR}/

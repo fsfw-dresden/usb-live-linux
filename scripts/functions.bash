@@ -1,5 +1,5 @@
 #!/bin/bash
-# ⚠️  uses bash arrays
+# ⚠️  uses associative arrays (bash v4+)
 
 # die on error
 set -e
@@ -46,55 +46,46 @@ display_inputbox() {
 }
 
 # fetch any external packages specified by URL in package-lists
-download_external_deb_packages() {
-    WGET_OPTIONS="--no-verbose --timeout=10 --no-http-keep-alive --show-progress --progress=dot:giga --execute content_disposition=off"
-    PKG_LISTS=($(command ls config/package-lists/*))
+download_external_deb_package() {
+    DEB_URL=${1}
+    FILE_NAME=${2}
 
-    for PKG_LIST in ${PKG_LISTS[@]}
-    do
-        while read LINE_START DEB_URL FILE_NAME
-        do
-            if [ "${LINE_START}" = "# @deb:" ]
+    WGET_OPTIONS="--no-verbose --timeout=10 --no-http-keep-alive --show-progress --progress=dot:giga --execute content_disposition=off --user-agent=org.schulstick.build"
+    if [ -z ${FILE_NAME} ]
+    then
+        FILE_NAME=${DEB_URL##*/}
+        FILE_NAME=${FILE_NAME/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert?)
+    fi
+
+    if [ -n "${FILE_NAME}" ]; then
+        if [ -f cache/packages.extra/${FILE_NAME} ]; then
+            echo "${FILE_NAME} available in cache, not downloading."
+        else
+            echo "downloading ${FILE_NAME}"
+            mkdir -p cache/packages.extra
+            if wget ${WGET_OPTIONS} ${DEB_URL} -O cache/packages.extra/${FILE_NAME}.partial
             then
-                if [ -z ${FILE_NAME} ]
-                then
-                    FILE_NAME=${DEB_URL##*/}
-                    FILE_NAME=${FILE_NAME/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert)
-                fi
-
-                if [ -n "${FILE_NAME}" ]; then
-                    if [ -f cache/packages.extra/${FILE_NAME} ]; then
-                        echo "${FILE_NAME} available in cache, not downloading."
-                    else
-                        echo "downloading ${FILE_NAME}"
-                        mkdir -p cache/packages.extra
-                        if wget ${WGET_OPTIONS} ${DEB_URL} -O cache/packages.extra/${FILE_NAME}.partial
-                        then
-                            echo "${FILE_NAME} fetched"
-                        else
-                            echo "Download from ${DEB_URL} failed : ("
-                            exit 1
-                        fi
-
-                        TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
-
-                        # extract downloaded package to check for basic integrity
-                        if dpkg-deb --extract cache/packages.extra/${FILE_NAME}.partial ${TMPDIR}
-                        then
-                            mv -v cache/packages.extra/${FILE_NAME}{.partial,}
-                        else
-                            echo "${FILE_NAME} from ${DEB_URL} seems broke, aborting"
-                            exit 2
-                        fi
-                        rm -r "${TMPDIR}"
-                    fi
-                    mkdir -p config/packages.chroot
-                    cp --archive --link cache/packages.extra/${FILE_NAME} config/packages.chroot/
-                fi
+                echo "${FILE_NAME} fetched"
+            else
+                echo "Download from ${DEB_URL} failed : ("
+                exit 1
             fi
 
-        done < ${PKG_LIST}
-    done
+            TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
+
+            # extract downloaded package to check for basic integrity
+            if dpkg-deb --extract cache/packages.extra/${FILE_NAME}.partial ${TMPDIR}
+            then
+                mv -v cache/packages.extra/${FILE_NAME}{.partial,}
+            else
+                echo "${FILE_NAME} from ${DEB_URL} seems broke, aborting"
+                exit 2
+            fi
+            rm -r "${TMPDIR}"
+        fi
+        mkdir -p config/packages.chroot
+        cp --archive --link cache/packages.extra/${FILE_NAME} config/packages.chroot/
+    fi
 }
 
 check_dependencies() {
@@ -105,6 +96,200 @@ check_dependencies() {
     [ ${#DEPS[@]} -eq 0 ] && echo "[ ✅ ] all dependencies present (hooray)" && return
     read -n1 -p "press [i] to run \`apt install ${DEPS[@]}\` and proceed, [any other] key to exit the script.."
     [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || echo "dependencies ${DEPS[@]} not installed, aborting"; exit 1
+}
+
+# FIXME: legacy implementation
+# better package list syntax than markdown?!
+convert_markdown_list() {
+    local TARGET_PATH=config/package-lists
+    local DATUM=$(date +%Y-%m-%d)
+    local MARKDOWN_LIST=$1
+
+    mkdir -pv ${TARGET_PATH}
+
+    # FIXME: kill section headers
+    # placeholder list: support missing headers in [feature]/packages.md
+    TARGET_LIST_CHROOT=${TARGET_PATH}/uncategorized.list.chroot
+
+    # Causes MD link strings to not be transferred to subshell
+    shopt -u nullglob
+
+    while read FULLLINE
+    do
+        local MARKDOWN_LIST_INCLUDED=$(echo ${FULLLINE}|sed -nr 's|.*]\((.*\.md)\).*|\1|p')
+        # remove -- Beschreibung suffix
+        line=${FULLLINE%%  -*}
+        STATE=${line%%  *}
+        ENTRY=${line##*  }
+        case "${STATE}" in
+            "##")
+                # replace all spaces with underscore
+                TARGET_LIST_CHROOT=${TARGET_PATH}/${ENTRY// /_}.list.chroot
+                TARGET_LIST_BIN=${TARGET_PATH}/${ENTRY// /_}.list.binary
+                [ -e ${TARGET_LIST_CHROOT} ] || echo "#  Package list auto-generated by md2packagelist - ${DATUM}" >> ${TARGET_LIST_CHROOT}
+
+                echo "schreibe Paketliste: ${TARGET_LIST_CHROOT}"
+            ;;
+            "- ###")
+                echo "### ${ENTRY}" >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- ### :o:")
+                echo "### ${ENTRY}" >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- ### :x:")
+                MARKDOWN_PATH="$(dirname $(realpath --relative-to=. "${MARKDOWN_LIST}"))/${MARKDOWN_LIST_INCLUDED}"
+                echo " including ${MARKDOWN_LIST_INCLUDED}"
+                convert_markdown_list "${MARKDOWN_PATH}"
+                echo " ${MARKDOWN_LIST_INCLUDED} included"
+            ;;
+            "- :x:")
+                echo ${ENTRY} >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- :+1:")
+                echo "# ${ENTRY}" >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- :+1: :x:")
+                URL=$(echo ${ENTRY}|sed -rn 's/.*\((.*)\).*/\1/p')
+                download_external_deb_package "${URL}"
+                echo "# @deb: ${URL}" >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- :o:")
+                echo "## ${ENTRY}" >> ${TARGET_LIST_CHROOT}
+            ;;
+            "- [x]")
+                echo "# ${ENTRY}" >> ${TARGET_LIST_BIN}
+            ;;
+        #    "- [ ]")
+        #       echo "# ${ENTRY}" >> ${TARGET_LIST_BIN}
+        #    ;;
+            *)
+                [ -z "${FULLLINE}" ] || echo " Unbekannt: ${FULLLINE}"
+            ;;  
+        esac
+
+    done < ${MARKDOWN_LIST}
+    set +x
+    echo "${MARKDOWN_LIST} converted"
+}
+
+# Recursive function to collect complete list of features
+parse_features() {
+    local BASE=${@}
+    #print_info "parse_features( BASE = ${BASE} )"
+
+    # shell option: swallow mon-matching / empty file globs
+    # "If  set,  bash  allows patterns which match no files
+    # to expand to a null string, rather than themselves."
+    shopt -q nullglob || shopt -s nullglob
+
+    for FEATURE_PATH in ${BASE}/{inherit,inherits,depends,features}/* ${BASE}; do
+        if [ ${FEATURE_PATH} != ${BASE} ] && [ -d ${FEATURE_PATH} ]
+        then
+            parse_features ${FEATURE_PATH}
+        else
+            #print_info "found ${FEATURE_PATH} feature"
+            FEATURE_ID=${FEATURE_PATH##*/}
+            if [[ "${FEATURE_PATH}" =~ " " ]]
+            then
+                print_warn "${FEATURE_PATH} contains spaces, please fix that."
+                exit 3
+            fi
+
+            if [[ "${FEATURE_PATH}" =~ .disable[d]* ]]
+            then
+                # Feature has been marked as disabled
+                FEATURE_ID=${FEATURE_ID%.disable*}
+                DISABLED_FEATURES[${FEATURE_ID}]=${FEATURE_PATH}
+            elif [ ${#FEATURES[${FEATURE_ID}]} -eq 0 ]
+            then
+                # Feature is not yet in list, so add it
+                FEATURES[${FEATURE_ID}]=${FEATURE_PATH}
+                FEATURE_IDS+=( ${FEATURE_ID} )
+            else
+                echo "${FEATURE_ID} already set from ${FEATURES[${FEATURE_ID}]}, skipping adding for ${FEATURE_PATH}"
+            fi
+        fi
+    done
+}
+
+# Puts files in the locations live-build expects them
+apply_features() {
+    declare -A PATH_MAPPINGS
+    PATH_MAPPINGS[live-build-config]="config"
+    PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
+    PATH_MAPPINGS[livefs-include]="config/includes.chroot"
+    PATH_MAPPINGS[package-include]="config/packages.chroot"
+    PATH_MAPPINGS[package-preferences]="config/archives"
+    PATH_MAPPINGS[package-repos]="config/archives"
+    PATH_MAPPINGS[packages.md]="config/package-lists.markdown"
+    PATH_MAPPINGS[prebuild-hooks]=""
+    PATH_MAPPINGS[user-config]="config/includes.chroot/etc/skel"
+
+    FEATURE_COUNT=0
+
+    # Walk the feature list and apply all fragments of each
+    for FEATURE_ID in "${FEATURE_IDS[@]}"; do
+        FEATURE_PATH=${FEATURES[${FEATURE_ID}]}
+
+        if [[ -v DISABLED_FEATURES[${FEATURE_ID}] ]]; then
+            print_warn "skipping ${FEATURE_ID} feature, disabled by ${DISABLED_FEATURES[${FEATURE_ID}]}"
+        else
+            print_info "applying ${FEATURE_ID} feature (from ${FEATURE_PATH#../})"
+
+            for FRAGMENT_PATH in ${!PATH_MAPPINGS[*]}
+            do
+                # Skip if feature does not provide this fragment
+                [ ! -e ${FEATURE_PATH}/${FRAGMENT_PATH} ] && continue
+
+                # Get target path for fragment type, print and create it (if set)
+                TARGET_PATH=${PATH_MAPPINGS[${FRAGMENT_PATH}]}
+                [ -z ${TARGET_PATH} ] || {
+                    print_info "TARGET_PATH = ${TARGET_PATH}"
+                    [ -d ${TARGET_PATH} ] || mkdir -p ${TARGET_PATH}
+                }
+
+                case ${FRAGMENT_PATH} in
+                    live-build-config)
+                        # derefence base-settings.d symlinks
+                        rsync --archive --checksum -ih --copy-links ${FEATURE_PATH}/${FRAGMENT_PATH}/ ${TARGET_PATH}/
+                        ;;
+                    packages.md)
+                        # Skip main package list of inherited build variants
+                        [[ ${FEATURE_PATH} =~ inherit/[^/]+$ ]] && continue
+                        TARGET_MD=${TARGET_PATH}/${FEATURE_ID}_${FRAGMENT_PATH}
+
+                        cp -a ${FEATURE_PATH}/${FRAGMENT_PATH} ${TARGET_MD}
+                        convert_markdown_list ${TARGET_MD}
+                        ;;
+                    prebuild-hooks)
+                        for HOOK in ${FEATURE_PATH}/${FRAGMENT_PATH}/*
+                        do
+                            sh -xc "${HOOK}"
+                        done
+                        ;;
+                    *)
+                        # the general case: copy fragment
+                        rsync --archive --checksum -ih ${SYMLINK_OPTION:-} ${FEATURE_PATH}/${FRAGMENT_PATH}/ ${TARGET_PATH}/
+                        ;;
+                esac
+            done
+
+            ((++FEATURE_COUNT))
+        fi
+    done
+
+    DISABLED_FEATURE_COUNT=${#DISABLED_FEATURES[@]}
+    print_info "${FEATURE_COUNT} feature configurations applied, ${DISABLED_FEATURE_COUNT} skipped."
+    [ ${DISABLED_FEATURE_COUNT} -eq 0 ] || print_info "disabled features: ${!DISABLED_FEATURES[@]}\n\n"
+}
+
+config_tree_from_features() {
+    declare -A DISABLED_FEATURES
+    declare -A FEATURES
+    declare -a FEATURE_IDS
+    parse_features ${@}
+    apply_features
+    unset DISABLED_FEATURES FEATURES FEATURE_IDS
 }
 
 # vim:ts=4:sts=4:sw=4:expandtab

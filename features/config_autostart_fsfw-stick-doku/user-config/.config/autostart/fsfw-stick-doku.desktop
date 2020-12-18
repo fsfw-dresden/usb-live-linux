@@ -1,7 +1,5 @@
 [Desktop Entry]
-Version=1.0
-Name=Script
+Name=FSFW doku autostart
 Type=Application
-Exec=sh -c 'pgrep firefox || nohup firefox /usr/local/share/doc/FSFW-Dresden/index.html'
-Terminal=false
+Exec=sh -c 'pgrep firefox || nohup firefox /usr/local/share/doc/FSFW/index.html'
 StartupNotify=false

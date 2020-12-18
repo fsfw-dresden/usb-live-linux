@@ -1,23 +1,20 @@
-# generated HTML files
-doc/html/*.html
-
 # image output directory
-iso-images/
+artifacts/
 
-# live-build work directories and artifacts
-binary/
-cache/
-chroot/
-chroot*
-config/
-source/
-.build/
-.lock
-*.log
-*.iso
-*.img
-*.tar*
-*.files
-*.contents
-*.packages
-*.zsync
+# live-build work directories and files
+build/binary/
+build/cache/
+build/chroot/
+build/chroot*
+build/config/
+build/source/
+build/.build/
+build/.lock
+build/*.log
+build/*.iso
+build/*.img
+build/*.tar*
+build/*.files
+build/*.contents
+build/*.packages
+build/*.zsync

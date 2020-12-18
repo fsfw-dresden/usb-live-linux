@@ -35,7 +35,7 @@ Momentan (Mai 2019) wird noch das Tool  *live-build* benutzt. Mittelfristig ist 
 Aktuelle Informationen (u.a. zur Verteilung vor Ort in Dresden) unter: [https://fsfw-dresden.de/uni-stick](https://fsfw-dresden.de/uni-stick).
 
 ## Benutzer.innen Doku:
-* [doc/src/index.md](doc/src/index.md): Welche Programme sind dabei und wozu sind die gut?
+* [doc/dist/index.md](doc/dist/index.md): Welche Programme sind dabei und wozu sind die gut?
 * [scripts/README.md](scripts/README.md): Erstellen eines bootfähigen USB-Sticks mit dem Live-Image
 
 ## Entwickler.innen Doku:

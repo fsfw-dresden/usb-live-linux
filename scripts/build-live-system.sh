@@ -69,54 +69,43 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 print_info "Available live-build versions:"
-apt policy live-build
+time apt policy live-build
 print_info "Using live-build $(lb --version), lb command is $(type lb)"
+
+# FIXME - HACK: modify build script to unlock zstd mksquashfs power
+sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
 
 print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
 STARTTIME=$(date +%s)
 
-# clean up live-build environment using auto/clean script
-lb clean
+(
+    # build in an appropriate sub-folder
+    cd build
 
-# generate live-build config for specified variant
-scripts/apply-build-variant.sh ${BUILD_VARIANT}
+    # clean up live-build environment using auto/clean script
+    lb clean
 
-# set shell option: remove non-matching file globs
-shopt -s nullglob
+    # generate live-build config/ from features of specified variant
+    config_tree_from_features ../variants/${BUILD_VARIANT}
 
-# copy FSFW docs (FIXME: convert into feature)
-scripts/copy-docs.sh ${BUILD_VARIANT} /usr/local/share/doc/FSFW-Dresden
+    # have live-build complete its config
+    lb config
 
-# generate live-user home directory "skeleton"
-scripts/prepare-home-skel.sh ${BUILD_VARIANT}
-
-# have live-build complete its config
-lb config
-
-# convert package lists from markdown
-scripts/md2packagelist.sh config/package-lists.markdown/*.md
-
-# workaround (FIXME): lb chroot_package-lists install verschluckt sich bei inaktiven Paketlisten
-find config/package-lists -type f -not -exec grep -q '^[^#]' {} \; -print -delete|sed 's/^/WORKAROUND/'
-
-# fetch external deb files specified by URL in package-list
-download_external_deb_packages
-
-# HACK: modify build script to unlock zstd mksquashfs power
-sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
-
-# Trigger image build
-lb build \
-    && {
-    print_info "Build SUCCEEDED"
-
-        # Ensure TARGET_DIR exists
-        mkdir -p ${TARGET_DIR}
-
-        # and move generated files there
-        mv -iv ./"${BUILD_VARIANT}"*.* ${TARGET_DIR}/
-
-        } \
-    || print_warn "Build FAILED"
+    # Trigger image build
+    lb build
+)
 
 print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"
+
+# FIXME: live-build exit status unreliable!
+# Instead, assume success if recent ISO image is found
+[ -z "$(find build -maxdepth 1 -iname '*.iso' -mmin -10)" ] \
+        && print_warn "Build FAILED" || {
+            print_info "Build SUCCEEDED"
+
+            # Ensure TARGET_DIR exists
+            mkdir -p ${TARGET_DIR}
+
+            # and move generated files there
+            mv -iv build/"${BUILD_VARIANT}"*.* ${TARGET_DIR}/
+        }
