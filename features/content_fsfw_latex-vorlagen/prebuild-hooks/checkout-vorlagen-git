@@ -1,5 +1,4 @@
 #!/bin/sh
-pwd
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/share/FSFW-Material/latex-vorlagen
 SRC_DIR=../doc/latex-vorlagen

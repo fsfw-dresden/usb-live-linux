@@ -1,5 +1,4 @@
 #!/bin/sh
-pwd
 PREFIX=config/includes.chroot
 TARGET_DIR=/etc
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}

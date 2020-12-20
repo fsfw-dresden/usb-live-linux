@@ -76,11 +76,4 @@
 - :x:  broadcom-sta-dkms  --		Broadcom STA Wireless driver
 - :x:  libblockdev-plugins-all  --	low-level operations with block devices
 
-- :o:  preload  --		adaptive readahead daemon, predicts what applications users might run
 - :o:  virtualbox-guest-dkms  --	virtualbox guest addition kernel modules
-- :o:  clamav  --	leichtgewichtiger, einfach nutzbarer, bei Bedarf einsetzbarer Antivirus-Scanner (+1.376 kB)
-- :o:  clamtk  --	Grafisches Frontend für ClamAV (+1.650 kB)
-- :o:  auto-apt-proxy  --		automatic detector of common APT proxy settings
-- :o:  tuned-gtk  --	tunes system settings dynamically, profile editor
-- :o:  tuned-utils  --	
-- :+1: :o:  [finalrd](http://de.archive.ubuntu.com/ubuntu/pool/main/f/finalrd/finalrd_3_all.deb)  -- final runtime directory for shutdown

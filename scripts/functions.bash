@@ -168,7 +168,6 @@ convert_markdown_list() {
         esac
 
     done < ${MARKDOWN_LIST}
-    set +x
     echo "${MARKDOWN_LIST} converted"
 }
 

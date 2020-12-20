@@ -6,4 +6,3 @@
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 - :x:  vim-scripts  --		Erweiterungen für vim (was man sonst noch so braucht)
 - :x:  vim-pathogen  --		pathogen.vim: install plugins in their own private directories ("bundles")
-
