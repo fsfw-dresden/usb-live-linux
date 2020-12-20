@@ -27,8 +27,7 @@
     },
     {
       "name": "Webseiten: Ecosia",
-      "url": "https://www.ecosia.org/search?q=%s",
-      "icon_url": "https://mycroftproject.com/updateos.php/id0/ecosia.png"
+      "url": "https://www.ecosia.org/search?q=%s"
     },
     {
       "name": "Webseiten: DuckDuckGo",
@@ -66,12 +65,11 @@
     },
     {
       "name": "Bilder: Bing (komfortabel)",
-      "url": "http://www.bing.de/images/search?q=%s&adlt=off",
-      "icon_url": "http://www.bing.com/favicon.ico"
+      "url": "http://www.bing.de/images/search?q=%s"
     },
     {
       "name": "Bilder: Google (treffsicher)",
-      "url": "http://images.google.de/images?q=%s&safe=off"
+      "url": "http://images.google.de/images?q=%s&safe=active"
     },
     {
       "name": "Videos: Youtube",
@@ -79,8 +77,7 @@
     },
     {
       "name": "Kunst: DeviantArt",
-      "url": "https://www.deviantart.com/search/deviations?q=%s",
-      "icon_url": "http://i.deviantart.net/icons/da_favicon.ico"
+      "url": "https://www.deviantart.com/search/deviations?q=%s"
     },
     {
       "name": "🇩🇪 Fernsehsendungen",
@@ -126,13 +123,11 @@
         },
         {
           "name": "HERE WeGo",
-          "url": "https://wego.here.com/search/%s",
-          "icon_url": "https://mycroftproject.com/updateos.php/id0/wego.here.com.ico"
+          "url": "https://wego.here.com/search/%s"
         },
         {
           "name": "Google",
-          "url": "https://www.google.de/maps?q=%s",
-          "icon_url": "https://www.google.de/favicon4.ico"
+          "url": "https://www.google.de/maps?q=%s"
         }
       ]
     },
@@ -143,18 +138,15 @@
       "engines": [
         {
           "name": "Google News",
-          "url": "https://www.google.de/search?q=%s&tbm=nws&tbs=sbd:1&qscrl=1",
-          "icon_url": "https://pbs.twimg.com/profile_images/1524409110/news-icon_normal.gif"
+          "url": "https://www.google.de/search?q=%s&tbm=nws&tbs=sbd:1&qscrl=1"
         },
         {
           "name": "Google Trends",
-          "url": "http://www.google.de/trends/explore?q=%s&date=all",
-          "icon_url": "https://pbs.twimg.com/profile_images/1193741593/Screen_shot_2010-12-19_at_01.50.57_normal.png"
+          "url": "http://www.google.de/trends/explore?q=%s&date=all"
         },
         {
           "name": "Twitter",
-          "url": "https://twitter.com/search?q=%s",
-          "icon_url": "https://twitter.com/favicon.ico"
+          "url": "https://twitter.com/search?q=%s"
         }
       ]
     },
@@ -169,8 +161,7 @@
         },
         {
           "name": "Science: Microsoft Academic",
-          "url": "https://academic.microsoft.com/search?q=%s",
-          "icon_url": "http://mycroftproject.com/updateos.php/id0/msacademic.ico"
+          "url": "https://academic.microsoft.com/search?q=%s"
         },
         {
           "name": "Journals: JSTOR",
@@ -178,18 +169,15 @@
         },
         {
           "name": "Journals: ScienceDirect",
-          "url": "http://www.sciencedirect.com/science?qs_all=%s&_ob=QuickSearchURL&_method=submitForm&_acct=C000065037&searchtype=a&_origin=home&_zone=qSearch&md5=38387b4e637d104dcec6e878cf7539e2&qs_author=&qs_title=&qs_vol=&qs_issue=&qs_pages=",
-          "icon_url": "http://cdn.els-cdn.com/sd/favSD.ico"
+          "url": "http://www.sciencedirect.com/search?qs=%s"
         },
         {
           "name": "Language: N-Grams:EN",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=15&smoothing=3",
-          "icon_url": "http://qph.is.quoracdn.net/main-thumb-t-35445-50-JboEBtSNlVhNV3WSzO1wADGafWKcdzJQ.jpeg"
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=15&smoothing=3"
         },
         {
           "name": "Language: N-Grams:DE",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=20&smoothing=3",
-          "icon_url": "http://qph.is.quoracdn.net/main-thumb-t-35445-50-JboEBtSNlVhNV3WSzO1wADGafWKcdzJQ.jpeg"
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=20&smoothing=3"
         },
         {
           "name": "Library Genesis",
@@ -218,7 +206,6 @@
         {
           "name": "Archive.Org",
           "url": "https://archive.org/searchresults.php{POSTARGS}search=%s&limit=100&start=0&searchAll=yes&submit=this+was+submitted{POSTENCODING}UTF-8",
-          "icon_url": "http://archive.org/images/glogo.jpg",
           "post": true
         }
       ]
@@ -230,13 +217,11 @@
       "engines": [
         {
           "name": "Android: Play Store",
-          "url": "https://play.google.com/store/search?q=%s&c=apps&price=1&sort=1",
-          "icon_url": "https://ssl.gstatic.com/android/market_images/web/favicon.ico"
+          "url": "https://play.google.com/store/search?q=%s&c=apps&price=1&sort=1"
         },
         {
           "name": "Software: github.com",
-          "url": "https://github.com/search?q=%s&type=Everything&repo=&langOverride=&start_value=1",
-          "icon_url": "https://github.com/favicon.ico"
+          "url": "https://github.com/search?q=%s&type=Everything&repo=&langOverride=&start_value=1"
         },
         {
           "name": "Software: Open Hub",
