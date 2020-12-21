@@ -7,6 +7,8 @@
 Prepare_persistence()
 {
 	PART2=$(grep -m 1 findiso /proc/mounts | cut -f 1 -d ' ')
+	[ -z "${PART2}" ] && return 0
+
 	DEV=$(readlink /sys/class/block/${PART2#/dev/})
 	DEV=${DEV%/*}
 	DEV=/dev/${DEV##*/}
