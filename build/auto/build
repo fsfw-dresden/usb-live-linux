@@ -2,4 +2,22 @@
 
 set -e
 
-lb build noauto "${@}" 2>&1 | tee build_$(date +'%F__%H-%M').log
+# Workaround to preserve live-build exit status, thx
+# https://stackoverflow.com/questions/1221833/pipe-output-and-capture-exit-status-in-bash/1221844#1221844
+# https://stackoverflow.com/questions/17757039/equivalent-of-pipefail-in-dash-shell
+# https://unix.stackexchange.com/questions/29851/shell-script-mktemp-whats-the-best-method-to-create-temporary-named-pipe
+
+# Generate a temporary file path according to template
+TMP=$(mktemp -ut live-build.pipe.XXXX)
+
+# Create a FIFO (named pipe) at that location
+# and set an exit trap to clean it up
+mkfifo ${TMP} && trap "rm ${TMP}" EXIT HUP INT TERM
+
+# Start tee, reading from the temporary pipe and writing
+# the build log, then send it in background
+tee build.$(date +'%F.%H%Mh').log < ${TMP} &
+
+# Now trigger actual build process, redirecting output
+# to that named pipe, and leave with lb's exit status.
+lb build noauto "${@}" > ${TMP} 2>&1

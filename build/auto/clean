@@ -2,8 +2,15 @@
 
 set -e
 
-# Move old cache to new build folder
-[ ! -d cache ] || mv -vf cache build/
+# Move old ephemeral folders to new (2020-12-18) build
+# folder (7256783721597cf0107ab697223767f1066cb8a4)
+for FOLDER in .build cache chroot config
+do
+    [ ! -d ../${FOLDER} ] || {
+        echo "${FOLDER} found, moving to new folder build/"
+        mv -vi ../${FOLDER} .
+    }
+done
 
 # this cleans chroot, binary, stage & source
 # c.f. /usr/lib/live/build/clean

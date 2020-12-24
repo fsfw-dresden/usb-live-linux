@@ -2,7 +2,7 @@
 
 DISTRIBUTION=buster
 DESKTOP=Xfce
-STICK_NAME=FSFW-Makerstick
+STICK_NAME=${BUILD_VARIANT}
 STICK_VERSION="$(echo "$(../scripts/calc-version-number.sh)")"
 
 lb config noauto \

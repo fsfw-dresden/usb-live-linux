@@ -4,7 +4,7 @@ check_program_exists pandoc || exit 1
 
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/share/doc/FSFW
-SRC_DIR=../doc/src
+SRC_DIR=../doc/dist
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
 mkdir -pv ${DEST_DIR}

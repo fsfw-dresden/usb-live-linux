@@ -52,7 +52,9 @@ select_build_variant() {
 
 # if neither, query user to visually select a variant
 [ -n "${BUILD_VARIANT}" ] || BUILD_VARIANT=$(select_build_variant)
-BUILD_VARIANT=${BUILD_VARIANT%/}
+
+# chop off possible trailing slash and expose variable to sub processes
+export BUILD_VARIANT=${BUILD_VARIANT%/}
 
 # Clear selection dialog from screen
 clear
@@ -75,7 +77,6 @@ print_info "Using live-build $(lb --version), lb command is $(type lb)"
 # FIXME - HACK: modify build script to unlock zstd mksquashfs power
 sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
 
-print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
 STARTTIME=$(date +%s)
 
 (
@@ -83,29 +84,29 @@ STARTTIME=$(date +%s)
     cd build
 
     # clean up live-build environment using auto/clean script
+    print_info "Triggering build aread clean-up.."
     lb clean
 
     # generate live-build config/ from features of specified variant
+    print_info "Collecting build features for ${BUILD_VARIANT}.."
     config_tree_from_features ../variants/${BUILD_VARIANT}
 
     # have live-build complete its config
+    print_info "Let live-build finalize its configuration"
     lb config
 
     # Trigger image build
-    lb build
+    print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
+    lb build &&
+    {
+        print_info "Building ISO SUCCEEDED"
+
+        # Ensure TARGET_DIR exists
+        mkdir -p ../${TARGET_DIR}
+
+        # and move generated files there
+        mv -iv "${BUILD_VARIANT}"*.* ../${TARGET_DIR}/
+    } || print_warn "FAILED"
 )
 
 print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"
-
-# FIXME: live-build exit status unreliable!
-# Instead, assume success if recent ISO image is found
-[ -z "$(find build -maxdepth 1 -iname '*.iso' -mmin -10)" ] \
-        && print_warn "Build FAILED" || {
-            print_info "Build SUCCEEDED"
-
-            # Ensure TARGET_DIR exists
-            mkdir -p ${TARGET_DIR}
-
-            # and move generated files there
-            mv -iv build/"${BUILD_VARIANT}"*.* ${TARGET_DIR}/
-        }
