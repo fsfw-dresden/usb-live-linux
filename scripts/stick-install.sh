@@ -329,6 +329,9 @@ BOOTOPTIONS+="persistence-media=removable-usb "
 # turn off spectre & co. security mitigations for a nice speed boost
 BOOTOPTIONS+="mitigations=off "
 
+# record bootchart
+# BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
+
 # debug logging of the live-boot scripts
 # BOOTOPTIONS+="live-boot.debug "
 

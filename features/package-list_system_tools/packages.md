@@ -13,6 +13,7 @@
 
 - :x:  installation-report  --	Hilfstool für Bugreports
 - :x:  reportbug  --		Werkzeug, um Fehler (Bugs) in Debian und abgeleiteten Distributionen relativ schmerzfrei zu melden
+- :x:  systemd-bootchart  --	boot performance graphing tool
 
 - ###  utils
 

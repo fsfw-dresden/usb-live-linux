@@ -1,6 +1,6 @@
 #!/bin/sh -e
 lb config noauto \
-    --bootappend-live "boot=live components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin net.ifnames=0 console=ttyS0 live-config.debug" \
+    --bootappend-live "boot=live init=/lib/systemd/systemd-bootchart components locales=de_DE.UTF-8 keyboard-layouts=de timezone=Europe/Berlin net.ifnames=0 console=ttyS0 live-config.debug" \
     --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single" \
         "${@}"
 
