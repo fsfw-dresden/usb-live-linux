@@ -326,7 +326,8 @@ BOOTOPTIONS+="persistence-storage=directory,file,filesystem "
 # only scan removable media for persistence volumes
 BOOTOPTIONS+="persistence-media=removable-usb "
 
-# turn off spectre & co. security mitigations for a nice speed boost
+# Turn off spectre & co. security mitigations for a nice speed boost
+# FIXME: needs to be disabled if any exploits ever become known
 BOOTOPTIONS+="mitigations=off "
 
 # record bootchart
@@ -338,13 +339,13 @@ BOOTOPTIONS+="mitigations=off "
 # redirect console output to virtual serial port for debugging in qemu
 # BOOTOPTIONS+="console=ttyS0 "
 
-# enable root login
-BOOTOPTIONS+="rootpw=Risiko "
-
 if [ "${FAT_LABEL}" = "SCHULSTICK" ]
 then
-    # disallow risky administration tasks without password
+    # no sudo: disallow risky administration tasks without password
     BOOTOPTIONS+="noroot "
+
+    # set root password
+    BOOTOPTIONS+="rootpw=Risiko "
 fi
 
 # don't scare the meek: silence the boot noise
