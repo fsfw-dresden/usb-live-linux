@@ -45,47 +45,84 @@ display_inputbox() {
     DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --inputbox "${TEXT}" ${HEIGHT} ${WIDTH} ${INIT}
 }
 
+download_file_cached() {
+    FILE_URL=${1}
+    FILE_NAME=${2}
+
+    if [ -z ${FILE_NAME} ]
+    then
+        FILE_NAME=${FILE_URL##*/}
+    fi
+
+    CACHE_DIR="cache/packages.extra"
+    FILE_CACHED="${CACHE_DIR}/${FILE_NAME}"
+    WGET_OPTIONS="--no-verbose --timeout=10 --no-http-keep-alive --show-progress --progress=dot:giga --execute content_disposition=off --user-agent=org.schulstick.build"
+
+    if [ -f "${FILE_CACHED}" ]; then
+        echo "${FILE_NAME} available in cache, not downloading." > /dev/stderr
+    else
+        echo "downloading ${FILE_NAME}" > /dev/stderr
+        mkdir -p "${CACHE_DIR}"
+        if wget ${WGET_OPTIONS} ${FILE_URL} -O ${FILE_CACHED}.partial
+        then
+            echo "${FILE_NAME} fetched" > /dev/stderr
+        else
+            echo "Download from ${FILE_URL} failed : (" > /dev/stderr
+            exit 1
+        fi
+
+        # If this is a debian archive, test for integrity
+        if [[ "${DEB_FILE}" =~ \.deb$ ]] && ! check_debian_archive ${DEB_FILE}
+        then
+            echo "${DEB_FILE} seems broke, aborting" > /dev/stderr
+            exit 1
+        fi
+
+        # Rename file in cache
+        mv -v ${FILE_CACHED}{.partial,}
+    fi
+
+    echo "${FILE_CACHED}"
+}
+
+check_debian_archive() {
+    DEB_FILE=${1}
+    TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
+    trap "rm -r \"${TMPDIR}\"" RETURN
+
+    # extract downloaded package to check for basic integrity
+    if dpkg-deb --extract ${DEB_FILE} ${TMPDIR}
+    then
+        return 0
+    else
+        return 2
+    fi
+}
+
 # fetch any external packages specified by URL in package-lists
 download_external_deb_package() {
     DEB_URL=${1}
     FILE_NAME=${2}
 
-    WGET_OPTIONS="--no-verbose --timeout=10 --no-http-keep-alive --show-progress --progress=dot:giga --execute content_disposition=off --user-agent=org.schulstick.build"
     if [ -z ${FILE_NAME} ]
     then
         FILE_NAME=${DEB_URL##*/}
         FILE_NAME=${FILE_NAME/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert?)
     fi
 
-    if [ -n "${FILE_NAME}" ]; then
-        if [ -f cache/packages.extra/${FILE_NAME} ]; then
-            echo "${FILE_NAME} available in cache, not downloading."
-        else
-            echo "downloading ${FILE_NAME}"
-            mkdir -p cache/packages.extra
-            if wget ${WGET_OPTIONS} ${DEB_URL} -O cache/packages.extra/${FILE_NAME}.partial
-            then
-                echo "${FILE_NAME} fetched"
-            else
-                echo "Download from ${DEB_URL} failed : ("
-                exit 1
-            fi
+    FILE_CACHED=$(download_file_cached ${DEB_URL} ${FILE_NAME})
 
-            TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
-
-            # extract downloaded package to check for basic integrity
-            if dpkg-deb --extract cache/packages.extra/${FILE_NAME}.partial ${TMPDIR}
-            then
-                mv -v cache/packages.extra/${FILE_NAME}{.partial,}
-            else
-                echo "${FILE_NAME} from ${DEB_URL} seems broke, aborting"
-                exit 2
-            fi
-            rm -r "${TMPDIR}"
-        fi
-        mkdir -p config/packages.chroot
-        cp --archive --link cache/packages.extra/${FILE_NAME} config/packages.chroot/
+    if [ -n "${FILE_CACHED}" ]
+    then
+        echo "${FILE_NAME} fetched"
+    else
+        echo "Download from ${DEB_URL} failed : ("
+        exit 1
     fi
+
+    TARGET_DIR=config/packages.chroot
+    mkdir -p "${TARGET_DIR}"
+    cp --archive --link "${FILE_CACHED}" "${TARGET_DIR}/"
 }
 
 check_dependencies() {
