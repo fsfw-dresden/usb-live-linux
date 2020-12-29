@@ -1,0 +1,48 @@
+#!/bin/bash
+# Download and install circuitjs electron release
+
+. ../scripts/functions.bash
+
+TARGET="config/includes.chroot/opt"
+URL="http://falstad.com/circuit/offline/circuitjs1-linux64.tgz"
+FILE=$(download_file_cached ${URL})
+
+echo "Unpacking CircuitJS.."
+
+# Create target dir and unpack
+mkdir -p "${TARGET}"
+tar --exclude='._*' --directory "${TARGET}" -xzf "${FILE}"
+
+# Keep a copy of the original app invocation
+cp -a ${TARGET}/circuitjs1/resources/app/main.js{,.orig}
+
+# Make Electron show with maximized window and bigger minimal font size
+patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
+--- /opt/circuitjs1/resources/app/main.js.orig	2020-12-11 20:48:48.000000000 +0100
++++ /opt/circuitjs1/resources/app/main.js	2020-12-29 17:39:19.501094275 +0100
+@@ -18,10 +18,14 @@
+   // Create the browser window.
+   var mainWindow = new BrowserWindow({width: 800, 
+     height: 600,
++    show: false,
+     webPreferences: { nativeWindowOpen: true,
++                      minimumFontSize: 14,
+                       preload: path.join(__dirname, 'preload.js')
+     }
+   })
++  mainWindow.maximize();
++  mainWindow.show();
+   windows.push(mainWindow);
+ 
+   // and load the index.html of the app.
+EOF
+
+# The sandbox being disabled in the .desktop Exec command prevents this error:
+# FATAL:setuid_sandbox_host.cc The SUID sandbox helper binary was found, but
+# is not configured correctly. Rather than run without sandboxing I'm aborting
+# now. You need to make sure that /opt/circuitjs1/chrome-sandbox is owned by
+# root and has mode 4755.
+
+# This would be another way, left for reference.
+# chown -c root config/includes.chroot/opt/circuitjs1/chrome-sandbox
+# chmod -c 4755 config/includes.chroot/opt/circuitjs1/chrome-sandbox

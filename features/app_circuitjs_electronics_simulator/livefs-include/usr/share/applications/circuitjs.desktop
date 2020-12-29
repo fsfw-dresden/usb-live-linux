@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Education;
+Type=Application
+Name=CircuitJS
+Comment=Electronic Circuit Simulator
+Comment[de]=Elektronikschaltungen simulieren
+Exec=/opt/circuitjs1/circuitjs1 --no-sandbox
+Icon=preferences-system-power
