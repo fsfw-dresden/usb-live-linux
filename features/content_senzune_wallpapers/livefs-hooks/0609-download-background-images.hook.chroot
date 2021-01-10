@@ -1,0 +1,38 @@
+#!/bin/sh -x
+
+IMAGE_URLS="
+https://www.deviantart.com/senzune/art/Acetylcholine-764073149
+https://www.deviantart.com/senzune/art/Afterglow-838905672
+https://www.deviantart.com/senzune/art/Arcus-Inlustris-705950384
+https://www.deviantart.com/senzune/art/Fluek-805906550
+https://www.deviantart.com/senzune/art/Gindoe-777485260
+https://www.deviantart.com/senzune/art/Gnasm-678714240
+https://www.deviantart.com/senzune/art/Hexaco-801445419
+https://www.deviantart.com/senzune/art/Hexaic-716882458
+https://www.deviantart.com/senzune/art/Hexaut-780425832
+https://www.deviantart.com/senzune/art/Hyso-718063907
+https://www.deviantart.com/senzune/art/Lavali-772016522
+https://www.deviantart.com/senzune/art/Low-Orbit-678162001
+https://www.deviantart.com/senzune/art/Snowdin-726081760
+"
+# Senzune Dec 8, 2017:
+# All my works are free for non-commercial use
+# As long as you don't make any money with them, you can use them however you want ^^
+
+TARGETDIR="/usr/share/backgrounds/collected"
+TMPDIR=$(mktemp -d /dev/shm/wallpapers.XXXXXX)
+mkdir -pv ${TARGETDIR}
+
+gallery-dl --dest ${TMPDIR} ${IMAGE_URLS}
+find ${TMPDIR} -type f | while read IMAGE
+do
+        # bigger than 4 MebiByte? shrink it.
+        if [ $(stat --printf=%s "${IMAGE}") -gt 4194304 ]
+        then
+                convert -verbose -quality 89 "${IMAGE}" "${TARGETDIR}/$(basename "${IMAGE%.*}").jpg"
+                rm "${IMAGE}"
+        else
+                mv -iv "${IMAGE}" ${TARGETDIR}/
+        fi
+done
+rm -rv "${TMPDIR}"
