@@ -5,6 +5,7 @@
 - :x:  lightdm  --		Einfaches grafisches Login-Programm
 - :x:  lightdm-gtk-greeter  --  Einfaches grafisches Login-Programm (GTK+-Anmeldefenster) LightDM
 - :x:  accountsservice  --		query and manipulate user account information
+- :x:  at-spi2-core  --		Assistive Technology Service Provider Interface (dbus core)
 
 - :x:  xfce4  --		not much
 

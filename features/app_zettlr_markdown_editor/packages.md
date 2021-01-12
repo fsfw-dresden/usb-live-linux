@@ -1,1 +1,1 @@
-- :+1: :x:  [zettlr](https://github.com/Zettlr/Zettlr/releases/download/1.8.0-beta.4/Zettlr-1.8.0-beta.4-amd64.deb)  --  powerful markdown editor
+- :+1: :x:  [zettlr](https://github.com/Zettlr/Zettlr/releases/download/v1.8.5/Zettlr-1.8.5-amd64.deb)  --  powerful markdown editor

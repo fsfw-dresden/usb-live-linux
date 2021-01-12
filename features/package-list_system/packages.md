@@ -14,8 +14,8 @@
 - :x:  grub-efi-ia32-bin  --	GRand Unified Bootloader, version 2 (EFI-IA32 modules)
 - :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
 - :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+- :x:  pavucontrol  --	PulseAudio Volume Control
 - :x:  pulseaudio-equalizer  --	
-- :o:  profile-sync-daemon  --	manage your browsers profile in tmpfs and periodically sync it back to disk
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN
 - :x:  network-manager-openconnect-gnome  --	OpenConnect plugin GNOME GUI
@@ -64,12 +64,12 @@
 - :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)
 - :x:  spice-vdagent  --	Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
 - :x:  qemu-guest-agent  --	Guest-side qemu-system agent (+255 kB)
+- :x:  xserver-xorg-video-qxl  --	Display driver for QXL video device inside SPICE-compatible KVM/Qemu emulator
 - :x:  vmtouch  --		file system cache diagnostics and control
 - :x:  qttranslations5-l10n  --		translations for Qt 5 (+1.501 kB)
 - :x:  syslinux-common  --		suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
 - :x:  syslinux-efi  --		collection of bootloaders (UEFI bootloader) (+200 kB)
 - :x:  grub-pc-bin  --		GRUB modules built for use with the traditional PC/BIOS architecture
-- :x:  profile-sync-daemon  --	manage your browsers profile in RAM, periodically syncing it back to disk (reduce flash writes & latency)
 - :x:  tlp  --		Spart Akku-Strom auf Laptops 
 - :x:  tp-smapi-dkms  --		ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 - :x:  acpi-call-dkms  --		enables you to call ACPI methods

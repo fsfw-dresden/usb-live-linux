@@ -63,6 +63,7 @@
 - :x:  iotop  --	displays a table of current I/O usage by processes on the system
 - :x:  iptraf-ng  --	Interactive Colorful IP LAN Monitor, generates various network statistics
 - :x:  jdupes  --	identify and delete or link duplicate files
+- :o:  jc  --	JSONifies the output of many CLI tools and file-types for easier parsing in scripts (not in buster)
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
 - :x:  less  --		world class file viewer
 - :x:  libcdio-utils  --		small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
@@ -85,8 +86,6 @@
 - :x:  ncurses-hexedit  --	Edit files/disks in hex, ASCII and EBCDIC
 - :x:  ne  --	easy-to-use and powerful text editor
 - :x:  nmon  --		display the CPU, memory, network, disks (mini graphs or numbers) …
-- :x:  pandoc-citeproc  -- Literaturverwaltungserweiterung für Pandoc
-- :x:  pandoc  -- Multiformatkonverter
 - :x:  pdfgrep  --	search in pdf files for strings matching a regular expression
 - :x:  percol  --		interactive selection for UNIX pipes
 - :x:  pinfo  --		user-friendly, console-based viewer for Info documents

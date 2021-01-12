@@ -4,6 +4,5 @@
 - :x:  exiftool  --		read and write meta information in multimedia files
 - :x:  icdiff  --	terminal side-by-side colorized word diff
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
-- :x:  pandoc  --	general markup converter
 - :x:  sqlite3  --		Command line interface for SQLite 3
 - :x:  tig  --		ncurses-based text-mode interface for Git

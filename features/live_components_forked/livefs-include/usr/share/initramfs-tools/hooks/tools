@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Copy utilities
+if [ "$1" = "prereqs" ]; then exit 0; fi
+
+. /usr/share/initramfs-tools/hook-functions
+
+copy_exec /bin/lsblk
+copy_exec /usr/bin/strace
