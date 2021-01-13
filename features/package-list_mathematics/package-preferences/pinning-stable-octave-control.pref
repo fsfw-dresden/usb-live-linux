@@ -1,0 +1,7 @@
+# workaround 2020-12-24:
+# yet no version of octave-control compatible
+# with upgraded octave 5.2 in backports
+
+Package: octave octave-common octave-control
+Pin: release a=stable, o=Debian
+Pin-Priority: 900
