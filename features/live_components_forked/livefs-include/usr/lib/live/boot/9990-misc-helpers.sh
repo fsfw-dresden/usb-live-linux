@@ -1384,7 +1384,8 @@ do_union ()
 			# + workdir and upperdir to be in separate directories
 			mkdir -p "${unionrw}/rw"
 			mkdir -p "${unionrw}/work"
-			unionmountopts="-o noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work"
+                        # tails is trying out adding these mount options, too; c.f. https://gitlab.tails.boum.org/tails/tails/-/issues/17258
+			unionmountopts="-o redirect_dir=on,metacopy=on,index=on,xino=on,noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work"
 			;;
 	esac
 
