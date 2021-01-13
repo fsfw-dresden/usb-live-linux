@@ -79,7 +79,7 @@ download_file_cached() {
         fi
 
         # Rename file in cache
-        mv -v ${FILE_CACHED}{.partial,}
+        mv -v ${FILE_CACHED}{.partial,} > /dev/stderr
     fi
 
     echo "${FILE_CACHED}"
