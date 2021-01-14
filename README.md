@@ -20,7 +20,7 @@ At this moment (2020-09-22), the [2020.0 Schulstick release](https://github.com/
 If you hit any problems, just open an issue here on github.
 
 ## Language
-While the project originally was targetting only German audiences, we are preparing to spin variants for other languages as well, as the system should be very suitable especially for developing world usage scenarios where hardware availability might be an issue.
+While the project originally was targeting only German audiences, we are preparing to spin variants for other languages as well, as the system should be very suitable especially for developing world usage scenarios where hardware availability might be an issue.
 Because of its German heritage, Documentation and other bits of pieces might partly be in German, partly in English. We're working on providing adequate translations where sensible.
 
 ## Zeitreise (2020-05)
