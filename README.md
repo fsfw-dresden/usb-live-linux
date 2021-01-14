@@ -13,6 +13,9 @@ This repository contains shell scripts to create a live-system from a nested tre
 ## Flavors
 While the original variant was the [Uni-Stick](variants/FSFW-Uni-Stick_Xfce/README.md), we have since been working on bringing the system to [school kids](variants/FSFW-Schulstick/README.md) and [makers](variants/FSFW-Makerstick/README.md) as well.
 
+## Online Demo
+If you just like to test Schulstick Linux online, you can try it at distrotest.net [2020.0 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2020.0)
+
 ## Downloads
 At this moment (2020-09-22), the [2020.0 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2020.0) is the only version available for download. It includes most of the functionality of the other variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the month).
 
