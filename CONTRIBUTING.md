@@ -1,4 +1,4 @@
-## Allgemeines
+## Allgemeines (2017-02-15)
 
 Das Projekt "FSFW-Uni-Stick" der FSFW Dresden ist explizit darauf angelegt, auch für andere Hochschulen nützlich zu sein. Wir freuen uns deshalb über Beiträge zu diesem Projekt, über [Feedback](https://fsfw-dresden.de/#kontakt) und über Pullrequests.
 

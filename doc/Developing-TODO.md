@@ -18,7 +18,7 @@
 2016-10-26 19:41 gerd     2cb3165 #
 2016-10-26 19:41 gerd     2cb3165
 2016-10-26 19:41 gerd     2cb3165 # TODO:
-2016-10-26 19:41 gerd     2cb3165 # Distibution / Verteilung Script
+2016-10-26 19:41 gerd     2cb3165 # Distribution / Verteilung Script
 2016-10-26 19:41 gerd     2cb3165 # script Uni_Stick_distri.show
 2016-10-26 19:41 gerd     2cb3165 #
 2016-10-26 19:41 gerd     2cb3165 # pack USBImage (ZIP)
