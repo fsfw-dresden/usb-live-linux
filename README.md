@@ -14,23 +14,23 @@ This repository contains shell scripts to create a live-system from a nested tre
 While the original variant was the [Uni-Stick](variants/FSFW-Uni-Stick_Xfce/README.md), we have since been working on bringing the system to [school kids](variants/FSFW-Schulstick/README.md) and [makers](variants/FSFW-Makerstick/README.md) as well.
 
 ## Online Demo
-If you just like to test Schulstick Linux online, you can try it at distrotest.net [2020.0 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2020.0)
+If you would like to test Schulstick Linux online, you can try it live inside your browser at distrotest.net [2020.0 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2020.0). There will be 2021.1 images released soon™.
 
-## Downloads
-At this moment (2020-09-22), the [2020.0 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2020.0) is the only version available for download. It includes most of the functionality of the other variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the month).
+## Downloads (2020-09-22)
+At the moment, the [2020.0 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2020.0) is the only version available for download. It includes most of the functionality of the other variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the month).
 
 ## Issues and Support
 If you hit any problems, just open an issue here on github.
 
 ## Language
 While the project originally was targeting only German audiences, we are preparing to spin variants for other languages as well, as the system should be very suitable especially for developing world usage scenarios where hardware availability might be an issue.
-Because of its German heritage, Documentation and other bits of pieces might partly be in German, partly in English. We're working on providing adequate translations where sensible.
+Because of its German heritage, bits and pieces still might be in German, but to the most part the documentation and code are in English.
 
-## Zeitreise (2020-05)
+## (2019-2020)
 Dieses Repo enthält die Skripte und Konfigurationsdateien, die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
 Momentan (Mai 2019) wird noch das Tool  *live-build* benutzt. Mittelfristig ist geplant, das Basis-Image mit `vmdb2` (Nachfolger von `vmdebootstrap`) zu bauen und weitergehende Anpassungen z.B. mittels Ansible-Skripten vorzunehmen. Dabei ist eine Kooperation mit dem [Lernstick-Projekt](https://lernstick.ch/) angestrebt.
 
-## Zeitreise (2018-08)
+## (2018-08)
 **Screenshot vom Desktop (2018-08-18):**
 ![Screenshot](doc/screenshot-KDE-Desktop-2018-08-18.png "Screenshot")
 
