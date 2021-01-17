@@ -8,7 +8,7 @@
 #               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
 #==========================================
 
-TARGET_DIR=artifacts
+ARTIFACTS_DIR=artifacts
 
 # exit on error
 set -e
@@ -101,11 +101,11 @@ STARTTIME=$(date +%s)
     {
         print_info "Building ISO SUCCEEDED"
 
-        # Ensure TARGET_DIR exists
-        mkdir -p ../${TARGET_DIR}
+        # Ensure ARTIFACTS_DIR exists
+        mkdir -p ../${ARTIFACTS_DIR}
 
         # and move generated files there
-        mv -iv "${BUILD_VARIANT}"*.* ../${TARGET_DIR}/
+        mv -iv "${BUILD_VARIANT}"*.* ../${ARTIFACTS_DIR}/
     } || print_warn "FAILED"
 )
 
