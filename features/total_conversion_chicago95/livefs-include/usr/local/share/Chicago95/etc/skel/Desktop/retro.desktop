@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Try Windows 95
+Comment=let's go back in time
+Exec=sudo qemu-system-x86_64 -hda /usr/local/games/windows95.vhd
+Icon=start-here

@@ -1,0 +1,9 @@
+# This file is sourced by Xsession(5), not executed.
+
+if [ -z "$GTK_MODULES" ] ; then
+	GTK_MODULES="canberra-gtk-module"
+else
+	GTK_MODULES="$GTK_MODULES:canberra-gtk-module"
+fi
+
+export GTK_MODULES

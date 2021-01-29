@@ -1,0 +1,26 @@
+#!/bin/sh
+# install appimagelint, a tool to check AppImage files for common issues.
+
+RELEASEINFO="https://api.github.com/repos/TheAssassin/appimagelint/releases/tags/continuous"
+
+ARCH=$(dpkg --print-architecture)
+
+case ${ARCH} in
+        amd64)
+                EXECARCH="x86_64"
+                ;;
+        i386)
+                EXECARCH="i686"
+                ;;
+        *)
+                EXECARCH="unsupported"
+                ;;
+esac
+
+for EXECURL in $(curl "${RELEASEINFO}"|jq -r '.assets[].browser_download_url|select(endswith("'${EXECARCH}'.AppImage"))|select(contains("appimagelint"))')
+do
+        NAME=${EXECURL##*/}
+        TARGETEXEC=/usr/local/bin/${NAME%%-*}
+        curl --location --remote-time --output "${TARGETEXEC}" "${EXECURL}"
+        chmod a+x "${TARGETEXEC}"
+done

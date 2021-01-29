@@ -24,6 +24,7 @@
 - :x:  pulseaudio-module-bluetooth  --		enables PulseAudio to work with bluetooth devices
 - :x:  gvfs-backends  --		android / camera image file transfer (mtp) and other backends
 - :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
+- :x:  samba-common-bin  --	Basic SMB/CIFS share tools
 - :x:  smart-notifier  --		graphical hard disk health status notifier
 - :x:  python-gi  --		smart-notifier dependency
 - :x:  unattended-upgrades  --		automatic installation of security upgrades

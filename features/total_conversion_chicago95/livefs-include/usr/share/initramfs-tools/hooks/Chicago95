@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# Copy utilities
+if [ "$1" = "prereqs" ]; then exit 0; fi
+
+. /usr/share/initramfs-tools/hook-functions
+
+THEME_NAME="Chicago95"
+THEMES="/usr/share/plymouth/themes"
+mkdir -pv "${DESTDIR}/${THEMES}"
+cp -ar "${THEMES}/${THEME_NAME}" "${DESTDIR}/${THEMES}"

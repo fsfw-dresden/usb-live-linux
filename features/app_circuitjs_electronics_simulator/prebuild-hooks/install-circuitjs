@@ -3,18 +3,20 @@
 
 . ../scripts/functions.bash
 
-TARGET="config/includes.chroot/opt"
+PREFIX=config/includes.chroot
+TARGET_DIR=/opt
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 URL="http://falstad.com/circuit/offline/circuitjs1-linux64.tgz"
 FILE=$(download_file_cached ${URL})
 
 echo "Unpacking CircuitJS.."
 
 # Create target dir and unpack
-mkdir -p "${TARGET}"
-tar --exclude='._*' --directory "${TARGET}" -xzf "${FILE}"
+mkdir -p "${DEST_DIR}"
+tar --exclude='._*' --directory "${DEST_DIR}" -xzf "${FILE}"
 
 # Keep a copy of the original app invocation
-cp -a ${TARGET}/circuitjs1/resources/app/main.js{,.orig}
+cp -a ${DEST_DIR}/circuitjs1/resources/app/main.js{,.orig}
 
 # Make Electron show with maximized window and bigger minimal font size
 patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF

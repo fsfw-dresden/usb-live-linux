@@ -1,0 +1,16 @@
+#!/bin/bash
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/applications
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+RELEASEINFO="https://api.github.com/repos/realthunder/FreeCAD_assembly3/releases"
+
+mkdir -pv ${DEST_DIR}
+
+# FIXME: get most recent release instead of 0.11
+DOWNLOADED_FILE=$(download_file_cached $(curl "${RELEASEINFO}" | jq -r 'map(select(.tag_name|match("0.11")))[].assets[].browser_download_url|select(endswith(".AppImage"))'))
+cp -val "${DOWNLOADED_FILE}" "${DEST_DIR}"
+chmod -c a+x "${DEST_DIR}/${DOWNLOADED_FILE##*/}"

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+Cmdline()
+{
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			chicago95)
+				LIVE_CHICAGO="true"
+				;;
+		esac
+	done
+}
+
+Main()
+{
+	case "${LIVE_CHICAGO}" in
+		true)
+			update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Chicago95_Animated_Hourglass_Cursors/index.theme 200
+			update-alternatives --set x-cursor-theme /usr/share/icons/Chicago95_Animated_Hourglass_Cursors/index.theme
+			for FILE in /etc/X11/Xresources/cursor-size /etc/X11/Xresources/cursor-theme
+			do
+				[ -f ${FILE} ] && rm -v ${FILE} || true
+			done
+			plymouth-set-default-theme -R Chicago95
+			rsync -aih /usr/local/share/Chicago95/etc / || true
+			#cp -ar /usr/local/share/Chicago95/etc /
+			;;
+
+		*)
+			return 0
+			;;
+	esac
+}
+
+Cmdline
+Main

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/games/
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+URL="https://download2044.mediafire.com/vzx6uswbhrag/vzinn93fyydb479/Windows+95+Hard+Disk.vhd"
+FILENAME="windows95.vhd"
+
+mkdir -pv ${DEST_DIR}
+FILE=$(download_file_cached ${URL} ${FILENAME})
+cp -v ${FILE} ${DEST_DIR}
+
+if check_dependencies qemu-utils
+then
+    # fix vfbackup error.. and don't fail if this doesn't work
+    [ -d /sys/module/nbd ] || modprobe -v && {
+        TMPDIR=$(mktemp -d /tmp/stick.XXXXXX)
+        trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
+        NBD_DEV=/dev/nbd3
+        if [ $(cat /sys/class/block/${NBD_DEV##*/}/size) -eq 0 ]
+        then
+            qemu-nbd --connect=${NBD_DEV} "${DEST_DIR}/${FILENAME}"
+            sleep 3
+            mount -v ${NBD_DEV}p1 ${TMPDIR}
+            echo smartdrv >> ${TMPDIR}/AUTOEXEC.BAT
+            read foo
+            umount -v ${NBD_DEV}p1
+            qemu-nbd --disconnect ${NBD_DEV}
+        fi
+    } || true
+fi

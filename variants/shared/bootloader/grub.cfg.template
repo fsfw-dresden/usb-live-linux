@@ -107,6 +107,11 @@ submenu "  [ Expertenoptionen ]" {
       initrd /boot/initrd.img
   }
 
+  menuentry "Live-System Windowsmodus (ohne Persistenz) (STICK_VERSION)" {
+      linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS chicago95
+      initrd /boot/initrd.img
+  }
+
   menuentry "Live-System komplett in Arbeitsspeicher laden (ohne Persistenz) (STICK_VERSION)" {
       linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS toram
       initrd /boot/initrd.img

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case ${1} in
+	prereqs)
+		exit 0
+		;;
+esac
+
+for _PARAMETER in $(cat /proc/cmdline)
+do
+	case "${_PARAMETER}" in
+		chicago95)
+			CHICAGO="true"
+			;;
+	esac
+done
+
+case "${CHICAGO}" in
+	true)
+		{ echo "[Daemon]"; echo "Theme=Chicago95"; } > /etc/plymouth/plymouthd.conf
+		;;
+
+	*)
+		return 0
+		;;
+esac

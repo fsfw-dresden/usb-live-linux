@@ -1,0 +1,2 @@
+- :x:  gconf2  --		GNOME configuration database system (support tools)
+- :x:  planner  --		project management application

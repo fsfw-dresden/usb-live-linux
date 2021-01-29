@@ -12,6 +12,7 @@
 - :x:  catdoc  --	text extractor for MS-Office files
 - :x:  ccze  --		robust and modular log coloriser
 - :x:  cgdb  --	curses-based interface to the GNU Debugger (GDB)
+- :x:  chafa  --	Image-to-text converter (supports animations, alpha, UTF..)
 - :x:  chntpw  --		NT SAM password recovery utility
 - :x:  cmatrix  --	Screen saver for the terminal
 - :x:  consolation  --		linux console pointer support for copy-paste
@@ -102,6 +103,7 @@
 - :x:  rlwrap  --	Kommandozeilen-Wrapper mit »readline«-Funktionalität (Editieren von Tastatureingaben)
 - :x:  scanmem  --	locate and modify a variable in a running process
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
+- :x:  shellcheck  --	lint tool for shell scripts
 - :x:  shed  --	simple hex editor with a pico-style interface
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm
 - :x:  smem  --		reports on memory usage

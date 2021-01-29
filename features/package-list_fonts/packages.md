@@ -8,6 +8,7 @@
 - :x:  fonts-ebgaramond  --	EB Garamond OpenType fonts
 - :x:  fonts-hack-otf  --	Typeface designed for source code
 - :x:  fonts-humor-sans  --	Font that looks like handwritten text
+- :x:  fonts-jetbrains-mono  --	typeface for developers: for a better code reading experience
 - :x:  fonts-lato  --	"Lato" means "Summer" in Polish
 - :x:  fonts-linuxlibertine  --
 - :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display

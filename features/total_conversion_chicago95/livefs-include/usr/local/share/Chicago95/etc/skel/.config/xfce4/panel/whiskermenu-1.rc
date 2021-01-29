@@ -1,0 +1,69 @@
+favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
+recent=
+button-title=Start
+button-icon=xfce4-whiskermenu
+button-single-row=false
+show-button-title=true
+show-button-icon=true
+launcher-show-name=true
+launcher-show-description=true
+launcher-show-tooltip=true
+item-icon-size=4
+hover-switch-category=false
+category-icon-size=2
+load-hierarchy=false
+recent-items-max=13
+favorites-in-recent=true
+display-recent-default=true
+position-search-alternate=true
+position-commands-alternate=true
+position-categories-alternate=true
+menu-width=700
+menu-height=640
+menu-opacity=90
+command-settings=xfce4-settings-manager
+show-command-settings=true
+command-lockscreen=xflock4
+show-command-lockscreen=false
+command-switchuser=gdmflexiserver
+show-command-switchuser=false
+command-shutdown=xfce4-session-logout --halt --fast
+show-command-shutdown=true
+command-logout=xfce4-session-logout
+show-command-logout=true
+command-menueditor=menulibre
+show-command-menueditor=false
+command-profile=mugshot
+show-command-profile=false
+search-actions=5
+
+[action0]
+name=Handbuchseiten
+pattern=#
+command=exo-open --launch TerminalEmulator man %s
+regex=false
+
+[action1]
+name=Internetsuche
+pattern=?
+command=exo-open --launch WebBrowser https://duckduckgo.com/?q=%u
+regex=false
+
+[action2]
+name=Wikipedia
+pattern=!w
+command=exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u
+regex=false
+
+[action3]
+name=Im Terminal ausführen
+pattern=!
+command=exo-open --launch TerminalEmulator %s
+regex=false
+
+[action4]
+name=Adresse öffnen
+pattern=^(file|http|https):\\/\\/(.*)$
+command=exo-open \\0
+regex=true
+

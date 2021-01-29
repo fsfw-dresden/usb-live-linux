@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/share/backgrounds/oseg
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+PACK_URL=https://cloud.opensourceecology.de/s/7b9n5HJwYzRwkSk/download
+PACK_FILE=open_source_ecology_wallpaper_pack_2020.zip
+
+mkdir -pv /usr/share/backgrounds/oseg
+PACK_FILE=$(download_file_cached ${PACK_URL} ${PACK_FILE})
+unzip -j ${PACK_FILE} -d ${DEST_DIR}
+ls -lah ${DEST_DIR}

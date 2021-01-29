@@ -1,0 +1,4 @@
+#!/bin/bash
+. /live-build/config/hooks.scripts/link_wallpaper.sh
+
+link_wallpaper /usr/share/backgrounds/oseg/*

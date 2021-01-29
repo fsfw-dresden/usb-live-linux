@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Development;
+Exec=x-www-browser https://scratch.mit.edu/projects/editor/?tutorial=getStarted
+Icon=scratch
+Name=Scratch (online)
+GenericName=Imagine, Program, Share
+GenericName[de]=Erstelle Geschichten, Spiele und Animationen.
+Type=Application

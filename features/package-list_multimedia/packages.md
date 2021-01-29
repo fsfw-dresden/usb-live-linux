@@ -36,6 +36,10 @@
 - :x:  oggvideotools  -- Tools fürs Ogg-Mediencontainerformat
 - :x:  subtitlecomposer  -- Untertiteleditor
 - :x:  winff-qt  -- Videoformatkonverter
+- :x:  dvgrab  --	grab digital video data via IEEE1394 and USB links
+- :x:  stopmotion  --	create stop-motion animations
+- :x:  qstopmotion  --	Application for creating stop-motion animation movies
+- :x:  v4l-utils  --	Collection of command line video4linux utilities
 
 - :x:  ogmtools  -- Dient der Bearbeitung von OGG-Streams
 

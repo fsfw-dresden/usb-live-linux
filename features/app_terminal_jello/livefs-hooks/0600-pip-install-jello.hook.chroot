@@ -1,0 +1,3 @@
+#!/bin/sh
+# Filter JSON and JSON Lines data with Python syntax (similar to jq)
+pip3 install jello

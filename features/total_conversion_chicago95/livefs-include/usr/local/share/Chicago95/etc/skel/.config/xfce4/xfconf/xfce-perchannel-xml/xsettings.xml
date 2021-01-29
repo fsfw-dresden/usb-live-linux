@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xsettings" version="1.0">
+  <property name="Net" type="empty">
+    <property name="ThemeName" type="string" value="Chicago95"/>
+    <property name="IconThemeName" type="string" value="Chicago95"/>
+    <property name="SoundThemeName" type="string" value="Chicago95"/>
+    <property name="EnableEventSounds" type="bool" value="true"/>
+    <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
+  </property>
+  <property name="Xft" type="empty">
+    <property name="DPI" type="int" value="-1"/>
+    <property name="Antialias" type="int" value="1"/>
+    <property name="Hinting" type="int" value="0"/>
+    <property name="HintStyle" type="string" value="hintnone"/>
+    <property name="RGBA" type="string" value="rgb"/>
+  </property>
+  <property name="Gtk" type="empty">
+    <property name="FontName" type="string" value="Liberation Sans 12"/>
+    <property name="MonospaceFontName" type="string" value="Courier 10 Pitch 14"/>
+    <property name="MenuImages" type="bool" value="true"/>
+    <property name="ButtonImages" type="bool" value="true"/>
+    <property name="CursorThemeName" type="string" value="Chicago95_Animated_Hourglass_Cursors"/>
+    <property name="CursorThemeSize" type="int" value="16"/>
+  </property>
+</channel>

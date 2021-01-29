@@ -1,0 +1,1 @@
+- :x:  python3-pip  --		Python 3 version of the Python package installer
