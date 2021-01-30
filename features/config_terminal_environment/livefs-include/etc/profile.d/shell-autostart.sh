@@ -8,25 +8,21 @@ esac
 
 export SHELL_AUTOSTART=1
 
-# depends on /usr/local/bin/color
-COLOR_CYAN=$(color bold cyan)
-COLOR_RED=$(color bold red)
-COLOR_OFF=$(color off)
+COLOR_CYAN='\033[1;36m'
+COLOR_RED='\033[1;31m'
+COLOR_OFF='\033[0;0m'
 
 [ $(id -u) -eq 0 ] && SU=1 || SU=
 [ -e /etc/sudoers.d/live ] && SUDO="sudo" || SUDO=
 
-MSG="Command line quick-start menu"
-[ -z $SU ] || MSG+=" -- ${COLOR_RED}superuser / system administration mode${COLOR_OFF} active"
-MSG+="\n-----------------------------\n"
-MSG+=" Press \n\t"
-MSG+="${COLOR_CYAN}[r]${COLOR_OFF}\t\t for ranger file browser, \n\t${COLOR_CYAN}[t]${COLOR_OFF}\t\t to enter tmux terminal multiplexer"
+[ -z $SU ] || MSG+="\n${COLOR_RED}superuser / system administration mode${COLOR_OFF} (⚠️ you can break things now!)\n\n"
+MSG+="Command line interface quick-start menu: ${COLOR_CYAN}Press${COLOR_OFF} ..\n"
+MSG+="\t${COLOR_CYAN}[r]${COLOR_OFF}\t\t for ranger file browser, \n\t${COLOR_CYAN}[t]${COLOR_OFF}\t\t to enter tmux terminal multiplexer"
 [ -z $SU ] && MSG+=", \n\t${COLOR_CYAN}[s]${COLOR_OFF}\t\t for a superuser / root shell"
 MSG+=" or \n\t${COLOR_CYAN}[any other key]${COLOR_OFF}\t to continue to a regular Bash shell prompt..$(color off)"
 
-ADIOS="\n\n\t... Happy Hacking! : )\n"
+ADIOS="\n\n\t... Happy Hacking! : )"
 
-echo
 if read -sn1 -sp "$(echo -e $MSG)"; then
   case $REPLY in
     s) echo; [ $(id -u) -eq 0 ] || ${SUDO} su -lw DISPLAY,XAUTHORITY,DBUS_SESSION_BUS_ADDRESS,SESSION_MANAGER,SSH_AUTH_SOCK;;

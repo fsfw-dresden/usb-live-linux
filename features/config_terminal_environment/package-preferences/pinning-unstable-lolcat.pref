@@ -1,0 +1,4 @@
+# WE The people demand newer lolcat
+Package: lolcat ruby-paint
+Pin: release a=unstable, o=Debian
+Pin-Priority: 500
