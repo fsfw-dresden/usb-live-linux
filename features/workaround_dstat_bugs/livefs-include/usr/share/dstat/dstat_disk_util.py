@@ -74,14 +74,14 @@ class dstat_plugin(dstat):
 
     def extract(self):
         for l in self.splitlines():
+            if len(l) < 13: continue
+            if l[5] == '0' and l[9] == '0': continue
+            if l[3:] == ['0',] * 11: continue
             name = l[2]
             if name not in self.vars: continue
             self.set2[name] = dict(
                 tot_ticks = long(l[12])
             )
-            if len(l) < 13: continue
-            if l[5] == '0' and l[9] == '0': continue
-            if l[3:] == ['0',] * 11: continue
 
         for name in self.vars:
             self.val[name] = ( (self.set2[name]['tot_ticks'] - self.set1[name]['tot_ticks']) * 1.0 * hz / elapsed / 1000, )
