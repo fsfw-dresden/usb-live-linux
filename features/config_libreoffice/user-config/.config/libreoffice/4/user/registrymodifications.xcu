@@ -10,4 +10,5 @@
 <item oor:path="/org.openoffice.Office.UI.ToolbarMode/Applications/org.openoffice.Office.UI.ToolbarMode:Application['Draw']"><prop oor:name="Active" oor:op="fuse"><value>notebookbar_groupedbar_compact.ui</value></prop></item>
 <item oor:path="/org.openoffice.Office.UI.ToolbarMode/Applications/org.openoffice.Office.UI.ToolbarMode:Application['Impress']"><prop oor:name="Active" oor:op="fuse"><value>notebookbar_groupedbar_full.ui</value></prop></item>
 <item oor:path="/org.openoffice.Office.UI.ToolbarMode/Applications/org.openoffice.Office.UI.ToolbarMode:Application['Writer']"><prop oor:name="Active" oor:op="fuse"><value>notebookbar_groupedbar_full.ui</value></prop></item>
+<item oor:path="/org.openoffice.Office.UI.ImpressWindowState/UIElements/States/org.openoffice.Office.UI.WindowState:WindowStateType['private:resource/toolbar/commontaskbar']"><prop oor:name="Visible" oor:op="fuse"><value>false</value></prop></item>
 </oor:items>
