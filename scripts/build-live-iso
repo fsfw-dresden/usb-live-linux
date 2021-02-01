@@ -1,12 +1,4 @@
 #!/bin/bash +x
-#===========================================
-#         FILE: build-live-system.sh
-#  DESCRIPTION: erstellen des FSFW-Uni-Stick
-#       AUTHOR: Gerd Göhler, gerdg-dd@gmx.de
-#      CREATED: 2016-10-21
-#       Lizenz: CC BY-NC-SA 3.0 DE - https://creativecommons.org/licenses/by-nc-sa/3.0/de/#
-#               https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
-#==========================================
 
 # exit on error
 set -e

@@ -20,7 +20,7 @@
 ## Images:
 Im Rahmen des Projektes *FSFW-Uni-Stick* gibt es zwei verschiedene Images
 * das Linux-Live-Image als boot- & brennbare ISO; Ergebnis von `lb build`, z.B. **FSFW-Uni-Stick_jessie-amd64.hybrid.iso**
-* das Image des kompletten Sticks wird dann mit dem Skript **stick-install.sh** erstellt
+* das Image des kompletten Sticks wird dann mit dem Skript **stick-install** erstellt
     * bis zu drei Partitionen:
         * Live-System (ext4) mit Live-System.iso u ggf. weitere Tools wie memtest86+, Hardware Test (HDT) und super-grub2-disk
         * Windows-Daten (FAT32) mit PortableApps-Sammlung hilfreicher Windows-Software
@@ -44,7 +44,7 @@ Herunterladen der benötigeten Dateien
 
 FSFW-Uni-Stick CD-Image bauen
 
-  ` $ scripts/build-live-system.sh `
+  ` $ scripts/build-live-iso `
 
 Dieses Skript führt im Wesentlichen folgende Schritte aus:
 

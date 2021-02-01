@@ -3,7 +3,7 @@
 DISTRIBUTION=stable
 DESKTOP=KDE
 STICK_NAME=FSFW-Uni-Stick
-STICK_VERSION="$(echo "$(../scripts/calc-version-number.sh)")"
+STICK_VERSION="$(echo "$(../scripts/calc-version-number)")"
 
 lb config noauto \
     --distribution ${DISTRIBUTION} \

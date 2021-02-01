@@ -2,7 +2,7 @@
 # This will allow booting directly into the installer from the ISO.
 # NOTE: The preferred method of offering installation is the calamares
 # installer included in the live system. Also, images/sticks created
-# with the stick-install.sh script do not show the installer entries
+# with the stick-install script do not show the installer entries
 # in the boot menu.
 
 # Allegedly, caching of bootstrap stage is necessary for this to work.

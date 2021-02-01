@@ -94,7 +94,7 @@ jobs:
 
     - name: build ISO
       run: |
-        sudo bash -x scripts/build-live-system.sh ${{env.BUILD_VARIANT}}
+        sudo bash -x scripts/build-live-iso ${{env.BUILD_VARIANT}}
         echo ::set-env name=ISO::$(cd iso-images; command ls -tr *.iso|tail -n 1)
         echo ::set-env name=BUILDLOG::$(command ls build*.log)
         df -h $(pwd) /mnt

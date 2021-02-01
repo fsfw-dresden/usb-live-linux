@@ -17,7 +17,7 @@ do
     pandoc --standalone --template ${SRC_DIR}/fsfw-template.html \
             --metadata "title=${TITLE}" \
             "${MD_FILE}" --output "${DEST_FILE}"
-    python3 ../scripts/convert-md-links.py "${DEST_FILE}"
+    ../scripts/convert-md-links "${DEST_FILE}"
 done
 
 # FIXME: separation?

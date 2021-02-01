@@ -2,10 +2,10 @@
 .PHONY: iso dist-image stick-install
 
 iso:
-	scripts/build-live-system.sh
+	scripts/build-live-iso
 
 dist-image:
-	scripts/create-distribution-image.sh
+	scripts/create-distribution-image
 
 stick-install:
-	scripts/stick-install.sh
+	scripts/stick-install
