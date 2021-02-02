@@ -1,8 +1,6 @@
-#!/bin/bash -x
-# next-generation live stick installation script
-# BETA status
-# Kein Backup
-# KEIN MITLEID
+#!/bin/bash
+# For installing a live ISO onto a flash drive or into an image file.
+# This creates the special partition layout for data persistence.
 
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
