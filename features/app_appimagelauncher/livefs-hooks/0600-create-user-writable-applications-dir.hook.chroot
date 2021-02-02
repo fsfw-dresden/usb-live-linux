@@ -1,10 +1,10 @@
 #!/bin/sh -x
 APPIMAGE_DIR="/usr/local/applications/"
 
-[ -d ${APPIMAGE_DIR} ] || mkdir -pv ${APPIMAGE_DIR} && chown -c user ${APPIMAGE_DIR}
+[ -d ${APPIMAGE_DIR} ] || mkdir -pv ${APPIMAGE_DIR} && chown -c 1000 ${APPIMAGE_DIR}
 
-for APPIMAGE ${APPIMAGE_DIR}/*
+for APPIMAGE in ${APPIMAGE_DIR}/*
 do
-        chown -c user "${APPIMAGE}"
+        chown -c 1000 "${APPIMAGE}"
         chmod -c a+x "${APPIMAGE}"
 done
