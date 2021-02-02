@@ -7,6 +7,8 @@ build/cache/
 build/chroot/
 build/chroot*
 build/config/
+build/container/
+build/.#container.lck
 build/source/
 build/.build/
 build/.lock

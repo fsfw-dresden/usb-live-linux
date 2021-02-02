@@ -251,6 +251,7 @@ parse_features() {
 # Puts files in the locations live-build expects them
 apply_features() {
     declare -A PATH_MAPPINGS
+    # for building the intermediate ISO image
     PATH_MAPPINGS[live-build-config]="config"
     PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
     PATH_MAPPINGS[livefs-include]="config/includes.chroot"
@@ -319,7 +320,7 @@ apply_features() {
     [ ${DISABLED_FEATURE_COUNT} -eq 0 ] || print_info "disabled features: ${!DISABLED_FEATURES[@]}\n\n"
 }
 
-config_tree_from_features() {
+lb_config_tree_from_features() {
     declare -A DISABLED_FEATURES
     declare -A FEATURES
     declare -a FEATURE_IDS

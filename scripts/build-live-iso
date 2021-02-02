@@ -74,12 +74,12 @@ STARTTIME=$(date +%s)
     cd build
 
     # clean up live-build environment using auto/clean script
-    print_info "Triggering build aread clean-up.."
+    print_info "Triggering build area clean-up.."
     lb clean
 
     # generate live-build config/ from features of specified variant
     print_info "Collecting build features for ${BUILD_VARIANT}.."
-    config_tree_from_features ../variants/${BUILD_VARIANT}
+    lb_config_tree_from_features ../variants/${BUILD_VARIANT}
 
     # have live-build complete its config
     print_info "Let live-build finalize its configuration"

@@ -21,6 +21,7 @@ fi
 
 select_target_device() {
     OPTIONS=()
+    shopt -s nullglob
     for DEVICE in /dev/{sd?,vd?,loop*}
     do
         DEVNAME=${DEVICE#/dev/}
@@ -34,6 +35,7 @@ select_target_device() {
         grep -qs 1 /sys/block/${DEVNAME}/removable || [[ -d /sys/block/${DEVNAME}/loop ]] && \
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
+    [ -z ${OPTIONS} ] && echo "Could not find any suitable (loop) device!" && exit 5
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
@@ -321,8 +323,11 @@ BOOTOPTIONS+="persistence-encryption=none,luks "
 # if the label name matches, a persistence volume can be a directory, and image file or partition
 BOOTOPTIONS+="persistence-storage=directory,file,filesystem "
 
-# only scan removable media for persistence volumes
-BOOTOPTIONS+="persistence-media=removable-usb "
+if ! [[ "${DEVICE}" =~ ^/dev/loop[0-9]+ ]]
+then
+    # only scan removable media for persistence volumes
+    BOOTOPTIONS+="persistence-media=removable-usb "
+fi
 
 # Turn off spectre & co. security mitigations for a nice speed boost
 # FIXME: needs to be disabled if any exploits ever become known

@@ -2,6 +2,8 @@
 
 . ../scripts/functions.bash
 
+check_dependencies qemu-utils libnbd-bin nbdkit
+
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/games/
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
@@ -13,22 +15,26 @@ mkdir -pv ${DEST_DIR}
 FILE=$(download_file_cached ${URL} ${FILENAME})
 cp -v ${FILE} ${DEST_DIR}
 
-if check_dependencies qemu-utils
-then
-    # fix vfbackup error.. and don't fail if this doesn't work
-    [ -d /sys/module/nbd ] || modprobe -v && {
-        TMPDIR=$(mktemp -d /tmp/stick.XXXXXX)
-        trap "rmdir ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
-        NBD_DEV=/dev/nbd3
-        if [ $(cat /sys/class/block/${NBD_DEV##*/}/size) -eq 0 ]
-        then
-            qemu-nbd --connect=${NBD_DEV} "${DEST_DIR}/${FILENAME}"
-            sleep 3
-            mount -v ${NBD_DEV}p1 ${TMPDIR}
-            echo smartdrv >> ${TMPDIR}/AUTOEXEC.BAT
-            read foo
-            umount -v ${NBD_DEV}p1
-            qemu-nbd --disconnect ${NBD_DEV}
-        fi
-    } || true
-fi
+# fix vfbackup error.. and don't fail if this doesn't work
+[ -e /dev/loop-control ] && {
+    TMPDIR=$(mktemp -d /tmp/stick.XXXXXX)
+    MNTDIR=${TMPDIR}/mount
+    PARTDIR=${TMPDIR}/partition
+    VFAT=${PARTDIR}/vfat
+    SOCKET=${TMPDIR}/qemu-nbd.sock
+    TARGET="AUTOEXEC.BAT"
+
+    echo "rewriting ${TARGET}, just a second.."
+    trap "rmdir ${MNTDIR} ${PARTDIR} ${TMPDIR}" EXIT SIGHUP SIGQUIT SIGTERM
+
+    mkdir -p ${PARTDIR} ${MNTDIR}
+
+    qemu-nbd --socket=${SOCKET} "${DEST_DIR}/${FILENAME}" &
+    nbdfuse ${VFAT} --command nbdkit --stdin nbd socket=${SOCKET} --filter=partition partition=1 &
+    sleep 1
+    mount -o loop ${VFAT} ${MNTDIR} && \
+      echo smartdrv >> ${MNTDIR}/${TARGET}
+    umount --detach-loop ${MNTDIR}
+    sleep 1
+    umount ${PARTDIR}
+} || true

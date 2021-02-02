@@ -16,14 +16,14 @@ repo_root() {
 cd_repo_root() {
         echo "current dir: " $(pwd)
         cd $(dirname $(realpath "${0}"))
-        echo "now at $(pwd), finding repo root"
         ROOT=$(repo_root)
+        echo "setting working directory to repo root at ${ROOT}"
         cd "${ROOT}"
 }
 
 check_program_exists() {
         [ ! -z $(command -v "${@}") ] && return 0
-        echo "Program '${@}' does NOT exist in path, try # apt install ${@}"
+        echo "Program '${@}' does NOT exist in path, please install the corresponding package!"
         return 1
 }
 

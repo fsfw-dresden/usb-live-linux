@@ -17,10 +17,9 @@ esac
 
 select_live_iso_for_image() {
     OPTIONS=()
-    cd iso-images
+    cd artifacts/
     for ISO in $(command ls -Lt *.iso)
     do
-        #ISO=${ISO##iso-images}
         SIZESTR=$(numfmt --to=iec-i --suffix B $(stat --dereference --format='%s' "${ISO}"))
         OPTIONS+=(${ISO} "${SIZESTR} $(date --date=@$(stat --dereference --format='%Y' "${ISO}") "+%F %_H:%M:%S")")
     done
@@ -56,7 +55,7 @@ map_image_name_to_stick_type() {
 }
 
 # ISO can be given as first parameter
-[ -n "${1}" ] && ISO=$1 || ISO="iso-images/$(select_live_iso_for_image)"
+[ -n "${1}" ] && ISO=$1 || ISO="artifacts/$(select_live_iso_for_image)"
 
 # try to detect stick type from image name
 FAT_LABEL="$(map_image_name_to_stick_type ${ISO})" || FAT_LABEL="LIVESTICK"
