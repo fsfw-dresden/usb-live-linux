@@ -1,6 +1,7 @@
 #!/bin/sh -e
 lb config noauto \
     --archive-areas "main contrib non-free" \
+    --parent-archive-areas "main contrib non-free" \
         "${@}"
 
 #        --archive-areas ARCHIVE_AREA|"ARCHIVE_AREAS"
@@ -10,3 +11,7 @@ lb config noauto \
 #            Remember  to  check the licenses of each package with respect to
 #            their redistributability in your juristiction when enabling con‐
 #            trib or non-free with this mechanism.
+
+#        --parent-archive-areas ARCHIVE_AREA|"ARCHIVE_AREAS"
+#            defines the archive areas for derivatives of the resulting  live
+#            system (a comma or space separated list).
