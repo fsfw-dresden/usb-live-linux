@@ -1,7 +1,9 @@
-#!/bin/sh -x
-APPIMAGE_DIR="/usr/local/applications/"
+#!/bin/bash -x
+APPIMAGE_DIR="/usr/local/applications"
 
 [ -d ${APPIMAGE_DIR} ] || mkdir -pv ${APPIMAGE_DIR} && chown -c 1000 ${APPIMAGE_DIR}
+
+shopt -s nullglob
 
 for APPIMAGE in ${APPIMAGE_DIR}/*
 do
