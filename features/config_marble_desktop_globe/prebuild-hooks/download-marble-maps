@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR="/usr/share/marble/data/maps"
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+BASEURL="http://ftp5.gwdg.de/pub/linux/kde/extrafiles/marble/newstuff/maps"
+# Other Mirrors:
+# http://files.kde.org/marble/newstuff/maps/
+# http://kde-applicationdata.mirrors.omnilance.com/marble/newstuff/maps/
+# http://mirrors.dotsrc.org/kde-applicationdata/marble/newstuff/maps/
+MAPS="
+agnese1544
+behaim1492
+blackmarble
+climatezones
+hondius1630
+mitchell1866
+opencyclemap
+opentopomap
+public-transport"
+
+for MAP in ${MAPS}
+do
+        URL="${BASEURL}/${MAP}-marblemap.zip"
+        FILE=$(download_file_cached ${URL}) \
+          && unzip -nd "${DEST_DIR}" "${FILE}"
+
+        # increase maximum zoom level for "Earth at Night 2012" map
+        [ ! "${MAP}" = "blackmarble" ] || sed -i 's/1500/1800/' "${DEST_DIR}/earth/blackmarble/blackmarble.dgml"
+done

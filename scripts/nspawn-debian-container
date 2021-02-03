@@ -25,6 +25,7 @@ rsync
 wget
 curl
 ca-certificates
+unzip
 bash
 jq
 patch
