@@ -17,7 +17,10 @@ etckeeper init
 
 # Don't leak hosts file and DNS conf to chroot
 git reset hosts hosts.orig resolv.conf resolv.conf.orig
-rm hosts.orig resolv.conf.orig
+for FILE in hosts.orig resolv.conf.orig
+do
+  [ ! -e ${FILE} ] || rm ${FILE}
+done
 
-# Should be clean now
-git commit -m "Initial commit"
+# Should be clean now. Discard output, as nspawn seems to choke on it.
+git commit -m "Initial commit" > /dev/null
