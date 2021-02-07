@@ -26,7 +26,6 @@
         <value type="int" value="15"/>
         <value type="int" value="13"/>
         <value type="int" value="6"/>
-        <value type="int" value="17"/>
         <value type="int" value="5"/>
         <value type="int" value="18"/>
         <value type="int" value="2"/>
@@ -44,7 +43,7 @@
         <value type="string" value="-suspend"/>
         <value type="string" value="-hibernate"/>
         <value type="string" value="-separator"/>
-        <value type="string" value="+shutdown"/>
+        <value type="string" value="-shutdown"/>
         <value type="string" value="-restart"/>
         <value type="string" value="-separator"/>
         <value type="string" value="+logout"/>
@@ -146,7 +145,6 @@
         <value type="string" value="15707679321.desktop"/>
       </property>
     </property>
-    <property name="plugin-17" type="string" value="notification-plugin"/>
     <property name="plugin-18" type="string" value="screenshooter"/>
     <property name="plugin-25" type="string" value="launcher">
       <property name="items" type="array">
