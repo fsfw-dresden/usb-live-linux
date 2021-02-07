@@ -29,3 +29,5 @@ popd
 # clean up
 rm ${TMPDIR}/04b_19.zip
 rmdir ${TMPDIR}
+
+fc-cache -fv ${TARGETDIR}
