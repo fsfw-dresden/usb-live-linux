@@ -1,0 +1,8 @@
+#!/bin/sh -x
+
+PDF_URL="https://cloud.opensourceecology.de/s/sKrsyG8YQXJYdZE/download"
+
+TARGETDIR="/etc/skel/Desktop"
+mkdir -pv ${TARGETDIR}
+
+wget -v --directory-prefix=${TARGETDIR} ${PDF_URL}

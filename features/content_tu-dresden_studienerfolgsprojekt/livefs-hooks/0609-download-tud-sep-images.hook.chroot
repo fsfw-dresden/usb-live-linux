@@ -1,0 +1,16 @@
+#!/bin/sh -x
+
+IMAGE_URLS="
+http://tu-dresden.de/studium/im-studium/ressourcen/bilder/studienerfolg/RS1397_Emotional-People99.jpeg
+http://paulsberg.co/wp-content/uploads/2020/01/Studienerfolg-flyer-980x555.jpg
+http://paulsberg.co/wp-content/uploads/2020/01/Studienerfolg-logo-poster-980x555.jpg
+"
+
+TARGETDIR="/usr/share/backgrounds/tud-studienerfolgsprojekt"
+mkdir -pv ${TARGETDIR}
+
+wget -v --directory-prefix=${TARGETDIR} ${IMAGE_URLS}
+
+# fix strange name
+STRANGE="${TARGETDIR}/Dudenausschnitt_ohne-Logo.jpg"
+[ -e "${STRANGE}" ] && mv "${STRANGE}" "${TARGETDIR}/Studienerfolg-postkarte-quantum.jpg"
