@@ -19,7 +19,7 @@ https://www.deviantart.com/senzune/art/Snowdin-726081760
 # All my works are free for non-commercial use
 # As long as you don't make any money with them, you can use them however you want ^^
 
-TARGETDIR="/usr/share/backgrounds/collected"
+TARGETDIR="/usr/share/backgrounds/senzune"
 TMPDIR=$(mktemp -d /dev/shm/wallpapers.XXXXXX)
 mkdir -pv ${TARGETDIR}
 
