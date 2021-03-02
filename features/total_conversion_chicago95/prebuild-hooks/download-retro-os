@@ -33,7 +33,7 @@ cp -v ${FILE} ${DEST_DIR}
     nbdfuse ${VFAT} --command nbdkit --stdin nbd socket=${SOCKET} --filter=partition partition=1 &
     sleep 1
     mount -o loop ${VFAT} ${MNTDIR} && \
-      echo smartdrv >> ${MNTDIR}/${TARGET}
+      printf "smartdrv\r\n" >> ${MNTDIR}/${TARGET}
     umount --detach-loop ${MNTDIR}
     sleep 1
     umount ${PARTDIR}

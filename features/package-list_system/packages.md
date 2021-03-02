@@ -15,6 +15,7 @@
 - :x:  grub-efi-amd64  --	GRand Unified Bootloader, version 2 (EFI-AMD64 version)
 - :x:  efibootmgr  --	modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
 - :x:  pavucontrol  --	PulseAudio Volume Control
+- :x:  jitterentropy-rngd  --	Jitter RNGd provides a source of sufficient entropy (to be replaced by rng-tools6 whenever that gets packaged)
 - :x:  pulseaudio-equalizer  --	
 - :x:  unburden-home-dir  --	move cache/thumbnail directories to tmpfs
 - :x:  network-manager-openconnect  --	open client for Cisco's AnyConnect SSL VPN

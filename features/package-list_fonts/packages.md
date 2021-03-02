@@ -11,6 +11,7 @@
 - :x:  fonts-jetbrains-mono  --	typeface for developers: for a better code reading experience
 - :x:  fonts-lato  --	"Lato" means "Summer" in Polish
 - :x:  fonts-linuxlibertine  --
+- :x:  fonts-larabie-uncommon  --	Special decorative fonts from www.larabiefonts.com
 - :x:  fonts-monoid  --	open source coding font… sharpness at 12px/9pt even on low res display
 - :x:  fonts-noto  --	"Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
 - :x:  fonts-noto-cjk  --	font families for Traditional Chinese, Simplified Chinese, Japanese and Korean (+54.3 MB)

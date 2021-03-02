@@ -10,6 +10,7 @@
 - :x:  gdisk  --	Textmodus-Partitionierungswerkzeug GPT fdisk
 - :o:  gpart  --	Partitionierungsprogramm (Konsolenvariante)
 - :x:  discover  --	Hardware-Erkennungs-System
+- :x:  cpupower-gui  --	utility to change the CPU frequency and governor
 
 - :x:  installation-report  --	Hilfstool für Bugreports
 - :x:  reportbug  --		Werkzeug, um Fehler (Bugs) in Debian und abgeleiteten Distributionen relativ schmerzfrei zu melden
