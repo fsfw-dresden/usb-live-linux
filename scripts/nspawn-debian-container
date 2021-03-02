@@ -39,16 +39,16 @@ qemu-utils libnbd-bin nbdkit
 # If no container directory exists, initiate a debian testing install with all our dependencies
 if [ ! -d build/container ]
 then
-  echo "${COLOR_CYAN}Initializing a debian testing container for building..${COLOR_OFF}"
-  echo " (this will take a few minutes)"
+  printf "${COLOR_CYAN}Initializing a debian testing container for building..${COLOR_OFF}\n"
+  printf " (this will take a few minutes)"
   debootstrap --verbose --cache-dir=${PWD}/build/cache/packages.bootstrap --include=$(echo ${DEPS}|tr ' ' ',') testing build/container http://ftp.de.debian.org/debian
   {
     echo "cd /mnt/usb-live-linux/"
     echo "clear"
-    echo "echo '${COLOR_CYAN}You are inside a debian container with the required tool set to build the usb-live-linux project.${COLOR_OFF}'"
+    printf "echo '${COLOR_CYAN}You are inside a debian container with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
     echo "echo"
-    echo "echo 'run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image'"
-    echo "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'"
+    printf "echo 'run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image'\n"
+    printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
   } >> build/container/root/.bashrc
 fi
 
