@@ -1,7 +1,11 @@
 #!/bin/sh
 # Temporary workaround for https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=970259
+# buster still not officially fixed
 
-FILENAME="xfce4-weather-plugin_0.10.1-1_amd64.deb"
-wget -O ${FILENAME} https://cloud.opensourceecology.de/s/6fdeXc6cxfgXezq/download
+ARCH=$(dpkg --print-architecture)
+URL="http://mxrepo.com/mx/repo/pool/main/x/xfce4-weather-plugin/xfce4-weather-plugin_0.10.2-1~mx17_${ARCH}.deb"
+FILENAME="${URL##*/}"
+
+wget -O ${FILENAME} "${URL}"
 dpkg -i ${FILENAME}
 rm -v ${FILENAME}
