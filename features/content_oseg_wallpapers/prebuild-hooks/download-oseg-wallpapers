@@ -11,7 +11,6 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 PACK_URL=https://cloud.opensourceecology.de/s/7b9n5HJwYzRwkSk/download
 PACK_FILE=open_source_ecology_wallpaper_pack_2020.zip
 
-mkdir -pv /usr/share/backgrounds/oseg
+mkdir -pv "${DEST_DIR}"
 PACK_FILE=$(download_file_cached ${PACK_URL} ${PACK_FILE})
 unzip -j ${PACK_FILE} -d ${DEST_DIR}
-ls -lah ${DEST_DIR}
