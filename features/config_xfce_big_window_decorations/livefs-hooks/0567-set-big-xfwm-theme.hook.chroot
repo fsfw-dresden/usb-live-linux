@@ -1,0 +1,3 @@
+#!/bin/sh
+# Replace default window manager theme with HDPI variant
+sed -i '/"theme"/ s/"Default"/"Default-hdpi"/' /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
