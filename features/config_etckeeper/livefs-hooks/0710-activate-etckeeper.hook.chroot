@@ -19,7 +19,7 @@ etckeeper init
 git reset hosts hosts.orig resolv.conf resolv.conf.orig
 for FILE in hosts.orig resolv.conf.orig
 do
-  [ ! -e ${FILE} ] || rm ${FILE}
+  [ ! -e ${FILE} ] || rm ${FILE}
 done
 
 # Should be clean now. Discard output, as nspawn seems to choke on it.
