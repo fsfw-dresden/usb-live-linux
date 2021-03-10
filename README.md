@@ -4,6 +4,12 @@ This is the home of our modular, [Debian](https://debian.org)-based [live](https
 
 With this project, we want to provide anyone with a portable and robust computing environment, abundant in possibilities and comfortable to use. It works independently from any installed operating system as it includes a whole software stack ready-to-use, from the [Linux Operating System kernel](https://en.wikipedia.org/wiki/Linux_kernel) to graphical applications for most common tasks.
 
+**Screenshot 2021 Stick, showing some applications (2021-02-10):**
+![Screenshot 2021 Stick, showing some applications (2021-02-10)](doc/screenshot_applications_2021-02-18.png "Screenshot 2021 Stick, showing some applications (2021-02-10)")
+
+**Screenshot 2021 Stick with Anmerkungen (2021-02-10):**
+![Screenshot 2021 Stick with Anmerkungen (2021-02-10)](doc/screenshot-Xfce-Desktop-2021-02-10.png "Screenshot 2021 Stick with Anmerkungen (2021-02-10)")
+
 **Screenshot FSFW-Schulstick (2020-04-01):**
 ![Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)](doc/screenshot-Xfce-Desktop-2020-04-01.png "Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)")
 
