@@ -1,0 +1,22 @@
+#!/bin/sh
+# install Disk Usage/Free Utility
+
+RELEASEINFO="https://api.github.com/repos/muesli/duf/releases"
+
+ARCH=$(dpkg --print-architecture)
+
+case ${ARCH} in
+        i386)
+                EXECARCH="386"
+                ;;
+        *)
+                # might work
+                EXECARCH="${ARCH}"
+                ;;
+esac
+
+DEBURL=$(curl "${RELEASEINFO}"|jq -r '.[0].assets[].browser_download_url|select(endswith("'_${ARCH}'.deb"))')
+NAME=${DEBURL##*/}
+curl --location --remote-time --remote-name "${DEBURL}"
+dpkg -i ${NAME}
+rm -v ${NAME}
