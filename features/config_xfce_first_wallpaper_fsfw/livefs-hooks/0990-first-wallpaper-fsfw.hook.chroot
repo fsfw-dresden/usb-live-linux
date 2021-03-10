@@ -1,0 +1,2 @@
+#!/bin/sh
+sh /live-build/config/hooks.scripts/xfce_set_first_cycled_wallpaper.sh freie_software_freies_wissen_green.svg
