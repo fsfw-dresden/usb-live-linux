@@ -1,0 +1,147 @@
+#!/bin/bash
+# This script uses asciidoc to regenerate the features table at variants/index.html
+
+. "$(dirname $(realpath "${0}"))/functions.sh"
+. "$(dirname $(realpath "${0}"))/functions.bash"
+cd_repo_root
+
+# abort on error
+set -e
+
+STARTTIME=$(date +%s)
+TARGET="variants/features.adoc"
+
+print_info "Regenerating ${TARGET} and rendering to ${TARGET%.adoc}.html"
+
+cat > ${TARGET} <<ETX
+= Features, features, variants..
+:table-caption!:
+
+++++
+<style>
+tbody > tr:first-child { position: -webkit-sticky; position: sticky; top: 0; }
+
+tbody > tr:first-child td { background-color: white; background-clip: padding-box; box-shadow: 0 1px; }
+tbody > tr:first-child td:first-child { background-color: unset; box-shadow: unset; }
+tbody > tr:first-child td p { writing-mode: vertical-rl; transform: rotate(-180deg); margin: 0.2em; }
+
+tbody > tr:first-child a,
+tbody td:first-child a { text-decoration: none; }
+a:visited { color: darkblue; }
+
+tbody tr:nth-child(even) { background-color: #eee }
+tbody td { line-height: 1em; }
+</style>
+
+<script type="text/javascript">
+// Workaround CSS layout glitch with writing-mode .. trigger re-layout for correct header margins
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('tbody > tr:first-child td p').forEach((headerCell) => {
+    headerCell.style.margin = '0.23em';
+  });
+});
+</script>
+++++
+
+Definitions used in this https://github.com/fsfw-dresden/usb-live-linux[usb-live-linux] build framework:
+
+- Feature: a distinct functional fragment
+- (Build) Variant: assembly of features, yielding in a complete live system image
+
+== Variants can derive from others, inheriting their features
+
+[graphviz, variant-inheritance.png, fdp]
+-------
+digraph variants {
+  splines=curved
+  node [ shape = box, style = rounded ];
+  edge [ labelfloat = true];
+  K=2.5;
+  rankdir=LR;
+ETX
+
+shopt -s extglob
+for INHERIT in variants/*/inherit/*
+do
+  DEST=$(basename ${INHERIT})
+  INHERIT=${INHERIT##variants/}
+  SOURCE=${INHERIT%%/*}
+  printf "  \"${SOURCE}\" -> \"${DEST}\" [ xlabel = \"based on\" ];\n" >> ${TARGET}
+done
+
+cat >> ${TARGET} <<ETX
+}
+-------
+
+== Which features are enabled in the various stick variants?
+
+-  : feature is not included in this variant
+- ✔: feature is enabled in this variant
+- ✔!: feature is only in this variant
+- ✘: feature is disabled in this variant
+ETX
+
+VARIANT_COUNT=0
+VARIANT_LINE="|\t\t\t\t"
+for VARIANT in variants/*/
+do
+  VARIANT_NAME=$(basename ${VARIANT})
+  [[ "${VARIANT_NAME}" == "shared" ]] && continue
+  echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
+  VARIANT_LINE="${VARIANT_LINE}\ts|link:${VARIANT_NAME}[]"
+done
+
+printf '[cols=">,' >> ${TARGET}
+printf ${VARIANT_COUNT} >> ${TARGET}
+cat >> ${TARGET} <<ETX
+*^.>", options="header, autowidth", frame="none", grid="all"]
+|====
+ETX
+printf '^|feature ' >> ${TARGET}
+printf ${VARIANT_COUNT} >> ${TARGET}
+cat >> ${TARGET} <<ETX
++^|variant
+ETX
+
+printf "${VARIANT_LINE}\n" >> ${TARGET}
+
+# sorting paths by basename? hell yeah xD
+# https://unix.stackexchange.com/questions/393987/sort-an-array-of-pathnames-of-files-by-their-basenames/638463#638463
+for FEATURE in $(command ls -d features/*/ variants/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/')
+do
+  FEATURE_NAME=$(basename ${FEATURE})
+
+  # don't duplicate print linked features
+  [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants/[^/]+/features/${FEATURE_NAME} ]] && continue
+
+  printf "|link:../${FEATURE}[${FEATURE_NAME}]" >> ${TARGET}
+  for VARIANT in variants/*/
+  do
+    VARIANT_NAME=$(basename ${VARIANT})
+    [[ "${VARIANT_NAME}" == "shared" ]] && continue
+
+    if [ -h ${VARIANT}/features/${FEATURE_NAME} ]
+    then
+      # feature linked from common features folder
+      printf "\t|✔" >> ${TARGET}
+    elif [ -d ${VARIANT}/features/${FEATURE_NAME} ]
+    then
+      # private feature of the variant
+      printf "\t|✔!" >> ${TARGET}
+    elif [ -e ${VARIANT}/features/${FEATURE_NAME}.disabled ]
+    then
+      # feature disabled in variant
+      printf "\t|✘" >> ${TARGET}
+    else
+      # not existant
+      printf "\t| " >> ${TARGET}
+    fi
+  done
+  printf "\n" >> ${TARGET}
+done
+
+printf "|===\n" >> ${TARGET}
+
+asciidoc -v ${TARGET} && print_info "regenerated ${TARGET%.adoc}.html in $(format_timespan $(($(date +%s) - STARTTIME))), thanks."
+
+# vim: sw=2 ts=2 et
