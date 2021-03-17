@@ -41,8 +41,3 @@ pref("browser.tabs.tabMinWidth", 160);
 
 // Add zoom controls to tab toolbar
 pref("browser.uiCustomization.state", "{\"placements\":{\"TabsToolbar\":[\"tabbrowser-tabs\",\"alltabs-button\",\"new-tab-button\",\"customizableui-special-spring1\",\"zoom-controls\"]}}");
-
-// Unfck opening links
-pref("browser.link.open_newwindow", 1);
-pref("browser.link.open_newwindow.restriction", 0);
-pref("browser.link.open_newwindow.override.external", 2);
