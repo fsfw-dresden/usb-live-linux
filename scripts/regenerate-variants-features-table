@@ -88,7 +88,9 @@ do
   VARIANT_NAME=$(basename ${VARIANT})
   [[ "${VARIANT_NAME}" == "shared" ]] && continue
   echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
-  VARIANT_LINE="${VARIANT_LINE}\ts|link:${VARIANT_NAME}[]"
+  # FIXME: ugly absolute URL, because of GitCDN workaround
+	VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants/${VARIANT_NAME}"
+  VARIANT_LINE="${VARIANT_LINE}\ts|link:${VARIANT_URL}[${VARIANT_NAME}]"
 done
 
 printf '[cols=">,' >> ${TARGET}
@@ -114,7 +116,9 @@ do
   # don't duplicate print linked features
   [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants/[^/]+/features/${FEATURE_NAME} ]] && continue
 
-  printf "|link:../${FEATURE}[${FEATURE_NAME}]" >> ${TARGET}
+  # FIXME: ugly absolute URL, because of GitCDN workaround
+	FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
+  printf "|link:${FEATURE_URL}[${FEATURE_NAME}]" >> ${TARGET}
   for VARIANT in variants/*/
   do
     VARIANT_NAME=$(basename ${VARIANT})
