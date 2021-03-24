@@ -209,8 +209,12 @@ mkfs.ext4 -FL ${MAIN_LABEL} -O ^has_journal -m 0 -i 1048576 ${DEVICE}${p}2
 # -i: larger bytes-per-inode ratio > fewer inodes
 
 # persistence storage
-#mkfs.ext4 -L live-memory ${DEVICE}${p}3
-mkfs.f2fs -fd 5 -l live-memory -O encrypt ${DEVICE}${p}3
+mkfs.f2fs -fd 5 -l live-memory -O extra_attr,inode_checksum,sb_checksum,compression,encrypt ${DEVICE}${p}3
+# extra_attr:     Enable extra attr feature, required for some of the other features.
+# inode_checksum: Enable inode checksum. Requires extra attr.
+# sb_checksum:    Enable superblock checksum.
+# compression:    Enable support for filesystem level compression. Requires extra attr.
+# encrypt:        Enable support for filesystem level encryption.
 
 debug_pause
 
@@ -253,7 +257,7 @@ trap "trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTER
 print_info "mounting partitions"
 mount -v ${DEVICE}${p}1 ${EFIBOOT}
 mount -v ${DEVICE}${p}2 ${ISOSTORE}
-is_f2fs_mountable && mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE}
+is_f2fs_mountable && mount -v ${DEVICE}${p}3 ${PERSISTENCESTORE} && chattr -R -V +c ${PERSISTENCESTORE}
 
 # exit TRAP: add unmounting storage as first step to the clean-up trap queue
 trap "trap_umount_partitions; trap_remove_mountsubdirs; trap_remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM

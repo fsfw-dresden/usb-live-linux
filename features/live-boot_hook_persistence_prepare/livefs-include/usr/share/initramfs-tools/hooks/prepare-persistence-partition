@@ -8,3 +8,4 @@ if [ "$1" = "prereqs" ]; then exit 0; fi
 copy_exec /usr/bin/partx
 copy_exec /sbin/sfdisk
 copy_exec /sbin/resize.f2fs
+copy_exec /usr/bin/chattr

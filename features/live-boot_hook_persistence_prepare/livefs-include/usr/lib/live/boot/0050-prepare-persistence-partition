@@ -31,6 +31,7 @@ Prepare_persistence()
                 # .. but empty?
                 if [ $(ls ${PERSISTENCESTORE} | wc -w) -eq 0 ]
                 then
+                        chattr -R -V +c ${PERSISTENCESTORE}
                         mkdir -pv ${PERSISTENCESTORE}/linux-userdata
                         mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
                         mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
