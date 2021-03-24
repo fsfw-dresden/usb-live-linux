@@ -21,7 +21,7 @@ esac
 select_build_variant() {
     shopt -s extglob
     OPTIONS=()
-    for VAR in $(command ls -Ltd variants/!(active|base_*|shared))
+    for VAR in $(command ls -Ltd variants/!(active|base_*|shared)/)
     do
         NUMFILES=$(find "${VAR}" -type f -printf x | wc -c)
         # THANKS https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory
