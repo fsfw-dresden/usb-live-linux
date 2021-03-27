@@ -11,6 +11,12 @@
 
 ![Screenshot](../../doc/screenshot-Xfce-Desktop-2020-04-01.png "FSFW-Schulstick mit Xfce-Desktop")
 
+## Notiz zur Kurzvorstellung in der Deutschlandfunk-Sendung Campus & Karriere am 27. März 2021
+
+Wie erwähnt ist ein Release für die kommende Woche gerade in Vorbereitung. Falls Sie automatisch davon (und von der Möglichkeit, als Lehrer kostenlos einen von hundert Probesticks zu erhalten) erfahren wollen, tragen Sie sich gerne auf https://fsfw-dresden.de/ in unsere News-Mailingliste ein.
+
+Einige weitere Informationen und aktuelle Screenshots zum Stick-Projekt finden Sie in der [Haupt-Readme](https://github.com/fsfw-dresden/usb-live-linux) dieses Projekt.
+
 ## Download und Bespielen eines USB-Sticks
 
 Die aktuelle Version (1368v / 2020-04-22) basiert auf Debian-Linux 10 (stable, codename »buster«) und dem Xfce-Desktop.
