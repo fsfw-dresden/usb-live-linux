@@ -252,6 +252,7 @@ parse_features() {
 apply_features() {
     declare -A PATH_MAPPINGS
     # for building the intermediate ISO image
+    PATH_MAPPINGS[base-setting]="config/base-settings.d"
     PATH_MAPPINGS[live-build-config]="config"
     PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
     PATH_MAPPINGS[livefs-include]="config/includes.chroot"

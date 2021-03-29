@@ -12,3 +12,4 @@ lb config noauto \
 #            such  a plain root filesystem, e.g. fat16/fat32 will not work as
 #            linux does not support running directly on them.
 
+# (!) squashfs is the default

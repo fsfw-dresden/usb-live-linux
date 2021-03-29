@@ -1,0 +1,52 @@
+#!/bin/sh -e
+# (!) These settings are only used when directly booting the ISO file, f.e. during
+# testing. The full disk image files generated with scripts/stick-install
+# use a grub.cfg template with different settings.
+
+# Mandatory live system parameters
+LIVEPARAMETERS="boot=live components"
+
+# German language, keyboard and timezone
+L10NPARAMETERS="locales=de_DE.UTF-8 "\
+"keyboard-layouts=de "\
+"timezone=Europe/Berlin "
+
+# Parameters for easy debugging
+NORMALDEBUGPARAMETERS="rootpw=foo "\
+"enforcing=0 "\
+"net.ifnames=0 "\
+"mitigations=off "\
+"init=/lib/systemd/systemd-bootchart "\
+"live-boot.debug "\
+"live-config.debug "\
+"systemd.debug-shell=1 "\
+"console=ttyS0 "
+# set trivial root password
+# turn off SELinux enforcement (aka permissive mode)
+# oldschool network interface names
+# (!) no CPU bug mitigations
+# generate bootchart
+# enable debug logging of core live scripts
+# (!) start a root shell on VT 9 which is available very early during boot and very late during shutdown.
+# route kernel output to serial console (for use with qemu -serial stdio)
+
+# NOTE: We misuse the "failsafe" entry for deep debugging
+DEBUGEVERYTHINGPARAMETERS="systemd.log_level=debug systemd.log_target=kmsg log_buf_len=1M printk.devkmsg=on "
+# turn on verbose debugging for boot and all services
+
+lb config noauto \
+    --bootappend-live "${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS}" \
+    --bootappend-live-failsafe "${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS} ${DEBUGEVERYTHINGPARAMETERS}" \
+        "${@}"
+
+#        --bootappend-live PARAMETER|"PARAMETERS"
+#            sets  boot parameters specific to debian-live. A complete list of
+#            boot parameters can be found in the  live-boot(7)  and  live-con‐
+#            fig(7) manual pages.
+
+#        --bootappend-live-failsafe PARAMETER|"PARAMETERS"
+#            sets  boot  parameters  specific to debian-live failsafe boot en‐
+#            tries. A complete list of boot parameters can  be  found  in  the
+#            live-boot(7) and live-config(7) manual pages.
+
+# default failsafe parameters: memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal

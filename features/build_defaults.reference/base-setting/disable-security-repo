@@ -6,3 +6,6 @@ lb config noauto \
 #        --security true|false
 #            defines if the security repositories specified  in  the  security
 #            mirror options should be used or not. (Enabled by default)
+
+# (!) by default, enabled for all releases but unstable (sid)
+# see /usr/share/live/build/functions/configuration.sh

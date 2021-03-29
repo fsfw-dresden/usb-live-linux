@@ -6,3 +6,6 @@ lb config noauto \
 #        --updates true|false
 #            defines  if debian updates package archives should be included in
 #            the image or not.
+
+# (!) by default, enabled for all releases but unstable (sid)
+# see /usr/share/live/build/functions/configuration.sh

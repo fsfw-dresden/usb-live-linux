@@ -1,4 +1,5 @@
 #!/bin/sh -e
+# Default FS (FAT32) is not suitable for ISOs > 4GiB
 lb config noauto \
     --binary-filesystem ext2 \
         "${@}"

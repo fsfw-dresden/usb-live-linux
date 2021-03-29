@@ -16,3 +16,7 @@ lb config noauto \
 #            comma  separated)  in order to allow for both BIOS and EFI boot‐
 #            loaders to be included, though note that only one of  each  type
 #            can be used (i.e. do not try to use two BIOS bootloaders).
+
+# (!) since 2016 (f811656150ff5f78e55b21702688f082330f78bd), live-build
+# defaults to "syslinux,grub-efi" on amd64 and i386
+# see /usr/share/live/build/functions/configuration.sh

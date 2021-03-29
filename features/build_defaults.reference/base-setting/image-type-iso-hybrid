@@ -9,3 +9,5 @@ lb config noauto \
 #            that  may also be used like HDD images, for non-syslinux images,
 #            it defaults to 'iso'.
 
+# (!) by default, iso-hybrid on amd64 and i386
+# see /usr/share/live/build/functions/configuration.sh

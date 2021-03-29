@@ -6,3 +6,5 @@ lb config noauto \
 #        --backports true|false
 #            defines if debian backports package archives should  be  included
 #            in the image or not.
+
+# (!) Backports repositories are only available for stable releases.
