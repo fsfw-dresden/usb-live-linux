@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# use bash here string to disaggregate BUILD_VARIANT into components
+read -r STICK_NAME DESKTOP DISTRIBUTION ARCHITECTURE <<< "$(echo "${BUILD_VARIANT}" | tr ':' ' ')"
+
+STICK_VERSION=$(../scripts/calc-version-number)
+
+# Branchname im Image-Namen setzen, falls nicht auf master
+nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
+if [[ ! "${nbranch}" = "master" ]]; then
+    nbranch=${nbranch////_}			# ersetze von / in _
+    nbranch=${nbranch//-/_}			# ersetze von - in _
+    nbranch=__${nbranch}_
+else
+    nbranch=
+fi
+
+lb config noauto \
+    --image-name "${STICK_NAME}_${STICK_VERSION}${nbranch}_${DESKTOP}_${DISTRIBUTION:-stable}" \
+        "${@}"
+
+#        --image-name NAME
+#            sets the base name of the image. Defaults to live-image.
