@@ -1,4 +1,4 @@
-= Features, features, variants..
+= Features, features, variants.. 🚧 as of 2021-04-03
 :table-caption!:
 
 ++++
@@ -273,6 +273,7 @@ digraph variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/content_oseg_wallpapers[content_oseg_wallpapers]	| 	| 	| 	| 	| 	| 	| 	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/content_senzune_wallpapers[content_senzune_wallpapers]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/content_tu-dresden_studienerfolgsprojekt[content_tu-dresden_studienerfolgsprojekt]	| 	| 	| 	| 	| 	|✔	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/content_usb-live-linux-git-repo[content_usb-live-linux-git-repo]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/debug_live_boot[debug_live_boot]	| 	| 	| 	| 	| 	| 	| 	| 	|✔	|✔	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants/49-GS-Dresden-Grundschulstick/features/desktop_49gs_icon[desktop_49gs_icon]	|✔!	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/desktop_fsfw-material_icon[desktop_fsfw-material_icon]	| 	| 	| 	| 	| 	| 	|✔	| 	| 	| 	| 	|
@@ -287,6 +288,7 @@ digraph variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/driver_wifi_rtl8821ce[driver_wifi_rtl8821ce]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/firmware_intel_pro_wireless_2x00[firmware_intel_pro_wireless_2x00]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/font_04b_19[font_04b_19]	| 	|(✔) 	| 	| 	| 	| 	| 	| 	|(✔) 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/function_firefox_policy_merge[function_firefox_policy_merge]	| 	|(✔) 	| 	|(✔) 	| 	|(✔) 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/function_link_to_wallpaper_cycling_pool[function_link_to_wallpaper_cycling_pool]	| 	|(✔) 	| 	|(✔) 	| 	|(✔) 	|(✔) 	|(✔) 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/function_xfce_set_first_cycled_wallpaper[function_xfce_set_first_cycled_wallpaper]	| 	|(✔) 	| 	|(✔) 	| 	|(✔) 	| 	|(✔) 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/game_minetest[game_minetest]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|

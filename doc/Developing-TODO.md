@@ -2,13 +2,20 @@
 
 - **collection of tutorials and walk-throughs** <= Contributions most welcome!
 - update documentation of repository structure
-- completion of the split into individual features that define config and package dependenciess
-- a KDE 5.18 variant
+- multi-language boot
+- portableapps scripted install with [pint](https://github.com/vensko/pint) or [scoop](https://github.com/lukesampson/scoop) ?
+- bullseye (testing) / KDE 5.18 variant [](../variants/TEST-Plasmastick:KDE:testing) (untested)
 - upstreaming of live-boot / live-config modifications
 - generalizing away from using live-build (vmdb2 + ansible?)
 - ISO Upgrades? c.f. https://tails.boum.org/blueprint/Endless_upgrades/ https://github.com/rauc/rauc/
 
-### Notizen aus fsfw-uni-stick_build.sh
+### Known issues (2021-04-03)
+- no stick install GUI (implement with pyside / qml)
+- night mode settings GUI in progress (implement with pyside / qml)
+- boot failure with newer nvidia chipsets (lernstick has support, also for CUDA apps like [meshroom](https://github.com/alicevision/meshroom/))
+- [](../variants/Basisstick:Xfce:buster:i386) `lb config noauto --architectures i386` and `--distribution buster` need to go into same invocation => need to merge base-settings.d
+- multi-variant inheritance?
+- no portableapps on first partition
 
 2016-10-21 13:22 gerdg-dd 092a2a1 # TODO:
 2016-10-21 13:22 gerdg-dd 092a2a1 # Windows Programme downoad & copieren auf WIN-DATEN Partition
