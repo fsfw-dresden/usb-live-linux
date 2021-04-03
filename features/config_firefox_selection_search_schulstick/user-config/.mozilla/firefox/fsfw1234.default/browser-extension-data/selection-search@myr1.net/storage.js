@@ -107,6 +107,10 @@
           "url": "http://kleinanzeigen.ebay.de/anzeigen/s-sortierung:preis/%s/k0"
         },
         {
+          "name": "Ebay.de sofort-Kauf",
+          "url": "http://shop.ebay.de/items/?_nkw=%s&LH_Price=..200&LH_BIN=1&LH_SubLocation=1&LH_PrefLoc=2&_sop=15&_ipg=200"
+        },
+        {
           "name": "Amazon (für Bewertungen)",
           "url": "http://www.amazon.de/gp/search?ie=UTF8&keywords=%s"
         }
@@ -137,12 +141,12 @@
       "is_submenu": true,
       "engines": [
         {
-          "name": "Google News",
-          "url": "https://www.google.de/search?q=%s&tbm=nws&tbs=sbd:1&qscrl=1"
+          "name": "Ecosia News",
+          "url": "https://www.ecosia.org/news?q=%s"
         },
         {
-          "name": "Google Trends",
-          "url": "http://www.google.de/trends/explore?q=%s&date=all"
+          "name": "Google News",
+          "url": "https://www.google.de/search?q=%s&tbm=nws&tbs=sbd:1&qscrl=1"
         },
         {
           "name": "Twitter",
@@ -178,6 +182,10 @@
         {
           "name": "Language: N-Grams:DE",
           "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=20&smoothing=3"
+        },
+        {
+          "name": "Google Trends",
+          "url": "http://www.google.de/trends/explore?q=%s&date=all"
         },
         {
           "name": "Library Genesis",
@@ -216,20 +224,24 @@
       "is_submenu": true,
       "engines": [
         {
-          "name": "Android: Play Store",
-          "url": "https://play.google.com/store/search?q=%s&c=apps&price=1&sort=1"
-        },
-        {
-          "name": "Software: github.com",
+          "name": "Software Code: github.com",
           "url": "https://github.com/search?q=%s&type=Everything&repo=&langOverride=&start_value=1"
         },
         {
-          "name": "Software: Open Hub",
+          "name": "Software Project: Open Hub",
           "url": "https://www.openhub.net/p?query=%s"
         },
         {
-          "name": "Debian Packages",
-          "url": "http://packages.debian.org/%s"
+          "name": "Software Packages: pkgs.org",
+          "url": "https://pkgs.org/search/?q=%s"
+        },
+        {
+          "name": "Android Apps: F-Droid",
+          "url": "https://search.f-droid.org/?q=%s"
+        },
+        {
+          "name": "Android Apps: Play Store",
+          "url": "https://play.google.com/store/search?q=%s&c=apps&price=1&sort=1"
         }
       ]
     }

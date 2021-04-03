@@ -1,0 +1,37 @@
+{
+  "policies": {
+    "Bookmarks": [
+      {
+        "Placement": "toolbar",
+        "Title": "TU-Webmail",
+        "URL": "https://msx.tu-dresden.de/"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "TU-Cloudstore",
+        "URL": "https://cloudstore.zih.tu-dresden.de/"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "ZIH-Dienste",
+        "URL": "https://tu-dresden.de/zih/dienste"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "StuRa",
+        "URL": "https://www.stura.tu-dresden.de/"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "Studienerfolgsleitsystem",
+        "URL": "http://www.tu-dresden.de/deinstudienerfolg"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "IPython-Notebook",
+        "URL": "http://localhost:8888/tree"
+      }
+    ],
+    "NoDefaultBookmarks": true
+  }
+}

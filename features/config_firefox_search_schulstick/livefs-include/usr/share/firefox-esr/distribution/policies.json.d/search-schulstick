@@ -1,0 +1,29 @@
+{
+  "policies": {
+    "SearchEngines": {
+      "Add": [
+        {
+          "Alias": "bk",
+          "Description": "Blinde Kuh - Die Suchmaschine für Kinder seit 1997",
+          "Method": "POST",
+          "Name": "Blinde-Kuh.de",
+          "PostData": "query={searchTerms}",
+          "URLTemplate": "http://www.blinde-kuh.de/bksearch.cgi"
+        },
+        {
+          "Description": "Bildersuche für Kinder",
+          "Name": "Find-das-Bild.de",
+          "URLTemplate": "http://www.find-das-bild.de/suche/?tx_fdbgallery_fdbgallery[searchWord]={searchTerms}"
+        },
+        {
+          "Alias": "ff",
+          "Description": "fragFINN - die Suchmaschine für Kinder",
+          "Method": "GET",
+          "Name": "fragFINN.de",
+          "URLTemplate": "https://www.fragfinn.de/?s={searchTerms}"
+        }
+      ],
+      "Default": "Ecosia"
+    }
+  }
+}

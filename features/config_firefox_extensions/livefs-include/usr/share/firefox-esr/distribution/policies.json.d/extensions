@@ -1,0 +1,87 @@
+{
+  "policies": {
+    "ExtensionSettings": {
+      "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}": {
+        "_name": "Auto Tab Discard",
+        "_description": "Increase browser speed and reduce memory load and when you have numerous open tabs.",
+        "_homepageURL": "https://add0n.com/tab-discard.html",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/",
+        "installation_mode": "normal_installed"
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "_name": "Bitwarden - Free Password Manager",
+        "_description": "A secure and free password manager for all of your devices.",
+        "_creator": "Bitwarden Inc.",
+        "_homepageURL": "https://bitwarden.com",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/",
+        "installation_mode": "normal_installed"
+      },
+      "dragselectlinktext@kestrel": {
+        "_name": "Drag-Select Link Text",
+        "_description": "Select link text with easy mouse gestures.",
+        "_creator": "Kestrel",
+        "_homepageURL": "https://github.com/nkestrel/dragselectlinktext",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/drag-select-link-text/",
+        "installation_mode": "normal_installed"
+      },
+      "{44ec79ad-72a9-471d-962d-49e7e5501d97}": {
+        "_name": "Earth View from Google Earth",
+        "_description": "Experience a beautiful image from Google Earth every time you open a new tab.",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/earth-view-from-google/",
+        "installation_mode": "normal_installed"
+      },
+      "enhancerforyoutube@maximerf.addons.mozilla.org": {
+        "_name": "Enhancer for YouTube™",
+        "_description": "Take control of YouTube and boost your user experience!",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/",
+        "installation_mode": "normal_installed"
+      },
+      "jid1-KKzOGWgsW3Ao4Q@jetpack": {
+        "_name": "I don't care about cookies",
+        "_creator": "Daniel Kladnik @ kiboke studio",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/",
+        "installation_mode": "normal_installed"
+      },
+      "playbackSpeed@waldemar.b": {
+        "_name": "Playback speed",
+        "_description": "Button to control the speed of media playback",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/playback-speed/",
+        "installation_mode": "normal_installed"
+      },
+      "selection-search@myr1.net": {
+        "_name": "Selection Search",
+        "_description": "Search for the selected text in search engines",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/selection-search-ff/",
+        "installation_mode": "normal_installed"
+      },
+      "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}": {
+        "_name": "Tab Extract",
+        "_description": "A simple & lightweight tool to reduce tab clutter, using just the address bar.",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tab-extract-port/",
+        "installation_mode": "normal_installed"
+      },
+      "tineye@ideeinc.com": {
+        "_name": "TinEye Reverse Image Search",
+        "_description": "This is the official TinEye Firefox extension. Find out where an image came from, how it's used, or find higher resolution versions.",
+        "_homepageURL": "https://tineye.com",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tineye-reverse-image-search/",
+        "installation_mode": "normal_installed"
+      },
+      "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
+        "_name": "Translate Web Pages",
+        "_description": "Translate your page in real time using Google or Yandex.",
+        "_homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/traduzir-paginas-web/",
+        "installation_mode": "normal_installed"
+      },
+      "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}": {
+        "_name": "Web Archives",
+        "_description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is, Google, Bi  ng, Yandex, Gigablast, WebCite, Sogou, Memento, Naver and Yahoo Japan.",
+        "_creator": "Armin Sebastian",
+        "_homepageURL": "https://github.com/dessant/web-archives",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/view-page-archive/",
+        "installation_mode": "normal_installed"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+#!/bin/sh
+# deep-merges JSON fragments
+
+POLICYDIR="/usr/share/firefox-esr/distribution"
+
+# move existing target file into assembly directory if it exists
+[ ! -e ${POLICYDIR}/policies.json ] || mv ${POLICYDIR}/policies.json ${POLICYDIR}/policies.json.d/policies.json
+
+JQFILTER='
+# THX https://stackoverflow.com/a/53666584/200509
+# Recursively meld a and b,
+# concatenating arrays and
+# favoring b when there is a conflict
+def meld(a; b):
+  a as $a | b as $b
+  | if ($a|type) == "object" and ($b|type) == "object"
+    then reduce ([$a,$b]|add|keys_unsorted[]) as $k ({};
+      .[$k] = meld( $a[$k]; $b[$k]) )
+    elif ($a|type) == "array" and ($b|type) == "array"
+    then ($a+$b)
+    elif $b == null then $a
+    else $b
+    end;
+reduce inputs as $i (.; meld(.; $i))'
+jq "${JQFILTER}" ${POLICYDIR}/policies.json.d/* > ${POLICYDIR}/policies.json

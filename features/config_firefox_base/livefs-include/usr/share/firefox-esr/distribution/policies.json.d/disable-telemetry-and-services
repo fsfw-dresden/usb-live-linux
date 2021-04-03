@@ -1,0 +1,34 @@
+{
+  "policies": {
+    "DisableAppUpdate": true,
+    "DisableFirefoxAccounts": true,
+    "DisableFirefoxStudies": true,
+    "DisablePocket": true,
+    "DisableTelemetry": true,
+    "DontCheckDefaultBrowser": true,
+    "FirefoxHome": {
+      "Highlights": false,
+      "Pocket": false,
+      "Snippets": false,
+      "TopSites": false
+    },
+    "NewTabPage": false,
+    "OfferToSaveLogins": false,
+    "OfferToSaveLoginsDefault": false,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "Permissions": {
+      "Notifications": {
+        "BlockNewRequests": true
+      }
+    },
+    "Preferences": {
+      "browser.tabs.warnOnClose": false,
+      "datareporting.policy.dataSubmissionPolicyBypassNotification": true,
+      "extensions.getAddons.showPane": false,
+      "media.gmp-gmpopenh264.enabled": true,
+      "ui.key.menuAccessKeyFocuses": true
+    }
+  }
+}
