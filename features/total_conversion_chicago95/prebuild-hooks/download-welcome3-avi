@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. ../scripts/functions.sh
+
+check_program_exists youtube-dl
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/Chicago95
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+URL="https://www.youtube.com/watch?v=MaU5ED3LyXM"
+
+youtube-dl --format best --output "${DEST_DIR}/welcome3.avi" ${URL}

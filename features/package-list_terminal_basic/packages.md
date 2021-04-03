@@ -63,9 +63,11 @@
 - :x:  inxi  --		system information script
 - :x:  iotop  --	displays a table of current I/O usage by processes on the system
 - :x:  iptraf-ng  --	Interactive Colorful IP LAN Monitor, generates various network statistics
+- :x:  irqtop  --	Observe IRQ and SoftIRQ in a top-like fashion
 - :x:  jdupes  --	identify and delete or link duplicate files
 - :o:  jc  --	JSONifies the output of many CLI tools and file-types for easier parsing in scripts (not in buster)
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
+- :x:  latencytop  --	visualize system latencies (needs CONFIG_LATENCYTOP!)
 - :x:  less  --		world class file viewer
 - :x:  libcdio-utils  --		small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
 - :x:  librsvg2-bin  --	command-line and graphical viewers for SVG files
@@ -93,10 +95,12 @@
 - :x:  pipemeter  --	shows the speed of data moving from input to output
 - :x:  pmount  --		mount removable devices as normal user
 - :x:  poppler-utils  --	PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
+- :x:  powertop  --		diagnose issues with power consumption and management
 - :x:  progress  --		Coreutils Progress Viewer
 - :x:  psmisc  --		utilities that use the proc file system
 - :x:  pylint  --	Python code static checker and UML diagram generator
 - :x:  qalc  --			command line version of Qalculate!
+- :x:  radeontop  --	show Radeon GPU utilization
 - :x:  ranger  --	Bester Dateimanager (Text UI)
 - :x:  renameutils  --	to make file renaming easier
 - :x:  ripgrep  --	line-oriented search tool that recursively searches

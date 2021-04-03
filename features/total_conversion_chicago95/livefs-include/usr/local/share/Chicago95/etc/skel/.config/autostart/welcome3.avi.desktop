@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=welcome3.avi
+Comment=Windows 95 extra
+Exec=sh -c "sleep 10; mpv --fullscreen /usr/local/share/Chicago95/welcome3.avi"

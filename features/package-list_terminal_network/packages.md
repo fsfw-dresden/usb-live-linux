@@ -1,4 +1,5 @@
 - :x:  bridge-utils  --		Dienstprogramme für die Konfiguration der Linux-Ethernet-Brücke
+- :x:  dnstop  --		console tool to analyze DNS traffic
 - :x:  ebtables  --		Verwaltung von Ethernet-Bridge-Frame-Tabellen
 - :x:  iftop  --		displays bandwidth usage information on an network interface
 - :x:  iproute2  --		Werkzeuge für Netzwerk(verkehrs)kontrolle

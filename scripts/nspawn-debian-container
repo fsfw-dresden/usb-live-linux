@@ -24,6 +24,8 @@ git
 rsync
 wget
 curl
+gallery-dl
+youtube-dl
 ca-certificates
 unzip
 bash
@@ -64,3 +66,5 @@ systemd-nspawn --directory=build/container apt install --no-install-recommends -
 
 # Now bind-mount this repository and enter the container (without any device access restrictions)
 systemd-nspawn --directory=build/container --bind=${PWD}:/mnt/usb-live-linux --bind=/dev --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --console=pipe
+
+# vim: ts=2 sw=2

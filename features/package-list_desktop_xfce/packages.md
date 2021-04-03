@@ -20,7 +20,9 @@
 - :x:  xfce4-terminal  --		lightweight and easy to use terminal emulator for X11
 - :x:  xfce4-screenshooter  --		take desktop, rectangles or selected window screenshots
 - :x:  xfce4-panel  --		multi-functional panel
+- :x:  xfce4-taskmanager  --	for monitoring and controlling running processes
 - :x:  xfce4-cpufreq-plugin  --		displays the current frequency of the CPU, in GHz or MHz
+- :x:  xfce4-eyes-plugin  --	eyes that follow your mouse for the Xfce4 panel
 - :x:  xfce4-power-manager-plugins  --		control brightness etc
 - :o:  xfce4-places-plugin  --		quick access to folders, documents and removable media
 - :x:  xfce4-pulseaudio-plugin  --		control pulseaudio
@@ -28,6 +30,9 @@
 - :x:  xfce4-weather-plugin  --		weather information plugin for the Xfce4 panel
 - :x:  xfce4-whiskermenu-plugin  --		application launcher for Xfce
 - :x:  xfce4-indicator-plugin  --		display information from various applications consistently
+- :x:  xfce4-sensors-plugin  --	hardware sensors plugin for the Xfce4 panel
+- :x:  xfce4-places-plugin  --	quick access to folders, documents and removable media
+- :x:  xfce4-datetime-plugin  --	date and time plugin for the Xfce4 panel
 - :x:  xfce4-clipman-plugin  --		clipboard history
 - :x:  xfce4-xkb-plugin  --		keyboard layout switch plugin for the Xfce4 panel
 - :x:  xfce4-timer-plugin  --		timer plugin for Xfce panel

@@ -1,4 +1,5 @@
 - :x:  read-edid  --		hardware information-gathering tool for VESA PnP monitors
+- :x:  pqiv  --			powerful GTK 3 based command-line image viewer with a minimal UI
 - :x:  sm  --			Zeigt einen kurzen Text bildschirmfüllend an
 - :x:  vainfo  --		Video Acceleration (VA) API for Linux -- info program
 - :x:  vdpauinfo  --		Video Decode and Presentation API for Unix (vdpauinfo utility)
