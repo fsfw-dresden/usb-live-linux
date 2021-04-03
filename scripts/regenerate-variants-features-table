@@ -14,23 +14,39 @@ TARGET="variants/features.adoc"
 print_info "Regenerating ${TARGET} and rendering to ${TARGET%.adoc}.html"
 
 cat > ${TARGET} <<ETX
-= Features, features, variants..
+= Features, features, variants.. 🚧 as of $(date +%F)
 :table-caption!:
 
 ++++
 <style>
-tbody > tr:first-child { position: -webkit-sticky; position: sticky; top: 0; }
+/* Floating Header */
+thead th:first-child,
+thead th:last-child,
+tbody tr:first-child td { position: -webkit-sticky; position: sticky; top: 0; }
 
-tbody > tr:first-child td { background-color: white; background-clip: padding-box; box-shadow: 0 1px; }
-tbody > tr:first-child td:first-child { background-color: unset; box-shadow: unset; }
-tbody > tr:first-child td p { writing-mode: vertical-rl; transform: rotate(-180deg); margin: 0.2em; }
+thead th:first-child,
+thead th:last-child,
+tbody tr:first-child td { background-color: white; background-clip: padding-box; box-shadow: 0 1px; }
 
-tbody > tr:first-child a,
+tbody tr:first-child td:first-child,
+tbody tr:first-child td:last-child { background-color: unset; box-shadow: unset; }
+
+/* Rotated Variants */
+tbody tr:first-child td p { writing-mode: vertical-rl; transform: rotate(-180deg); margin: 0.2em; }
+
+/* Limit check mark width */
+tbody td { max-width: 2em; }
+tbody td:first-child, tbody td:last-child { max-width: unset; }
+
+/* No Underlining of Links */
+tbody tr:first-child a,
 tbody td:first-child a { text-decoration: none; }
 a:visited { color: darkblue; }
 
+/* Slick Looks */
 tbody tr:nth-child(even) { background-color: #eee }
 tbody td { line-height: 1em; }
+body { margin: 1em; }
 </style>
 
 <script type="text/javascript">
@@ -50,14 +66,17 @@ Definitions used in this https://github.com/fsfw-dresden/usb-live-linux[usb-live
 
 == Variants can derive from others, inheriting their features
 
-[graphviz, variant-inheritance.png, fdp]
+[graphviz, variant-inheritance.png, dot]
 -------
 digraph variants {
-  splines=curved
-  node [ shape = box, style = rounded ];
-  edge [ labelfloat = true];
-  K=2.5;
-  rankdir=LR;
+  splines=curved;
+  node [
+    shape = box,
+    style = rounded
+  ];
+  edge [
+    arrowhead = empty
+  ];
 ETX
 
 shopt -s extglob
@@ -73,16 +92,19 @@ cat >> ${TARGET} <<ETX
 }
 -------
 
-== Which features are enabled in the various stick variants?
+== Which features are enabled in various stick variants?
 
 -  : feature is not included in this variant
 - ✔: feature is enabled in this variant
-- ✔!: feature is only in this variant
+- (✔): feature is included as dependency
+- ✔!: feature is exclusive to this variant
 - ✘: feature is disabled in this variant
 ETX
 
+# Assemble sub-header row (VARIANT_LINE)
 VARIANT_COUNT=0
 VARIANT_LINE="|\t\t\t\t"
+print_info "finding variants to crawl.."
 for VARIANT in variants/*/
 do
   VARIANT_NAME=$(basename ${VARIANT})
@@ -90,26 +112,28 @@ do
   echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
   # FIXME: ugly absolute URL, because of GitCDN workaround
 	VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants/${VARIANT_NAME}"
-  VARIANT_LINE="${VARIANT_LINE}\ts|link:${VARIANT_URL}[${VARIANT_NAME}]"
+  VARIANT_LINE="${VARIANT_LINE}\t.>s|link:${VARIANT_URL}[${VARIANT_NAME//:/ }]"
 done
+VARIANT_LINE="${VARIANT_LINE}\t|"
 
-printf '[cols=">,' >> ${TARGET}
+printf '[cols=">.^,' >> ${TARGET}
 printf ${VARIANT_COUNT} >> ${TARGET}
 cat >> ${TARGET} <<ETX
-*^.>", options="header, autowidth", frame="none", grid="all"]
+*^.^,<.^", options="header,autowidth", frame="none", grid="all"]
 |====
 ETX
 printf '^|feature ' >> ${TARGET}
 printf ${VARIANT_COUNT} >> ${TARGET}
 cat >> ${TARGET} <<ETX
-+^|variant
++^|variant ^|description
 ETX
 
 printf "${VARIANT_LINE}\n" >> ${TARGET}
 
+print_info "Searching for feature inclusion across variants.."
 # sorting paths by basename? hell yeah xD
 # https://unix.stackexchange.com/questions/393987/sort-an-array-of-pathnames-of-files-by-their-basenames/638463#638463
-for FEATURE in $(command ls -d features/*/ variants/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/')
+for FEATURE in $(command ls -d features/*/ variants/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/; s#/$##')
 do
   FEATURE_NAME=$(basename ${FEATURE})
 
@@ -122,8 +146,11 @@ do
   for VARIANT in variants/*/
   do
     VARIANT_NAME=$(basename ${VARIANT})
+    VARIANT=${VARIANT%/}
+
     [[ "${VARIANT_NAME}" == "shared" ]] && continue
 
+    #ls -lah ${VARIANT}/features/*/depends/${FEATURE_NAME}
     if [ -h ${VARIANT}/features/${FEATURE_NAME} ]
     then
       # feature linked from common features folder
@@ -137,15 +164,37 @@ do
       # feature disabled in variant
       printf "\t|✘" >> ${TARGET}
     else
-      # not existant
-      printf "\t| " >> ${TARGET}
+      # check if is included indirectly / as dependency
+      FEATURE_DEPENDENCY_FOUND=0
+      for DEPENDENCY in $(command ls -d ${VARIANT}/features/*/depends/${FEATURE_NAME} 2>/dev/null)
+      do
+        if [[ ${DEPENDENCY} =~ \.disabled ]]
+        then
+          echo "skipping ${DEPENDENCY}"
+          continue
+        else
+          echo "implicit dependency ${DEPENDENCY} found"
+          FEATURE_DEPENDENCY_FOUND=$((FEATURE_DEPENDENCY_FOUND + 1))
+        fi
+      done
+
+      if [ ${FEATURE_DEPENDENCY_FOUND} -gt 0 ]
+      then
+        printf "\t|(✔) " >> ${TARGET}
+      else
+        # not existant
+        printf "\t| " >> ${TARGET}
+      fi
     fi
   done
+  FEATURE_METADATA="${FEATURE}/metadata"
+  FEATURE_DESCRIPTION=$([ ! -e ${FEATURE_METADATA} ] || sed -nr 's/description-en: *(.*)/\1/p' ${FEATURE_METADATA})
+  printf "\t|${FEATURE_DESCRIPTION}" >> ${TARGET}
   printf "\n" >> ${TARGET}
 done
 
 printf "|===\n" >> ${TARGET}
 
-asciidoc -v ${TARGET} && print_info "regenerated ${TARGET%.adoc}.html in $(format_timespan $(($(date +%s) - STARTTIME))), thanks."
+asciidoc -v ${TARGET} |& ccze -A -o nolookups && print_info "regenerated ${TARGET%.adoc}.html in $(format_timespan $(($(date +%s) - STARTTIME))), thanks."
 
 # vim: sw=2 ts=2 et
