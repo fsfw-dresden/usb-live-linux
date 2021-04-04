@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --bootloaders "syslinux,grub-efi" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --bootloaders 'syslinux,grub-efi'"
 
 #        --bootloaders grub-legacy|grub-pc|syslinux|grub-efi|"BOOTLOADERS"
 #            defines which bootloaders to use in the  generated  image.  This

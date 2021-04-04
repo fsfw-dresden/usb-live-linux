@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --apt-indices true \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --apt-indices true"
 
 #        --apt-indices true|false|none
 #            defines if the resulting images should have apt  indices  or  not

@@ -1,23 +1,51 @@
 #!/bin/bash
 
-# use bash here string to disaggregate BUILD_VARIANT into components
-read -r STICK_NAME DESKTOP DISTRIBUTION ARCHITECTURE <<< "$(echo "${BUILD_VARIANT}" | tr ':' ' ')"
+# Skip empty for loop globs
+shopt -s nullglob
+
+TEMP_ENV=".iso_name.env"
+trap "rm -v ${TEMP_ENV}" 0 1
+echo > ${TEMP_ENV}
+
+parse_recursive()
+{
+    # Remove trailing backslash
+    local VARIANT=${@%/}
+    echo "parse_recursive(${VARIANT})"
+
+    for PARENT_VARIANT in ${VARIANT}/inherit/*/
+    do
+        parse_recursive ${PARENT_VARIANT}
+    done
+
+    # chop variant name into variables
+    read -r STICK_NAME STICK_DESKTOP STICK_DISTRIBUTION STICK_ARCHITECTURE <<< "$(echo "${VARIANT##*/}" | tr ':' ' ')"
+
+    # mark, export, filter and store
+    export STICK_NAME STICK_DESKTOP STICK_DISTRIBUTION STICK_ARCHITECTURE
+    export -p|sed -n '/STICK_[^=]\+="[^"]\+"/p' >> ${TEMP_ENV}
+}
+
+# walk the tree and pluck metadata
+parse_recursive ../variants/${BUILD_VARIANT}
+
+# now read in variables
+. ${TEMP_ENV}
 
 STICK_VERSION=$(../scripts/calc-version-number)
 
 # Branchname im Image-Namen setzen, falls nicht auf master
-nbranch=$(git rev-parse --abbrev-ref HEAD)		# aktuellen branch auslesen
+nbranch=$(git rev-parse --abbrev-ref HEAD)      # aktuellen branch auslesen
 if [[ ! "${nbranch}" = "master" ]]; then
-    nbranch=${nbranch////_}			# ersetze von / in _
-    nbranch=${nbranch//-/_}			# ersetze von - in _
+    nbranch=${nbranch////_}         # ersetze von / in _
+    nbranch=${nbranch//-/_}         # ersetze von - in _
     nbranch=__${nbranch}_
 else
     nbranch=
 fi
 
-lb config noauto \
-    --image-name "${STICK_NAME}_${STICK_VERSION}${nbranch}_${DESKTOP}_${DISTRIBUTION:-stable}" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --image-name '${STICK_NAME}_${STICK_VERSION}${nbranch}_${STICK_DESKTOP}_${STICK_DISTRIBUTION:-stable}'"
 
 #        --image-name NAME
-#            sets the base name of the image. Defaults to live-image.
+#            sets the base name of the image. Defaults to "live-image".

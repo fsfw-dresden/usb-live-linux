@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --linux-packages "linux-image linux-headers" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --linux-packages 'linux-image linux-headers'"
 
 #        --linux-packages "PACKAGES"
 #            sets  the  internal name of the kernel packages naming scheme. If

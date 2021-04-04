@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --cache-packages true \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --cache-packages true"
 
 #        --cache-packages true|false
 #            defines  if  downloaded  packages files should be cached which is

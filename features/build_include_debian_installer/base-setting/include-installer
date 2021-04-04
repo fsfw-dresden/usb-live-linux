@@ -6,9 +6,8 @@
 # in the boot menu.
 
 # Allegedly, caching of bootstrap stage is necessary for this to work.
-lb config noauto \
-    --cache-stages "bootstrap" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --cache-stages 'bootstrap'"
 
 #        --cache-stages STAGE|"STAGES"
 #            sets which stages should be cached (a comma or space
@@ -20,11 +19,10 @@ lb config noauto \
 # Disabling would be an option if not using debian-installer.
 rm -rf cache/bootstrap
 
-lb config noauto \
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
     --debian-installer live \
     --debian-installer-gui true \
-    --win32-loader true \
-        "${@}"
+    --win32-loader true"
 
 #        --debian-installer          cdrom|netinst|netboot|business‐
 #        card|live|none

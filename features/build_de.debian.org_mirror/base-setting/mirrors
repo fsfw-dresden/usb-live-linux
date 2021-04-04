@@ -1,5 +1,5 @@
 #!/bin/sh -e
-lb config noauto \
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
     --parent-mirror-bootstrap http://ftp.de.debian.org/debian/ \
     --parent-mirror-chroot http://ftp.de.debian.org/debian/ \
     --parent-mirror-chroot-security http://security.debian.org/ \
@@ -9,8 +9,7 @@ lb config noauto \
     --mirror-chroot-security http://ftp.de.debian.org/debian-security/ \
     --mirror-bootstrap http://ftp.de.debian.org/debian/ \
     --mirror-binary http://ftp.de.debian.org/debian/ \
-    --mirror-binary-security http://ftp.de.debian.org/debian-security/ \
-        "${@}"
+    --mirror-binary-security http://ftp.de.debian.org/debian-security/"
 
 #        --mirror-binary URL
 #            sets  the  location of the derivative package mirror that should

@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --apt-options "--yes --allow-downgrades" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --apt-options '--yes --allow-downgrades'"
 
 #        --apt-options OPTION|"OPTIONS"
 #            defines  the default options that will be appended to every apt

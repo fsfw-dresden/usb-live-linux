@@ -95,7 +95,8 @@ STARTTIME=$(date +%s)
         mkdir -p ../artifacts
 
         # and move generated files there
-        mv -iv "${BUILD_VARIANT}"*.* ../artifacts/
+        LB_IMAGE_NAME=$(sed -nr 's/LB_IMAGE_NAME="(.*)"$/\1/p' config/common)
+        mv -iv ${LB_IMAGE_NAME}*.* ../artifacts/
     } || print_warn "FAILED"
 )
 

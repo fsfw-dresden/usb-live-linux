@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --keyring-packages "debian-archive-keyring debian-keyring" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --keyring-packages 'debian-archive-keyring debian-keyring'"
 
 #        --keyring-packages PACKAGE|"PACKAGES"
 #            sets the keyring package or additional keyring packages (a space

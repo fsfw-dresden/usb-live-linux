@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --source false \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --source false"
 
 #        --source true|false
 #            defines  if  a  corresponding  source  image to the binary image

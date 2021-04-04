@@ -1,8 +1,7 @@
 #!/bin/sh -e
 # Default FS (FAT32) is not suitable for ISOs > 4GiB
-lb config noauto \
-    --binary-filesystem ext2 \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --binary-filesystem ext2"
 
 #        --binary-filesystem fat16|fat32|ext2|ext3|ext4|ntfs
 #            defines the filesystem to be used in the image type.  This  only

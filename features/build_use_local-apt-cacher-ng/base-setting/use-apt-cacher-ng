@@ -1,10 +1,10 @@
 #!/bin/sh -e
 # This can be used with the default setup of apt-cacher-ng running on localhost:3142
-lb config noauto \
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
     --cache-packages false \
     --apt-http-proxy http://127.0.0.1:3142/ \
     --mirror-bootstrap http://localhost:3142/ftp.debian.org/debian/ \
-    --parent-mirror-bootstrap http://localhost:3142/ftp.debian.org/debian/
+    --parent-mirror-bootstrap http://localhost:3142/ftp.debian.org/debian/"
 
 #        --cache-packages true|false
 #            defines  if  downloaded packages files should be cached. This is

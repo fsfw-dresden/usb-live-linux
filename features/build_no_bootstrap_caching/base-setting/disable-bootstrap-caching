@@ -2,9 +2,8 @@
 # This is REQUIRED when switching target distributions (f.e. stable
 # <=> testing) between builds
 
-lb config noauto \
-    --cache-stages " " \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --cache-stages ' '"
 
 #        --cache-stages STAGE|"STAGES"
 #            sets which stages should be cached (a comma or space

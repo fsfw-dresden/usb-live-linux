@@ -2,9 +2,8 @@
 
 DISTRIBUTION=buster
 
-lb config noauto \
-    --distribution ${DISTRIBUTION} \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --distribution ${DISTRIBUTION}"
 
 #        -d|--distribution CODENAME
 #            defines the distribution of the resulting live system. This cur‐

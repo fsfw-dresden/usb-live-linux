@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --initsystem systemd \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --initsystem systemd"
 
 #        --initsystem sysvinit|systemd|none]
 #            defines the init system. Defaults to 'systemd'.

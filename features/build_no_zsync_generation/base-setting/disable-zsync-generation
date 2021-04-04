@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --zsync false \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --zsync false"
 
 #        --zsync true|false
 #            defines whether a file for distributing the  image  in  zsync(1)

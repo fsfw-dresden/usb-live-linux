@@ -1,8 +1,7 @@
 #!/bin/sh -e
-lb config noauto \
-    --archive-areas "main contrib non-free" \
-    --parent-archive-areas "main contrib non-free" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --archive-areas 'main contrib non-free' \
+    --parent-archive-areas 'main contrib non-free'"
 
 #        --archive-areas ARCHIVE_AREA|"ARCHIVE_AREAS"
 #            defines which package archive areas (a comma or space  separated

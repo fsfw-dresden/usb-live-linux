@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --initramfs live-boot \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --initramfs live-boot"
 
 #        --initramfs none|live-boot
 #            sets  the name of the package that contains the live system spe‐

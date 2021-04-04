@@ -13,9 +13,9 @@
 - no stick install GUI (implement with pyside / qml)
 - night mode settings GUI in progress (implement with pyside / qml)
 - boot failure with newer nvidia chipsets (lernstick has support, also for CUDA apps like [meshroom](https://github.com/alicevision/meshroom/))
-- [](../variants/Basisstick:Xfce:buster:i386) `lb config noauto --architectures i386` and `--distribution buster` need to go into same invocation => need to merge base-settings.d
 - multi-variant inheritance?
-- no portableapps on first partition
+- no portableapps on first partition yet
+- enable kernel-updates / create update-initramfs wrapper for our partition layout
 
 2016-10-21 13:22 gerdg-dd 092a2a1 # TODO:
 2016-10-21 13:22 gerdg-dd 092a2a1 # Windows Programme downoad & copieren auf WIN-DATEN Partition

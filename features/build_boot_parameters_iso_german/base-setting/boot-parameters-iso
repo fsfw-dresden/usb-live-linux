@@ -34,10 +34,9 @@ NORMALDEBUGPARAMETERS="rootpw=foo "\
 DEBUGEVERYTHINGPARAMETERS="systemd.log_level=debug systemd.log_target=kmsg log_buf_len=1M printk.devkmsg=on "
 # turn on verbose debugging for boot and all services
 
-lb config noauto \
-    --bootappend-live "${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS}" \
-    --bootappend-live-failsafe "${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS} ${DEBUGEVERYTHINGPARAMETERS}" \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --bootappend-live '${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS}' \
+    --bootappend-live-failsafe '${LIVEPARAMETERS} ${L10NPARAMETERS} ${NORMALDEBUGPARAMETERS} ${DEBUGEVERYTHINGPARAMETERS}'"
 
 #        --bootappend-live PARAMETER|"PARAMETERS"
 #            sets  boot parameters specific to debian-live. A complete list of

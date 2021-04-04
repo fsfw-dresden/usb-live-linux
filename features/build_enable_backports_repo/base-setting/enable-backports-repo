@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --backports=true \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --backports=true"
 
 #        --backports true|false
 #            defines if debian backports package archives should  be  included

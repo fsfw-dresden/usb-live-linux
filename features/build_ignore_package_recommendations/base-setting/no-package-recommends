@@ -1,7 +1,6 @@
 #!/bin/sh -e
-lb config noauto \
-    --apt-recommends false \
-        "${@}"
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --apt-recommends false"
 
 #        --apt-recommends true|false
 #            defines  if  apt  should  install recommended packages automati‐
