@@ -1,0 +1,3 @@
+# transparently disable fsync and friends to speed up build
+LD_PRELOAD=/usr/lib/i386-linux-gnu/libeatmydata.so
+MKSQUASHFS_OPTIONS="-comp zstd -Xcompression-level 22 -info"
