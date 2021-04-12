@@ -1,0 +1,16 @@
+#!/bin/bash
+# FIXME: unhardcode
+# THX: https://github.com/stedolan/jq/wiki/Cookbook#extract-specific-data-for-while-loop-in-shell-script
+
+# die on error
+set -e
+
+CURRENT_REPO_URL=$(git config remote.origin.url)
+
+echo ${CURRENT_REPO_URL} | grep -qs "github.com" || { echo "this doesn't seem to be a github repository? remote.origin.url is ${CURRENT_REPO_URL}"; exit 1; }
+
+read GHUSER GHPROJECT < <(echo ${CURRENT_REPO_URL} | sed 's#.*github.com[:/]##; s#\.git$##; s#/# #')
+
+GHFORKS_URL="https://api.github.com/repos/${GHUSER}/${GHPROJECT}/forks"
+
+curl "${GHFORKS_URL}" | jq -r '.[] | "git remote add \(.owner.login) \(.html_url)"' | vipe | sh -x

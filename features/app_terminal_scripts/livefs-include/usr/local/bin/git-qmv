@@ -1,14 +1,35 @@
-#!/bin/sh -x
+#!/bin/sh
 # will invoke an editor to edit all filenames given as arguments
 # integrates with git and falls back to conventional mv
+COLOR_ORANGE="\e[1;33m"
+COLOR_CYAN="\e[1;36m"
+COLOR_OFF="\e[0m"
 
 type qcmd || { echo "this mechanism needs package renameutils"; exit 1; }
 
-INSIDEGIT=$(git rev-parse --is-inside-work-tree >/dev/null 2>&1; echo $?)
-[ -d "${@}" ] && echo "this is not quite working yet for directories" && FILESINGIT=0 || \
-FILESINGIT=$(git ls-files --error-unmatch "${@}" >/dev/null 2>&1; echo $?)
+# are we inside a git tree?
+git rev-parse --is-inside-work-tree >/dev/null 2>&1 && INSIDEGIT=1 || INSIDEGIT=0
 
-[ ${INSIDEGIT} -eq 0 ] && [ ${FILESINGIT} -eq 0 ] && COMMAND="/usr/lib/git-core/git-mv" || COMMAND="mv"
+# Is *any* of the files checked in?
+FILEINGIT=0
+for FILE in ${@}
+do
+  git ls-files --error-unmatch "${FILE}" >/dev/null 2>&1 && FILEINGIT=1
+done
+
+# Use git-mv if handling git-tracked objects, normal mv otherwise
+if [ ${INSIDEGIT} -eq 1 ] && [ ${FILEINGIT} -eq 1 ]
+then
+  COMMAND="/usr/lib/git-core/git-mv"
+  COMMAND_STRING="${COLOR_ORANGE}git-mv${COLOR_OFF}"
+else
+  COMMAND="mv"
+  COMMAND_STRING="${COLOR_CYAN}mv${COLOR_OFF}"
+fi
+
+echo "invoking file-name editor for execution with ${COMMAND_STRING}"
+sleep 0.3
+
 # long options broken in renameutils 0.12.0-8
 # -A = --almost-all
 # -d = --directory
