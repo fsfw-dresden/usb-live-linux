@@ -89,7 +89,7 @@ STARTTIME=$(date +%s)
     print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
     lb build &&
     {
-        print_info "Building ISO SUCCEEDED"
+        print_success "Building ISO SUCCEEDED"
 
         # Ensure artifacts dir exists
         mkdir -p ../artifacts
@@ -97,7 +97,7 @@ STARTTIME=$(date +%s)
         # and move generated files there
         LB_IMAGE_NAME=$(sed -nr 's/LB_IMAGE_NAME="(.*)"$/\1/p' config/common)
         mv -iv ${LB_IMAGE_NAME}*.* ../artifacts/
-    } || print_warn "FAILED"
+    } || print_error "FAILED"
 )
 
 print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"

@@ -35,7 +35,7 @@ select_target_device() {
         grep -qs 1 /sys/block/${DEVNAME}/removable || [[ -d /sys/block/${DEVNAME}/loop ]] && \
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
-    [ -z ${OPTIONS} ] && echo "Could not find any suitable (loop) device!" && exit 5
+    [ -z ${OPTIONS} ] && echo "Could not find any suitable (loop) device!" && die_with_error 5
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
@@ -102,10 +102,10 @@ is_f2fs_mountable() {
 echo "DEVICE=${DEVICE}"
 
 # no device no play
-[ -z ${DEVICE} ] && echo "no DEVICE chosen, cannot continue" >&2 && exit 2
+[ -z ${DEVICE} ] && die_with_error 1 "no DEVICE chosen, cannot continue"
 
 # proceed only if selected device is not mounted
-grep -s "^${DEVICE}" /proc/mounts && print_warn "partition(s) on ${DEVICE} currently mounted, not continuing!" >&2 && exit 1
+grep -s "^${DEVICE}" /proc/mounts && die_with_error 2 "partition(s) on ${DEVICE} currently mounted, not continuing!"
 
 # loop devices have a different naming scheme (loop3p1 vs sdc1)
 [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
@@ -116,7 +116,7 @@ grep -s "^${DEVICE}" /proc/mounts && print_warn "partition(s) on ${DEVICE} curre
 echo "LIVE_IMAGE=${LIVE_IMAGE}"
 
 # no ISO no burn
-[ -z ${LIVE_IMAGE} ] && echo "no LIVE_IMAGE chosen, cannot continue" >&2 && exit 2
+[ -z ${LIVE_IMAGE} ] && die_with_error 3 "no LIVE_IMAGE chosen, cannot continue"
 
 # FAT_LABEL can be given as third parameter - or interactively selected
 [ -n "$3" ] && FAT_LABEL=$3 || FAT_LABEL=$(select_fat_label)

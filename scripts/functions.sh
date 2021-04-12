@@ -4,7 +4,7 @@
 set -e
 
 COLOR_GREEN="\e[1;32m"
-COLOR_ORANGE="\e[1;33m"
+COLOR_YELLOW="\e[1;33m"
 COLOR_CYAN="\e[1;36m"
 COLOR_RED="\e[1;31m"
 COLOR_OFF="\e[0m"
@@ -27,14 +27,32 @@ check_program_exists() {
         return 1
 }
 
+printf_escaped() {
+    printf '%s\n' "$(echo -e "${@}" | sed 's/%/%%/g')"
+}
+
 print_info() {
-    printf "[ ℹ️  ] ${COLOR_CYAN}${@//%/%%}${COLOR_OFF}\n"
+    printf_escaped "[ ℹ️  ] ${COLOR_CYAN}${*}${COLOR_OFF}\n" >&2
 }
 
 print_warn() {
-    printf "[ ⚠️  ] ${COLOR_RED}${@//%/%%}${COLOR_OFF}\n"
+    printf_escaped "[ ⚠️  ] ${COLOR_YELLOW}${*}${COLOR_OFF}\n" >&2
 }
 
+print_success() {
+    printf_escaped "[ ✅ ] ${COLOR_GREEN}${*}${COLOR_OFF}\n" >&2
+}
+
+print_error() {
+    printf_escaped "[ 🛑 ] ${COLOR_RED}${*}${COLOR_OFF}\n" >&2
+}
+
+die_with_error() {
+    ERROR=${1}
+    shift
+    print_error "${@}"
+    exit ${ERROR}
+}
 # THANKS https://unix.stackexchange.com/questions/364776/how-to-output-a-date-time-as-20-minutes-ago-or-9-days-ago-etc
 rel_fmt_low_precision() {
     local SEC_PER_MINUTE=$((60))
