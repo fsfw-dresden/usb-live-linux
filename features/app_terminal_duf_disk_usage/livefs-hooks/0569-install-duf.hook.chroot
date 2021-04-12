@@ -15,7 +15,7 @@ case ${ARCH} in
                 ;;
 esac
 
-DEBURL=$(curl "${RELEASEINFO}"|jq -r '.[0].assets[].browser_download_url|select(endswith("'_${ARCH}'.deb"))')
+DEBURL=$(curl "${RELEASEINFO}"|jq -r '.[0].assets[].browser_download_url|select(endswith("'_${EXECARCH}'.deb"))')
 NAME=${DEBURL##*/}
 curl --location --remote-time --remote-name "${DEBURL}"
 dpkg -i ${NAME}
