@@ -1,4 +1,5 @@
 #!/bin/sh
 # Replace light Breeze desktop theme by dark variant
+sed -i '/^theme-name/ s/Breeze$/Breeze-Dark/' /usr/share/lightdm/lightdm-gtk-greeter.conf.d/90_theme.conf
 sed -i '/"ThemeName"/ s/"Breeze"/"Breeze-Dark"/' /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 sed -i '/"IconThemeName"/ s/"Papirus-Light"/"Papirus-Dark"/' /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
