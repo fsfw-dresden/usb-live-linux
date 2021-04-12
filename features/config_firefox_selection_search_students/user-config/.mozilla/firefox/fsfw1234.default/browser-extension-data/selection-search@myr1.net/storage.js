@@ -190,7 +190,7 @@
         },
         {
           "name": "Library Genesis",
-          "url": "https://libgen.lc/search.php?req=%s"
+          "url": "http://libgen.rs/search.php?req=%s"
         },
         {
           "name": "Libraries: WorldCat",
