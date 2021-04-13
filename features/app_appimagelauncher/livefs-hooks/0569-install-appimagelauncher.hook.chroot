@@ -1,0 +1,12 @@
+#!/bin/sh
+# install AppImageLauncher
+
+RELEASEINFO="https://api.github.com/repos/TheAssassin/AppImageLauncher/releases/tags/continuous"
+
+ARCH=$(dpkg --print-architecture)
+DEBURL=$(curl "${RELEASEINFO}"|jq -r '.assets[].browser_download_url|select(endswith("bionic_'${ARCH}'.deb"))')
+FILENAME=${DEBURL##*/}
+
+curl --location --remote-time --remote-name "${DEBURL}"
+dpkg -i ${FILENAME}
+rm -v ${FILENAME}
