@@ -1,0 +1,7 @@
+{
+  "chrome://browser/content/places/historySidebar.xhtml": {
+    "viewButton": {
+      "selectedsort": "lastvisited"
+    }
+  }
+}
