@@ -1,0 +1,67 @@
+{
+  "app-profile": {
+    "addons": {
+      "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7B5f19c5b2-8ef9-4f63-9d0b-d13bc476972a%7D.xpi!/",
+        "version": "1.0.4"
+      },
+      "tineye@ideeinc.com": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/tineye@ideeinc.com.xpi!/",
+        "version": "1.4.1"
+      },
+      "playbackSpeed@waldemar.b": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/playbackSpeed@waldemar.b.xpi!/",
+        "version": "1.4.3"
+      },
+      "enhancerforyoutube@maximerf.addons.mozilla.org": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/enhancerforyoutube@maximerf.addons.mozilla.org.xpi!/",
+        "version": "2.0.104.4"
+      },
+      "dragselectlinktext@kestrel": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/dragselectlinktext@kestrel.xpi!/",
+        "version": "1.5.4"
+      },
+      "selection-search@myr1.net": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/selection-search@myr1.net.xpi!/",
+        "version": "0.8.57"
+      },
+      "{44ec79ad-72a9-471d-962d-49e7e5501d97}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7B44ec79ad-72a9-471d-962d-49e7e5501d97%7D.xpi!/",
+        "version": "2.18.7"
+      },
+      "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7B036a55b4-5e72-4d05-a06c-cba2dfcc134a%7D.xpi!/",
+        "version": "8.9.3"
+      },
+      "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7Bd07ccf11-c0cd-4938-a265-2a4d6ad01189%7D.xpi!/",
+        "version": "2.1.0"
+      },
+      "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7Bc2c003ee-bd69-42a2-b0e9-6f34222cb046%7D.xpi!/",
+        "version": "0.4.3"
+      },
+      "jid1-KKzOGWgsW3Ao4Q@jetpack": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/jid1-KKzOGWgsW3Ao4Q@jetpack.xpi!/",
+        "version": "3.2.9"
+      },
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "enabled": true,
+        "rootURI": "jar:file:///home/user/.mozilla/firefox/xia19wh5.default-esr/extensions/%7B446900e4-71c2-419f-a6a7-df9c091e268b%7D.xpi!/",
+        "version": "1.49.1"
+      }
+    },
+    "staged": {}
+  }
+}

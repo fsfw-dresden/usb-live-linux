@@ -1,52 +1,287 @@
 {
-  "schemaVersion": 31,
+  "schemaVersion": 32,
   "addons": [
     {
-      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-      "syncGUID": "{abf4ab46-f776-4513-bca1-3796906c6c0e}",
-      "version": "1.45.0",
+      "id": "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}",
+      "version": "1.0.4",
       "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": null,
-      "optionsType": null,
-      "optionsBrowserStyle": true,
-      "aboutURL": null,
+      "defaultLocale": {
+        "name": "Tab Extract",
+        "description": "A simple & lightweight tool to reduce tab clutter, using just the address bar."
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/tab-extract-port/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "tabs"
+        ],
+        "origins": []
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "tineye@ideeinc.com",
+      "version": "1.4.1",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "TinEye Reverse Image Search",
+        "description": "This is the official TinEye Firefox extension. Find out where an image came from, how it's used, or find higher resolution versions.",
+        "homepageURL": "https://tineye.com"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/tineye-reverse-image-search/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "activeTab",
+          "contextMenus",
+          "storage"
+        ],
+        "origins": []
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "playbackSpeed@waldemar.b",
+      "version": "1.4.3",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Playback speed",
+        "description": "Control the speed of video playback."
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/playback-speed/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "tabs",
+          "activeTab",
+          "storage"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "enhancerforyoutube@maximerf.addons.mozilla.org",
+      "version": "2.0.104.4",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Enhancer for YouTube™",
+        "description": "Take control of YouTube and boost your user experience!"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "cookies",
+          "storage"
+        ],
+        "origins": [
+          "*://www.youtube.com/*",
+          "*://www.youtube.com/embed/*",
+          "*://www.youtube.com/pop-up-player/*",
+          "*://www.youtube.com/live_chat*"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "dragselectlinktext@kestrel",
+      "version": "1.5.4",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Drag-Select Link Text",
+        "description": "Select link text with easy mouse gestures.",
+        "creator": "Kestrel",
+        "homepageURL": "https://github.com/nkestrel/dragselectlinktext"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/drag-select-link-text/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "storage"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "selection-search@myr1.net",
+      "version": "0.8.57",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Selection Search",
+        "description": "Search for the selected text in search engines"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/selection-search-ff/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "contextMenus",
+          "storage",
+          "notifications",
+          "clipboardWrite",
+          "tabs"
+        ],
+        "origins": [
+          "<all_urls>",
+          "http://*/*",
+          "https://*/*",
+          "file://*/*",
+          "http://mycroftproject.com/*",
+          "https://mycroftproject.com/*"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
+      "version": "2.18.7",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Earth View from Google Earth",
+        "description": "Experience a beautiful image from Google Earth every time you open a new tab."
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/earth-view-from-google/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [],
+        "origins": [
+          "https://www.gstatic.com/prettyearth/*"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
+      "version": "8.9.3",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Translate Web Pages",
+        "description": "Translate your page in real time using Google or Yandex.",
+        "homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/traduzir-paginas-web/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "storage",
+          "activeTab",
+          "contextMenus"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}",
+      "version": "2.1.0",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Web Archives",
+        "description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is, Google, Bing, Yandex, Gigablast, WebCite, Sogou, Memento, Naver and Yahoo Japan.",
+        "creator": "Armin Sebastian",
+        "homepageURL": "https://github.com/dessant/web-archives"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/view-page-archive/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "contextMenus",
+          "notifications",
+          "storage",
+          "tabs",
+          "webRequest",
+          "webRequestBlocking"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}",
+      "version": "0.4.3",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "Auto Tab Discard",
+        "description": "Increase browser speed and reduce memory load and when you have numerous open tabs.",
+        "homepageURL": "https://add0n.com/tab-discard.html"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "idle",
+          "storage",
+          "tabs",
+          "contextMenus",
+          "notifications",
+          "alarms"
+        ],
+        "origins": [
+          "*://*/*",
+          "<all_urls>"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "jid1-KKzOGWgsW3Ao4Q@jetpack",
+      "version": "3.2.9",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "I don't care about cookies",
+        "creator": "Daniel Kladnik @ kiboke studio"
+      },
+      "visible": true,
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/",
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "tabs",
+          "storage",
+          "notifications",
+          "webRequest",
+          "webRequestBlocking",
+          "webNavigation"
+        ],
+        "origins": [
+          "http://*/*",
+          "https://*/*"
+        ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
+      "version": "1.49.1",
+      "type": "extension",
       "defaultLocale": {
         "name": "Bitwarden - Free Password Manager",
         "description": "A secure and free password manager for all of your devices.",
         "creator": "Bitwarden Inc.",
-        "homepageURL": "https://bitwarden.com",
-        "developers": null,
-        "translators": null,
-        "contributors": null
+        "homepageURL": "https://bitwarden.com"
       },
       "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1585295362000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{446900e4-71c2-419f-a6a7-df9c091e268b}.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": true,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": "42.0",
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": false,
-      "dependencies": [],
-      "incognito": "spanning",
+      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/",
+      "seen": true,
       "userPermissions": {
         "permissions": [
           "tabs",
@@ -65,467 +300,6 @@
           "file:///*"
         ]
       },
-      "icons": {
-        "16": "images/icon16.png",
-        "32": "images/icon32.png",
-        "48": "images/icon48.png",
-        "96": "images/icon96.png",
-        "128": "images/icon128.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "app-profile",
-        "method": "sideload"
-      },
-      "recommendationState": {
-        "validNotAfter": 1751299230000,
-        "validNotBefore": 1593511230000,
-        "states": [
-          "recommended"
-        ]
-      },
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B446900e4-71c2-419f-a6a7-df9c091e268b%7D.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "dragselectlinktext@kestrel",
-      "syncGUID": "{98ea68f3-9a3a-441a-9b59-a525be569f3d}",
-      "version": "1.5.4",
-      "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": "options/options.html",
-      "optionsType": 5,
-      "optionsBrowserStyle": true,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Drag-Select Link Text",
-        "description": "Select link text with easy mouse gestures.",
-        "creator": "Kestrel",
-        "homepageURL": "https://github.com/nkestrel/dragselectlinktext",
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1516785624000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/dragselectlinktext@kestrel.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": true,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": "55.0",
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": false,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "storage"
-        ],
-        "origins": [
-          "<all_urls>"
-        ]
-      },
-      "icons": {
-        "48": "icons/icon48.png",
-        "96": "icons/icon96.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "app-profile",
-        "method": "sideload"
-      },
-      "recommendationState": null,
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/dragselectlinktext@kestrel.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "tineye@ideeinc.com",
-      "syncGUID": "{4b5e0504-4f4f-4861-a105-f87c463a4a80}",
-      "version": "1.4.1",
-      "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": "options.html",
-      "optionsType": 5,
-      "optionsBrowserStyle": true,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "TinEye Reverse Image Search",
-        "description": "This is the official TinEye Firefox extension. Find out where an image came from, how it's used, or find higher resolution versions.",
-        "creator": null,
-        "homepageURL": "https://tineye.com",
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1585527484000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": false,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": null,
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": true,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "activeTab",
-          "contextMenus",
-          "storage"
-        ],
-        "origins": []
-      },
-      "icons": {
-        "16": "tineye16.png",
-        "48": "tineye48.png",
-        "128": "tineye128.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "enterprise-policy"
-      },
-      "recommendationState": {
-        "validNotAfter": 1720558268000,
-        "validNotBefore": 1562770268000,
-        "states": [
-          "recommended"
-        ]
-      },
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/tineye@ideeinc.com.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "selection-search@myr1.net",
-      "syncGUID": "{ef09941f-73ae-42ce-b366-24e37e845460}",
-      "version": "0.8.56",
-      "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": "options/options.html",
-      "optionsType": 3,
-      "optionsBrowserStyle": false,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Selection Search",
-        "description": "Search for the selected text in search engines",
-        "creator": null,
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1596663308000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/selection-search@myr1.net.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": false,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": "63.0",
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": true,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "contextMenus",
-          "storage",
-          "notifications",
-          "clipboardWrite",
-          "tabs"
-        ],
-        "origins": [
-          "<all_urls>",
-          "http://*/*",
-          "https://*/*",
-          "file://*/*",
-          "http://mycroftproject.com/*",
-          "https://mycroftproject.com/*"
-        ]
-      },
-      "icons": {
-        "16": "img/icon16.png",
-        "48": "img/icon48.png",
-        "128": "img/icon128.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "amo",
-        "sourceURL": "https://addons.mozilla.org/en-US/firefox/search/?q=selection%20search&platform=Linux&appver=68.11.0",
-        "method": "amWebAPI"
-      },
-      "recommendationState": null,
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/selection-search@myr1.net.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
-      "syncGUID": "{b0e17189-6b46-4dc1-93d9-648c2b2ad50a}",
-      "version": "6.7",
-      "type": "extension",
-      "loader": null,
-      "optionsURL": "options/options.html",
-      "optionsType": 5,
-      "optionsBrowserStyle": false,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Translate Web Pages",
-        "description": "Translate your page in real time using Google or Yandex.",
-        "creator": null,
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1596666063000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 0,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{036a55b4-5e72-4d05-a06c-cba2dfcc134a}.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": false,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org"
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": true,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "storage",
-          "activeTab",
-          "contextMenus"
-        ],
-        "origins": [
-          "<all_urls>"
-        ]
-      },
-      "icons": {
-        "32": "icons/google-translate-32.png",
-        "64": "icons/google-translate-64.png",
-        "128": "icons/google-translate-128.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "amo",
-        "sourceURL": "https://addons.mozilla.org/en-US/firefox/addon/traduzir-paginas-web/",
-        "method": "amWebAPI"
-      },
-      "recommendationState": null,
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B036a55b4-5e72-4d05-a06c-cba2dfcc134a%7D.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
-      "syncGUID": "{f143f8aa-e1ca-48f3-9333-4a8ff5829315}",
-      "version": "2.18.7",
-      "type": "extension",
-      "loader": null,
-      "optionsURL": null,
-      "optionsType": null,
-      "optionsBrowserStyle": true,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Earth View from Google Earth",
-        "description": "Experience a beautiful image from Google Earth every time you open a new tab.",
-        "creator": null,
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1598136445000,
-      "updateDate": 1598136445000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/{44ec79ad-72a9-471d-962d-49e7e5501d97}.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": true,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org"
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": true,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [],
-        "origins": [
-          "https://www.gstatic.com/prettyearth/*"
-        ]
-      },
-      "icons": {
-        "16": "images/icons/icon-16.png",
-        "48": "images/icons/icon-48.png",
-        "128": "images/icons/icon-128.png"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "app-profile",
-        "method": "sideload"
-      },
-      "recommendationState": null,
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/%7B44ec79ad-72a9-471d-962d-49e7e5501d97%7D.xpi!/",
-      "location": "app-profile"
-    },
-    {
-      "id": "playbackSpeed@waldemar.b",
-      "syncGUID": "{149c548a-3727-4fca-83b3-bd7f9822af4c}",
-      "version": "1.4.3",
-      "type": "extension",
-      "loader": null,
-      "updateURL": null,
-      "optionsURL": "options.html",
-      "optionsType": 5,
-      "optionsBrowserStyle": false,
-      "aboutURL": null,
-      "defaultLocale": {
-        "name": "Playback speed",
-        "description": "Control the speed of video playback.",
-        "creator": null,
-        "developers": null,
-        "translators": null,
-        "contributors": null
-      },
-      "visible": true,
-      "active": true,
-      "userDisabled": false,
-      "appDisabled": false,
-      "installDate": 1598136444000,
-      "updateDate": 1598136444000,
-      "applyBackgroundUpdates": 1,
-      "path": "/home/user/.mozilla/firefox/fsfw1234.default/extensions/playbackSpeed@waldemar.b.xpi",
-      "skinnable": false,
-      "sourceURI": null,
-      "releaseNotesURI": null,
-      "softDisabled": false,
-      "foreignInstall": true,
-      "strictCompatibility": true,
-      "targetApplications": [
-        {
-          "id": "toolkit@mozilla.org",
-          "minVersion": "60.0a1",
-          "maxVersion": null
-        }
-      ],
-      "targetPlatforms": [],
-      "signedState": 2,
-      "seen": true,
-      "dependencies": [],
-      "incognito": "spanning",
-      "userPermissions": {
-        "permissions": [
-          "tabs",
-          "activeTab",
-          "storage"
-        ],
-        "origins": [
-          "<all_urls>"
-        ]
-      },
-      "icons": {
-        "48": "icons/icon.svg"
-      },
-      "iconURL": null,
-      "blocklistState": 0,
-      "blocklistURL": null,
-      "startupData": null,
-      "hidden": false,
-      "installTelemetryInfo": {
-        "source": "app-profile",
-        "method": "sideload"
-      },
-      "recommendationState": null,
-      "rootURI": "jar:file:///home/user/.mozilla/firefox/fsfw1234.default/extensions/playbackSpeed@waldemar.b.xpi!/",
       "location": "app-profile"
     }
   ]
