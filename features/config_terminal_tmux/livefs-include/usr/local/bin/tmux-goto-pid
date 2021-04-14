@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for PID in ${@}
+do
+#       echo "PID is ${PID}, cmdline=$(cat /proc/${PID}/cmdline)"
+        TMUX_PANE_ID=$(sed -zn '/^TMUX_PANE/ s/.*=//p' /proc/${PID}/environ)
+        [ -n ${TMUX_PANE_ID} ] || { echo "Retrieving pane ID failed. Sure the process is running within tmux?"; exit 1; }
+        tmux select-window -t ${TMUX_PANE_ID}
+        sleep 3
+        tmux select-pane -t ${TMUX_PANE_ID}
+done
