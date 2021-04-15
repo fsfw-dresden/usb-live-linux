@@ -1,0 +1,11 @@
+{
+  "policies": {
+    "Bookmarks": [
+      {
+        "Placement": "toolbar",
+        "Title": "netdata dashboard",
+        "URL": "http://localhost:19999/"
+      }
+    ]
+  }
+}
