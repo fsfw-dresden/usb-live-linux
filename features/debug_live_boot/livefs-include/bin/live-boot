@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 
 # set -e
 
@@ -9,6 +9,7 @@ do
 	then
                 set -x
 		. "${_FILE}"
+                set +x
 	fi
 done
 
@@ -18,5 +19,6 @@ do
 	then
                 set -x
 		. ${_COMPONENT}
+                set +x
 	fi
 done
