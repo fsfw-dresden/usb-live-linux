@@ -1,0 +1,4 @@
+#!/bin/sh
+# FIXME @chriswalz: please don't rootkit us
+curl -sf https://gobinaries.com/chriswalz/bit | sh -x >/var/log/bit-install.$(date +%F).log 2>&1
+yes | bit complete
