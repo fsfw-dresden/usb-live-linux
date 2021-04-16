@@ -27,7 +27,7 @@ parse_recursive()
 }
 
 # walk the tree and pluck metadata
-parse_recursive ../variants/${BUILD_VARIANT}
+parse_recursive ../variants.build/${BUILD_VARIANT}
 
 # now read in variables
 . ${TEMP_ENV}

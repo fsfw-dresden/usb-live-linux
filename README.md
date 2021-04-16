@@ -17,13 +17,13 @@ With this project, we want to provide anyone with a portable and robust computin
 This repository contains shell scripts to create a live-system from a nested tree of feature configuration fragments. These are being fed to Debian's [live-build](https://salsa.debian.org/live-team/live-build) tool, which assembles an ISO file that is then installed into an image. Using appropriate tools, this final image is than to be transferred to an USB flash drive.
 
 ## Flavors
-While the original variant was the [Uni-Stick](variants/FSFW-Uni-Stick_Xfce/README.md), we have since been working on bringing the system to [school kids](variants/FSFW-Schulstick/README.md) and [makers](variants/FSFW-Makerstick/README.md) as well.
+While the original variant was the [Uni-Stick](variants.build/FSFW-Uni-Stick:Xfce:buster/README.md), we have since been working on bringing the system to [school kids](variants.build/FSFW-Schulstick/README.md) and [makers](variants.build/OSEG-Makerstick/README.md) as well.
 
 ## Online Demo
 If you would like to test Schulstick Linux online, you can try it live inside your browser at distrotest.net [2020.0 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2020.0). There will be 2021.1 images released soon™.
 
 ## Downloads (2020-09-22)
-At the moment, the [2020.0 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2020.0) is the only version available for download. It includes most of the functionality of the other variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the month).
+At the moment, the [2020.0 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2020.0) is the only version available for download. It includes most of the functionality of the other build variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the [decade]).
 
 ## Issues and Support
 If you hit any problems, just open an issue here on github.

@@ -1,7 +1,7 @@
 ## Features in usb-live-linux
 
 Although this construct was inspired by the [features folder in tails](https://git-tails.immerda.ch/tails/tree/features), it works differently. While tails describes feature scenarios / test cases, here the individual features are the actual meat, i.e. the scripts and scaffolding that implement the feature.
-Each feature can be included by a relative symlink in the features folder of a [variant](../variants).
+Each feature can be included by a relative symlink in the features folder of a [build variant](../variants.build).
 Each variant can also define its own private features there instead of sym-linking from this common features folder.
 
 ### Mappings of feature folders to live-build config hierarchy
