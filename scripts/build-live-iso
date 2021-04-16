@@ -34,48 +34,39 @@ select_build_variant() {
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
-# if an 'active' symlink exists, parse that (DEPRECATED)
-[ -e variants.build/active ] && BUILD_VARIANT=$(readlink variants.build/active)
+build_main() {
+    if [ "$(id -u)" != "0" ]; then
+        die_with_error 3 "ERROR: no super-user privilege, please run as root or with sudo."
+    fi
 
-# if a BUILD_VARIANT is given as parameter, prefer that
-[ -n "${1}" ] && BUILD_VARIANT=$1
+    # if a BUILD_VARIANT is given as parameter, prefer that
+    [ -n "${1}" ] && BUILD_VARIANT=$1
 
-# if neither, query user to visually select a variant
-[ -n "${BUILD_VARIANT}" ] || BUILD_VARIANT=$(select_build_variant)
+    # if not given, query user to visually select a variant
+    [ -n "${BUILD_VARIANT}" ] || BUILD_VARIANT=$(select_build_variant)
 
-# chop off possible trailing slash and expose variable to sub processes
-export BUILD_VARIANT=${BUILD_VARIANT%/}
+    # chop off possible trailing slash and expose variable to sub processes
+    export BUILD_VARIANT=${BUILD_VARIANT%/}
 
-# Clear selection dialog from screen
-clear
+    # Clear selection dialog from screen
+    clear
 
-echo "Live-Stick ${0} ${BUILD_VARIANT}" 
+    print_info "Live-Stick Build Variant chosen: ${BUILD_VARIANT}"
 
-# ensure the directory exists
-[ -d "variants.build/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
+    # ensure the directory exists
+    [ -d "variants.build/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
 
-if [ "$(id -u)" != "0" ]; then
-    print_warn "ERROR: no super-user privilege, please run as root or with sudo."
-    print_warn "Running this script without sudo is not supported anymore!"
-    exit 3
-fi
+    print_info "Available live-build versions:"
+    apt policy live-build
+    [ -n "${LIVE_BUILD}" ] && print_warn "LIVE_BUILD variable is set\nlive-build scripts and functions will be invoked from ${LIVE_BUILD}"
+    print_info "Using live-build $(lb --version), lb command is $(type lb)"
 
-print_info "Available live-build versions:"
-time apt policy live-build
-print_info "Using live-build $(lb --version), lb command is $(type lb)"
-
-# FIXME - HACK: modify build script to unlock zstd mksquashfs power
-sed -i 's/comp xz/comp zstd/' /usr/lib/live/build/binary_rootfs
-
-STARTTIME=$(date +%s)
-
-(
     # build in an appropriate sub-folder
     cd build
 
     # clean up live-build environment using auto/clean script
     print_info "Triggering build area clean-up.."
-    lb clean
+    lb clean --color
 
     # generate live-build config/ from features of specified variant
     print_info "Collecting build features for ${BUILD_VARIANT}.."
@@ -83,11 +74,11 @@ STARTTIME=$(date +%s)
 
     # have live-build complete its config
     print_info "Let live-build finalize its configuration"
-    lb config
+    lb config --color
 
     # Trigger image build
     print_info "Firing build process, fasten seatbelts.. it is $(date '+%F %H:%M') now."
-    lb build &&
+    lb build --color &&
     {
         print_success "Building ISO SUCCEEDED"
 
@@ -98,6 +89,9 @@ STARTTIME=$(date +%s)
         LB_IMAGE_NAME=$(sed -nr 's/LB_IMAGE_NAME="(.*)"$/\1/p' config/common)
         mv -iv ${LB_IMAGE_NAME}*.* ../artifacts/
     } || print_error "FAILED"
-)
+}
+
+STARTTIME=$(date +%s)
+build_main "${@}" |& tee build/build-live-iso.$(date '+%F.%H%Mh').log
 
 print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"

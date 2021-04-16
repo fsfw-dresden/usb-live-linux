@@ -321,7 +321,7 @@ apply_features() {
     [ ${DISABLED_FEATURE_COUNT} -eq 0 ] || print_info "disabled features: ${!DISABLED_FEATURES[@]}\n\n"
 }
 
-lb_config_tree_from_features() {
+transmogrify_features() {
     declare -A DISABLED_FEATURES
     declare -A FEATURES
     declare -a FEATURE_IDS
