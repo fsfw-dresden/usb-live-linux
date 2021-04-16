@@ -49,6 +49,7 @@ Aktuelle Informationen (u.a. zur Verteilung vor Ort in Dresden) unter: [https://
 
 ## Entwickler.innen Doku:
 * [CONTRIBUTING.md](CONTRIBUTING.md)
+* [doc/SWOT-analysis.md](doc/SWOT-analysis.md)
 * [doc/Developing-README.md](doc/Developing-README.md)
 * [doc/Developing-CHECKLIST.md](doc/Developing-CHECKLIST.md)
 * [doc/Developing-TODO.md](doc/Developing-TODO.md)
