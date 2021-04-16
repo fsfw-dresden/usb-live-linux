@@ -1,0 +1,39 @@
+#!/bin/sh
+
+URLS="
+https://github.com/boltsparts/BOLTSFC
+https://github.com/cadenasgmbh/3dfindit-freecad-integration
+https://github.com/davesrocketshop/Rocket
+https://github.com/easyw/Defeaturing_WB
+https://github.com/eddyverl/FreeCAD-Pyramids-and-Polyhedrons
+https://github.com/FredsFactory/FreeCAD_AirPlaneDesign
+https://github.com/FreeCAD/FreeCAD-render
+https://github.com/FreeCAD/freecad.ship
+https://github.com/FreeCAD/FreeCAD-symbols
+https://github.com/JMG1/ExplodedAssembly
+https://github.com/jmplonka/InventorLoader
+https://github.com/looooo/FCGear
+https://github.com/rkrenzler/ose-piping-workbench
+https://github.com/shaise/FreeCAD_FastenersWB
+https://github.com/shaise/FreeCAD_SheetMetal
+https://github.com/triplus/CubeMenu"
+
+# https://github.com/triplus/Glass
+# https://github.com/HakanSeven12/Modern-UI
+# https://github.com/triplus/PieMenu
+# https://github.com/triplus/SelectorToolbar
+# https://github.com/triplus/TabBar
+# https://github.com/triplus/ToolbarStyle
+
+# Do not store in HOME, but make accessible to both deb and appimage freecad
+TARGETDIR="/usr/local/share/freecad/Mod"
+LINKDIR="/etc/skel/.FreeCAD"
+
+mkdir -pv ${TARGETDIR} ${LINKDIR}
+ln -sv ${TARGETDIR} ${LINKDIR}/Mod
+
+cd ${TARGETDIR}
+for URL in ${URLS}
+do
+  git clone ${URL}
+done
