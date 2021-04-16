@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script uses asciidoc to regenerate the features table at variants/index.html
+# This script uses asciidoc to regenerate the features table at variants.build/index.html
 
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
@@ -9,12 +9,12 @@ cd_repo_root
 set -e
 
 STARTTIME=$(date +%s)
-TARGET="variants/features.adoc"
+TARGET="variants.build/features.adoc"
 
 print_info "Regenerating ${TARGET} and rendering to ${TARGET%.adoc}.html"
 
 cat > ${TARGET} <<ETX
-= Features, features, variants.. 🚧 as of $(date +%F)
+= Features, features, build variants.. 🚧 as of $(date +%F)
 :table-caption!:
 
 ++++
@@ -64,11 +64,11 @@ Definitions used in this https://github.com/fsfw-dresden/usb-live-linux[usb-live
 - Feature: a distinct functional fragment
 - (Build) Variant: assembly of features, yielding in a complete live system image
 
-== Variants can derive from others, inheriting their features
+== Build Variants can derive from others, inheriting their features
 
-[graphviz, variant-inheritance.png, dot]
+[graphviz, build-variant-inheritance.png, dot]
 -------
-digraph variants {
+digraph build_variants {
   splines=curved;
   node [
     shape = box,
@@ -80,10 +80,10 @@ digraph variants {
 ETX
 
 shopt -s extglob
-for INHERIT in variants/*/inherit/*
+for INHERIT in variants.build/*/inherit/*
 do
   DEST=$(basename ${INHERIT})
-  INHERIT=${INHERIT##variants/}
+  INHERIT=${INHERIT##variants.build/}
   SOURCE=${INHERIT%%/*}
   printf "  \"${SOURCE}\" -> \"${DEST}\" [ xlabel = \"based on\" ];\n" >> ${TARGET}
 done
@@ -92,26 +92,27 @@ cat >> ${TARGET} <<ETX
 }
 -------
 
-== Which features are enabled in various stick variants?
+== Which features are enabled in various stick build variants?
 
 -  : feature is not included in this variant
 - ✔: feature is enabled in this variant
-- (✔): feature is included as dependency
+- (✔): feature is included implicitly as dependency of another feature
 - ✔!: feature is exclusive to this variant
 - ✘: feature is disabled in this variant
+- FIXME: features included by parent variant not yet displayed, consult above graph
 ETX
 
 # Assemble sub-header row (VARIANT_LINE)
 VARIANT_COUNT=0
 VARIANT_LINE="|\t\t\t\t"
-print_info "finding variants to crawl.."
-for VARIANT in variants/*/
+print_info "finding build variants to crawl.."
+for VARIANT in variants.build/*/
 do
   VARIANT_NAME=$(basename ${VARIANT})
   [[ "${VARIANT_NAME}" == "shared" ]] && continue
   echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
   # FIXME: ugly absolute URL, because of GitCDN workaround
-	VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants/${VARIANT_NAME}"
+  VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/${VARIANT_NAME}"
   VARIANT_LINE="${VARIANT_LINE}\t.>s|link:${VARIANT_URL}[${VARIANT_NAME//:/ }]"
 done
 VARIANT_LINE="${VARIANT_LINE}\t|"
@@ -130,20 +131,20 @@ ETX
 
 printf "${VARIANT_LINE}\n" >> ${TARGET}
 
-print_info "Searching for feature inclusion across variants.."
+print_info "Searching for feature inclusion across build variants.."
 # sorting paths by basename? hell yeah xD
 # https://unix.stackexchange.com/questions/393987/sort-an-array-of-pathnames-of-files-by-their-basenames/638463#638463
-for FEATURE in $(command ls -d features/*/ variants/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/; s#/$##')
+for FEATURE in $(command ls -d features/*/ variants.build/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/; s#/$##')
 do
   FEATURE_NAME=$(basename ${FEATURE})
 
   # don't duplicate print linked features
-  [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants/[^/]+/features/${FEATURE_NAME} ]] && continue
+  [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants.build/[^/]+/features/${FEATURE_NAME} ]] && continue
 
   # FIXME: ugly absolute URL, because of GitCDN workaround
-	FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
+  FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
   printf "|link:${FEATURE_URL}[${FEATURE_NAME}]" >> ${TARGET}
-  for VARIANT in variants/*/
+  for VARIANT in variants.build/*/
   do
     VARIANT_NAME=$(basename ${VARIANT})
     VARIANT=${VARIANT%/}

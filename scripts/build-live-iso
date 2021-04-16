@@ -13,7 +13,7 @@ case "${1}" in
         ;&
     "--help")
         print_info "usage is ${0} [BUILD_VARIANT]"
-        print_info "If given, BUILD_VARIANT must match a sub-folder or symlink in variants/"
+        print_info "If given, BUILD_VARIANT must match a sub-folder or symlink in variants.build/"
         exit
         ;;
 esac
@@ -21,21 +21,21 @@ esac
 select_build_variant() {
     shopt -s extglob
     OPTIONS=()
-    for VAR in $(command ls -Ltd variants/!(active|base_*|shared)/)
+    for VAR in $(command ls -Ltd variants.build/!(active|base_*|shared)/)
     do
         NUMFILES=$(find "${VAR}" -type f -printf x | wc -c)
         # THANKS https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory
         NEWESTFILE=$(find ${VAR} -type f -printf '%T@ %p\n'|sort -n|tail -n 1|cut -d" " -f2-)
         [ -z "${NEWESTFILE}" ] && CHANGESTR="" || CHANGESTR=", last changed $(rel_fmt_low_precision $(stat --format='@%Y' "${NEWESTFILE}"))"
-        OPTIONS+=(${VAR#variants/} "(${NUMFILES} files${CHANGESTR})")
+        OPTIONS+=(${VAR#variants.build/} "(${NUMFILES} files${CHANGESTR})")
     done
-    TEXT="Please choose the variant to build. (Variants named base_* or shared are not listed)"
+    TEXT="Please choose the variant to build. (Build Variants named base_* or shared are not listed)"
     TITLE="SELECT LIVE SYSTEM BUILD VARIANT"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
 }
 
 # if an 'active' symlink exists, parse that (DEPRECATED)
-[ -e variants/active ] && BUILD_VARIANT=$(readlink variants/active)
+[ -e variants.build/active ] && BUILD_VARIANT=$(readlink variants.build/active)
 
 # if a BUILD_VARIANT is given as parameter, prefer that
 [ -n "${1}" ] && BUILD_VARIANT=$1
@@ -52,7 +52,7 @@ clear
 echo "Live-Stick ${0} ${BUILD_VARIANT}" 
 
 # ensure the directory exists
-[ -d "variants/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
+[ -d "variants.build/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
 
 if [ "$(id -u)" != "0" ]; then
     print_warn "ERROR: no super-user privilege, please run as root or with sudo."
@@ -79,7 +79,7 @@ STARTTIME=$(date +%s)
 
     # generate live-build config/ from features of specified variant
     print_info "Collecting build features for ${BUILD_VARIANT}.."
-    lb_config_tree_from_features ../variants/${BUILD_VARIANT}
+    lb_config_tree_from_features ../variants.build/${BUILD_VARIANT}
 
     # have live-build complete its config
     print_info "Let live-build finalize its configuration"
