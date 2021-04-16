@@ -367,12 +367,12 @@ BOOTOPTIONS+="splash"
 export BOOTOPTIONS
 print_info "BOOTOPTIONS = ${COLOR_OFF}'$BOOTOPTIONS'"
 
-print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from variants/shared/bootloader/grub.cfg.template"
+print_info "now generating ${EFIBOOT}/boot/grub/grub.cfg from features/install_bootmenu_german/install-data/grub.cfg.template"
 sed -e "s|DATE|${DATE}|" \
     -e "s|STICK_VERSION|${STICK_VERSION}|" \
     -e "s|STICK_ISO|${STICK_ISO}|" \
     -e "s|BOOTOPTIONS|${BOOTOPTIONS}|" \
-    variants/shared/bootloader/grub.cfg.template > ${EFIBOOT}/boot/grub/grub.cfg
+    features/install_bootmenu_german/install-data/grub.cfg.template > ${EFIBOOT}/boot/grub/grub.cfg
 
 print_info "copying bootloader background image — teh glorious FSFW merch!"
 cp -v --preserve=timestamps features/config_fsfw_grub_theme/live-build-config/bootloaders/grub-pc/fsfw-background_640x480.png ${EFIBOOT}/boot/grub/
@@ -393,7 +393,7 @@ print_info "marking files on the EFI partition as hidden system files"
 print_info "(so it can better be used for data exchange with other systems)"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
 
-cp -v --preserve=timestamps variants/shared/FAT_exchange_partition/LIESMICH.txt ${EFIBOOT}/
+cp -v --preserve=timestamps features/install_liesmich/install-data/LIESMICH.txt ${EFIBOOT}/
 
 if is_f2fs_mountable
 then
