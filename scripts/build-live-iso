@@ -1,7 +1,4 @@
-#!/bin/bash +x
-
-# exit on error
-set -e
+#!/bin/bash
 
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
@@ -45,16 +42,15 @@ build_main() {
     # if not given, query user to visually select a variant
     [ -n "${BUILD_VARIANT}" ] || BUILD_VARIANT=$(select_build_variant)
 
+    [ -z ${BUILD_VARIANT} ] && die_with_error 1 "no BUILD_VARIANT selected. #saaad.."
+
     # chop off possible trailing slash and expose variable to sub processes
     export BUILD_VARIANT=${BUILD_VARIANT%/}
 
-    # Clear selection dialog from screen
-    clear
-
-    print_info "Live-Stick Build Variant chosen: ${BUILD_VARIANT}"
-
     # ensure the directory exists
-    [ -d "variants.build/${BUILD_VARIANT}" ] || { print_warn "given BUILD_VARIANT=${BUILD_VARIANT} does not exist" >&2 && exit 1; }
+    [ -d "variants.build/${BUILD_VARIANT}" ] || die_with_error 2 "given BUILD_VARIANT=${BUILD_VARIANT} does not exist"
+
+    print_info "Live-Stick Build Variant chosen: ${BUILD_VARIANT}\n"
 
     print_info "Available live-build versions:"
     apt policy live-build

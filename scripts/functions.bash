@@ -74,15 +74,13 @@ download_file_cached() {
         then
             echo "${FILE_NAME} fetched" > /dev/stderr
         else
-            echo "Download from ${FILE_URL} failed : (" > /dev/stderr
-            exit 1
+            die_with_error 5 "Download from ${FILE_URL} failed : (" > /dev/stderr
         fi
 
         # If this is a debian archive, test for integrity
         if [[ "${DEB_FILE}" =~ \.deb$ ]] && ! check_debian_archive ${DEB_FILE}
         then
-            echo "${DEB_FILE} seems broke, aborting" > /dev/stderr
-            exit 1
+            die_with_error 6 "${DEB_FILE} seems broke, aborting" > /dev/stderr
         fi
 
         # Rename file in cache
@@ -123,8 +121,7 @@ download_external_deb_package() {
     then
         echo "${FILE_NAME} fetched"
     else
-        echo "Download from ${DEB_URL} failed : ("
-        exit 1
+        die_with_error 4 "Download from ${DEB_URL} failed : ("
     fi
 
     TARGET_DIR=config/packages.chroot
@@ -137,9 +134,9 @@ check_dependencies() {
     do
          dpkg -s ${DEP} | grep -qs "Status:.*installed" || { DEPS+=( ${DEP} ); echo "${DEP} missing"; }
     done
-    [ ${#DEPS[@]} -eq 0 ] && echo "[ ✅ ] all dependencies present (hooray)" && return
+    [ ${#DEPS[@]} -eq 0 ] && print_success "Dependencies present (${@})" && return
     read -n1 -p "press [i] to run \`apt install ${DEPS[@]}\` and proceed, [any other] key to exit the script.."
-    [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || echo "dependencies ${DEPS[@]} not installed, aborting"; exit 1
+    [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || die_with_error 1 "dependencies ${DEPS[@]} not installed, aborting"
 }
 
 # FIXME: legacy implementation
@@ -234,8 +231,7 @@ parse_features() {
             FEATURE_ID=${FEATURE_PATH##*/}
             if [[ "${FEATURE_PATH}" =~ " " ]]
             then
-                print_warn "${FEATURE_PATH} contains spaces, please fix that."
-                exit 3
+                die_with_error 3 "${FEATURE_PATH} contains spaces, please fix that."
             fi
 
             if [[ "${FEATURE_PATH}" =~ .disable[d]* ]]
@@ -294,7 +290,7 @@ apply_features() {
                 # Get target path for fragment type, print and create it (if set)
                 TARGET_PATH=${PATH_MAPPINGS[${FRAGMENT_PATH}]}
                 [ -z ${TARGET_PATH} ] || {
-                    print_info "TARGET_PATH = ${TARGET_PATH}"
+                    print_info " ~> ${TARGET_PATH}"
                     [ -d ${TARGET_PATH} ] || mkdir -p ${TARGET_PATH}
                 }
 
@@ -319,7 +315,7 @@ apply_features() {
                         ;;
                     *)
                         # the general case: copy fragment
-                        rsync --archive --checksum -ih ${SYMLINK_OPTION:-} ${FEATURE_PATH}/${FRAGMENT_PATH}/ ${TARGET_PATH}/
+                        rsync --archive --checksum -ih ${FEATURE_PATH}/${FRAGMENT_PATH}/ ${TARGET_PATH}/
                         ;;
                 esac
             done

@@ -2,6 +2,10 @@
 # For installing a live ISO onto a flash drive or into an image file.
 # This creates the special partition layout for data persistence.
 
+# abort if any sub-command produces an error
+set -o errexit -o errtrace
+trap 'print_error "Sorry, something went wrong."' ERR
+
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
@@ -23,7 +27,7 @@ select_target_device() {
         grep -qs 1 /sys/block/${DEVNAME}/removable || [[ -d /sys/block/${DEVNAME}/loop ]] && \
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
-    [ -z ${OPTIONS} ] && echo "Could not find any suitable (loop) device!" && die_with_error 5
+    [ -z ${OPTIONS} ] && die_with_error 5 "Could not find any suitable (loop) device!"
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
