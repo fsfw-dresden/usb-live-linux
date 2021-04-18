@@ -16,11 +16,14 @@
 [pretty]
 	shorter = "%C(yellow)%ai %n%C(magenta)%s"
 [tig]
-	ignore-space = all
-	ignore-case = true
 	horizontal-scroll = 20%
+	ignore-case = true
+	ignore-space = all
 	line-graphics = utf-8
-	commit-order = date
+	main-view-date-display = relative
+	main-view-id-display = yes
+	mouse = yes
+	vertical-split = no
 	wrap-lines = yes
 [pager]
 	difftool = true
