@@ -1,8 +1,9 @@
 #!/bin/bash
 # ⚠️  uses associative arrays (bash v4+)
 
-# die on error
-set -e
+# abort if any sub-command produces an error
+set -o errexit -o errtrace
+trap 'print_error "Sorry, something went wrong."' ERR
 
 # takes a number of seconds and outputs a
 # nice human-readable time string
@@ -31,6 +32,9 @@ display_menu() {
     MAXMENUHEIGHT=20
     COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = tag_color" "tag_key_selected_color = tag_selected_color" )
     DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MAXMENUHEIGHT} "${OPTIONS[@]}"
+
+    # redraw screen without erasing backscroll history
+    clear -x > /dev/stderr
 }
 
 display_inputbox() {
@@ -43,6 +47,9 @@ display_inputbox() {
     MAXMENUHEIGHT=20
     COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = tag_color" "tag_key_selected_color = tag_selected_color" )
     DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --inputbox "${TEXT}" ${HEIGHT} ${WIDTH} ${INIT}
+
+    # redraw screen without erasing backscroll history
+    clear -x > /dev/stderr
 }
 
 download_file_cached() {
@@ -262,6 +269,11 @@ apply_features() {
     PATH_MAPPINGS[packages.md]="config/package-lists.markdown"
     PATH_MAPPINGS[prebuild-hooks]=""
     PATH_MAPPINGS[user-config]="config/includes.chroot/etc/skel"
+
+    # for installing on device / into image
+    # (creates the fancy persistence partition layout)
+    PATH_MAPPINGS[install-hooks]="install/hooks"
+    PATH_MAPPINGS[install-data]="install/data"
 
     FEATURE_COUNT=0
 

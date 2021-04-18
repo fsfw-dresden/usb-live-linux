@@ -9,6 +9,7 @@ build/chroot*
 build/config/
 build/container/
 build/.#container.lck
+build/install/
 build/source/
 build/.build/
 build/.lock
