@@ -1,0 +1,3 @@
+#!/bin/sh -e
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --chroot-squashfs-compression-level 22"
