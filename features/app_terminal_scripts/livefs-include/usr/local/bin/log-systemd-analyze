@@ -8,6 +8,7 @@ DATE=$(uptime --since|tr -d ':'| tr ' ' '.')
   systemd-analyze time
   systemd-analyze critical-chain
   systemd-analyze blame
+  unsquashfs -stat /run/live/medium/live/filesystem.squashfs
 } > /var/log/systemd-analyze.${DATE}.log
 
 systemd-analyze plot > /var/log/systemd-analyze.${DATE}.svg
