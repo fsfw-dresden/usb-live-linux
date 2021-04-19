@@ -269,7 +269,7 @@ execute_install_hooks() {
 
 install_main() {
     determine_install_fundamentals "${@}"
-    determine_partition_sizes
+    determine_partition_sizes "${@}"
     create_partitions
     create_filesystems
     mount_filesystems
@@ -278,6 +278,6 @@ install_main() {
     # unmounts done by traps
 }
 
-install_main
+install_main "${@}"
 
 # vim:ts=4:sts=4:sw=4:expandtab
