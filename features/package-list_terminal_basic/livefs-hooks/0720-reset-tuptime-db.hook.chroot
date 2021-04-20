@@ -1,0 +1,5 @@
+#!/bin/sh
+# Do not transfer host uptime to db
+TUPTIME_DB="/var/lib/tuptime/tuptime.db"
+
+[ ! -e "${TUPTIME_DB}" ] || rm -v "${TUPTIME_DB}"
