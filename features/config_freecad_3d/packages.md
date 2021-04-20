@@ -1,1 +1,1 @@
-- :x:  freecad  -- Extensible Open Source CAx program
+- :o:  freecad  -- Extensible Open Source CAx program
