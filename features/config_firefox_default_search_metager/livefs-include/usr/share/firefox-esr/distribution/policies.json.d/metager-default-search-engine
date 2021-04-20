@@ -1,0 +1,7 @@
+{
+  "policies": {
+    "SearchEngines": {
+      "Default": "MetaGer"
+    }
+  }
+}
