@@ -126,7 +126,7 @@ determine_partition_sizes() {
     print_info "figuring out partition sizes for $(numfmt --to=iec-i --suffix B ${SIZE_STICK}) storage device ${DEVICE}"
 
     [ -n "$4" ] && SIZE_MB_PARTITION_FAT32=$4 || \
-        SIZE_MB_PARTITION_FAT32=$(define_first_partition_size 150)
+        SIZE_MB_PARTITION_FAT32=$(define_first_partition_size 500)
 
     # no size no partitioning
     [ ! ${SIZE_MB_PARTITION_FAT32:-0} -gt 0 ] && die_with_error 5 "No partition size set, cannot continue"
