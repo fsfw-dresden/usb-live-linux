@@ -10,10 +10,10 @@ GRUB_CFG="${EFIBOOT}/boot/grub/grub.cfg"
 BOOTOPTIONS=""
 
 # languages to support
-BOOTOPTIONS+="locales=de_DE.UTF-8,en_GB.UTF-8 "
+BOOTOPTIONS+="locales=de_DE.UTF-8 "
 
-BOOTOPTIONS+="keyboard-layouts=de,us,gr,ru "
-BOOTOPTIONS+="keyboard-variants=nodeadkeys,,, "
+BOOTOPTIONS+="keyboard-layouts=de "
+BOOTOPTIONS+="keyboard-variants=nodeadkeys "
 BOOTOPTIONS+="timezone=Europe/Berlin "
 BOOTOPTIONS+="utc=auto "
 
@@ -53,7 +53,7 @@ BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
 # redirect console output to virtual serial port for debugging in qemu
 # BOOTOPTIONS+="console=ttyS0 "
 
-if [ "${INSTALL_VARIANT}" = "SCHULSTICK" ]
+if [ "${INSTALL_VARIANT}" = "Schulstick" ]
 then
     # no sudo: disallow risky administration tasks without password
     BOOTOPTIONS+="noroot "
