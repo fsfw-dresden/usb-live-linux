@@ -141,6 +141,9 @@ do
   # don't duplicate print linked features
   [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants.build/[^/]+/features/${FEATURE_NAME} ]] && continue
 
+  # hide install_ features from build variants table
+  [[ "${FEATURE_NAME}" =~ ^install_.* ]] && continue
+
   # FIXME: ugly absolute URL, because of GitCDN workaround
   FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
   printf "|link:${FEATURE_URL}[${FEATURE_NAME}]" >> ${TARGET}

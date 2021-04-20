@@ -2,10 +2,6 @@
 # For installing a live ISO onto a flash drive or into an image file.
 # This creates the special partition layout for data persistence.
 
-# abort if any sub-command produces an error
-set -o errexit -o errtrace
-trap 'print_error "Sorry, something went wrong."' ERR
-
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
@@ -95,7 +91,7 @@ determine_install_fundamentals() {
     [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
 
     # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
-    [ -f "artifacts/$2" ] && LIVE_IMAGE="artifacts/$2" || [ -f "$2" ] && LIVE_IMAGE="$2" || LIVE_IMAGE=$(select_live_iso)
+    { [ -f "artifacts/$2" ] && LIVE_IMAGE="artifacts/$2"; } || { [ -f "$2" ] && LIVE_IMAGE="$2"; } || LIVE_IMAGE="$(select_live_iso)"
 
     # no ISO no play
     [ -z ${LIVE_IMAGE} ] && die_with_error 3 "no LIVE_IMAGE chosen, cannot continue"
@@ -247,24 +243,27 @@ mount_filesystems() {
 }
 
 execute_install_hooks() {
-    cd build
+    # work in a subshell so the directory change is ineffective outside
+    (
+        cd build
 
-    # clean install/ folder
-    [ ! -d install ] || rm -r install
+        # clean install/ folder
+        [ ! -d install ] || rm -r install
 
-    # and copy out install features anew
-    transmogrify_features "../variants.install/${INSTALL_VARIANT}"
+        # and copy out install features anew
+        transmogrify_features "../variants.install/${INSTALL_VARIANT}"
 
-    for INSTALL_HOOK in install/hooks/*
-    do
-        (
-            printf '\n'
-            print_info "Invoking ${INSTALL_HOOK}"
-            source "${INSTALL_HOOK}"
-        ) &
-        # set -e & subshell? https://unix.stackexchange.com/a/254676/18150
-        wait $! || die_with_error 10 "Problem occurred in ${INSTALL_HOOK}"
-    done
+        for INSTALL_HOOK in install/hooks/*
+        do
+            (
+                printf '\n'
+                print_info "Invoking ${INSTALL_HOOK}"
+                source "${INSTALL_HOOK}"
+            ) &
+            # set -e & subshell? https://unix.stackexchange.com/a/254676/18150
+            wait $! || die_with_error 10 "Problem occurred in ${INSTALL_HOOK}"
+        done
+    )
 }
 
 install_main() {

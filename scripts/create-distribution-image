@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
@@ -8,80 +8,84 @@ case "${1}" in
     "-h")
         ;&
     "--help")
-        print_info "usage is ${0} [ISO [TARGETDIRECTORY [TOTALSIZEMB* [FATPARTITIONSIZEMB**]]]]"
-        print_info "   (*) defaults to $((10 * 2**10))"
-        print_info "  (**) defaults to 1450"
+        print_info "usage is  ${0} [TARGET [ISO_FILE [INSTALL_VARIANT [SIZE_MB_PARTITION_FAT32]]]]"
+        print_info "\tTARGET: can be either a pre-allocated image file or a block or loop device."
         exit
         ;;
 esac
 
-select_live_iso_for_image() {
-    OPTIONS=()
-    cd artifacts/
-    for ISO in $(command ls -Lt *.iso)
-    do
-        SIZESTR=$(numfmt --to=iec-i --suffix B $(stat --dereference --format='%s' "${ISO}"))
-        OPTIONS+=(${ISO} "${SIZESTR} $(date --date=@$(stat --dereference --format='%Y' "${ISO}") "+%F %_H:%M:%S")")
-    done
-    TEXT="Please choose the live system ISO the image should be created for."
-    TITLE="SELECT LIVE SYSTEM ISO"
-    display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
+release_loop_device() {
+        # Skip in case loop device is released already (should not happen)
+        losetup "${DEVICE}" > /dev/null || return
+
+        print_info "Releasing ${DEVICE}"
+
+        grep ${DEVICE} /proc/mounts && print_warn "Mounted partitions still around, to be released after unmounting exit trap has run"
+
+        losetup --verbose --detach ${DEVICE}
 }
 
-# crudely map build variant or iso names to FSFW stick type
-map_image_name_to_stick_type() {
-    # match patterns in a case-insensitive fashion
-    shopt -s nocasematch
+setup_loop_device() {
+        # connect file to loop device
+        DEVICE=$(losetup --partscan --verbose --show --nooverlap --find "${1}")
 
-    # limited amount of variants => stupid substring match
-    case ${@} in
-        *schul*)
-            echo "SCHULSTICK"
-            ;;
-        *uni*)
-            echo "UNISTICK"
-            ;;
-        *lern*)
-            echo "LERNSTICK"
-            ;;
-        *mini*)
-            echo "MINISTICK"
-            ;;
-        *)
-            echo "couldn't detect variant from string ${@}"
-            exit 1
-            ;;
-    esac
+        # free loop device again on premature script termination
+        trap "release_loop_device" EXIT SIGHUP SIGQUIT SIGTERM
 }
 
-# ISO can be given as first parameter
-[ -n "${1}" ] && ISO=$1 || ISO="artifacts/$(select_live_iso_for_image)"
+# First parameter can be an image file or loop device
+if [ -n "${1}" ]
+then
+        # Is it a block device?
+        if [ -b "${1}" ]
+        then
+                # just pass it on
+                DEVICE="${1}"
+        # or is it a writable, pre-allocated image file?
+        elif [ -w "${1}" ]
+        then
+                setup_loop_device "${1}"
+        else
+                ls -lahd "${1}"
+                lstrail "${1}"
+                die_with_error 5 "What is ${1}, a pineapple?"
+        fi
 
-# try to detect stick type from image name
-FAT_LABEL="$(map_image_name_to_stick_type ${ISO})" || FAT_LABEL="LIVESTICK"
+        # drop argument one, move up the following
+        shift
+else
+        PRELIMINARY_IMAGE="build/installing.img"
+        # FIXME: this should be SIZE_MB_PARTITION_FAT32 bigger than SIZE_LIVE_SYSTEM 🤔
+        SIZE_MB_IMAGE=$((10 * 2**10))
 
-# cut off file ending of ISO and replace with .img
-IMG=${ISO##*/}
-IMG=${IMG%%.iso}
-IMG=${IMG%%.hybrid}.img
+        # create image file
+        truncate --size="${SIZE_MB_IMAGE}M" "${PRELIMINARY_IMAGE}"
 
-# target directory for image file as second parameter
-[ -n "${2}" ] && IMG=$2/${IMG}
+        setup_loop_device "${PRELIMINARY_IMAGE}"
+fi
 
-# total size of image in MiB as 4th parameter
-[ -n "${3}" ] && size_mb_disk_image=$3 || size_mb_disk_image=$((10 * 2**10))
+# Invoke stick-install in same shell process
+source scripts/stick-install "${DEVICE}" "${@}"
 
-# size of boot / data exchange FAT32 partition in MiB as 5th parameter
-[ -n "${4}" ] && size_mb_partition_fat32=$4 || size_mb_partition_fat32=1450
+printf '\n'
+print_info "Returned from stick-install script"
 
-# create image file
-truncate --size=${size_mb_disk_image}M ${IMG}
+# This has overriden the release_loop_device and set unmount exit traps
+# that will only be run at the exit of this script. However, linux is
+# cool and we can move the image, then unmap its loop device, then
+# unmount the partitions afterwards. Blessed are thee who cut corners.
+release_loop_device
 
-# connect image to loop device
-LOOP=$(losetup --partscan --verbose --show --find ${IMG})
+if [ -n "${PRELIMINARY_IMAGE}" ]
+then
+        # cut off file ending of ISO and replace with .img
+        TARGET_IMAGE=${LIVE_IMAGE##*/}
+        TARGET_IMAGE=${TARGET_IMAGE%%.iso}
+        TARGET_IMAGE="artifacts/${TARGET_IMAGE%%.hybrid}.img"
 
-# install ISO onto it
-HOTFIX="none" scripts/stick-install ${LOOP} ${ISO} ${FAT_LABEL} ${size_mb_partition_fat32}
+        mv -iv "${PRELIMINARY_IMAGE}" "${TARGET_IMAGE}"
+else
+        TARGET_IMAGE="${DEVICE}"
+fi
 
-# free loop device
-losetup --verbose --detach ${LOOP}
+print_success "Finished distribution image at ${TARGET_IMAGE}, enjoy."
