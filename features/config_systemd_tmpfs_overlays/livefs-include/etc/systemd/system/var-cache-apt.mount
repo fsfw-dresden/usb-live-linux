@@ -9,6 +9,7 @@ What=overlay
 Type=overlay
 Where=%f
 Options=lowerdir=%f,upperdir=/run%f/rw,workdir=/run%f/work
+DirectoryMode=0777
 
 [Install]
 WantedBy=local-fs.target
