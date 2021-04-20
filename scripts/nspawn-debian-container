@@ -36,6 +36,10 @@ make
 tig
 ranger
 qemu-utils libnbd-bin nbdkit
+bash-completion
+pipemeter
+nocache
+pigz
 "
 
 # If no container directory exists, initiate a debian testing install with all our dependencies

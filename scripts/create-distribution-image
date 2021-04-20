@@ -54,7 +54,7 @@ then
         # drop argument one, move up the following
         shift
 else
-        PRELIMINARY_IMAGE="build/installing.img"
+        PRELIMINARY_IMAGE="build/installation.temp.img"
         # FIXME: this should be SIZE_MB_PARTITION_FAT32 bigger than SIZE_LIVE_SYSTEM 🤔
         SIZE_MB_IMAGE=$((10 * 2**10))
 
@@ -78,12 +78,27 @@ release_loop_device
 
 if [ -n "${PRELIMINARY_IMAGE}" ]
 then
-        # cut off file ending of ISO and replace with .img
+        # cut off file ending of ISO and append .img.gz
         TARGET_IMAGE=${LIVE_IMAGE##*/}
         TARGET_IMAGE=${TARGET_IMAGE%%.iso}
-        TARGET_IMAGE="artifacts/${TARGET_IMAGE%%.hybrid}.img"
+        TARGET_IMAGE="artifacts/${TARGET_IMAGE%%.hybrid}.img.gz"
 
-        mv -iv "${PRELIMINARY_IMAGE}" "${TARGET_IMAGE}"
+        # prevent excessive space usage
+        (
+                cd build
+                print_info "Cleaning up after live-build, disk space is finite..\n$(df -h .)"
+                lb clean --color
+                print_info "Finished cleaning, disk space now:\n$(df -h .)"
+        )
+
+        print_info "Multi-core gzipping the disk image to create release product"
+        pigz --independent --blocksize 1024 --stdout < "${PRELIMINARY_IMAGE}" | pipemeter > "${TARGET_IMAGE}"
+
+        print_info "generating checksum"
+        sha256sum "${TARGET_IMAGE}" > "${TARGET_IMAGE}.sha256sum"
+
+        # and remove the uncompressed temp image
+        rm -v "${PRELIMINARY_IMAGE}"
 else
         TARGET_IMAGE="${DEVICE}"
 fi
