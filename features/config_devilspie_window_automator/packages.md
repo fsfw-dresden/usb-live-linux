@@ -1,0 +1,1 @@
+- :x:  devilspie  --	find windows and perform actions on them

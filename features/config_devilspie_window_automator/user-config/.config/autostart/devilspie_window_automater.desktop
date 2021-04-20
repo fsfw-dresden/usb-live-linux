@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Devilspie
+Comment=find windows and perform actions on them
+Exec=devilspie
+Terminal=false
+NoDisplay=true

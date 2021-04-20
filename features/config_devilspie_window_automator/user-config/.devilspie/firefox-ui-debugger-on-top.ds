@@ -1,0 +1,22 @@
+(
+    if
+    (
+        and
+        ( is (application_name) "Firefox" )
+        ( or
+                ( matches (window_name) "^Developer Tools - chrome:" )
+                ( matches (window_name) "^Multiprocess Browser Toolbox" )
+                ( matches (window_name) "^Entwicklerwerkzeuge" )
+                ( matches (window_name) "^Untitled window" )
+                ( matches (window_name) "^Firefox" )
+        )
+    )
+    (
+        begin
+        (
+            debug
+            undecorate
+            above
+        )
+    )
+)
