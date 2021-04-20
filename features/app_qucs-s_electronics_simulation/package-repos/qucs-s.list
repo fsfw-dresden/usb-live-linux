@@ -1,1 +1,1 @@
-deb http://download.opensuse.org/repositories/home:/ra3xdh/Debian_10/ ./
+deb [trusted=yes] http://download.opensuse.org/repositories/home:/ra3xdh/Debian_10/ ./
