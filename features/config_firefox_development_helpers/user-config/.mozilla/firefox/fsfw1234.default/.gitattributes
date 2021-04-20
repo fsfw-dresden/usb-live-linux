@@ -1,0 +1,8 @@
+*.js  diff=json
+prefs.js diff=text
+user.js diff=text
+*.json  diff=json
+*.json.lz4  diff=jsonlz4
+*.mozlz4  diff=jsonlz4
+*.db  diff=sqlite3
+*.sqlite  diff=sqlite3
