@@ -1,4 +1,6 @@
-# warm fs cache, preload desktop files
-sleep 30
-[ -x /usr/bin/vmtouch ] && ionice -c 3 nice -n 19 vmtouch -tfq /usr/share/applications &
-ionice -c 3 nice -n 19 find / -xdev > /dev/null 2>&1 &
+# fork into background, wait until boot is done, then warm up fs cache and preload desktop files
+(
+    sleep 30
+    [ -x /usr/bin/vmtouch ] && ionice -c 3 nice -n 19 vmtouch -tfq /usr/share/applications &
+    ionice -c 3 nice -n 19 find / -xdev > /dev/null 2>&1 &
+) &
