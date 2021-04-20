@@ -170,7 +170,7 @@ do
     else
       # check if is included indirectly / as dependency
       FEATURE_DEPENDENCY_FOUND=0
-      for DEPENDENCY in $(command ls -d ${VARIANT}/features/*/depends/${FEATURE_NAME} 2>/dev/null)
+      for DEPENDENCY in $(command ls -d ${VARIANT}/features/*/depends/${FEATURE_NAME} 2>/dev/null | cat)
       do
         if [[ ${DEPENDENCY} =~ \.disabled ]]
         then

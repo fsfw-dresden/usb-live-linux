@@ -1,4 +1,4 @@
-= Features, features, build variants.. 🚧 as of 2021-04-16
+= Features, features, build variants.. 🚧 as of 2021-04-21
 :table-caption!:
 
 ++++
@@ -86,7 +86,7 @@ digraph build_variants {
 |					.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/49-GS-Dresden-Grundschulstick[49-GS-Dresden-Grundschulstick]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/Basisstick:Xfce:buster[Basisstick Xfce buster]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/Basisstick:Xfce:buster:i386[Basisstick Xfce buster i386]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/FSFW-Schulstick[FSFW-Schulstick]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/FSFW-Uni-Stick:KDE:testing[FSFW-Uni-Stick KDE testing]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/FSFW-Uni-Stick-TU-Dresden:Xfce[FSFW-Uni-Stick-TU-Dresden Xfce]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/FSFW-Uni-Stick:Xfce:buster[FSFW-Uni-Stick Xfce buster]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/OSEG-Makerstick[OSEG-Makerstick]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/TEST-Microstick:Xfce:buster[TEST-Microstick Xfce buster]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/TEST-Ministick:Xfce:buster[TEST-Ministick Xfce buster]	.>s|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/TEST-Plasmastick:KDE:testing[TEST-Plasmastick KDE testing]	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_anki_flashcard_learning[app_anki_flashcard_learning]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_anydesk_remote_support[app_anydesk_remote_support]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_appimagelauncher[app_appimagelauncher]	| 	|✔	| 	| 	| 	| 	|(✔) 	|(✔) 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_appimagelauncher[app_appimagelauncher]	| 	|✔	| 	|(✔) 	| 	| 	|(✔) 	|(✔) 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_appimagelint[app_appimagelint]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_blanket_soundscape[app_blanket_soundscape]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_boot-repair[app_boot-repair]	|✘	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
@@ -103,7 +103,7 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_gnome_keyring[app_gnome_keyring]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_google_earth_3d_universe_browser[app_google_earth_3d_universe_browser]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_hw-probe_hardware_data_sharing[app_hw-probe_hardware_data_sharing]	| 	| 	| 	| 	| 	| 	| 	|✔	| 	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/appimage_freecad_assembly3[appimage_freecad_assembly3]	| 	| 	| 	| 	| 	| 	|✔	|✔	| 	| 	|✘	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/appimage_freecad_assembly3[appimage_freecad_assembly3]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	|✘	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_jami_multi-conferencing[app_jami_multi-conferencing]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_jitsi_voip_sip_xmpp_messenger.broken[app_jitsi_voip_sip_xmpp_messenger.broken]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/app_kalzium_chemical_elements[app_kalzium_chemical_elements]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
@@ -157,7 +157,7 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_de.debian.org_mirror[build_de.debian.org_mirror]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_defaults.reference[build_defaults.reference]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_distribution_buster[build_distribution_buster]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_early_package_inclusion[build_early_package_inclusion]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_early_package_inclusion[build_early_package_inclusion]	| 	|✔	|(✔) 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_enable_backports_repo[build_enable_backports_repo]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_ignore_package_recommendations[build_ignore_package_recommendations]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_include_debian_installer[build_include_debian_installer]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
@@ -170,6 +170,8 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_no_source_archives[build_no_source_archives]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_no_zsync_generation[build_no_zsync_generation]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_offline_rebuild[build_offline_rebuild]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_squashfs_compression_level_22[build_squashfs_compression_level_22]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_squashfs_compression_zstd[build_squashfs_compression_zstd]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/build_use_local-apt-cacher-ng[build_use_local-apt-cacher-ng]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/49-GS-Dresden-Grundschulstick/features/config_49gs_printer[config_49gs_printer]	|✔!	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/49-GS-Dresden-Grundschulstick/features/config_49gs_schulproxy[config_49gs_schulproxy]	|✔!	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
@@ -189,11 +191,15 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_desktop_cats[config_desktop_cats]	| 	| 	| 	|✔	| 	| 	| 	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_desktop_debian_edu_theme[config_desktop_debian_edu_theme]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_device_independent_network_connections[config_device_independent_network_connections]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_devilspie_window_automator[config_devilspie_window_automator]	| 	| 	| 	| 	| 	| 	| 	| 	| 	|✔	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_disable_screensaver_during_fullscreen_video[config_disable_screensaver_during_fullscreen_video]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_dpkg_force[config_dpkg_force]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_etckeeper[config_etckeeper]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_file_associations[config_file_associations]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_base[config_firefox_base]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_default_search_ecosia[config_firefox_default_search_ecosia]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_default_search_metager[config_firefox_default_search_metager]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_development_helpers[config_firefox_development_helpers]	| 	| 	| 	| 	| 	| 	| 	| 	| 	|✔	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_extensions[config_firefox_extensions]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_extensions_force_json_storage[config_firefox_extensions_force_json_storage]	| 	| 	| 	| 	| 	| 	| 	| 	| 	|✔	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_fsfw-dresden_bookmarks[config_firefox_fsfw-dresden_bookmarks]	| 	| 	| 	| 	| 	|✔	| 	| 	| 	| 	| 	|
@@ -201,12 +207,13 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_selection_search_schulstick[config_firefox_selection_search_schulstick]	| 	| 	| 	|✔	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_firefox_selection_search_students[config_firefox_selection_search_students]	| 	|✔	| 	|✘	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_flathub_flatpak_repo[config_flathub_flatpak_repo]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_fsfw_grub_theme[config_fsfw_grub_theme]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_freecad_3d[config_freecad_3d]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_fsfw_theme[config_fsfw_theme]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_gcompris[config_gcompris]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_git_advanced[config_git_advanced]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_git_anonymous-user[config_git_anonymous-user]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_google_earth_cache_limit[config_google_earth_cache_limit]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_hide_desktop_folder[config_hide_desktop_folder]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_inkscape[config_inkscape]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_journald_no_disk_storage[config_journald_no_disk_storage]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/config_jupyter_notebook_service[config_jupyter_notebook_service]	| 	| 	| 	| 	| 	| 	|✔	|✔	| 	| 	| 	|
@@ -298,8 +305,6 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/hook_faster_initramfs_lz4_compression[hook_faster_initramfs_lz4_compression]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/hook_fix_network_connection_permissions[hook_fix_network_connection_permissions]	| 	| 	| 	| 	| 	|(✔) 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/hook_reduce_size_localepurge[hook_reduce_size_localepurge]	| 	|✔	| 	| 	| 	| 	| 	| 	|✔	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/install_bootmenu_german[install_bootmenu_german]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
-|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/install_liesmich[install_liesmich]	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/lang_DEU_anydesk[lang_DEU_anydesk]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/lang_german_kturtle[lang_german_kturtle]	| 	| 	| 	|✔	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/lang_german_locales[lang_german_locales]	| 	|✔	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
@@ -383,6 +388,7 @@ digraph build_variants {
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/total_conversion_chicago95[total_conversion_chicago95]	| 	| 	| 	| 	| 	| 	| 	|✔	| 	|✔	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/workaround_black_screen_after_suspend[workaround_black_screen_after_suspend]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/workaround_dstat_bugs[workaround_dstat_bugs]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
+|link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/workaround_git_curl_http2_fail[workaround_git_curl_http2_fail]	| 	| 	| 	|(✔) 	| 	| 	|(✔) 	|(✔) 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/workaround_google_earth_broken_search[workaround_google_earth_broken_search]	| 	| 	| 	|✔	| 	| 	|✔	|✔	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/49-GS-Dresden-Grundschulstick/features/workaround_iptables_stable[workaround_iptables_stable]	|✔!	| 	| 	| 	| 	| 	| 	| 	| 	| 	| 	|
 |link:https://github.com/fsfw-dresden/usb-live-linux/tree/master/features/workaround_ocrmypdf_python3-lxml[workaround_ocrmypdf_python3-lxml]	| 	|(✔) 	| 	|(✔) 	| 	| 	|(✔) 	|(✔) 	| 	| 	| 	|
