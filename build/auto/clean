@@ -16,5 +16,5 @@ done
 # c.f. /usr/lib/live/build/clean
 lb clean noauto "${@}"
 
-# remove previous live-build settings
-rm -rf config/
+# remove previous live-build settings and install stuff
+rm -rf config/ install/
