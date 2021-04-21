@@ -13,6 +13,7 @@
       "TopSites": false
     },
     "NewTabPage": false,
+    "NoDefaultBookmarks": true,
     "OfferToSaveLogins": false,
     "OfferToSaveLoginsDefault": false,
     "OverrideFirstRunPage": "",

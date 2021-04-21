@@ -2,36 +2,36 @@
   "policies": {
     "Bookmarks": [
       {
+        "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABU0lEQVRYhe2Xy43DIBBAXQMYKcdcmcmBEqLBSCnDJaQEd+JSUoJL2BJcQvaE19kYho+90kpBmoNl4L0ZSwNuGmYodEYAzULTMyuAZoXOcPunwcFO7aW75oQAO1VJrOEC6Z5dAaR7scQWXIIdU9dLpL5YohZeJbEXvEhib3iWxFHwJImj4azEX8BjEo3Q9Gwv3dV3rxa6IRYSqY8BuPUC7LRmNkLTU6EzUtsHF0LTl9T2ERRYzeFCoTOLwMnczimZt9ANnMB6bixO5nZeBHw5uMyTBZhKvH2C5SEw/KY5Ai10Q2jeR+Aj8L8FYtczAXYqEvBdKdRmXwSYqxgn4M+Dn04INEuwo3+xJcFlHqpECC6Regl2FEDzchzHJFIy36oEB3+7E3CVKB1RuB9HSSTBj5LIgu8tUQTfS6IKHpPIiSr4loRCZ1L7gEJnquG/JbJ/ThPh3/1VYus2EgJpAAAAAElFTkSuQmCC",
         "Placement": "toolbar",
         "Title": "TU-Webmail",
         "URL": "https://msx.tu-dresden.de/"
       },
       {
+        "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABU0lEQVRYhe2Xy43DIBBAXQMYKcdcmcmBEqLBSCnDJaQEd+JSUoJL2BJcQvaE19kYho+90kpBmoNl4L0ZSwNuGmYodEYAzULTMyuAZoXOcPunwcFO7aW75oQAO1VJrOEC6Z5dAaR7scQWXIIdU9dLpL5YohZeJbEXvEhib3iWxFHwJImj4azEX8BjEo3Q9Gwv3dV3rxa6IRYSqY8BuPUC7LRmNkLTU6EzUtsHF0LTl9T2ERRYzeFCoTOLwMnczimZt9ANnMB6bixO5nZeBHw5uMyTBZhKvH2C5SEw/KY5Ai10Q2jeR+Aj8L8FYtczAXYqEvBdKdRmXwSYqxgn4M+Dn04INEuwo3+xJcFlHqpECC6Regl2FEDzchzHJFIy36oEB3+7E3CVKB1RuB9HSSTBj5LIgu8tUQTfS6IKHpPIiSr4loRCZ1L7gEJnquG/JbJ/ThPh3/1VYus2EgJpAAAAAElFTkSuQmCC",
         "Placement": "toolbar",
         "Title": "TU-Cloudstore",
         "URL": "https://cloudstore.zih.tu-dresden.de/"
       },
       {
+        "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABU0lEQVRYhe2Xy43DIBBAXQMYKcdcmcmBEqLBSCnDJaQEd+JSUoJL2BJcQvaE19kYho+90kpBmoNl4L0ZSwNuGmYodEYAzULTMyuAZoXOcPunwcFO7aW75oQAO1VJrOEC6Z5dAaR7scQWXIIdU9dLpL5YohZeJbEXvEhib3iWxFHwJImj4azEX8BjEo3Q9Gwv3dV3rxa6IRYSqY8BuPUC7LRmNkLTU6EzUtsHF0LTl9T2ERRYzeFCoTOLwMnczimZt9ANnMB6bixO5nZeBHw5uMyTBZhKvH2C5SEw/KY5Ai10Q2jeR+Aj8L8FYtczAXYqEvBdKdRmXwSYqxgn4M+Dn04INEuwo3+xJcFlHqpECC6Regl2FEDzchzHJFIy36oEB3+7E3CVKB1RuB9HSSTBj5LIgu8tUQTfS6IKHpPIiSr4loRCZ1L7gEJnquG/JbJ/ThPh3/1VYus2EgJpAAAAAElFTkSuQmCC",
         "Placement": "toolbar",
         "Title": "ZIH-Dienste",
         "URL": "https://tu-dresden.de/zih/dienste"
       },
       {
+        "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEM0lEQVRYhb2XX0xbVRzHL2MERK9j2k1L3KzTKSzy4MUHM5O1I5sxDpPFPZjBMrfFBd3DHoyJezHWmPigJitMZRNJYVJngkOXbG0RNin/NjM6QJYRQAJmWI3V0rHVQjvz8aHnsNumBYXWm3xzzv37+9zfub/vOVdRFEUBHhatAcgHLIBRSdiAogVk0cmUsG8BqmRf97x9snM/kCf6RuAB4FGgGNAgokUIaXPMFKUShIx3hBq/f0ciRqFoN0qAbCBXBC8CngIOhmYD5YM/t3hbf3zf23L5TW/L5TeWrfahj9BnNBnALggZByZP0+CppNpVhs1p5mia1NR9AODxeQAgR0hVFEWJ/j33Tu/o59S27eCoc0va1dS1H2AdkCXffh4AMAxMnvbWuLdlJLgOwATk6gFUoMAfGtMaPJUZC54AYJIAucAaQO0drRdj9T8C+PGrwCZAPdX7WoobzdS27cDesRt7R8WydKbvSDzAdHjCJOr+7lTpr7vwEmO+81ogNFUeDP/2SDDk05aiBFMrUBRFUQKMrxIHVjV4KpICfNlzkGh0ZrO4LgtYCawQrmn4DzIKmYBCQFPEw/KA/FQAju5X+Ss6s1lcu07cnAvkJ9p1EvueB9Dtq0CpHmAFcE+qITjRvpPFAoXwG8GXHxN65Unp0z+fAXFgNWBsvnR46V+4a4vX5jQ7bE6z45h7m8PuqXC4B99zTExfNAFrxVuvF/FMiQA5gOGHnxqxubamreRsTjMn2nfSNVxbLks+KYDcYka0J+21X+Muw9n/LsDqlADAvXB7z9XrZ/nku+czYEJmLo7ZWQjgLmB7hMgzPSN1fJqBycjesRtfcFATQ74mroqAh4AngWejzD539fo5mroPUOMuSxtAtWsrvaP1iA8yB8jRA2yQrUjPoVuRP/YqiqJ4rn3M2Stvc6bvyKL6tu8tTnbuxeayJIVovnQYYkuzHGClHmA9sSVYMfAE8KDo58fcK2QMR29aFhPMGHzBPq3uwq6kAGJBUii8R5XBs4D7AA14WqhQtJtEv1AYSIHOUkt1MgttmAn/uu9k5yvJAWKzoSotXQKsBTbqHmIm+cpWSgJoUvpyDoQmX7B3JLd1OR3rU58t0v3Y+O893uFfWlmOrk25aRv6gGOt25MCnOqpQrxcXAZKZm/PlDd6KofSX//xXtA+9CGIfwNAVQK3xkuAqtnIjUONnRVzmQQ43v4iI77zyPoHVMUfGtOAqvDctDXVdJwuneu3Ep6btsbVv//GmBWwZBLA5jTzRdd+/rw5YRXjn41clmcaoNpVxle9rzMVGPCKipG/ZwbAKIegNN0ANpeF+u9fpmfkM4LhqeNAObEfVAlQpAcohkjpsM9V1T/RbO2faLZemfzau1QNTn7DpL9PC0Z8GkQ0oITYwlcGN8m+BCjSmcu/kbrQeWWBTVi7KpzV8g/VKjNkLy2zOQAAAABJRU5ErkJggg==",
         "Placement": "toolbar",
         "Title": "StuRa",
         "URL": "https://www.stura.tu-dresden.de/"
       },
       {
+        "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABU0lEQVRYhe2Xy43DIBBAXQMYKcdcmcmBEqLBSCnDJaQEd+JSUoJL2BJcQvaE19kYho+90kpBmoNl4L0ZSwNuGmYodEYAzULTMyuAZoXOcPunwcFO7aW75oQAO1VJrOEC6Z5dAaR7scQWXIIdU9dLpL5YohZeJbEXvEhib3iWxFHwJImj4azEX8BjEo3Q9Gwv3dV3rxa6IRYSqY8BuPUC7LRmNkLTU6EzUtsHF0LTl9T2ERRYzeFCoTOLwMnczimZt9ANnMB6bixO5nZeBHw5uMyTBZhKvH2C5SEw/KY5Ai10Q2jeR+Aj8L8FYtczAXYqEvBdKdRmXwSYqxgn4M+Dn04INEuwo3+xJcFlHqpECC6Regl2FEDzchzHJFIy36oEB3+7E3CVKB1RuB9HSSTBj5LIgu8tUQTfS6IKHpPIiSr4loRCZ1L7gEJnquG/JbJ/ThPh3/1VYus2EgJpAAAAAElFTkSuQmCC",
         "Placement": "toolbar",
         "Title": "Studienerfolgsleitsystem",
         "URL": "http://www.tu-dresden.de/deinstudienerfolg"
-      },
-      {
-        "Placement": "toolbar",
-        "Title": "IPython-Notebook",
-        "URL": "http://localhost:8888/tree"
       }
     ],
-    "NoDefaultBookmarks": true
+    "DisplayBookmarksToolbar": true
   }
 }
