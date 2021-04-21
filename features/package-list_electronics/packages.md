@@ -1,4 +1,4 @@
-- :+1: :x:  [qucs](https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.18-2_amd64.deb)  --	Schaltungssimulation
+- :+1: :x:  [qucs](https://launchpad.net/~qucs/+archive/ubuntu/qucs/+files/qucs_0.0.20.201022-1_amd64.deb)  --	Schaltungssimulation
 
 - :x:  fritzing  --	Benutzerfreundliche Elektronikentwicklungssoftware
 - :x:  pcb  --		Programm zur Entwicklung gedruckter Schaltungen
@@ -8,3 +8,4 @@
 - :x:  geda-gsymcheck  --
 - :x:  caneda  --	Electronic Design Automation software focused on easy of use and portability
 - :x:  oregano  --	schematic capture and printing of electronic circuit
+- :x:  logisim  --	educational tool for designing and simulating digital logic circuits

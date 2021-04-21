@@ -9,6 +9,10 @@
 - :x:  sozi  -- Inkscape-Plugin für kreative Präsentationen
 - :x:  scribus  --	DTP-Programm
 - :x:  scribus-template  -- Vorlagen
+- :x:  gucharmap  -- Unicode character picker and font browser
+- :x:  screenruler  --		measure objects on screen with a variety of metrics
+- :x:  king  --		interactive system for three-dimensional vector graphics
+- :x:  openstereogram  --		Stereogram ("Magic Eye") generator with GUI
 
 - :x:  gimp  --		Das GNU-Bildbearbeitungsprogramm
 - :x:  gimp-data-extras  --	Ein extra Satz Pinsel, Paletten, Gradienten für GIMP (+3.884 kB)

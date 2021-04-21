@@ -12,6 +12,17 @@
 
 - :x:  kdeconnect  --		integrate linux desktop with android smartphone
 
+- :x:  gnome-characters  --		find and insert unusual characters
+- :x:  jugglinglab  --		creating and animating juggling patterns
+- :x:  storymaps  --		graphical story planning and writing application for children
+- :x:  cronometer  --		Exercise and nutrient intake tracker
+- :x:  screenkey  --		screencast tool to display your keys
+- :x:  openboard  --		interactive white board application designed primarily for use in schools
+- :x:  quiterss  --		fast and comfortable RSS/Atom news feeds reader
+- :x:  projecteur  --		virtual laser pointer for use with inertial pointers
+- :x:  ding  --		Graphical dictionary lookup program for Unix
+- :x:  kiwix   --		offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
+
 - :x:  gthumb  --		advanced image viewer and browser
 
 - :x:  onboard  --		On-screen Keyboard with macros, easy layout creation and word suggestion

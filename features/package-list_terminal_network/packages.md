@@ -1,4 +1,5 @@
 - :x:  bridge-utils  --		Dienstprogramme für die Konfiguration der Linux-Ethernet-Brücke
+- :x:  cutycapt  --		capture WebKit's rendering of a web page into a variety of vector and bitmap formats (SVG, PDF, PNG, JPEG..)
 - :x:  dnstop  --		console tool to analyze DNS traffic
 - :x:  ebtables  --		Verwaltung von Ethernet-Bridge-Frame-Tabellen
 - :x:  iftop  --		displays bandwidth usage information on an network interface
@@ -14,3 +15,5 @@
 - :x:  traceroute  --		Netzwerkanalysetool
 - :x:  wavemon  --		watch signal and noise levels
 - :x:  wireless-tools  --	zum Bearbeiten von WLAN Einstellungen
+- :x:  wkhtmltopdf  --		convert html to pdf or image using WebKit
+- :x:  youtube-dl  --		downloader of videos from YouTube and other sites

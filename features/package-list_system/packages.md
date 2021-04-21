@@ -34,6 +34,7 @@
 - :x:  exfat-utils  --		Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
 - :x:  dislocker  --		read/write encrypted BitLocker volumes
 - :x:  cifs-utils  --		Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
+- :x:  laptop-mode-tools  --		automatically enabling laptop mode when the computer is working on batteries
 - :x:  foomatic-db-engine  --		Druckerunterstützung von OpenPrinting - Programme
 - :x:  hp-ppd  --		PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
 - :x:  openprinting-ppds  --		Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
