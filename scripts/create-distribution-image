@@ -55,8 +55,8 @@ then
         shift
 else
         PRELIMINARY_IMAGE="build/installation.temp.img"
-        # FIXME: this should be SIZE_MB_PARTITION_FAT32 bigger than SIZE_LIVE_SYSTEM 🤔
-        SIZE_MB_IMAGE=$((10 * 2**10))
+        # FIXME: this should be SIZE_MB_PARTITION_FAT32 + a bit bigger than SIZE_LIVE_SYSTEM 🤔
+        SIZE_MB_IMAGE=$((14 * 2**10))
 
         # create image file
         truncate --size="${SIZE_MB_IMAGE}M" "${PRELIMINARY_IMAGE}"
