@@ -17,9 +17,9 @@
 - :x:  storymaps  --		graphical story planning and writing application for children
 - :x:  cronometer  --		Exercise and nutrient intake tracker
 - :x:  screenkey  --		screencast tool to display your keys
-- :x:  openboard  --		interactive white board application designed primarily for use in schools
+- :o:  openboard  --		interactive white board application designed primarily for use in schools (FIXME: not in buster)
 - :x:  quiterss  --		fast and comfortable RSS/Atom news feeds reader
-- :x:  projecteur  --		virtual laser pointer for use with inertial pointers
+- :o:  projecteur  --		virtual laser pointer for use with inertial pointers (FIXME: not in buster)
 - :x:  ding  --		Graphical dictionary lookup program for Unix
 - :x:  kiwix   --		offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
 
