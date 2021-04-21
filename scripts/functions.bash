@@ -1,6 +1,10 @@
 #!/bin/bash
 # ⚠️  uses associative arrays (bash v4+)
 
+# FIXME: workaround for prebuild-hooks, have to include this for the logging functions
+[ -e scripts/functions.sh ] && . scripts/functions.sh
+[ -e ../scripts/functions.sh ] && . ../scripts/functions.sh
+
 # abort if any sub-command produces an error
 set -o errexit -o errtrace
 trap 'print_error "Sorry, something went wrong."' ERR
