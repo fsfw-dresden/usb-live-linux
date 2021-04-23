@@ -16,7 +16,8 @@ select_target_device() {
         [ -e /sys/block/${DEVNAME}/size ] || continue
         SIZE=$(($(< /sys/block/${DEVNAME}/size) * 512))
         SIZESTR=$(numfmt --to=iec-i --suffix B ${SIZE})
-        NUMPARTITIONS=$(grep -c "${DEVNAME}[[:alnum:]]\+$" /proc/partitions | cat)
+        [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
+        NUMPARTITIONS=$(grep -c "${DEVNAME}${p}[[:digit:]]*$" /proc/partitions | cat)
         [ ${SIZE} -eq 0 ] && continue
         BACKING=/sys/block/${DEVNAME}/loop/backing_file
         [ -e ${BACKING} ] && BACKING="$(<${BACKING}) " || BACKING=""
@@ -84,11 +85,11 @@ determine_install_fundamentals() {
     # no device no burn
     [ -z ${DEVICE} ] && die_with_error 1 "no DEVICE chosen, cannot continue"
 
-    # proceed only if selected device is not mounted
-    grep -s "^${DEVICE}" /proc/mounts && die_with_error 2 "partition(s) on ${DEVICE} currently mounted, not continuing!"
-
     # loop devices have a different naming scheme (loop3p1 vs sdc1)
-    [[ "$DEVICE" =~ "loop" ]] && p="p" || p=""
+    [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
+
+    # proceed only if selected device is not mounted
+    grep -s "^${DEVICE}${p}[[:digit:]]* " /proc/mounts && die_with_error 2 "partition(s) on ${DEVICE} currently mounted, not continuing!"
 
     # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
     { [ -f "artifacts/$2" ] && LIVE_IMAGE="artifacts/$2"; } || { [ -f "$2" ] && LIVE_IMAGE="$2"; } || LIVE_IMAGE="$(select_live_iso)"
