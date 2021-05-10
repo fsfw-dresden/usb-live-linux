@@ -14,3 +14,6 @@ PACK_FILE=open_source_ecology_wallpaper_pack_2020.zip
 mkdir -pv "${DEST_DIR}"
 PACK_FILE=$(download_file_cached ${PACK_URL} ${PACK_FILE})
 unzip -j ${PACK_FILE} -d ${DEST_DIR}
+
+# Decided against shipping this slide about funding
+find ${DEST_DIR} -name "BuB-OSEG-3.jpg" -print -delete
