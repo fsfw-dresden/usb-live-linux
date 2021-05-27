@@ -1,1 +1,1 @@
-deb https://dl.bintray.com/zulip/debian/ stable main
+deb https://download.zulip.com/desktop/apt stable main
