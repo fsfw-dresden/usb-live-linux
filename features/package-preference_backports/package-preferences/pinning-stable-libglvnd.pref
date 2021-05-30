@@ -1,0 +1,6 @@
+# Workaround because backported libglvnd breaks libegl1-mesa-dev reverse dependencies (2021-05-29)
+# c.f. https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=989231
+
+Package: libegl libegl1-mesa-dev libegl1 libgl-dev libgl1 libgles-dev libgles1 libgles2 libglvnd-core-dev libglvnd-dev libglvnd0 libglx-dev libglx0 libopengl-dev libopengl0
+Pin: release a=buster-backports
+Pin-Priority: 499
