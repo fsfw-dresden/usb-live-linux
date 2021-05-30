@@ -1,5 +1,6 @@
 {
   "policies": {
+    "ExtensionUpdate": false,
     "ExtensionSettings": {
       "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}": {
         "_name": "Auto Tab Discard",
