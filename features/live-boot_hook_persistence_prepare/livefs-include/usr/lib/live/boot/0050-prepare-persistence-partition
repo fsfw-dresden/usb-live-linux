@@ -13,7 +13,8 @@ Prepare_persistence()
 	DEV=${DEV%/*}
 	DEV=/dev/${DEV##*/}
 
-	if [ -b ${DEV}*3 ] && LANG=C sfdisk --list-free ${DEV} | grep -qs "Start"
+	# is the third partition a block device and does it have free space at the end?
+	if [ -b ${DEV}*3 ] && LANG=C sfdisk --list-free ${DEV} | grep -v '^ *2048' | grep -qs '^ *[0-9]'
 	then
 		# grow persistence partition to device boundary
 		echo ",+" | sfdisk --no-reread -N 3 ${DEV}
