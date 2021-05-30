@@ -6,22 +6,22 @@
 
 Prepare_persistence()
 {
-	PART2=$(grep -m 1 findiso /proc/mounts | cut -f 1 -d ' ')
-	[ -z "${PART2}" ] && return 0
+        PART2=$(grep -m 1 findiso /proc/mounts | cut -f 1 -d ' ')
+        [ -z "${PART2}" ] && return 0
 
-	DEV=$(readlink /sys/class/block/${PART2#/dev/})
-	DEV=${DEV%/*}
-	DEV=/dev/${DEV##*/}
+        DEV=$(readlink /sys/class/block/${PART2#/dev/})
+        DEV=${DEV%/*}
+        DEV=/dev/${DEV##*/}
 
-	# is the third partition a block device and does it have free space at the end?
-	if [ -b ${DEV}*3 ] && LANG=C sfdisk --list-free ${DEV} | grep -v '^ *2048' | grep -qs '^ *[0-9]'
-	then
-		# grow persistence partition to device boundary
-		echo ",+" | sfdisk --no-reread -N 3 ${DEV}
-		partx --verbose --delete --nr 3 ${DEV}
-		partx --verbose --add --nr 3 ${DEV}
-		resize.f2fs ${DEV}*3
-	fi
+        # is the third partition a block device and does it have free space at the end?
+        if [ -b ${DEV}*3 ] && LANG=C sfdisk --list-free ${DEV} | grep -v '^ *2048' | grep -qs '^ *[0-9]'
+        then
+                # grow persistence partition to device boundary
+                echo ",+" | sfdisk --no-reread -N 3 ${DEV}
+                partx --verbose --delete --nr 3 ${DEV}
+                partx --verbose --add --nr 3 ${DEV}
+                resize.f2fs ${DEV}*3
+        fi
 
         PERSISTENCESTORE=/run/persistence
         mkdir -pv ${PERSISTENCESTORE}
