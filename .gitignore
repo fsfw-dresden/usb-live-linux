@@ -3,9 +3,10 @@ artifacts/
 
 # live-build work directories and files
 build/binary/
+build/binary.*
 build/cache/
 build/chroot/
-build/chroot*
+build/chroot.*
 build/config/
 build/container/
 build/.#container.lck
