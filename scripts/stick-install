@@ -17,7 +17,7 @@ select_target_device() {
         SIZE=$(($(< /sys/block/${DEVNAME}/size) * 512))
         SIZESTR=$(numfmt --to=iec-i --suffix B ${SIZE})
         [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
-        NUMPARTITIONS=$(grep -c "${DEVNAME}${p}[[:digit:]]*$" /proc/partitions | cat)
+        NUMPARTITIONS=$(grep -c "${DEVNAME}${p}[[:digit:]]\+$" /proc/partitions | cat)
         [ ${SIZE} -eq 0 ] && continue
         BACKING=/sys/block/${DEVNAME}/loop/backing_file
         [ -e ${BACKING} ] && BACKING="$(<${BACKING}) " || BACKING=""
