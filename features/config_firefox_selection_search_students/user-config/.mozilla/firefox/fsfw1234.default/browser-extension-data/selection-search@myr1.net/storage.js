@@ -112,6 +112,10 @@
           "url": "http://www.amazon.de/gp/search?ie=UTF8&keywords=%s"
         },
         {
+          "name": "Products: Amazon.com",
+          "url": "http://www.amazon.com/gp/search?ie=UTF8&keywords=%s"
+        },
+        {
           "name": "Products: Aliexpress",
           "url": "http://www.aliexpress.com/wholesale?SearchText=%s&catId=0&SortType=price_asc"
         }
@@ -235,6 +239,10 @@
         {
           "name": "Software Packages: pkgs.org",
           "url": "https://pkgs.org/search/?q=%s"
+        },
+        {
+          "name": "Software Packages: Repology",
+          "url": "https://repology.org/projects/?search=%s"
         },
         {
           "name": "Android Apps: F-Droid",

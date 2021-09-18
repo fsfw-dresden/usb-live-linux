@@ -228,12 +228,16 @@
           "url": "https://github.com/search?q=%s&type=Everything&repo=&langOverride=&start_value=1"
         },
         {
-          "name": "Software Project: Open Hub",
+          "name": "Software Projects: Open Hub",
           "url": "https://www.openhub.net/p?query=%s"
         },
         {
           "name": "Software Packages: pkgs.org",
           "url": "https://pkgs.org/search/?q=%s"
+        },
+        {
+          "name": "Software Packages: Repology",
+          "url": "https://repology.org/projects/?search=%s"
         },
         {
           "name": "Android Apps: F-Droid",
