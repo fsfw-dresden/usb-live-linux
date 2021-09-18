@@ -63,7 +63,7 @@ then
 fi
 
 # hide ACPI BIOS ERRORS
-BOOTOPTIONS+="loglevel=3 "
+BOOTOPTIONS+="loglevel=0 "
 
 # don't scare the meek: silence the boot noise
 BOOTOPTIONS+="quiet "
