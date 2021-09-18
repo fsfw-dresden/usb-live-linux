@@ -1,6 +1,6 @@
 - :x:  fonts-powerline  --		font which provides symbols used by Powerline
 - :x:  sqlite3  --		Command line interface for SQLite 3
-- :x:  ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
+- :x:  universal-ctags  --		Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
 - :x:  vim-airline-themes  --	themable vim status bar + themes
 - :x:  vim-gtk3  --	verbessserter vi-Editor - mit GTK3-Oberfläche
 - :x:  vim-nox  --	vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI

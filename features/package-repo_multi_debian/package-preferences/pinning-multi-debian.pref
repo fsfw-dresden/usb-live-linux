@@ -1,7 +1,7 @@
 # pin priority below stable
-Package: *
-Pin: release a=testing, o=Debian
-Pin-Priority: 99
+# Package: *
+# Pin: release a=testing, o=Debian
+# Pin-Priority: 99
 
 Package: *
 Pin: release a=unstable, o=Debian

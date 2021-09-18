@@ -61,7 +61,6 @@
 - :x:  printer-driver-pxljr  --		Druckertreiber für HP Color LaserJet 35xx/36xx
 - :x:  printer-driver-sag-gdi  --		Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
 - :x:  printer-driver-splix  --		Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
-- :x:  task-print-server  --		Dieser Task richtet Ihr System als Druckserver ein.
 - :x:  foomatic-db-compressed-ppds  --		Druckerunterstützung von OpenPrinting - Komprimierte PPDs
 - :x:  ethtool  --		Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
 - :x:  shim-signed  --		Secure Boot chain-loading bootloader (Microsoft-signed binary)

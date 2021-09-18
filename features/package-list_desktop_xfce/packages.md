@@ -9,8 +9,6 @@
 
 - :x:  xfce4  --		not much
 
-- :x:  gtk2-engines-xfce  --	theme engine for Xfce
-- :x:  gtk3-engines-xfce  --	theme engine for Xfce
 - :x:  xfce4-session  --		Xfce4 Session Manager
 - :x:  xfdesktop4  --		xfce desktop background, icons and root menu manager
 - :x:  xfwm4  --		window manager of the Xfce project
