@@ -3,6 +3,7 @@
 - Live-Demo ohne Download direkt in Ihrem Webbrowser: https://distrotest.net/Schulstick%20Linux/2021.4
 - eine Lern-, Spiel- und Arbeitsplattform für Schüler von der Grundschule bis zum Abschluss
 - mit aktueller Freier Software für viele Anwendungsbereiche
+- alle Programme offline und ohne Registrierung oder Installation nutzbar
 - eigenes Betriebssystem in der Tasche: lässt sich unabhängig von und ohne Gefahr für auf einem Rechner installierter Software starten
 - einfache Benutzeroberfläche und verständliche Dokumentation
 - Nachinstallieren weiterer Programme möglich

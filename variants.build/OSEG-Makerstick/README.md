@@ -3,7 +3,7 @@
 - eine Arbeits-, Lern- und Spielplattform für alle, die mit Computern nicht nur Zeit totschlagen wollen
 - mit aktueller Freier Software für viele Anwendungsbereiche
 - eigenes Betriebssystem in der Tasche: einfach irgendeinen Laptop nehmen und in zwei Minuten loslegen
-- lässt sich unabhängig von und ohne Gefahr für auf einem Rechner installiertei(r) Software starten
+- lässt sich unabhängig von und ohne Gefahr für auf einem Rechner installierte(r) Software starten
 - einfache Benutzeroberfläche und verständliche Dokumentation
 - Nachinstallieren weiterer Programme möglich
 - mit automatischen Sicherheitsupdates

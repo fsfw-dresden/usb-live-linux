@@ -91,6 +91,8 @@ then
                 print_info "Finished cleaning, disk space now:\n$(df -h .)"
         )
 
+        # (Other compression algorithms have been tried and found to be much slower, providing
+        # very little extra download volume savings because the ISO itself is already compressed)
         print_info "Multi-core gzipping the disk image to create release product"
         pigz --independent --blocksize 1024 --stdout < "${PRELIMINARY_IMAGE}" | pipemeter > "${TARGET_IMAGE}"
 

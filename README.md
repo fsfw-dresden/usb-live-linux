@@ -10,7 +10,7 @@ With this project, we want to provide anyone with a portable and robust computin
 **Screenshot 2021 Stick with Anmerkungen (2021-02-10):**
 ![Screenshot 2021 Stick with Anmerkungen (2021-02-10)](doc/screenshot-Xfce-Desktop-2021-02-10.png "Screenshot 2021 Stick with Anmerkungen (2021-02-10)")
 
-**Screenshot FSFW-Schulstick (2020-04-01):**
+**Screenshot 2020 FSFW-Schulstick (2020-04-01):**
 ![Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)](doc/screenshot-Xfce-Desktop-2020-04-01.png "Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)")
 
 ## Structure and Development
