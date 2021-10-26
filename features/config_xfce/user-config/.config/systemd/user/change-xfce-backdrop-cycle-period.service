@@ -1,0 +1,11 @@
+[Unit]
+Description=Reduce cycling period of xfce wallpaper to once per hour on first shutdown
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=sed -ir '/backdrop-cycle-period/ s/value="[^"]*"/value="4"/' /home/user/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+ExecStop=rm /home/user/.config/systemd/user/default.target.wants/change-xfce-backdrop-cycle-period.service /home/user/.config/systemd/user/change-xfce-backdrop-cycle-period.service
+
+[Install]
+WantedBy=default.target

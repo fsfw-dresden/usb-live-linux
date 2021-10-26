@@ -9,8 +9,8 @@
           <property name="last-image" type="string" value="/usr/local/share/backgrounds/cycled/"/>
           <property name="backdrop-cycle-enable" type="bool" value="true"/>
           <property name="backdrop-cycle-random-order" type="bool" value="true"/>
-          <property name="backdrop-cycle-period" type="int" value="5"/>
-          <property name="backdrop-cycle-timer" type="uint" value="1"/>
+          <property name="backdrop-cycle-period" type="int" value="1"/>
+          <property name="backdrop-cycle-timer" type="uint" value="2"/>
         </property>
       </property>
     </property>
