@@ -27,7 +27,6 @@
 - :x:  gvfs-fuse  --		exposing the gvfs mounts to non-gio applications using fuse
 - :x:  samba-common-bin  --	Basic SMB/CIFS share tools
 - :x:  smart-notifier  --		graphical hard disk health status notifier
-- :x:  python-gi  --		smart-notifier dependency
 - :x:  unattended-upgrades  --		automatic installation of security upgrades
 - :x:  python3-software-properties  --		manage the repositories that you install software from
 - :x:  exfat-fuse  --		exFAT-Treiber mit Schreib- und Lesezugriff für FUSE

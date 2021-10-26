@@ -43,6 +43,5 @@
 
 - ###  Gnome-Desktop & Derivate
 
-- :x:  gespeaker  -- GTK+ Frontend für espeaker und mbrola
 - :x:  gnome-accessibility-themes  -- Barrierereduzierung für Anwender mit Handicap
 - :x:  gnome-orca  -- Programmierbarer Screenreader

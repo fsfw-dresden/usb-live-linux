@@ -19,7 +19,6 @@
 - :x:  fonts-open-sans  --	humanist sans serif typeface
 - :x:  fonts-opendin  --	Open DIN font
 - :x:  fonts-radisnoir  --	font inspired by Bayer Universal and Bauhaus
-- :x:  fonts-pecita  --	hand-written font that give a natural rendition.
 - :x:  fonts-roboto  --	default font in Android and ChromeOS, recommended font for … Material Design
 - :x:  fonts-roboto-slab  --	Slab Serif font for the Roboto font family
 - :x:  fonts-sil-gentiumplus  --	extended smart font family for Latin, Greek and Cyrillic

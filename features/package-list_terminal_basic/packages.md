@@ -19,7 +19,7 @@
 - :x:  cpuid  --		dump x86 CPUID information
 - :x:  cruft-ng  --		finds anything that shouldn't be there, but is & anything that should be there, but isn't
 - :x:  csstidy  --	CSS parser and optimiser
-- :x:  ctop  --	text based Linux Containers monitoring tool
+- :o:  ctop  --	text based Linux Containers monitoring tool
 - :x:  curl  --		command line tool for transferring data with URL syntax
 - :x:  davfs2  --		mount a WebDAV resource as a regular file system
 - :x:  dconf-cli  --		low-level key/value database designed for storing desktop environment settings
@@ -67,7 +67,7 @@
 - :x:  jdupes  --	identify and delete or link duplicate files
 - :o:  jc  --	JSONifies the output of many CLI tools and file-types for easier parsing in scripts (not in buster)
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
-- :x:  latencytop  --	visualize system latencies (needs CONFIG_LATENCYTOP!)
+- :o:  latencytop  --	visualize system latencies (needs CONFIG_LATENCYTOP!)
 - :x:  less  --		world class file viewer
 - :x:  libcdio-utils  --		small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
 - :x:  librsvg2-bin  --	command-line and graphical viewers for SVG files
@@ -84,6 +84,7 @@
 - :x:  moreutils  --	additional Unix utilities
 - :x:  mosh  --		Mobile shell that supports roaming and intelligent local echo
 - :x:  most  --		Pager-Programm - alternativ zu more / less
+- :x:  neofetch  --	Shows Linux System Information with Distribution Logo
 - :x:  ncdu  --		ncurses disk usage viewer
 - :x:  ncurses-hexedit  --	Edit files/disks in hex, ASCII and EBCDIC
 - :x:  ne  --	easy-to-use and powerful text editor
@@ -106,6 +107,7 @@
 - :x:  rlwrap  --	Kommandozeilen-Wrapper mit »readline«-Funktionalität (Editieren von Tastatureingaben)
 - :x:  scanmem  --	locate and modify a variable in a running process
 - :x:  screen  --	Terminalmultiplexer mit VT100/ANSI-Terminalemulation
+- :x:  screenfetch  --	Bash Screenshot Information Tool: terminal theme information + ASCII distribution
 - :x:  shellcheck  --	lint tool for shell scripts
 - :x:  shed  --	simple hex editor with a pico-style interface
 - :x:  silversearcher-ag  -- sehr schnell grep-ähnliches Programm

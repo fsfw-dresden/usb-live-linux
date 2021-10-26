@@ -1,3 +1,2 @@
 - :x:  pidgin  --	Grafischer Instant-Messaging-Client
-- :x:  pidgin-encryption  -- Pidgin-Erweiterung, die transparente Verschlüsselung bietet
 - :x:  pidgin-otr  --	Pidgin-Erweiterung für Off-the-Record Messaging

@@ -20,7 +20,6 @@
 - :x:  torus-trooper  --		speeding ship sailing through barrage (5809 kB)
 - :x:  gcompris-qt  --		Educational games for small children (74.8 MB)
 - :x:  pysiogame  --		educational activity pack for kids (12.6 MB)
-- :x:  pysycache  --		Educational game to teach children to use the mouse (20.8 MB)
 - :x:  tuxmath  --		math game for kids with Tux (10.7 MB)
 - :x:  colobot  --		educational programming strategy game (87.9 MB)
 - :x:  laby  --		learn how to program with ants and spider webs (1493 kB)
@@ -32,7 +31,6 @@
 - :x:  gbrainy  --		Lustiges Spiel, um das Gehirn zu stimulieren und zu trainieren (2.340 kB)
 - :x:  gplanarity  --		Einfaches Puzzle-Spiel um das Entwirren planarer Graphen (79,3 kB)
 - :x:  hex-a-hop  --		puzzle game based on hexagonal tiles (9.271 kB)
-- :x:  kiki-the-nano-bot  --		3D-Denkspiel, Mischung aus Sokoban und Kula-World (595 kB)
 - :x:  lix  --		Puzzle game inspired by Lemmings (27,4 MB)
 - :x:  miceamaze  --		video game with mice in a maze (12,5 MB)
 - :x:  phlipple  --		reduce 3D shapes to a single square (2.584 kB)
@@ -48,7 +46,7 @@
 - :x:  gnome-games  --		Spiele für die GNOME-Arbeitsoberfläche (28,7 MB)
 - :x:  kajongg  --		Klassisches Spiel Mahjongg (<19,0 MB)
 - :x:  stellarium  --		Echtzeit-Generator für fotorealistische Himmelsansichten (205 MB)
-- :x:  childsplay  --		Suite mit lehrreichen Spielen für kleine Kinder (30,8 MB)
+- :o:  childsplay  --		Suite mit lehrreichen Spielen für kleine Kinder (30,8 MB)
 - :x:  oneko  -		cat chases the mouse cursor around the screen
 - :x:  frogatto  --		2D platformer game starring a quixotic frog
 

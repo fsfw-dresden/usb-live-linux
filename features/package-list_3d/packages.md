@@ -3,7 +3,6 @@
 - ###  3D-Grafik
 
 - :x:  blender  --	Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
-- :x:  makehuman  --	Modelling of 3-Dimensional humanoid characters (+295 MB)
 - :x:  sweethome3d  --	Interior 2D design application with 3D preview (java)
 - :+1:  sweethome3d-furniture-editor  -- Sweet Home 3D Furniture Library Editor
 - :+1:  sweethome3d-textures-editor  --  Sweet Home 3D Textures Library Editor
@@ -27,4 +26,4 @@
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-94-g8b1c96b7-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-113-g02234deb-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll

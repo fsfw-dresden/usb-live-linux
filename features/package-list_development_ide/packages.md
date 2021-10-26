@@ -3,6 +3,7 @@
 - ###  IDEs
 
 - :x:  geany  -- leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
+- :x:  geany-plugins  --	fast and lightweight IDE + plugins (+5.003 kB)
 - :x:  geany-plugin-addons
 - :o:  geany-plugin-devhelp  -- API-Dokumentation beim Programmieren anzeigen lassen
 - :x:  geany-plugin-doc  -- weitere API-Dokumentationssuche

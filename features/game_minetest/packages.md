@@ -23,7 +23,6 @@
 - :x:  minetest-mod-skyblock  --	
 - :x:  minetest-mod-throwing  --	
 - :x:  minetest-mod-throwing-arrows  --	
-- :x:  minetest-mod-torches  --	
 - :x:  minetest-mod-unified-inventory  --	
 - :x:  minetest-mod-worldedit  --	
 - :x:  minetest-mod-xdecor  --	

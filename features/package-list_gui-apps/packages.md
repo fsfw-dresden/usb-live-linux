@@ -1,6 +1,6 @@
 - :x:  telegram-desktop  --	messaging app with a focus on speed and security on all your devices at the same time
 
-- :x:  qalculate-gtk  --	Powerful and easy to use desktop calculator
+- :o:  qalculate-gtk  --	Powerful and easy to use desktop calculator
 
 - :x:  meld  --		graphical diff … recursive  directory diffs
 
@@ -34,7 +34,7 @@
 - :x:  catfish  --		file searching tool
 
 - :x:  weston  --		reference implementation of a wayland compositor
-- :x:  key-mon  --		show live keyboard and mouse status
+- :o:  key-mon  --		show live keyboard and mouse status
 
 - :x:  tipp10  --		touch typing software
 
@@ -42,7 +42,6 @@
 
 - :x:  xpra  --		tool to detach/reattach running X programs
 
-- :x:  geany-plugins  --	fast and lightweight IDE + plugins (+5.003 kB)
 - :x:  lazarus-2.0  --	IDE for Free Pascal (Delphi-likesion) (+>130 MB)
 - :x:  fpc  --	Free Pascal Compiler
 
@@ -56,7 +55,7 @@
 - :x:  calibre  --	powerful and easy to use e-book manager (+28,1 MB)
 - :x:  seahorse  --		front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
 
-- :x:  childsplay  --		educational games for young children (+30.8 MB)
+- :o:  childsplay  --		educational games for young children (+30.8 MB)
 - :x:  gramps  --		Familienstammbaum (+7,010 kB + 876 kB recommends)
 - :x:  gir1.2-gexiv2-0.10  --		recommended by gramps
 - :x:  gir1.2-goocanvas-2.0  --		recommended by gramps

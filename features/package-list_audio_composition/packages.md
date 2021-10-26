@@ -10,7 +10,6 @@
 ### Plugins
 - :x:  amb-plugins  -- ambisonics LADSPA plugins
 - :x:  autotalent  -- pitch correction LADSPA plugin
-- :x:  calf-ladspa  -- Linux Multimedia Studio - Calf LADSPA plugins
 - :x:  caps  -- C\* Audio Plugin Suite
 - :x:  fil-plugins  -- parametric equalizer LADSPA plugin
 - :x:  jalv  -- tool to run LV2 plugins as stand-alone applications
