@@ -120,6 +120,7 @@ Probier doch z.B. mal [🌳Ecosia](https://www.ecosia.org/) aus statt zu guhgeln
 - ![](/usr/share/icons/Papirus/64x64/apps/audacious.svg){.app} **Audacious**: Kleiner und schneller Audiospieler
 - ![](/usr/share/icons/Papirus/64x64/apps/goobox.svg){.app} **Goobox**: CD-Spieler
 - ![](/usr/share/icons/Papirus/64x64/apps/clementine.svg){.app} **Clementine**: Musikspieler, auch für Internetradio
+- [Radio Garden](https://radio.garden/): Weltkarte mit Radiostationen zum reinhören in die Welt
 
 [[wieder nach oben]](#willkommen)
 
