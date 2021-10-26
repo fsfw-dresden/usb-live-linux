@@ -21,13 +21,13 @@ then
   echo "    Willkommen zum Kommandozeilenmodus. Computer wartet auf deine Befehle." | lolcat
   echo -e "	( Taste ${COLOR_CYAN}[F1]${COLOR_OFF} zum umschalten hier zum Terminal und zurück )"
   [ -f /usr/local/share/icons/keine-panik.svg ] \
-    && chafa --colors 16 --size $(tput cols)x18 --color-space din99d --fill braille --symbols=all --work 2 -- /usr/local/share/icons/keine-panik.svg | lolcat \
+    && chafa --colors 16 --size $(tput cols)x18 --color-space din99d --fill braille --work 3 -- /usr/local/share/icons/keine-panik.svg | lolcat \
     || echo "KEINE PANIK"|toilet --filter border | lolcat
 else
   echo "    Welcome to the command line interface. Computer is waiting for your input." | lolcat
   echo -e "	( Press ${COLOR_CYAN}[F1]${COLOR_OFF} key to show and hide this terminal )"
   [ -f /usr/local/share/icons/dont-panic.svg ] \
-    && chafa --colors 16 --size $(tput cols)x18 --color-space din99d --fill braille --symbols=all --work 2 -- /usr/local/share/icons/dont-panic.svg | lolcat \
+    && chafa --colors 16 --size $(tput cols)x18 --color-space din99d --fill braille --work 3 -- /usr/local/share/icons/dont-panic.svg | lolcat \
     || echo "don't panic"|toilet --filter border | lolcat
 fi
 
