@@ -104,7 +104,7 @@
         },
         {
           "name": "Kleinanzeigen",
-          "url": "http://kleinanzeigen.ebay.de/anzeigen/s-sortierung:preis/%s/k0"
+          "url": "http://www.ebay-kleinanzeigen.de/anzeigen/s-sortierung:preis/%s/k0"
         },
         {
           "name": "Ebay.de sofort-Kauf",
