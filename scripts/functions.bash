@@ -259,6 +259,7 @@ parse_features() {
 apply_features() {
     declare -A PATH_MAPPINGS
     # for building the intermediate ISO image
+    PATH_MAPPINGS[packages.apt]="config/package-lists"
     PATH_MAPPINGS[base-setting]="config/base-settings.d"
     PATH_MAPPINGS[live-build-config]="config"
     PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
@@ -302,6 +303,14 @@ apply_features() {
                     live-build-config)
                         # derefence base-settings.d symlinks
                         rsync --archive --checksum -ih --copy-links ${FEATURE_PATH}/${FRAGMENT_PATH}/ ${TARGET_PATH}/
+                        ;;
+                    packages.apt)
+                        # Skip main package list of inherited build variants
+                        [[ ${FEATURE_PATH} =~ inherit/[^/]+$ ]] && continue
+                        TARGET_LIST=${TARGET_PATH}/${FEATURE_ID}.list.chroot
+
+                        # comments have to be put on their own line or they will be evaluated as package name list
+                        sed -r 's/(.*)\s+(#.*)/\2 =>\n\1/' ${FEATURE_PATH}/${FRAGMENT_PATH} > ${TARGET_LIST}
                         ;;
                     packages.md)
                         # Skip main package list of inherited build variants
