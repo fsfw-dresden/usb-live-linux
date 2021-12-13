@@ -4,5 +4,5 @@ Type=Application
 Name=CircuitJS
 Comment=Electronic Circuit Simulator
 Comment[de]=Elektronikschaltungen simulieren
-Exec=/opt/circuitjs1/circuitjs1 --no-sandbox
+Exec=/opt/circuitjs1/circuitjs1
 Icon=preferences-system-power
