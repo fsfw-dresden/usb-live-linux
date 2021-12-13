@@ -1,2 +1,2 @@
 deb http://ppa.launchpad.net/apandada1/blanket/ubuntu focal main
-deb http://ppa.launchpad.net/apandada1/blanket-daily/ubuntu focal main
+# deb http://ppa.launchpad.net/apandada1/blanket-daily/ubuntu focal main
