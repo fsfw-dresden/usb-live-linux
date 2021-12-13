@@ -1,4 +1,3 @@
 - :x:  lernstick-calibre  --	hide the standalone ebook viewer
 - :x:  lernstick-freeplane  --	Enforce the usage of antialiased fonts in Freeplane
-- :x:  lernstick-openshot-qt  --	Adds German translations to the desktop file
 - :x:  lernstick-openstreetmap  --	menu entry for the OpenStreetMap webpage
