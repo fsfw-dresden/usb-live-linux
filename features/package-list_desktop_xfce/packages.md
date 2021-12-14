@@ -34,6 +34,7 @@
 - :x:  xfce4-clipman-plugin  --		clipboard history
 - :x:  xfce4-xkb-plugin  --		keyboard layout switch plugin for the Xfce4 panel
 - :x:  xfce4-timer-plugin  --		timer plugin for Xfce panel
+- :x:  mousepad  --		simple graphical text editor for Xfce based on Leafpad
 - :o:  xfce4-screensaver  --		screen saver and locker that is integrated with the xfce4 desktop (unstable)
 
 - ###  Netzwerk
