@@ -1,0 +1,17 @@
+checkstyle
+chktex
+cppcheck
+hlint
+lacheck
+libperl-critic-perl
+sparse
+splint
+
+biosyntax-vim
+vim-ale
+vim-asciidoc
+vim-fugitive
+vim-gitgutter
+vim-julia
+vim-syntastic
+vim-tabular
