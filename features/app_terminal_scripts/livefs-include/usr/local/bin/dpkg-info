@@ -38,7 +38,7 @@ dpkg-info()
             echo
             {
                 apt-cache show ${pkg}
-                apt-cache showsrc ${pkg}
+                apt-cache showsrc ${pkg} 2>/dev/null
             } | ccze -A -o nolookups
         } | less -SRiM~ --shift 1 -PM"debian package info\: ${pkg}, ?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END)"
     done
