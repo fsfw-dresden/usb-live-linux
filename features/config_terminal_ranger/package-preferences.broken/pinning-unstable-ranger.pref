@@ -1,3 +1,0 @@
-Package: ranger
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500
