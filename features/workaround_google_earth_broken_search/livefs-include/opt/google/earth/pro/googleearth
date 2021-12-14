@@ -21,7 +21,7 @@ fi
 # following is a hotfix for unbreaking the search functionality
 # (i18n messing with GPS coordinate separators)
 # c.f. https://support.google.com/earth/thread/10088759?msgid=18922305
-# still not fixed in google-earth-pro-stable 7.3.3.7721-r0 (2020-05-26)
+# still not fixed in google-earth-pro-stable 7.3.4.8248-r0 (2021-07-16)
 export LC_NUMERIC=en_US.UTF-8
 
 "$(dirname "$(readlink -f "$0")")/googleearth-bin" "$@"
