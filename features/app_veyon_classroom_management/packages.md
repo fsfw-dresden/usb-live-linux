@@ -1,1 +1,1 @@
-- :+1: :x:  [veyon](https://github.com/veyon/veyon/releases/download/v4.5.3/veyon_4.5.3-0-debian-buster_amd64.deb)  --	computer monitoring and classroom management
+- :+1: :x:  [veyon](https://github.com/veyon/veyon/releases/download/v4.7.0/veyon_4.7.0-0-debian-bullseye_amd64.deb)  --	computer monitoring and classroom management

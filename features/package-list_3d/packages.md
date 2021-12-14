@@ -26,4 +26,4 @@
 - ###  LaserCut
 
 [//]: # ( http://download.visicut.org/master )
-- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-113-g02234deb-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+- :+1: :x:  [VisiCut](https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-135-g7d0e68e8-1_all.deb)  -- Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
