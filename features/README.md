@@ -4,6 +4,8 @@ Although this construct was inspired by the [features folder in tails](https://g
 Each feature can be included by a relative symlink in the features folder of a [build variant](../variants.build).
 Each variant can also define its own private features there instead of sym-linking from this common features folder.
 
+[FSFW Stick Variants / Features Table](https://raw.githack.com/fsfw-dresden/usb-live-linux/master/variants.build/features.html)
+
 ### Mappings of feature folders to live-build config hierarchy
 The folders contained in a feature have been named to make them easily understandable. They will be translated to their target live-build folder when scripts/apply-build-variant.sh is being run in the build process. The path mappings are as follows:
 
