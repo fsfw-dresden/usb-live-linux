@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# shellcheck disable=SC2016
+
+WEATHER='/*/*[@name="plugins"]/*[@value="weather"]'
+xmlstarlet edit --inplace \
+                --delete "${WEATHER}/*[@name='location']" \
+                --subnode "${WEATHER}" -t elem -n property \
+                --var location '$prev' \
+                --insert '$location' -t attr -n name -v "location" \
+                --insert '$location' -t attr -n type -v "empty" \
+                --subnode '$location' -t elem -n property \
+                --var name '$prev' \
+                --insert '$name' -t attr -n name -v "name" \
+                --insert '$name' -t attr -n type -v "string" \
+                --insert '$name' -t attr -n value -v "Dresden, Germany" \
+                --subnode '$location' -t elem -n property \
+                --var latitude '$prev' \
+                --insert '$latitude' -t attr -n name -v "latitude" \
+                --insert '$latitude' -t attr -n type -v "string" \
+                --insert '$latitude' -t attr -n value -v "51.041600" \
+                --subnode '$location' -t elem -n property \
+                --var longitude '$prev' \
+                --insert '$longitude' -t attr -n name -v "longitude" \
+                --insert '$longitude' -t attr -n type -v "string" \
+                --insert '$longitude' -t attr -n value -v "13.743400" \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

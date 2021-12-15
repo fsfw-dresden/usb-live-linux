@@ -87,7 +87,16 @@
       </property>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
-    <property name="plugin-4" type="string" value="weather"/>
+    <property name="plugin-4" type="string" value="weather">
+      <property name="round" type="bool" value="true"/>
+      <property name="forecast" type="empty">
+        <property name="layout" type="int" value="0"/>
+        <property name="days" type="int" value="7"/>
+      </property>
+      <property name="labels" type="empty">
+        <property name="label0" type="int" value="3"/>
+      </property>
+    </property>
     <property name="plugin-7" type="string" value="separator">
       <property name="style" type="uint" value="2"/>
     </property>
