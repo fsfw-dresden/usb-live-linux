@@ -1,0 +1,2 @@
+#!/bin/sh
+plymouth-set-default-theme -R spacefun
