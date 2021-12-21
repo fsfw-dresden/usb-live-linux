@@ -72,19 +72,7 @@
     </property>
     <property name="plugin-6" type="string" value="systray">
       <property name="show-frame" type="bool" value="false"/>
-      <property name="names-hidden" type="array">
-      </property>
-      <property name="size-max" type="uint" value="36"/>
-      <property name="names-visible" type="array">
-        <value type="string" value="indicator-keylock"/>
-        <value type="string" value="zwischenablage"/>
-        <value type="string" value="ausklapp-terminal"/>
-        <value type="string" value="xfce-terminal"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="netzwerk-manager-applet"/>
-        <value type="string" value="zulip"/>
-        <value type="string" value="copyq"/>
-      </property>
+      <property name="icon-size" type="int" value="0"/>
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
     <property name="plugin-4" type="string" value="weather">
