@@ -1,0 +1,4 @@
+# pin priority below stable, testing and unstable
+Package: *
+Pin: release a=experimental, o=Debian
+Pin-Priority: 97
