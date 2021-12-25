@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 32,
+  "schemaVersion": 33,
   "addons": [
     {
       "id": "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}",
@@ -10,7 +10,6 @@
         "description": "A simple & lightweight tool to reduce tab clutter, using just the address bar."
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/tab-extract-port/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -22,7 +21,7 @@
     },
     {
       "id": "tineye@ideeinc.com",
-      "version": "1.4.1",
+      "version": "1.5.2",
       "type": "extension",
       "defaultLocale": {
         "name": "TinEye Reverse Image Search",
@@ -30,11 +29,9 @@
         "homepageURL": "https://tineye.com"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/tineye-reverse-image-search/",
       "seen": true,
       "userPermissions": {
         "permissions": [
-          "activeTab",
           "contextMenus",
           "storage"
         ],
@@ -51,7 +48,6 @@
         "description": "Control the speed of video playback."
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/playback-speed/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -67,14 +63,13 @@
     },
     {
       "id": "enhancerforyoutube@maximerf.addons.mozilla.org",
-      "version": "2.0.104.4",
+      "version": "2.0.111",
       "type": "extension",
       "defaultLocale": {
         "name": "Enhancer for YouTube™",
         "description": "Take control of YouTube and boost your user experience!"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -101,7 +96,6 @@
         "homepageURL": "https://github.com/nkestrel/dragselectlinktext"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/drag-select-link-text/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -115,14 +109,13 @@
     },
     {
       "id": "selection-search@myr1.net",
-      "version": "0.8.57",
+      "version": "0.8.58",
       "type": "extension",
       "defaultLocale": {
         "name": "Selection Search",
         "description": "Search for the selected text in search engines"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/selection-search-ff/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -152,7 +145,6 @@
         "description": "Experience a beautiful image from Google Earth every time you open a new tab."
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/earth-view-from-google/",
       "seen": true,
       "userPermissions": {
         "permissions": [],
@@ -164,7 +156,7 @@
     },
     {
       "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
-      "version": "8.9.3",
+      "version": "9.4.2",
       "type": "extension",
       "defaultLocale": {
         "name": "Translate Web Pages",
@@ -172,16 +164,17 @@
         "homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/traduzir-paginas-web/",
       "seen": true,
       "userPermissions": {
         "permissions": [
           "storage",
           "activeTab",
-          "contextMenus"
+          "contextMenus",
+          "webRequest"
         ],
         "origins": [
-          "<all_urls>"
+          "<all_urls>",
+          "https://www.deepl.com/translator*"
         ]
       },
       "location": "app-profile"
@@ -197,7 +190,6 @@
         "homepageURL": "https://github.com/dessant/web-archives"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/view-page-archive/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -216,15 +208,14 @@
     },
     {
       "id": "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}",
-      "version": "0.4.3",
+      "version": "0.4.8",
       "type": "extension",
       "defaultLocale": {
         "name": "Auto Tab Discard",
-        "description": "Increase browser speed and reduce memory load and when you have numerous open tabs.",
+        "description": "Increase browser speed and reduce memory load when you have numerous open tabs.",
         "homepageURL": "https://add0n.com/tab-discard.html"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -244,14 +235,13 @@
     },
     {
       "id": "jid1-KKzOGWgsW3Ao4Q@jetpack",
-      "version": "3.2.9",
+      "version": "3.3.5",
       "type": "extension",
       "defaultLocale": {
         "name": "I don't care about cookies",
         "creator": "Daniel Kladnik @ kiboke studio"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -271,7 +261,7 @@
     },
     {
       "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-      "version": "1.49.1",
+      "version": "1.55.0",
       "type": "extension",
       "defaultLocale": {
         "name": "Bitwarden - Free Password Manager",
@@ -280,7 +270,6 @@
         "homepageURL": "https://bitwarden.com"
       },
       "visible": true,
-      "sourceURI": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/",
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -299,6 +288,27 @@
           "https://*/*",
           "file:///*"
         ]
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{b216c277-278a-4651-8448-d34382845efb}",
+      "version": "1.0.2020.190",
+      "type": "extension",
+      "defaultLocale": {
+        "name": "qr",
+        "description": "Show QR code representing url of current Tab or right clicked link",
+        "creator": "XA",
+        "homepageURL": "http://my.opera.com/XAntares/"
+      },
+      "visible": true,
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "activeTab",
+          "contextMenus"
+        ],
+        "origins": []
       },
       "location": "app-profile"
     }
