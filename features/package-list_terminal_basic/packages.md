@@ -16,6 +16,7 @@
 - :x:  chntpw  --		NT SAM password recovery utility
 - :x:  cmatrix  --	Screen saver for the terminal
 - :x:  consolation  --		linux console pointer support for copy-paste
+- :x:  conspy  --	(Remote) control of Linux virtual consoles
 - :x:  cpuid  --		dump x86 CPUID information
 - :x:  cruft-ng  --		finds anything that shouldn't be there, but is & anything that should be there, but isn't
 - :x:  csstidy  --	CSS parser and optimiser
