@@ -1,1 +1,1 @@
-deb http://deb.anydesk.com/ all main
+deb [trusted=yes] http://deb.anydesk.com/ all main
