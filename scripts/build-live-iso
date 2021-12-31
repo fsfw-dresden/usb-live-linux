@@ -90,4 +90,4 @@ build_main() {
 STARTTIME=$(date +%s)
 build_main "${@}" |& tee build/build-live-iso.$(date '+%F.%H%Mh').log
 
-print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) and the work of many"
+print_info "this took $(format_timespan $(($(date +%s) - ${STARTTIME}))) (+ the work of many)"

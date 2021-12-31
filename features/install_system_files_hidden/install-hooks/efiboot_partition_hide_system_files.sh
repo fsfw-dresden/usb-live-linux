@@ -10,5 +10,5 @@ echo "System Volume Information" >> ${EFIBOOT}/.hidden
 touch ${EFIBOOT}/NvVars
 
 print_info "marking files on boot / exchange as hidden system files\n" \
-    "\tso they will not be accidentally deleted in Windows"
+    "\tto make accidental deletion in Windows less likely"
 fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden

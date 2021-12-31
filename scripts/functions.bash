@@ -238,7 +238,7 @@ parse_features() {
                 die_with_error 3 "${FEATURE_PATH} contains spaces, please fix that."
             fi
 
-            if [[ "${FEATURE_PATH}" =~ .disable[d]* ]]
+            if [[ "${FEATURE_PATH}" =~ \.disable[d]*$ ]]
             then
                 # Feature has been marked as disabled
                 FEATURE_ID=${FEATURE_ID%.disable*}

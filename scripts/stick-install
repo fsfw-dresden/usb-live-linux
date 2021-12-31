@@ -157,7 +157,7 @@ create_partitions() {
 
     # create a small persistence partition that will be grown on first boot to device limits
     # allows distributing a smaller image file that will fit USB sticks of varying size
-    END_MB_PARTITION_PERSISTENCE=$(( END_MB_PARTITION_LIVE_IMAGE + 128 ))
+    END_MB_PARTITION_PERSISTENCE=$(( END_MB_PARTITION_LIVE_IMAGE + 256 ))
     parted --script --align=optimal -- ${DEVICE} mkpart primary ${END_MB_PARTITION_LIVE_IMAGE}MiB ${END_MB_PARTITION_PERSISTENCE}MiB
     print_info "created ${END_MB_PARTITION_LIVE_IMAGE}MiB - ${END_MB_PARTITION_PERSISTENCE}MiB persistence partition (will be formatted f2fs)"
 
@@ -179,7 +179,7 @@ create_filesystems() {
     print_info "creating filesystems"
 
     MAIN_LABEL=live-system
-    FAT_LABEL=$(basename "${INSTALL_VARIANT}")
+    FAT_LABEL=$(basename "${INSTALL_VARIANT%.*}")
 
     # the EFI boot partition needs to be FAT32 which
     # is perfect for file exchange with inferior OSs
