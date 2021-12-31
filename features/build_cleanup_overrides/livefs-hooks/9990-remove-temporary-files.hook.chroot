@@ -1,0 +1,15 @@
+#!/bin/sh
+# The clean-up shall run after all hooks have fired
+
+set -e
+
+# DO NOT Remove temporary files
+# rm -rf /var/cache/man/*
+
+for _DIRECTORY in /tmp /var/tmp /run
+do
+	rm -rf ${_DIRECTORY}
+
+	mkdir -p ${_DIRECTORY}
+	chmod 1777 ${_DIRECTORY}
+done
