@@ -14,6 +14,9 @@ case "${1}" in
         ;;
 esac
 
+# install required tools
+sudo apt install fatattr f2fs-tools libcdio-utils dialog ccze
+
 release_loop_device() {
         # Skip in case loop device is released already (should not happen)
         losetup "${DEVICE}" > /dev/null || return
