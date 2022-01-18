@@ -52,6 +52,16 @@
         0%  { opacity:  100%; }
   }
 
+  /* hide the banner animation until letter icon has been hovered over */
+  @keyframes hovered {
+    0% {
+      visibility: hidden;
+    }
+    100% {
+      visibility: visible;
+    }
+  }
+
   /* Set up the Free Software banner with animation */
   .search-wrapper .logo-and-wordmark .wordmark {
     background-image: url("../images/free-software-loves-you-and-your-freedom.svg") !important;
@@ -61,16 +71,14 @@
     width: 110% !important;
     height: 60vh !important;
     background-size: contain !important;
-    animation: blend-out 0.9s ease-in;
-    animation-fill-mode: forwards;
-    animation-delay: 500ms;
+    animation: blend-out 0.5s ease-in 500ms forwards, hovered 1ms paused;
     pointer-events: none;
     margin-left: 0px;
   }
 
-  /* trigger animation when hovering letter icon */
+  /* unhide & trigger animation when hovering letter icon */
   .search-wrapper .logo-and-wordmark .logo:hover ~ .wordmark  {
-    animation: blend-in 0.9s ease-out;
+    animation: blend-in 0.9s ease-out, hovered 1ms running;
   }
 
   @keyframes blend-in {
