@@ -42,24 +42,20 @@
 
   /* animation-delay only when fading back in */
   @keyframes fade-in {
-        0%  { opacity:  0%; }
-       50%  { opacity:  0%; }
-      100%  { opacity:  100%; }
+      0%  { opacity:  0; }
+     50%  { opacity:  0; }
+    100%  { opacity:  1; }
   }
 
   @keyframes fade-out {
-      100%  { opacity:  0%; }
-        0%  { opacity:  100%; }
+    100%  { opacity:  0; }
+      0%  { opacity:  1; }
   }
 
   /* hide the banner animation until letter icon has been hovered over */
   @keyframes hovered {
-    0% {
-      visibility: hidden;
-    }
-    100% {
-      visibility: visible;
-    }
+     0%  { visibility: hidden; }
+    100% { visibility: visible; }
   }
 
   /* Set up the Free Software banner with animation */
@@ -84,13 +80,13 @@
   @keyframes blend-in {
     0%   { opacity:   0%; filter: hue-rotate(140deg); scale: 1.5; }
     50%  { opacity: 100%; }
-    90%  {                filter: hue-rotate(0deg); }
-    100% { opacity: 100%; filter: hue-rotate(0deg);   scale: 1; }
+    90%  {                filter: hue-rotate(  0deg); }
+    100% { opacity: 100%; filter: hue-rotate(  0deg); scale: 1; }
   }
 
   @keyframes blend-out {
-    100% { opacity:   0%; filter: hue-rotate(260deg); scale: 1.5; }
+    0%   { opacity: 100%; filter: hue-rotate(  0deg); scale: 1; }
     20%  { opacity:  90%; filter: hue-rotate(140deg); }
-    0%   { opacity: 100%; filter: hue-rotate(0deg);   scale: 1; }
+    100% { opacity:   0%; filter: hue-rotate(260deg); scale: 1.5; }
   }
 }
