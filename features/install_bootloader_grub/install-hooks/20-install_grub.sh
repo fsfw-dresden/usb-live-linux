@@ -4,6 +4,7 @@ check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common lib
 # if the image is small, it is a test image to short cut an automated build process
 if [ ${SIZE_LIVE_SYSTEM} -gt 16777216 ]
 then
+    mkdir -p ${EFIBOOT}/boot
     print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
     iso-read -e live/vmlinuz -o ${EFIBOOT}/boot/vmlinuz -i ../${LIVE_IMAGE}
     iso-read -e live/initrd.img -o ${EFIBOOT}/boot/initrd.img -i ../${LIVE_IMAGE}
