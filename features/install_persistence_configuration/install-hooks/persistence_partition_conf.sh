@@ -45,8 +45,9 @@ then
     echo "/etc/NetworkManager/system-connections union,source=network-connections" >>  ${SYSTEMCONFIG}/persistence.conf
 
     # systemdata persistence: stuff
-    echo "/var/lib union,source=var-lib" >  ${SYSTEMDATA}/persistence.conf
+    echo "/root union,source=root-user" > ${SYSTEMDATA}/persistence.conf
     echo "/usr/src union,source=usr-src" >>  ${SYSTEMDATA}/persistence.conf
+    echo "/var/lib union,source=var-lib" >>  ${SYSTEMDATA}/persistence.conf
 
     # system persistence: to be !DELETED! before update
     echo "/ union,source=rootfs" >  ${SYSTEM}/persistence.conf
