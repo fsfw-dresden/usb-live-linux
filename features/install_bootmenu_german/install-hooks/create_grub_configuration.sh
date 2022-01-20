@@ -62,11 +62,11 @@ then
     BOOTOPTIONS+="rootpw=Risiko "
 fi
 
-# hide ACPI BIOS ERRORS
-BOOTOPTIONS+="loglevel=0 "
-
 # don't scare the meek: silence the boot noise
 BOOTOPTIONS+="quiet "
+
+# hide ACPI BIOS ERRORS
+BOOTOPTIONS+="loglevel=0 "
 
 # show a friendly boot screen
 BOOTOPTIONS+="splash"
