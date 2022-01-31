@@ -10,5 +10,4 @@
 - :x:  libreoffice-help-hi  --	
 - :x:  libreoffice-l10n-hi  --	
 
-- :o:  thunderbird-l10n-de  --	not yet
-- :o:  lightning-l10n-de  --	not yet	
+- :o:  thunderbird-l10n-hi  --	not yet
