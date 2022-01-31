@@ -8,6 +8,7 @@
 #nav-bar .toolbarbutton-1 > * {
         z-index: 4 !important;
         transition: all 0.1s ease !important;
+        position: relative;
 }
 
 /* Make zoomed buttons overflow nicely */
