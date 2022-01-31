@@ -6,7 +6,6 @@
     "centered": true,
     "position": "absolute"
   },
-  "hiderelated": true,
   "controls": [
     "loop",
     "stop",

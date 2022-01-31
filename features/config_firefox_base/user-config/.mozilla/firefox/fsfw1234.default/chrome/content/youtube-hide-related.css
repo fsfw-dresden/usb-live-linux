@@ -1,0 +1,11 @@
+/* Hide the addictive "related videos" section on youtube until hovered. */
+@-moz-document domain("youtube.com") {
+    #related {
+        opacity: 0;
+        transition: all 0.1s ease;
+    }
+    
+    #related:hover {
+        opacity: 1;
+    }
+}
