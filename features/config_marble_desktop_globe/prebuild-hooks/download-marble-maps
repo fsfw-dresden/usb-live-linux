@@ -16,21 +16,46 @@ BASEURL="http://ftp5.gwdg.de/pub/linux/kde/extrafiles/marble/newstuff/maps"
 # http://files.kde.org/marble/newstuff/maps/
 # http://kde-applicationdata.mirrors.omnilance.com/marble/newstuff/maps/
 # http://mirrors.dotsrc.org/kde-applicationdata/marble/newstuff/maps/
-MAPS="
-agnese1544
+
+# Earth historical
+MAPS="agnese1544
 behaim1492
+bowen1744
+cantino1502
+delisle1720
+dewit1670
+dunn1794
+faden1786
+hondius1595
+hondius1630
+jode1589
+mitchell1866
+ortelius1570
+sanson1691
+
+# Earth various
 blackmarble
 climatezones
-hondius1630
-mitchell1866
-opencyclemap
+naturalearth
 opentopomap
-public-transport"
+public-transport
 
-for MAP in ${MAPS}
+# Moon
+doppelmayr1707
+harriot1609
+hevelius1645
+moonelev
+
+# Mars
+lowell1895
+mars
+mgsmola
+schiaparelli1886"
+
+for MAP in $(echo "${MAPS}" | sed -r '/^($|#.*)/d')
 do
         URL="${BASEURL}/${MAP}-marblemap.zip"
-        FILE=$(download_file_cached ${URL}) \
+        FILE=$(download_file_cached "${URL}") \
           && unzip -nd "${DEST_DIR}" "${FILE}"
 
         # increase maximum zoom level for "Earth at Night 2012" map
