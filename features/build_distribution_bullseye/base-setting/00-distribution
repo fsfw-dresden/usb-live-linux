@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DISTRIBUTION=bullseye
+
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --distribution ${DISTRIBUTION}"
+
+#        -d|--distribution CODENAME
+#            defines the distribution of the resulting live system. This cur‐
+#            rently defaults to 'bullseye'. The value 'sid' can be used for
+#            Debian unstable.
