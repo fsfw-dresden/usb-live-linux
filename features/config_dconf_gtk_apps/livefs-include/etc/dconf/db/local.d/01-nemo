@@ -1,19 +1,29 @@
 [org/nemo/preferences]
-size-prefixes='base-2'
-tooltips-in-list-view=true
+close-device-view-on-device-eject=true
 date-format='informal'
-thumbnail-limit=uint64 3145728
+default-folder-viewer='list-view'
+ignore-view-metadata=true
+quick-renames-with-pause-in-between=true
 show-full-path-titles=true
+show-open-in-terminal-toolbar=true
+show-show-thumbnails-toolbar=true
+size-prefixes='base-2'
+thumbnail-limit=uint64 8589934592
 tooltips-in-icon-view=true
+tooltips-in-list-view=true
 
 [org/nemo/window-state]
+geometry='1200x750+40+40'
 sidebar-width=285
 start-with-sidebar=true
-geometry='1200x750+40+40'
+
+[org/nemo/compact-view]
+default-zoom-level='standard'
 
 [org/nemo/icon-view]
-default-zoom-level='large'
 default-use-tighter-layout=true
+default-zoom-level='large'
 
 [org/nemo/list-view]
 default-visible-columns=['name', 'size', 'type', 'date_modified', 'mime_type']
+default-zoom-level='standard'
