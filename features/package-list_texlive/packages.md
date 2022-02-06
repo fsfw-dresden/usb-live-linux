@@ -17,7 +17,6 @@
 - :x:  texlive-fonts-recommended  --
 - :+1:  texlive-fonts-recommended-doc  --
 - :x:  texlive-formats-extra  --
-- :x:  texlive-generic-recommended  --
 - :x:  texlive-lang-german  --
 - :x:  texlive-latex-base  --
 - :+1:  texlive-latex-base-doc  --
@@ -31,7 +30,6 @@
 - :x:  texlive-science  -- TeX Live: Mathematics and science packages
 - :x:  texlive-pictures  --
 - :+1:  texlive-pictures-doc  --
-- :x:  texlive-plain-extra  --
 - :x:  texlive-pstricks  --
 
 [//]: # (Wird leider von texlive-pstricks automatisch nachgezogen, auch wenn man das garnicht möchte.)

@@ -17,9 +17,9 @@
 - :x:  storymaps  --		graphical story planning and writing application for children
 - :x:  cronometer  --		Exercise and nutrient intake tracker
 - :x:  screenkey  --		screencast tool to display your keys
-- :o:  openboard  --		interactive white board application designed primarily for use in schools (FIXME: not in buster)
+- :x:  openboard  --		interactive white board application designed primarily for use in schools
 - :x:  quiterss  --		fast and comfortable RSS/Atom news feeds reader
-- :o:  projecteur  --		virtual laser pointer for use with inertial pointers (FIXME: not in buster)
+- :x:  projecteur  --		virtual laser pointer for use with inertial pointers
 - :o:  ding  --		Graphical dictionary lookup program for Unix
 - :x:  kiwix   --		offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
 
@@ -69,7 +69,7 @@
 
 - :o:    --		
 - :o:  ffplay  --	simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
-- :o:  pulseeffects  --		advanced system-wide equalizer for PulseAudio
+- :x:  pulseeffects  --		advanced system-wide equalizer for PulseAudio
 - :o:  webcamoid  --		full featured webcam capture application, can do a lot of funny things (+9,328 kB)
 - :o:  guake  --		Drop-down terminal (GTK)
 - :o:  yakuake  --		Drop-down terminal (KDE)

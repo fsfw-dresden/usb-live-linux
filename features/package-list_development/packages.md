@@ -3,10 +3,10 @@
 - ###  Compiler
 
 - :x:  build-essential  --	Kompiler und diverse Bibliotheken (wichtig)
-- :x:  gcc  --			GNU C Compiler
-- :x:  g++  --			GNU C++ Compiler
-- :x:  make  --			einfaches Build-Tool
-- :x:  gdb-minimal  --		minmaler GNU-Debugger
+- :o:  gcc  --			GNU C Compiler
+- :o:  g++  --			GNU C++ Compiler
+- :o:  make  --			einfaches Build-Tool
+- :o:  gdb-minimal  --		minmaler GNU-Debugger
 - :o:  kdbg  --			Kde basiertes Frontend für den Gdb-Debugger
 - :x:  golang  -- 		Compiler und toolchain zur Programmiersprache go
 - :x:  gfortran  --		GNU-Fortran-95-Compiler

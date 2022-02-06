@@ -9,7 +9,7 @@
 - :o:  kvmtool  --	ist ein leichtes Tool für das Hosting KVM Gästen
 
 - :x:  virt-manager  -- Desktopanwendung zur Verwaltung virtueller Maschinen
-- :x:  libvirt-daemon-system  --
+- :o:  libvirt-daemon-system  -- broken by qemu
 - :x:  virt-viewer  --	Anzeige der grafischen Konsole einer virtuellen Maschine
 
 - :+1:  virtualbox  -- einfach zu bedienendes Virtualisierungsprogramm

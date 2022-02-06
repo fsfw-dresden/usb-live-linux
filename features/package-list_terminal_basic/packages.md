@@ -66,7 +66,7 @@
 - :x:  iptraf-ng  --	Interactive Colorful IP LAN Monitor, generates various network statistics
 - :x:  irqtop  --	Observe IRQ and SoftIRQ in a top-like fashion
 - :x:  jdupes  --	identify and delete or link duplicate files
-- :o:  jc  --	JSONifies the output of many CLI tools and file-types for easier parsing in scripts (not in buster)
+- :x:  jc  --	JSONifies the output of many CLI tools and file-types for easier parsing in scripts
 - :x:  jq  --	Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
 - :o:  latencytop  --	visualize system latencies (needs CONFIG_LATENCYTOP!)
 - :x:  less  --		world class file viewer

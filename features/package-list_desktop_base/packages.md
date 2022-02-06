@@ -22,6 +22,10 @@
  - :x:  xdg-user-dirs  --	Werkzeug zur Verwaltung von Benutzerordnern
 
 
+- :x:  xdg-utils  --
+- :x:  libfile-mimeinfo-perl  --
+- :x:  libglib2.0-bin  --
+
 - ### fonts
 
 - :x:  ttf-bitstream-vera  --	Die TrueType-Schriftfamilie Bitstream Vera
