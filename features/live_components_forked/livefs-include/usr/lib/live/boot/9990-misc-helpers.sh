@@ -1384,7 +1384,12 @@ do_union ()
 			# + workdir and upperdir to be in separate directories
 			mkdir -p "${unionrw}/rw"
 			mkdir -p "${unionrw}/work"
-                        # tails is trying out adding these mount options, too; c.f. https://gitlab.tails.boum.org/tails/tails/-/issues/17258
+			# tails is trying out adding these mount options, too; c.f. https://gitlab.tails.boum.org/tails/tails/-/issues/17258
+			# redirect_dir: let calls to rename(2) succeed instead of EXDEV ("Invalid cross-device link") error
+			# metacopy:     enable metadata-only copy-up (as opposed to whole file) for metadata changes
+			# index:        preserve hard-links on copy-up
+			# xino:         persistent unique object identifiers across merged FS layers
+
 			unionmountopts="-o redirect_dir=on,metacopy=on,index=on,xino=on,noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work"
 			;;
 	esac
