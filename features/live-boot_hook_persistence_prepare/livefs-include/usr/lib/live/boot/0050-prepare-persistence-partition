@@ -32,39 +32,44 @@ Prepare_persistence()
                 # .. but empty?
                 if [ $(ls ${PERSISTENCESTORE} | wc -w) -eq 0 ]
                 then
+                        # activate compression recursively
+                        # FIXME: doesn't seem to work?
                         chattr -R -V +c ${PERSISTENCESTORE}
+
                         mkdir -pv ${PERSISTENCESTORE}/linux-userdata
                         mkdir -pv ${PERSISTENCESTORE}/linux-systemconfig
                         mkdir -pv ${PERSISTENCESTORE}/linux-systemdata
                         mkdir -pv ${PERSISTENCESTORE}/linux-system
 
                         # home persistence
-                        # TODO: f2fscrypt add_key -S 0x42
-                        echo "/home bind,source=." > ${PERSISTENCESTORE}/linux-userdata/persistence.conf
+                        # TODO: encryption using something like f2fscrypt add_key -S 0x42
+                        {
+                            echo "/home bind,source=."
+                        } > ${PERSISTENCESTORE}/linux-userdata/persistence.conf
 
                         # systemconfig persistence: network connections and printer configuration
-                        echo "/etc/cups union,source=printer-configuration" > ${PERSISTENCESTORE}/linux-systemconfig/persistence.conf
-                        echo "/etc/NetworkManager/system-connections union,source=network-connections" >> ${PERSISTENCESTORE}/linux-systemconfig/persistence.conf
+                        {
+                            echo "/etc/cups union,source=printer-configuration"
+                            echo "/etc/NetworkManager/system-connections union,source=network-connections"
+                        } > ${PERSISTENCESTORE}/linux-systemconfig/persistence.conf
 
                         # systemdata persistence: stuff
-                        echo "/root union,source=root-user" > ${PERSISTENCESTORE}/linux-systemdata/persistence.conf
-                        echo "/usr/src union,source=usr-src" >> ${PERSISTENCESTORE}/linux-systemdata/persistence.conf
-                        echo "/var/lib union,source=var-lib" >> ${PERSISTENCESTORE}/linux-systemdata/persistence.conf
+                        {
+                            echo "/root union,source=root-user"
+                            echo "/usr/src union,source=usr-src"
+                            echo "/var/lib union,source=var-lib"
+                        } > ${PERSISTENCESTORE}/linux-systemdata/persistence.conf
 
                         # system persistence: to be !DELETED! before update
-                        echo "/ union,source=rootfs" > ${PERSISTENCESTORE}/linux-system/persistence.conf
-
-                        # binding etc gives full git ability from outside
-                        # echo "/etc bind,source=etc" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-
-                        # union mount for etc allows shipping hotfixes
-                        echo "/etc union,source=etc" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-
-                        echo "/var/lib/apt union,source=var-lib-apt" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-                        echo "/var/lib/aptitude union,source=var-lib-aptitude" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-                        echo "/var/lib/dlocate union,source=var-lib-dlocate" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-                        echo "/var/lib/dpkg union,source=var-lib-dpkg" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
-                        echo "/var/lib/live union,source=var-lib-live" >> ${PERSISTENCESTORE}/linux-system/persistence.conf
+                        {
+                            echo "/ union,source=rootfs"
+                            echo "/etc union,source=etc"
+                            echo "/var/lib/apt union,source=var-lib-apt"
+                            echo "/var/lib/aptitude union,source=var-lib-aptitude"
+                            echo "/var/lib/dlocate union,source=var-lib-dlocate"
+                            echo "/var/lib/dpkg union,source=var-lib-dpkg"
+                            echo "/var/lib/live union,source=var-lib-live"
+                        } > ${PERSISTENCESTORE}/linux-system/persistence.conf
                 fi
                 umount -v ${PERSISTENCESTORE}
         fi
