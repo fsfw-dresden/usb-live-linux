@@ -1,0 +1,18 @@
+ranger          # Console File Manager with VI Key Bindings
+
+atool
+binutils
+catdoc
+djvulibre-bin
+exiftool
+highlight
+jq
+librsvg2-bin
+mediainfo
+odt2txt
+pandoc
+poppler-utils
+python3-pygments
+unrar
+w3m
+xlsx2csv
