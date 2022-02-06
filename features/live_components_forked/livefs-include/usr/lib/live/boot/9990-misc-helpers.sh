@@ -775,10 +775,26 @@ mount_persistence_media ()
 	if [ -z "${old_backing}" ]
 	then
 		fstype="$(get_fstype ${device})"
-		mount_opts="rw,noatime"
+		mount_opts="rw,lazytime,noatime"
 		if [ -n "${PERSISTENCE_READONLY}" ]
 		then
 			mount_opts="ro,noatime"
+		fi
+		if [ "${fstype}" = "f2fs" ]
+		then
+                        # FIXME: although this should compress all files except {.jpg,.png,.gz}, no space reduction seen yet?!
+			mount_opts="${mount_opts},discard_unit=segment,compress_cache,compress_extension=*,nocompress_extension=jpg,nocompress_extension=png,nocompress_extension=gz,compress_algorithm=zstd:6,compress_chksum,whint_mode=fs-based,gc_merge,atgc"
+                        # FIXME: add nodiscard:         DON'T issue discard/TRIM commands when a segment is cleaned (to reduce flash wear; needs fstrim.service)
+			# discard_unit=segment          discard bigger chunks instead of small blocks
+			# compress_cache:               use address space of a filesystem managed inode to cache compressed
+			#                               block, in order to improve cache hit ratio of random read.
+			# ----- from https://wiki.archlinux.org/title/F2FS:
+			# compress_algorithm=zstd:6:    tells F2FS to use zstd for compression at level 6
+			# compress_chksum:              tells the filesystem to verify compressed blocks
+			# whint_mode=fs-based:          Try to optimize fs-log management depending on file "hotness"
+			# gc_merge:                     let background GC thread handle foreground GC requests
+			# atgc:                         Enable age-threshold garbage collection
+			# lazytime:                     Don't synchronously update access or modification times
 		fi
 		if mount -t "${fstype}" -o "${mount_opts}" "${device}" "${backing}" >/dev/null 2>&1
 		then
