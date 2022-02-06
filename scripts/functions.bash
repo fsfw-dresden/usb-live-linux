@@ -310,7 +310,16 @@ apply_features() {
                         TARGET_LIST=${TARGET_PATH}/${FEATURE_ID}.list.chroot
 
                         # comments have to be put on their own line or they will be evaluated as package name list
-                        sed -r 's/(.*)\s+(#.*)/\2 =>\n\1/' ${FEATURE_PATH}/${FRAGMENT_PATH} > ${TARGET_LIST}
+                        sed -r 's/(.*)\s+(#.*)/\2:\n\1/' ${FEATURE_PATH}/${FRAGMENT_PATH} > ${TARGET_LIST}
+
+                        # download .deb URLs on lines beginning with '<'
+                        for URL in "$(sed -rn 's/^<\s+//p' ${TARGET_LIST})"
+                        do
+                            [ -n "${URL}" ] && download_external_deb_package "${URL}"
+                        done
+
+                        # after downloading, replace '<'-markers with comment
+                        sed -ri 's/^<\s+/# @deb: /g' ${TARGET_LIST}
                         ;;
                     packages.md)
                         # Skip main package list of inherited build variants
