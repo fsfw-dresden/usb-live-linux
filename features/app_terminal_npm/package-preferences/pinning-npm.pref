@@ -1,0 +1,4 @@
+# workaround 2022-01: prevent pulling in any node packages from backports
+Package: npm node-*
+Pin: release o=Debian Backports
+Pin-Priority: 499
