@@ -314,11 +314,16 @@ setup_unionfs ()
 		chmod 1777 "${rootmnt}"/tmp
 	fi
 
+	# Correct the permission of /var/tmp:
+	if [ -d "${rootmnt}/var/tmp" ]
+	then
+		chmod 1777 "${rootmnt}"/var/tmp
+	fi
+
 	# Handle custom persistence
 	local custom_mounts
 	custom_mounts="/tmp/custom_mounts.list"
 	touch ${custom_mounts}
-	
 
 	# Gather information about custom mounts from devices detected as overlays
 	get_custom_mounts ${custom_mounts} ${overlay_devices}

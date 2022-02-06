@@ -1079,9 +1079,9 @@ find_persistence_media ()
 	# in one union together.
 	#
 	black_listed_devices=""
-	for d in /run/live/rootfs/* /run/live/findiso /run/live/fromiso
+	for d in /run/live/medium /run/live/rootfs/* /run/live/findiso /run/live/fromiso
 	do
-		black_listed_devices="${black_listed_devices} $(what_is_mounted_on d)"
+		black_listed_devices="${black_listed_devices} $(what_is_mounted_on ${d})"
 	done
 
 	for dev in $(storage_devices "${black_listed_devices}" "${white_listed_devices}")

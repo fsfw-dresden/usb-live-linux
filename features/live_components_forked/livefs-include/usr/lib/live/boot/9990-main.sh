@@ -33,7 +33,7 @@ Live ()
 	# Needed here too because some things (*cough* udev *cough*)
 	# changes the timeout
 
-	if [ ! -z "${NETBOOT}" ] || [ ! -z "${FETCH}" ] || [ ! -z "${HTTPFS}" ] || [ ! -z "${FTPFS}" ]
+	if [ -n "${NETBOOT}" ] || [ -n "${FETCH}" ] || [ -n "${HTTPFS}" ] || [ -n "${FTPFS}" ]
 	then
 		if do_netmount
 		then
