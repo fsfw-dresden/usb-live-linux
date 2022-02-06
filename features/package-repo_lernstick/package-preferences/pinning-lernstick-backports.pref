@@ -1,0 +1,3 @@
+Package: *
+Pin: release n=lernstick-11-backports
+Pin-Priority: 500

@@ -1,0 +1,8 @@
+aacs-keydb-installer    # Blu-ray playback support
+lernstick-calibre       # hide the standalone ebook viewer
+lernstick-execute-jar
+lernstick-freeplane     # Enforce the usage of antialiased fonts in Freeplane
+lernstick-htop
+lernstick-openstreetmap # menu entry for the OpenStreetMap webpage
+lernstick-xkb-data      # adds some Mac specific keyboard layouts
+youtubedl-gui
