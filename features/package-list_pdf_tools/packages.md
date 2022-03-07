@@ -6,4 +6,5 @@
 - :x:  pdfmod  --	PDF-Bearbeitungsfrontend
 - :x:  pdfresurrect  -- zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
 - :x:  pdftk  --	Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
-- :+1: :x:  [xournalpp](https://github.com/xournalpp/xournalpp/releases/download/nightly/xournalpp-1.1.0+dev-nightly.20220205-Debian-bullseye-x86_64.deb)  --  Weiterentwicklung von Xournal
+- :+1: :x:  [xournalpp](https://github.com/xournalpp/xournalpp/releases/download/v1.1.1/xournalpp-1.1.1-Debian-bullseye-x86_64.deb)  --  Weiterentwicklung von Xournal
+
