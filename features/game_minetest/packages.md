@@ -1,6 +1,6 @@
 - :x:  minetest  --	Multiplayer infinite-world block sandbox
 - :x:  lernstick-minetest-game-tutorial  --	
-- :x:  minetest-mod-3d-armor  --	
+- :o:  minetest-mod-3d-armor  --	
 - :x:  minetest-mod-basic-materials  --	
 - :x:  minetest-mod-character-creator  --	
 - :x:  minetest-mod-craftguide  --	
