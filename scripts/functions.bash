@@ -66,8 +66,10 @@ download_file_cached() {
     fi
 
     CACHE_DIR="cache/packages.extra"
-    FILE_CACHED="${CACHE_DIR}/${FILE_NAME}"
-    WGET_OPTIONS="--no-verbose --timeout=10 --no-http-keep-alive --show-progress --progress=dot:giga --execute content_disposition=off --user-agent=org.schulstick.build"
+    FILE_CACHED="${CACHE_DIR}/${FILE_NAME%&*}" # remove trailing URL params
+    WGET_OPTIONS="--no-check-certificate --user-agent=org.schulstick.build \
+                  --no-http-keep-alive --show-progress --progress=dot:giga \
+                  --no-verbose --timeout=10 --execute content_disposition=off"
 
     if [ -f "${FILE_CACHED}" ]; then
         echo "${FILE_NAME} available in cache, not downloading." > /dev/stderr
