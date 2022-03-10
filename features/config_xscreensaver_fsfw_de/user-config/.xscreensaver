@@ -2,8 +2,8 @@
 # Written by xscreensaver-demo 5.42 for user on Tue Nov  5 03:51:20 2019.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:04:00
-cycle:		0:05:00
+timeout:	0:08:00
+cycle:		0:03:00
 lock:		False
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
