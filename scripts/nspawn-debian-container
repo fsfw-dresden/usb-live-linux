@@ -45,12 +45,14 @@ pigz
 # If no container directory exists, initiate a debian testing install with all our dependencies
 if [ ! -d build/container ]
 then
+  CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
   printf "${COLOR_CYAN}Initializing a debian testing container for building..${COLOR_OFF}\n"
   printf " (this will take a few minutes)\n"
   printf "echo 'systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).'\n"
   printf "\n"
   printf "\n"
-  debootstrap --verbose --cache-dir=${PWD}/build/cache/packages.bootstrap --include=$(echo ${DEPS}|tr ' ' ',') testing build/container http://ftp.debian.org/debian
+  mkdir -pv "${CACHE_DIR}"
+  debootstrap --verbose --cache-dir="${CACHE_DIR}" --include=$(echo ${DEPS}|tr ' ' ',') testing build/container http://ftp.debian.org/debian
   {
     echo "cd /mnt/usb-live-linux/"
     echo "clear"
