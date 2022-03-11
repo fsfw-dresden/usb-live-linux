@@ -176,12 +176,12 @@
           "url": "http://www.sciencedirect.com/search?qs=%s"
         },
         {
-          "name": "Language: N-Grams:EN",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=15&smoothing=3"
+          "name": "Language: EN N-Grams",
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=26"
         },
         {
-          "name": "Language: N-Grams:DE",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=20&smoothing=3"
+          "name": "Language: DE N-Grams",
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=31"
         },
         {
           "name": "Google Trends",
