@@ -1,6 +1,7 @@
 Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,codename=${distro_codename},label=Debian-Security";
         "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+        "origin=FSFW-Dresden:eMPee584,codename=schulstick-11,label=schulstick-production";
 };
 
 Unattended-Upgrade::Package-Blacklist {
