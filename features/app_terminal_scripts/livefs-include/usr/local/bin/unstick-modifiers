@@ -1,0 +1,5 @@
+#!/bin/sh
+# https://unix.stackexchange.com/questions/60007/how-to-force-release-of-a-keyboard-modifiers
+sh -cx "ltrace -n4 -e '@MAIN-strcasecmp' xdotool keyup --clearmodifiers space"
+# sed -nr '/^#define XK_/ s/.*XK_(.*_Lock) .*/\1/p' /usr/include/X11/keysymdef.h | xargs --verbose xdotool keyup
+sed -nr '/^#define XK_/ s/.*XK_(.*)_(L|R|Level[^ ]*) .*/\1_\2/p' /usr/include/X11/keysymdef.h | xargs --verbose xdotool keyup

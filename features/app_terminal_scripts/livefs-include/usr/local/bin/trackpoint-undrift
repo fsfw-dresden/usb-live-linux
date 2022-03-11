@@ -1,0 +1,14 @@
+#!/bin/sh
+# Get drifting trackpoint unstuck
+
+for DRIFT_FILE in $(find /sys -name drift_time)
+do
+        {
+                echo "Found trackpoint settings at ${DRIFT_FILE%/*}"
+                echo "Setting drift_time to 1s to let trackpoint calibration recover, then"
+                echo "setting back to 5s after waiting a bit. Should fix the issue."
+                echo 1 > "${DRIFT_FILE}"
+                sleep 20
+                echo 5 > "${DRIFT_FILE}"
+        } &
+done

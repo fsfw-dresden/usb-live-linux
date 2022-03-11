@@ -11,6 +11,11 @@ echo ${CURRENT_REPO_URL} | grep -qs "github.com" || { echo "this doesn't seem to
 
 read GHUSER GHPROJECT < <(echo ${CURRENT_REPO_URL} | sed 's#.*github.com[:/]##; s#\.git$##; s#/# #')
 
-GHFORKS_URL="https://api.github.com/repos/${GHUSER}/${GHPROJECT}/forks"
+if [[ ${CURRENT_REPO_URL} =~ /gist.github.com/ ]]
+then
+        GHFORKS_URL="https://api.github.com/gists/${GHPROJECT}/forks"
+else
+        GHFORKS_URL="https://api.github.com/repos/${GHUSER}/${GHPROJECT}/forks"
+fi
 
 curl "${GHFORKS_URL}" | jq -r '.[] | "git remote add \(.owner.login) \(.html_url)"' | vipe | sh -x
