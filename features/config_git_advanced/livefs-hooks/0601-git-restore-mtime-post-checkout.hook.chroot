@@ -1,0 +1,4 @@
+#!/bin/sh
+HOOKSPATH=/usr/local/share/git/hooks
+
+ln -svi /usr/lib/git-core/git-restore-mtime ${HOOKSPATH}/post-checkout

@@ -1,4 +1,5 @@
-split this up:
+- improve lz4 handling
+- split this config up using:
 [include]
      path = /path/to/foo.inc ; include by absolute path
      path = foo.inc ; find "foo.inc" relative to the current file

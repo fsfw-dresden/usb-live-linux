@@ -1,0 +1,5 @@
+#!/bin/sh
+HOOKSPATH=/usr/local/share/git/hooks
+
+mkdir -pv ${HOOKSPATH}
+git config --system core.hooksPath ${HOOKSPATH}
