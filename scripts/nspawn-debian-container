@@ -27,6 +27,7 @@ rsync
 wget
 curl
 gallery-dl
+html-xml-utils
 youtube-dl
 ca-certificates
 unzip

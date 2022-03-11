@@ -1,0 +1,12 @@
+#!/bin/sh -x
+umake ide eclipse /opt/eclipse
+
+# workaround until https://github.com/ubuntu/ubuntu-make/issues/667 resolved
+TARGET_DIR="/usr/local/share/applications"
+SHARE_DIR="/root/.local/share"
+mkdir -pv "${TARGET_DIR}"
+mv -v "${SHARE_DIR}/applications/eclipse-java.desktop" "${TARGET_DIR}/"
+mv -v "${SHARE_DIR}/umake/bin/eclipse-java" /usr/local/bin/
+
+# clean up
+find "${SHARE_DIR}" -type d -empty -print -delete

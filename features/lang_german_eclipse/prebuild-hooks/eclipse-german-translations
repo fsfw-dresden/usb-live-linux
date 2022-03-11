@@ -1,0 +1,25 @@
+#!/bin/bash
+# depends on html-xml-utils for hxwls utility
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR="/opt"
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+BABEL_URL='https://download.eclipse.org/technology/babel/babel_language_packs/latest/'
+
+for LANG_PACK in $(wget -O- "${BABEL_URL}" | hxwls | sed '/-de_/!d; s/$/\&r=1/')
+do
+        FILE=$(download_file_cached "${LANG_PACK}") \
+          && unzip -nd "${DEST_DIR}" "${FILE}"
+done
+
+# Seriously? .. workaround for umake message
+# "/opt/eclipse isn't an empty directory, do you want to remove its content and install there? [Yes (y)/No (N)]"
+mv "${DEST_DIR}/eclipse" "${DEST_DIR}/eclipse.preload"

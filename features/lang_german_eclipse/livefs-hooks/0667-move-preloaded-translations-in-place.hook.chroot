@@ -1,0 +1,4 @@
+#!/bin/sh -x
+# workarounds is what we do
+cp -rv /opt/eclipse.preload/* /opt/eclipse/
+rm -rv /opt/eclipse.preload
