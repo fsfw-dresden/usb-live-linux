@@ -1,0 +1,772 @@
+#!/usr/bin/perl
+#
+# This file causes a list of directories to be removed or moved off
+# the users home directory into a given other directory. Usually this
+# is used to relief NFS home directories of the burden of caches and
+# other performance needing directories.
+#
+# Copyright (C) 2010-2017 Axel Beckert <abe@deuxchevaux.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see http://www.gnu.org/licenses/.
+#
+
+use strict;
+use warnings;
+use 5.010;
+
+# Globally define version
+our $VERSION = '0.4.1.2';
+
+# Load Modules
+use Config::File;
+use Getopt::Std; $Getopt::Std::STANDARD_HELP_VERSION = 1;
+use File::Path qw(mkpath rmtree);
+use File::Basename;
+use File::BaseDir qw(config_home);
+use File::Touch;
+use File::Rsync;
+use File::Which;
+use IO::Handle;
+use IPC::Run qw(run);
+use String::Expand;
+use Try::Tiny;
+use Data::Dumper;
+
+# Determine default value for target directory
+my $default_target = '/tmp';
+if (defined($ENV{TMPDIR})) { # defined() doesn't autovivicate
+    $default_target = $ENV{TMPDIR};
+}
+if (-r '/proc/mounts') {
+    my $runtime_dir = '/run/user';
+    if (defined($ENV{XDG_RUNTIME_DIR})) { # defined() doesn't autovivicate
+        $runtime_dir = $ENV{XDG_RUNTIME_DIR};
+    } else {
+        $runtime_dir .= "/$<"; # typically something like /run/user/1000
+    }
+
+    open(my $proc_mounts_fd, '<', '/proc/mounts')
+        or die "Can't open /proc/mounts despite it exists: $!";
+    my @mounts = <$proc_mounts_fd>;
+    close($proc_mounts_fd);
+
+    foreach my $mount (@mounts) {
+        my @mount = split( /\s+ /x, $mount);
+        if ($mount[1] eq $runtime_dir) {
+            $default_target = $runtime_dir;
+            last;
+        }
+    }
+}
+
+# Configuration variables to be used in configuration files
+my $CONFIG = {
+    TARGETDIR  => $default_target,
+    FILELAYOUT => '.unburden-%u/%s',
+};
+
+# Just show what would be done
+my $DRYRUN = undef;
+
+# Undo feature
+my $REVERT = 0;
+
+# Defaul base name
+my $BASENAME = 'unburden-home-dir';
+my $LISTSUFFIX = 'list';
+
+# Declare and initialise some variables
+my %OPTIONS = ();
+my $FILTER = undef;
+my $UID = getpwuid($<);
+my $USE_LSOF = 1;
+my $LSOF_CMD = undef;
+
+# Some messages for Getopt::Std
+sub VERSION_MESSAGE {
+    my ($fh, $getoptpkg, $getoptversion, $cmdlineargs) = @_;
+
+    say $fh "Unburden Home Directory $VERSION\n";
+
+    return;
+}
+
+sub HELP_MESSAGE {
+    my ($fh, $getoptpkg, $getoptversion, $cmdlineargs) = @_;
+
+    say $fh <<"HELP_TEXT";
+Usage: $0 [ -F | -n | -u | -b basename | (-c|-C) conffile | -f filter | (-l|-L) listfile ]
+       $0 ( -h | --help | --version )
+
+Options with parameters:
+
+  -b  use the given string as basename instead of \"$BASENAME\".
+
+  -c  read an additional configuration file
+
+  -C  read only the given configuration file
+
+  -f  just unburden those directory matched by the given filter (a perl
+      regular expression) -- it matches the already unburdened
+      directories if used together with -u.
+
+  -l  read an additional list file
+
+  -L  read only the given list file
+
+Options without parameters:
+
+  -F  Do not check if to-be-(re)moved files and directories are still
+      in use (aka *F*orce (re)moving).
+
+  -n  dry run (show what would be done)
+
+  -u  undo (reverse the functionality and put stuff back into the home
+      directory)
+
+  -h, --help show this help
+
+  --version  show the program's version
+HELP_TEXT
+
+    return;
+}
+
+# Parse command line options
+getopts('hnuf:Fb:c:C:l:L:', \%OPTIONS);
+
+foreach my $key (keys %OPTIONS) {
+    if ($key eq 'h') {
+        my $fh = IO::Handle->new_from_fd(fileno(STDOUT),'w');
+        VERSION_MESSAGE($fh);
+        HELP_MESSAGE($fh);
+        exit 0;
+    }
+    elsif ($key eq 'b') { $BASENAME = $OPTIONS{b}; }
+}
+
+# By default check for a system wide and a user configuration and list file
+my @CONFFILES = ("/etc/$BASENAME",
+                 "$ENV{HOME}/.$BASENAME",
+                 config_home($BASENAME).'/config');
+my @LISTFILES = ("/etc/$BASENAME.$LISTSUFFIX",
+                 "$ENV{HOME}/.$BASENAME.$LISTSUFFIX",
+                 config_home($BASENAME)."/$LISTSUFFIX");
+
+foreach my $key (keys %OPTIONS) {
+    if    ($key eq 'C') {      @CONFFILES = ($OPTIONS{C}); }
+    elsif ($key eq 'c') { push(@CONFFILES,   $OPTIONS{c}); }
+    elsif ($key eq 'L') {      @LISTFILES = ($OPTIONS{L}); }
+    elsif ($key eq 'l') { push(@LISTFILES,   $OPTIONS{l}); }
+    elsif ($key eq 'n') { $DRYRUN   = 1; }
+    elsif ($key eq 'u') { $REVERT   = 1; }
+    elsif ($key eq 'F') { $USE_LSOF = 0; }
+    elsif ($key eq 'f') {
+        try {
+            $FILTER = qr/ $OPTIONS{f} /x;
+        } catch {
+            report_serious_problem("parameter to -f", $OPTIONS{f});
+            exit 2;
+        };
+    }
+}
+
+# Check for configuration files and read them
+foreach my $configfile (@CONFFILES) {
+    if ( -e $configfile ) {
+        # Workaround RT#98542 in Config::File 1.50 and earlier
+        my $cf = Config::File::read_config_file($configfile);
+        if (defined($cf)) {
+            $CONFIG = { %$CONFIG, %$cf };
+        }
+    }
+}
+
+# Fix some values
+$UID =~ s/ \s+ //gsx;
+
+# Expand environment variables
+expand_strings($CONFIG, \%ENV);
+
+# Remove quotes and line-feeds from values
+foreach my $key (keys %$CONFIG) {
+    chomp($CONFIG->{$key});
+    $CONFIG->{$key} =~ s/ ^ ([\'\"]) (.*) \1$ /$2/x;
+}
+
+# Set proper umask when creating files or directories. Save current
+# umask before.
+my $OLDUMASK = umask();
+umask(077);
+
+# Initialize rsync object
+my $rsync = File::Rsync->new(
+    archive => 1,
+    verbose => 1,
+    outfun => sub {
+        my $output = shift;
+        chomp($output);
+        say $output unless $output =~ m( ^sent\  | ^total\ size | ^\s*$ )x;
+    },
+    errfun => sub {
+        # uncoverable subroutine
+        chomp;          # uncoverable statement
+        warn "$_[0]\n"; # uncoverable statement
+    },
+);
+
+# Check for lsof in search path
+my $which_lsof = which('lsof');
+# Extra check for crappy distributions which place lsof outside a
+# user's $PATH. Fixes GH#8.
+if (not($which_lsof) and -x '/usr/sbin/lsof') {
+    $which_lsof = '/usr/sbin/lsof';
+}
+if (!$which_lsof) {
+    warn "WARNING: lsof not found, not checking for files in use.\n";
+    $USE_LSOF = 0;
+} else {
+    $LSOF_CMD = $which_lsof;
+}
+
+# Standard Error reporting function; Warning
+sub report_problem {
+    warn "WARNING: Can't handle $_[0]: $_[1]";
+    return;
+}
+
+# Standard Error reporting function; Error
+sub report_serious_problem {
+    warn "ERROR: Can't handle $_[0]: $_[1]";
+    return;
+}
+
+# Actually move a directory or file
+sub move {
+    my ($from, $to) = @_;
+    say "Moving $from -> $to";
+    unless ($DRYRUN) {
+        if (-d $from) {
+            $from .= '/';
+            $to .= '/';
+
+            my $rc = $rsync->exec(
+                src => $from,
+                dst => $to,
+            );
+            rmtree($from);
+        } else {
+            my $rc = system(qw(mv -v), $from, $to);
+            return !($? >> 8);
+        }
+    }
+    return 1;
+}
+
+# Create a symlink. Create its parent directories if they don't yet
+# exist.
+sub create_symlink_and_parents {
+    my ($old, $new) = @_;
+    create_parent_directories($new);
+    say "Symlinking $new -> $old";
+    unless ($DRYRUN) {
+        # uncoverable branch true
+        symlink($old, $new)
+            or die "Couldn't symlink $new -> $old: $!";
+    }
+    return;
+}
+
+# Create those parent directories for a given file or directory name
+# which don't yet exist.
+sub create_parent_directories {
+    my $file = shift;
+    my $parent_dir = dirname($file);
+    unless (-d $parent_dir) {
+        say "Create parent directories for $file";
+        mkpath($parent_dir, { verbose => 1 }) unless $DRYRUN;
+    }
+    return;
+}
+
+# In case of uppercase type letters, create symlinks as replacement
+# for directories files which may not even exist yet. Common cases are
+# trash directories which are created when something gets put into the
+# trashcan, etc.
+sub possibly_create_non_existing_stuff {
+    my ($type, $item, $target) = @_;
+
+    # Shall we create not yet existing directories or files as symlink?
+    # Case 1: directory
+    if ( $type eq 'D' ) {
+        # TODO: Refactor create_symlink_and_parents so that its
+        # create_parent_directories call isn't redundant in this case.
+        say "Create directory $target and parents";
+        mkpath($target, { verbose => 1 }) unless $DRYRUN;
+        create_symlink_and_parents($target, $item);
+    }
+
+    # Case 2: file
+    elsif ( $type eq 'F' ) {
+        create_parent_directories($target);
+        say "Touching $target";
+        touch($target) unless $DRYRUN;
+        create_symlink_and_parents($target, $item)
+    }
+    return 0;
+}
+
+# Dangling links may happen if the destination directory has been
+# weeped, e.g. due to being on an tmpfs mount or by tmpreaper, etc.
+sub fix_dangling_links {
+    my ($type, $itemexpanded, $target) = @_;
+    my $link = readlink($itemexpanded);
+    my $is_dir  = type_is_directory($type);
+    my $is_file = type_is_file($type);
+
+    # Accept existing symlinks or unburden-home-dir.list entries for
+    # directories with or without trailing slash
+    if ($is_dir) {
+        $link         =~ s{ /$ }{}x;
+        $itemexpanded =~ s{ /$ }{}x;
+        $target       =~ s{ /$ }{}x;
+    }
+
+    # Check if link target is wanted target
+    if ( $link ne $target ) {
+        report_problem($itemexpanded, "$link not equal $target");
+        return 1;
+    }
+
+    # Check if target exists and is same type
+    if ( -e $target ) {
+        my $unexpected_type = check_for_unexpected_type($type, $target);
+        return $unexpected_type if $unexpected_type;
+    }
+    # Symlink is there, but file or directory not
+    else {
+        create_object_of_type($type, $target);
+    }
+    return 0;
+}
+
+# Find pid and command in lsof output
+sub parse_lsof_output {
+    my ($output) = @_;
+    chomp($output);
+    my @lines = split(/\n/x, $output);
+
+    my $result = '';
+    my $pid;
+    my $cmd;
+
+    foreach my $line (@lines) {
+        if ($line =~ /^p(.*)$/x) {
+            $pid = $1;
+            $cmd = undef;
+        } elsif ($line =~ /^c(.*)$/x) {
+            $cmd = $1;
+            # uncoverable branch true
+            unless ($pid) {
+                # uncoverable statement
+                report_problem("lsof output", "No pid before command: $line");
+                next; # uncoverable statement
+            }
+            $result .= sprintf("  %5i (%s)\n", $pid, $cmd);
+            $pid = undef;
+        } elsif ($line =~ /^f/x) {
+            # file descriptor, always selected in more recent versions
+            # of lsof -- not interesting here, hence skipping.
+            next;
+        } else {
+            # uncoverable statement
+            report_problem("unexpected line in lsof output", $line);
+        }
+    }
+
+    return $result;
+
+}
+
+sub backticks_with_error_handing {
+    my ($cmd_ref, $output_ref, $stderr_ref) = @_;
+    my $rc = run($cmd_ref, \undef, $output_ref, $stderr_ref);
+    # lsof exits with return code 1 if it couldn't find a process for
+    # any given file, i.e. nearly always exits with return code
+    # 1. Hence ignore it.
+    if (not($rc) and ($?>>8 != 1)) {
+        die('Running "'.join(' ', @$cmd_ref).'" returned '.($?>>8)."\n".
+             ($$output_ref ? "\nSTDOUT:\n\n".$$output_ref."\n" : '') .
+             ($$stderr_ref ? "\nSTDERR:\n\n".$$stderr_ref."\n" : ''));
+    }
+    return $rc;
+}
+
+# Check if files in to be moved directories are currently in use.
+sub files_in_use {
+    my ($item) = @_;
+    my $lsof_output = undef;
+    my $lsof_stderr = undef;
+
+    if (-d $item) {
+        my @cmd = ($LSOF_CMD, qw(-F c +D), $item);
+        backticks_with_error_handing(\@cmd, \$lsof_output, \$lsof_stderr);
+    } elsif (-f _) {
+        my @cmd = ($LSOF_CMD, qw(-F c), $item);
+        backticks_with_error_handing(\@cmd, \$lsof_output, \$lsof_stderr);
+    } else {
+        report_problem("checking open files in $item", "neither file nor directory");
+        return;
+    }
+
+    my $lsof_parsed = parse_lsof_output($lsof_output);
+
+    if ($lsof_parsed) {
+        report_problem($item, "in use, not (re)moving. Process list:\n$lsof_parsed");
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+# Move a directory or file (higher level function)
+sub action_move {
+    my ($itemexpanded, $target) = @_;
+
+    create_parent_directories($target);
+    # uncoverable branch true
+    move($itemexpanded, $target)
+        or die "Couldn't move $itemexpanded -> $target: $!";
+    return;
+}
+
+# Handle directory or file which should be emptied (higher level function)
+sub action_delete_and_recreate {
+    my ($type, $itemexpanded, $target) = @_;
+
+    my $is_file = type_is_file($type);
+    my $is_dir  = type_is_directory($type);
+
+    say "Delete $itemexpanded";
+    unless ($DRYRUN) {
+        $is_dir  and rmtree($itemexpanded, { verbose => 1 }) ;
+        # uncoverable condition right
+        $is_file and (unlink($itemexpanded)
+                      or die "Couldn't delete $itemexpanded: $!");
+    }
+    create_object_of_type($type, $target);
+
+    return;
+}
+
+# Generic create function for both, directories and files
+sub create_object_of_type {
+    my ($type, $target) = @_;
+
+    say "Create $target";
+    unless ($DRYRUN) {
+        if (type_is_directory($type)) {
+            mkpath($target, { verbose => 1 });
+        }
+        elsif (type_is_file($type)) {
+            create_parent_directories($target);
+            say "Touching $target";
+            # uncoverable branch true
+            touch($target) or die "Couldn't touch $target: $!";
+        }
+    }
+
+    return;
+}
+
+# Create a symlink
+sub create_symlink {
+    my ($itemexpanded, $target) = @_;
+
+    say "Symlinking $target ->  $itemexpanded";
+    unless ($DRYRUN) {
+        # uncoverable branch true
+        symlink($target, $itemexpanded)
+            or die "Couldn't symlink $target ->  $itemexpanded: $!";
+    }
+    return;
+}
+
+# Check if the expected type of an object is "directory"
+sub type_is_directory {
+    return (lc(shift) eq 'd');
+}
+
+# Check if the expected type of an object is "file"
+sub type_is_file {
+    return (lc(shift) eq 'f');
+}
+
+# Check if an object has an unexpected type (higher level function)
+sub check_for_unexpected_type {
+    my ($type, $itemexpanded) = @_;
+
+    my $is_file = type_is_file($type);
+    my $is_dir  = type_is_directory($type);
+
+    if ($is_file and not(-f $itemexpanded)) {
+        report_serious_problem($itemexpanded,
+                               'Unexpected type (not a file)');
+        return 1;
+    }
+
+    if ($is_dir and not(-d $itemexpanded)) {
+        report_serious_problem($itemexpanded,
+                               'Unexpected type (not a directory)');
+        return 1;
+    }
+
+    return;
+}
+
+# Top-level function run once per to-be-changed-item
+sub do_it {
+    my ($type, $itemexpanded, $target, $action) = @_;
+
+    if ( $USE_LSOF and files_in_use($itemexpanded) ) {
+        return 0;
+    }
+
+    my $unexpected_type = check_for_unexpected_type($type, $itemexpanded);
+    return $unexpected_type if $unexpected_type;
+
+    if ( $action eq 'r' or $action eq 'd' ) {
+        action_delete_and_recreate($type, $itemexpanded, $target);
+    }
+    elsif ( $action eq 'm' ) {
+        action_move($itemexpanded, $target);
+    }
+
+    create_symlink($itemexpanded, $target);
+
+    return 0;
+}
+
+# Parse and fill placeholders in target definition
+sub calculate_target {
+    my $replacement = shift;
+    my $target = $CONFIG->{FILELAYOUT};
+
+    $target =~ s| %u |$UID|gx;
+    $target =~ s| %s |$replacement|gx;
+
+    return $CONFIG->{TARGETDIR}."/$target";
+}
+
+# Parse and fill wildcards
+sub fill_in_wildcard_matches {
+    my ($itemglob, $itemexpanded, $target) = @_;
+
+    # Replace %<n> (e.g. %1) with the n-th wildcard match. Uses perl
+    # here as it would be too complicated and way less readable if
+    # written as (bourne) shell script.
+
+    # Change from globbing to regexp
+    $itemglob =~ s/ \? /(.)/gx;
+    $itemglob =~ s/ \* /(.*)/gx;
+
+    my @result = $itemexpanded =~ m( $itemglob )gx;
+
+    $target =~ s/ \%(\d+) /$result[$1-1]/egx;
+
+    return $target;
+}
+
+# Check if the path to something to unburden already contains a symlink
+sub symlink_in_path {
+    my $path = shift;
+    # Remove home directory, i.e. check just from below the home directory
+    # uncoverable branch false
+    if ($path =~ s( $ENV{HOME} /? )()x) {
+        # Split up into components, but remove the last one (which we
+        # are requested to handle, so we shouldn't check that now)
+        my @path_elements = split(m(/)x, $path);
+        pop(@path_elements);
+
+        foreach my $i (0..$#path_elements) {
+            my $path_to_check = $ENV{HOME}.'/'.join('/', @path_elements[0..$i]);
+            #say "Check if $path_to_check is a symlink";
+            return $path_to_check if -l $path_to_check;
+        }
+        return 0;
+    } else {
+        # uncoverable statement
+        report_serious_problem("Can't find home directory ($ENV{HOME}) in $path!");
+    }
+
+    die 'Assertion: symlink_in_path() either return()ed or called report_serious_problem()';
+}
+
+# Handle replacement requests and check if they're sane
+sub replace {
+    # replace $type $i $item $replacement
+    my ($type, $itemexpanded, $itemglob, $replacement, $action) = @_;
+
+    if (my $symlink = symlink_in_path($itemexpanded)) {
+        warn "Skipping '$itemexpanded' due to symlink in path: $symlink\n";
+        return 0;
+    }
+
+    my $target = fill_in_wildcard_matches($itemglob, $itemexpanded,
+                                          calculate_target($replacement));
+
+    # Check if the source exists
+    if ( not(-e $itemexpanded) and not(-l $itemexpanded) ) {
+        possibly_create_non_existing_stuff($type, $itemexpanded, $target);
+    }
+    # Check if source is already a symlink
+    elsif ( -l $itemexpanded ) {
+        fix_dangling_links($type, $itemexpanded, $target);
+    }
+
+    # TODO: Check available disk space
+    # Should use report_serious_problem
+
+    # No symlink yet, then actually move or remove!
+    else {
+        do_it($type, $itemexpanded, $target, $action);
+    }
+
+    return;
+}
+
+# Core functionality of the undo feature
+sub revert {
+    my ($itemexpanded, $item_in_home, $target_glob) = @_;
+
+    $item_in_home = "$ENV{HOME}/" .
+        fill_in_wildcard_matches($target_glob, $itemexpanded, $item_in_home);
+    say "Trying to revert $itemexpanded to $item_in_home";
+
+    if (-l $item_in_home) {
+        my $link_target = readlink($item_in_home);
+        $itemexpanded =~ s{ /$ }{}x;
+        $link_target  =~ s{ /$ }{}x;
+
+        if ($itemexpanded eq $link_target) {
+            say "Removing symlink $item_in_home";
+            unlink($item_in_home) unless $DRYRUN;
+            move($itemexpanded, $item_in_home);
+        } else {
+            warn "Ignoring symlink $item_in_home as it points to $link_target ".
+                 "and not to $itemexpanded as expected.\n";
+        }
+    }
+
+    return;
+}
+
+# Parse wildcards backwards
+sub exchange_wildcards_and_replacements {
+    my ($wildcard, $replacement) = @_;
+    my $i = 1;
+    while ($replacement =~ / \% (\d+) /x) {
+        my $number = $1;
+        my $prev = $number-1;
+        my $wildcardtype = undef;
+        my $wildcard_re = qr/^ ( ([^*]* [*?]){$prev} [^*]* ) ([?*]) /x;
+        if ($wildcard =~ $wildcard_re) {
+            $wildcardtype = $3;
+            $wildcard =~ s/ $wildcard_re / "$1\%" . $i++ /ex;
+            $replacement =~ s/ \% (\d+) /$wildcardtype/x;
+        } else {
+            die "Assertion: exchange_wildcards_and_replacements():\n".
+                "'$replacement' =~ / \% (\\d+) /x\n".
+                "but\n".
+                "$wildcard =~ $wildcard_re\n".
+                "didn't.\n";
+        }
+    }
+    return ($wildcard, $replacement);
+}
+
+# Parse a single line of a .list file
+sub parse_list_file {
+    my $line = shift;
+    return if $line =~ / ^\# | ^\ *$ /x;
+    chomp($line);
+
+    my ($action, $type, $item, $replacement) = split(' ', $line);
+    return unless defined $action;
+
+    # Expand environment variables in item and replacement only
+    $item        = expand_string($item,        \%ENV) if defined($item);
+    $replacement = expand_string($replacement, \%ENV) if defined($replacement);
+
+    if (not (defined($item) and defined($replacement) and
+             # $item can't be '' since $replacement is undef then
+             $replacement ne '')) {
+        warn "Can't parse '$line', skipping...";
+        return;
+    }
+    unless ( type_is_directory($type) or type_is_file($type) ) {
+        warn "Can't parse type '$type', must be 'd', 'D', 'f' or 'F', skipping...";
+        return;
+    }
+    if ( $action ne 'd' and $action ne 'r' and $action ne 'm'  ) {
+        warn "Can't parse action '$action', must be 'd', 'r' or 'm', skipping...";
+        return;
+    }
+
+    if ( $item =~ m( ^ (\.\.)? / )x ) {
+        warn "$item would be outside of the home directory, skipping...\n";
+        return;
+    }
+
+    if ($REVERT) {
+        ($item, $replacement) =
+            exchange_wildcards_and_replacements($item, $replacement);
+
+        my $replacement_path = calculate_target($replacement);
+        for my $i (glob($replacement_path)) {
+            if (defined($FILTER)) {
+                return unless ($i =~ $FILTER);
+            }
+            revert($i, $item, $replacement);
+        }
+    } else {
+        for my $i (glob("$ENV{HOME}/$item")) {
+            if (defined($FILTER)) {
+                return unless ($i =~ $FILTER);
+            }
+            replace($type, $i, $item, $replacement, $action);
+        }
+    }
+
+    return;
+}
+
+# Main loop over all items in list files
+for my $list (@LISTFILES) {
+    next unless -e $list;
+    unless (-r _) {
+        warn "List file $list isn't readable, skipping";
+        next;
+    }
+
+    # uncoverable branch true
+    open(my $list_fh, '<', $list) or die "Can't open $list: $!";
+    while (<$list_fh>) {
+        parse_list_file($_);
+    }
+    close($list_fh);
+}
+
+# Restore original umask
+umask($OLDUMASK);
