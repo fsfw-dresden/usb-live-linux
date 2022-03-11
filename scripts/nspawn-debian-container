@@ -8,6 +8,8 @@ check_program_exists debootstrap
 
 DEPS="
 systemd-container
+dbus
+aptitude
 grub-pc-bin
 grub-efi-ia32-bin
 shim-signed
@@ -45,14 +47,18 @@ pigz
 # If no container directory exists, initiate a debian testing install with all our dependencies
 if [ ! -d build/container ]
 then
-  CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
   printf "${COLOR_CYAN}Initializing a debian testing container for building..${COLOR_OFF}\n"
   printf " (this will take a few minutes)\n"
   printf "echo 'systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).'\n"
   printf "\n"
   printf "\n"
+
+  # Debootstrap container using same cache location as for building the images
+  CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
   mkdir -pv "${CACHE_DIR}"
   debootstrap --verbose --cache-dir="${CACHE_DIR}" --include=$(echo ${DEPS}|tr ' ' ',') testing build/container http://ftp.debian.org/debian
+
+  # Create a container welcome prompt
   {
     echo "cd /mnt/usb-live-linux/"
     echo "clear"
@@ -62,6 +68,9 @@ then
     printf "echo 'run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image'\n"
     printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
   } >> build/container/root/.bashrc
+
+  # Copy custom aptitude config
+  cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d build/container/etc/apt/
 fi
 
 # Update apt database
@@ -71,6 +80,6 @@ systemd-nspawn --directory=build/container apt update
 systemd-nspawn --directory=build/container apt install --no-install-recommends --no-upgrade ${DEPS}
 
 # Now bind-mount this repository and enter the container (without any device access restrictions)
-systemd-nspawn --directory=build/container --bind=${PWD}:/mnt/usb-live-linux --bind=/dev --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --console=pipe
+systemd-nspawn --directory=build/container --bind=${PWD}:/mnt/usb-live-linux --bind=/dev --tmpfs=/run/lock --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --console=pipe
 
 # vim: ts=2 sw=2
