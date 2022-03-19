@@ -8,4 +8,4 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
 mkdir -pv ${DEST_DIR}
 git clone .. ${DEST_DIR}
-git -C ${DEST_DIR} remote set-url origin git://github.com/fsfw-dresden/usb-live-linux
+git -C ${DEST_DIR} remote set-url origin https://github.com/fsfw-dresden/usb-live-linux
