@@ -1,0 +1,47 @@
+##  Accessibility
+
+dasher                        #  Gestengesteuerte Eingabe
+ebook-speaker
+# +1 eflite                   # ein auf Festival-Lite basierender Sprachserver für Emacsspeak
+# -1 espeakup                 # Sprachsynthese mit Schwierigkeiten
+flite                         #  Laufzeit-Sprachsynthese auf Basis von Festival-Lite
+# ? libttspico-utils          # Sprachsysthese aus dem Non-Free- Repo
+# ? jovie                     # Sprachausgabe
+espeak                        #  Sprachausgabe
+# ? mbrola                    # Sprachsynthese (unfrei)
+# ? mbrola-de4
+# ? mbrola-de5
+# ? mbrola-de6
+# ? mbrola-de7
+# ? mbrola-us1
+# ? mbrola-us2
+# ? mbrola-us3
+pocketsphinx                  #  Spracherkennung
+
+
+###  Konsole
+
+# ? brltty                    # Braille-Tool
+console-braille               #  Fonts and keymaps for reading/typing unicode braille
+# ? brltty-espeak             #
+# ? brltty-flite              #
+# ? brltty-speechd            #
+speech-dispatcher             #  Common interface to speech synthesizers
+speech-dispatcher-festival
+freetts                       #  FLite basierte Sprachsynthese
+gocr                          #  Texterkennung (OCR)
+tesseract-ocr                 #  OCR als Vorstufe für Textausgabe per Sprache oder Braillezeile
+tesseract-ocr-deu             #  OCR-Trainingsdaten für Deutsch
+
+
+###  KDE-Desktop -- für den KDE-Desktop
+
+# ? kdeaccessibility          # Barrierereduzierung für gehandicapte Anwender
+# ? kvkbd                     # Oncreen-Keyboard
+# ? kmouth                    # Frontend für Sprachausgabe
+
+
+###  Gnome-Desktop & Derivate
+
+gnome-accessibility-themes    #  Barrierereduzierung für Anwender mit Handicap
+gnome-orca                    #  Programmierbarer Screenreader

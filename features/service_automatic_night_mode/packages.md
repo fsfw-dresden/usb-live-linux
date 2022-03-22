@@ -1,1 +1,0 @@
-- :x:  sct  --		set screen color temperature via xrandr - reduce or increase blue light

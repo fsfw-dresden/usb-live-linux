@@ -1,1 +1,0 @@
-- :x:  gdebi  --		Einfaches Programm für Betrachtung und Installation von deb-Dateien (+176 kB)

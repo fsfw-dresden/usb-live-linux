@@ -1,0 +1,3 @@
+ethtool                         # Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
+iptables                        # administration tools for packet filtering and NAT
+redsocks                        # TCP connection redirector to a SOCKS or HTTPS proxy server

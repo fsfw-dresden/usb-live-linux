@@ -1,0 +1,9 @@
+diffpdf                         # grafischer PDF-Vergleicher
+ocrmypdf                        # add an OCR text layer to PDF files
+paperwork-gtk                   # personal document manager for scanned documents and PDFs ("scan & forget")
+pdfchain                        # Grafische Benutzeroberfläche für das PDF Tool Kit
+pdfgrep                         # grep-artiges Suchprogramm für PDF-Dateien für die Konsole
+pdfmod                          # PDF-Bearbeitungsfrontend
+pdfresurrect                    # zeigt Überarbeitungen in PDF-Dateien, falls vorhanden
+pdftk                           # Werkzeug für die Manipulation von PDF-Dokumenten - benötigt Java runtime
+xournalpp                       # Weiterentwicklung von Xournal

@@ -1,1 +1,0 @@
-- :x:  firmware-ipw2x00  --	binary firmware for Intel Pro Wireless 2100, 2200 and 2915

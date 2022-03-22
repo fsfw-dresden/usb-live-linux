@@ -1,0 +1,5 @@
+# ? mysql-server                # MySQL-Datenbankserver
+# ? mysql-client                # MySQL-Datenbankclient (Konsolenvariante)
+# ? phpmyadmin                  # umfangreiches und lehrreiches MySQL-Webfrontend
+
+# ? postgresql                  # Objektrelationale SQL-Datenbank

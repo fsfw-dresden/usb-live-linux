@@ -1,0 +1,52 @@
+### Dictionaries
+dict                            # dictionary client
+dictd                           # dictionary server
+dict-bouvier
+dict-de-en                      # German-English translation dictionary for dictd
+dict-devil
+dict-elements
+dict-foldoc
+dict-freedict-ara-eng
+dict-freedict-deu-eng
+dict-freedict-deu-fra
+dict-freedict-deu-ita
+dict-freedict-deu-nld
+dict-freedict-deu-pol
+dict-freedict-deu-por
+dict-freedict-deu-rus
+dict-freedict-deu-spa
+dict-freedict-eng-ara
+dict-freedict-eng-deu
+dict-freedict-eng-ell
+dict-freedict-eng-fra
+dict-freedict-eng-hin
+dict-freedict-eng-jpn
+dict-freedict-eng-lat
+dict-freedict-eng-nld
+dict-freedict-eng-pol
+dict-freedict-eng-rus
+dict-freedict-eng-spa
+dict-freedict-eng-swh
+dict-freedict-fra-deu
+dict-freedict-fra-eng
+dict-freedict-ita-deu
+dict-freedict-ita-eng
+dict-freedict-jpn-deu
+dict-freedict-lat-deu
+dict-freedict-lat-eng
+dict-freedict-nld-deu
+dict-freedict-nld-eng
+dict-freedict-pol-deu
+dict-freedict-pol-eng
+dict-freedict-por-deu
+dict-freedict-spa-eng
+dict-freedict-swh-eng
+dict-freedict-tur-deu
+dict-freedict-tur-eng
+dict-gazetteer2k
+dict-gcide
+dict-jargon
+dict-moby-thesaurus
+dict-vera
+dict-wn
+

@@ -1,0 +1,37 @@
+##  Desktop
+
+# (gerd: >> recommends true << schlägt bevorzugt >> gnome << als Desktop vor - alternativ mate,kde-standard,xfce4,wmaker )
+
+# ? task-desktop                # Grafische Desktop Umgebung - Progamm Sammlung
+desktop-base                    # Allgemeine Dateien für den Debian-Desktop
+
+xorg
+xserver-xorg
+x11-utils                       # Hilfsprogramme für X11
+
+# ohne mesa kein blender
+mesa-utils                      # Mesa-GL-Hilfsprogramme
+libgl1-mesa-dri                 # Freie Implementierung der OpenGL-Schnittstelle
+
+xserver-xorg-input-all          # X.org-X-Server -- Metapaket für Eingabegeräte-Treiber
+xserver-xorg-video-all          # alle Grafik-Treiber (10 MB)
+xserver-xorg-video-intel        # X.Org-X-Server -- Grafikkartentreiber für Intel i8xx, i9xx
+
+# ? xfonts-utils
+gsfonts-x11
+xdg-user-dirs                   # Werkzeug zur Verwaltung von Benutzerordnern
+
+
+xdg-utils
+libfile-mimeinfo-perl
+libglib2.0-bin
+
+### fonts
+
+ttf-bitstream-vera              # Die TrueType-Schriftfamilie Bitstream Vera
+fonts-dejavu                    # Vera-Schriftartfamile mit zusätzlichen Zeichen
+fonts-texgyre                   # OpenType-Schriften auf Basis der URW-Schriften
+fonts-liberation                # Schriften mit den gleichen Metriken wie Times, Arial und Courier
+fonts-lmodern                   # OpenType-Schriften auf Grundlage von Computer Modern
+fonts-freefont-ttf              # Freefont-TrueType-Schriften Serif, Sans und Mono
+fonts-freefont-otf              # Freefont Serif, Sans and Mono OpenType fonts

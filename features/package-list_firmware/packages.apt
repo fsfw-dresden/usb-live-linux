@@ -1,0 +1,45 @@
+##  System Tools
+
+###  firmware  -- wird >> lb config --firmware-chroot false << verwendet, fehlen diese Pakete
+
+firmware-linux
+firmware-linux-free
+# ? firmware-linux-nonfree
+firmware-misc-nonfree
+# ? firmware-amd-graphics
+
+hdmi2usb-fx2-firmware
+
+# ? dahdi-firmware-nonfree
+
+bluez-firmware
+atmel-firmware
+amd64-microcode
+intel-microcode
+
+firmware-atheros
+firmware-bnx2
+firmware-bnx2x
+firmware-brcm80211
+firmware-cavium
+firmware-intel-sound
+firmware-intelwimax
+firmware-ipw2x00
+# ? firmware-ivtv
+firmware-libertas
+firmware-myricom
+firmware-netronome
+firmware-netxen
+firmware-qlogic
+firmware-realtek
+# ? firmware-samsung
+# ? firmware-siano
+firmware-ti-connectivity
+firmware-zd1211
+
+
+###  Firmware für Wlan - Hardware
+
+firmware-b43-installer          # installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
+
+firmware-iwlwifi                # wird von Thinkpads (getestet mit einem T420) gebraucht

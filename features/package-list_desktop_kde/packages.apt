@@ -1,0 +1,82 @@
+##  Desktop
+
+###  task-kde-desktop  -- KDE Desktop Umgebung
+
+# ? kde-full                    # Vollständige KDE (5:92) Software Compilation für Anwender
+# ? task-kde-desktop
+sddm                            # Moderner Displaymanager für X11
+
+kwin-x11                        # KDE-Fenstermanager - X11-Version
+plasma-theme-oxygen             # kde-style-oxygen-qt5 / qt4 - Oxygen desktop theme is used by Plasma and other KDE Software
+
+# ? kdeartwork-wallpapers
+# ? plasma-workspace-wallpapers
+
+# (Dieses Paket scheint eine Abhängigkeit zu sein, das automatisch mit installiert wird, auch wenn es hier garnicht zum Installieren ausgewählt wurde.)
+# ? kde-wallpapers              # Hintergrundbilder für den KDE-Desktop (Größe 90 MB)
+
+fonts-oxygen
+kwin-decoration-oxygen
+
+###  kde tools für System Einstellungen
+
+systemsettings                  # Anwendung zur Konfiguration der Arbeitsfläche
+khotkeys                        # Konfiguriere die Einstellungen für die Eingabeaktionen in Plasma.
+kmenuedit                       # stellt einen Menüeditor bereit, mit dem Sie das KDE-Plasma- Arbeitsflächen-Menü oder ein beliebiges anderes XDG-Menü bearbeiten können
+kde-config-screenlocker         # KCM Module for kscreenlocker
+kde-config-sddm                 # KCM module for SDDM
+kscreen                         # KDE-Unterstützung für Monitorwechsel und Handhabung der Anzeige
+
+###  kde-standard
+
+akregator                       # RSS/Atom-Feed-Aggregator
+ark                             # Archiv-Werkzeug
+dragonplayer                    # Einfacher Videoabspieler
+gwenview                        # Bildbetrachter
+juk                             # Jukebox und Musikabspieler
+kaddressbook                    # Adressbuch- und Kontaktdatenverwaltung
+kate                            # Leistungsstarker Texteditor
+kcalc                           # Einfacher wissenschaftlicher Taschenrechner
+kde-plasma-desktop              # KDE Plasma Desktop und eine minimale Auswahl an Anwendungen - oder ...netbook
+user-manager                    # user management tool for the Plasma workspace
+kde-spectacle                   # Werkzeug für die Erstellung von Bildschirmfotos (ersetzt KSnapshot)
+khelpcenter                     # Hilfezentrum
+kio-extras                      # Extra functionality for kioslaves - wird benötigt für Vorschau Hintergrundbilder
+
+# (Carsten: bei kmail wäre zu überlegen, ob man es nicht weglässt. icedove (bzw. vorzugsweise thunderbird) ist ohnehin gesetzt. Alles weitere verwirrt nur.)
+# ? kmail                       # Vollständiger grafischer E-Mail-Client
+knotes                          # Programm für Haftnotizen (sticky notes)
+kopete                          # Instant-Messaging- und Chat-Anwendung
+korganizer                      # Kalender und persönliche Terminverwaltung
+kwalletmanager                  # Sichere Passwortverwaltung
+okular                          # Universal-Dokumentenbetrachter
+plasma-dataengines-addons       # additional data engines for Plasma
+plasma-pa                       # Plasma 5 Volume controller
+kmix                            # Lautstärkeregler und Mischer
+plasma-runners-addons           # additional runners for Plasma 5 and Krunner
+plasma-wallpapers-addons        # additional wallpaper plugins for Plasma 5
+plasma-widgets-addons           # additional widgets for Plasma 5
+polkit-kde-agent-1              # KDE-Dialoge für PolicyKit
+sweeper                         # Löschen von Verlauf und temporären Dateien
+konqueror                       # Hochentwickelter Dokumentenbetrachter, Webbrowser und Dateimanager
+konq-plugins                    # Erweiterungen für Konqueror, den KDE-Datei-/Web-/Dokumenten-Browser
+plasma-nm                       # Plasma5-Bibliothek zur Netzwerkverwaltung
+skanlite                        # Auf dem KSane-Backend basierendes Scanprogramm für KDE 4
+
+###  kde-l10n  -- virtuelles Paket zur Sprachenunterstützung
+
+kde-l10n-de                     # Deutsche (de) Lokalisierung für KDE
+
+###  KDE Programme
+
+# ? ksnapshot                   # Werkzeug für die Erstellung von Bildschirmfotos
+okular-extra-backends           # Unterstützung von zusätzlichen Dokumentformaten für Okular
+kontact                         # Integrierte Anwendung für die Verwaltung persönlicher Informationen
+konsolekalendar                 # Persönlicher Organizer für die Konsole
+# +1 kteatime                   # Kurzzeitwecker, damit der Tee weder zu kurz och zu lange zieht
+# +1 ktimetracker               # Zeiterfassungstool zur Unterstützung bei der Zeiteinteilung
+
+kdiff3                          # Vergleicht und führt zwei oder drei Dateien oder Verzeichnisse zusammen
+partitionmanager                # KDE-Programm zur Verwaltung von Dateien, Platten und Partitionen
+filelight                       # Speicherbelegungsvisualisierung
+

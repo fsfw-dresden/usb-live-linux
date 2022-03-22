@@ -1,1 +1,0 @@
-- :x:  ccze  --	robust and modular log coloriser

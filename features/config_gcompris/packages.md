@@ -1,1 +1,0 @@
-- :x:  gcompris-qt  --		Educational games for small children (74.8 MB)

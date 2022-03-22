@@ -1,0 +1,44 @@
+##  system-tools
+
+###  admin
+
+dselect                         # Oberfläche für die Debian-Paketverwaltung
+fbset                           # Framebuffer-Geräte einstellen
+hdparm                          # Festplattenparameter einstellen
+cryptsetup                      # Unterstützung für Festplattenverschlüsselung - Startskripte
+cryptsetup-initramfs            # Festplattenverschlüsselung - initramfs integration
+gdisk                           # Textmodus-Partitionierungswerkzeug GPT fdisk
+# ? gpart                       # Partitionierungsprogramm (Konsolenvariante)
+discover                        # Hardware-Erkennungs-System
+cpupower-gui                    # utility to change the CPU frequency and governor
+
+installation-report             # Hilfstool für Bugreports
+reportbug                       # Werkzeug, um Fehler (Bugs) in Debian und abgeleiteten Distributionen relativ schmerzfrei zu melden
+systemd-bootchart               # boot performance graphing tool
+
+###  utils
+
+bash-completion                 # Programmierbare Vervollständigung für die Bash-Shell
+console-setup                   # Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole
+usbutils                        # Linux USB-Hilfsprogramme
+pciutils                        # PCI-Hilfsprogramme
+lshw                            # Informationen über die Hardwarekonfiguration
+lsdvd                           # liest die Inhaltsinformation einer DVD
+eject                           # Auswerfen von CDs und Steuern von CD-Wechslern unter Linux
+udisks2                         # D-Bus-Dienst für Zugriff auf und Manipulation von Speichergeräten
+sshfs                           # Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
+pm-utils                        # Powermanagement
+testdisk                        # Datenrettungswerkzeug
+dosfstools                      # Programme zum Anlegen und Überprüfen von MS-DOS-FAT-Dateisystemen
+
+cups                            # Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
+cups-bsd                        # Common UNIX Printing System(tm) - BSD-Befehle
+
+# ? openssh-server              # Ermöglicht Zugriff von Außen, hilfreich für die Entwicklung des Live-Systems
+
+
+###  kernel
+
+squashfs-tools                  # Werkzeug zum Erzeugen und Hinzufügen von squashfs-Dateisystemen
+
+

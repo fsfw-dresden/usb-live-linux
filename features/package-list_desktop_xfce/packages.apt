@@ -1,0 +1,42 @@
+##  Desktop
+
+###  task-xfce-desktop  -- xfce Desktop Umgebung
+
+lightdm                         # Einfaches grafisches Login-Programm
+lightdm-gtk-greeter             # Einfaches grafisches Login-Programm (GTK+-Anmeldefenster) LightDM
+accountsservice                 # query and manipulate user account information
+at-spi2-core                    # Assistive Technology Service Provider Interface (dbus core)
+
+xfce4                           # not much
+
+xfce4-session                   # Xfce4 Session Manager
+xfdesktop4                      # xfce desktop background, icons and root menu manager
+xfwm4                           # window manager of the Xfce project
+libxfce4ui-utils                # xfce4-about
+xfce4-power-manager             # power manager for Xfce desktop
+xfce4-notifyd                   # simple, visually-appealing notification daemon for Xfce
+xfce4-terminal                  # lightweight and easy to use terminal emulator for X11
+xfce4-screenshooter             # take desktop, rectangles or selected window screenshots
+xfce4-panel                     # multi-functional panel
+xfce4-taskmanager               # for monitoring and controlling running processes
+xfce4-cpufreq-plugin            # displays the current frequency of the CPU, in GHz or MHz
+xfce4-eyes-plugin               # eyes that follow your mouse for the Xfce4 panel
+xfce4-power-manager-plugins     # control brightness etc
+# ? xfce4-places-plugin         # quick access to folders, documents and removable media
+xfce4-pulseaudio-plugin         # control pulseaudio
+xfce4-sensors-plugin            # hardware sensors plugin for the Xfce4 panel
+xfce4-weather-plugin            # weather information plugin for the Xfce4 panel
+xfce4-whiskermenu-plugin        # application launcher for Xfce
+xfce4-indicator-plugin          # display information from various applications consistently
+xfce4-sensors-plugin            # hardware sensors plugin for the Xfce4 panel
+xfce4-places-plugin             # quick access to folders, documents and removable media
+xfce4-datetime-plugin           # date and time plugin for the Xfce4 panel
+xfce4-clipman-plugin            # clipboard history
+xfce4-xkb-plugin                # keyboard layout switch plugin for the Xfce4 panel
+xfce4-timer-plugin              # timer plugin for Xfce panel
+mousepad                        # simple graphical text editor for Xfce based on Leafpad
+# ? xfce4-screensaver           # screen saver and locker that is integrated with the xfce4 desktop (unstable)
+
+###  Netzwerk
+
+network-manager-gnome           # systray applet

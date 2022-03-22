@@ -1,3 +1,0 @@
-- :x:  sweethome3d  --		Interior 2D design application with 3D preview
-- :x:  sweethome3d-furniture  --	additional furniture libraries created by SweetHome3D contributors
-- :x:  sweethome3d-furniture-nonfree  --	additional furniture libraries created by SweetHome3D contributors (gratis, not free)

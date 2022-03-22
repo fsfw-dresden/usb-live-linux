@@ -1,0 +1,3 @@
+csound                          # Soundsynthese und Multieffekt-Prozessor
+supercollider                   # algorithmische Soundsynthese
+puredata                        # Echtzeit-Musik- & Grafiksystem

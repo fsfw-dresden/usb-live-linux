@@ -1,0 +1,8 @@
+chicago95-theme-all             # XFCE Windows 95 Total Conversion
+libcanberra-gtk-module          # translates GTK+ widgets signals to event sounds
+libcanberra-gtk3-module         # translates GTK3 widgets signals to event sounds
+mpv                             # general-purpose video player based on mplayer2
+qemu-system-x86                 # full system emulation binaries (x86)
+qemu-system-gui                 # graphical user interface (currently GTK) and audio backends
+qt5ct                           # Qt5 Configuration Utility
+qt5-style-plugins               # Qt 5 extra widget styles + GTK+ 2 platformtheme

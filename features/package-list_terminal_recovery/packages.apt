@@ -1,0 +1,7 @@
+gpart                   # Guess PC disk partition table, find lost partitions
+foremost                # recover lost files based on their headers, footers, and internal data structures
+clonezilla              # bare metal backup and recovery of disk drives
+partclone               # clone and restore a partition
+testdisk                # disk/file recovery tool
+gddrescue               # GNU data recovery tool
+

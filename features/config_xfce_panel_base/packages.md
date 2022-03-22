@@ -1,2 +1,0 @@
-- :x:  nemo  --         file manager
-- :x:  cinnamon-l10n  --                translation files for nemo et al.

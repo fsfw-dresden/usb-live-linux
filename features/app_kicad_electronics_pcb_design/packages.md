@@ -1,7 +1,0 @@
-- :x:  kicad  --	Electronic design software: suite of programs for the creation of printed circuit boards
-- :x:  kicad-libraries  --	common used libraries by kicad
-- :x:  kicad-symbols  --	schematic symbols
-- :x:  kicad-footprints  --	footprint is a drawing of the physical component including its land pattern (e.g. the layout of pads on the circuit board
-- :x:  kicad-templates  --	worksheet files e.g. for Raspberry PI, BeagleBone, Arduino
-- :x:  kicad-demos  --	various typical small use cases
-- :x:  kicad-packages3d  --	3D models for 3D viewer in KiCad's Pcbnew and Footprint Editor

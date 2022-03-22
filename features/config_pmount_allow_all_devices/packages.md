@@ -1,1 +1,0 @@
-- :x:  pmount  --		mount removable devices as normal user

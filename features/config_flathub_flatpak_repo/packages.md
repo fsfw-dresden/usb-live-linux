@@ -1,1 +1,0 @@
-- :x:  flatpak  --	Application deployment framework for desktop apps

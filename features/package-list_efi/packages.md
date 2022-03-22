@@ -1,3 +1,0 @@
-- :x:  efitools  --		Tools to manipulate EFI secure boot keys and signatures
-- :x:  efibootmgr  --	Interact with the EFI Boot Manager (create and destroy boot entries, change the boot order, change the next running boot option)
-- :x:  efivar  --	Tools to manage UEFI variables

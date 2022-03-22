@@ -1,0 +1,17 @@
+##  System-Tools - Virtualisierung - Netzwerk
+
+###  Virtualisierung
+
+qemu-system-x86                 # Vollständige Virtualisierung auf x86-Hardware
+ovmf                            # UEFI firmware for 64-bit x86 virtual machines
+qemu-system-gui                 # graphical user interface (currently GTK) and audio backends (+97,8 kB)
+qemu-utils                      # QEMU-Werkzeuge qemu-img, qemu-io, qemu-nbd (+964 kB)
+# ? kvmtool                     # ist ein leichtes Tool für das Hosting KVM Gästen
+
+virt-manager                    # Desktopanwendung zur Verwaltung virtueller Maschinen
+# ? libvirt-daemon-system       # broken by qemu
+virt-viewer                     # Anzeige der grafischen Konsole einer virtuellen Maschine
+
+# +1 virtualbox                 # einfach zu bedienendes Virtualisierungsprogramm
+# +1 virtualbox-guest-utils
+# +1 virtualbox-guest-x11

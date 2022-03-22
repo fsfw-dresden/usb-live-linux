@@ -1,1 +1,0 @@
-- :x:  fonts-linuxlibertine  --		Linux Libertine family of fonts

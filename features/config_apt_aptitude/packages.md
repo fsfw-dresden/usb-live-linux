@@ -1,1 +1,0 @@
-- :x:  aptitude  --	terminal-based package manager

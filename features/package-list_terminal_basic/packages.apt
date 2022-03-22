@@ -1,0 +1,135 @@
+acpitool                # command line ACPI client (battery status, thermal status, …)
+alsa-utils              # Utilities for configuring and using ALSA
+antiword                # Converts MS Word files to text, PS, PDF and XML
+aptitude                # Anständiger Paketmanager (Text UI)
+atool                   # tool for managing file archives of various types
+beep                    # advanced PC-speaker beeper
+boxes                   # textmode box- and comment drawing filter
+brightnessctl           # small utility to control the brightness of screen and LEDs
+bsdmainutils            # collection of more utilities from FreeBSD (hexdump etc)
+btrfs-progs             # Checksumming Copy on Write Filesystem utilities
+caca-utils              # text mode graphics utilities
+catdoc                  # text extractor for MS-Office files
+ccze                    # robust and modular log coloriser
+cgdb                    # curses-based interface to the GNU Debugger (GDB)
+chafa                   # Image-to-text converter (supports animations, alpha, UTF..)
+chntpw                  # NT SAM password recovery utility
+cmatrix                 # Screen saver for the terminal
+consolation             # linux console pointer support for copy-paste
+conspy                  # (Remote) control of Linux virtual consoles
+cpuid                   # dump x86 CPUID information
+cruft-ng                # finds anything that shouldn't be there, but is & anything that should be there, but isn't
+csstidy                 # CSS parser and optimiser
+# ? ctop                # text based Linux Containers monitoring tool
+curl                    # command line tool for transferring data with URL syntax
+davfs2                  # mount a WebDAV resource as a regular file system
+dconf-cli               # low-level key/value database designed for storing desktop environment settings
+debian-goodies          # (debmany, dpigs, dzgrep)
+debram                  # catalog of available shell commands
+debsums                 # verification of installed package files against MD5 checksums
+dialog                  # dialog boxes from shell scripts
+diskscan                # scan storage media for bad or near failure sectors
+dlocate                 # find files in debian packages: fast alternative to dpkg -L and dpkg -S
+dmidecode               # SMBIOS/DMI table decoder
+dnsutils                # client programs related to DNS (dig, nslookup, nsupdate)
+docutils-common         # weiterer Multiformatkonverter (für Restructured Text)
+docx2txt                # Convert Microsoft OOXML files to plain text
+dos2unix                # convert text file line endings between CRLF and LF
+dpkg-repack             # creates .deb file of an installed package
+dstat                   # versatile resource statistics tool
+dvipng                  # Konvertiert DVI-Dateien in PNG-Grafiken
+e2fsprogs-l10n          # Werkzeuge für ext2-/ext3-/ext4-Dateisysteme - Übersetzungen
+edid-decode             # decode the binary EDID information from monitors
+elinks                  # advanced text-mode WWW browser
+entr                    # Event Notify Test Runner (entr) runs commands when files change (detected through kqueue/inotify kernel interface)
+exiftool                # read and write meta information in multimedia files
+f2fs-tools              # Tools for Flash-Friendly File System
+f3                      # test real flash memory capacity
+faketime                # intercepts various system calls and fake date and time to programs
+fatattr                 # control attributes on a FAT filesystem
+fatrace                 # report system wide file access events
+gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
+graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
+highlight               # Universal source code to formatted text converter
+hopenpgp-tools          # hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
+htop                    # interaktive Prozessübersicht für die Konsole
+htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
+httpie                  # CLI, cURL-like tool for humans
+hwinfo                  # Informationen über die im System installierte Hardware
+i2c-tools               # set of I2C tools
+i7z                     # reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
+icdiff                  # terminal side-by-side colorized word diff
+imagemagick             # konsolenbasierte Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: um ganze Bilderordner zu konvertieren
+inotify-tools           # command-line programs providing a simple interface to inotify
+inxi                    # system information script
+iotop                   # displays a table of current I/O usage by processes on the system
+iptraf-ng               # Interactive Colorful IP LAN Monitor, generates various network statistics
+irqtop                  # Observe IRQ and SoftIRQ in a top-like fashion
+jdupes                  # identify and delete or link duplicate files
+jc                      # JSONifies the output of many CLI tools and file-types for easier parsing in scripts
+jq                      # Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
+# ? latencytop          # visualize system latencies (needs CONFIG_LATENCYTOP!)
+less                    # world class file viewer
+libcdio-utils           # small libcdio-based tools (cd-drive, cd-info, iso-info, ..)
+librsvg2-bin            # command-line and graphical viewers for SVG files
+linux-cpupower          # CPU power management tools for Linux
+lm-sensors              # hardware health monitoring: read temperature/voltage/fan sensors
+lnav                    # log file navigator
+lsof                    # utility to list open files
+ltrace                  # trace library calls in dynamically linked programs
+lz4json                 # unpack lz4json files, usually generated by Mozilla programs
+lz4                     # very fast lossless compression, used by firefox to compress settings files (f.e. search.json.mozlz4)
+mc                      # Midnight Commander - ein guter Dateimanager
+mediainfo               # command-line utility for reading information from audio/video files
+memtester               # userspace utility for testing the memory subsystem for faults
+moreutils               # additional Unix utilities
+mosh                    # Mobile shell that supports roaming and intelligent local echo
+most                    # Pager-Programm - alternativ zu more / less
+neofetch                # Shows Linux System Information with Distribution Logo
+ncdu                    # ncurses disk usage viewer
+ncurses-hexedit         # Edit files/disks in hex, ASCII and EBCDIC
+ne                      # easy-to-use and powerful text editor
+nmon                    # display the CPU, memory, network, disks (mini graphs or numbers) …
+pdfgrep                 # search in pdf files for strings matching a regular expression
+percol                  # interactive selection for UNIX pipes
+pinfo                   # user-friendly, console-based viewer for Info documents
+pipemeter               # shows the speed of data moving from input to output
+pmount                  # mount removable devices as normal user
+poppler-utils           # PDF utilities (pdfinfo, pdftotext, pdfimages, pdfunite ..)
+powertop                # diagnose issues with power consumption and management
+progress                # Coreutils Progress Viewer
+psmisc                  # utilities that use the proc file system
+pylint                  # Python code static checker and UML diagram generator
+qalc                    # command line version of Qalculate!
+radeontop               # show Radeon GPU utilization
+ranger                  # Bester Dateimanager (Text UI)
+renameutils             # to make file renaming easier
+ripgrep                 # line-oriented search tool that recursively searches
+rlwrap                  # Kommandozeilen-Wrapper mit »readline«-Funktionalität (Editieren von Tastatureingaben)
+scanmem                 # locate and modify a variable in a running process
+screen                  # Terminalmultiplexer mit VT100/ANSI-Terminalemulation
+screenfetch             # Bash Screenshot Information Tool: terminal theme information + ASCII distribution
+shellcheck              # lint tool for shell scripts
+shed                    # simple hex editor with a pico-style interface
+silversearcher-ag       # sehr schnell grep-ähnliches Programm
+smem                    # reports on memory usage
+strace                  # System call tracer
+stress                  # impose load on and stress test a computer system
+syslinux-utils          # auxiliary utilities (+98,4 kB)
+sysstat                 # system performance tools (iostat etc)
+tidy                    # HTML/XML syntax checker and reformatter
+tilde                   # Intuitive text editor for the terminal
+traceroute              # displays the route used by IP packets on their way
+translate-shell         # Command-line translator using Google Translate, etc.
+tree                    # recursive directory listing: depth indented colorized listing of files
+tuptime                 # report historical system real time
+tweak                   # Efficient text-mode hex editor
+udftools                # tools for UDF filesystems and DVD/CD-R(W) drives
+unrar                   # Unarchiver for .rar files (+111 kB)
+usbtop                  # show bandwidth on USB buses and devices
+vbindiff                # visually compare binary files
+w3m                     # WWW browsable pager with excellent tables/frames support
+wcalc                   # command-line scientific calculator
+whois                   # intelligent WHOIS client
+xmlstarlet              # transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
+zip                     # Archiver for .zip files (+234 kB)

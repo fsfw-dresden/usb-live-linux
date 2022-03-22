@@ -1,1 +1,0 @@
-- :+1: :x:  [sejda-desktop](https://sejda-cdn.com/downloads/sejda-desktop_7.3.7_amd64.deb)  --	PDF modifications: edit existing text, split, merge, extract, compress, export to other formats and more

@@ -1,1 +1,0 @@
-- :x:  google-earth-pro-stable  --		Explore, search and discover the planet (+56,5 MB)

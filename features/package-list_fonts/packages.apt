@@ -1,0 +1,39 @@
+##  Staging
+### Fonts
+fonts-bebas-neue                # Flat, rounded style font designed
+fonts-croscore                  # metrically compatible with Arial, Courier New and Times New Roman
+fonts-crosextra-caladea         # metric-compatible with the Cambria font
+fonts-crosextra-carlito         # metric-compatible with Calibri font
+fonts-cabin                     # humanist sans serif font
+fonts-ebgaramond                # EB Garamond OpenType fonts
+fonts-hack-otf                  # Typeface designed for source code
+fonts-humor-sans                # Font that looks like handwritten text
+fonts-jetbrains-mono            # typeface for developers: for a better code reading experience
+fonts-lato                      # "Lato" means "Summer" in Polish
+fonts-linuxlibertine
+fonts-larabie-uncommon          # Special decorative fonts from www.larabiefonts.com
+fonts-monoid                    # open source coding font… sharpness at 12px/9pt even on low res display
+fonts-noto                      # "Noto" is short for "No Tofu", Tofu (豆腐) is Japanese jargon for unicode replacement character "�" (U+FFFD)
+fonts-noto-cjk                  # font families for Traditional Chinese, Simplified Chinese, Japanese and Korean (+54.3 MB)
+fonts-noto-color-emoji          # color emoji font used on "stock" Android devices (+7.572 kB)
+fonts-open-sans                 # humanist sans serif typeface
+fonts-opendin                   # Open DIN font
+fonts-radisnoir                 # font inspired by Bayer Universal and Bauhaus
+fonts-roboto                    # default font in Android and ChromeOS, recommended font for … Material Design
+fonts-roboto-slab               # Slab Serif font for the Roboto font family
+fonts-sil-gentiumplus           # extended smart font family for Latin, Greek and Cyrillic
+fonts-ubuntu                    # developed between 2010-2011. Dalton Maag
+fonts-yanone-kaffeesatz         # reminiscent of 1920s coffee house typography
+fonts-clear-sans                # sharp on-screen sans-serif font
+fonts-gotico-antiqua            # 15th century types between gothic and roman
+fonts-cantarell                 # contemporary Humanist sans serif, designed for on-screen reading (default of GNOME 3 desktop)
+fonts-anonymous-pro             # fixed width font designed for coders
+fonts-stix                      # Scientific and Technical Information eXchange fonts (+590 kB)
+fonts-bwht                      # Six handwritten fonts created for the Because We Had To project (+110 kB)
+fonts-ferrite-core              # geometric shaped font lending it a futurist look
+fonts-tomsontalks               # comic lettering font created with online comics in mind
+fonts-texgyre                   # OpenType fonts based on URW Fonts
+
+# ? powerdevil                  # KDE power settings (& brightness control keys)
+# ? kde-config-gtk-style-preview # KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
+# ? gtk2-engines-oxygen         # Oxygen widget theme for GTK+-based applications

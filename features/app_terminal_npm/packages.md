@@ -1,1 +1,0 @@
-- :x:  npm  --		npm is the package manager for the Node JavaScript platform

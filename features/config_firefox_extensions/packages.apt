@@ -1,0 +1,4 @@
+webext-ublock-origin-firefox    # lightweight and efficient ads, malware, trackers blocker
+curl                            # command line tool for transferring data with URL syntax
+jq                              # Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
+

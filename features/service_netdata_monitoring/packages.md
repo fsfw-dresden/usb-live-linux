@@ -1,3 +1,0 @@
-- :x:  netdata  --	real-time performance monitoring using interactive web dashboards on http://localhost:19999/
-- :o:  netdata-plugins-nodejs  --
-- :x:  netdata-plugins-python  --

@@ -1,6 +1,0 @@
-- :x:  nemo  --		file manager
-- :x:  nemo-fileroller  --		create and extract archives
-- :x:  nemo-nextcloud  --		integrates the Nextcloud web service
-- :x:  cinnamon-l10n  --		translation files for nemo et al.
-- :x:  tumbler  --		D-Bus thumbnailing service
-- :x:  tumbler-plugins-extra  --		additional plugins for video files, Raw Digital Camera Images, OpenDocuments

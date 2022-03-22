@@ -1,1 +1,0 @@
-- :x:  oneko  --	cat (neko) chases the cursor (now a mouse) around the screen

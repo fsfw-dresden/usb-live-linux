@@ -1,0 +1,53 @@
+##  Programmierung Softwareentwicklung
+
+###  IDEs
+
+geany                           # leichtgewichtiger Texteditor, der durch Plugins erweitert werden kann
+geany-plugins                   # fast and lightweight IDE + plugins (+5.003 kB)
+geany-plugin-addons
+# ? geany-plugin-devhelp        # API-Dokumentation beim Programmieren anzeigen lassen
+geany-plugin-doc                # weitere API-Dokumentationssuche
+geany-plugin-gendoc             # Doku-Generator für Geany (vgl. etwa Doxygen)
+
+# (Norman: Dies erscheint mir redundant, da bereits ein umfangreicherer LaTeX-Editor vorgesehen)
+geany-plugin-latex              # LaTeX-Plugin für Geany
+
+# ? geany-plugin-markdown       # Markdown- (und somit auch Pandoc-) Vorschaufenster für Geany
+geany-plugin-pairtaghighlighter
+geany-plugin-pg                 # GPG-Plugin für Geany zum Ver-/Entschlüsseln und digitalem Signieren
+geany-plugin-prettyprinter      # Geanyplugin für hübschere Ausdrucke
+geany-plugin-spellcheck         # Rechtschreibkorrektur für Geany
+geany-plugin-vc                 # Geanyplugin für Versionsverwaltungen
+geany-plugin-extrasel           # Blockauswahlmodus für Geany
+geany-plugin-projectorganizer   # Projektverwaltungsplugin für Geany
+
+eric                            # Vollständige integrierte Python-Entwicklungsumgebung
+spyder3                         # Python-IDE für Wissenschaftler (Python 3)
+python3-rope                    # Empfehlung von Spyder3 (Python refactoring library)
+
+qtcreator                       # IDE für C++ incl. QT-Framework
+
+swi-prolog                      # deklaratives Programmieren
+swi-prolog-doc
+swi-prolog-java
+swi-prolog-odbc
+
+arduino                         # Entwicklungswerkzeuge für das AVR-Entwicklungsboard (Arduino-Boards) für Hobbybastler und andere
+
+sqlitebrowser                   # grafisches Datenbankfrontend für Sqlite
+
+###  Spielerisch programmieren Lernen
+
+scratch                         # Einfach bedienbare Programmierumgebung für Kinder ab 8 Jahren
+# ? squeak-plugins-scratch      # spielerisch programmieren lernen (Erweiterung)
+
+###  IDEs - Java
+
+jedit                           # weiterer Texteditor, der durch Plugins erweitert werden kann
+
+# ? eclipse                     # vielseitiger, aber auch schwergewichtiger, Klassiker
+# ? eclipse-cdt                 # Eclipse für C++ Programmierung
+# ? eclipse-jdt                 # Eclipse für Java Programmierung
+# ? eclipse-eclox               # Doxygen-Plugin für Eclipse
+# ? eclipse-egit                # Git-Plugin für Eclipse
+# ? netbeans                    # IDE für Webprogrammierung (Ist leider nicht im Repo)

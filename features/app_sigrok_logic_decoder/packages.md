@@ -1,1 +1,0 @@
-- :x:  sigrok  -- Logic analyzer and protocol decoder software suite (metapackage)

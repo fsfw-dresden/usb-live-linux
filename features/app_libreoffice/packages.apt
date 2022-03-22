@@ -1,0 +1,20 @@
+##  Libre Office
+
+###  libreoffice
+
+libreoffice                     # office productivity suite (metapackage)
+libreoffice-base                # Datenbank
+libreoffice-calc                # Tabellenkalkulation
+libreoffice-writer              # Text-Verarbeitung
+libreoffice-math                # Formel-Editor
+# ? libreoffice-dmaths          # Verbesserungen für den LibreOffice-Formeleditor
+libreoffice-draw                # Zeichenprogramm
+libreoffice-impress             # Präsentation
+libreoffice-java-common         # architekturunabhängige Dateien der Java-Unterstützung
+libreoffice-evolution           # Unterstützung für Evolution-Adressbücher
+unoconv                         # converter between LibreOffice document formats
+
+# ? libreoffice-gnome           # GNOME-Integration
+# ? libreoffice-gtk2            # GTK+-2-Integration
+libreoffice-gtk3                # GTK+-3-Integration
+# ? libreoffice-kde             # KDE-Integration

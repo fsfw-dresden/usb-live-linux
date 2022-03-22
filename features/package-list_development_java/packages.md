@@ -1,1 +1,0 @@
-- :x:  default-jdk  -- Standard-Java oder Java-kompatibles Development Kit - Open Java Development Kit 8

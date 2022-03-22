@@ -1,2 +1,0 @@
-- :x:  pandoc-citeproc  -- Literaturverwaltungserweiterung für Pandoc
-- :x:  pandoc  -- Multiformatkonverter

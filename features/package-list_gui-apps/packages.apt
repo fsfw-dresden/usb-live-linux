@@ -1,0 +1,75 @@
+telegram-desktop                # messaging app with a focus on speed and security on all your devices at the same time
+
+# ? qalculate-gtk               # Powerful and easy to use desktop calculator
+
+meld                            # graphical diff … recursive  directory diffs
+
+remmina                         # remote desktop client
+remmina-plugin-vnc              # VNC plugin for Remmina
+remmina-plugin-nx               # NX plugin for Remmina
+remmina-plugin-rdp              # RDP plugin for Remmina
+remmina-plugin-spice            # Spice plugin for Remmina
+
+kdeconnect                      # integrate linux desktop with android smartphone
+
+gnome-characters                # find and insert unusual characters
+jugglinglab                     # creating and animating juggling patterns
+storymaps                       # graphical story planning and writing application for children
+cronometer                      # Exercise and nutrient intake tracker
+screenkey                       # screencast tool to display your keys
+openboard                       # interactive white board application designed primarily for use in schools
+quiterss                        # fast and comfortable RSS/Atom news feeds reader
+projecteur                      # virtual laser pointer for use with inertial pointers
+# ? ding                        # Graphical dictionary lookup program for Unix
+kiwix                           # offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
+
+gthumb                          # advanced image viewer and browser
+
+onboard                         # On-screen Keyboard with macros, easy layout creation and word suggestion
+
+gnome-font-viewer               # preview fonts
+
+calamares-settings-debian       # Debian theme and settings for the Calamares Installer (which this also pulls in)
+
+catfish                         # file searching tool
+
+weston                          # reference implementation of a wayland compositor
+# ? key-mon                     # show live keyboard and mouse status
+
+tipp10                          # touch typing software
+
+simple-scan                     # easy-to-use Scanning Utility
+
+xpra                            # tool to detach/reattach running X programs
+
+lazarus-2.0                     # IDE for Free Pascal (Delphi-likesion) (+>130 MB)
+fpc                             # Free Pascal Compiler
+
+libvte9                         # Terminal emulator widget for GTK+ 2.0 - runtime files
+
+qt5ct                           # Qt5 Configuration Utility (theme, font, icons, etc.)
+qt5-style-plugins               # Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
+
+webext-ublock-origin            # general-purpose lightweight ads, malware, trackers blocker (Web Extension)
+
+calibre                         # powerful and easy to use e-book manager (+28,1 MB)
+seahorse                        # front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
+
+# ? childsplay                  # educational games for young children (+30.8 MB)
+gramps                          # Familienstammbaum (+7,010 kB + 876 kB recommends)
+gir1.2-gexiv2-0.10              # recommended by gramps
+gir1.2-goocanvas-2.0            # recommended by gramps
+gir1.2-gtkspell3-3.0            # recommended by gramps
+gir1.2-osmgpsmap-1.0            # recommended by gramps
+python3-icu                     # recommended by gramps
+libnotify-bin                   # Sendet Benachrichtigungen an die Arbeitsfläche
+
+materia-gtk-theme               # Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)
+
+
+# ?
+# ? ffplay                      # simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
+pulseeffects                    # advanced system-wide equalizer for PulseAudio
+# ? webcamoid                   # full featured webcam capture application, can do a lot of funny things (+9,328 kB)
+# ? guake                       # Drop-down terminal (GTK)
+# ? yakuake                     # Drop-down terminal (KDE)

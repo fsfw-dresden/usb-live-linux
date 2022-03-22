@@ -1,0 +1,29 @@
+##  Desktop Grafik - Video - Audio
+
+###  3D-Grafik
+
+blender                         # Sehr schnelle und vielseitige Suite für 3D-Modellierung/-Rendering
+sweethome3d                     # Interior 2D design application with 3D preview (java)
+# +1 sweethome3d-furniture-editor# Sweet Home 3D Furniture Library Editor
+# +1 sweethome3d-textures-editor# Sweet Home 3D Textures Library Editor
+
+###  CAD
+
+# ? freecad                     # umfangreiches und vielfältiges Konstruktionsprogramm
+calculix-ccx                    # Three-Dimensional Structural Finite Element Program (+1.906 kB)
+povray-examples                 # Persistence of vision raytracer (3D renderer) + sample files (+11,8 MB)
+# ? librecad                    # Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
+# ? openscad                    # script file based graphical CAD environment
+
+
+###  Maker Tools  -- 3D Tools - G-Code
+
+printrun                        # 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software (+13,5 MB)
+slic3r                          # G-code generator for 3D printers (+4 MB)
+cura                            # GUI G-code generator for 3D printers
+# < https://github.com/alicevision/meshroom/releases/download/v2018.1.0/Meshroom-2018.1.0-linux.tar.gz # Meshroom: Photogrammetrie-Werkzeug
+
+###  LaserCut
+
+# ( http://download.visicut.org/master )
+< https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-139-g2ed60ea3-1_all.deb      # VisiCut: Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll

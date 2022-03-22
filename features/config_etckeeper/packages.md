@@ -1,1 +1,0 @@
-- :x:  etckeeper  --		tool to let /etc be stored in a git

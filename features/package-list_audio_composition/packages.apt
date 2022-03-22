@@ -1,0 +1,23 @@
+# Apps
+sonic-pi                # Live Coding for Everyone
+solfege                 # Ear training software
+lmms                    # Linux Multimedia Studio
+
+### Misc
+fluid-soundfont-gm      # Fluid (R3) General MIDI SoundFont (GM)
+pulseaudio-module-jack  # jackd modules for PulseAudio sound server
+
+### Plugins
+amb-plugins             # ambisonics LADSPA plugins
+autotalent              # pitch correction LADSPA plugin
+caps                    # C\* Audio Plugin Suite
+fil-plugins             # parametric equalizer LADSPA plugin
+jalv                    # tool to run LV2 plugins as stand-alone applications
+lsp-plugins-ladspa      # Linux Studio Plugins for ladspa
+lv2vocoder              # LV2 vocoder plugin
+mcp-plugins             # LADSPA plugins designed for Alsa Modular Synth
+omins                   # collection of LADSPA plugins aimed at modular synthesizers
+rubberband-ladspa       # LADSPA plugin for audio pitch-shifting
+swh-plugins             # Steve Harris's LADSPA plugins
+tap-plugins             # Tom's Audio Processing LADSPA plugins
+wah-plugins             # auto-wah LADSPA plugin

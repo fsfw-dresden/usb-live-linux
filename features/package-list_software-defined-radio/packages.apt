@@ -1,0 +1,6 @@
+gnuradio                        # SoftwareDefinedRadio, Signalverarbeitung
+gr-dab                          # Gnuradio blocks and tools for receiving DAB and DAB+ radio
+gr-gsm                          # tools for scanning for GSM base stations and for decoding GSM radio trafic
+cutesdr                         # simple demodulation and spectrum display program
+gqrx-sdr                        # powered by GNU Radio and the Qt GUI toolkit
+sdrangelove                     # Qt5 software-defined radio receiver application

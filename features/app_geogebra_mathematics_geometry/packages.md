@@ -1,2 +1,0 @@
-- :x:  geogebra-classic  --	Dynamische Mathematiksoftware für die Lehre (+48,7 MB, geogebra.net repo)
-- :o:  geogebra-classic-tutorials  --	offline version of the GeoGebra Classic Tutorials (+24,6 MB, geogebra.net repo) (removed?)

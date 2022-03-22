@@ -1,0 +1,17 @@
+##  System Tools
+
+###  recommends  -- Pakete die installiert werden sollten wenn > lb config --apt-recommends < verwendet wird
+
+user-setup
+sudo
+
+dbus
+irqbalance
+ixo-usb-jtag
+keyboard-configuration
+libglib2.0-data
+locales-all
+sgml-base
+shared-mime-info
+xdg-user-dirs
+xml-core

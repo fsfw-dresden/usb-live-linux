@@ -1,3 +1,0 @@
-- :x:  qgis  --		Qt-based Geographic Information System
-- :x:  grass  --		Geographic Resources Analysis Support System for geospatial data management and analysis, image processing, graphics/map production, spatial modeling, and visualization
-- :x:  qgis-plugin-grass  --		plugin for GRASS data access in QGIS

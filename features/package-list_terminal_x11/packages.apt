@@ -1,0 +1,11 @@
+read-edid       # hardware information-gathering tool for VESA PnP monitors
+pqiv            # powerful GTK 3 based command-line image viewer with a minimal UI
+sm              # Zeigt einen kurzen Text bildschirmfüllend an
+vainfo          # Video Acceleration (VA) API for Linux -- info program
+vdpauinfo       # Video Decode and Presentation API for Unix (vdpauinfo utility)
+vulkan-tools    # provides utilities for Vulkan, including vulkaninfo
+w3m-img         # inline image extension support utilities for w3m; powers image previews in ranger
+xdotool         # X11-Tastatur- und Mauseingaben-Ereignisse generieren, Fenster bewegen, deren Größe verändern usw (+88,5 kB)
+xinput          # Runtime configuration and test of XInput devices
+xrestop         # X11 server resource usage monitor
+xsel            # Kommandozeilenwerkzeug für den Zugriff auf Zwischenablage und Auswahlpuffer von X (+20,5 kB)

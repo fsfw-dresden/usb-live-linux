@@ -1,2 +1,0 @@
-- :x:  marble-plugins  --    various plugins for the Marble desktop globe
-- :x:  marble-qt  --	Schreibtischglobus mit Routingfunktion (über Pluginsystem erweiterbar)

@@ -1,4 +1,0 @@
-- :x:  cmatrix  --	Screen saver for the terminal
-- :x:  elinks  --		advanced text-mode WWW browser
-- :x:  lolcat  --       concatenates files like the UNIX `cat` program, but colors it
-- :x:  toilet  --       prints text using large characters made of smaller characters

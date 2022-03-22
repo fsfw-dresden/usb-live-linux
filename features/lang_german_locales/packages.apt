@@ -1,0 +1,16 @@
+##  German User  -- System Tools - Deutsche Sprachpakete
+
+###  task-german
+
+manpages-de
+wngerman
+ingerman
+aspell-de
+aspell-de-1901                  # Traditional German dictionary
+firefox-esr-l10n-de             # Deutsches Sprachpaket für den Firefox
+thunderbird-l10n-de
+hunspell-de-de                  # German dictionary for hunspell (+293 kB)
+hyphen-de                       # German hyphenation patterns (+494 kB)
+mythes-de                       # German Thesaurus for OpenOffice.org/LibreOffice (+2.663 kB)
+libreoffice-help-de             # deutsche Hilfe von LibreOffice (+3.706 kB)
+libreoffice-l10n-de             # Deutsches Sprachpaket

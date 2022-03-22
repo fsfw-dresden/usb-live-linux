@@ -1,1 +1,0 @@
-- :x:  jami  -- Secure and distributed voice, video and chat platform - desktop client

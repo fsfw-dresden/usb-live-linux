@@ -1,2 +1,0 @@
-- :x:  aptitude  --	Y2K-compliant, non-fattening, naturally cleansing and housebroken terminal-based package manager
-- :x:  eatmydata  --	LD_PRELOAD library to transparently disable fsync making software that writes data safely to disk a lot quicker and no longer crash safe

@@ -1,2 +1,0 @@
-- :x:  jupyter-notebook  --	Jupyter projects for Python 3
-

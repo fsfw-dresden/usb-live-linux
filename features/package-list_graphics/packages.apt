@@ -1,0 +1,44 @@
+##  Desktop Grafik - Video - Audio
+
+###  Desktop Grafik
+
+# ? dia                         # umfangreiches Diagrammerstellungsprogramm
+inkscape                        # Vektorbasiertes Zeichenprogramm
+inkscape-tutorials              # collection of hands-on tutorials (2.2MiB kompr., nur testing)
+inkscape-open-symbols           # Open source SVG symbol sets (1.6MB kompr.)
+< https://github.com/sozi-projects/Sozi/releases/download/v21.09/sozi_21.09.14-1631646245_amd64.deb     # sozi: Inkscape-Plugin für kreative Präsentationen
+scribus                         # DTP-Programm
+scribus-template                # Vorlagen
+gucharmap                       # Unicode character picker and font browser
+screenruler                     # measure objects on screen with a variety of metrics
+king                            # interactive system for three-dimensional vector graphics
+openstereogram                  # Stereogram ("Magic Eye") generator with GUI
+
+gimp                            # Das GNU-Bildbearbeitungsprogramm
+gimp-data-extras                # Ein extra Satz Pinsel, Paletten, Gradienten für GIMP (+3.884 kB)
+gimp-texturize                  # generates large textures from a small sample
+gimp-plugin-registry            # optional extensions
+gimp-gutenprint                 # Gutenprint-Druckerweiterung für GIMP
+gimp-gmic                       # GREYC's Magic Image Converter - Konvertieren, Manipulieren, Filtern und Visualisieren
+# ? gimp-ufraw                  # Gimp Importierprogramm für Kamerabilder im raw-Format
+gimp-help-de                    # Dokumentation für GIMP (Deutsch) (+31,8 MB)
+
+# ? darktable                   # Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
+rawtherapee                     # Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
+
+icc-profiles                    # high quality ICC color profiles
+icc-profiles-free               # Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
+
+xsane                           # Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
+fraqtive                        # Zeichnet Mandelbrot- und Julia-Fraktale
+mandelbulber2                   # 3D fractal renderer and animator
+# ? structure-synth             # generating 3D structures by specifying a design grammar
+sunflow                         # rendering system for photo-realistic image synthesis (for structure-synth)
+
+###  Fotoverwaltung
+
+# ? digikam                     # Full-Featured Fotoverwaltung für KDE
+# +1 digikam-doc
+# +1 kipi-plugins               # Grafikbibliothek für KDEs Digikam
+# +1 geeqie                     # Bildbetrachtung - Bildvorschau - Diashow -- verwendet GTK+
+rapid-photo-downloader          # download photos and videos from cameras, memory cards, other devices

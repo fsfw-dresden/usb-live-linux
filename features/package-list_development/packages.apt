@@ -1,0 +1,30 @@
+##  Programmierung Softwareentwicklung
+
+###  Compiler
+
+build-essential                 # Kompiler und diverse Bibliotheken (wichtig)
+# ? gcc                         # GNU C Compiler
+# ? g++                         # GNU C++ Compiler
+# ? make                        # einfaches Build-Tool
+# ? gdb-minimal                 # minmaler GNU-Debugger
+# ? kdbg                        # Kde basiertes Frontend für den Gdb-Debugger
+golang                          # Compiler und toolchain zur Programmiersprache go
+gfortran                        # GNU-Fortran-95-Compiler
+gnat                            # GNU Ada compiler
+
+###  Revisions-Kontroll-Systeme
+
+git                             # Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
+git-gui                         # grafische Oberfläche für die Versionsverwaltung Git
+# +1 gitg                       # weitere grafische Oberfläche für die Versionsverwaltung Git
+gitk                            # Schnelles, skalierbares, verteiltes Revisions-Kontrollsystem (Visualisierungsprogramm)
+
+###  Dokumentation
+
+doxygen-gui                     # Frontend des Doku-Generators
+doxygen-latex                   # Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Export gewünscht
+
+###  UML Tools
+
+umbrello                        # einfaches UML-Tool für den KDE-Desktop
+

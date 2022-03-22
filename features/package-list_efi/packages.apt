@@ -1,0 +1,3 @@
+efitools                        # Tools to manipulate EFI secure boot keys and signatures
+efibootmgr                      # Interact with the EFI Boot Manager (create and destroy boot entries, change the boot order, change the next running boot option)
+efivar                          # Tools to manage UEFI variables

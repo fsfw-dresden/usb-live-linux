@@ -1,0 +1,18 @@
+##  Python
+
+###  python scientific
+
+ipython3                        # Erweiterte interaktive Python-3-Shell
+python3-sympy                   # Python-Computeralgebrasystem (CAS)
+python3-numpy                   # Numerical Python adds a fast array facility to the Python language
+
+jupyter-notebook                # Jupyter projects for Python 3
+jupyter-nbformat                # Jupyter notebook format (tools)
+jupyter-client                  # Jupyter protocol client APIs (tools)
+
+python3-dev                     # Header-Dateien und eine statische Bibliothek für Python (wird zum Kompilieren von Python-Paketen gebraucht)
+python3-setuptools              # Werkzeuge zur Installation von Python-Paketen
+python3-pip                     # Pythons eigener Paketmanager
+python3-scipy                   # scientific tools for Python 3
+python3-matplotlib              # Python-3-System ähnlich Matlab zur Ausgabe von Zeichnungen
+python3-tk                      # Writing Tk applications with Python 3.x

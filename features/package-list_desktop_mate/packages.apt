@@ -1,0 +1,28 @@
+##  Desktop
+
+###  task-mate-desktop  -- Mate Desktop Umgebung
+
+lightdm                         # Einfaches grafisches Login-Programm
+lightdm-gtk-greeter             # Einfaches grafisches Login-Programm (GTK+-Anmeldefenster) LightDM
+
+###  mate-desktop-environment
+
+mate-desktop-environment-core
+
+# ? atril                       # MATE-Dokumentenbetrachter
+# ? engrampa                    # MATE-Archivmanager
+# ? eom                         # Bildbetrachter Eye of MATE
+# ? ffmpegthumbnailer           # Schnelles und leichtgewichtiges Programm für Video-Miniaturansichten
+# ? galculator                  # Wissenschaftlicher Taschenrechner
+mate-applets                    # Diverse Applets für das MATE-Panel
+mate-icon-theme-faenza          # MATE Faenza Desktop icon theme
+mate-media                      # MATE-Medienwerkzeuge sind das Audio-Mischpult und das Applet für die Lautstärkeregelung
+mate-notification-daemon        # daemon for displaying passive pop-up notifications
+mate-power-manager              # Werkzeug zur Energieverwaltung für die Arbeitsumgebung MATE
+# ? mate-screensaver            # MATE-Bildschirmschoner und -sperrer
+mate-system-monitor             # Prozessanzeige und Ressourcenmonitor für MATE
+# ? mate-user-guide             # Documentation for MATE Desktop
+mate-utils                      # Hilfsprogramme für den MATE-Desktop
+# ? pluma                       # Offizieller Texteditor der Arbeitsumgebung MATE
+
+mate-themes                     # Official themes for the MATE desktop

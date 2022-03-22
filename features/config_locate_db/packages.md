@@ -1,1 +1,0 @@
-- :x:  mlocate  --		Dateien anhand ihrer Namen schnell im Dateisystem finden

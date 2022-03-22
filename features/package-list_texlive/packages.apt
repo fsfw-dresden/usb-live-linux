@@ -1,0 +1,47 @@
+##  TexLive  -- LaTex Toolbox - Dokumenten Satzprogramm
+
+###  TexLive
+
+texlive
+texlive-base
+texlive-bibtex-extra
+
+# (Carsten: biber ist notwendig für Daniels Vorlage)
+biber                           # Stark erweiterter BibTeX-Ersatz für Anwender von BibLaTeX (perl)
+texlive-binaries
+texlive-extra-utils             # für pdfjam (pdf90)
+texlive-font-utils
+texlive-fonts-extra             # Zusatzliche Schriftarten                     (Größe 599 MB das fetteste Paket von allen!)
+# +1 texlive-fonts-extra-doc
+tex-gyre                        # Skalierbare PostScript- und OpenType-Schriften auf Basis der URW-Schriften
+texlive-fonts-recommended
+# +1 texlive-fonts-recommended-doc
+texlive-formats-extra
+texlive-lang-german
+texlive-latex-base
+# +1 texlive-latex-base-doc
+texlive-latex-extra             # gut für Beamer-presentation
+
+# (Dies dürfte die fetteste Doku sein! Leider wird sie von texlive-latex-extra automatisch nachgezogen, auch wenn man das garnicht möchte.)
+# +1 texlive-latex-extra-doc    # Doku für texlive-latex-extra        (Größe 420 MB)
+texlive-latex-recommended
+# +1 texlive-latex-recommended-doc
+texlive-luatex
+texlive-science                 # TeX Live: Mathematics and science packages
+texlive-pictures
+# +1 texlive-pictures-doc
+texlive-pstricks
+
+# (Wird leider von texlive-pstricks automatisch nachgezogen, auch wenn man das garnicht möchte.)
+# +1 texlive-pstricks-doc       # Doku für texlive-publishers         (Größe 112 MB)
+texlive-publishers
+
+# (Wird leider von texlive-publishers automatisch nachgezogen, auch wenn man das garnicht möchte.)
+# +1 texlive-publishers-doc     # Doku für texlive-publishers         (Größe 113 MB)
+texlive-xetex
+biber                           # Literaturverw.programm
+# +1 kile                       # KDE basierter LaTeX-Editor
+# +1 kile-doc
+# +1 kile-l10n
+# +1 klatexformula              # grafischer Formeleditor für LaTeX
+# +1 ktikz                      # grafischer TikZ-Editor für KDE

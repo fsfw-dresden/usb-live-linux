@@ -1,1 +1,0 @@
-- :x:  thunderbird  --	E-Mail- und News-Client mit RSS-Unterstützung, Kalender, Adressbuch und integriertem Spam-Filter         (Größe 102 MB)

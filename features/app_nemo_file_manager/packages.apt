@@ -1,0 +1,6 @@
+nemo                    # file manager
+nemo-fileroller         # create and extract archives
+nemo-nextcloud          # integrates the Nextcloud web service
+cinnamon-l10n           # translation files for nemo et al.
+tumbler                 # D-Bus thumbnailing service
+tumbler-plugins-extra   # additional plugins for video files, Raw Digital Camera Images, OpenDocuments

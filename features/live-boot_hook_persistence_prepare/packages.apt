@@ -1,0 +1,3 @@
+util-linux              # important system utilities
+fdisk                   # partitioning utilities
+f2fs-tools              # Tools for Flash-Friendly File System (aimed at NAND flash memory-based storage devices, such as SSD, eMMC, and SD cards)

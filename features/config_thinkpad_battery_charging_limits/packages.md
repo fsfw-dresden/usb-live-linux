@@ -1,1 +1,0 @@
-- :x:  tlp  --	advanced power management tool

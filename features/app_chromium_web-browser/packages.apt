@@ -1,0 +1,2 @@
+chromium-l10n           # aims to build a safer, faster, and more stable internet browsing experience + translation
+chromium-sandbox        # setuid security sandbox for chromium

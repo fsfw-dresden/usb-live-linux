@@ -1,5 +1,0 @@
-- :x:  carmetal  --	Compass and Ruler: dynamic geometry software
-- :x:  gnuplot  --	Kommandozeilengesteuertes, interaktives Plot-Programm
-- :x:  octave-control
-- :x:  octave  --	GNU Octave - Sprache für numerische Berechnungen
-- :x:  scilab  --	matrixbasierte Wissenschaftssoftwaresuite

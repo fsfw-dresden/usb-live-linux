@@ -1,4 +1,0 @@
-- :x:  fonts-noto-color-emoji  --	color emoji font used on "stock" Android devices (+7.572 kB)
-- :x:  python3-pip  --		Python 3 version of the Python package installer
-- :x:  python3-wheel  --		provides a `bdist_wheel` command for setuptools
-- :x:  xclip  --		command line interface to X selections / clipboard

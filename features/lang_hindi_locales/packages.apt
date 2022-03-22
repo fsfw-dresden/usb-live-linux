@@ -1,0 +1,13 @@
+##  Hindi User  -- Indische Sprachpakete
+
+###  task-hindi
+
+fonts-lohit-deva                # font for Devanagari script
+aspell-hi
+firefox-esr-l10n-hi-in
+hunspell-hi
+hyphen-hi
+libreoffice-help-hi
+libreoffice-l10n-hi
+
+# ? thunderbird-l10n-hi         # not yet

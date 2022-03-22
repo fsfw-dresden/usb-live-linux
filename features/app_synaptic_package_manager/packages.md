@@ -1,1 +1,0 @@
-- :x:  synaptic  -- Grafischer Paket-Verwalter

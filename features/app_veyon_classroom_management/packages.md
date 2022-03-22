@@ -1,1 +1,0 @@
-- :+1: :x:  [veyon](https://github.com/veyon/veyon/releases/download/v4.7.1/veyon_4.7.1-3-debian-bullseye_amd64.deb)  --	computer monitoring and classroom management

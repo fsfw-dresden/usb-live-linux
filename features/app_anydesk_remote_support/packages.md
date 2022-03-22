@@ -1,1 +1,0 @@
-- :x:  anydesk  --		remote desktop software (non-free)

@@ -1,0 +1,80 @@
+##  Staging
+
+### System
+util-linux-locales
+gettext                         #  GNU-Internationalisierungswerkzeuge
+haveged                         #  userspace entropy daemon
+system-config-printer           #  configure the printing system
+gsmartcontrol                   #  tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+gparted                         #  manipulate devices and partition tables
+gnome-disk-utility              #  manage and configure disk drives and media
+usermode                        #  Graphical tools for user account management tasks (userinfo, usermount and userpasswd)
+plymouth-themes                 #  boot animation, logger and I/O multiplexer + themes
+anacron                         #  periodic command scheduler for systems not running continuously.
+grub-efi-ia32-bin               #  GRand Unified Bootloader, version 2 (EFI-IA32 modules)
+grub-efi-amd64                  #  GRand Unified Bootloader, version 2 (EFI-AMD64 version)
+efibootmgr                      #  modify the Intel Extensible Firmware Interface (EFI) Boot Manager configuration
+pavucontrol                     #  PulseAudio Volume Control
+jitterentropy-rngd              #  Jitter RNGd provides a source of sufficient entropy (to be replaced by rng-tools6 whenever that gets packaged)
+pulseaudio-equalizer
+unburden-home-dir               #  move cache/thumbnail directories to tmpfs
+network-manager-openconnect     #  open client for Cisco's AnyConnect SSL VPN
+network-manager-openconnect-gnome #  OpenConnect plugin GNOME GUI
+sct                             #  set screen color temperature via xrandr - reduce or increase blue light
+blueman                         #  GTK+ bluetooth management utility
+pulseaudio-module-bluetooth     #  enables PulseAudio to work with bluetooth devices
+gvfs-backends                   #  android / camera image file transfer (mtp) and other backends
+gvfs-fuse                       #  exposing the gvfs mounts to non-gio applications using fuse
+samba-common-bin                #  Basic SMB/CIFS share tools
+smart-notifier                  #  graphical hard disk health status notifier
+unattended-upgrades             #  automatic installation of security upgrades
+python3-software-properties     #  manage the repositories that you install software from
+exfat-fuse                      #  exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
+exfat-utils                     #  Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+dislocker                       #  read/write encrypted BitLocker volumes
+cifs-utils                      #  Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
+# ? laptop-mode-tools           # automatically enabling laptop mode when the computer is working on batteries
+foomatic-db-engine              #  Druckerunterstützung von OpenPrinting - Programme
+hp-ppd                          #  PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+openprinting-ppds               #  Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
+bluez-cups                      #  Bluetooth printer driver for CUPS
+printer-driver-cups-pdf         #  Druckertreiber zur PDF-Erzeugung mittels CUPS
+printer-driver-all              #  Druckertreiber-Metapaket
+printer-driver-brlaser          #  Druckertreiber für (einige) Brother-Laserdrucker
+printer-driver-c2050            #  Druckertreiber für den Lexmark 2050 Color Jetprinter
+printer-driver-c2esp            #  Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
+printer-driver-cjet             #  Druckertreiber für Canon-LBP-Laserdrucker
+printer-driver-dymo             #  Treiber für DYMO-Etikettendrucker
+printer-driver-escpr            #  Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
+printer-driver-foo2zjs          #  Druckertreiber für auf ZjStream basierende Drucker
+printer-driver-fujixerox        #  Druckertreiber für Fuji-Xerox-Drucker
+printer-driver-gutenprint       #  Druckertreiber für CUPS (Gutenprint basierend)
+printer-driver-hpcups           #  HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
+printer-driver-hpijs            #  HP Linux Printing and Imaging - Druckertreiber (hpijs)
+hpijs-ppds                      #  HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
+printer-driver-m2300w           #  Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
+printer-driver-min12xxw         #  Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+printer-driver-pnm2ppa          #  Druckertreiber für HP-GDI-Drucker
+printer-driver-postscript-hp    #  Beschreibungen von HP-PostScript-Druckern
+printer-driver-ptouch           #  Treiber für »Brother P-touch«-Etikettendrucker
+printer-driver-pxljr            #  Druckertreiber für HP Color LaserJet 35xx/36xx
+printer-driver-sag-gdi          #  Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
+printer-driver-splix            #  Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
+foomatic-db-compressed-ppds     #  Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+ethtool                         #  Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
+shim-signed                     #  Secure Boot chain-loading bootloader (Microsoft-signed binary)
+spice-vdagent                   #  Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
+qemu-guest-agent                #  Guest-side qemu-system agent (+255 kB)
+xserver-xorg-video-qxl          #  Display driver for QXL video device inside SPICE-compatible KVM/Qemu emulator
+vmtouch                         #  file system cache diagnostics and control
+qttranslations5-l10n            #  translations for Qt 5 (+1.501 kB)
+syslinux-common                 #  suite of bootloaders, currently supporting DOS FAT and NTFS filesystems (SYSLINUX), Linux ext2/ext3/ext4… (+1.237 kB)
+syslinux-efi                    #  collection of bootloaders (UEFI bootloader) (+200 kB)
+grub-pc-bin                     #  GRUB modules built for use with the traditional PC/BIOS architecture
+tlp                             #  Spart Akku-Strom auf Laptops
+tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
+acpi-call-dkms                  #  enables you to call ACPI methods
+broadcom-sta-dkms               #  Broadcom STA Wireless driver
+libblockdev-plugins-all         #  low-level operations with block devices
+
+# ? virtualbox-guest-dkms       # virtualbox guest addition kernel modules
