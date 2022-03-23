@@ -61,6 +61,8 @@
 	co = checkout
 	log1 = log --pretty=oneline --abbrev-commit
 	logs = log --stat
+[init]
+	defaultBranch = main
 [url "git@github.com:"]
         pushInsteadOf = https://github.com/
         pushInsteadOf = git://github.com/
