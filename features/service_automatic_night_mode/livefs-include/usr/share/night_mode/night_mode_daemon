@@ -1,0 +1,135 @@
+#!/usr/bin/python3
+"""A small daemon for automatically adjusting screen color temperature,
+   to be invoked during X11 startup."""
+
+import datetime
+import distutils.util
+import os
+import signal
+import sys
+import time
+
+import daemon
+import daemon.pidfile
+from configobj import ConfigObj
+
+
+def daemon_loop():
+    """Main daemon business"""
+    while True:
+        if night_mode_enabled:
+            temp = calculate_temperature()
+            set_screen_color_temperature(temp)
+        time.sleep(10)
+
+def daemon_setup():
+    """Sets up the daemon"""
+    with daemon.DaemonContext(
+        pidfile = daemon.pidfile.PIDLockFile('/run/lock/night_mode_daemon.pid'),
+        stdout = sys.stdout, stderr = sys.stderr,
+        signal_map = {
+            signal.SIGUSR1: reload_config,
+            signal.SIGUSR2: lambda s, f: daemon_print(config),
+            signal.SIGTERM: daemon_exit
+        }):
+        daemon_loop()
+
+def daemon_exit(signum = None, frame = None):  # pylint: disable=unused-argument
+    """Quits the daemon"""
+    daemon_print('terminating')
+    sys.exit(signum)
+
+def daemon_print(value, **kwargs):
+    """Prepends executable name and calls print()"""
+    print(os.path.basename(__file__) + ' ' + value, kwargs)
+
+def reload_config(signum = None, frame = None):
+    # pylint: disable=unused-argument,invalid-name,global-statement
+    """On startup and when receiving USER1 signal, reload config file"""
+    daemon_print('config before reload: ' + str(config))
+    config.reload()
+
+    global night_mode_enabled, color_change_logging, night_fade_start, night_fade_end, \
+           day_fade_start, day_fade_end, day_temp, night_temp, previous_temp
+
+    night_mode_enabled = distutils.util.strtobool(config['General']['nightModeEnabled'])
+    color_change_logging = distutils.util.strtobool(config['General']['colorChangeLogging'])
+    night_fade_start = datetime.datetime.strptime(config['General']['nightFadeStart'], '%H:%M')
+    night_fade_end = datetime.datetime.strptime(config['General']['nightFadeEnd'], '%H:%M')
+    day_fade_start = datetime.datetime.strptime(config['General']['dayFadeStart'], '%H:%M')
+    day_fade_end = datetime.datetime.strptime(config['General']['dayFadeEnd'], '%H:%M')
+    day_temp = int(config['General']['dayTemp'])
+    night_temp = int(config['General']['nightTemp'])
+    previous_temp = day_temp
+
+    daemon_print('Configuration reloaded')
+    daemon_print('new config: ' + str(config))
+    if night_mode_enabled:
+        temp = calculate_temperature()
+        set_screen_color_temperature(temp)
+
+def calculate_temperature():
+    # pylint: disable=global-statement,invalid-name
+    """Compare time to the configured fade times, calculate and return temperature"""
+
+    global previous_temp
+
+    now = datetime.datetime.now()
+    now_time = now.time()
+
+    if now_time > day_fade_end.time():
+        if now_time < night_fade_start.time():
+            temp = day_temp
+        elif now_time > night_fade_end.time():
+            temp = night_temp
+        else:
+            temp = day_temp + (night_temp - day_temp) \
+                * ((now - datetime.datetime.combine(now.date(), night_fade_start.time())) \
+                / (night_fade_end - night_fade_start))
+    elif now_time < day_fade_start.time():
+        temp = night_temp
+    else:
+        temp = night_temp + (day_temp - night_temp) \
+            * ((now - datetime.datetime.combine(now.date(), day_fade_start.time())) \
+            / (day_fade_end - day_fade_start))
+
+    # Don't be rediculously precise
+    temp = round(temp, 2)
+
+    # Log the temperature value and expose binary arithmetic imprecision by low digit "jitter"
+    if color_change_logging:
+        daemon_print(
+            f'{now}: temp is {temp}, diff {temp - previous_temp} '
+            f'from {previous_temp} before')
+
+    # Remember the temp
+    previous_temp = temp
+
+    return temp
+
+def set_screen_color_temperature(temp = 6500):
+    """Invokes sct tool to set the specified screen color temperature"""
+    if color_change_logging:
+        daemon_print(
+            f'Calling `sct {temp}` to set screen color temperature at '
+            f'{time.strftime("%H:%M:%S")}')
+    os.system(f'sct {temp}')
+
+if __name__ == '__main__':
+    # pylint: disable=invalid-name
+
+    night_mode_enabled = False
+    color_change_logging = False
+    night_fade_start = datetime.time()
+    night_fade_end = datetime.time()
+    day_fade_start = datetime.time()
+    day_fade_end = datetime.time()
+    day_temp = 0
+    night_temp = 0
+    previous_temp = 0
+
+    config = ConfigObj(os.path.expanduser('~/.config/night-mode.conf'))
+    daemon_print(os.path.expanduser('~/.config/night-mode.conf') + ' gives ' + str(config))
+    reload_config()
+    daemon_print('starting')
+    daemon_setup()

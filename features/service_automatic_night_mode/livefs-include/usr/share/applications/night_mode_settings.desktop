@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=night_mode_settings
+Categories=Settings;
+Icon=face-cool
+Name=Night Mode Settings
+Name[de]=Nachtmodus-Konfiguration
+Comment=Configure automatic blue light / red screen filter
+Comment[de]=Automatischen Blaulichtfilter einstellen
+Keywords=blue light filter;red screen filter
+Keywords[de]=Blaulichtfilter; Rotfilter

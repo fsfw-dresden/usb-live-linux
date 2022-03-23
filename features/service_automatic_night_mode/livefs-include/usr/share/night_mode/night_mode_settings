@@ -1,0 +1,171 @@
+#!/usr/bin/python3
+"""Settings dialog for X11 night_mode_daemon """
+
+import distutils.util
+import os
+import signal
+import subprocess
+import sys
+
+import psutil
+from configobj import ConfigObj
+from PyQt5.QtCore import Qt, QTime
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication, QDialog, QSystemTrayIcon
+from PyQt5.uic import loadUi
+
+
+class SettingsWindow(QDialog):
+    """The settings dialog"""
+    def __init__(self):
+        super().__init__()
+        self.config = ConfigObj(
+            os.path.expanduser('~/.config/night-mode.conf'), create_empty = True
+        )
+        self.defaults_adult = {
+            'nightFadeStart' : '20:00',
+            'nightFadeEnd' : '22:30',
+            'dayFadeStart' : '05:00',
+            'dayFadeEnd' : '05:30',
+            'dayTemp' : 6500,
+            'nightTemp' : 3000
+        }
+        self.defaults_child = {
+            'nightFadeStart' : '19:00',
+            'nightFadeEnd' : '21:30',
+            'dayFadeStart' : '05:00',
+            'dayFadeEnd' : '06:00',
+            'dayTemp' : 6500,
+            'nightTemp' : 1500
+        }
+        loadUi(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'settings.ui'), self)
+        self.reload_config_file()
+
+    def tray_icon_activated(self, reason):  # pylint: disable=unused-argument
+        """Receives tray icon click events"""
+        if self.isVisible():
+            self.hide()
+        else:
+            self.showNormal()
+
+    def check_time_coherency(self):
+        """Figure out whether the specified times overlap and warn about any mischief"""
+        if self.nightFadeStartTimeEdit.time() > self.nightFadeEndTimeEdit.time() \
+            or self.dayFadeStartTimeEdit.time() > self.dayFadeEndTimeEdit.time() \
+            or self.dayFadeEndTimeEdit.time() > self.nightFadeStartTimeEdit.time():
+            self.timesCoherentLabel.setText("Times inconherent, please check.")
+            self.timesCoherentLabel.setStyleSheet('color: red;')
+        else:
+            self.timesCoherentLabel.setText("OK")
+            self.timesCoherentLabel.setStyleSheet('color: green;')
+
+    def reload_config_file(self):
+        """Load the config from file and into memory"""
+        self.config.reload()
+        self.load_dialog_state_from_config_memory()
+
+    def load_dialog_state_from_config_memory(self):
+        """Apply config values to dialog widgets"""
+        self.config.setdefault('General', {})
+        # print(self.config)
+        self.enabledCheckBox.setChecked(distutils.util.strtobool(
+            self.config['General'].setdefault('nightModeEnabled', 'True')))
+        self.logChangesCheckBox.setChecked(distutils.util.strtobool(
+            self.config['General'].setdefault('colorChangeLogging', 'False')))
+        self.nightFadeStartTimeEdit.setTime(QTime.fromString(self.config['General'].setdefault(
+            'nightFadeStart', self.defaults_adult['nightFadeStart']), 'HH:mm'))
+        self.nightFadeEndTimeEdit.setTime(QTime.fromString(self.config['General'].setdefault(
+            'nightFadeEnd', self.defaults_adult['nightFadeEnd']), 'HH:mm'))
+        self.dayFadeStartTimeEdit.setTime(QTime.fromString(self.config['General'].setdefault(
+            'dayFadeStart', self.defaults_adult['dayFadeStart']), 'HH:mm'))
+        self.dayFadeEndTimeEdit.setTime(QTime.fromString(self.config['General'].setdefault(
+            'dayFadeEnd', self.defaults_adult['dayFadeEnd']), 'HH:mm'))
+        self.dayTempSpinBox.setValue(int(self.config['General'].setdefault(
+            'dayTemp', self.defaults_adult['dayTemp'])))
+        self.nightTempSpinBox.setValue(int(self.config['General'].setdefault(
+            'nightTemp', self.defaults_adult['nightTemp'])))
+
+    def reset_defaults_adult(self):
+        """Load adult defaults"""
+        self.config['General'] = self.defaults_adult
+        self.load_dialog_state_from_config_memory()
+
+    def reset_defaults_child(self):
+        """Load child defaults"""
+        self.config['General'] = self.defaults_child
+        self.load_dialog_state_from_config_memory()
+
+    def save_config_file_from_dialog_state(self):
+        """Stores current dialog settings"""
+        self.config['General'] = {
+            'nightModeEnabled': self.enabledCheckBox.isChecked(),
+            'colorChangeLogging': self.logChangesCheckBox.isChecked(),
+            'nightFadeStart': self.nightFadeStartTimeEdit.time().toString('HH:mm'),
+            'nightFadeEnd': self.nightFadeEndTimeEdit.time().toString('HH:mm'),
+            'dayFadeStart': self.dayFadeStartTimeEdit.time().toString('HH:mm'),
+            'dayFadeEnd': self.dayFadeEndTimeEdit.time().toString('HH:mm'),
+            'dayTemp': self.dayTempSpinBox.value(),
+            'nightTemp': self.nightTempSpinBox.value()
+        }
+        print(self.config)
+        self.config.write()
+
+    def save(self):
+        """Saves the config to file"""
+        self.save_config_file_from_dialog_state()
+        trigger_daemon_reload()
+
+    def close(self):
+        """Closes the settings application"""
+        self.done(0)
+
+def trigger_daemon_reload():
+    """Signal the daemon process to reload the config"""
+    for proc in psutil.process_iter():
+        if proc.name() == 'night_mode_daem':
+            print(proc)
+            proc.send_signal(signal.SIGUSR1)
+
+def set_screen_color_temperature(temp = 6500):
+    """Apply screen color change"""
+    if settings.logChangesCheckBox.isChecked():
+        print(f'Calling `sct {temp}` to set screen color temperature')
+    subprocess.run(['sct', str(temp)], check=True)
+
+
+if __name__ == '__main__':
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    app = QApplication(sys.argv)
+
+    settings = SettingsWindow()
+    settings.show()
+
+    # FIXME: why is this necessary for icon to load?
+    QIcon.setThemeSearchPaths(['/usr/share/icons'])
+    QIcon.setThemeName('Papirus')
+
+    icon = QIcon.fromTheme('face-cool')
+    settings.setWindowIcon(icon)
+    trayIcon = QSystemTrayIcon()
+    trayIcon.setIcon(icon)
+    trayIcon.show()
+    trayIcon.activated.connect(settings.tray_icon_activated)
+
+    settings.nightFadeStartTimeEdit.timeChanged.connect(settings.check_time_coherency)
+    settings.nightFadeEndTimeEdit.timeChanged.connect(settings.check_time_coherency)
+    settings.dayFadeStartTimeEdit.timeChanged.connect(settings.check_time_coherency)
+    settings.dayFadeEndTimeEdit.timeChanged.connect(settings.check_time_coherency)
+
+    settings.previewTempSpinBox.valueChanged.connect(lambda temp:
+        set_screen_color_temperature(temp) if settings.previewCheckBox.isChecked() else None)
+    settings.previewCheckBox.stateChanged.connect(lambda state:
+        set_screen_color_temperature() if state == Qt.Unchecked else \
+        set_screen_color_temperature(settings.previewTempSpinBox.value()))
+
+    settings.resetAdultButton.clicked.connect(settings.reset_defaults_adult)
+    settings.resetChildButton.clicked.connect(settings.reset_defaults_child)
+    settings.reloadButton.clicked.connect(settings.reload_config_file)
+    settings.saveButton.clicked.connect(settings.save)
+    settings.closeButton.clicked.connect(settings.close)
+
+    sys.exit(app.exec())

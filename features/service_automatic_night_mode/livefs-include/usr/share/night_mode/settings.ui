@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>nightModeSettingsDialog</class>
+ <widget class="QDialog" name="nightModeSettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>472</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Night Mode Settings</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="leftVerticalLayout">
+     <item>
+      <widget class="QGroupBox" name="colorTempGroupBox">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="title">
+        <string>Color Temperatures</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QWidget" name="colorTempContentWidget">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLabel" name="colorTempLabel">
+             <property name="text">
+              <string>The color of indoor lights and screen tint are most often specified as temperatures in the unit Kelvin in the range of 1000K–10000K. The lower the color temperature, the "warmer" (yellow, red) the appearance and the less blue light does it contain. Some examples:
+· 1850K: Candle flame, strong red tint
+· 2700K: Standard warm color point
+· 6500K: Neutral Daylight </string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="margin">
+              <number>5</number>
+             </property>
+             <property name="buddy">
+              <cstring>previewCheckBox</cstring>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="colorTempGridLayout">
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="previewCheckBox">
+               <property name="text">
+                <string>Live Preview</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSlider" name="previewTempSlider">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>100</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="sizeIncrement">
+                <size>
+                 <width>41</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+               <property name="pageStep">
+                <number>500</number>
+               </property>
+               <property name="value">
+                <number>6500</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QSpinBox" name="previewTempSpinBox">
+               <property name="suffix">
+                <string> K</string>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="value">
+                <number>6500</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="3">
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+            <item row="3" column="0">
+              <widget class="QLabel" name="dayTempLabel">
+               <property name="text">
+                <string>Day Temperature</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>dayTempSlider</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QSlider" name="dayTempSlider">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>100</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="sizeIncrement">
+                <size>
+                 <width>41</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+               <property name="pageStep">
+                <number>500</number>
+               </property>
+               <property name="value">
+                <number>6500</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="QSpinBox" name="dayTempSpinBox">
+               <property name="suffix">
+                <string> K</string>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="value">
+                <number>6500</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="nightTempLabel">
+               <property name="text">
+                <string>Night Temperature</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="buddy">
+                <cstring>nightTempSlider</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QSlider" name="nightTempSlider">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>100</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="sizeIncrement">
+                <size>
+                 <width>41</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+               <property name="pageStep">
+                <number>500</number>
+               </property>
+               <property name="value">
+                <number>2700</number>
+               </property>
+               <property name="sliderPosition">
+                <number>2700</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>false</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QSpinBox" name="nightTempSpinBox">
+               <property name="suffix">
+                <string> K</string>
+               </property>
+               <property name="minimum">
+                <number>1000</number>
+               </property>
+               <property name="maximum">
+                <number>10000</number>
+               </property>
+               <property name="value">
+                <number>2700</number>
+               </property>
+              </widget>
+             </item>
+             </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="leftVerticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="buttonsHorizontalLayout">
+       <item>
+        <widget class="QPushButton" name="reloadButton">
+         <property name="text">
+          <string>Reload</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="saveButton">
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="closeButton">
+         <property name="text">
+          <string>Close</string>
+         </property>
+         <property name="default">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="rightVerticalLayout">
+     <item>
+      <widget class="QGroupBox" name="fadeTimesGroupBox">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="title">
+        <string>Fade Times</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QWidget" name="fadeTimesContentWidget">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0" colspan="8">
+            <widget class="QLabel" name="fadeTimesLabel">
+             <property name="text">
+              <string>When enabled above, the filter will fade from day to night color in the specified intervals.</string>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <property name="buddy">
+              <cstring>nightFadeStartTimeEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <spacer name="horizontalSpacer_1">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="nightFadeStartLabel">
+             <property name="text">
+              <string>Night Fade Start</string>
+             </property>
+             <property name="buddy">
+              <cstring>nightFadeStartTimeEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QTimeEdit" name="nightFadeStartTimeEdit">
+             <property name="time">
+              <time>
+               <hour>20</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Minimum</enum>
+             </property>
+             <property name="sizeHint">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="5">
+            <widget class="QLabel" name="dayFadeStartLabel">
+             <property name="text">
+              <string>Day Fade Start</string>
+             </property>
+             <property name="buddy">
+              <cstring>dayFadeStartTimeEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="6">
+            <widget class="QTimeEdit" name="dayFadeStartTimeEdit">
+             <property name="time">
+              <time>
+               <hour>5</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="7">
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLabel" name="nightFadeEndLabel">
+             <property name="text">
+              <string>Night Fade End</string>
+             </property>
+             <property name="buddy">
+              <cstring>nightFadeEndTimeEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QTimeEdit" name="nightFadeEndTimeEdit">
+             <property name="time">
+              <time>
+               <hour>22</hour>
+               <minute>30</minute>
+               <second>0</second>
+              </time>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="5">
+            <widget class="QLabel" name="dayFadeEndLabel">
+             <property name="text">
+              <string>Day Fade End</string>
+             </property>
+             <property name="buddy">
+              <cstring>dayFadeEndTimeEdit</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="6">
+            <widget class="QTimeEdit" name="dayFadeEndTimeEdit">
+             <property name="time">
+              <time>
+               <hour>5</hour>
+               <minute>30</minute>
+               <second>0</second>
+              </time>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2" colspan="5">
+            <widget class="QLabel" name="timesCoherentLabel">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="generalOptionsGroupBox">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="title">
+        <string>General Options</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QWidget" name="generalOptionsContentWidget">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="enabledCheckBox">
+             <property name="text">
+              <string>Enable Automatic Night Mode Blue Light Filter</string>
+             </property>
+            </widget>
+           </item>
+          <item row="1" column="0">
+            <widget class="QCheckBox" name="logChangesCheckBox">
+             <property name="text">
+              <string>Log every color change</string>
+             </property>
+            </widget>
+           </item>
+           </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <spacer name="rightVerticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetChildButton">
+       <property name="text">
+        <string>Reset to default child settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetAdultButton">
+       <property name="text">
+        <string>Reset to default adult settings</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>nightFadeStartTimeEdit</tabstop>
+  <tabstop>nightFadeEndTimeEdit</tabstop>
+  <tabstop>dayFadeStartTimeEdit</tabstop>
+  <tabstop>dayFadeEndTimeEdit</tabstop>
+  <tabstop>previewCheckBox</tabstop>
+  <tabstop>previewTempSlider</tabstop>
+  <tabstop>previewTempSpinBox</tabstop>
+  <tabstop>dayTempSlider</tabstop>
+  <tabstop>dayTempSpinBox</tabstop>
+  <tabstop>nightTempSlider</tabstop>
+  <tabstop>nightTempSpinBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>previewTempSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>previewTempSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>previewTempSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>previewTempSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dayTempSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dayTempSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>387</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dayTempSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dayTempSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nightTempSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>nightTempSpinBox</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>434</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>443</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nightTempSpinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>nightTempSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>443</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>349</x>
+     <y>434</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,8 +1,0 @@
-[Unit]
-Description=automatic night mode (timer)
-
-[Timer]
-OnCalendar=*-*-* *:*:42
-
-[Install]
-WantedBy=default.target
