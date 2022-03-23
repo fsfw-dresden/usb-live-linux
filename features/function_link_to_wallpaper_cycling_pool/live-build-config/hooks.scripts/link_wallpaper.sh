@@ -6,7 +6,7 @@
 link_wallpaper() {
         # Symlinks in this folder will be shown as desktop background
         # and cycled through daily
-        DEST=/usr/local/share/backgrounds/cycled
+        DEST=/usr/local/share/backgrounds
         mkdir -pv $DEST
 
         # First parameter may be a number

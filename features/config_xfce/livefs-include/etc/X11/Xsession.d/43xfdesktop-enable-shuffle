@@ -1,0 +1,33 @@
+#!/bin/sh -x
+# Thanks for the idea @ToZ on 2021-05-21 01:07:31 at https://forum.xfce.org/viewtopic.php?id=14986
+
+# do not overwrite user's preferences
+xfconf_create_if_not_exist() {
+  PROPERTY=$1
+  TYPE=$2
+  VALUE=$3
+  xfconf-query --channel xfce4-desktop --property "${PROPERTY}" || \
+    xfconf-query --channel xfce4-desktop --property "${PROPERTY}" --type "${TYPE}" --set "${VALUE}" --create
+}
+
+{
+  # wait until xfdesktop has recognized monitor name and expanded its config 
+  sleep 10
+
+  # get list of screens and named monitors using some awk magic
+  SCREENS=$(xfconf-query -c xfce4-desktop -l | awk -F/ '/screen/ { if ( !seen[$3]++ ) print $3 }')
+  MONITORS=$(xfconf-query -c xfce4-desktop -l | awk -F/ '/monitor/ { if ( $4 !~ "monitor[0-9]" && !seen[$4]++ ) print $4 }')
+
+  for SCREEN in ${SCREENS}
+  do
+    for MONITOR in ${MONITORS}
+    do
+      PROPERTY_PATH="/backdrop/${SCREEN}/${MONITOR}/workspace0"
+
+      xfconf_create_if_not_exist "${PROPERTY_PATH}/backdrop-cycle-enable" bool true
+      xfconf_create_if_not_exist "${PROPERTY_PATH}/backdrop-cycle-period" uint 1  # minutes
+      xfconf_create_if_not_exist "${PROPERTY_PATH}/backdrop-cycle-timer" uint 15  # 15
+      xfconf_create_if_not_exist "${PROPERTY_PATH}/backdrop-cycle-random-order" bool true
+    done
+  done
+} &

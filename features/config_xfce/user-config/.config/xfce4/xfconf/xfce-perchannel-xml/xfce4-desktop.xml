@@ -4,14 +4,16 @@
   <property name="backdrop" type="empty">
     <property name="screen0" type="empty">
       <property name="monitor0" type="empty">
-        <property name="workspace0" type="empty">
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/local/share/backgrounds/cycled/"/>
-          <property name="backdrop-cycle-enable" type="bool" value="true"/>
-          <property name="backdrop-cycle-random-order" type="bool" value="true"/>
-          <property name="backdrop-cycle-period" type="int" value="1"/>
-          <property name="backdrop-cycle-timer" type="uint" value="2"/>
-        </property>
+        <property name="image-path" type="string" value="/usr/local/share/backgrounds/"/>
+      </property>
+      <property name="monitor1" type="empty">
+        <property name="image-path" type="string" value="/usr/local/share/backgrounds/"/>
+      </property>
+      <property name="monitor2" type="empty">
+        <property name="image-path" type="string" value="/usr/local/share/backgrounds/"/>
+      </property>
+      <property name="monitor3" type="empty">
+        <property name="image-path" type="string" value="/usr/local/share/backgrounds/"/>
       </property>
     </property>
   </property>
