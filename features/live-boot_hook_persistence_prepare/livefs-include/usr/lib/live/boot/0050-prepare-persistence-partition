@@ -24,7 +24,7 @@ Prepare_persistence()
         fi
 
         PERSISTENCESTORE=/run/persistence
-        mkdir -pv ${PERSISTENCESTORE}
+        mkdir -p ${PERSISTENCESTORE}
 
         # is the persistence partition present ..
         if [ -b ${DEV}*3 ] && mount -v ${DEV}*3 ${PERSISTENCESTORE}
@@ -71,7 +71,7 @@ Prepare_persistence()
                             echo "/var/lib/live union,source=var-lib-live"
                         } > ${PERSISTENCESTORE}/linux-system/persistence.conf
                 fi
-                umount -v ${PERSISTENCESTORE}
+                umount ${PERSISTENCESTORE}
         fi
-        rmdir -v ${PERSISTENCESTORE}
+        rmdir ${PERSISTENCESTORE}
 }
