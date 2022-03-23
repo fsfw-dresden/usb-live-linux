@@ -2,9 +2,11 @@
 Description=Prepare writable overlay on %f
 DefaultDependencies=no
 RequiresMountsFor=/run
+# Only ever run once per overlay path
+ConditionPathIsMountPoint=!/run/overlay%f
 
 [Service]
 Type=oneshot
-ExecStart=/bin/mkdir -p '/run%f'
-ExecStart=/bin/mount -t tmpfs -o noatime tmpfs '/run%f'
-ExecStart=/bin/mkdir -p '/run%f/work' '/run%f/rw'
+ExecStart=/bin/mkdir -p '/run/overlay%f'
+ExecStart=/bin/mount -t tmpfs -o noatime tmpfs '/run/overlay%f'
+ExecStart=/bin/mkdir -p '/run/overlay%f/work' '/run/overlay%f/rw'

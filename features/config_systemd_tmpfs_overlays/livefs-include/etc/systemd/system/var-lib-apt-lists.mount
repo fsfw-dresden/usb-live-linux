@@ -3,12 +3,16 @@ Description=tmpfs overlay of %f
 Conflicts=umount.target
 Wants=pre-overlay@%p.service
 After=pre-overlay@%p.service
+# Only when ran as live-system
+ConditionPathIsMountPoint=/run/live/rootfs/filesystem.squashfs
+# Prevent overlapping mounts
+ConditionPathIsMountPoint=!%f
 
 [Mount]
 What=overlay
 Type=overlay
 Where=%f
-Options=lowerdir=%f,upperdir=/run%f/rw,workdir=/run%f/work
+Options=lowerdir=%f,upperdir=/run/overlay%f/rw,workdir=/run/overlay%f/work
 
 [Install]
 WantedBy=local-fs.target
