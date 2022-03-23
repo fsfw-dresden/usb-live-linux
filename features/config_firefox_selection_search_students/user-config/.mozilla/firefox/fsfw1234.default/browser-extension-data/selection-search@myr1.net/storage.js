@@ -318,8 +318,8 @@
   },
   "blacklist": [],
   "sync": {
-    "sync_engines": true,
-    "sync_settings": true,
-    "sync_style": true
+    "sync_engines": false,
+    "sync_settings": false,
+    "sync_style": false
   }
 }
