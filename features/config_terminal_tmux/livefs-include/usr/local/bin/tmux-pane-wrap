@@ -21,7 +21,7 @@ _get_first_non_var_arg() {
 }
 
 # get the unescaped, pristine shell command
-cmd=$(echo $(tmux display-message -t $TMUX_PANE -p '#{pane_start_command}')|sed -r 's|^tmux-pane-wrap (-v *)*"*||;s|"*(; tmux-pane-respawn-prompt *)*||g')
+cmd="$(tmux display-message -t $TMUX_PANE -p '#{pane_start_command}' | sed -r 's|.*tmux-pane-wrap (-v *)*\\"||; s|\\"; tmux-pane-respawn-prompt.*||g')"
 
 [ $debug ] && echo "\$@ = '$@'"
 [ $debug ] && echo "\$* = '$*'"
@@ -43,7 +43,8 @@ exe=$(_get_first_non_var_arg ${@})
 [ $verbose ] && echo
 
 # if pane title does not differ from default, set it to command
-[ $(tmux display-message -p '#{==:#{pane_title},#{host}}') -eq 1 ] && tmux select-pane -T "${cmd}"
+pane_title_equals_default=$(tmux display-message -p '#{==:#{pane_title},#{host}}')
+[ ${pane_title_equals_default:-0} -eq 1 ] && tmux select-pane -T "${cmd}"
 
 # save command history
 [ $verbose ] && echo "$cmd" >>~/.bash_history.tmux
