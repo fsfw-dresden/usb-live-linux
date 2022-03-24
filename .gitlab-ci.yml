@@ -37,14 +37,15 @@ build_stick_iso:
     - dpkg -l rsync pandoc debian-archive-keyring grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 #    - apt install -y --no-install-recommends rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
     - wget http://ftp.de.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.126+nmu1_all.deb && dpkg -i debootstrap_1.0.126+nmu1_all.deb
-    - scripts/build-live-iso TEST-Microstick:Xfce:buster
+    - scripts/build-live-iso TEST-Microstick:bullseye
   artifacts:
     paths:
-      - artifacts/
-      - build/*.log
+      - /work/usb-live-linux/artifacts/
+      - /work/usb-live-linux/build/*.log
       - /work/usb-live-linux/build/chroot/debootstrap/debootstrap.log
     exclude:
-      - artifacts/*.iso
+      - artifacts/*.isohttp://ftp.de.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.126+nmu1_all.deb
   cache:
+    key: bullseye
     paths:
-      - build/cache/
+      - /work/usb-live-linux/build/cache/
