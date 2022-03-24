@@ -1,0 +1,39 @@
+# groove
+
+image: debian:11
+
+before_script:
+  - echo "Before script section"
+  - pwd
+  - ls -lah
+  - apt-cache policy aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
+  - apt-cache policy rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+  - df -h
+  - findmnt
+  - du -sh
+  - date
+
+after_script:
+  - echo "After script section"
+  - df -h
+  - findmnt
+  - du -sh
+  - date
+  - cal
+
+build_stick_iso:
+  stage: build
+  script:
+    - apt install -y aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
+    - dpkg -l rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+    - apt install -y rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+    - bash -x scripts/build-live-iso TEST-Microstick:Xfce:buster
+  artifacts:
+    paths:
+      - artifacts/
+      - build/*.log
+    exclude:
+      - artifacts/*.iso
+  cache:
+    paths:
+      - build/cache/
