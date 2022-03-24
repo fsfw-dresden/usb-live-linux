@@ -19,7 +19,6 @@ after_script:
   - findmnt
   - du -sh
   - date
-  - cal
 
 build_stick_iso:
   stage: build
