@@ -40,7 +40,7 @@ build_stick_iso:
 #    - apt install -y --no-install-recommends rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
     # Newer debootstrap is required to prevent "Failure trying to run: chroot "[…]" mount -t proc proc /proc"
     - wget http://ftp.de.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.126+nmu1_all.deb && dpkg -i debootstrap_1.0.126+nmu1_all.deb
-    - sed -ir 's/^#!(.*)/#!\1 -x/' /usr/sbin/debootstrap
+    - sed -ri 's/^#!(.*)/#!\1 -x/' /usr/sbin/debootstrap
     - scripts/build-live-iso TEST-Microstick:bullseye
   artifacts:
     paths:
