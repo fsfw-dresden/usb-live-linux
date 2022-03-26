@@ -26,6 +26,7 @@ after_script:
 
 build_stick_iso:
   stage: build
+  tags: base
   script:
     - pwd
     #- cd /work/usb-live-linux
@@ -36,6 +37,7 @@ build_stick_iso:
     - apt install -y --no-install-recommends aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
     - dpkg -l rsync pandoc debian-archive-keyring grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 #    - apt install -y --no-install-recommends rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+    # Newer debootstrap is required to prevent "Failure trying to run: chroot "[…]" mount -t proc proc /proc"
     - wget http://ftp.de.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.126+nmu1_all.deb && dpkg -i debootstrap_1.0.126+nmu1_all.deb
     - scripts/build-live-iso TEST-Microstick:bullseye
   artifacts:
@@ -44,7 +46,7 @@ build_stick_iso:
       - /work/usb-live-linux/build/*.log
       - /work/usb-live-linux/build/chroot/debootstrap/debootstrap.log
     exclude:
-      - artifacts/*.isohttp://ftp.de.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.126+nmu1_all.deb
+      - artifacts/*.iso
   cache:
     key: bullseye
     paths:
