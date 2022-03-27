@@ -73,7 +73,7 @@ build_stick_iso:
 #    - dpkg -l rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 
     # Uncomment to turn on live-build debugging if needed
-    # - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
+    - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
 
     # Trigger actual build process
     - scripts/build-live-iso TEST-Microstick:bullseye
@@ -82,14 +82,14 @@ build_stick_iso:
     - mkdir -pv /work/artifacts
 
     # Move ISO to local folder
-    - mv -v /work/usb-live-linux/artifacts/*.iso /work/artifacts/'
+    - mv -v /work/usb-live-linux/artifacts/*.iso /work/artifacts/
 
     # Copy other artifacts & build log over to be attached as pipeline results
     - cp -av /work/usb-live-linux/artifacts "/${CI_PROJECT_DIR/"
     - cp -av /work/usb-live-linux/build/*.log "/${CI_PROJECT_DIR/build/"
 
     # Move those other artifacts to local folder, too
-    - mv -v /work/usb-live-linux/artifacts/*.* /work/artifacts/'
+    - mv -v /work/usb-live-linux/artifacts/*.* /work/artifacts/
 
     - ls -lahd $CI_PROJECT_DIR
 
