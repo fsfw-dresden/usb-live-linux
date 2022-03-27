@@ -51,6 +51,10 @@ after_script:
 
   # move back the cache folder
   - mv -v /work/usb-live-linux/build/cache /work/
+  - ls -lah /work/usb-live-linux/build/
+
+  # Kill the work copy (+)
+  - rm -r /work/usb-live-linux/
 
 build_stick_iso:
   stage: build
@@ -89,8 +93,8 @@ build_stick_iso:
     - mv -v /work/usb-live-linux/artifacts/*.iso /work/artifacts/
 
     # Copy other artifacts & build log over to be attached as pipeline results
-    - cp -av /work/usb-live-linux/artifacts "/${CI_PROJECT_DIR/"
-    - cp -av /work/usb-live-linux/build/*.log "/${CI_PROJECT_DIR/build/"
+    - cp -av /work/usb-live-linux/artifacts "/${CI_PROJECT_DIR}/"
+    - cp -av /work/usb-live-linux/build/*.log "/${CI_PROJECT_DIR}/build/"
 
     # Move those other artifacts to local folder, too
     - mv -v /work/usb-live-linux/artifacts/*.* /work/artifacts/
