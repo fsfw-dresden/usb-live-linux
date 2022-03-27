@@ -15,7 +15,7 @@ before_script:
   - cat /proc/mounts
   # copy kali-linux workaround for /builds being mounted nodev, c.f.
   # https://gitlab.com/kalilinux/build-scripts/kali-docker/-/commit/e8cef6913812eeca41ab119e5a5ae9caf28de4ca
-  - mkdir /work
+  - mkdir -pv /work
   - cp -a ${PWD} /work/
   - cd /work/${PWD##*/}
 
