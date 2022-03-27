@@ -19,21 +19,22 @@ before_script:
   # copy kali-linux workaround for /builds being mounted nodev, c.f.
   # https://gitlab.com/kalilinux/build-scripts/kali-docker/-/commit/e8cef69
   - mkdir -pv /work
-  - cp -a ${PWD} /work/
-  - cd /work/${PWD##*/}
-  - pwd
+  - cp -a ${CI_PROJECT_DIR} /work/
   - cd /work/usb-live-linux
   - pwd
 
-  # bash?!
-  - bash -xc '[[ "foo" =~ ".oo" ]] && echo success || echo fail'
-
   # If local cache folder exists, bind mount it into build folder
+  # - bash -xc '[ -d /work/cache ]
+  #   && mkdir -pv /work/usb-live-linux/build/cache
+  #   && mount -v --bind /work/cache /work/usb-live-linux/build/cache'
+  # - ls -lah /work/usb-live-linux/build/cache
+  # - findmnt
+
+  # because the .deb files are hard-linked by live-build,
+  # cache folder can not be bind mounted (!)
   - bash -xc '[ -d /work/cache ]
-    && mkdir -pv /work/usb-live-linux/build/cache
-    && mount -v --bind /work/cache /work/usb-live-linux/build/cache'
+    && mv -v /work/cache /work/usb-live-linux/build/'
   - ls -lah /work/usb-live-linux/build/cache
-  - findmnt
 
 
 after_script:
@@ -45,9 +46,11 @@ after_script:
   - date
 
   # If local cache folder exists, remove bind mount in build folder
-  - bash -xc '[ -d /work/cache ]
-    && umount -v /work/usb-live-linux/build/cache'
+  # - bash -xc '[ -d /work/cache ]
+  #   && umount -v /work/usb-live-linux/build/cache'
 
+  # move back the cache folder
+  - mv -v /work/usb-live-linux/build/cache /work/
 
 build_stick_iso:
   stage: build
@@ -56,6 +59,7 @@ build_stick_iso:
   script:
     - pwd
     #- cd /work/usb-live-linux
+
     # Fail early if device nodes can not be created
     - echo "If this fails, /[work] is mounted nodev"; mknod test b 1 2 && rm test
 
@@ -73,7 +77,7 @@ build_stick_iso:
 #    - dpkg -l rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 
     # Uncomment to turn on live-build debugging if needed
-    - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
+    # - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
 
     # Trigger actual build process
     - scripts/build-live-iso TEST-Microstick:bullseye
@@ -91,7 +95,7 @@ build_stick_iso:
     # Move those other artifacts to local folder, too
     - mv -v /work/usb-live-linux/artifacts/*.* /work/artifacts/
 
-    - ls -lahd $CI_PROJECT_DIR
+    - ls -lah ${CI_PROJECT_DIR}
 
   artifacts:
     paths:
