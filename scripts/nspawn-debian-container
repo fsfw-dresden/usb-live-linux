@@ -7,42 +7,44 @@ check_program_exists systemd-nspawn
 check_program_exists debootstrap
 
 DEPS="
-systemd-container
-dbus
 aptitude
-grub-pc-bin
+bash
+bash-completion
+bmap-tools
+ca-certificates
+ccze
+curl
+dbus
+dialog
+dosfstools
+eatmydata
+f2fs-tools
+fatattr
+gallery-dl
+git
 grub-efi-ia32-bin
+grub-pc-bin
+html-xml-utils
+jq
+libcdio-utils
+live-build
+make
+nocache
+pandoc
+parted
+patch
+pigz
+pipemeter
+qemu-utils libnbd-bin nbdkit
+ranger
+rsync
 shim-signed
 syslinux-common
-parted
-fatattr
-dosfstools
-f2fs-tools
-libcdio-utils
-dialog
-ccze
-live-build
-git
-rsync
-wget
-curl
-gallery-dl
-html-xml-utils
-youtube-dl
-ca-certificates
-unzip
-bash
-jq
-patch
-pandoc
-make
+systemd-container
 tig
-ranger
-qemu-utils libnbd-bin nbdkit
-bash-completion
-pipemeter
-nocache
-pigz
+unzip
+wget
+youtube-dl
 "
 
 # If no container directory exists, initiate a debian testing install with all our dependencies
@@ -73,6 +75,9 @@ then
   # Copy custom aptitude config
   cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d build/container/etc/apt/
 fi
+
+# Disable enforcing of seccomp filters for speed-up
+export SYSTEMD_SECCOMP=0
 
 # Update apt database
 systemd-nspawn --directory=build/container apt update

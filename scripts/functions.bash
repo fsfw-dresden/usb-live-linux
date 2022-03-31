@@ -80,13 +80,13 @@ download_file_cached() {
         then
             echo "${FILE_NAME} fetched" > /dev/stderr
         else
-            die_with_error 5 "Download from ${FILE_URL} failed : (" > /dev/stderr
+            die "Download from ${FILE_URL} failed : (" > /dev/stderr
         fi
 
         # If this is a debian archive, test for integrity
         if [[ "${DEB_FILE}" =~ \.deb$ ]] && ! check_debian_archive ${DEB_FILE}
         then
-            die_with_error 6 "${DEB_FILE} seems broke, aborting" > /dev/stderr
+            die "${DEB_FILE} seems broke, aborting" > /dev/stderr
         fi
 
         # Rename file in cache
@@ -115,19 +115,19 @@ download_external_deb_package() {
     DEB_URL=${1}
     FILE_NAME=${2}
 
-    if [ -z ${FILE_NAME} ]
+    if [ -z "${FILE_NAME}" ]
     then
         FILE_NAME=${DEB_URL##*/}
         FILE_NAME=${FILE_NAME/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert?)
     fi
 
-    FILE_CACHED=$(download_file_cached ${DEB_URL} ${FILE_NAME})
+    FILE_CACHED=$(download_file_cached "${DEB_URL}" "${FILE_NAME}")
 
     if [ -n "${FILE_CACHED}" ]
     then
         echo "${FILE_NAME} fetched"
     else
-        die_with_error 4 "Download from ${DEB_URL} failed : ("
+        die "Download from ${DEB_URL} failed : ("
     fi
 
     TARGET_DIR=config/packages.chroot
@@ -142,7 +142,7 @@ check_dependencies() {
     done
     [ ${#DEPS[@]} -eq 0 ] && print_success "Dependencies present (${@})" && return
     read -n1 -p "press [i] to run \`apt install ${DEPS[@]}\` and proceed, [any other] key to exit the script.."
-    [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || die_with_error 1 "dependencies ${DEPS[@]} not installed, aborting"
+    [ "$REPLY" = "i" ] && apt install ${DEPS[@]} || die "dependencies ${DEPS[@]} not installed, aborting"
 }
 
 # FIXME: legacy implementation
@@ -218,6 +218,12 @@ convert_markdown_list() {
     echo "${MARKDOWN_LIST} converted"
 }
 
+# Read image file name
+get_image_name() {
+    [ -e config/common ] || die "Could not read image name from config/common\nPWD=${PWD}\n$(ls -lah config/)"
+    sed -nr 's/LB_IMAGE_NAME="(.*)"$/\1/p' config/common
+}
+
 # Recursive function to collect complete list of features
 parse_features() {
     local BASE=${@}
@@ -231,13 +237,13 @@ parse_features() {
     for FEATURE_PATH in ${BASE}/{inherit,inherits,depends,features}/* ${BASE}; do
         if [ ${FEATURE_PATH} != ${BASE} ] && [ -d ${FEATURE_PATH} ]
         then
-            parse_features ${FEATURE_PATH}
+            parse_features "${FEATURE_PATH}"
         else
             #print_info "found ${FEATURE_PATH} feature"
             FEATURE_ID=${FEATURE_PATH##*/}
             if [[ "${FEATURE_PATH}" =~ " " ]]
             then
-                die_with_error 3 "${FEATURE_PATH} contains spaces, please fix that."
+                die "${FEATURE_PATH} contains spaces, please fix that."
             fi
 
             if [[ "${FEATURE_PATH}" =~ \.disable[d]*$ ]]
