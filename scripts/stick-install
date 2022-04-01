@@ -7,6 +7,18 @@
 cd_repo_root
 check_dependencies parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
 
+check_help_wanted() {
+    # give some rudimentary help if requested
+    case "${1}" in
+        "-h")
+            ;&
+        "--help")
+            print_info "usage is ${0} DEVICE [ISO_FILE [INSTALL_VARIANT [SIZE_MB_PARTITION_FAT32]]]"
+            exit
+            ;;
+    esac
+}
+
 select_target_device() {
     OPTIONS=()
     shopt -s nullglob
@@ -24,7 +36,7 @@ select_target_device() {
         grep -qs 1 /sys/block/${DEVNAME}/removable || [[ -d /sys/block/${DEVNAME}/loop ]] && \
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
-    [ -z ${OPTIONS} ] && die_with_error 5 "Could not find any suitable (loop) device!"
+    [ -z ${OPTIONS} ] && die "Could not find any suitable (loop) device!"
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
@@ -63,13 +75,13 @@ define_first_partition_size() {
     TEXT+="- ${SIZE_MB_LIVE_SYSTEM} MiB Live System ISO\n"
     TEXT+="= $(( SIZE_MB_STICK - SIZE_MB_LIVE_SYSTEM )) MiB space for 1st (boot) & 3rd (persistence) partition\n"
     TITLE="DEFINE FIRST PARTITION SIZE"
-    INIT=$1
+    INIT=${1}
     display_inputbox "${TITLE}" "${TEXT}" ${INIT}
 }
 
 # THANKS https://stackoverflow.com/questions/33085008/bash-round-to-nearest-multiple-of-4
 round_int_to_next_multiple_of_16() {
-    echo $(( ($1 + 15 ) / 16 * 16 ))
+    echo $(( (${1} + 15 ) / 16 * 16 ))
 }
 
 is_f2fs_mountable() {
@@ -80,28 +92,28 @@ is_f2fs_mountable() {
 
 determine_install_fundamentals() {
     # target DEVICE can be given as first parameter or interactively selected
-    [ -b "$1" ] && DEVICE=$1 || DEVICE=$(select_target_device)
+    [ -b "${1}" ] && DEVICE="${1}" || DEVICE=$(select_target_device)
 
     # no device no burn
-    [ -z ${DEVICE} ] && die_with_error 1 "no DEVICE chosen, cannot continue"
+    [ -z ${DEVICE} ] && die "no DEVICE chosen, cannot continue"
 
     # loop devices have a different naming scheme (loop3p1 vs sdc1)
     [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
 
     # proceed only if selected device is not mounted
-    grep -s "^${DEVICE}${p}[[:digit:]]* " /proc/mounts && die_with_error 2 "partition(s) on ${DEVICE} currently mounted, not continuing!"
+    grep -s "^${DEVICE}${p}[[:digit:]]* " /proc/mounts && die "partition(s) on ${DEVICE} currently mounted, not continuing!"
 
     # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
-    { [ -f "artifacts/$2" ] && LIVE_IMAGE="artifacts/$2"; } || { [ -f "$2" ] && LIVE_IMAGE="$2"; } || LIVE_IMAGE="$(select_live_iso)"
+    { [ -f "artifacts/${2}" ] && LIVE_IMAGE="artifacts/${2}"; } || { [ -f "${2}" ] && LIVE_IMAGE="${2}"; } || LIVE_IMAGE="$(select_live_iso)"
 
     # no ISO no play
-    [ -z ${LIVE_IMAGE} ] && die_with_error 3 "no LIVE_IMAGE chosen, cannot continue"
+    [ -z ${LIVE_IMAGE} ] && die "no LIVE_IMAGE chosen, cannot continue"
 
     # The "install variant" defines the set of install procedures to be executed
-    [ -n "$3" ] && [ -d "variants.install/$3" ] && INSTALL_VARIANT="$3" || INSTALL_VARIANT=$(select_install_variant)
+    [ -n "${3}" ] && [ -d "variants.install/${3}" ] && INSTALL_VARIANT="${3}" || INSTALL_VARIANT=$(select_install_variant)
 
     # no install procedures no mission
-    [ -z ${INSTALL_VARIANT} ] && die_with_error 4 "no INSTALL_VARIANT chosen, cannot continue"
+    [ -z ${INSTALL_VARIANT} ] && die "no INSTALL_VARIANT chosen, cannot continue"
 
     # make endpoint variables available to sub-processes
     export DEVICE LIVE_IMAGE INSTALL_VARIANT
@@ -111,7 +123,8 @@ determine_install_fundamentals() {
     print_info "Target Device: ${DEVICE}"
 
     # any partitions on the device? => show the layout
-    [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -eq 0 ] || parted --script ${DEVICE} print free
+    [ $(grep -c "${DEVICE#/dev/}[[:alnum:]]\+$" /proc/partitions) -eq 0 ] \
+        || { print_warn "overwriting existing partition layout:"; parted --script ${DEVICE} unit MiB print free; }
 }
 
 
@@ -126,20 +139,23 @@ determine_partition_sizes() {
 
     print_info "figuring out partition sizes for $(numfmt --to=iec-i --suffix B ${SIZE_STICK}) storage device ${DEVICE}"
 
-    [ -n "$4" ] && SIZE_MB_PARTITION_FAT32=$4 || \
-        SIZE_MB_PARTITION_FAT32=$(define_first_partition_size 500)
+    [ -n "${4}" ] && SIZE_MB_PARTITION_FAT32=${4} || \
+        SIZE_MB_PARTITION_FAT32=$(define_first_partition_size 1500)
 
     # no size no partitioning
-    [ ! ${SIZE_MB_PARTITION_FAT32:-0} -gt 0 ] && die_with_error 5 "No partition size set, cannot continue"
+    [ ! ${SIZE_MB_PARTITION_FAT32:-0} -gt 0 ] && die "No partition size set, cannot continue"
 
     # try to put partition boundaries on flash cell erasure block boundaries assumed to be 16MiB
     SIZE_MB_PARTITION_FAT32=$(round_int_to_next_multiple_of_16 ${SIZE_MB_PARTITION_FAT32})
+
+    # partition has 32768s = 16MiB offset
+    END_MB_PARTITION_FAT32=$((16 + ${SIZE_MB_PARTITION_FAT32}))
 
     # >~ 114 MiB for the filesystem gods
     SIZE_MB_SPACE_BUFFER=150
 
     SIZE_MB_PARTITION_LIVE_IMAGE=$(( SIZE_MB_LIVE_SYSTEM + SIZE_MB_SPACE_BUFFER ))
-    END_MB_PARTITION_LIVE_IMAGE=$(round_int_to_next_multiple_of_16 $((SIZE_MB_PARTITION_FAT32 + SIZE_MB_PARTITION_LIVE_IMAGE)) )
+    END_MB_PARTITION_LIVE_IMAGE=$(round_int_to_next_multiple_of_16 $((END_MB_PARTITION_FAT32 + SIZE_MB_PARTITION_LIVE_IMAGE)) )
 }
 
 create_partitions() {
@@ -147,17 +163,18 @@ create_partitions() {
     parted --script ${DEVICE} mklabel msdos
 
     # create an EFI boot & data exchange partition at an offset of 16MiB (to align with page size)
-    parted --script --align=optimal ${DEVICE} mkpart primary fat32 32768s ${SIZE_MB_PARTITION_FAT32}MiB
+    parted --script --align=optimal ${DEVICE} mkpart primary fat32 32768s ${END_MB_PARTITION_FAT32}MiB
     parted ${DEVICE} set 1 boot on
-    print_info "created 16MiB - ${SIZE_MB_PARTITION_FAT32}MiB fat32 data exchange / EFI boot partition"
+    print_info "created 16MiB - ${END_MB_PARTITION_FAT32}MiB fat32 data exchange / EFI boot partition"
 
     # create the main live-system partition
-    parted --script --align=optimal -- ${DEVICE} mkpart primary ${SIZE_MB_PARTITION_FAT32}MiB ${END_MB_PARTITION_LIVE_IMAGE}MiB
-    print_info "created ${SIZE_MB_PARTITION_FAT32}MiB - ${END_MB_PARTITION_LIVE_IMAGE}MiB live system partition (will be formatted ext2)"
+    parted --script --align=optimal -- ${DEVICE} mkpart primary ${END_MB_PARTITION_FAT32}MiB ${END_MB_PARTITION_LIVE_IMAGE}MiB
+    print_info "created ${END_MB_PARTITION_FAT32}MiB - ${END_MB_PARTITION_LIVE_IMAGE}MiB live system partition (will be formatted ext2)"
 
     # create a small persistence partition that will be grown on first boot to device limits
     # allows distributing a smaller image file that will fit USB sticks of varying size
-    END_MB_PARTITION_PERSISTENCE=$(( END_MB_PARTITION_LIVE_IMAGE + 256 ))
+    SIZE_MB_PARTITION_PERSISTENCE=256
+    END_MB_PARTITION_PERSISTENCE=$(( END_MB_PARTITION_LIVE_IMAGE + SIZE_MB_PARTITION_PERSISTENCE ))
     parted --script --align=optimal -- ${DEVICE} mkpart primary ${END_MB_PARTITION_LIVE_IMAGE}MiB ${END_MB_PARTITION_PERSISTENCE}MiB
     print_info "created ${END_MB_PARTITION_LIVE_IMAGE}MiB - ${END_MB_PARTITION_PERSISTENCE}MiB persistence partition (will be formatted f2fs)"
 
@@ -184,6 +201,7 @@ create_filesystems() {
     # the EFI boot partition needs to be FAT32 which
     # is perfect for file exchange with inferior OSs
     mkfs.vfat -vn ${FAT_LABEL} -F 32 ${DEVICE}${p}1
+    print_info "EFI boot partition formatted"
 
     # the live system main storage partition
     mkfs.ext4 -FL ${MAIN_LABEL} -O ^has_journal -m 0 -i 1048576 ${DEVICE}${p}2
@@ -192,6 +210,7 @@ create_filesystems() {
     # -O: create without journal
     # -m: percentage of blocks reserved for the super-user
     # -i: larger bytes-per-inode ratio > fewer inodes
+    print_info "live system partition formatted"
 
     # persistence storage
     mkfs.f2fs -fd 5 -l live-memory -O extra_attr,inode_checksum,sb_checksum,compression,encrypt ${DEVICE}${p}3
@@ -200,6 +219,7 @@ create_filesystems() {
     # sb_checksum:    Enable superblock checksum.
     # compression:    Enable support for filesystem level compression. Requires extra attr.
     # encrypt:        Enable support for filesystem level encryption.
+    print_info "persistence partition formatted"
 }
 
 # CLEAN-UP TRAPS
@@ -212,6 +232,7 @@ trap_umount_partitions() {
     umount -v ${DEVICE}${p}1
     umount -v ${DEVICE}${p}2
     ! is_f2fs_mountable || umount -v ${DEVICE}${p}3
+    print_info "Installation to ${DEVICE} took $(format_timespan $(($(date +%s) - ${STARTTIME})))"
     print_success "It is now safe to remove device ${DEVICE}.\n" \
         "\tIf no errors have been reported above, the live stick should work fine.\n" \
         "\tPlease report any problems you find, and good luck!"
@@ -262,14 +283,19 @@ execute_install_hooks() {
                 source "${INSTALL_HOOK}"
             ) &
             # set -e & subshell? https://unix.stackexchange.com/a/254676/18150
-            wait $! || die_with_error 10 "Problem occurred in ${INSTALL_HOOK}"
+            wait $! || die "Problem occurred in ${INSTALL_HOOK}"
         done
     )
 }
 
 install_main() {
+    is_root_user_or_die
+    check_help_wanted "{@}"
+
     determine_install_fundamentals "${@}"
     determine_partition_sizes "${@}"
+
+    STARTTIME=$(date +%s)
     create_partitions
     create_filesystems
     mount_filesystems

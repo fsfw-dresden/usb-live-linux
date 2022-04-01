@@ -14,11 +14,15 @@ repo_root() {
 }
 
 cd_repo_root() {
-        echo "current dir: " $(pwd)
+        # echo "current dir: " $(pwd)
         cd $(dirname $(realpath "${0}"))
         ROOT=$(repo_root)
-        echo "setting working directory to repo root at ${ROOT}"
+        # echo "setting working directory to repo root at ${ROOT}"
         cd "${ROOT}"
+}
+
+is_root_user_or_die() {
+    [ "$(id -u)" = "0" ] || die "ERROR: no super-user privilege, please run as root or with sudo."
 }
 
 check_program_exists() {
@@ -47,12 +51,11 @@ print_error() {
     printf_escaped "[ 🛑 ] ${COLOR_RED}${*}${COLOR_OFF}\n" >&2
 }
 
-die_with_error() {
-    ERROR=${1}
-    shift
+die() {
     print_error "${@}"
-    exit ${ERROR}
+    exit 1
 }
+
 # THANKS https://unix.stackexchange.com/questions/364776/how-to-output-a-date-time-as-20-minutes-ago-or-9-days-ago-etc
 rel_fmt_low_precision() {
     local SEC_PER_MINUTE=$((60))

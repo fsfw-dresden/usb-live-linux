@@ -5,7 +5,7 @@ iso:
 	scripts/build-live-iso
 
 dist-image:
-	scripts/create-distribution-image
+	scripts/create-distribution-image $(filter-out $@,$(MAKECMDGOALS))
 
 stick-install:
 	scripts/stick-install

@@ -1,108 +1,131 @@
 #!/bin/bash
+
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
 
-# give some rudimentary help if requested
-case "${1}" in
-    "-h")
-        ;&
-    "--help")
-        print_info "usage is  ${0} [TARGET [ISO_FILE [INSTALL_VARIANT [SIZE_MB_PARTITION_FAT32]]]]"
-        print_info "\tTARGET: can be either a pre-allocated image file or a block or loop device."
-        exit
-        ;;
-esac
+# let failures in pipe fail the whole pipe
+set -o pipefail
+
+check_help_wanted() {
+    # give some rudimentary help if requested
+    case "${1}" in
+        "-h")
+            ;&
+        "--help")
+            print_info "usage is ${0} ISO_FILE [INSTALL_VARIANT [SIZE_MB_PARTITION_FAT32]]"
+            exit
+            ;;
+    esac
+}
 
 release_loop_device() {
-        # Skip in case loop device is released already (should not happen)
-        losetup "${DEVICE}" > /dev/null || return
+    # Skip in case loop device is released already (should not happen)
+    losetup "${IMAGE_LOOP_DEVICE}" > /dev/null || return
 
-        print_info "Releasing ${DEVICE}"
+    print_info "Releasing ${IMAGE_LOOP_DEVICE}"
 
-        grep ${DEVICE} /proc/mounts && print_warn "Mounted partitions still around, to be released after unmounting exit trap has run"
+    grep "${IMAGE_LOOP_DEVICE}" /proc/mounts && print_warn "Mounted partitions still around, will be released after this exit trap has completed"
 
-        losetup --verbose --detach ${DEVICE}
+    losetup --verbose --detach "${IMAGE_LOOP_DEVICE}"
 }
 
 setup_loop_device() {
-        # connect file to loop device
-        DEVICE=$(losetup --partscan --verbose --show --nooverlap --find "${1}")
-
-        # free loop device again on premature script termination
-        trap "release_loop_device" EXIT SIGHUP SIGQUIT SIGTERM
+    # connect file to loop device
+    losetup --partscan --verbose --show --nooverlap --find "${1}"
 }
 
-# First parameter can be an image file or loop device
-if [ -n "${1}" ]
-then
-        # Is it a block device?
-        if [ -b "${1}" ]
-        then
-                # just pass it on
-                DEVICE="${1}"
-        # or is it a writable, pre-allocated image file?
-        elif [ -w "${1}" ]
-        then
-                setup_loop_device "${1}"
-        else
-                ls -lahd "${1}"
-                lstrail "${1}"
-                die_with_error 5 "What is ${1}, a pineapple?"
-        fi
+get_matching_install_variant() {
+    for INSTALL_VARIANT in variants.install/*/
+    do
+        INSTALL_VARIANT=$(basename "${INSTALL_VARIANT}")
+        [[ "${LIVE_IMAGE}" =~ .*${INSTALL_VARIANT}.* ]] \
+            && echo "${INSTALL_VARIANT}" \
+            && return
+    done
 
-        # drop argument one, move up the following
-        shift
-else
-        PRELIMINARY_IMAGE="build/installation.temp.img"
-        # FIXME: this should be SIZE_MB_PARTITION_FAT32 + a bit bigger than SIZE_LIVE_SYSTEM 🤔
-        SIZE_MB_IMAGE=$((14 * 2**10))
+    # wasn't able to find a match
+    print_warn "Could not find a matching install variant from image name, defaulting to 'Makerstick'"
+    echo "Makerstick"
+}
 
-        # create image file
-        truncate --size="${SIZE_MB_IMAGE}M" "${PRELIMINARY_IMAGE}"
+check_parameters() {
+    # Make sure that first parameter is live-image ISO file
+    LIVE_IMAGE="${1##*/}"
+    [ -n "${LIVE_IMAGE}" ] && [ -s "artifacts/${LIVE_IMAGE}" ] || die "ISO not given or empty file"
 
-        setup_loop_device "${PRELIMINARY_IMAGE}"
-fi
+    # The "install variant" defines the set of install procedures to be executed
+    [ -n "${2}" ] && {
+        [ -d "variants.install/${2}" ] && INSTALL_VARIANT="${2}" || {
+            print_warn "Invalid install variant '${2}' given, trying to detect"; false
+        }
+    } || INSTALL_VARIANT=$(get_matching_install_variant)
 
-# Invoke stick-install in same shell process
-source scripts/stick-install "${DEVICE}" "${@}"
+    # Set exchange / EFI partition size to 1.5G if not given as 2nd parameter
+    [ -n "${3}" ] && SIZE_MB_PARTITION_FAT32=${3} || \
+        SIZE_MB_PARTITION_FAT32=1500
+}
 
-printf '\n'
-print_info "Returned from stick-install script"
+calculate_partition_sizes() {
+    # Calculate ISO / "live-system" partition size
+    SIZE_MB_SPACE_BUFFER=150        # Same buffer as in stick-install
+    SIZE_MB_LIVE_IMAGE=$(( $(stat --dereference --format=%s "artifacts/${LIVE_IMAGE}") / (1024 * 1024) ))
+    SIZE_MB_PARTITION_LIVE_IMAGE=$(( SIZE_MB_LIVE_IMAGE + SIZE_MB_SPACE_BUFFER ))
+    print_info "Using ${SIZE_MB_LIVE_IMAGE}MiB ISO artifacts/${LIVE_IMAGE} as live image"
 
-# This has overriden the release_loop_device and set unmount exit traps
-# that will only be run at the exit of this script. However, linux is
-# cool and we can move the image, then unmap its loop device, then
-# unmount the partitions afterwards. Blessed are thee who cut corners.
-release_loop_device
+    SIZE_MB_OFFSET=16
+    SIZE_MB_PARTITION_PERSISTENCE=256
+    SIZE_MB_ROUNDING_MARGIN=16
+    SIZE_MB_IMAGE=$(( SIZE_MB_OFFSET + SIZE_MB_PARTITION_FAT32 + SIZE_MB_PARTITION_LIVE_IMAGE \
+                     + SIZE_MB_PARTITION_PERSISTENCE + 2 * SIZE_MB_ROUNDING_MARGIN ))
+}
 
-if [ -n "${PRELIMINARY_IMAGE}" ]
-then
-        # cut off file ending of ISO and append .img.gz
-        TARGET_IMAGE=${LIVE_IMAGE##*/}
-        TARGET_IMAGE=${TARGET_IMAGE%%.iso}
-        TARGET_IMAGE="artifacts/${TARGET_IMAGE%%.hybrid}.img.gz"
+create_image_loop() {
+    # Create image file and make it loop
+    TARGET_IMAGE_FILE="${LIVE_IMAGE%.iso}.img"
+    TARGET_BMAP="${LIVE_IMAGE%.iso}.bmap"
+    truncate --size="${SIZE_MB_IMAGE}M" "build/${TARGET_IMAGE_FILE}"
+    IMAGE_LOOP_DEVICE=$(setup_loop_device "build/${TARGET_IMAGE_FILE}")
+    print_info "Looped ${SIZE_MB_IMAGE}MiB image build/${TARGET_IMAGE_FILE} as ${IMAGE_LOOP_DEVICE}"
 
-        # prevent excessive space usage
-        (
-                cd build
-                print_info "Cleaning up after live-build, disk space is finite..\n$(df -h .)"
-                lb clean --color
-                print_info "Finished cleaning, disk space now:\n$(df -h .)"
-        )
+    # free loop device again on premature script termination
+    trap "release_loop_device" EXIT SIGHUP SIGQUIT SIGTERM
+}
 
-        # (Other compression algorithms have been tried and found to be much slower, providing
-        # very little extra download volume savings because the ISO itself is already compressed)
-        print_info "Multi-core gzipping the disk image to create release product"
-        pigz --independent --blocksize 1024 --stdout < "${PRELIMINARY_IMAGE}" | pipemeter > "${TARGET_IMAGE}"
+create_image_main(){
+    STARTTIME=$(date +%s)
+    is_root_user_or_die
 
-        print_info "generating checksum"
-        sha256sum "${TARGET_IMAGE}" > "${TARGET_IMAGE}.sha256sum"
+    check_help_wanted "${@}"
+    check_parameters "${@}"
 
-        # and remove the uncompressed temp image
-        rm -v "${PRELIMINARY_IMAGE}"
-else
-        TARGET_IMAGE="${DEVICE}"
-fi
+    calculate_partition_sizes
+    create_image_loop
 
-print_success "Finished distribution image at ${TARGET_IMAGE}, enjoy."
+    print_info "Invoking stick-install ${IMAGE_LOOP_DEVICE} artifacts/${LIVE_IMAGE} ${INSTALL_VARIANT} ${SIZE_MB_PARTITION_FAT32}"
+    scripts/stick-install "${IMAGE_LOOP_DEVICE}" "artifacts/${LIVE_IMAGE}" "${INSTALL_VARIANT}" "${SIZE_MB_PARTITION_FAT32}"
+    print_info "Returned from stick-install script"
+
+    # Unloop the image and remove the trap to do so on abortion
+    release_loop_device && trap - EXIT SIGHUP SIGQUIT SIGTERM
+
+    # GZ compression is widely and good enough, supported ISO itself is compressed already
+    print_info "Multi-core gzipping the disk image to create release product"
+    pigz --independent --blocksize 1024 --stdout < "build/${TARGET_IMAGE_FILE}" | pipemeter > "build/${TARGET_IMAGE_FILE}.gz"
+
+    print_info "generating checksum"
+    ( cd build && sha256sum "${TARGET_IMAGE_FILE}.gz" > "${TARGET_IMAGE_FILE}.gz.sha256sum" )
+
+    print_info "generating block map for efficient stick writing"
+    bmaptool create --output "build/${TARGET_BMAP}" "build/${TARGET_IMAGE_FILE}"
+
+    print_info "Removing uncompressed image"
+    rm -v "build/${TARGET_IMAGE_FILE}"
+
+    print_info "Moving finished files to artifacts/ folder"
+    mv -vi "build/${TARGET_IMAGE_FILE}.gz"{,.sha256sum} "build/${TARGET_BMAP}" artifacts/
+
+    print_success "Finished distribution image at artifacts/${TARGET_IMAGE_FILE}.gz in $(format_timespan $(($(date +%s) - STARTTIME))), enjoy."
+}
+
+create_image_main "${@}"
