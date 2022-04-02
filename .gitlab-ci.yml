@@ -21,6 +21,9 @@ before_script:
   - ls -lah
   - du -sh
 
+  # ?
+  - ls -lah /work
+
   # Fetch package lists so installations can be performed
   - apt update
   - apt list --upgradable
