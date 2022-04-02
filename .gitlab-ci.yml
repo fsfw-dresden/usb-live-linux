@@ -82,7 +82,7 @@ build_stick_iso:
     # - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
 
     # Trigger actual build process
-    - scripts/build-live-iso FSFW-Schulstick
+    - scripts/build-live-iso Basisstick:Xfce:bullseye
 
     # Make sure local target folder exists
     - mkdir -pv /work/artifacts
