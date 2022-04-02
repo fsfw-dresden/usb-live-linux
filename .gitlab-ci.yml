@@ -1,59 +1,70 @@
-# Stick CI
+# Stick Build CI
 
 image: debian:11
 
 before_script:
   - echo "Before script section"
 
-  # Log details about runner environment
-  - pwd
-  - ls -lah
-  - df -h
-  - findmnt
-  - du -sh
+  # Log details about runner
   - date
   - uname -a
   - cat /proc/cmdline
   - cat /proc/mounts
+  - findmnt
+  - df -h
+  # .. environment variables
+  - env | sort
+  - export
+  - export | sort
+  # .. source directory
+  - pwd
+  - ls -lah
+  - du -sh
 
-  # copy kali-linux workaround for /builds being mounted nodev, c.f.
+  # Fetch package lists so installations can be performed
+  - apt update
+  - apt list --upgradable
+
+  # Install build prerequisites
+  - apt install -y --no-install-recommends aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl grub-efi-amd64-signed
+
+  # show available package versions
+  - apt-cache policy aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
+
+  # show installed package versions
+  - dpkg -l aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
+
+  # Use kali-linux's workaround for /builds being mounted nodev, c.f.
   # https://gitlab.com/kalilinux/build-scripts/kali-docker/-/commit/e8cef69
   - mkdir -pv /work
   - cp -a ${CI_PROJECT_DIR} /work/
   - cd /work/usb-live-linux
   - pwd
 
-  # If local cache folder exists, bind mount it into build folder
-  # - bash -xc '[ -d /work/cache ]
-  #   && mkdir -pv /work/usb-live-linux/build/cache
-  #   && mount -v --bind /work/cache /work/usb-live-linux/build/cache'
-  # - ls -lah /work/usb-live-linux/build/cache
-  # - findmnt
+  # Fail early if device nodes can not be created
+  - echo "If this fails, /[work] is mounted nodev"; mknod test b 1 2 && rm test
 
   # because the .deb files are hard-linked by live-build,
   # cache folder can not be bind mounted (!)
+  # So mv cache folder into build dir if it exists
   - bash -xc '[ -d /work/cache ]
     && mv -v /work/cache /work/usb-live-linux/build/'
-  - ls -lah /work/usb-live-linux/build/cache
-
 
 after_script:
   - echo "After script section"
   - pwd
+  - du -sh
   - df -h
   - findmnt
-  - du -sh
+  - env | sort
+  - export | sort
   - date
-
-  # If local cache folder exists, remove bind mount in build folder
-  # - bash -xc '[ -d /work/cache ]
-  #   && umount -v /work/usb-live-linux/build/cache'
 
   # move back the cache folder
   - mv -v /work/usb-live-linux/build/cache /work/
   - ls -lah /work/usb-live-linux/build/
 
-  # Kill the work copy (+)
+  # prune the work copy
   - rm -r /work/usb-live-linux/
 
 build_stick_iso:
@@ -64,27 +75,11 @@ build_stick_iso:
     - pwd
     #- cd /work/usb-live-linux
 
-    # Fail early if device nodes can not be created
-    - echo "If this fails, /[work] is mounted nodev"; mknod test b 1 2 && rm test
-
-    # Fetch package lists so installations can be performed
-    - apt update
-    - apt list --upgradable
-
-    # Install build prerequisites
-    - apt install -y --no-install-recommends aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl grub-efi-amd64-signed
-
-    # what do we have here
-    - apt-cache policy aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
-#    - apt-cache policy rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
-    - dpkg -l aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
-#    - dpkg -l rsync pandoc debian-archive-keyring lbzip2 python3-pip grub-pc-bin grub-efi-amd64-bin grub-efi-amd64-signed grub-efi-ia32-bin shim-signed grub-rescue-pc syslinux-common parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
-
     # Uncomment to turn on live-build debugging if needed
     # - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
 
     # Trigger actual build process
-    - scripts/build-live-iso TEST-Microstick:bullseye
+    - scripts/build-live-iso FSFW-Schulstick
 
     # Make sure local target folder exists
     - mkdir -pv /work/artifacts
@@ -107,6 +102,19 @@ build_stick_iso:
       - build/*.log
     exclude:
       - artifacts/*.iso
+
+build_distribution_image:
+  stage: build
+  tags:
+    - base
+  needs: ['build_stick_iso']
+  script:
+    - pwd
+    - export IMAGE_NAME=$(bash -xc 'source scripts/functions.bash && get_image_name')
+    - scripts/create_distribution_image "${IMAGE_NAME}"
+
+    # move out the created image, checksum and block map
+    - mv -v /work/usb-live-linux/artifacts/*.* /work/artifacts/
 
 #  cache:
 #    key: bullseye
