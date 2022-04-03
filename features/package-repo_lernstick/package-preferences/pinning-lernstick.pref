@@ -1,3 +1,4 @@
+# Allow lernstick packages to be installed explicitly, but do not prefer them over debian's
 Package: *
 Pin: release o=Lernstick
 Pin-Priority: 497
