@@ -12,17 +12,28 @@ before_script:
   - cat /proc/mounts
   - findmnt
   - df -h
+
   # .. environment variables
+  - env
   - env | sort
-  - export
-  - export | sort
+
   # .. source directory
   - pwd
   - ls -lah
   - du -sh
 
-  # ?
-  - ls -lah /work
+  # what is in the /work already?
+  - "[ ! -d /work ] || ls -lah /work"
+
+  # Use kali-linux's workaround for /builds being mounted nodev, c.f.
+  # https://gitlab.com/kalilinux/build-scripts/kali-docker/-/commit/e8cef69
+  - mkdir -pv /work
+  - cp -a ${CI_PROJECT_DIR} /work/
+  - cd /work/usb-live-linux
+  - pwd
+
+  # Fail early if device nodes can not be created
+  - echo "If this fails, /[work] is mounted nodev"; mknod test b 1 2 && rm test
 
   # Fetch package lists so installations can be performed
   - apt update
@@ -37,16 +48,6 @@ before_script:
   # show installed package versions
   - dpkg -l aptitude bash bash-completion ca-certificates ccze curl dbus dialog dosfstools f2fs-tools fatattr gallery-dl git grub-efi-ia32-bin grub-pc-bin html-xml-utils jq libcdio-utils libnbd-bin live-build make nbdkit nocache pandoc parted patch pigz pipemeter qemu-utils ranger rsync shim-signed syslinux-common systemd-container tig unzip wget youtube-dl
 
-  # Use kali-linux's workaround for /builds being mounted nodev, c.f.
-  # https://gitlab.com/kalilinux/build-scripts/kali-docker/-/commit/e8cef69
-  - mkdir -pv /work
-  - cp -a ${CI_PROJECT_DIR} /work/
-  - cd /work/usb-live-linux
-  - pwd
-
-  # Fail early if device nodes can not be created
-  - echo "If this fails, /[work] is mounted nodev"; mknod test b 1 2 && rm test
-
   # because the .deb files are hard-linked by live-build,
   # cache folder can not be bind mounted (!)
   # So mv cache folder into build dir if it exists
@@ -60,7 +61,6 @@ after_script:
   - df -h
   - findmnt
   - env | sort
-  - export | sort
   - date
 
   # move back the cache folder
@@ -81,8 +81,9 @@ build_stick_iso:
     # Uncomment to turn on live-build debugging if needed
     # - sed -ri 's/lb build/lb build --debug/' /work/usb-live-linux/scripts/build-live-iso
 
+    - sed -i 's/CACHE_DIR=/set -x; CACHE_DIR=/' scripts/functions.bash
     # Trigger actual build process
-    - scripts/build-live-iso Basisstick:Xfce:bullseye
+    - scripts/build-live-iso FSFW-Schulstick
 
     # Make sure local target folder exists
     - mkdir -pv /work/artifacts
