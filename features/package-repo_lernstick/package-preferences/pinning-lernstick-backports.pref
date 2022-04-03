@@ -1,3 +1,4 @@
+# Give lernstick backport packages the same priority as debian's
 Package: *
 Pin: release n=lernstick-11-backports
 Pin-Priority: 500
