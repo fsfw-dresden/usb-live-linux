@@ -27,7 +27,7 @@ Prepare_persistence()
         mkdir -p ${PERSISTENCESTORE}
 
         # is the persistence partition present ..
-        if [ -b ${DEV}*3 ] && mount -v ${DEV}*3 ${PERSISTENCESTORE}
+        if [ -b ${DEV}*3 ] && mount ${DEV}*3 ${PERSISTENCESTORE}
         then
                 # .. but empty?
                 if [ $(ls ${PERSISTENCESTORE} | wc -w) -eq 0 ]
