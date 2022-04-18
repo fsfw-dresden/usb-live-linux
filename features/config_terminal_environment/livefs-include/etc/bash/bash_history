@@ -2,6 +2,7 @@
 export HISTSIZE=1000000
 export HISTCONTROL="ignoreboth:erasedups"
 export HISTIGNORE="fg:bg:ls:curdirremove:l"
+export HISTTIMEFORMAT="%F %T "
 
 history() {
   _bash_history_sync
