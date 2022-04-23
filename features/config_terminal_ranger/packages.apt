@@ -10,7 +10,6 @@ jq
 librsvg2-bin
 mediainfo
 odt2txt
-pandoc
 poppler-utils
 python3-pygments
 unrar

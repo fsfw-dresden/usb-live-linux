@@ -1,0 +1,5 @@
+vim-gtk3                # verbessserter vi-Editor - mit GTK3-Oberfläche
+checkstyle            # checks Java source against a coding standard +200MiB
+cppcheck
+hlint
+sparse                # semantic parser of source files + gcc

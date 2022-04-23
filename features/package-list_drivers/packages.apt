@@ -1,0 +1,45 @@
+# printing
+foomatic-db-engine              #  Druckerunterstützung von OpenPrinting - Programme
+hp-ppd                          #  PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+openprinting-ppds               #  Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
+bluez-cups                      #  Bluetooth printer driver for CUPS
+printer-driver-cups-pdf         #  Druckertreiber zur PDF-Erzeugung mittels CUPS
+printer-driver-all              #  Druckertreiber-Metapaket
+printer-driver-brlaser          #  Druckertreiber für (einige) Brother-Laserdrucker
+printer-driver-c2050            #  Druckertreiber für den Lexmark 2050 Color Jetprinter
+printer-driver-c2esp            #  Druckertreiber für Farbtintenstrahldrucker der Reihe Kodak ESP AiO
+printer-driver-cjet             #  Druckertreiber für Canon-LBP-Laserdrucker
+printer-driver-dymo             #  Treiber für DYMO-Etikettendrucker
+printer-driver-escpr            #  Druckertreiber für Epson Inkjets, die ESC/P-R nutzen
+printer-driver-foo2zjs          #  Druckertreiber für auf ZjStream basierende Drucker
+printer-driver-fujixerox        #  Druckertreiber für Fuji-Xerox-Drucker
+printer-driver-gutenprint       #  Druckertreiber für CUPS (Gutenprint basierend)
+printer-driver-hpcups           #  HP Linux Printing and Imaging - CUPS-Rastertreiber (hpcups)
+printer-driver-hpijs            #  HP Linux Printing and Imaging - Druckertreiber (hpijs)
+hpijs-ppds                      #  HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
+printer-driver-m2300w           #  Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
+printer-driver-min12xxw         #  Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+printer-driver-pnm2ppa          #  Druckertreiber für HP-GDI-Drucker
+printer-driver-postscript-hp    #  Beschreibungen von HP-PostScript-Druckern
+printer-driver-ptouch           #  Treiber für »Brother P-touch«-Etikettendrucker
+printer-driver-pxljr            #  Druckertreiber für HP Color LaserJet 35xx/36xx
+printer-driver-sag-gdi          #  Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
+printer-driver-splix            #  Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
+foomatic-db-compressed-ppds     #  Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+
+# extra filesystem / hardware support
+dislocker                       #  read/write encrypted BitLocker volumes
+gvfs-backends                   #  android / camera image file transfer (mtp) and other backends
+pulseaudio-module-bluetooth     #  enables PulseAudio to work with bluetooth devices
+samba-common-bin                #  Basic SMB/CIFS share tools
+# ? laptop-mode-tools           # automatically enabling laptop mode when the computer is working on batteries
+
+# virtual machine support
+spice-vdagent                   #  Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
+xserver-xorg-video-qxl          #  Display driver for QXL video device inside SPICE-compatible KVM/Qemu emulator
+
+# out of kernel drivers
+tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
+acpi-call-dkms                  #  enables you to call ACPI methods
+broadcom-sta-dkms               #  Broadcom STA Wireless driver
+# ? virtualbox-guest-dkms       # virtualbox guest addition kernel modules

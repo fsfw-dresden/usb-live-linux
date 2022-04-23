@@ -1,0 +1,12 @@
+blueman                         # GTK+ bluetooth management utility
+galternatives                   # graphical front-end to update-alternatives
+gnome-disk-utility              # manage and configure disk drives and media
+gparted                         # manipulate devices and partition tables
+gsmartcontrol                   # tool for querying and controlling SMART (Self-Monitoring, Analysis, and Reporting Technology
+network-manager-openconnect-gnome # OpenConnect plugin GNOME GUI
+pavucontrol                     # PulseAudio Volume Control
+pulseaudio-equalizer            # Equalizer sink module for PulseAudio sound server
+setools-gui                     # graphical SELinux policy analysis tool
+smart-notifier                  # graphical hard disk health status notifier
+system-config-printer           # configure the printing system
+usermode                        # Graphical tools for user account management tasks (userinfo, usermount and userpasswd)

@@ -5,4 +5,3 @@ eatmydata                       # small LD_PRELOAD library to transparently disa
 git-extras                      # extra git commands to easily solve typical tasks
 make                            # utility for directing compilation
 tig                             # ncurses-based text-mode interface for Git
-setools-gui                     # graphical SELinux policy analysis tool

@@ -37,7 +37,6 @@ docx2txt                # Convert Microsoft OOXML files to plain text
 dos2unix                # convert text file line endings between CRLF and LF
 dpkg-repack             # creates .deb file of an installed package
 dstat                   # versatile resource statistics tool
-dvipng                  # Konvertiert DVI-Dateien in PNG-Grafiken
 e2fsprogs-l10n          # Werkzeuge für ext2-/ext3-/ext4-Dateisysteme - Übersetzungen
 edid-decode             # decode the binary EDID information from monitors
 elinks                  # advanced text-mode WWW browser
@@ -51,7 +50,6 @@ fatrace                 # report system wide file access events
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 highlight               # Universal source code to formatted text converter
-hopenpgp-tools          # hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
 htop                    # interaktive Prozessübersicht für die Konsole
 htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
 httpie                  # CLI, cURL-like tool for humans

@@ -30,7 +30,6 @@ icc-profiles                    # high quality ICC color profiles
 icc-profiles-free               # Freie Farbprofile für die Kompatibilität mit den Farbverwaltungen anderer Grafikprogramme
 
 xsane                           # Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
-fraqtive                        # Zeichnet Mandelbrot- und Julia-Fraktale
 mandelbulber2                   # 3D fractal renderer and animator
 # ? structure-synth             # generating 3D structures by specifying a design grammar
 sunflow                         # rendering system for photo-realistic image synthesis (for structure-synth)

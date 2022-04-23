@@ -2,19 +2,14 @@ fonts-powerline         # font which provides symbols used by Powerline
 sqlite3                 # Command line interface for SQLite 3
 universal-ctags         # Erzeugt Indexdateien von Quelltextdefinitionen (für taglist)
 vim-airline-themes      # themable vim status bar + themes
-vim-gtk3                # verbessserter vi-Editor - mit GTK3-Oberfläche
 vim-nox                 # vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 vim-scripts             # Erweiterungen für vim (was man sonst noch so braucht)
 vim-pathogen            # pathogen.vim: install plugins in their own private directories ("bundles")
 
 git
-checkstyle
 chktex
-cppcheck
-hlint
 lacheck
 libperl-critic-perl
-sparse
 splint
 
 biosyntax-vim
