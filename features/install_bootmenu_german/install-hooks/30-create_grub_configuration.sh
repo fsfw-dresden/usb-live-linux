@@ -39,7 +39,7 @@ then
 fi
 
 # Turn off spectre & co. security mitigations for a nice speed boost
-BOOTOPTIONS+="mitigations=off "
+BOOTOPTIONS+="mitigations=off tsx=on "
 # FIXME: needs to be disabled if any real-world exploits ever become known (not yet)
 # https://techbeacon.com/security/spectre-returns-haunt-us-exploit-hides-plain-sight
 #BOOTOPTIONS+="spec_store_bypass_disable=on "

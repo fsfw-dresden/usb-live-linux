@@ -16,6 +16,7 @@ NORMALDEBUGPARAMETERS="rootpw=foo "\
 "enforcing=0 "\
 "net.ifnames=0 "\
 "mitigations=off "\
+"tsx=on "\
 "init=/lib/systemd/systemd-bootchart "\
 "live-boot.debug "\
 "live-config.debug "\
