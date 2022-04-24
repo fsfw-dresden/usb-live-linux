@@ -60,7 +60,7 @@ Prepare_persistence()
                             echo "/var/lib union,source=var-lib"
                         } > ${PERSISTENCESTORE}/linux-systemdata/persistence.conf
 
-                        # system persistence: to be !DELETED! before update
+                        # system persistence: to be !DELETED! before ISO update
                         {
                             echo "/ union,source=rootfs"
                             echo "/etc union,source=etc"

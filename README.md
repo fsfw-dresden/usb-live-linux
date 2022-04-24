@@ -14,7 +14,7 @@ With this project, we want to provide anyone with a portable and robust computin
 ![Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)](doc/screenshot-Xfce-Desktop-2020-04-01.png "Screenshot FSFW-Schulstick with Xfce Desktop (2020-04-01)")
 
 ## Structure and Development
-This repository contains shell scripts to create a live-system from a nested tree of feature configuration fragments. These are being fed to Debian's [live-build](https://salsa.debian.org/live-team/live-build) tool, which assembles an ISO file that is then installed into an image. Using appropriate tools, this final image is than to be transferred to an USB flash drive.
+This repository contains shell scripts to create a live-system from a nested tree of feature configuration fragments. These are being fed to Debian's [live-build](https://salsa.debian.org/live-team/live-build) tool, which assembles an ISO file that is then installed to an USB pen drive or into an image file for distribution. Using an appropriate tool, this final image can then be transferred to an USB flash drive.
 
 ## Flavors
 While the original variant was the [Uni-Stick](variants.build/FSFW-Uni-Stick:Xfce:buster/README.md), we have since been working on bringing the system to [school kids](variants.build/FSFW-Schulstick/README.md) and [makers](variants.build/OSEG-Makerstick/README.md) as well.

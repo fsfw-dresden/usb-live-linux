@@ -16,6 +16,7 @@ The folders contained in a feature have been named to make them easily understan
     livefs-include => config/includes.chroot
     live-build-config => config
     user-config => config/includes.chroot/etc/skel
+    packages.apt => config/package-lists
     packages.md => (scripts/md2packagelist.sh) => config/package-lists
 
 ### Naming
