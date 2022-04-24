@@ -29,10 +29,8 @@ let mapleader=" "
 " Plugins
 packadd! bufexplorer
 packadd! closetag
-packadd! detectindent
 packadd! EnhancedCommentify
 packadd! nerd-commenter
-packadd! python-indent
 packadd! supertab
 packadd! taglist
 packadd! xmledit
@@ -70,11 +68,11 @@ set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap <F10> :b <C-Z>
 
-set noautoindent "don't copy indentation from previous line
-set copyindent "copy indentation from previous line, preserve tabs
-set preserveindent
-set expandtab
+"set noautoindent "don't copy indentation to next line
+"set copyindent "copy indentation from previous line, preserve tabs
+"set preserveindent
 filetype indent on
+"set expandtab
 set modeline
 set ignorecase
 set smartcase
@@ -93,7 +91,7 @@ endif
 set matchtime=6
 set laststatus=2
 " Show extended Statusline, displaying the ASCII or Unicode value of the char
-" under the cursor in hex... if powerline not active
+" under the cursor in hex... if powerline not active or pressing CTRL+G
 set statusline=[%v,%l/%L\ (%p%%)]:[%F]%<:%y%m%r%h%w:[\%{strftime(\"\%y-\%m-\%d\",getftime(expand(\"\%\%\")))}]%=char\ 0x%02B,\ buffer%a
 
 set nofsync

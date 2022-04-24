@@ -3,4 +3,5 @@ mkdir -pv /var/lib/vim/addons/bundle/ && cd /var/lib/vim/addons/bundle/ && \
         git clone https://github.com/jpalardy/spacehi.vim && \
         git clone https://github.com/ap/vim-css-color && \
         git clone https://github.com/fidian/hexmode && \
+        git clone https://github.com/tpope/vim-sleuth && \
         git clone https://github.com/eMPee584/office.vim
