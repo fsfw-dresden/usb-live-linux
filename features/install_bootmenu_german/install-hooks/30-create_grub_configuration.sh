@@ -45,7 +45,7 @@ BOOTOPTIONS+="mitigations=off tsx=on "
 #BOOTOPTIONS+="spec_store_bypass_disable=on "
 
 # record bootchart
-BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
+# BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
 
 # debug logging of the live-boot scripts
 # BOOTOPTIONS+="live-boot.debug "
