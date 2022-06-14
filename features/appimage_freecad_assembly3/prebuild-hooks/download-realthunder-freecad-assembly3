@@ -6,11 +6,13 @@ set -e
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/applications
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
-RELEASEINFO="https://api.github.com/repos/realthunder/FreeCAD_assembly3/releases"
+RELEASEINFO="https://api.github.com/repos/realthunder/FreeCAD/releases"
+
+APPIMAGE_URL=$(curl "${RELEASEINFO}" | jq -r '.[0].assets[].browser_download_url|select(contains("Daily") and endswith(".AppImage"))')
+[ -z "${APPIMAGE_URL}" ] && die "Appimage URL not found"
+
+DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
 
 mkdir -pv ${DEST_DIR}
-
-# FIXME: get most recent release instead of 0.11
-DOWNLOADED_FILE=$(download_file_cached $(curl "${RELEASEINFO}" | jq -r '.[0].assets[].browser_download_url|select(contains("Daily") and endswith(".AppImage"))'))
 cp -val "${DOWNLOADED_FILE}" "${DEST_DIR}"
 chmod -c a+x "${DEST_DIR}/${DOWNLOADED_FILE##*/}"
