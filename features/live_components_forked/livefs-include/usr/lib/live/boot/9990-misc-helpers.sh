@@ -782,12 +782,15 @@ mount_persistence_media ()
 		fi
 		if [ "${fstype}" = "f2fs" ]
 		then
-                        # FIXME: although this should compress all files except {.jpg,.png,.gz}, no space reduction seen yet?!
 			mount_opts="${mount_opts},discard_unit=segment,compress_cache,compress_extension=*,nocompress_extension=jpg,nocompress_extension=png,nocompress_extension=gz,compress_algorithm=zstd:6,compress_chksum,whint_mode=fs-based,gc_merge,atgc"
-                        # FIXME: add nodiscard:         DON'T issue discard/TRIM commands when a segment is cleaned (to reduce flash wear; needs fstrim.service)
+			# FIXME: add nodiscard:         DON'T issue discard/TRIM commands when a segment is cleaned (to reduce flash wear; needs fstrim.service)
 			# discard_unit=segment          discard bigger chunks instead of small blocks
 			# compress_cache:               use address space of a filesystem managed inode to cache compressed
 			#                               block, in order to improve cache hit ratio of random read.
+			# compress_extension=*          compress all files
+			# nocompress_extension=jpg      .. except {.jpg,.png,.gz}
+			# nocompress_extension=png      "doesn’t expose compressed space to user"
+			# nocompress_extension=gz       "main goal is to reduce data writes"
 			# ----- from https://wiki.archlinux.org/title/F2FS:
 			# compress_algorithm=zstd:6:    tells F2FS to use zstd for compression at level 6
 			# compress_chksum:              tells the filesystem to verify compressed blocks

@@ -33,7 +33,8 @@ Prepare_persistence()
                 if [ $(ls ${PERSISTENCESTORE} | wc -w) -eq 0 ]
                 then
                         # activate compression recursively
-                        # FIXME: doesn't seem to work?
+                        # "doesn’t expose compressed space to user"
+                        # "main goal is to reduce data writes"
                         chattr -R -V +c ${PERSISTENCESTORE}
 
                         mkdir -pv ${PERSISTENCESTORE}/linux-userdata
