@@ -1,0 +1,32 @@
+#!/bin/bash
+
+set -e
+
+# set up target dir
+TARGETDIR=/usr/share/icons
+mkdir -pv ${TARGETDIR}
+
+# create ephemeral dir for unpacking
+TMPDIR=$(mktemp -d /tmp/qogir-cursors.XXXXXX)
+
+# go into the temp dir
+pushd ${TMPDIR}
+
+FILE=01-Qogir-cursors.tar.xz
+
+# download the cursors from our mirror
+# original at opendesktop.org / pling open store https://www.pling.com/p/1366182
+wget --output-document=${FILE} https://cloud.opensourceecology.de/s/X3zEd8DqaozHpga/download
+
+# unpack it
+tar xaf ${FILE}
+
+# and move files into target place
+mv -v Qogir-*/ ${TARGETDIR}/
+
+# go back into previous dir
+popd
+
+# clean up
+rm ${TMPDIR}/${FILE}
+rmdir ${TMPDIR}

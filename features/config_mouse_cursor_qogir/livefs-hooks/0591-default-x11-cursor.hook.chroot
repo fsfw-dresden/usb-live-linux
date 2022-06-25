@@ -1,0 +1,4 @@
+#!/bin/sh
+# this will apply Qogir white cursor theme on lightdm, too
+update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Qogir-white-cursors/index.theme 42
+update-alternatives --set x-cursor-theme /usr/share/icons/Qogir-white-cursors/index.theme

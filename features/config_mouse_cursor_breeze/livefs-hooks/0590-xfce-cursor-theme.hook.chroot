@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# shellcheck disable=SC2016
+# "Expressions don't expand in single quotes, use double quotes for that"
+
+GTK='/*/*[@name="Gtk"]'
+xmlstarlet edit --inplace \
+                --delete "${GTK}/*[@name='CursorThemeName']" \
+                --subnode "${GTK}" -t elem -n "property" \
+                --var name '$prev' \
+                --insert '$name' -t attr -n "name" -v "CursorThemeName" \
+                --insert '$name' -t attr -n "type" -v "string" \
+                --insert '$name' -t attr -n "value" -v "Breeze_Snow" \
+                --delete "${GTK}/*[@name='CursorThemeSize']" \
+                --subnode "${GTK}" -t elem -n property \
+                --var size '$prev' \
+                --insert '$size' -t attr -n "name" -v "CursorThemeSize" \
+                --insert '$size' -t attr -n "type" -v "int" \
+                --insert '$size' -t attr -n "value" -v "48" \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml

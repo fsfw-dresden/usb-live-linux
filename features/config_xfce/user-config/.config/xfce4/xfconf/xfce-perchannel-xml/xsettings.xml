@@ -19,7 +19,5 @@
     <property name="MonospaceFontName" type="string" value="Ubuntu Mono 14"/>
     <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="true"/>
-    <property name="CursorThemeName" type="string" value="Breeze_Snow"/>
-    <property name="CursorThemeSize" type="int" value="48"/>
   </property>
 </channel>
