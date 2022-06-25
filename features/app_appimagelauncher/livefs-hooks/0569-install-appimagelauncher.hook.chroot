@@ -4,7 +4,7 @@
 RELEASEINFO="https://api.github.com/repos/TheAssassin/AppImageLauncher/releases/tags/continuous"
 
 ARCH=$(dpkg --print-architecture)
-DEBURL=$(curl "${RELEASEINFO}"|jq -r '.assets[].browser_download_url|select(endswith("bionic_'${ARCH}'.deb"))')
+DEBURL=$(curl "${RELEASEINFO}"|jq -r '[.assets[].browser_download_url|select(endswith("bionic_'${ARCH}'.deb"))][-1]')
 FILENAME=${DEBURL##*/}
 
 curl --location --remote-time --remote-name "${DEBURL}"
