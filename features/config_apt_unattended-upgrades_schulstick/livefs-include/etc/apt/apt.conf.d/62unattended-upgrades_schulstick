@@ -1,0 +1,4 @@
+# Extend the list of auto-updated repositories.
+Unattended-Upgrade::Origins-Pattern {
+        "origin=FSFW-Dresden:eMPee584,codename=schulstick-11,label=schulstick-production";
+};

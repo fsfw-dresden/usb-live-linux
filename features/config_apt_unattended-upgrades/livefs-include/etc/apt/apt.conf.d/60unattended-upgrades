@@ -1,0 +1,9 @@
+// Extend the list of auto-updated repositories.
+Unattended-Upgrade::Origins-Pattern {
+        "origin=FSFW-Dresden:eMPee584,codename=fsfw-stix-11-security,label=fsfw-stix-production";
+};
+
+// FIXME: Don't try upgrading the kernel until we have a working live-update-initramfs
+Unattended-Upgrade::Package-Blacklist {
+    "linux-";
+};

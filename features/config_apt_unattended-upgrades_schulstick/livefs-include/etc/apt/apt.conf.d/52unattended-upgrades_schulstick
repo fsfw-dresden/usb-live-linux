@@ -1,8 +1,0 @@
-# This overrides any previously defined patterns in files with lower numbering
-Unattended-Upgrade::Origins-Pattern {
-        "origin=Debian,codename=${distro_codename},label=Debian-Security";
-        "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
-        "origin=FSFW-Dresden:eMPee584,codename=fsfw-stix-11-security,label=fsfw-stix-production";
-        "origin=FSFW-Dresden:eMPee584,codename=fsfw-stix-11,label=fsfw-stix-production";
-        "origin=FSFW-Dresden:eMPee584,codename=schulstick-11,label=schulstick-production";
-};

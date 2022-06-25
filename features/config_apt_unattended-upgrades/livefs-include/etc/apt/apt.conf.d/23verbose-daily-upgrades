@@ -1,0 +1,3 @@
+// Turn this up for debug logging of apt-daily services & unattended-upgrades
+// 1 turns on logging, 3 includes verbose script execution
+APT::Periodic::Verbose "0";
