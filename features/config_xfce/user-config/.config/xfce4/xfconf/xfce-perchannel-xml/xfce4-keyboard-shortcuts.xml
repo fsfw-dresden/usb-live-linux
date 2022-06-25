@@ -35,7 +35,7 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="string" value="xkill"/>
       <property name="Print" type="string" value="xfce4-screenshooter"/>
-      <property name="F1" type="string" value="xfce4-terminal --drop-down --hide-menubar"/>
+      <property name="&lt;Shift&gt;F1" type="string" value="xfce4-terminal --drop-down --hide-menubar"/>
       <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="XF86Tools" type="string" value="xfce4-settings-manager"/>
     </property>
