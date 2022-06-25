@@ -21,7 +21,7 @@ _get_first_non_var_arg() {
 }
 
 # get the unescaped, pristine shell command
-cmd="$(tmux display-message -t $TMUX_PANE -p '#{pane_start_command}' | sed -r 's|.*tmux-pane-wrap (-v *)*\"*||; s|\"*(; tmux-pane-respawn-prompt.*)*||g')"
+cmd="$(tmux display-message -t $TMUX_PANE -p '#{pane_start_command}' | sed -r 's|.*tmux-pane-wrap (-v *)*\\*\"*||; s|\\*\"*(; tmux-pane-respawn-prompt.*)*||g')"
 
 [ $debug ] && echo "\$@ = '$@'"
 [ $debug ] && echo "\$* = '$*'"
