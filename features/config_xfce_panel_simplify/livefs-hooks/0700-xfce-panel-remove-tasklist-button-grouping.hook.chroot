@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# remove tasklist button grouping
+xmlstarlet edit --inplace --delete '//*[@value="tasklist"]/*[@name="grouping"]' \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

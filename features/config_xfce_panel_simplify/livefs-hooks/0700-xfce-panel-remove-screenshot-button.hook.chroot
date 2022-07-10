@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# remove screenshot button
+xmlstarlet edit --inplace --delete '//*[@name="plugin-ids"]/*[@value="18"]' \
+                          --delete '//*[@name="plugin-18"]' \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

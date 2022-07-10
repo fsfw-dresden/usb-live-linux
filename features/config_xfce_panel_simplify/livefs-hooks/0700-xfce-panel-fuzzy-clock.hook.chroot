@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# set clock from digital to fuzzy (words) mode
+xmlstarlet edit --inplace --update '//*[@value="clock"]/*[@name="mode"]/@value' -v "3" \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

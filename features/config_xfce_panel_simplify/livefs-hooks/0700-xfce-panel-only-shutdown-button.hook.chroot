@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# replace lock-screen and logout buttons with shutdown
+xmlstarlet edit --inplace --update '//*[@value="actions"]/*[@name="items"]/*[@value="+lock-screen"]/@value' -v "-lock-screen" \
+                          --update '//*[@value="actions"]/*[@name="items"]/*[@value="-shutdown"]/@value' -v "+shutdown" \
+                          --update '//*[@value="actions"]/*[@name="items"]/*[@value="+logout"]/@value' -v "-logout" \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
