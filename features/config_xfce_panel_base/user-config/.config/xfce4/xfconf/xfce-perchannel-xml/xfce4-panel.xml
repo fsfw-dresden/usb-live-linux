@@ -9,7 +9,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="length-adjust" type="bool" value="false"/>
       <property name="length" type="uint" value="100"/>
-      <property name="size" type="uint" value="42"/>
+      <property name="size" type="uint" value="38"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="8"/>
@@ -53,7 +53,7 @@
     <property name="plugin-3" type="string" value="tasklist">
       <property name="show-handle" type="bool" value="false"/>
       <property name="middle-click" type="uint" value="1"/>
-      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="true"/>
       <property name="include-all-workspaces" type="bool" value="true"/>
       <property name="show-wireframes" type="bool" value="false"/>
       <property name="grouping" type="uint" value="1"/>
@@ -76,6 +76,7 @@
     </property>
     <property name="plugin-1" type="string" value="whiskermenu"/>
     <property name="plugin-4" type="string" value="weather">
+      <property name="auto-location" type="bool" value="true"/>
       <property name="round" type="bool" value="true"/>
       <property name="forecast" type="empty">
         <property name="layout" type="int" value="0"/>
@@ -86,10 +87,10 @@
       </property>
     </property>
     <property name="plugin-7" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
+      <property name="style" type="uint" value="1"/>
     </property>
     <property name="plugin-8" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
+      <property name="style" type="uint" value="1"/>
     </property>
     <property name="plugin-9" type="string" value="launcher">
       <property name="items" type="array">
@@ -117,7 +118,7 @@
       <property name="arrow-position" type="uint" value="5"/>
     </property>
     <property name="plugin-12" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
+      <property name="style" type="uint" value="1"/>
     </property>
     <property name="plugin-13" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
