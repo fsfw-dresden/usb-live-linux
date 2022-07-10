@@ -1,0 +1,33 @@
+#!/bin/bash
+# Builds suite of main stick variants for distribution
+
+. "$(dirname $(realpath "${0}"))/functions.sh"
+. "$(dirname $(realpath "${0}"))/functions.bash"
+cd_repo_root
+
+# fail on failure
+set -e
+
+COLOR_YELLOW="\e[1;33m"
+COLOR_OFF="\e[0m"
+
+VARIANTS="FSFW-Schulstick FSFW-Uni-Stick OSEG-Makerstick"
+
+print_info "${COLOR_YELLOW}Generating distribution suite with variants: ${VARIANTS}. This could take a few hours.${COLOR_OFF}\n"
+
+for VARIANT in ${VARIANTS}
+do
+    # build variant iso:
+    print_info "${COLOR_YELLOW}building ${VARIANT}${COLOR_OFF}"
+    scripts/build-live-iso "${VARIANT}"
+
+    # build distribution image:
+    IMAGE_NAME=$(bash -c 'source scripts/functions.bash && cd build && get_image_name')
+    print_info "${COLOR_YELLOW}creating image for artifacts/${IMAGE_NAME}${COLOR_OFF}"
+    scripts/create-distribution-image "artifacts/${IMAGE_NAME}"*.iso
+
+    # remove ISO files:
+    print_info "${COLOR_YELLOW}removing ISO file for ${VARIANT}${COLOR_OFF}"
+    rm -v "artifacts/${IMAGE_NAME}"*.iso
+    echo
+done
