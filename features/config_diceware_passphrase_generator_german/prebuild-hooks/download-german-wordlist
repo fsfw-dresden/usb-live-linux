@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR="/usr/lib/python3/dist-packages/diceware/wordlists"
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://github.com/klamann/diceware-dereko/raw/master/diceware-dereko.txt"
+FILE=$(download_file_cached ${URL}) \
+  && mv -v "${FILE}" "${DEST_DIR}/wordlist_de.txt"
