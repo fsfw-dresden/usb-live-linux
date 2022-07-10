@@ -1,5 +1,5 @@
 {
-  "VERSION": "0.8.56",
+  "VERSION": "0.8.60",
   "click-count": {},
   "searchEngines": [
     {
@@ -282,10 +282,10 @@
   "options": {
     "button": 0,
     "newtab": true,
+    "background_tab": true,
     "activator": "auto",
     "remove_icons": "no",
     "show_in_inputs": true,
-    "background_tab": true,
     "k_and_m_combo": [
       17,
       0
@@ -302,19 +302,19 @@
     "dblclick_in_inputs": false,
     "open_new_tab_last": false,
     "disable_effects": true,
+    "show_tooltips": true,
     "auto_popup_relative_to_mouse": false,
     "auto_popup_show_menu_directly": false,
     "auto_popup_in_inputs": true,
     "activator_combo": [],
-    "show_tooltips": true,
     "circular_menu": false,
     "sort_by_click": false,
+    "selection_allow_newline": false,
+    "use_whitelist": false,
     "selection_length_limit": "140",
     "auto_hide_delay": 2342,
     "auto_open_delay": 500,
-    "hide_on_scroll": false,
-    "selection_allow_newline": false,
-    "use_whitelist": false
+    "hide_on_scroll": false
   },
   "blacklist": [],
   "sync": {
