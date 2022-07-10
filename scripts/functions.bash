@@ -266,6 +266,10 @@ parse_features() {
 # Puts files in the locations live-build expects them
 apply_features() {
     declare -A PATH_MAPPINGS
+    # FIXME: »This effectively means […] you can't rely on a specific order [when handling associative arrays].«
+    # FIXME: »If you want to store ordered data, or re-order data, go with numerical indexes.«
+    #           ( from https://wiki.bash-hackers.org/syntax/arrays#associative_bash_4 )
+
     # for building the intermediate ISO image
     PATH_MAPPINGS[packages.apt]="config/package-lists"
     PATH_MAPPINGS[base-setting]="config/base-settings.d"
@@ -295,7 +299,8 @@ apply_features() {
         else
             print_info "applying ${FEATURE_ID} feature (from ${FEATURE_PATH#../})"
 
-            for FRAGMENT_PATH in ${!PATH_MAPPINGS[*]}
+            # FIXME: sorting alphabetically works for now by sheer coincidence
+            for FRAGMENT_PATH in $(printf '%s\0' ${!PATH_MAPPINGS[*]} | sort -z | tr '\0' '\n')
             do
                 # Skip if feature does not provide this fragment
                 [ ! -e ${FEATURE_PATH}/${FRAGMENT_PATH} ] && continue
