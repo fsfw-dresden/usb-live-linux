@@ -65,7 +65,7 @@
     },
     {
       "name": "Bilder: Bing (komfortabel)",
-      "url": "http://www.bing.de/images/search?q=%s"
+      "url": "http://www.bing.com/images/search?q=%s"
     },
     {
       "name": "Bilder: Google (treffsicher)",
@@ -108,7 +108,7 @@
         },
         {
           "name": "Ebay.de sofort-Kauf",
-          "url": "http://shop.ebay.de/items/?_nkw=%s&LH_Price=..200&LH_BIN=1&LH_SubLocation=1&LH_PrefLoc=2&_sop=15&_ipg=200"
+          "url": "http://shop.ebay.de/items/?_nkw=%s&LH_BIN=1&LH_SubLocation=1&LH_PrefLoc=2&_sop=15&_ipg=200"
         },
         {
           "name": "Amazon (für Bewertungen)",
@@ -164,10 +164,6 @@
           "url": "http://scholar.google.de/scholar?q=%s"
         },
         {
-          "name": "Science: Microsoft Academic",
-          "url": "https://academic.microsoft.com/search?q=%s"
-        },
-        {
           "name": "Journals: JSTOR",
           "url": "https://www.jstor.org/action/doBasicSearch?Query=%s"
         },
@@ -176,15 +172,15 @@
           "url": "http://www.sciencedirect.com/search?qs=%s"
         },
         {
-          "name": "Language: EN N-Grams",
+          "name": "EN N-Grams Language stats",
           "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=26"
         },
         {
-          "name": "Language: DE N-Grams",
+          "name": "DE N-Grams Language stats",
           "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=31"
         },
         {
-          "name": "Google Trends",
+          "name": "Search Trends",
           "url": "http://www.google.de/trends/explore?q=%s&date=all"
         },
         {
@@ -193,7 +189,7 @@
         },
         {
           "name": "Libraries: WorldCat",
-          "url": "http://oaister.worldcat.org/search?q=%s"
+          "url": "https://oaister.on.worldcat.org/search?queryString=%s"
         },
         {
           "name": "Literature: SpringerLink",
@@ -213,8 +209,7 @@
         },
         {
           "name": "Archive.Org",
-          "url": "https://archive.org/searchresults.php{POSTARGS}search=%s&limit=100&start=0&searchAll=yes&submit=this+was+submitted{POSTENCODING}UTF-8",
-          "post": true
+          "url": "https://archive.org/search.php?query=%s"
         }
       ]
     },
