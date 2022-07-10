@@ -52,7 +52,7 @@ if [ ! -d build/container ]
 then
   printf "${COLOR_CYAN}Initializing a debian testing container for building..${COLOR_OFF}\n"
   printf " (this will take a few minutes)\n"
-  printf "echo 'systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).'\n"
+  printf "systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).\n"
   printf "\n"
   printf "\n"
 
@@ -66,9 +66,9 @@ then
     echo "cd /mnt/usb-live-linux/"
     echo "clear"
     printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
-    printf "echo ''\n"
     echo "echo"
-    printf "echo 'run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image'\n"
+    printf "echo 'Run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image',\n"
+    printf "echo '    ${COLOR_CYAN}scripts/build-distribution-suite${COLOR_OFF} to build distribution images for main variants'\n"
     printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
   } >> build/container/root/.bashrc
 
