@@ -1,7 +1,12 @@
 android-sdk-platform-tools      # Tools for interacting with an Android platform (pulls in adb, fastboot)
+bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
 bmap-tools                      # flash image files to block devices using the block map
+debconf-utils                   # small utilities for debconf developers
 debootstrap                     # used to create a Debian base system from scratch
+deborphan                       # find unused packages (with no other packages depending on them)
+devscripts                      # scripts to make the life of a Debian Package maintainer easier
 eatmydata                       # small LD_PRELOAD library to transparently disable fsync and friends
 git-extras                      # extra git commands to easily solve typical tasks
 make                            # utility for directing compilation
+manpages-dev                    # Manual pages about using GNU/Linux for development
 tig                             # ncurses-based text-mode interface for Git

@@ -26,6 +26,7 @@ printer-driver-pxljr            #  Druckertreiber für HP Color LaserJet 35xx/36
 printer-driver-sag-gdi          #  Druckertreiber für die Reihen Ricoh Aficio SP 1000/SP 1100
 printer-driver-splix            #  Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
 foomatic-db-compressed-ppds     #  Druckerunterstützung von OpenPrinting - Komprimierte PPDs
+system-config-printer-udev      #  detect and configure printers automatically
 
 # extra filesystem / hardware support
 dislocker                       #  read/write encrypted BitLocker volumes
