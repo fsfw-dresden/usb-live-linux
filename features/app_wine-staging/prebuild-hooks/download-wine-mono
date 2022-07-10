@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR="/opt/wine-staging/share/wine/mono"
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://dl.winehq.org/wine/wine-mono/7.3.0/wine-mono-7.3.0-x86.tar.xz"
+FILE=$(download_file_cached ${URL}) \
+  && tar xavf "${FILE}" --directory "${DEST_DIR}"

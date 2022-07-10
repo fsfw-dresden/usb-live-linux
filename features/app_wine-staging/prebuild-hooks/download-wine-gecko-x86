@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR="/opt/wine-staging/share/wine/gecko"
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="http://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86.tar.xz"
+FILE=$(download_file_cached ${URL}) \
+  && tar xavf "${FILE}" --directory "${DEST_DIR}"
