@@ -2,7 +2,6 @@
 
 fritzing                        #  Benutzerfreundliche Elektronikentwicklungssoftware
 pcb                             #  Programm zur Entwicklung gedruckter Schaltungen
-qelectrotech                    #  Editor für elektrische Schaltpläne
 # ? geda                        # GPL EDA - Elektronikentwurfssoftware
 # ? geda-examples
 # ? geda-gsymcheck
