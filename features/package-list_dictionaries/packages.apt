@@ -1,7 +1,7 @@
 ### Dictionaries
 dict                            # dictionary client
 dictd                           # dictionary server
-dict-bouvier
+< http://snapshot.debian.org/archive/debian/20160413T095808Z/pool/main/d/dict-bouvier/dict-bouvier_6.revised-3.3_all.deb
 dict-de-en                      # German-English translation dictionary for dictd
 dict-devil
 dict-elements
@@ -43,10 +43,13 @@ dict-freedict-spa-eng
 dict-freedict-swh-eng
 dict-freedict-tur-deu
 dict-freedict-tur-eng
-dict-gazetteer2k
+< http://snapshot.debian.org/archive/debian/20170903T033650Z/pool/main/d/dict-gazetteer2k/dict-gazetteer2k_1.0.0-5.4_all.deb
+< http://snapshot.debian.org/archive/debian/20170903T033650Z/pool/main/d/dict-gazetteer2k/dict-gazetteer2k-counties_1.0.0-5.4_all.deb
+< http://snapshot.debian.org/archive/debian/20170903T033650Z/pool/main/d/dict-gazetteer2k/dict-gazetteer2k-places_1.0.0-5.4_all.deb
+< http://snapshot.debian.org/archive/debian/20170903T033650Z/pool/main/d/dict-gazetteer2k/dict-gazetteer2k-zips_1.0.0-5.4_all.deb
 dict-gcide
 dict-jargon
-dict-moby-thesaurus
+< http://snapshot.debian.org/archive/debian/20170902T215249Z/pool/main/d/dict-moby-thesaurus/dict-moby-thesaurus_1.0-6.4_all.deb
 dict-vera
 dict-wn
 
