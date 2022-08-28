@@ -44,6 +44,7 @@ systemd-container
 tig
 unzip
 wget
+xz-utils
 youtube-dl
 "
 
