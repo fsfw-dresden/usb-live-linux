@@ -10,3 +10,4 @@ git-extras                      # extra git commands to easily solve typical tas
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
 tig                             # ncurses-based text-mode interface for Git
+visidata                        # interactive multitool for tabular data
