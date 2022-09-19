@@ -1,0 +1,1 @@
+ttf-mscorefonts-installer
