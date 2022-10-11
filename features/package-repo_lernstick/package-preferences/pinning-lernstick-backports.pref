@@ -1,3 +1,8 @@
+# Half-complete updates breaking build? rather not
+Package: linux-*
+Pin: release o=Debian Backports
+Pin-Priority: 501
+
 # Give lernstick backport packages the same priority as debian's
 Package: *
 Pin: release n=lernstick-11-backports
