@@ -1,0 +1,32 @@
+#!/bin/bash
+
+INTERFACE="${1}"
+STATUS="${2}"
+
+TAG="49gs-dresden-network-share"
+
+mount_samba_share() {
+        mkdir -p /media/Tausch-Schueler
+        mount -t cifs //kserver/Tausch-Schueler /media/Tausch-Schueler -o uid=1000,gid=1000,username=mimi,password=123456 \
+          && logger -t ${TAG} "mounted //kserver/Tausch-Schueler on /media/Tausch-Schueler"
+}
+
+umount_samba_share() {
+        umount -vl /media/Tausch-Schueler && rmdir /media/Tausch-Schueler \
+          && logger -t ${TAG} "unmounted /media/Tausch-Schueler" \
+          || logger -t ${TAG} -p user.warning "WARNING: could not unmount /media/Tausch-Schueler"
+}
+
+case "${STATUS}" in
+        up)
+                # detect 49GS school network
+                if [[ "${IP4_DOMAINS}" == *".gs.dresden.de"* ]]; then
+                        # mount student network share
+                        mount_samba_share
+                fi
+                ;;
+        down)
+                # disconnect student network share
+                umount_samba_share
+                ;;
+esac
