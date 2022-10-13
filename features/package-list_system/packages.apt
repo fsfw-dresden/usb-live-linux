@@ -28,3 +28,4 @@ syslinux-efi                    #  collection of bootloaders (UEFI bootloader) (
 grub-pc-bin                     #  GRUB modules built for use with the traditional PC/BIOS architecture
 tlp                             #  Spart Akku-Strom auf Laptops
 libblockdev-plugins-all         #  low-level operations with block devices
+wpasupplicant                   #  userspace daemon handling connection and authentication in wireless and wired networks
