@@ -22,6 +22,8 @@ projecteur                      # virtual laser pointer for use with inertial po
 # ? ding                        # Graphical dictionary lookup program for Unix
 kiwix                           # offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
 
+manuskript                      # rich environment to help writers create their first draft and then further refine and edit
+
 gthumb                          # advanced image viewer and browser
 
 onboard                         # On-screen Keyboard with macros, easy layout creation and word suggestion

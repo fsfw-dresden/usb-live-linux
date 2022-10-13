@@ -11,6 +11,7 @@ brasero-cdrkit                  # cdrkit extensions for the Brasero burning appl
 cdrdao                          # records CDs in Disk-At-Once (DAO) mode
 cheese                          # tool to take pictures and videos from your webcam
 clementine                      # modern music player and library organizer (+5.968 kB)
+easytag                         # viewing, editing and writing the tags of different audio files
 gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
 goobox                          # CD player and ripper with GNOME 3 integration
 kdenlive                        # non-linear video editor (+>=17,8 MB)
@@ -29,6 +30,7 @@ transcriber                     # Programm zum Transkripieren (z.B. von Intervie
 ###  Video
 
 vlc                             # Multimedia-Player und Streamer
+vlc-l10n                        # translations for VLC
 pitivi                          # Videoschnitt (entweder Pitivi oder Kdenlive)
 kdenlive                        # Videoschnitt
 mkvtoolnix                      # Toolsammlung fürs Matroska-Containerformat für Mediendateien (Audio+Video, incl. Metadaten)
@@ -40,6 +42,7 @@ dvgrab                          # grab digital video data via IEEE1394 and USB l
 stopmotion                      # create stop-motion animations
 qstopmotion                     # Application for creating stop-motion animation movies
 v4l-utils                       # Collection of command line video4linux utilities
-
+handbrake                       # DVD ripper and video transcoder
+handbrake-gtk                   # DVD ripper and video transcoder (GTK GUI)
 ogmtools                        # Dient der Bearbeitung von OGG-Streams
 
