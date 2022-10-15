@@ -1,0 +1,3 @@
+Package: libass9 libbluray2 libfdk-aac2 libmp3lame0 libudfread0 libvpx6
+Pin: origin /deb.multimedia/
+Pin-Priority: 500
