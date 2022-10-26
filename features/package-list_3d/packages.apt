@@ -23,4 +23,4 @@ cura                            # GUI G-code generator for 3D printers
 ###  LaserCut
 
 # ( http://download.visicut.org/master )
-< https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-142-gc05b03f5-1_all.deb      # VisiCut: Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
+< https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-155-gb4085751-1_all.deb      # VisiCut: Lasercutter-Frontend das leider nicht in den Repros verfügbar ist, aber alternativ installiert werden soll
