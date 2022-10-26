@@ -22,9 +22,7 @@ xfce4-taskmanager               # for monitoring and controlling running process
 xfce4-cpufreq-plugin            # displays the current frequency of the CPU, in GHz or MHz
 xfce4-eyes-plugin               # eyes that follow your mouse for the Xfce4 panel
 xfce4-power-manager-plugins     # control brightness etc
-# ? xfce4-places-plugin         # quick access to folders, documents and removable media
 xfce4-pulseaudio-plugin         # control pulseaudio
-xfce4-sensors-plugin            # hardware sensors plugin for the Xfce4 panel
 xfce4-weather-plugin            # weather information plugin for the Xfce4 panel
 xfce4-whiskermenu-plugin        # application launcher for Xfce
 xfce4-indicator-plugin          # display information from various applications consistently

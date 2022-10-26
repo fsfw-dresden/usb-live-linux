@@ -3,7 +3,6 @@
 ###  Netzwerk
 
 wireshark                       # Netzwerkanalysetool
-traceroute                      # Netzwerkanalysetool
 netcat-traditional              # Unix-Programm, das über Netzwerkverbindungen per TCP oder UDP Daten liest und schreibt
 network-manager-openvpn         # Verwaltung von Netzwerken OpenVPN-Erweiterung
 network-manager-pptp            # Verwaltung von Netzwerken PPTP-Erweiterung (Point-to-Point Tunneling Protocol)
@@ -12,17 +11,6 @@ modem-manager-gui               # GUI front-end for ModemManager / Wader / oFono
 usb-modeswitch                  # Werkzeug für Modiwechsel zum Steuern von USB-Geräten mit Flipflopschaltung
 usbmuxd                         # USB-Multiplexer-Daemon für iPhone- und iPod-Touch-Geräte
 
-bridge-utils                    # Dienstprogramme für die Konfiguration der Linux-Ethernet-Brücke
-ebtables                        # Verwaltung von Ethernet-Bridge-Frame-Tabellen
 dnsmasq-base                    # Kleiner zwischenspeichernder DNS-Proxy und DHCP/TFTP-Server
-# ? iproute2                    # Werkzeuge für Netzwerk(verkehrs)kontrolle
-net-tools                       # ifconfig etc.
-
-
-###  Wlan - Tools
 
 crda                            # Central Regulatory Domain Agent für kabellose Geräte
-iw                              # Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
-rfkill                          # Wlan, Bluetooth & Co. an-/ abschalten
-wireless-tools                  # zum Bearbeiten von WLAN Einstellungen
-wavemon                         # watch signal and noise levels

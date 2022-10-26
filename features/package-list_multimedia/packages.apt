@@ -12,18 +12,13 @@ cdrdao                          # records CDs in Disk-At-Once (DAO) mode
 cheese                          # tool to take pictures and videos from your webcam
 clementine                      # modern music player and library organizer (+5.968 kB)
 easytag                         # viewing, editing and writing the tags of different audio files
-gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
 goobox                          # CD player and ripper with GNOME 3 integration
-kdenlive                        # non-linear video editor (+>=17,8 MB)
 libdvdcss2                      # Simple foundation for reading DVDs - runtime libraries
-lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
 mixxx                           # Digital Disc Jockey Interface
 mkchromecast-pulseaudio         # Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
 pavucontrol                     # PulseAudio Volume Control
 playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
-slowmovideo                     # creates slow-motion videos from your footage
-smplayer-l10n                   # Qt5 front-end for mplayer + translation
 
 transcriber                     # Programm zum Transkripieren (z.B. von Interviews)
 
@@ -31,8 +26,8 @@ transcriber                     # Programm zum Transkripieren (z.B. von Intervie
 
 vlc                             # Multimedia-Player und Streamer
 vlc-l10n                        # translations for VLC
-pitivi                          # Videoschnitt (entweder Pitivi oder Kdenlive)
-kdenlive                        # Videoschnitt
+pitivi                          # Videoschnitt
+kdenlive                        # non-linear video editor (+>=17,8 MB)
 mkvtoolnix                      # Toolsammlung fürs Matroska-Containerformat für Mediendateien (Audio+Video, incl. Metadaten)
 mkvtoolnix-gui                  # GUI für mkvtoolnix
 oggvideotools                   # Tools fürs Ogg-Mediencontainerformat
@@ -43,4 +38,8 @@ stopmotion                      # create stop-motion animations
 qstopmotion                     # Application for creating stop-motion animation movies
 v4l-utils                       # Collection of command line video4linux utilities
 ogmtools                        # Dient der Bearbeitung von OGG-Streams
+gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
+lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
+slowmovideo                     # creates slow-motion videos from your footage
+smplayer-l10n                   # Qt5 front-end for mplayer + translation
 
