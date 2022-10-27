@@ -36,11 +36,6 @@ arduino                         # Entwicklungswerkzeuge für das AVR-Entwicklung
 
 sqlitebrowser                   # grafisches Datenbankfrontend für Sqlite
 
-###  Spielerisch programmieren Lernen
-
-scratch                         # Einfach bedienbare Programmierumgebung für Kinder ab 8 Jahren
-# ? squeak-plugins-scratch      # spielerisch programmieren lernen (Erweiterung)
-
 ###  IDEs - Java
 
 jedit                           # weiterer Texteditor, der durch Plugins erweitert werden kann

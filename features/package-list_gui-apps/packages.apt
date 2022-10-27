@@ -1,6 +1,6 @@
 telegram-desktop                # messaging app with a focus on speed and security on all your devices at the same time
 
-# ? qalculate-gtk               # Powerful and easy to use desktop calculator
+qalculate-gtk                   # Powerful and easy to use desktop calculator
 
 meld                            # graphical diff … recursive  directory diffs
 
