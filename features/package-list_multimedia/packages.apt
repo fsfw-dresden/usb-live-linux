@@ -41,5 +41,6 @@ ogmtools                        # Dient der Bearbeitung von OGG-Streams
 gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
 lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
 slowmovideo                     # creates slow-motion videos from your footage
+mplayer                         # movie player for Unix-like systems
 smplayer-l10n                   # Qt5 front-end for mplayer + translation
 
