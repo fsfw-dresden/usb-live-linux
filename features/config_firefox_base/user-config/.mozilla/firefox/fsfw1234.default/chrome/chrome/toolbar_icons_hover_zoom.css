@@ -12,6 +12,7 @@
 }
 
 /* Make zoomed buttons overflow nicely */
+.unified-extensions-item-action,
 #nav-bar:not([urlbar-exceeds-toolbar-bounds]) {
   overflow: unset !important;
 }
