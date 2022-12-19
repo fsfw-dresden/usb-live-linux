@@ -57,12 +57,15 @@ disable_redsocks() {
         systemctl mask redsocks
 }
 
+# log invocation environment
+{
+        env | sort
+        echo "default network device: $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route)"
+        ip -4 -br address show
+} > /run/log/NetworkManager--dispatcher.d--99-dresden-schulen.${STATUS}.$(date +'%F.%H%Mh').log
+
 case "${STATUS}" in
         up)
-                # turn on ethernet auto-negotiation when speed is detected and below 1 gigabit
-                ETH_SPEED=$(ethtool ${INTERFACE} 2>&1|sed -nr 's/.*Speed: ([0-9]+)[^0-9]+$/\1/p')
-                [ -n "${ETH_SPEED}" ] && [ ${ETH_SPEED} -lt 1000 ] && ethtool --change ${INTERFACE} autoneg on
-
                 # detect school proxy
                 if [[ "${IP4_DOMAINS}" == *".dd-schulen.de" || "${IP4_DOMAINS}" == *".gs.dresden.de"* ]]
                 then
@@ -74,12 +77,6 @@ case "${STATUS}" in
                         disable_redsocks
                 fi
 
-                # log invocation environment
-                {
-                        env | sort
-                        echo "default network device: $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route)"
-                        ip -4 -br address show
-                } > /run/log/NetworkManager--dispatcher.d--99-gs-dresden.$(date +'%F.%H%Mh').log
                 ;;
         down)
                 # unset redsocks traffic redirector
