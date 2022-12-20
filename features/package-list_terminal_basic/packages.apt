@@ -48,6 +48,7 @@ faketime                # intercepts various system calls and fake date and time
 fatattr                 # control attributes on a FAT filesystem
 fatrace                 # report system wide file access events
 finger                  # displays information about the system users
+fq                      # jq for binary formats
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 highlight               # Universal source code to formatted text converter
@@ -87,7 +88,6 @@ memtester               # userspace utility for testing the memory subsystem for
 moreutils               # additional Unix utilities
 mosh                    # Mobile shell that supports roaming and intelligent local echo
 most                    # Pager-Programm - alternativ zu more / less
-mtr-tiny                # ncurses traceroute tool
 neofetch                # Shows Linux System Information with Distribution Logo
 ncdu                    # ncurses disk usage viewer
 ncurses-hexedit         # Edit files/disks in hex, ASCII and EBCDIC
@@ -126,7 +126,6 @@ sysstat                 # system performance tools (iostat etc)
 tidy                    # HTML/XML syntax checker and reformatter
 tilde                   # Intuitive text editor for the terminal
 time                    # GNU time program for measuring CPU resource usage
-traceroute              # displays the route used by IP packets on their way
 translate-shell         # Command-line translator using Google Translate, etc.
 tree                    # recursive directory listing: depth indented colorized listing of files
 tuptime                 # report historical system real time

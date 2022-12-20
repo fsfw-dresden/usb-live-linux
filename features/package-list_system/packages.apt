@@ -13,7 +13,6 @@ jitterentropy-rngd              #  Jitter RNGd provides a source of sufficient e
 network-manager-openconnect     #  open client for Cisco's AnyConnect SSL VPN
 sct                             #  set screen color temperature via xrandr - reduce or increase blue light
 gvfs-fuse                       #  exposing the gvfs mounts to non-gio applications using fuse
-unattended-upgrades             #  automatic installation of security upgrades
 python3-software-properties     #  manage the repositories that you install software from
 exfat-fuse                      #  exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
 exfat-utils                     #  Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT

@@ -9,5 +9,6 @@ eatmydata                       # small LD_PRELOAD library to transparently disa
 git-extras                      # extra git commands to easily solve typical tasks
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
+podman                          # daemon-less alternative to Docker for managing Pods, Containers, and Container Images
 tig                             # ncurses-based text-mode interface for Git
 visidata                        # interactive multitool for tabular data
