@@ -18,12 +18,10 @@ Einige weitere Informationen und Screenshots zum Stick-Projekt finden Sie in der
 .. gibt es ab sofort für Lehrkräfte aller Schulformen. Füllen Sie dafür einfach unser [Web-Formular](https://survey.opensourceecology.de/index.php?r=survey/index&sid=281135) aus.
 
 ## Download und Bespielen eines USB-Sticks
-Wir sind gerade dabei, ein Debian-11-basiertes Release fertigzustellen.
-Die letztjährige Version (1734v / 2021-04-24) basierend auf Debian-Linux 10 (stable, codename »buster«) lässt sich hier herunterladen:
+Die aktuelle Version (2286a / 2022-10-28) basiert auf Debian-Linux 11 (stable, codename »bullseye«) mit dem Xfce-Desktop und lässt sich hier herunterladen:
 
-> Image-Datei (7,5 GiB): [FSFW-Schulstick_1734v_Xfce_buster-amd64.img.gz](https://web.fsr.mw.tu-dresden.de/dateien/FSFW_Schulstick_2021/FSFW-Schulstick_1734v_Xfce_buster-amd64.img.gz)  
-> dazugehörige SHA256-Prüfsumme: [FSFW-Schulstick_1734v_Xfce_buster-amd64.img.gz.sha256sum](https://web.fsr.mw.tu-dresden.de/dateien/FSFW_Schulstick_2021/FSFW-Schulstick_1734v_Xfce_buster-amd64.img.gz.sha256sum)
-> Live-Demo ohne Download direkt im Webbrowser: https://distrotest.net/Schulstick%20Linux/2021.4
+> Image-Datei (11,1 GiB): [FSFW-Schulstick_2286a_Xfce_bullseye-amd64.hybrid.img.gz](https://ftp.inf.tu-dresden.de/os/FSFW/FSFW-Schulstick_2286a_Xfce_bullseye-amd64.hybrid.img.gz)
+> zugehörige SHA256-Prüfsumme: `c031e9d521b206a9c0100a65aecf32e140416aa59b3f994f494c33aafc5bfd4f`
 
 Für die Installation des FSFW-Schulsticks braucht es (mindestens) einen 16-Gigabyte-USB-Stick guter Qualität. Weiterhin braucht man ein spezielles Programm, um das Bespielen durchzuführen. Wir empfehlen dafür den [Etcher](https://www.balena.io/etcher/), den es dort für verschiedene Betriebssysteme zum Download gibt.
 
@@ -34,11 +32,11 @@ Das Image kann auch für USB-Sticks mit mehr als 16 Gigabyte verwendet werden, d
 
 Falls Probleme auftreten, ihr eine Funktion vermisst oder eine Idee habt, wie man etwas besser machen kann: einfach hier auf der Github-Projekt-Seite oben unter "Issues" suchen oder einen neuen Fall anlegen.
 
-## Weitere Pläne / Kompetenzen gesucht
+## Weitere Pläne (zum Mitmachen!)
 
 - Python/Qt-Portal-App für Open Educational Resources: Tutorials, walk-throughs und Challenges für auf dem Stick vorhandene Software
 - Barrierefreiheit prüfen und verbessern
 - Multisprach-System (=> Grub Boot-Menü)
 - international versions (f.e. India, Africa, Ukraine..)
-- gemeinsames Build-Framework mit dem Lernstick
+- gemeinsames Build-Framework mit dem [Lernstick](https://lernstick.ch/)
 - siehe auch [doc/Developing-TODO.md](../../doc/Developing-TODO.md)

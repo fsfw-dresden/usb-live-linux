@@ -1,4 +1,6 @@
 # The Freie-Software-Freies-Wissen-Stick Project
+Why would you want to use it: It just works
+ ..very well for most computing ambitions.
 
 This is the home of our modular, [Debian](https://debian.org)-based [live](https://wiki.debian.org/DebianLive)-linux-[distribution](https://en.wikipedia.org/wiki/Linux_distribution) targeted at students, learners and makers of all kind.
 
@@ -20,10 +22,10 @@ This repository contains shell scripts to create a live-system from a nested tre
 While the original variant was the [Uni-Stick](variants.build/FSFW-Uni-Stick:Xfce:buster/README.md), we have since been working on bringing the system to [school kids](variants.build/FSFW-Schulstick/README.md) and [makers](variants.build/OSEG-Makerstick/README.md) as well.
 
 ## Online Demo
-If you would like to test Schulstick Linux online, you can try it live inside your browser at distrotest.net [2021.4 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2021.4).
+If you would like to test Schulstick Linux online, you can try it live inside your browser at distrotest.net [2021.4 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2021.4) (version outdated, we're working on getting it updated).
 
-## Downloads (2021-04-24)
-At the moment, the [2021.4 Schulstick release](https://github.com/fsfw-dresden/usb-live-linux/releases/tag/FSFW-Schulstick%2F2021.4) is the only version available for download. It includes most of the functionality of the other build variants though, so we encourage you to try it out instead while we are working on creating release images for the other variants (which we hope to have ready by end of the [decade]).
+## Downloads
+The most recent image files can be found on our [Releases](https://github.com/fsfw-dresden/usb-live-linux/releases) page.
 
 ## Issues and Support
 If you hit any problems, just open an issue here on github.
@@ -34,7 +36,7 @@ Because of its German heritage, bits and pieces still might be in German, but to
 
 ## (2019-2020)
 Dieses Repo enthält die Skripte und Konfigurationsdateien, die zur Erstellung des angepassten Linux-Live-Systems benötigt werden.
-Momentan (Mai 2019) wird noch das Tool  *live-build* benutzt. Mittelfristig ist geplant, das Basis-Image mit `vmdb2` (Nachfolger von `vmdebootstrap`) zu bauen und weitergehende Anpassungen z.B. mittels Ansible-Skripten vorzunehmen. Dabei ist eine Kooperation mit dem [Lernstick-Projekt](https://lernstick.ch/) angestrebt.
+Momentan (Mai 2019) wird noch das Tool  *live-build* benutzt. Mittelfristig ist geplant, das Basis-Image mit `vmdb2` (Nachfolger von `vmdebootstrap`) o.ä. zu bauen und weitergehende Anpassungen z.B. mittels Ansible-Skripten vorzunehmen. Dabei ist eine Kooperation mit dem [Lernstick-Projekt](https://lernstick.ch/) angestrebt.
 
 ## (2018-08)
 **Screenshot vom Desktop (2018-08-18):**
