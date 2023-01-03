@@ -36,7 +36,7 @@ STICK_VERSION=$(../scripts/calc-version-number)
 
 # Branchname im Image-Namen setzen, falls nicht auf master
 nbranch=$(git rev-parse --abbrev-ref HEAD)      # aktuellen branch auslesen
-if [[ ! "${nbranch}" = "master" ]]; then
+if [[ ! "${nbranch}" = "master" && ! "${nbranch}" = "main" ]]; then
     nbranch=${nbranch////_}         # ersetze von / in _
     nbranch=${nbranch//-/_}         # ersetze von - in _
     nbranch=__${nbranch}_
