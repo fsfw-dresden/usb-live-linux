@@ -65,10 +65,6 @@
       "url": "http://www.archive.org/search.php?query=%s"
     },
     {
-      "name": "Art: DeviantArt",
-      "url": "https://www.deviantart.com/search/deviations?q=%s"
-    },
-    {
       "name": "Audiobooks: LibriVox",
       "url": "https://librivox.org/search?q=%s&search_form=advanced"
     },

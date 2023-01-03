@@ -76,10 +76,6 @@
       "url": "http://www.youtube.com/results?search_query=%s"
     },
     {
-      "name": "Kunst: DeviantArt",
-      "url": "https://www.deviantart.com/search/deviations?q=%s"
-    },
-    {
       "name": "🇩🇪 Fernsehsendungen",
       "url": "https://mediathekviewweb.de/#query=%s"
     },
