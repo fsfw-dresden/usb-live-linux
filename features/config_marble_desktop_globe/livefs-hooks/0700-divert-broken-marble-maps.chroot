@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Disable broken marble maps
+dpkg-divert --add --rename --divert /usr/share/marble/data/maps/earth/naturalearth/naturalearth.dgml{.broken,}
+dpkg-divert --add --rename --divert /usr/share/marble/data/maps/earth/sentinel2/sentinel2.dgml{.broken,}
