@@ -1,1 +1,1 @@
-deb https://dl.winehq.org/wine-builds/debian/ stable main
+deb https://dl.winehq.org/wine-builds/debian/ bullseye main
