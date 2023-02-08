@@ -22,6 +22,7 @@ application/xhtml+xml=firefox-esr.desktop
 application/xhtml_xml=firefox-esr.desktop
 application/x-ldraw=mousepad.desktop
 application/xml=mousepad.desktop
+application/x-ms-dos-executable=wine.desktop
 audio/mp3=audacious.desktop
 audio/mp4=audacious.desktop
 audio/mpeg2=audacious.desktop
