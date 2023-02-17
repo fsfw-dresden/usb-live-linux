@@ -14,7 +14,9 @@ bmap-tools
 ca-certificates
 ccze
 curl
+cryptsetup
 dbus
+dctrl-tools
 dialog
 dosfstools
 eatmydata
@@ -25,10 +27,13 @@ git
 grub-efi-ia32-bin
 grub-pc-bin
 html-xml-utils
+isolinux
 jq
 libcdio-utils
+librsvg2-bin
 live-build
 make
+mtools
 nocache
 pandoc
 parted
@@ -39,11 +44,13 @@ qemu-utils libnbd-bin nbdkit
 ranger
 rsync
 shim-signed
+squashfs-tools
 syslinux-common
 systemd-container
 tig
 unzip
 wget
+xorriso
 xz-utils
 youtube-dl
 "

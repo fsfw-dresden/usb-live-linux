@@ -1,0 +1,15 @@
+#!/bin/sh -e
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --build-with-chroot false"
+
+#        --build-with-chroot true|false
+#            defines whether live-build should use the tools from within the ch‐
+#            root  to  build  the binary image or not by using and including the
+#            host system's tools. This is a very  dangerous  option,  using  the
+#            tools  of the host system can lead to tainted and even non-bootable
+#            images if the host systems version of the  required  tools  (mainly
+#            these are the bootloaders such as syslinux and grub, and the auxil‐
+#            iary tools such as dosfstools, xorriso, squashfs-tools and  others)
+#            do  not  exactly  match what is present at build-time in the target
+#            distribution. Never disable this option unless you are exactly sure
+#            what you are doing and have completely understood its consequences.
