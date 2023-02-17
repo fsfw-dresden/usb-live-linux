@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# The xfce desktop shortcut will display a lock if the linked folder is not writable, so..
+chmod o+w "/usr/share/sample-media-files"

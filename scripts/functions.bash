@@ -56,6 +56,32 @@ display_inputbox() {
     clear -x > /dev/stderr
 }
 
+get_cached() {
+    CACHE_DIR="cache/packages.extra"
+    OBJECT_ID=${1##*/}
+
+    OBJECT_CACHED="${CACHE_DIR}/${OBJECT_ID}"
+    if [ -e "${OBJECT_CACHED}" ]; then
+        echo "${OBJECT_ID} available in cache, not downloading." > /dev/stderr
+        echo "${OBJECT_CACHED}"
+    else
+        return 1
+    fi
+}
+
+cache_store() {
+    CACHE_DIR="cache/packages.extra"
+    OBJECT_PATH=${1}
+    OBJECT_ID=${2}
+
+    # If no object ID given, use object name
+    [ -z "${OBJECT_ID}" ] && OBJECT_ID="${OBJECT_PATH##*/}"
+
+    mkdir -p "${CACHE_DIR}"
+    cp -a "${OBJECT_PATH}" "${CACHE_DIR}/${OBJECT_ID}" \
+        && echo "stored ${OBJECT_PATH} in ${CACHE_DIR} as ${OBJECT_ID}" > /dev/stderr
+}
+
 download_file_cached() {
     FILE_URL=${1}
     FILE_NAME=${2}
@@ -67,16 +93,23 @@ download_file_cached() {
 
     CACHE_DIR="cache/packages.extra"
     FILE_CACHED="${CACHE_DIR}/${FILE_NAME%&*}" # remove trailing URL params
-    WGET_OPTIONS="--no-check-certificate --user-agent=org.schulstick.build \
-                  --no-http-keep-alive --show-progress --progress=dot:giga \
-                  --no-verbose --timeout=10 --execute content_disposition=off"
+
+    # Set custom user-agent string, turn on location following, timestamp files
+    # and disable SSL certificate checking as well as BEAST workaround
+    CURL_DEFAULT="--user-agent org.schulstick.build --location --no-keepalive \
+                  --remote-time --insecure --ssl-allow-beast --connect-timeout 10"
 
     if [ -f "${FILE_CACHED}" ]; then
         echo "${FILE_NAME} available in cache, not downloading." > /dev/stderr
     else
         echo "downloading ${FILE_NAME}" > /dev/stderr
         mkdir -p "${CACHE_DIR}"
-        if wget ${WGET_OPTIONS} ${FILE_URL} -O ${FILE_CACHED}.partial
+
+        # curl will interpret an empty string parameter as URL and give an error,
+        # so fill the variable with an option already stated above (NOOP)
+        [ -z "${CURL_OPTIONS}" ] && CURL_OPTIONS="--no-keepalive"
+
+        if eval curl ${CURL_DEFAULT} "${CURL_OPTIONS}" --output "\"${FILE_CACHED}.partial\"" "'${FILE_URL}'"
         then
             echo "${FILE_NAME} fetched" > /dev/stderr
         else
@@ -90,7 +123,7 @@ download_file_cached() {
         fi
 
         # Rename file in cache
-        mv -v ${FILE_CACHED}{.partial,} > /dev/stderr
+        mv "${FILE_CACHED}"{.partial,} > /dev/stderr
     fi
 
     echo "${FILE_CACHED}"

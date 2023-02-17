@@ -1,0 +1,186 @@
+#!/bin/bash
+
+. ../scripts/functions.bash
+
+url_to_filename() {
+  echo "${1}" | /bin/printf "$(sed -r 's-.*://--; s+/+--+g; s/%/\\x/g; s/ /-/g')" | sed 's|/|__|g'
+}
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/share/sample-media-files
+BASE_DIR=${PREFIX}/${TARGET_DIR#/}
+
+mkdir -p "${BASE_DIR}"
+
+{
+  IMAGE_URLS="
+  https://upload.wikimedia.org/wikipedia/commons/1/16/Atlantis_seen_over_the_Mediterranean_Sea%2C_near_the_Algerian_coast.jpeg
+  https://upload.wikimedia.org/wikipedia/commons/1/1f/Adam_Simmons%2C_Swaffham_Raceway%2C_2017-03-11.JPG
+  https://upload.wikimedia.org/wikipedia/commons/2/27/Rosa_de_alabastro_%28Echeveria_elegans%29%2C_jard%C3%ADn_del_molino%2C_Sierra_de_San_Felipe%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_01.JPG
+  https://upload.wikimedia.org/wikipedia/commons/2/2c/Desiccation-cracks_hg.jpg
+  https://upload.wikimedia.org/wikipedia/commons/3/37/%D0%9F%D1%96%D1%81%D0%BB%D1%8F_%D0%B3%D1%80%D0%BE%D0%B7%D0%B8_%29.jpg
+  https://upload.wikimedia.org/wikipedia/commons/4/4e/Mavericks_Surf_Contest_2010b.jpg
+  https://upload.wikimedia.org/wikipedia/commons/4/4f/Fractal_Broccoli.jpg
+  https://upload.wikimedia.org/wikipedia/commons/5/55/Waterlily_in_Thailand_11_Photographed_by_TrisornTriboon.JPG
+  https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg
+  https://upload.wikimedia.org/wikipedia/commons/5/5a/Lava_fountain_dome_2.jpg
+  https://upload.wikimedia.org/wikipedia/commons/7/77/Great_Wave_unrestored.jpg
+  https://upload.wikimedia.org/wikipedia/commons/7/78/Stropharia_aeruginosa_in_nature_park_Jesenicko_in_2014.JPG
+  https://upload.wikimedia.org/wikipedia/commons/7/7b/Fliegenpilz_fly_agaric_Amanita_muscaria.JPG
+  https://upload.wikimedia.org/wikipedia/commons/8/83/Lightning_in_Dallas_2015.jpg
+  https://upload.wikimedia.org/wikipedia/commons/8/86/Geranium_wallichianum_%27Crystal_Lake%27_06.JPG
+  https://upload.wikimedia.org/wikipedia/commons/9/94/Reflection_in_a_soap_bubble_edit.jpg
+  https://upload.wikimedia.org/wikipedia/commons/9/98/F5_tornado_Elie_Manitoba_2007.jpg
+  https://upload.wikimedia.org/wikipedia/commons/9/98/Schachfiguren%2C_Bauern_--_2022_--_0022_%28bw%29.jpg
+  https://upload.wikimedia.org/wikipedia/commons/a/aa/Polarlicht_2.jpg
+  https://upload.wikimedia.org/wikipedia/commons/b/b5/Bloem_van_een_Astrantia_major_%27Roma%27._24-06-2021_%28actm.%29_01.jpg
+  https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg
+  https://upload.wikimedia.org/wikipedia/commons/b/bc/Darvasa_gas_crater_panorama_crop.jpg
+  https://upload.wikimedia.org/wikipedia/commons/b/bc/Low_pressure_system_over_Iceland.jpg
+  https://upload.wikimedia.org/wikipedia/commons/c/c1/Streichholz.jpg
+  https://upload.wikimedia.org/wikipedia/commons/c/c7/Taro_leaf_underside%2C_backlit_by_sun_-_edit.jpg
+  https://upload.wikimedia.org/wikipedia/commons/c/cd/Nelumbo_nucifera_Oga02.jpg
+  https://upload.wikimedia.org/wikipedia/commons/d/d6/Energy_Arc_%28central_electrode_of_a_Plasma_Lamp%29.jpg
+  https://upload.wikimedia.org/wikipedia/commons/e/e4/Mistbow_on_Rannoch_Moor%2C_Scotland.jpg
+  https://upload.wikimedia.org/wikipedia/commons/e/eb/Reindeer_on_Salen%2C_Hammerfest%2C_Troms_og_Finnmark%2C_Norway%2C_2022_August.jpg
+  https://upload.wikimedia.org/wikipedia/commons/f/f0/13W3_Stecker.jpg
+  https://upload.wikimedia.org/wikipedia/commons/f/f3/SL_Kandy_asv2020-01_img34_Sacred_Tooth_Temple.jpg
+  "
+
+  DEST_DIR=${BASE_DIR}/images
+  mkdir -pv ${DEST_DIR}
+
+  for IMAGE_URL in ${IMAGE_URLS}
+  do
+    FILENAME=$(url_to_filename "${IMAGE_URL}")
+    FILE=$(download_file_cached "${IMAGE_URL}" "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/"
+  done
+}
+
+{
+  MUSIC_URLS="
+  http://ccmixter.org/content/admiralbob77/admiralbob77_-_Victoria.mp3
+  http://ccmixter.org/content/admiralbob77/admiralbob77_-_Warm_Vacuum_Tube_.mp3
+  http://ccmixter.org/content/airtone/airtone_-_bluenotes_6.mp3
+  http://ccmixter.org/content/airtone/airtone_-_preamble.mp3
+  http://ccmixter.org/content/airtone/airtone_-_sleepwalking.mp3
+  http://ccmixter.org/content/Astral/Astral_-_Hu.mp3
+  http://ccmixter.org/content/Astral/Astral_-_The_Beach_(Original_Mix).mp3
+  http://ccmixter.org/content/belaf/belaf_-_Brake_Dub.mp3
+  http://ccmixter.org/content/Bluemillenium/Bluemillenium_-_Le_blues_de_No_l.mp3
+  http://ccmixter.org/content/BOCrew/BOCrew_-_SUNBIRDS.mp3
+  http://ccmixter.org/content/BOCrew/BOCrew_-_WHEN_THE_SKY_TURNS_BLUE.mp3
+  http://ccmixter.org/content/_BoomShaak_/_BoomShaak_-_KINGSTON-MALAK.mp3
+  http://ccmixter.org/content/coffeetrim/coffeetrim_-_Open_your_eyes-_Long_Island_Remix.mp3
+  http://ccmixter.org/content/dangerous_objects/dangerous_objects_-_Tomato_ketchup_is_not_a_vegatable.mp3
+  http://ccmixter.org/content/djiz/djiz_-_HOODDY_SWEATER_Clarance_Boddyker_remix_by_DjiZ.mp3
+  http://ccmixter.org/content/djlang59/djlang59_-_Drops_of_H2O_(_The_Filtered_Water_Treatment_).mp3
+  http://ccmixter.org/content/dj_snyder/dj_snyder_-_Bristol_Sewer_System.mp3
+  http://ccmixter.org/content/doxent/doxent_-_Forgotten_Land.mp3
+  http://ccmixter.org/content/F_Fact/F_Fact_-_Beautiful_(feat_Wildsilences_and_Karstenholymoly).mp3
+  http://ccmixter.org/content/FuriousStereo/FuriousStereo_-_Rainha_do_Sol_-_F-Stereo_2007_remix.mp3
+  http://ccmixter.org/content/jlbrock44/jlbrock44_-_Slow_Burn.mp3
+  http://ccmixter.org/content/KatazTrophee/KatazTrophee_-_The_Nightmare.mp3
+  http://ccmixter.org/content/Psykick/Psykick_-_SkyDub.mp3
+  http://ccmixter.org/content/qpec/qpec_-_Double_Dragon.mp3
+  http://ccmixter.org/content/Reiswerk/Reiswerk_-_Be_Cool_ft_4ensic.mp3
+  http://ccmixter.org/content/rewob/rewob_-_Forever_How_This_Time_Will_Last.mp3
+  http://ccmixter.org/content/SackJo22/SackJo22_-_Rest_in_the_Garden.mp3
+  http://ccmixter.org/content/SackJo22/SackJo22_-_Things_Change.mp3
+  http://ccmixter.org/content/shagrugge/shagrugge_-_Sax_Flute_n_Glass.mp3
+  http://ccmixter.org/content/snowflake/snowflake_-_Orc_March.mp3
+  http://ccmixter.org/content/snowflake/snowflake_-_Transmutate.mp3
+  http://ccmixter.org/content/tobias_weber/tobias_weber_-_Death_Of_A_Music_Box_(Instrumental).mp3
+  http://ccmixter.org/content/Vidian/Vidian_-_aether_theories_1.mp3
+  http://ccmixter.org/content/Whitewolf225/Whitewolf225_-_Trance_is..._(Ambient_Cinematic_Trance)_10.mp3
+  http://ccmixter.org/content/presse/presse_-_Gabriels_Trumpet.mp3
+  "
+
+  DEST_DIR=${BASE_DIR}/music
+  mkdir -pv ${DEST_DIR}
+
+  for MUSIC_URL in ${MUSIC_URLS}
+  do
+    FILENAME=$(url_to_filename "${MUSIC_URL}")
+    FILE=$(CURL_OPTIONS="--user-agent 'Mozilla/5.0 (Linux; KHTML, like Gecko)' --referer 'http://dig.ccmixter.org/free'" download_file_cached "${MUSIC_URL}" "${FILENAME}") \
+      && cp -a "${FILE}" "${DEST_DIR}/"
+    sleep 1
+  done
+
+}
+
+{
+  VIDEO_URLS="
+  https://coverr.co/videos/coastline-paradise-pu1wu2KKyC
+  https://coverr.co/videos/overlooking-the-mountains-B1u9fiuoHy
+  https://coverr.co/videos/sandboarding-in-desert-fFFXsEFn9T
+  https://coverr.co/videos/kitten-yawning-pt3CzcIAm0
+  https://coverr.co/videos/water-buffalo-kAD9tRXEcv
+  https://coverr.co/videos/cute-dog--l2PuW4L0jF
+  https://coverr.co/videos/painting-cardboard-shapes-yellow-WWOsATIUpt
+  https://coverr.co/videos/woman-making-a-clay-pot-SvTsRSKxWD
+  https://coverr.co/videos/graffiti-on-the-street--hNfmSfFKx8
+  https://coverr.co/videos/cracking-eggs-in-a-jug-9q24xyi8KR
+  https://coverr.co/videos/putting-pink-hearts-on-cupcakes-JI1uMqSCN4
+  "
+
+  DEST_DIR=${BASE_DIR}/videos
+  mkdir -pv ${DEST_DIR}
+
+  for VIDEO_URL in ${VIDEO_URLS}
+  do
+    FILENAME="$(url_to_filename "${VIDEO_URL}").mp4"
+
+    FILE=$(get_cached "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/" || {
+      youtube-dl --output "${DEST_DIR}/${FILENAME}" "${VIDEO_URL}" \
+        && cache_store "${DEST_DIR}/${FILENAME}"
+    }
+    sleep 1
+  done
+}
+
+{
+  BOOK_URLS="
+  https://oer-musik.de/data/openbooks/filmmusik/releases/Kaiser_Filmmusik_2020-09-21.pdf
+  https://oer-musik.de/data/openbooks/sequenzen/releases/Kaiser_SequenzenUnterrichtsheft-ForKids_2012.pdf
+  https://oer-musik.de/data/openbooks/sequenzen/releases/Kaiser_SequenzenKommentarheft-ForKids_2012.pdf
+  https://oer-musik.de/data/openbooks/intervalleundakkorde/releases/Kaiser_IntervalleUndAkkorde_2012.pdf
+  https://oer-musik.de/data/openbooks/harmonieundform/releases/Kaiser_HarmonieUndForm_2015.pdf
+  https://oer-musik.de/data/openbooks/harmonielehre/releases/Kaiser_Harmonielehre-reloaded.pdf
+  https://oer-musik.de/data/openbooks/formenlehre/releases/Kaiser_Formenlehre_2019-03-16.pdf
+  https://www.assets.dpunkt.de/openbooks/Haekeln_Stricken.pdf
+  https://boell.de/sites/default/files/2022-06/Boell-Sozialatlas-2022.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_Infrastrukturatlas%202020_V01_kommentierbarpdf.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_Insektenatlas_2020_II_V01_Kommentierbar.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_Mobilitaetsatlas2019_II_V01_kommentierbar.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_Plastikatlas%202019%206.Auflage_V01_kommentierbar.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_agraratlas2019_III_V01_kommentierbar_0.pdf
+  https://boell.de/sites/default/files/2022-01/Boell-Pestizidatlas-2022.pdf
+  https://boell.de/sites/default/files/2022-01/Boell_Fleischatlas2021_V01_kommentierbar.pdf
+  https://boell.de/sites/default/files/konzernatlas2017_iii_web.pdf
+  https://boell.de/sites/default/files/bodenatlas2015_iv.pdf
+  https://boell.de/sites/default/files/europa-atlas-2014_auflage_ii_kommentierbar.pdf
+  https://boell.de/sites/default/files/kohleatlas2015_ii.pdf
+  https://boell.de/sites/default/files/2021-05/fleischatlas2014-extra.pdf
+  https://klimafakten.de/sites/default/files/downloads/fliccdisinformation101pdf-2000px.pdf
+  https://klimafakten.de/sites/default/files/downloads/ipcc-posterar62021en210812a3.pdf
+  https://klimafakten.de/sites/default/files/downloads/klimafaktenbroschuere2017low.pdf
+  https://klimafakten.de/sites/default/files/downloads/plurvgrundkurs-desinformationa3web.pdf
+  https://klimafakten.de/sites/default/files/images/reports/printversion/branchenberichtarbeitundbeschaeftigung.pdf
+  "
+
+  DEST_DIR=${BASE_DIR}/books
+  mkdir -pv ${DEST_DIR}
+
+  for BOOK_URL in ${BOOK_URLS}
+  do
+    FILENAME=$(url_to_filename "${BOOK_URL}")
+    FILE=$(download_file_cached "${BOOK_URL}" "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/"
+  done
+
+}
+
+mkdir -p ${PREFIX}/etc/skel/Desktop
+ln -sv "${TARGET_DIR}" ${PREFIX}/etc/skel/Desktop/Mediendateien
