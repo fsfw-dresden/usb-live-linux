@@ -1,0 +1,20 @@
+#!/bin/bash
+
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/share/backgrounds/senzune
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+PACK_URL=https://cloud.opensourceecology.de/s/ifALFC7NGnFifAL/download
+PACK_FILE=senzune-wallpapers.zip
+
+mkdir -pv "${DEST_DIR}"
+PACK_FILE=$(download_file_cached ${PACK_URL} ${PACK_FILE})
+unzip -j ${PACK_FILE} -d ${DEST_DIR}
+
+echo "Senzune Dec 8, 2017:
+All my works are free for non-commercial use
+As long as you don't make any money with them, you can use them however you want ^^" => ${DEST_DIR}/LICENSE
