@@ -19,8 +19,9 @@ mkchromecast-pulseaudio         # Pulseaudio dependencies to cast with mkchromec
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
 pavucontrol                     # PulseAudio Volume Control
 playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
-
+soundconverter                  # simple sound converter application
 transcriber                     # Programm zum Transkripieren (z.B. von Interviews)
+xcfa				# extract the contens of Audio-CDs and convert musical audio files
 
 ###  Video
 
