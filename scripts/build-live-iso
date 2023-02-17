@@ -98,4 +98,5 @@ LOGFILE="build/build-live-iso.$(date '+%F.%H%Mh').log"
 STARTTIME=$(date +%s)
 trap "print_time_used" EXIT SIGHUP SIGQUIT SIGTERM
 
-build_main "${@}" |& tee "${LOGFILE}"
+# Filter build log from apt's complaints about outdated packages in cache
+build_main "${@}" |& grep -v '^Del ' | tee "${LOGFILE}"
