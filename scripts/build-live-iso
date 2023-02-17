@@ -35,7 +35,7 @@ select_build_variant() {
 }
 
 print_time_used() {
-    print_info "this took $(format_timespan $(($(date +%s) - STARTTIME))) (+ the work of many)"
+    print_info "this took $(format_timespan $(($(date +%s) - STARTTIME))) (+ the work of many)" 2> >(tee --append "${LOGFILE}")
 }
 
 build_main() {
