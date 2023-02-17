@@ -181,7 +181,7 @@
         },
         {
           "name": "Library Genesis",
-          "url": "http://libgen.rs/search.php?req=%s"
+          "url": "http://libgen.rs/search.php?req=%s&view=detailed&sort=year&sortmode=DESC"
         },
         {
           "name": "Libraries: WorldCat",
@@ -200,7 +200,7 @@
           "url": "http://ieeexplore.ieee.org/search/searchresult.jsp?queryText=%s"
         },
         {
-          "name": "Science Hub (DOI)",
+          "name": "Science Hub (for DOI)",
           "url": "https://sci-hub.st/%s"
         },
         {

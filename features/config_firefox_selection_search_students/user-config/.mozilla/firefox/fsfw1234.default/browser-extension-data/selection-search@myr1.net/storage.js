@@ -186,7 +186,7 @@
         },
         {
           "name": "Library Genesis",
-          "url": "http://libgen.rs/search.php?req=%s"
+          "url": "http://libgen.rs/search.php?req=%s&view=detailed&sort=year&sortmode=DESC"
         },
         {
           "name": "Libraries: WorldCat",
