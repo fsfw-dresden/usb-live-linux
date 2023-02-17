@@ -5,7 +5,7 @@
 . "$(dirname $(realpath "${0}"))/functions.sh"
 . "$(dirname $(realpath "${0}"))/functions.bash"
 cd_repo_root
-check_dependencies parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze
+check_dependencies parted fatattr dosfstools f2fs-tools libcdio-utils dialog ccze eatmydata
 
 check_help_wanted() {
     # give some rudimentary help if requested
@@ -187,8 +187,8 @@ create_partitions() {
     parted ${DEVICE} align-check optimal 3
 
     print_info "setting 2nd + 3rd partition to type 0 / empty because.. Windows 10 will propose to format it otherwise"
-    sfdisk --part-type ${DEVICE} 2 0
-    sfdisk --part-type ${DEVICE} 3 0
+    eatmydata sfdisk --part-type ${DEVICE} 2 0
+    eatmydata sfdisk --part-type ${DEVICE} 3 0
 }
 
 
