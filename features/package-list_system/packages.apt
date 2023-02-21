@@ -15,7 +15,7 @@ sct                             #  set screen color temperature via xrandr - red
 gvfs-fuse                       #  exposing the gvfs mounts to non-gio applications using fuse
 python3-software-properties     #  manage the repositories that you install software from
 exfat-fuse                      #  exFAT-Treiber mit Schreib- und Lesezugriff für FUSE
-exfat-utils                     #  Werkzeuge zum Erstellen, Überprüfen, Benennen und Exportieren des Dateisystems exFAT
+exfatprogs                      #  exFAT file system utilities maintained by Samsung and LG engineers
 cifs-utils                      #  Werkzeuge für das Common Internet File System (SMB, Dateiaustausch mit Windows-Netzwerkfreigaben)
 ethtool                         #  Änderung von Ethernet-Geräte-Einstellungen wie Geschwindigkeit, Autonegotiation
 shim-signed                     #  Secure Boot chain-loading bootloader (Microsoft-signed binary)
