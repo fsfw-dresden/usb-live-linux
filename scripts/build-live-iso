@@ -99,4 +99,4 @@ STARTTIME=$(date +%s)
 trap "print_time_used" EXIT SIGHUP SIGQUIT SIGTERM
 
 # Filter build log from apt's complaints about outdated packages in cache
-build_main "${@}" |& sed '/^Del /d' | tee "${LOGFILE}"
+build_main "${@}" |& tee >(sed '/^Del /d' > "${LOGFILE}")
