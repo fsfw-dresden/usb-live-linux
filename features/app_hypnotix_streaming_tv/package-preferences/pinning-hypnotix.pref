@@ -1,0 +1,3 @@
+Package: *xapp* hypnotix
+Pin: release o=linuxmint, a=elsie
+Pin-Priority: 500

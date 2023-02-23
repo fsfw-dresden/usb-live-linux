@@ -1,0 +1,4 @@
+# pin priority below stable
+Package: *
+Pin: release o=linuxmint
+Pin-Priority: 499

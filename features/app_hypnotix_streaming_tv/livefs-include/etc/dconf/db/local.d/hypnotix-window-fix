@@ -1,0 +1,3 @@
+# https://github.com/linuxmint/hypnotix/issues/198
+[org/x/hypnotix]
+mpv-options='hwdec=auto-safe vo=x11'
