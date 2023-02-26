@@ -7,6 +7,9 @@ cd_repo_root
 # let failures in pipe fail the whole pipe
 set -o pipefail
 
+# turn on extended globbing for !(pattern-list)
+shopt -s extglob
+
 # give some rudimentary help if requested
 case "${1}" in
     "-h")
@@ -19,7 +22,6 @@ case "${1}" in
 esac
 
 select_build_variant() {
-    shopt -s extglob
     OPTIONS=()
     for VARIANT in $(command ls -Ltd variants.build/!(active|base_*|shared)/)
     do
