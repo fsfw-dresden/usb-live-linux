@@ -2,7 +2,7 @@
 
 set timeout=3
 set default=0
-set isofile=/STICK_ISO
+set stick_iso=/STICK_ISO
 set prefix=($root)/boot/grub
 
 insmod part_msdos
@@ -59,7 +59,7 @@ fi
 
 menuentry "Live-System (STICK_VERSION mit Persistenz)" {
   print_geduld_and_set_background_image
-  linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS persistence
+  linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS persistence
   initrd /boot/initrd.img
 }
 
@@ -69,13 +69,13 @@ menuentry " " {
 
 menuentry "Live-System Failsafe (falls normales Starten nicht funktioniert) (STICK_VERSION)" {
   print_geduld_and_set_background_image
-  linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
+  linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS persistence memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal
   initrd /boot/initrd.img
 }
 
 menuentry "Live-System ohne Gedächtnis (Änderungen gehen verloren) (STICK_VERSION)" {
   print_geduld_and_set_background_image
-  linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS
+  linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS
   initrd /boot/initrd.img
 }
 
@@ -85,22 +85,22 @@ menuentry " " {
 
 submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 
-  set isofile=/boot/STICK_ISO
+  set stick_iso=/STICK_ISO
   menuentry "Alle Änderungen am Stick zurücksetzen (!löscht ALLE geänderten Dateien!)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS persistence persistence-remove
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS persistence persistence-remove
     initrd /boot/initrd.img
   }
 
   menuentry "Systemdateien zurücksetzen (bei Updates)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS persistence persistence-remove=linux-system
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS persistence persistence-remove=linux-system
     initrd /boot/initrd.img
   }
 
   menuentry "Userdateien löschen (zur Reparatur; erstellt Backup auf Austauschpartition)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS persistence persistence-remove=linux-userdata backup
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS persistence persistence-remove=linux-userdata backup
     initrd /boot/initrd.img
   }
 
@@ -108,62 +108,53 @@ submenu "  [ Stick-Gedächtnis (Persistenz) zurücksetzen ]" {
 
 submenu "  [ Expertenoptionen ]" {
 
-  set isofile=/boot/STICK_ISO
+  set stick_iso=/STICK_ISO
   menuentry "Live-System Rettungsmodus (mit Persistenz) (STICK_VERSION)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single persistence
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single persistence
     initrd /boot/initrd.img
   }
 
   menuentry "Live-System Rettungsmodus (ohne Persistenz) (STICK_VERSION)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS memtest noapic noapm nodma nomce nolapic nomodeset nosmp nosplash vga=normal single
     initrd /boot/initrd.img
   }
 
   menuentry "Live-System Windowsmodus (ohne Persistenz) (STICK_VERSION)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS chicago95
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS chicago95
     initrd /boot/initrd.img
   }
 
   menuentry "Live-System komplett in Arbeitsspeicher laden (ohne Persistenz) (STICK_VERSION)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS toram
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS toram
     initrd /boot/initrd.img
   }
 
   menuentry "Live-System debuggen (mit Persistenz) (STICK_VERSION)" {
     print_geduld_and_set_background_image
-    linux /boot/vmlinuz boot=live findiso=$isofile components BOOTOPTIONS debug console=ttyS0 persistence
+    linux /boot/vmlinuz boot=live findiso=$stick_iso components BOOTOPTIONS debug console=ttyS0 persistence
     initrd /boot/initrd.img
   }
 
 }
 
 submenu "  [ Werkzeuge ] " {
-  set isofile=/boot/memtest86+-5.01.iso
-  if [ -s $isofile ]; then
-  menuentry "Memory test (memtest86+) iso " {
+  set memtest_iso=/boot/mt86plus.iso
+  if [ -s $memtest_iso ]; then
+  menuentry "Memory test (memtest86+)" {
     linux16 /boot/memdisk iso
-    initrd16 /boot/$isofile
+    initrd16 $memtest_iso
   }
   fi
 
-  set isofile=/boot/hdt-0.5.2.iso
-  if [ -s $isofile ]; then
-  menuentry "Hardware Test (HDT) " {
+  set hdt_iso=/boot/hdt-0.5.2.iso
+  if [ -s $hdt_iso ]; then
+  menuentry "Hardware Detection Tool (HDT) " {
     linux16 /boot/memdisk iso
-    initrd16 /boot/$isofile
-  }
-  fi
-
-  set isofile=SUPERGRUB2ISO
-  if [ -s $isofile ]; then
-  menuentry "Super Grub2 Disk " {
-    loopback loop $isofile
-    root=(loop)
-    configfile /boot/grub/loopback.cfg
+    initrd16 $hdt_iso
   }
   fi
 

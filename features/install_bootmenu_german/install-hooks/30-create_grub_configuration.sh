@@ -83,9 +83,3 @@ sed -e "s|DATE|${DATE}|" \
 
 # copy the memdisk bootloader
 if [ ! -f ${EFIBOOT}/boot/memdisk ]; then cp -v --preserve=timestamps /usr/lib/syslinux/memdisk ${EFIBOOT}/boot/memdisk ; fi
-
-# FIXME: reintegrate this?
-# Variablen für download url's (hdt.iso , memtest.iso  ....)
-#URL_HDT_ISO=http://github.com/knightmare2600/hdt/blob/master/hdt-0.5.2.iso
-#URL_MEMTEST_ISO=http://www.memtest.org/download/5.01/memtest86+-5.01.iso        #.gz
-#URL_SUPERGRUB2_ISO=https://sourceforge.net/projects/supergrub2/files/2.02s9/super_grub2_disk_2.02s9/super_grub2_disk_hybrid_2.02s9.iso
