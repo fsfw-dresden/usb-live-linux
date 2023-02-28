@@ -22,7 +22,7 @@ nnoremap <silent> <F12> :Exp<CR>
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <F6> :Hexmode<CR>
 nmap <F3> :set wrap!<CR>
-map <silent> <unique> <F2> :ToggleSpaceHi<CR>
+map <silent> <unique> <F2> :ToggleSpaceHi<CR> :set number!<CR>
 
 let mapleader=" "
 
