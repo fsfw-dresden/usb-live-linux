@@ -1,2 +1,3 @@
-chromium-l10n           # aims to build a safer, faster, and more stable internet browsing experience + translation
-chromium-sandbox        # setuid security sandbox for chromium
+chromium-l10n                   # aims to build a safer, faster, and more stable internet browsing experience + translation
+chromium-sandbox                # setuid security sandbox for chromium
+webext-ublock-origin-chromium   # lightweight and efficient ads, malware, trackers blocker (Chromium)

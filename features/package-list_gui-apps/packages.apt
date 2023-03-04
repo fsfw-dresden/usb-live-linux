@@ -52,8 +52,6 @@ qt5ct                           # Qt5 Configuration Utility (theme, font, icons,
 qt5-style-plugins               # Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 qttranslations5-l10n            # translations for Qt 5 (+1.501 kB)
 
-webext-ublock-origin            # general-purpose lightweight ads, malware, trackers blocker (Web Extension)
-
 calibre                         # powerful and easy to use e-book manager (+28,1 MB)
 seahorse                        # front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
 
