@@ -1,5 +1,4 @@
 #!/bin/bash
-# depends on html-xml-utils for hxwls utility
 
 set -e
 

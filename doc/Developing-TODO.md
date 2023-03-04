@@ -12,6 +12,7 @@
 - generalizing away from using live-build (vmdb2 + ansible?)
 - multi-variant inheritance?
 - ISO Upgrades? c.f. https://tails.boum.org/blueprint/Endless_upgrades/ https://github.com/rauc/rauc/
+- ImageMagick policies ?
 
 ### Known issues (2021-04-03)
 - no stick duplication GUI yet
