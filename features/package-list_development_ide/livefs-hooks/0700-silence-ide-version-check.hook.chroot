@@ -1,0 +1,5 @@
+#!/bin/sh -x
+# don't want lazarus to start with complaints, so use this workaround
+# until https://bugs.debian.org/compgi-bin/bugreport.cgi?bug=1032350 fixed
+
+echo "'$(dpkg-query --showformat '${Version}' --show lazarus-ide-gtk2-2.2)'" > /usr/lib/lazarus/default/ide/version.inc

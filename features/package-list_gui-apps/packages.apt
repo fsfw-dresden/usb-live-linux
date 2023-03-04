@@ -43,9 +43,6 @@ simple-scan                     # easy-to-use Scanning Utility
 
 xpra                            # tool to detach/reattach running X programs
 
-lazarus-2.0                     # IDE for Free Pascal (Delphi-likesion) (+>130 MB)
-fpc                             # Free Pascal Compiler
-
 libvte9                         # Terminal emulator widget for GTK+ 2.0 - runtime files
 
 qt5ct                           # Qt5 Configuration Utility (theme, font, icons, etc.)

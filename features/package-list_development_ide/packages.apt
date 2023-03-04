@@ -27,6 +27,9 @@ python3-rope                    # Empfehlung von Spyder3 (Python refactoring lib
 
 qtcreator                       # IDE für C++ incl. QT-Framework
 
+lazarus                         # IDE for Free Pascal (Delphi-like, with form-designer)
+fpc                             # Free Pascal Compiler
+
 swi-prolog                      # deklaratives Programmieren
 swi-prolog-doc
 swi-prolog-java
