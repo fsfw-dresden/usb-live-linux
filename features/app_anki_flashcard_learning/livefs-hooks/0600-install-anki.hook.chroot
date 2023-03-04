@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Just use anki install script from unpackaged archive
+(
+  cd /tmp/anki-*
+  bash -x install.sh
+) && rm -rv /tmp/anki-*
