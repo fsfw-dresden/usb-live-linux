@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Stick Welcome
+Name[de]=Willkommensstick
+Comment=testing!
+Icon=emblem-generic
+Categories=System
+Exec=sh -c "echo 1000 > /proc/$$/oom_score_adj; exec stick-welcome"
+Type=Application
+StartupNotify=false
