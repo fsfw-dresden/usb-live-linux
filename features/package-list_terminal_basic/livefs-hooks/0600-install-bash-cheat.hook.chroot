@@ -1,0 +1,8 @@
+#!/bin/sh
+# interactive cheatsheets for the command-line
+
+TARGET_FILE="/usr/local/bin/cheat"
+URL=https://gitlab.com/slackermedia/cheat/-/raw/97ddb3ad/bin/cheat
+curl --location ${URL} | sed 's#__CHEATPATH__#/usr/local/share/doc#' > ${TARGET_FILE} \
+       && chmod a+x ${TARGET_FILE}
+${TARGET_FILE} --fetch
