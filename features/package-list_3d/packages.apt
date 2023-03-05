@@ -12,6 +12,7 @@ povray-examples                 # Persistence of vision raytracer (3D renderer) 
 # ? librecad                    # Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 # ? openscad                    # script file based graphical CAD environment
 
+python3-pygmsh                  # powerful mesh generation tool with the versatility of Python
 
 ###  Maker Tools  -- 3D Tools - G-Code
 

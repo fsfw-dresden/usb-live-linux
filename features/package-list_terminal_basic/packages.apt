@@ -51,6 +51,7 @@ finger                  # displays information about the system users
 #       fq              # jq for binary formats (will be in bookworm)
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
+gstreamer1.0-tools      # gst-inspect, gst-launch, gst-stats et al.
 highlight               # Universal source code to formatted text converter
 htop                    # interaktive Prozessübersicht für die Konsole
 htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
