@@ -53,6 +53,7 @@ wget
 xorriso
 xz-utils
 youtube-dl
+zstd
 "
 
 # If no container directory exists, initiate a debian testing install with all our dependencies
