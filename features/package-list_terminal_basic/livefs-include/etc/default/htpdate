@@ -1,0 +1,24 @@
+# This file is used to configure htpdate daemon. Most users needn't change
+# anything here.
+
+# htpdate will run on system boot as daemon and at every network restart
+# (IF UP). However you can disable each one uncommenting the following lines.
+# But IF YOUR SYSTEM ARE USING SYSTEMD (Debian Jessie and newer use it!),
+# the first line will be ignored. You can use '# systemctl disable htpdate'
+# to disable htpdate on boot and '# systemctl enable htpdate' to reenable it.
+# HTP_DAEMON=no
+# HTP_IFUP=no
+
+# If you have a HTTP proxy, uncomment the following line and change the
+# values.
+# HTP_PROXY="-P myproxy-xyz.com:8080"
+
+# In the next line you should put HTTP servers. Note that htpdate uses
+# the timestamps extracted from headers to synchronize the time. You
+# must to use reliable servers only. Remember: you can use any site, not
+# specifics NTP site only.
+HTP_SERVERS="debian.org kernel.org 1.1.1.1"
+
+# The general options can be viewed with '$ htpdate -h'. However, you can
+# keep the current options, that works fine.
+HTP_OPTIONS="-D -s"
