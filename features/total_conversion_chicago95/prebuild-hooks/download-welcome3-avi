@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-. ../scripts/functions.sh
+. ../scripts/functions.bash
 
 check_program_exists youtube-dl
 
@@ -9,5 +9,9 @@ TARGET_DIR=/usr/local/share/Chicago95
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
 URL="https://www.youtube.com/watch?v=MaU5ED3LyXM"
+FILENAME="welcome3.avi"
 
-youtube-dl --format best --output "${DEST_DIR}/welcome3.avi" ${URL}
+FILE=$(get_cached "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/" || {
+  youtube-dl --format best --output "${DEST_DIR}/${FILENAME}" ${URL} \
+    && cache_store "${DEST_DIR}/${FILENAME}"
+}
