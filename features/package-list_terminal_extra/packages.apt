@@ -1,4 +1,4 @@
 cutycapt                # capture WebKit's rendering of a web page into a variety of vector and bitmap formats (SVG, PDF, PNG, JPEG..)
 dvipng                  # Konvertiert DVI-Dateien in PNG-Grafiken
-hopenpgp-tools          # hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
+# blocked by freeze: hopenpgp-tools          # hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
 wkhtmltopdf             # convert html to pdf or image using WebKit

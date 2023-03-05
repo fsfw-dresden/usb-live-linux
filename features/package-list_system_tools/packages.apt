@@ -10,7 +10,8 @@ cryptsetup-initramfs            # Festplattenverschlüsselung - initramfs integr
 gdisk                           # Textmodus-Partitionierungswerkzeug GPT fdisk
 # ? gpart                       # Partitionierungsprogramm (Konsolenvariante)
 discover                        # Hardware-Erkennungs-System
-cpupower-gui                    # utility to change the CPU frequency and governor
+# Updating cpupower-gui would introduce bugs in testing: cpupower-gui                    # utility to change the CPU frequency and governor
+< https://github.com/vagnum08/cpupower-gui/releases/download/v1.0.0/cpupower-gui_1.0.0-1_all.deb
 
 installation-report             # Hilfstool für Bugreports
 reportbug                       # Werkzeug, um Fehler (Bugs) in Debian und abgeleiteten Distributionen relativ schmerzfrei zu melden

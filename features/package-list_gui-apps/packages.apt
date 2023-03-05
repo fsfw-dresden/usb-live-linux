@@ -7,7 +7,7 @@ meld                            # graphical diff … recursive  directory diffs
 remmina                         # remote desktop client
 remmina-plugin-vnc              # VNC plugin for Remmina
 remmina-plugin-rdp              # RDP plugin for Remmina
-remmina-plugin-spice            # Spice plugin for Remmina
+# b0rk remmina-plugin-spice            # Spice plugin for Remmina
 
 kdeconnect                      # integrate linux desktop with android smartphone
 

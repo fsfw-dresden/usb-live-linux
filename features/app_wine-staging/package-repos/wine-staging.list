@@ -1,1 +1,2 @@
 deb https://dl.winehq.org/wine-builds/debian/ bullseye main
+deb https://dl.winehq.org/wine-builds/debian/ bookworm main

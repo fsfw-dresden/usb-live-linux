@@ -1,3 +1,3 @@
-Package: libass9:any libbluray2:any libfdk-aac2:any libmp3lame0:any libudfread0:any libvpx6:any handbrake*
+Package: libass9:any libbluray2:any libfdk-aac2:any libmp3lame0:any libudfread0:any libvpx6:any handbrake* libdav1d6:any libsvtav1enc1:any libx264-164:any libx265-199:any libzimg2:any
 Pin: origin /deb.multimedia/
 Pin-Priority: 500

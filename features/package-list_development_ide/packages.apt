@@ -22,7 +22,7 @@ geany-plugin-extrasel           # Blockauswahlmodus für Geany
 geany-plugin-projectorganizer   # Projektverwaltungsplugin für Geany
 
 eric                            # Vollständige integrierte Python-Entwicklungsumgebung
-spyder3                         # Python-IDE für Wissenschaftler (Python 3)
+# Too young spyder3                         # Python-IDE für Wissenschaftler (Python 3)
 python3-rope                    # Empfehlung von Spyder3 (Python refactoring library)
 
 qtcreator                       # IDE für C++ incl. QT-Framework

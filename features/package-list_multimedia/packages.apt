@@ -18,7 +18,8 @@ mixxx                           # Digital Disc Jockey Interface
 mkchromecast-pulseaudio         # Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
 pavucontrol                     # PulseAudio Volume Control
-playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
+# abandoned upstream playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
+# soundstretch  (command line) and audacity (gui)
 soundconverter                  # simple sound converter application
 transcriber                     # Programm zum Transkripieren (z.B. von Interviews)
 xcfa				# extract the contens of Audio-CDs and convert musical audio files
@@ -40,7 +41,7 @@ qstopmotion                     # Application for creating stop-motion animation
 v4l-utils                       # Collection of command line video4linux utilities
 ogmtools                        # Dient der Bearbeitung von OGG-Streams
 gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
-lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
+# unsatisfiable dependency lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
 slowmovideo                     # creates slow-motion videos from your footage
 mplayer                         # movie player for Unix-like systems
 smplayer-l10n                   # Qt5 front-end for mplayer + translation

@@ -1,2 +1,2 @@
-pandoc-citeproc         # Literaturverwaltungserweiterung für Pandoc
+# not needed; upstream dead pandoc-citeproc         # Literaturverwaltungserweiterung für Pandoc
 pandoc                  # Multiformatkonverter

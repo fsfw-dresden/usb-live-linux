@@ -14,7 +14,7 @@ splint
 
 biosyntax-vim
 vim-ale
-vim-asciidoc
+# vim-asciidoc removed from bookworm
 vim-fugitive
 vim-gitgutter
 vim-julia

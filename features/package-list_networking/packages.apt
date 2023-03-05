@@ -13,4 +13,4 @@ usbmuxd                         # USB-Multiplexer-Daemon für iPhone- und iPod-T
 
 dnsmasq-base                    # Kleiner zwischenspeichernder DNS-Proxy und DHCP/TFTP-Server
 
-crda                            # Central Regulatory Domain Agent für kabellose Geräte
+# obsolete due to kernel changes crda                            # Central Regulatory Domain Agent für kabellose Geräte
