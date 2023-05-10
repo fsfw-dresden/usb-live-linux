@@ -15,6 +15,10 @@
       "url": "http://duckduckgo.com/?q=%s&km=l&kp=-1&ks=s&kx=o&k1=-1"
     },
     {
+      "name": "Websites: You.com",
+      "url": "https://you.com/search?q=%s"
+    },
+    {
       "name": "Websites: Google",
       "url": "http://google.com/search?q=%s"
     },
@@ -123,6 +127,9 @@
       "is_submenu": true,
       "engines": [
         {
+          "name": "OpenStreetMap",
+          "url": "https://www.openstreetmap.org/search?query=%s"
+        {,
           "name": "Maps: Bing",
           "url": "https://www.bing.com/maps/default.aspx?q=%s"
         },
@@ -149,6 +156,10 @@
           "name": "Google News",
           "url": "https://www.google.de/search?q=%s&tbm=nws&tbs=sbd:1&qscrl=1"
         },
+        {
+          "name": "Hacker News",
+          "url": "https://hn.algolia.com/?query=%s"
+        {,
         {
           "name": "Twitter",
           "url": "https://twitter.com/search?q=%s"
