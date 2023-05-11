@@ -49,8 +49,6 @@ set pastetoggle=<F3>
 noremap <C-U> :earlier 1f<CR>
 
 nnoremap - :Switch<cr>
-noremap p P
-noremap P p
 map <C-D> <C-A>
 map <C-E> <C-W>
 map <C-G> :echo expand('%:p ') strftime('%t (%F %T)', getftime(expand('%')))<CR>
@@ -58,9 +56,6 @@ map <C-L> :TlistToggle<CR>
 map <C-J> :N<CR>
 map <C-K> :n<CR>
 imap <S-Tab> <C-V><Tab>
-
-" swap word forward/backward search
-set langmap=#*,*#
 
 " Buffers menu
 set wildchar=<Tab> wildmenu wildmode=full
