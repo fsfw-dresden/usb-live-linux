@@ -168,7 +168,12 @@ mkdir -p "${BASE_DIR}"
   https://klimafakten.de/sites/default/files/downloads/ipcc-posterar62021en210812a3.pdf
   https://klimafakten.de/sites/default/files/downloads/klimafaktenbroschuere2017low.pdf
   https://klimafakten.de/sites/default/files/downloads/plurvgrundkurs-desinformationa3web.pdf
+  https://klimafakten.de/sites/default/files/downloads/waswiruebersklimawissen-akt202222-09-23web.pdf
   https://klimafakten.de/sites/default/files/images/reports/printversion/branchenberichtarbeitundbeschaeftigung.pdf
+  https://klimakommunikation.klimafakten.de/wp-content/uploads/HandbuchKlimakommunikation_Gesamt-mitLinks_final.pdf
+  https://klimakommunikation.klimafakten.de/wp-content/uploads/HandbuchKlimakommunikation_Materialsammlung.pdf
+  https://skepticalscience.com/docs/Consensus_Handbook_German_A4.pdf
+  https://legunet.de/fileadmin/legunet/Dokumente/legnet_UL_Schule_Vorteile_Koernerleguminosen_230224.pdf
   "
 
   DEST_DIR=${BASE_DIR}/books
