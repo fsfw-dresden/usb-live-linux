@@ -49,6 +49,7 @@ fatattr                 # control attributes on a FAT filesystem
 fatrace                 # report system wide file access events
 finger                  # displays information about the system users
 #       fq              # jq for binary formats (will be in bookworm)
+glances                 # curses-based monitor for CPU, load, memory, network bandwidth, disk I/O, disk use, process
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 gstreamer1.0-tools      # gst-inspect, gst-launch, gst-stats et al.

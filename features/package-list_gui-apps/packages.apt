@@ -66,6 +66,10 @@ materia-gtk-theme               # Material Design theme for GNOME/GTK+ based des
 # ?
 # ? ffplay                      # simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
 pulseeffects                    # advanced system-wide equalizer for PulseAudio
+calf-plugins
+lsp-plugins
+zam-plugins
+
 # ? webcamoid                   # full featured webcam capture application, can do a lot of funny things (+9,328 kB)
 # ? guake                       # Drop-down terminal (GTK)
 # ? yakuake                     # Drop-down terminal (KDE)

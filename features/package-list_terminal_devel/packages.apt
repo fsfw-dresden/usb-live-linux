@@ -7,8 +7,12 @@ deborphan                       # find unused packages (with no other packages d
 devscripts                      # scripts to make the life of a Debian Package maintainer easier
 eatmydata                       # small LD_PRELOAD library to transparently disable fsync and friends
 git-extras                      # extra git commands to easily solve typical tasks
+ipython3                        # Enhanced interactive Python 3 shell
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
+manpages-posix-dev              # Manual pages about using a POSIX system for development
+pagemon                         # ncurses based interactive memory/page monitoring tool
 podman                          # daemon-less alternative to Docker for managing Pods, Containers, and Container Images
+pup                             # command-line HTML processor to filter using CSS selectors
 tig                             # ncurses-based text-mode interface for Git
 visidata                        # interactive multitool for tabular data
