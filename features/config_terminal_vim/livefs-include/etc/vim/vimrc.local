@@ -29,7 +29,6 @@ let mapleader=" "
 " Plugins
 packadd! bufexplorer
 packadd! closetag
-packadd! EnhancedCommentify
 packadd! nerd-commenter
 packadd! supertab
 packadd! taglist
