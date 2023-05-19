@@ -55,7 +55,6 @@ select_live_iso() {
 }
 
 select_install_variant() {
-    shopt -s extglob
     OPTIONS=()
     for VAR in $(command ls -Ltd variants.install/*/ | sed 's|/$||')
     do
