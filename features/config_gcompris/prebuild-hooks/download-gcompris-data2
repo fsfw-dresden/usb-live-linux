@@ -1,0 +1,26 @@
+#!/bin/bash
+# Preload gcompris data2 files. They should be packaged instead, but aren't yet.
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/KDE/gcompris-qt/data2
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+AUDIO_FORMAT="ogg"
+BASE_URL="https://cdn.kde.org/gcompris/data2"
+LANG="de"
+
+TARGETS=(
+  "words/words.rcc"
+  "backgroundMusic/backgroundMusic-${AUDIO_FORMAT}.rcc"
+  "voices-${AUDIO_FORMAT}/voices-${LANG}.rcc"
+)
+
+for TARGET in ${TARGETS[@]}
+do
+  FILE=$(download_file_cached "${BASE_URL}/${TARGET}") \
+    && install -vD "${FILE}" "${DEST_DIR}/${TARGET}"
+done

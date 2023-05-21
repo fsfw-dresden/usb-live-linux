@@ -1,4 +1,6 @@
 #!/bin/sh
+# This hook will insert specific location into xfce panel's weather
+# plugin settings, if one exists.
 
 # shellcheck disable=SC2016
 

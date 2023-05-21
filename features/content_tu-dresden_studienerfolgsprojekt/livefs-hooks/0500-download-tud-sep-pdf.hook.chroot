@@ -1,9 +1,0 @@
-#!/bin/sh -x
-
-PDF_URL="https://cloud.opensourceecology.de/s/sKrsyG8YQXJYdZE/download"
-
-TARGETDIR="/etc/skel/Desktop"
-FILENAME="Übersicht Studienerfolgsprojekt.pdf"
-
-mkdir -pv ${TARGETDIR}
-wget -v --output-document="${TARGETDIR}/${FILENAME}" ${PDF_URL}

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/fonts
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://cloud.opensourceecology.de/s/jiNdswgiBWbrNqw/download"
+NAME="04b_19.zip"
+FILE=$(download_file_cached ${URL} ${NAME}) \
+  && unzip -d "${DEST_DIR}" "${FILE}" "04B_19__.TTF"
