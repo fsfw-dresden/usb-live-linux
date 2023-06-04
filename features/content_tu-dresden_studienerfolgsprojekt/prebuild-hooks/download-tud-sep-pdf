@@ -1,8 +1,8 @@
-#!/bin/bash -x
+#!/bin/bash
 
 set -e
 
-. /usr/src/usb-live-linux/scripts/functions.bash
+. ../scripts/functions.bash
 
 PREFIX=config/includes.chroot
 TARGET_DIR=/etc/skel/Desktop
