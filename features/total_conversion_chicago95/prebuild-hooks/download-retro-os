@@ -32,9 +32,12 @@ cp -v ${FILE} ${DEST_DIR}
     qemu-nbd --socket=${SOCKET} "${DEST_DIR}/${FILENAME}" &
     nbdfuse ${VFAT} --command nbdkit --stdin nbd socket=${SOCKET} --filter=partition partition=1 &
     sleep 1
-    mount -o loop ${VFAT} ${MNTDIR} && \
+    mount -vo loop ${VFAT} ${MNTDIR} && \
       printf "smartdrv\r\n" >> ${MNTDIR}/${TARGET}
-    umount --detach-loop ${MNTDIR}
+    umount -v --detach-loop ${MNTDIR}
     sleep 1
     umount ${PARTDIR}
+    while [ -e ${SOCKET} ]; do
+      sleep 1
+    done
 } || true
