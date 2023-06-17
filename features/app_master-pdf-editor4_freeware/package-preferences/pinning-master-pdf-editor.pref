@@ -1,0 +1,5 @@
+# Do not upgrade this unless explicitly told to
+# v4.3.89 is the most recent one without watermarking
+Package: master-pdf-editor
+Pin: version 4.3.89
+Pin-Priority: 600

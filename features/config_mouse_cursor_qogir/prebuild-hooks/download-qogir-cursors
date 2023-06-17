@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/share/icons
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://cloud.opensourceecology.de/s/X3zEd8DqaozHpga/download"
+NAME="01-Qogir-cursors.tar.xz"
+FILE=$(download_file_cached ${URL} ${NAME}) \
+  && tar -xaC "${DEST_DIR}" -f "${FILE}"

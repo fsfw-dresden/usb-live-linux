@@ -1,0 +1,8 @@
+#!/bin/sh
+# The schul-proxy redirection setup should be disabled on shutdown, too.
+# It is cleared on net disconnect in /etc/NetworkManager/dispatcher.d/99-dresden-schulen
+
+TAG="dresden-schulen-proxy"
+
+logger -t ${TAG} "masking redsocks magic proxy gateway before shutdown"
+systemctl mask redsocks

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/etc/skel/Desktop
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://cloud.opensourceecology.de/s/sKrsyG8YQXJYdZE/download"
+NAME="Übersicht Studienerfolgsprojekt.pdf"
+FILE=$(download_file_cached ${URL} "${NAME}") \
+  && install -Dp "${FILE}" "${DEST_DIR}/${NAME}"

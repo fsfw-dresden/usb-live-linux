@@ -1,0 +1,4 @@
+#!/bin/sh
+# Filter JSON and JSON Lines data with Python syntax (similar to jq)
+. /etc/profile.d/pipx-global-environment.sh
+pipx install jello

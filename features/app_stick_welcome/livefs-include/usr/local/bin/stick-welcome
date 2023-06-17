@@ -1,0 +1,104 @@
+#!/usr/bin/python3
+
+import os
+import signal
+import sys
+
+from PyQt5.uic import loadUi
+from PyQt5.QtCore import QSize, QUrl, QProcess
+from PyQt5.QtGui import *
+from PyQt5.QtMultimedia import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtWebEngineWidgets import * 
+
+class PortalWindow(QDialog):
+    ressourceDir = "/usr/local/share/stick-welcome"
+
+    def __init__(self):
+        super(PortalWindow, self).__init__()
+        self.setupTrayIcon()
+        loadUi(os.path.join(PortalWindow.ressourceDir, "portal.ui"), self)
+        self.welcomeTabInstallStickButton.clicked.connect(self.installClicked)
+        self.installTabCalamaresPushButton.clicked.connect(self.calamaresClicked)
+
+    def setupTrayIcon(self):
+        self.anitray = AnimatedSystemTrayIcon(QMovie(os.path.join(PortalWindow.ressourceDir, "upload.wikimedia.org--wikipedia--commons--thumb--9--9e--GIF_KARRATUA.gif--240px-GIF_KARRATUA.gif")))
+        self.anitray.setVisible(True)
+        self.anitray.activated.connect(self.iconActivated)
+
+        self.trayMenu = QMenu()
+        #self.fooAction = QAction("broken: message bubble")
+        #self.fooAction.triggered.connect(lambda: self.anitray.showMessage("title", "message"))
+        #self.trayMenu.addAction(self.fooAction)
+
+        self.quitAction = QAction("Quit")
+        self.quitAction.triggered.connect(app.quit)
+        self.trayMenu.addAction(self.quitAction)
+
+        self.anitray.setContextMenu(self.trayMenu)
+        
+    def iconActivated(self, reason):
+        sys.stdout.write("iconActivated(" + str(reason) +")\n")
+        #sys.stdout.write("windowState: " + str(self.windowStates()) +")\n")
+        if self.isVisible():
+            self.hide()
+        else:
+            self.showNormal()
+
+    def installClicked(self):
+        self.tabWidget.setCurrentIndex(4);
+
+    def calamaresClicked(self):
+        self.calamares = QProcess()
+        self.calamares.start("install-debian")
+
+
+class AnimatedSystemTrayIcon(QSystemTrayIcon):
+    def __init__(self, movie):
+        super(AnimatedSystemTrayIcon, self).__init__()
+        self.icon = QIcon()
+
+        self.loop = 1
+
+        self.iconMovie = movie
+        self.frameCount = self.iconMovie.frameCount()
+        self.iconMovie.frameChanged.connect(self.updateIconFrame)
+        #sys.stdout.write("size is " + str(self.iconMovie.scaledSize()) + "\n")
+        self.iconMovie.start()
+
+        self.mediaplay = QMediaPlayer()
+
+        #QSound.play("/usr/lib/libreoffice/share/gallery/sounds/pluck.wav")
+
+    def updateIconFrame(self):
+        if debug == 1:
+            sys.stdout.write("showing frame " + \
+                str(self.iconMovie.currentFrameNumber() + 1) + "/" + \
+                str(self.frameCount) + ", loop " + str(self.loop) + ", time to next frame is " + \
+                str(self.iconMovie.nextFrameDelay()) + ", speed is " + \
+                str(self.iconMovie.speed()) + "\n")
+        if self.iconMovie.currentFrameNumber() == self.frameCount - 1:
+            self.loop += 1
+
+        if self.loop > 500:
+            self.iconMovie.setPaused(True)
+            #self.playlist = QMediaPlaylist()
+            #self.playlist.addMedia(QMediaContent(QUrl.fromLocalFile("/usr/lib/libreoffice/share/gallery/sounds/drama.wav")))
+            #self.playlist.addMedia(QMediaContent(QUrl.fromLocalFile("/usr/lib/libreoffice/share/gallery/sounds/cow.wav")))
+            #self.mediaplay.setPlaylist(self.playlist)
+            #self.mediaplay.play()
+
+        self.icon.addPixmap(self.iconMovie.currentPixmap())
+        self.setIcon(self.icon)
+        #self.iconMovie.setSpeed(self.iconMovie.speed() + 1)
+
+
+if __name__ == '__main__':
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+    app = QApplication(sys.argv)
+    app.setQuitOnLastWindowClosed(False)
+    debug = 0
+
+    portal = PortalWindow()
+
+    sys.exit(app.exec())

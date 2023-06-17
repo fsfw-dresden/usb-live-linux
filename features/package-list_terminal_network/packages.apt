@@ -14,7 +14,9 @@ mtr-tiny                # ncurses traceroute tool
 rfkill                  # Wlan, Bluetooth & Co. an-/ abschalten
 speedometer             # measure and display the rate of data across a network connection
 ssh-audit               # tool for ssh server auditing
+tftp                    # Trivial file transfer protocol client, used to recover / flash routers
 traceroute              # displays the route used by IP packets on their way
+tshark                  # network traffic analyzer (console version of wireshark)
 wavemon                 # watch signal and noise levels
 wireless-tools          # zum Bearbeiten von WLAN Einstellungen
 youtube-dl              # downloader of videos from YouTube and other sites

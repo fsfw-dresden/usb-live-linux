@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Live-Stick Welcome Portal Mockup
+Name[de]=Live-Stick-Willkommensportal Vorversion
+Comment=(🚧 work in progress 🚧)
+Icon=emblem-generic
+Categories=System
+Exec=sh -c "echo 1000 > /proc/$$/oom_score_adj; exec stick-welcome"
+Type=Application
+StartupNotify=false

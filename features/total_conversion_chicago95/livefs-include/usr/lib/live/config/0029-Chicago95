@@ -22,6 +22,7 @@ Main()
 			do
 				[ -f ${FILE} ] && rm -v ${FILE} || true
 			done
+			sed -i 's/Icon=.*/Icon=firefox/' /etc/skel/.config/xfce4/panel/launcher-10/15707679321.desktop
 			plymouth-set-default-theme -R Chicago95
 			rsync -aih /usr/local/share/Chicago95/etc / || true
 			#cp -ar /usr/local/share/Chicago95/etc /

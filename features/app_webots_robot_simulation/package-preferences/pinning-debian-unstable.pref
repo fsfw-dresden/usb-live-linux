@@ -1,0 +1,4 @@
+# pin priority below stable and testing
+Package: *
+Pin: release a=unstable, o=Debian
+Pin-Priority: 98

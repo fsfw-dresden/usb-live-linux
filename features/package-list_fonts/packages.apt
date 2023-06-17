@@ -34,6 +34,8 @@ fonts-ferrite-core              # geometric shaped font lending it a futurist lo
 fonts-tomsontalks               # comic lettering font created with online comics in mind
 fonts-texgyre                   # OpenType fonts based on URW Fonts
 
+font-manager                    #  a way for average users to easily manage desktop fonts
+
 # ? powerdevil                  # KDE power settings (& brightness control keys)
 # ? kde-config-gtk-style-preview # KDE configuration module for GTK+ 2.x and GTK+ 3.x styles + preview
 # ? gtk2-engines-oxygen         # Oxygen widget theme for GTK+-based applications
