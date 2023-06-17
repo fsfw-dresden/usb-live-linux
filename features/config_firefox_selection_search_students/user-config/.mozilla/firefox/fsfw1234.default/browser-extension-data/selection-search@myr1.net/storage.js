@@ -129,7 +129,8 @@
         {
           "name": "OpenStreetMap",
           "url": "https://www.openstreetmap.org/search?query=%s"
-        {,
+        },
+        {
           "name": "Maps: Bing",
           "url": "https://www.bing.com/maps/default.aspx?q=%s"
         },
@@ -159,7 +160,7 @@
         {
           "name": "Hacker News",
           "url": "https://hn.algolia.com/?query=%s"
-        {,
+        },
         {
           "name": "Twitter",
           "url": "https://twitter.com/search?q=%s"
