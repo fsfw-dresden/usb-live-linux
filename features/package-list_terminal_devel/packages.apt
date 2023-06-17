@@ -1,6 +1,7 @@
 android-sdk-platform-tools      # Tools for interacting with an Android platform (pulls in adb, fastboot)
 bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
 bmap-tools                      # flash image files to block devices using the block map
+datamash                        # numeric, textual and statistical operations on input textual data files
 debconf-utils                   # small utilities for debconf developers
 debootstrap                     # used to create a Debian base system from scratch
 deborphan                       # find unused packages (with no other packages depending on them)
