@@ -23,7 +23,8 @@ firmware-bnx2x
 firmware-brcm80211
 firmware-cavium
 firmware-intel-sound
-firmware-intelwimax
+# firmware-intelwimax
+# 20220815: intelwimax: Drop Intel WiMax package (unsupported since 5.10+) 
 firmware-ipw2x00
 # ? firmware-ivtv
 firmware-libertas
@@ -40,6 +41,6 @@ firmware-zd1211
 
 ###  Firmware für Wlan - Hardware
 
-firmware-b43-installer          # installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
+#firmware-b43-installer          # installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
 
 firmware-iwlwifi                # wird von Thinkpads (getestet mit einem T420) gebraucht
