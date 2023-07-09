@@ -1,7 +1,0 @@
-# libcurl3-gnutls 7.74 breaks git checkouts (2021-04-20)
-# fatal: unable to access 'https://github.com/…/…/': Failed sending HTTP2 data
-# c.f. https://superuser.com/questions/1642858/git-throws-fatal-unable-to-access
-
-Package: libcurl3-gnutls
-Pin: release a=buster-backports
-Pin-Priority: 499

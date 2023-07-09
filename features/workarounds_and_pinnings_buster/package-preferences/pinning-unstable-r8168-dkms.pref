@@ -1,3 +1,0 @@
-Package: r8168-dkms
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500

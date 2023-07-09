@@ -1,4 +1,0 @@
-# Prefer newest part release
-Package: ldraw-parts
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500

@@ -1,4 +1,0 @@
-# workaround 2021-02-21: prevent pulling in any node packages from backports
-Package: npm node-*
-Pin: release a=stable, o=Debian
-Pin-Priority: 600

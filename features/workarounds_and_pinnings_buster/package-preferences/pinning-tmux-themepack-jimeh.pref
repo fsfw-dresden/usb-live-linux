@@ -1,6 +1,0 @@
-# workaround 2020-12-06: pin newer version of tmux-themepack-jimeh
-# compatible with upgraded tmux 3.1c that entered backports
-
-Package: tmux-themepack-jimeh
-Pin: release a=unstable, o=Debian
-Pin-Priority: 500
