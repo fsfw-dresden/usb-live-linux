@@ -25,18 +25,22 @@ select_target_device() {
     for DEVICE in /dev/{sd?,vd?,loop*}
     do
         DEVNAME=${DEVICE#/dev/}
+        # skip devices with no size, like empty card readers
         [ -e /sys/block/${DEVNAME}/size ] || continue
         SIZE=$(($(< /sys/block/${DEVNAME}/size) * 512))
         SIZESTR=$(numfmt --to=iec-i --suffix B ${SIZE})
         [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
+        # skip mounted devices
+        grep -Eqs "^${DEVICE}(${p}[0-9]*)*" /proc/mounts && continue
         NUMPARTITIONS=$(grep -c "${DEVNAME}${p}[[:digit:]]\+$" /proc/partitions | cat)
         [ ${SIZE} -eq 0 ] && continue
         BACKING=/sys/block/${DEVNAME}/loop/backing_file
         [ -e ${BACKING} ] && BACKING="$(<${BACKING}) " || BACKING=""
+        [[ "${BACKING}" =~ "^/run/live/" ]] && continue
         grep -qs 1 /sys/block/${DEVNAME}/removable || [[ -d /sys/block/${DEVNAME}/loop ]] && \
             OPTIONS+=(${DEVICE} "${SIZESTR} ${BACKING}(${NUMPARTITIONS} $(ngettext 'partition' 'partitions' ${NUMPARTITIONS}))")
     done
-    [ -z ${OPTIONS} ] && die "Could not find any suitable (loop) device!"
+    [ -z ${OPTIONS} ] && die "Could not find any suitable block device to install to!"
     TEXT="Please choose the target device for installation of the live system.\n(Only removable block and loop devices with non-zero size are listed)"
     TITLE="SELECT LIVE SYSTEM TARGET DEVICE"
     display_menu "${TITLE}" "${TEXT}" "${OPTIONS[@]}"
@@ -69,7 +73,7 @@ select_install_variant() {
 }
 
 define_first_partition_size() {
-    TEXT="Please define a size for the first partition, which is FAT32 and used for booting as well as for data exchange. The PortableApps.com packages will also be put here.\nFor the boot files to fit, specify at least 90MiB.\n\n"
+    TEXT="Please define a size for the first partition, which is FAT32 and used for booting as well as for data exchange. The PortableApps.com packages might also be put here.\nFor the boot files to fit, specify \Zr\Zbat least 100MiB.\Zn\n\n"
     TEXT+="  ${SIZE_MB_STICK} MiB storage device"
     TEXT+="- ${SIZE_MB_LIVE_SYSTEM} MiB Live System ISO\n"
     TEXT+="= $(( SIZE_MB_STICK - SIZE_MB_LIVE_SYSTEM )) MiB space for 1st (boot) & 3rd (persistence) partition\n"
@@ -100,7 +104,7 @@ determine_install_fundamentals() {
     [[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
 
     # proceed only if selected device is not mounted
-    grep -s "^${DEVICE}${p}[[:digit:]]* " /proc/mounts && die "partition(s) on ${DEVICE} currently mounted, not continuing!"
+    grep -qs "^${DEVICE}${p}[[:digit:]]* " /proc/mounts && lsblk ${DEVICE} && die "partition(s) on ${DEVICE} currently mounted, not continuing!"
 
     # the LIVE_IMAGE iso file can be given as second parameter or interactively selected
     { [ -f "artifacts/${2}" ] && LIVE_IMAGE="artifacts/${2}"; } || { [ -f "${2}" ] && LIVE_IMAGE="${2}"; } || LIVE_IMAGE="$(select_live_iso)"
