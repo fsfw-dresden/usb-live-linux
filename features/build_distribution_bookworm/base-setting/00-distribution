@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DISTRIBUTION=bookworm
+
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --distribution ${DISTRIBUTION}"
+
+#        -d|--distribution CODENAME
+#            defines the distribution of the resulting live system. This cur‐
+#            rently defaults to 'buster'. The value 'sid' can be used for De‐
+#            bian unstable.
