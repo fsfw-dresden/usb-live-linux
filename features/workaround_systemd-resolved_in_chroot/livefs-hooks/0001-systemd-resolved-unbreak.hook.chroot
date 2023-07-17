@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# systemd-resolved: new in bookworm / bullseye backports
+# and determined to cause trouble.. c.f.
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1032937
+
+mkdir -pv /run/systemd/resolve/
+cp -av /etc/.resolv.conf.systemd-resolved.bak /run/systemd/resolve/stub-resolv.conf
