@@ -9,4 +9,4 @@ BAK_FILE=/etc/.resolv.conf.systemd-resolved.bak
 [ -e "${BAK_FILE}" ] && {
   mkdir -pv /run/systemd/resolve/
   cp -av "${BAK_FILE}" /run/systemd/resolve/stub-resolv.conf
-}
+} || echo "Skipping systemd-resolved workaround because it hasn't been installed.."
