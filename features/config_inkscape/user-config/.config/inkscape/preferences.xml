@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <inkscape
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   version="1">
+   version="1"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">
   <group
-     id="toolbox"
-     secondary="0"
-     small="0">
-    <group
-       id="tools"
-       small="0" />
-  </group>
-  <group
-     id="window">
-    <group
-       id="task"
-       taskset="0" />
+     id="theme"
+     preferDarkTheme="0"
+     menuIcons="1">
   </group>
 </inkscape>
-
