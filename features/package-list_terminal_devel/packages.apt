@@ -1,4 +1,6 @@
 android-sdk-platform-tools      # Tools for interacting with an Android platform (pulls in adb, fastboot)
+adb                             # Android Debug Bridge: versatile command line tool for android device
+fastboot                        # command line tool for flashing Android deviceu
 bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
 bmap-tools                      # flash image files to block devices using the block map
 datamash                        # numeric, textual and statistical operations on input textual data files
@@ -13,7 +15,7 @@ make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
 manpages-posix-dev              # Manual pages about using a POSIX system for development
 pagemon                         # ncurses based interactive memory/page monitoring tool
-podman                          # daemon-less alternative to Docker for managing Pods, Containers, and Container Images
+poke                            # interactive, extensible editor for structured binary data
 pup                             # command-line HTML processor to filter using CSS selectors
 tig                             # ncurses-based text-mode interface for Git
 visidata                        # interactive multitool for tabular data

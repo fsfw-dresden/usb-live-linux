@@ -3,6 +3,8 @@ sonic-pi                # Live Coding for Everyone
 solfege                 # Ear training software
 lmms                    # Linux Multimedia Studio
 
+< https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.3/surge-xt-linux-x64-1.2.3.deb
+
 ### Misc
 fluid-soundfont-gm      # Fluid (R3) General MIDI SoundFont (GM)
 pulseaudio-module-jack  # jackd modules for PulseAudio sound server

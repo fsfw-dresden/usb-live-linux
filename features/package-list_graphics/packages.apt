@@ -6,7 +6,7 @@
 inkscape                        # Vektorbasiertes Zeichenprogramm
 inkscape-tutorials              # collection of hands-on tutorials (2.2MiB kompr., nur testing)
 inkscape-open-symbols           # Open source SVG symbol sets (1.6MB kompr.)
-< https://github.com/sozi-projects/Sozi/releases/download/v22.03.25/sozi_22.3.25-1648241936_amd64.deb   # sozi: Inkscape-Plugin für kreative Präsentationen
+< https://github.com/sozi-projects/Sozi/releases/download/v22.09-beta/sozi_22.9.23-1663961842_amd64.deb # sozi: Inkscape-Plugin für kreative Präsentationen
 scribus                         # DTP-Programm
 scribus-template                # Vorlagen
 gucharmap                       # Unicode character picker and font browser
