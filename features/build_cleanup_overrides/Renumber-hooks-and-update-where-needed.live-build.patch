@@ -1,0 +1,240 @@
+From 045de9bf6456d549317d4b90a369b760351446c7 Mon Sep 17 00:00:00 2001
+From: Roland Clobus <rclobus@rclobus.nl>
+Date: Sat, 16 Apr 2022 10:09:48 +0200
+Subject: [PATCH] Renumber hooks and update where needed
+
+See https://lists.debian.org/debian-live/2022/04/msg00014.html
+---
+ ....hook.chroot => 1000-create-mtab-symlink.hook.chroot} | 0
+ ...up.hook.chroot => 1010-enable-cryptsetup.hook.chroot} | 0
+ ...hook.chroot => 1020-create-locales-files.hook.chroot} | 0
+ ...ook.chroot => 5000-update-apt-file-cache.hook.chroot} | 0
+ ...k.chroot => 5010-update-apt-xapian-index.hook.chroot} | 0
+ ...ok.chroot => 5020-update-glx-alternative.hook.chroot} | 0
+ ...k.chroot => 5030-update-plocate-database.hook.chroot} | 9 ++++++++-
+ ...chroot => 5040-update-nvidia-alternative.hook.chroot} | 0
+ ...oot => 8000-remove-adjtime-configuration.hook.chroot} | 0
+ ....hook.chroot => 8010-remove-backup-files.hook.chroot} | 0
+ ...ok.chroot => 8020-remove-dbus-machine-id.hook.chroot} | 0
+ ...s.hook.chroot => 8030-truncate-log-files.hook.chroot} | 0
+ ...hroot => 8040-remove-mdadm-configuration.hook.chroot} | 0
+ ... => 8050-remove-openssh-server-host-keys.hook.chroot} | 0
+ ...chroot => 8060-remove-systemd-machine-id.hook.chroot} | 0
+ ...ok.chroot => 8070-remove-temporary-files.hook.chroot} | 2 --
+ ...c.hook.chroot => 8080-reproducible-glibc.hook.chroot} | 0
+ ....chroot => 8090-remove-ssl-cert-snakeoil.hook.chroot} | 0
+ ... => 8100-remove-udev-persistent-cd-rules.hook.chroot} | 0
+ ...=> 8110-remove-udev-persistent-net-rules.hook.chroot} | 0
+ ...k.chroot => 9000-remove-gnome-icon-cache.hook.chroot} | 2 +-
+ ...py.hook.chroot => 9010-remove-python-pyc.hook.chroot} | 2 +-
+ share/hooks/normal/9020-remove-man-cache.hook.chroot     | 6 ++++++
+ ...e-apt-sources-lists => 9030-remove-apt-sources-lists} | 0
+ share/hooks/normal/README                                | 8 ++++++++
+ 25 files changed, 24 insertions(+), 5 deletions(-)
+ rename share/hooks/normal/{0020-create-mtab-symlink.hook.chroot => 1000-create-mtab-symlink.hook.chroot} (100%)
+ rename share/hooks/normal/{0030-enable-cryptsetup.hook.chroot => 1010-enable-cryptsetup.hook.chroot} (100%)
+ rename share/hooks/normal/{0040-create-locales-files.hook.chroot => 1020-create-locales-files.hook.chroot} (100%)
+ rename share/hooks/normal/{0400-update-apt-file-cache.hook.chroot => 5000-update-apt-file-cache.hook.chroot} (100%)
+ rename share/hooks/normal/{0410-update-apt-xapian-index.hook.chroot => 5010-update-apt-xapian-index.hook.chroot} (100%)
+ rename share/hooks/normal/{0420-update-glx-alternative.hook.chroot => 5020-update-glx-alternative.hook.chroot} (100%)
+ rename share/hooks/normal/{0430-update-mlocate-database.hook.chroot => 5030-update-plocate-database.hook.chroot} (64%)
+ rename share/hooks/normal/{0440-update-nvidia-alternative.hook.chroot => 5040-update-nvidia-alternative.hook.chroot} (100%)
+ rename share/hooks/normal/{0100-remove-adjtime-configuration.hook.chroot => 8000-remove-adjtime-configuration.hook.chroot} (100%)
+ rename share/hooks/normal/{0110-remove-backup-files.hook.chroot => 8010-remove-backup-files.hook.chroot} (100%)
+ rename share/hooks/normal/{0120-remove-dbus-machine-id.hook.chroot => 8020-remove-dbus-machine-id.hook.chroot} (100%)
+ rename share/hooks/normal/{0140-remove-log-files.hook.chroot => 8030-truncate-log-files.hook.chroot} (100%)
+ rename share/hooks/normal/{0150-remove-mdadm-configuration.hook.chroot => 8040-remove-mdadm-configuration.hook.chroot} (100%)
+ rename share/hooks/normal/{0160-remove-openssh-server-host-keys.hook.chroot => 8050-remove-openssh-server-host-keys.hook.chroot} (100%)
+ rename share/hooks/normal/{0180-remove-systemd-machine-id.hook.chroot => 8060-remove-systemd-machine-id.hook.chroot} (100%)
+ rename share/hooks/normal/{0190-remove-temporary-files.hook.chroot => 8070-remove-temporary-files.hook.chroot} (86%)
+ rename share/hooks/normal/{0500-reproducible-glibc.hook.chroot => 8080-reproducible-glibc.hook.chroot} (100%)
+ rename share/hooks/normal/{0195-remove-ssl-cert-snakeoil.hook.chroot => 8090-remove-ssl-cert-snakeoil.hook.chroot} (100%)
+ rename share/hooks/normal/{0200-remove-udev-persistent-cd-rules.hook.chroot => 8100-remove-udev-persistent-cd-rules.hook.chroot} (100%)
+ rename share/hooks/normal/{0300-remove-udev-persistent-net-rules.hook.chroot => 8110-remove-udev-persistent-net-rules.hook.chroot} (100%)
+ rename share/hooks/normal/{0130-remove-gnome-icon-cache.hook.chroot => 9000-remove-gnome-icon-cache.hook.chroot} (74%)
+ rename share/hooks/normal/{0170-remove-python-py.hook.chroot => 9010-remove-python-pyc.hook.chroot} (82%)
+ create mode 100755 share/hooks/normal/9020-remove-man-cache.hook.chroot
+ rename share/hooks/normal/{0910-remove-apt-sources-lists => 9030-remove-apt-sources-lists} (100%)
+ create mode 100644 share/hooks/normal/README
+
+diff --git share/hooks/normal/0020-create-mtab-symlink.hook.chroot share/hooks/normal/1000-create-mtab-symlink.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0020-create-mtab-symlink.hook.chroot
+rename to share/hooks/normal/1000-create-mtab-symlink.hook.chroot
+diff --git share/hooks/normal/0030-enable-cryptsetup.hook.chroot share/hooks/normal/1010-enable-cryptsetup.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0030-enable-cryptsetup.hook.chroot
+rename to share/hooks/normal/1010-enable-cryptsetup.hook.chroot
+diff --git share/hooks/normal/0040-create-locales-files.hook.chroot share/hooks/normal/1020-create-locales-files.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0040-create-locales-files.hook.chroot
+rename to share/hooks/normal/1020-create-locales-files.hook.chroot
+diff --git share/hooks/normal/0400-update-apt-file-cache.hook.chroot share/hooks/normal/5000-update-apt-file-cache.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0400-update-apt-file-cache.hook.chroot
+rename to share/hooks/normal/5000-update-apt-file-cache.hook.chroot
+diff --git share/hooks/normal/0410-update-apt-xapian-index.hook.chroot share/hooks/normal/5010-update-apt-xapian-index.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0410-update-apt-xapian-index.hook.chroot
+rename to share/hooks/normal/5010-update-apt-xapian-index.hook.chroot
+diff --git share/hooks/normal/0420-update-glx-alternative.hook.chroot share/hooks/normal/5020-update-glx-alternative.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0420-update-glx-alternative.hook.chroot
+rename to share/hooks/normal/5020-update-glx-alternative.hook.chroot
+diff --git share/hooks/normal/0430-update-mlocate-database.hook.chroot share/hooks/normal/5030-update-plocate-database.hook.chroot
+similarity index 64%
+rename from share/hooks/normal/0430-update-mlocate-database.hook.chroot
+rename to share/hooks/normal/5030-update-plocate-database.hook.chroot
+index 03502fdeb..eb01841aa 100755
+--- share/hooks/normal/0430-update-mlocate-database.hook.chroot
++++ share/hooks/normal/5030-update-plocate-database.hook.chroot
+@@ -2,13 +2,20 @@
+ 
+ set -e
+ 
+-# Update the mlocate database.
++# Update the [mp]locate database.
+ #
+ # It is convenient for this to be already up to date on the live system, and it
+ # means that if the live system is later installed to a hard disk then less
+ # work will be required after installation.
+ 
++# Up to Bullseye: mlocate
+ if command -v updatedb.mlocate >/dev/null
+ then
+ 	updatedb.mlocate
+ fi
++
++# Bookworm and later: plocate
++if command -v updatedb.plocate >/dev/null
++then
++	updatedb.plocate
++fi
+diff --git share/hooks/normal/0440-update-nvidia-alternative.hook.chroot share/hooks/normal/5040-update-nvidia-alternative.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0440-update-nvidia-alternative.hook.chroot
+rename to share/hooks/normal/5040-update-nvidia-alternative.hook.chroot
+diff --git share/hooks/normal/0100-remove-adjtime-configuration.hook.chroot share/hooks/normal/8000-remove-adjtime-configuration.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0100-remove-adjtime-configuration.hook.chroot
+rename to share/hooks/normal/8000-remove-adjtime-configuration.hook.chroot
+diff --git share/hooks/normal/0110-remove-backup-files.hook.chroot share/hooks/normal/8010-remove-backup-files.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0110-remove-backup-files.hook.chroot
+rename to share/hooks/normal/8010-remove-backup-files.hook.chroot
+diff --git share/hooks/normal/0120-remove-dbus-machine-id.hook.chroot share/hooks/normal/8020-remove-dbus-machine-id.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0120-remove-dbus-machine-id.hook.chroot
+rename to share/hooks/normal/8020-remove-dbus-machine-id.hook.chroot
+diff --git share/hooks/normal/0140-remove-log-files.hook.chroot share/hooks/normal/8030-truncate-log-files.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0140-remove-log-files.hook.chroot
+rename to share/hooks/normal/8030-truncate-log-files.hook.chroot
+diff --git share/hooks/normal/0150-remove-mdadm-configuration.hook.chroot share/hooks/normal/8040-remove-mdadm-configuration.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0150-remove-mdadm-configuration.hook.chroot
+rename to share/hooks/normal/8040-remove-mdadm-configuration.hook.chroot
+diff --git share/hooks/normal/0160-remove-openssh-server-host-keys.hook.chroot share/hooks/normal/8050-remove-openssh-server-host-keys.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0160-remove-openssh-server-host-keys.hook.chroot
+rename to share/hooks/normal/8050-remove-openssh-server-host-keys.hook.chroot
+diff --git share/hooks/normal/0180-remove-systemd-machine-id.hook.chroot share/hooks/normal/8060-remove-systemd-machine-id.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0180-remove-systemd-machine-id.hook.chroot
+rename to share/hooks/normal/8060-remove-systemd-machine-id.hook.chroot
+diff --git share/hooks/normal/0190-remove-temporary-files.hook.chroot share/hooks/normal/8070-remove-temporary-files.hook.chroot
+similarity index 86%
+rename from share/hooks/normal/0190-remove-temporary-files.hook.chroot
+rename to share/hooks/normal/8070-remove-temporary-files.hook.chroot
+index fd220e030..21bc5ee6f 100755
+--- share/hooks/normal/0190-remove-temporary-files.hook.chroot
++++ share/hooks/normal/8070-remove-temporary-files.hook.chroot
+@@ -3,8 +3,6 @@
+ set -e
+ 
+ # Remove temporary files
+-rm -rf /var/cache/man/*
+-
+ for _DIRECTORY in /tmp /var/tmp
+ do
+ 	rm -rf ${_DIRECTORY}
+diff --git share/hooks/normal/0500-reproducible-glibc.hook.chroot share/hooks/normal/8080-reproducible-glibc.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0500-reproducible-glibc.hook.chroot
+rename to share/hooks/normal/8080-reproducible-glibc.hook.chroot
+diff --git share/hooks/normal/0195-remove-ssl-cert-snakeoil.hook.chroot share/hooks/normal/8090-remove-ssl-cert-snakeoil.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0195-remove-ssl-cert-snakeoil.hook.chroot
+rename to share/hooks/normal/8090-remove-ssl-cert-snakeoil.hook.chroot
+diff --git share/hooks/normal/0200-remove-udev-persistent-cd-rules.hook.chroot share/hooks/normal/8100-remove-udev-persistent-cd-rules.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0200-remove-udev-persistent-cd-rules.hook.chroot
+rename to share/hooks/normal/8100-remove-udev-persistent-cd-rules.hook.chroot
+diff --git share/hooks/normal/0300-remove-udev-persistent-net-rules.hook.chroot share/hooks/normal/8110-remove-udev-persistent-net-rules.hook.chroot
+similarity index 100%
+rename from share/hooks/normal/0300-remove-udev-persistent-net-rules.hook.chroot
+rename to share/hooks/normal/8110-remove-udev-persistent-net-rules.hook.chroot
+diff --git share/hooks/normal/0130-remove-gnome-icon-cache.hook.chroot share/hooks/normal/9000-remove-gnome-icon-cache.hook.chroot
+similarity index 74%
+rename from share/hooks/normal/0130-remove-gnome-icon-cache.hook.chroot
+rename to share/hooks/normal/9000-remove-gnome-icon-cache.hook.chroot
+index ab35a1d68..a102b0838 100755
+--- share/hooks/normal/0130-remove-gnome-icon-cache.hook.chroot
++++ share/hooks/normal/9000-remove-gnome-icon-cache.hook.chroot
+@@ -4,6 +4,6 @@ set -e
+ 
+ # Remove GNOME icon cache.
+ #
+-# This saves space some space.
++# This saves some space.
+ 
+ rm -f /usr/share/icons/*/icon-theme.cache
+diff --git share/hooks/normal/0170-remove-python-py.hook.chroot share/hooks/normal/9010-remove-python-pyc.hook.chroot
+similarity index 82%
+rename from share/hooks/normal/0170-remove-python-py.hook.chroot
+rename to share/hooks/normal/9010-remove-python-pyc.hook.chroot
+index ff705838f..b334865e7 100755
+--- share/hooks/normal/0170-remove-python-py.hook.chroot
++++ share/hooks/normal/9010-remove-python-pyc.hook.chroot
+@@ -2,7 +2,7 @@
+ 
+ set -e
+ 
+-# Remove Python *.py files.
++# Remove Python *.pyc files.
+ #
+ # This removes byte-compiled Python modules to save some space.
+ 
+diff --git share/hooks/normal/9020-remove-man-cache.hook.chroot share/hooks/normal/9020-remove-man-cache.hook.chroot
+new file mode 100755
+index 000000000..5dad25641
+--- /dev/null
++++ share/hooks/normal/9020-remove-man-cache.hook.chroot
+@@ -0,0 +1,6 @@
++#!/bin/sh
++
++set -e
++
++# Remove the cache
++rm -rf /var/cache/man/*
+diff --git share/hooks/normal/0910-remove-apt-sources-lists share/hooks/normal/9030-remove-apt-sources-lists
+similarity index 100%
+rename from share/hooks/normal/0910-remove-apt-sources-lists
+rename to share/hooks/normal/9030-remove-apt-sources-lists
+diff --git share/hooks/normal/README share/hooks/normal/README
+new file mode 100644
+index 000000000..5c8b35d88
+--- /dev/null
++++ share/hooks/normal/README
+@@ -0,0 +1,8 @@
++Numbering scheme:
++
++1XXX: Preparation hooks (e.g. create-locales-files)
++5XXX: Update/regenerate cache files (e.g. update-apt-file-cache)
++8XXX: Remove files that should not be in a live image (e.g. remove-dbus-machine-id)
++9XXX: Remove files that reduce the size of the image (e.g. remove-python-pyc)
++
++This leaves three ranges 0XXX, 2XXX-4XXX and 6XXX-7XXX for your own hooks (but you can still use all the other numbers as well)
+-- 
+2.40.1
+
