@@ -59,30 +59,30 @@ zstd
 # If no container directory exists, initiate a debian stable install with our build dependencies
 if [ ! -d build/container ]
 then
-  printf "${COLOR_CYAN}Initializing a debian stable container for building..${COLOR_OFF}\n"
-  printf " (this will take a few minutes)\n"
-  printf "systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).\n"
-  printf "\n"
-  printf "\n"
+    printf "${COLOR_CYAN}Initializing a debian stable container for building..${COLOR_OFF}\n"
+    printf " (this will take a few minutes)\n"
+    printf "systemd-container is being used to automatically remove /proc and /sys mounts after this shell process has terminated. The container is being run with ${COLOR_CYAN}full root access to the host system${COLOR_OFF} at the moment (pull requests welcome for constraining that without breakage).\n"
+    printf "\n"
+    printf "\n"
 
-  # Debootstrap container using same cache location as for building the images
-  CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
-  mkdir -pv "${CACHE_DIR}"
-  debootstrap --verbose --cache-dir="${CACHE_DIR}" --include=$(echo ${DEPS}|tr ' ' ',') stable build/container http://ftp.debian.org/debian
+    # Debootstrap container using same cache location as for building the images
+    CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
+    mkdir -pv "${CACHE_DIR}"
+    debootstrap --verbose --cache-dir="${CACHE_DIR}" --include=$(echo ${DEPS}|tr ' ' ',') stable build/container http://ftp.debian.org/debian
 
-  # Create a container welcome prompt
-  {
-    echo "cd /mnt/usb-live-linux/"
-    echo "clear"
-    printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
-    echo "echo"
-    printf "echo 'Run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image',\n"
-    printf "echo '    ${COLOR_CYAN}scripts/build-distribution-suite${COLOR_OFF} to build distribution images for main variants'\n"
-    printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
-  } >> build/container/root/.bashrc
+    # Create a container welcome prompt
+    {
+        echo "cd /mnt/usb-live-linux/"
+        echo "clear"
+        printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
+        echo "echo"
+        printf "echo 'Run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image',\n"
+        printf "echo '    ${COLOR_CYAN}scripts/build-distribution-suite${COLOR_OFF} to build distribution images for main variants'\n"
+        printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
+    } >> build/container/root/.bashrc
 
-  # Copy custom aptitude config
-  cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d build/container/etc/apt/
+    # Copy custom aptitude config
+    cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d build/container/etc/apt/
 fi
 
 # Disable enforcing of seccomp filters for speed-up

@@ -10,15 +10,15 @@ COLOR_RED="\e[1;31m"
 COLOR_OFF="\e[0m"
 
 repo_root() {
-        git rev-parse --show-toplevel
+    git rev-parse --show-toplevel
 }
 
 cd_repo_root() {
-        # echo "current dir: " $(pwd)
-        cd $(dirname $(realpath "${0}"))
-        ROOT=$(repo_root)
-        # echo "setting working directory to repo root at ${ROOT}"
-        cd "${ROOT}"
+    # echo "current dir: " $(pwd)
+    cd $(dirname $(realpath "${0}"))
+    ROOT=$(repo_root)
+    # echo "setting working directory to repo root at ${ROOT}"
+    cd "${ROOT}"
 }
 
 is_root_user_or_die() {
@@ -26,9 +26,9 @@ is_root_user_or_die() {
 }
 
 check_program_exists() {
-        [ ! -z $(command -v "${@}") ] && return 0
-        echo "Program '${@}' does NOT exist in path, please install the corresponding package!"
-        return 1
+    [ ! -z $(command -v "${@}") ] && return 0
+    echo "Program '${@}' does NOT exist in path, please install the corresponding package!"
+    return 1
 }
 
 printf_escaped() {

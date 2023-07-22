@@ -82,10 +82,10 @@ ETX
 shopt -s extglob
 for INHERIT in variants.build/*/inherit/*
 do
-  DEST=$(basename ${INHERIT})
-  INHERIT=${INHERIT##variants.build/}
-  SOURCE=${INHERIT%%/*}
-  printf "  \"${SOURCE}\" -> \"${DEST}\" [ xlabel = \"based on\" ];\n" >> ${TARGET}
+    DEST=$(basename ${INHERIT})
+    INHERIT=${INHERIT##variants.build/}
+    SOURCE=${INHERIT%%/*}
+    printf "  \"${SOURCE}\" -> \"${DEST}\" [ xlabel = \"based on\" ];\n" >> ${TARGET}
 done
 
 cat >> ${TARGET} <<ETX
@@ -108,12 +108,12 @@ VARIANT_LINE="|\t\t\t\t"
 print_info "finding build variants to crawl.."
 for VARIANT in variants.build/*/
 do
-  VARIANT_NAME=$(basename ${VARIANT})
-  [[ "${VARIANT_NAME}" == "shared" ]] && continue
-  echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
-  # FIXME: ugly absolute URL, because of GitCDN workaround
-  VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/${VARIANT_NAME}"
-  VARIANT_LINE="${VARIANT_LINE}\t.>s|link:${VARIANT_URL}[${VARIANT_NAME//:/ }]"
+    VARIANT_NAME=$(basename ${VARIANT})
+    [[ "${VARIANT_NAME}" == "shared" ]] && continue
+    echo "adding ${VARIANT}, variant count = $((++VARIANT_COUNT))"
+    # FIXME: ugly absolute URL, because of GitCDN workaround
+    VARIANT_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/variants.build/${VARIANT_NAME}"
+    VARIANT_LINE="${VARIANT_LINE}\t.>s|link:${VARIANT_URL}[${VARIANT_NAME//:/ }]"
 done
 VARIANT_LINE="${VARIANT_LINE}\t|"
 
@@ -136,65 +136,65 @@ print_info "Searching for feature inclusion across build variants.."
 # https://unix.stackexchange.com/questions/393987/sort-an-array-of-pathnames-of-files-by-their-basenames/638463#638463
 for FEATURE in $(command ls -d features/*/ variants.build/*/features/*/ | sed -re 's/^(.*)(\/.+)$/\2\t\1\2/' | sort | sed -re 's/^.+\t(.*)$/\1/; s#/$##')
 do
-  FEATURE_NAME=$(basename ${FEATURE})
+    FEATURE_NAME=$(basename ${FEATURE})
 
-  # don't duplicate print linked features
-  [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants.build/[^/]+/features/${FEATURE_NAME} ]] && continue
+    # don't duplicate print linked features
+    [ -h "${FEATURE%/}" ] && [[ "${FEATURE}" =~ variants.build/[^/]+/features/${FEATURE_NAME} ]] && continue
 
-  # hide install_ features from build variants table
-  [[ "${FEATURE_NAME}" =~ ^install_.* ]] && continue
+    # hide install_ features from build variants table
+    [[ "${FEATURE_NAME}" =~ ^install_.* ]] && continue
 
-  # FIXME: ugly absolute URL, because of GitCDN workaround
-  FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
-  printf "|link:${FEATURE_URL}[${FEATURE_NAME}]" >> ${TARGET}
-  for VARIANT in variants.build/*/
-  do
-    VARIANT_NAME=$(basename ${VARIANT})
-    VARIANT=${VARIANT%/}
+    # FIXME: ugly absolute URL, because of GitCDN workaround
+    FEATURE_URL="https://github.com/fsfw-dresden/usb-live-linux/tree/master/${FEATURE}"
+    printf "|link:${FEATURE_URL}[${FEATURE_NAME}]" >> ${TARGET}
+    for VARIANT in variants.build/*/
+    do
+        VARIANT_NAME=$(basename ${VARIANT})
+        VARIANT=${VARIANT%/}
 
-    [[ "${VARIANT_NAME}" == "shared" ]] && continue
+        [[ "${VARIANT_NAME}" == "shared" ]] && continue
 
-    #ls -lah ${VARIANT}/features/*/depends/${FEATURE_NAME}
-    if [ -h ${VARIANT}/features/${FEATURE_NAME} ]
-    then
-      # feature linked from common features folder
-      printf "\t|✔" >> ${TARGET}
-    elif [ -d ${VARIANT}/features/${FEATURE_NAME} ]
-    then
-      # private feature of the variant
-      printf "\t|✔!" >> ${TARGET}
-    elif [ -e ${VARIANT}/features/${FEATURE_NAME}.disabled ]
-    then
-      # feature disabled in variant
-      printf "\t|✘" >> ${TARGET}
-    else
-      # check if is included indirectly / as dependency
-      FEATURE_DEPENDENCY_FOUND=0
-      for DEPENDENCY in $(command ls -d ${VARIANT}/features/*/depends/${FEATURE_NAME} 2>/dev/null | cat)
-      do
-        if [[ ${DEPENDENCY} =~ \.disabled ]]
+        #ls -lah ${VARIANT}/features/*/depends/${FEATURE_NAME}
+        if [ -h ${VARIANT}/features/${FEATURE_NAME} ]
         then
-          echo "skipping ${DEPENDENCY}"
-          continue
+            # feature linked from common features folder
+            printf "\t|✔" >> ${TARGET}
+        elif [ -d ${VARIANT}/features/${FEATURE_NAME} ]
+        then
+            # private feature of the variant
+            printf "\t|✔!" >> ${TARGET}
+        elif [ -e ${VARIANT}/features/${FEATURE_NAME}.disabled ]
+        then
+            # feature disabled in variant
+            printf "\t|✘" >> ${TARGET}
         else
-          echo "implicit dependency ${DEPENDENCY} found"
-          FEATURE_DEPENDENCY_FOUND=$((FEATURE_DEPENDENCY_FOUND + 1))
-        fi
-      done
+            # check if is included indirectly / as dependency
+            FEATURE_DEPENDENCY_FOUND=0
+            for DEPENDENCY in $(command ls -d ${VARIANT}/features/*/depends/${FEATURE_NAME} 2>/dev/null | cat)
+            do
+                if [[ ${DEPENDENCY} =~ \.disabled ]]
+                then
+                    echo "skipping ${DEPENDENCY}"
+                    continue
+                else
+                    echo "implicit dependency ${DEPENDENCY} found"
+                    FEATURE_DEPENDENCY_FOUND=$((FEATURE_DEPENDENCY_FOUND + 1))
+                fi
+            done
 
-      if [ ${FEATURE_DEPENDENCY_FOUND} -gt 0 ]
-      then
-        printf "\t|(✔) " >> ${TARGET}
-      else
-        # not existant
-        printf "\t| " >> ${TARGET}
-      fi
-    fi
-  done
-  FEATURE_METADATA="${FEATURE}/metadata"
-  FEATURE_DESCRIPTION=$([ ! -e ${FEATURE_METADATA} ] || sed -nr 's/description-en: *(.*)/\1/p' ${FEATURE_METADATA})
-  printf "\t|${FEATURE_DESCRIPTION}" >> ${TARGET}
-  printf "\n" >> ${TARGET}
+            if [ ${FEATURE_DEPENDENCY_FOUND} -gt 0 ]
+            then
+                printf "\t|(✔) " >> ${TARGET}
+            else
+                # not existant
+                printf "\t| " >> ${TARGET}
+            fi
+        fi
+    done
+    FEATURE_METADATA="${FEATURE}/metadata"
+    FEATURE_DESCRIPTION=$([ ! -e ${FEATURE_METADATA} ] || sed -nr 's/description-en: *(.*)/\1/p' ${FEATURE_METADATA})
+    printf "\t|${FEATURE_DESCRIPTION}" >> ${TARGET}
+    printf "\n" >> ${TARGET}
 done
 
 printf "|===\n" >> ${TARGET}
