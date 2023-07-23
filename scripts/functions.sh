@@ -31,24 +31,20 @@ check_program_exists() {
     return 1
 }
 
-printf_escaped() {
-    printf '%s\n' "$(echo -e "${@}" | sed 's/%/%%/g')"
-}
-
 print_info() {
-    printf_escaped "[ ℹ️  ] ${COLOR_CYAN}${*}${COLOR_OFF}\n" >&2
+    printf "[ ℹ️  ] ${COLOR_CYAN}${*}${COLOR_OFF}\n" >&2
 }
 
 print_warn() {
-    printf_escaped "[ ⚠️  ] ${COLOR_YELLOW}${*}${COLOR_OFF}\n" >&2
+    printf "[ ⚠️  ] ${COLOR_YELLOW}${*}${COLOR_OFF}\n" >&2
 }
 
 print_success() {
-    printf_escaped "[ ✅ ] ${COLOR_GREEN}${*}${COLOR_OFF}\n" >&2
+    printf "[ ✅ ] ${COLOR_GREEN}${*}${COLOR_OFF}\n" >&2
 }
 
 print_error() {
-    printf_escaped "[ 🛑 ] ${COLOR_RED}${*}${COLOR_OFF}\n" >&2
+    printf "[ 🛑 ] ${COLOR_RED}${*}${COLOR_OFF}\n" >&2
 }
 
 die() {
