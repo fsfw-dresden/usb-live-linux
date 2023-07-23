@@ -25,6 +25,25 @@ is_root_user_or_die() {
     [ "$(id -u)" = "0" ] || die "ERROR: no super-user privilege, please run as root or with sudo."
 }
 
+check_bootstrap_cache_version() {
+    VERSION=$1
+    CODENAME=$2
+
+    PATH_BOOTSTRAP_CACHE=../build/cache/bootstrap
+    PATH_DEB_VERSION=/etc/debian_version
+
+    # no problem if no bootstrap cache yet
+    [ -d ${PATH_BOOTSTRAP_CACHE} ] || return 0
+
+    # debian_version of bootstrap cache not matching?
+    grep -qs ^${VERSION} ${PATH_BOOTSTRAP_CACHE}${PATH_DEB_VERSION} || {
+        print_info "Found cached bootstrap stage ($(cat ${PATH_BOOTSTRAP_CACHE}${PATH_DEB_VERSION})) not matching selected build variant (${VERSION}: ${CODENAME})."
+        print_info "Moving build/cache/bootstrap folder out of the way so it will be regenerated."
+        DATESTR=$(date --date="$(stat --printf='%y' ${PATH_BOOTSTRAP_CACHE})" +'%F.%H%Mh')
+        mv -v ${PATH_BOOTSTRAP_CACHE} ${PATH_BOOTSTRAP_CACHE}.${DATESTR}
+    }
+}
+
 check_program_exists() {
     [ ! -z $(command -v "${@}") ] && return 0
     echo "Program '${@}' does NOT exist in path, please install the corresponding package!"

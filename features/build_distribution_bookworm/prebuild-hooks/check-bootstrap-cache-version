@@ -1,0 +1,4 @@
+#!/bin/sh
+. ../scripts/functions.sh
+
+check_bootstrap_cache_version 12 bookworm
