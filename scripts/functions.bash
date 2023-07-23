@@ -378,7 +378,7 @@ apply_features() {
                     prebuild-hooks)
                         for HOOK in ${FEATURE_PATH}/${FRAGMENT_PATH}/*
                         do
-                            sh -xc "${HOOK}"
+                            ${HOOK}
                         done
                         ;;
                     *)
