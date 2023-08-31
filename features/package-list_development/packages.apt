@@ -12,6 +12,10 @@ golang                          # Compiler und toolchain zur Programmiersprache 
 gfortran                        # GNU-Fortran-95-Compiler
 gnat                            # GNU Ada compiler
 
+rust-all                        # Rust systems programming language - all developer tools
+cargo-binutils
+cargo-debstatus                 # cargo debstatus is similar to cargo tree, but for Debian packaging
+
 ###  Revisions-Kontroll-Systeme
 
 git                             # Schnelles, skalierbares, verteiltes Revisions-Kontroll-System
