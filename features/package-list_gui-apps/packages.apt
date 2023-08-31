@@ -65,7 +65,6 @@ materia-gtk-theme               # Material Design theme for GNOME/GTK+ based des
 
 # ?
 # ? ffplay                      # simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
-pulseeffects                    # advanced system-wide equalizer for PulseAudio
 calf-plugins
 lsp-plugins
 zam-plugins

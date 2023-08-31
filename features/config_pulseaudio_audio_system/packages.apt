@@ -1,0 +1,6 @@
+mkchromecast-pulseaudio         # Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
+pavucontrol                     # PulseAudio Volume Control
+pulseaudio-equalizer            # Equalizer sink module for PulseAudio sound server
+pulseaudio-module-bluetooth     # enables PulseAudio to work with bluetooth devices
+pulseaudio-module-jack          # jackd modules for PulseAudio sound server
+pulseeffects                    # advanced system-wide equalizer for PulseAudio

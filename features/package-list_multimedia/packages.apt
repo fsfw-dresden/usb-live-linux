@@ -15,9 +15,7 @@ easytag                         # viewing, editing and writing the tags of diffe
 goobox                          # CD player and ripper with GNOME 3 integration
 libdvdcss2                      # Simple foundation for reading DVDs - runtime libraries
 mixxx                           # Digital Disc Jockey Interface
-mkchromecast-pulseaudio         # Pulseaudio dependencies to cast with mkchromecast (+10,3 MB)
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
-pavucontrol                     # PulseAudio Volume Control
 # abandoned upstream playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
 # soundstretch  (command line) and audacity (gui)
 soundconverter                  # simple sound converter application

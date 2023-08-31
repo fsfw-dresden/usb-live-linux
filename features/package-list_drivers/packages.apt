@@ -31,7 +31,6 @@ system-config-printer-udev      #  detect and configure printers automatically
 # extra filesystem / hardware support
 dislocker                       #  read/write encrypted BitLocker volumes
 gvfs-backends                   #  android / camera image file transfer (mtp) and other backends
-pulseaudio-module-bluetooth     #  enables PulseAudio to work with bluetooth devices
 samba-common-bin                #  Basic SMB/CIFS share tools
 # ? laptop-mode-tools           # automatically enabling laptop mode when the computer is working on batteries
 

@@ -7,7 +7,6 @@ lmms                    # Linux Multimedia Studio
 
 ### Misc
 fluid-soundfont-gm      # Fluid (R3) General MIDI SoundFont (GM)
-pulseaudio-module-jack  # jackd modules for PulseAudio sound server
 rtkit                   # allow real-time scheduling of user processes
 
 ### Plugins

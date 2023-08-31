@@ -1,0 +1,9 @@
+easyeffects
+gstreamer1.0-pipewire
+libpipewire-0.3-modules-x11
+pipewire-audio
+pipewire-jack
+pipewire-libcamera
+pipewire-tests
+qpwgraph
+vlc-plugin-pipewire
