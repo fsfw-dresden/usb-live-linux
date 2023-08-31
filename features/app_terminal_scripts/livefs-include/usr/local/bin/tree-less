@@ -29,4 +29,4 @@ export LESS="-SRiMJj.2~ --shift 5"
 
 [ ! -e "$1" ] && par=$1 && shift || par=;
 [ -z "$1" ] && dir=$(pwd) || dir=$(realpath "$@");
-cat <(tree -hDC --dirsfirst --timefmt '%F' $par "$dir"|sed -r 's/([^.])\.\//\1/') <(du -sh "$dir") | less
+cat <(tree -hDCF --dirsfirst --timefmt '%F' $par "$dir"|sed -r 's/([^.])\.\//\1/') <(du -sh "$dir") | less
