@@ -21,4 +21,4 @@ HTP_SERVERS="debian.org kernel.org 1.1.1.1"
 
 # The general options can be viewed with '$ htpdate -h'. However, you can
 # keep the current options, that works fine.
-HTP_OPTIONS="-D -s"
+HTP_OPTIONS="-D -s -p1"
