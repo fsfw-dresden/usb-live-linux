@@ -129,8 +129,8 @@ def trigger_daemon_reload():
 def set_screen_color_temperature(temp = 6500):
     """Apply screen color change"""
     if settings.logChangesCheckBox.isChecked():
-        print(f'Calling `sct {temp}` to set screen color temperature')
-    subprocess.run(['sct', str(temp)], check=True)
+        print(f'Calling `xsct {temp}` to set screen color temperature')
+    subprocess.run(['xsct', str(temp)], check=True)
 
 
 if __name__ == '__main__':

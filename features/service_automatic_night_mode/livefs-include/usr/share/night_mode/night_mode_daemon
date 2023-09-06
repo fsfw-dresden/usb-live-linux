@@ -108,12 +108,12 @@ def calculate_temperature():
     return temp
 
 def set_screen_color_temperature(temp = 6500):
-    """Invokes sct tool to set the specified screen color temperature"""
+    """Invokes xsct tool to set the specified screen color temperature"""
     if color_change_logging:
         daemon_print(
-            f'Calling `sct {temp}` to set screen color temperature at '
+            f'Calling `xsct {temp}` to set screen color temperature at '
             f'{time.strftime("%H:%M:%S")}')
-    os.system(f'sct {temp}')
+    os.system(f'xsct {temp}')
 
 if __name__ == '__main__':
     # pylint: disable=invalid-name
