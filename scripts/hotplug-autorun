@@ -1,0 +1,240 @@
+#!/usr/bin/python3
+
+""" Auto-burn live-usb sticks on hot-plug. """
+
+import datetime
+import os
+import subprocess
+import shlex
+
+import apt
+
+deps = [ 'python3-dialog', 'python3-humanize', 'python3-blessings', 'python3-pyudev' ]
+deps_missing = []
+
+print(f"Checking for dependencies {deps}..")
+for dep in deps:
+    if 0 and not apt.Cache()[dep].is_installed:
+        deps_missing.append(dep)
+
+if not apt.Cache()['python3-multiplex'].is_installed:
+    print('Please install python3-multiplex if you want a fancy multi-autorun.')
+
+if len(deps_missing) > 0:
+    quit(f"Please install {deps_missing}.")
+
+import dialog
+import humanize
+import blessings
+import pyudev
+
+use_multiplex = False
+term = blessings.Terminal()
+udev = pyudev.Context()
+monitor = pyudev.Monitor.from_netlink(udev)
+monitor.filter_by(subsystem = 'block', device_type = 'disk')
+repo_path = os.path.realpath(os.path.dirname(__file__) + os.sep + os.pardir)
+
+def quit(message):
+    os.system('clear')
+    print(message)
+    input("Press [ENTER] to exit.")
+    exit()
+
+def canceled():
+    quit("Cancelled. Goodbye.")
+
+def spawn_command(command):
+    """Spawns command either with multiplex or subprocess module."""
+
+    if use_multiplex:
+        mp.add(multiplex.Process(command))
+    else:
+        subprocess.Popen(command, start_new_session = True)
+
+def spawn_command_timed(command):
+    global mode_tag
+
+    spawn_command(["env", f"TIMEFORMAT={str(command)} ({mode_tag}) took %1R second(s)",
+                   "/bin/bash", "-xc", shlex.join(['time'] + command)])
+
+def plug_event(dev):
+    global mode_tag
+
+    # Log event type + device details (status, uptime, properties & attributes)
+    #print(f"dev.action={dev.action} {dev} {dev.is_initialized}"
+          #f" {dev.properties['USEC_INITIALIZED']} PROPS={list(dev.properties)}"
+          #f" ATTRS={list(dev.attributes.available_attributes)}")
+
+    # List parent device chain
+    #print(*list(dev.ancestors), sep='\nFOO')
+    #for parent in list(dev.ancestors)[3:-2]:
+       #print(parent.attributes.get('product'))
+
+    # Only proceed when a removable device is added and has been initialized
+    if not (dev.action == 'add' and dev.is_initialized
+            and 'removable' in dev.attributes.available_attributes
+            and dev.attributes.asbool('removable')):
+        return False
+
+    # dict with device metadata for convenience
+    d = {
+        # Gather medium info
+        'path': dev.properties['DEVNAME'],
+        'vendor': dev.properties['ID_VENDOR'],
+        'device_type': dev.device_type,
+        'model': dev.properties['ID_MODEL'],
+        'serial': dev.properties['ID_SERIAL_SHORT'],
+        'fslabel': dev.properties.get('ID_FS_LABEL'),
+        'fstype': dev.properties.get('ID_FS_TYPE'),
+        'size': dev.attributes.asint('size') * 512
+        }
+
+    with open('/var/log/sticks-hotplug.$(date +%F.%H%Mh).log', 'a+') as log_file:
+        print(f"{d['path']} {d['vendor']} {d['model']}"
+              f" {d['serial'][:10]} {humanize.naturalsize(d['size'])}"
+              f" / {humanize.naturalsize(d['size'], binary = True)}"
+              f" {d['device_type']} '{d['fslabel']}' '{d['fstype']}' at"
+              f" {datetime.datetime.now()}", file = log_file)
+
+    # Now invoke the action
+    if mode_tag == 'INFO':
+        invoke_info(d)
+    elif mode_tag == 'INSTALL':
+        invoke_install_script(d)
+    elif mode_tag == 'IMAGEBURN':
+        invoke_bmaptool(d)
+    elif mode_tag == 'HOTFIX':
+        invoke_hotfix(d)
+
+
+
+def invoke_info(d):
+    """ Invokes live-stick-info script."""
+
+    os.system(shlex.join(["blockdev", "-v", "--setro", d['path']]))
+    spawn_command_timed(['scripts/live-stick-info', d['path']])
+
+
+def invoke_install_script(d):
+    """Invokes classic stick installation script with preset parameters."""
+
+    global iso_path, install_variant, fat32_partition_size
+
+    install_script = "scripts/stick-install"
+
+    print(f"Invoking '{install_script} {d['path']} {iso_path} {install_variant} {fat32_partition_size}' now")
+    spawn_command_timed([install_script, d['path'], iso_path, install_variant, str(fat32_partition_size)])
+
+    # spawn_command(['/bin/sh', '-xc', f'echo sleeping 4 seconds for {d.path};'
+    #                 f' sleep 4s; echo done for {d.path}'],
+    #                 start_new_session = True)
+
+def invoke_bmaptool(d):
+    """Burn a distribution image file with bmaptool."""
+
+    global image_path
+
+    print(f"Device {d['path']} inserted ({d['vendor']} {d['model']} {d['serial'][:10]},"
+          f" {humanize.naturalsize(d['size'])}"
+          f" / {humanize.naturalsize(d['size'], binary = True)})")
+
+    print(f"Invoking 'bmaptool copy {image_path} {d['path']}' now")
+    spawn_command_timed(["bmaptool", "copy", image_path, d['path']])
+
+    # spawn_command(['/bin/echo', 'test run for ', d['path']])
+
+def invoke_hotfix(d):
+    """Apply persistence hotfix for quickly rolling out post-ISO hacks."""
+
+    global hotfix_path
+
+    spawn_command_timed(['/bin/sh', '-xc',
+                         f'cd {hotfix_path}'
+                         f' && run-parts --verbose --regex=\'.*sh$\' --arg={d["path"]} install-hooks'
+                         f' && echo hotfixed {d["path"]}'])
+
+def main():
+    # pylint: disable=anomalous-backslash-in-string
+    """Main function."""
+
+    global use_multiplex, multiplex, mp, mode_tag
+    global iso_path, image_path, hotfix_path, install_variant, fat32_partition_size
+
+    # all activity shall be relative to repository root
+    os.chdir(repo_path)
+
+    tui = dialog.Dialog()
+    tui.add_persistent_args(['--colors'])
+
+    # choose operating mode
+    main_text = 'This tool will run the action selected here on every removable storage device that is plugged in while it is running, potentially ERASING ANY DATA from it. Only the INFO action sets the block device read-only and mounts each device partition read-only, so it should be safe to use.\nTo stop hotplug autorun, press [ENTER] during operation.\n\nAction to run on inserted USB flash drives:'
+    mode_retval, mode_tag = tui.menu(main_text, height = 20, width = 80,
+                          choices = [('INFO', 'Run \Zblive-stick-info\Zn (read-only)'),
+                                     ('INSTALL', 'Execute classic install script'),
+                                     ('IMAGEBURN', 'Burn image file with \Zbbmaptool\Zn'),
+                                     ('HOTFIX', 'Hotfix stick issues post-iso')])
+    os.system('clear')
+
+    if mode_retval == tui.OK:
+        # choose whether multiplex should be used
+        multi_text = "Do you have python3-multiplex > 0.6 installed and want to use it for parallel operation?\n\nYou'll have to press [q] to quit the multiplexer followed by [ENTER] to stop the udev observer."
+        retval = tui.yesno(multi_text, height = 6, width = 60, yes_label = 'Yes, use multiplex')
+        use_multiplex = (retval == tui.OK)
+
+        if mode_tag == 'INSTALL':
+            # Choose ISO file
+            isos = list(filter(lambda file: file.endswith('.iso'), os.listdir('artifacts/')))
+            choices = list(zip(map(str, range(len(isos))), isos))
+            retval, tag = tui.menu("Please select ISO for installing with `stick-install`", width = 90, choices = choices)
+            if retval == tui.OK:
+                iso_path = dict(choices)[tag]
+            else:
+                canceled()
+
+            # Choose install variant
+            variants = os.listdir("variants.install/")
+            choices = list(zip(map(str, range(len(variants))), variants))
+            retval, tag = tui.menu("Please choose an install variant.", width = 90, choices = choices)
+            if retval == tui.OK:
+                install_variant = dict(choices)[tag]
+            else:
+                canceled()
+
+            # Specify first partition size
+            retval, fat32_partition_size = tui.rangebox("Please set the size of the FAT32 boot/exchange partition in MiB.", width = 90,
+                                                            min = 100, max = 5000, init = 1500)
+            if retval != tui.OK:
+                canceled()
+        elif mode_tag == 'IMAGEBURN':
+            retval, image_path = tui.inputbox("Image path for *burning* with `bmaptool copy`", width=90)
+        elif mode_tag == 'HOTFIX':
+            # Choose Hotfix
+            hotfix_dir = 'hotfixes/'
+            hotfixes = list(filter(lambda ent: os.path.isdir(os.path.join(hotfix_dir, ent)), os.listdir(hotfix_dir)))
+            choices = list(zip(map(str, range(len(hotfixes))), hotfixes))
+            retval, tag = tui.menu("hotfix for applying", width=90, choices = choices)
+            if retval == tui.OK:
+                hotfix_path = os.path.join(hotfix_dir, dict(choices)[tag])
+            else:
+                canceled()
+ 
+        observer = pyudev.MonitorObserver(monitor, callback = plug_event)
+        observer.start()
+        os.system('clear')
+        print(f"{term.bold}USB hotplug autorun activated with mode {term.cyan}{mode_tag}{term.normal}")
+
+        if use_multiplex:
+            import multiplex
+            mp = multiplex.Multiplex()
+            mp.run()
+            os.system('clear')
+
+        input(f"Press {term.bold}[ENTER]{term.normal} to {term.red}stop{term.normal}..\n")
+        os.system('clear')
+        quit("udev observer stopped")
+    else:
+        canceled()
+
+if __name__ == '__main__':
+    main()

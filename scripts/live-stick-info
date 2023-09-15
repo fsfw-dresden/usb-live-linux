@@ -1,0 +1,216 @@
+#!/bin/bash
+# This hackisch script takes the path to an FSFW stick device or image as an
+# argument and examines it, printing details about its version and state.
+
+COLOR_GREEN="\e[1;32m"
+COLOR_YELLOW="\e[1;33m"
+COLOR_CYAN="\e[1;36m"
+COLOR_RED="\e[1;31m"
+COLOR_OFF="\e[0m"
+
+export TIMEFORMAT="%1R"
+
+command_exists() {
+    command -v "${@}" &>/dev/null
+}
+
+# No device argument given?
+[ -z ${1} ] && printf "(!) ${COLOR_RED}Please provide device to check.${COLOR_OFF}\n" && exit 1
+
+STARTTIME=$(date +%s)
+
+DEVICE=${1}
+DEVNAME=${DEVICE#/dev/}
+[[ "${DEVICE}" =~ "loop" ]] && p="p" || p=""
+NUMPARTITIONS=$(grep -c "${DEVNAME}${p}[[:digit:]]\+$" /proc/partitions | cat)
+
+# Get device identifier from udev, truncating to 48 chars
+DEVID="$(udevadm info --query=property --value --property=ID_SERIAL ${DEVICE} | cut -c1-48)"
+
+# If (still) present, strip "-0:0" suffix using extended globbing
+shopt -s extglob
+DEVID="${DEVID%-+([0-9]):+([0-9])}"
+
+# DEVID will be empty for loop devices, get the actual image file path for these
+[ -z "${DEVID}" ] && {
+    BACKING_FILE=$(sed 's/\///; s/\//--/g' /sys/block/${DEVNAME}/loop/backing_file)
+    DEVID="${BACKING_FILE}.${DEVNAME}"
+}
+
+LOGDIR="/var/log/live-stick-info"
+mkdir -p "${LOGDIR}"
+
+# Create a temporary directory to hold the mounts
+MOUNTDIR=$(mktemp --tmpdir --directory live-stick-info.XXXX)
+
+# Define trap functions (for cleaning when script is interrupted or terminated)
+remove_mountdir() { rmdir ${MOUNTDIR}; }
+umount_partition() { ! grep -qs ${MOUNTDIR} /proc/mounts || umount -l ${MOUNTDIR} || fuser -vm ${MOUNTDIR}; }
+
+# On script termination: at this point, only temporary mountdir to clean up
+trap "remove_mountdir" EXIT SIGHUP SIGQUIT SIGTERM
+
+{
+    DEV_SIZE=$(lsblk --noheadings --nodeps --raw --output SIZE --bytes ${DEVICE} 2>/dev/null)
+    printf "${COLOR_GREEN}>>> live-stick-info invoked on ${DEVICE} (${DEV_SIZE} Bytes) >>>${COLOR_OFF}\n"
+
+    # Give udev time to gather all data
+    udevadm settle 
+
+    # Show storage device information
+    lsblk --paths --output RO,RM,STATE,NAME,SIZE,FSTYPE,FSVER,LABEL,PARTFLAGS,VENDOR,MODEL,SERIAL ${DEVICE}
+    echo
+
+    # Dump persistence F2FS status
+    [ -b "${DEVICE}${p}3" ] && {
+        printf "\n${COLOR_CYAN}persistence partition F2FS info:${COLOR_OFF}\n"
+        dump.f2fs "${DEVICE}${p}3"
+        echo
+    }
+
+    # Go through all partitions and scout
+    for i in $(seq ${NUMPARTITIONS})
+    do
+        # On script termination: unmount mounted directory and remove it
+        trap "umount_partition" EXIT SIGHUP SIGQUIT SIGTERM
+
+        PARTITION=${DEVICE}$p$i
+        FS_TYPE=$(lsblk --noheadings --raw --output FSTYPE ${PARTITION} 2>/dev/null)
+        FS_SIZE=$(lsblk --noheadings --raw --output SIZE ${PARTITION} 2>/dev/null)
+
+        # Now mount (RO) the partition and show information about content
+        TIME=$({ time mount --read-only ${PARTITION} ${MOUNTDIR}; } 2>&1) && (
+            FS_USED=$(lsblk --noheadings --raw --output FSUSE% ${PARTITION})
+            FS_FREE=$(lsblk --noheadings --raw --output FSAVAIL ${PARTITION})
+            printf "${COLOR_CYAN}mounted %s (%s %s, %s used, %s free) in ${TIME} seconds, listing content size..${COLOR_OFF}\n" \
+                ${PARTITION} ${FS_SIZE} ${FS_TYPE} ${FS_USED} ${FS_FREE}
+            cd "${MOUNTDIR}"
+            # If this is the persistence memory
+            [ -d linux-system ] && {
+                # list size of persistence directories
+                du --summarize --human-readable * | sort --human-numeric-sort --reverse
+            } || {
+                # otherwise, show upper two levels of FS tree
+                tree -CDhL 2 . | tail --lines=+2
+            }
+        ) || {
+            [ -n "${FSTYPE}" ] && FSTYPESTR="(${FSTYPE}) "
+            printf "(!) Mounting ${PARTITION} ${FSTYPESTR}${COLOR_RED}FAILED${COLOR_OFF}"
+        }
+
+        # Listing potential user data
+        USER_DIR="linux-userdata/user"
+        [ -d "${MOUNTDIR}/${USER_DIR}" ] && (
+            cd "${MOUNTDIR}"
+            printf "\n${COLOR_CYAN}user data, tree:${COLOR_OFF}\n"
+            tree -CDt "linux-userdata/user/"
+
+            printf "\n${COLOR_CYAN}user data in MiB, sorted by size:${COLOR_OFF}\n"
+            du -hd 1 "linux-userdata/user/" | sort -rh | head -n 10
+        )
+
+        # Dump tuptime runtime statistics
+        TUPTIMEDB="linux-systemdata/var-lib/rw/tuptime/tuptime.db"
+        [ -f "${MOUNTDIR}/${TUPTIMEDB}" ] && command_exists tuptime && {
+            # Make a temporary copy of the tuptime sqlite DB file
+            TUPTIMEDB_RW=$(mktemp --tmpdir live-stick-info.tuptime.XXXX)
+            cp "${MOUNTDIR}/${TUPTIMEDB}" "${TUPTIMEDB_RW}"
+            printf "\n${COLOR_CYAN}Stick runtime statistics:${COLOR_OFF}\n"
+            tuptime --noup --date "%a %F %H:%M" --file "${TUPTIMEDB_RW}" 2>/dev/null
+            tuptime --noup --date "%a %F %H:%M" --table --file "${TUPTIMEDB_RW}"
+            rm "${TUPTIMEDB_RW}"
+        }
+
+        # List printers
+        PRINTER_CONF="linux-systemconfig/printer-configuration/rw/printers.conf"
+        [ -f "${MOUNTDIR}/${PRINTER_CONF}" ] && {
+            printf "\n${COLOR_CYAN}Configured printers:${COLOR_OFF}\n"
+            sed -n 's/MakeModel //p' "${MOUNTDIR}/${PRINTER_CONF}"
+        }
+
+        # List existing network connections
+        CONNECTIONS_DIR="linux-systemconfig/network-connections/rw"
+        [ -d "${MOUNTDIR}/${CONNECTIONS_DIR}" ] && [ $(find "${MOUNTDIR}/${CONNECTIONS_DIR}" -type f | wc -l) -gt 0 ] && (
+            cd "${MOUNTDIR}"
+
+            printf "\n${COLOR_CYAN}Network connections:${COLOR_OFF}\n"
+            tree -CDt "${CONNECTIONS_DIR}"
+        )
+
+        # Check dpkg overlay dir for added packages
+        DPKG_DIR="linux-system/var-lib-dpkg/rw/info"
+        [ -d "${MOUNTDIR}/${DPKG_DIR}" ] && [ $(find "${MOUNTDIR}/${DPKG_DIR}" -type f | wc -l) -gt 0 ] && (
+            cd "${MOUNTDIR}/${DPKG_DIR}"
+
+            printf "\n${COLOR_CYAN}Packages installed / updated:${COLOR_OFF}\n"
+            ls -lh *.list
+        )
+
+        # Code repositories in /usr/src?
+        REPOS_DIR="linux-systemdata/usr-src/rw/repos"
+        [ -d "${MOUNTDIR}/${REPOS_DIR}" ] && (
+            cd "${MOUNTDIR}/${REPOS_DIR}"
+
+            printf "\n${COLOR_CYAN}Repositories in /usr/src/repos/:${COLOR_OFF}\n"
+            ls -lh
+        )
+
+        # Vim temp file trail
+        VIM_DIR="linux-systemdata/var-lib/rw/vim/temp"
+        [ -d "${MOUNTDIR}/${VIM_DIR}" ] && (
+            cd "${MOUNTDIR}/${VIM_DIR}"
+
+            printf "\n${COLOR_CYAN}Vim temp files:${COLOR_OFF} (in ${VIM_DIR})\n"
+            ls -lh | tail --lines=+2
+        )
+
+        VAR_LIB_DIR="linux-systemdata/var-lib/rw"
+        [ -d "${MOUNTDIR}/${VAR_LIB_DIR}" ] && (
+            cd "${MOUNTDIR}/${VAR_LIB_DIR}"
+
+            printf "\n${COLOR_CYAN}Biggest /var/lib contents:${COLOR_OFF} (in ${VAR_LIB_DIR})\n"
+            du -hs * | sort -rh | head -n 7
+        )
+
+        VAR_LOG_DIR="linux-system/rootfs/rw/var/log"
+        [ -d "${MOUNTDIR}/${VAR_LOG_DIR}" ] && (
+            cd "${MOUNTDIR}/${VAR_LOG_DIR}"
+
+            printf "\n${COLOR_CYAN}/var/log contents:${COLOR_OFF} (in ${VAR_LOG_DIR})\n"
+            tree -CDh --du | tail --lines=+2
+        )
+
+        for ROOT_HOME in "linux-system/rootfs/rw/root" "linux-systemdata/root-user/rw"
+        do
+            [ -d "${MOUNTDIR}/${ROOT_HOME}" ] && \
+                for BASH_HISTORY in "${ROOT_HOME}/.bash_history" "${ROOT_HOME}/.bash_history.tmux"
+            do
+                [ -f "${MOUNTDIR}/${BASH_HISTORY}" ] && {
+                    MOD_DATE=$(date --date="@$(stat --format=%Y "${MOUNTDIR}/${BASH_HISTORY}")")
+                    printf "\n${COLOR_CYAN}super user bash history:${COLOR_OFF} (${BASH_HISTORY} ${MOD_DATE})\n"
+                    # Replace unix epoch timestamps by human-readable date, trim faulty tmux-pane-wrap grime
+                    uniq < "${MOUNTDIR}/${BASH_HISTORY}" \
+                        | awk 'BEGIN {FS="#"} { if ($1 == "" && $2 ~ /^[0-9]{10}$/) { date = "# " strftime("%a %F %T %Z", $2) } else { if (date == "") { print } else { printf("%-100s %s\n", $0, date); date = ""}}}' \
+                        | sed 's/^tmux-pane-wrap -v \(\\\)*//; s/^\\//; s/\\$//'
+                }
+            done
+        done
+
+        umount_partition
+        echo
+    done
+
+    # Clear umount trap
+    trap - EXIT SIGHUP SIGQUIT SIGTERM
+
+    printf "${COLOR_CYAN}=== live-stick-info on ${DEVID} completed in $(($(date +%s) - STARTTIME)) second(s) ===${COLOR_OFF}\n\n"
+} |& tee "${LOGDIR}/${DEVID}.$(date '+%F.%H%Mh%S').log"
+
+# # DEBUG code parked here for convenience
+# echo "traps outside {}"
+# trap -p
+#
+# printf "\n${COLOR_CYAN}leftovers${COLOR_OFF} in (${MOUNTDIR})\n"
+# ls -lah "${MOUNTDIR}"
+#
+# grep ${MOUNTDIR} /proc/mounts && lstrail "${MOUNTDIR}"
