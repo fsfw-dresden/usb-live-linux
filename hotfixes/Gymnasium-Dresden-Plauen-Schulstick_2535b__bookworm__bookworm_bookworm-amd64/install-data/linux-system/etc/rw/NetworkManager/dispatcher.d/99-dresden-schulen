@@ -1,0 +1,93 @@
+#!/bin/bash
+
+INTERFACE="${1}"
+STATUS="${2}"
+
+PAC_URL="${DHCP4_WPAD:-http://kjs.lan.dd-schulen.de/SaferSurf/genpac.cgi}"
+TAG="dresden-schulen-proxy"
+
+enable_redsocks() {
+        PROXY_URL=$(wget -qO - ${PAC_URL}|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
+        logger -t ${TAG} "configuring redsocks magic proxy to route via ${PROXY_URL}"
+        [ -z ${PROXY_URL} ] && PROXY_URL="kjs-02.lan.dd-schulen.de:3128" && logger -t ${TAG} -p user.warning "PROXY_URL not found, falling back to ${PROXY_URL}"
+        PROXY_DOMAIN=${PROXY_URL%:*}
+        PROXY_PORT=${PROXY_URL#*:}
+        sed -ri "s/(\tip = )(.*);/\1${PROXY_DOMAIN};/" /etc/redsocks.conf
+        sed -ri "s/(\tport = )(.*);/\1${PROXY_PORT};/" /etc/redsocks.conf
+
+        logger -t ${TAG} "enabling redsocks magic proxy gateway"
+        systemctl unmask redsocks
+        systemctl restart redsocks
+
+        # Set up global traffic redirect via local proxy gateway
+        logger -t ${TAG} "Setting up proxy redirection"
+        iptables -t nat -N REDSOCKS
+
+        # Do not proxy-route LANs and other reserved addresses
+        # c.f. https://en.wikipedia.org/wiki/Reserved_IP_addresses
+        iptables -t nat -A REDSOCKS -d 0.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 10.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 100.64.0.0/10 -j RETURN
+        iptables -t nat -A REDSOCKS -d 127.0.0.0/8 -j RETURN
+        iptables -t nat -A REDSOCKS -d 169.254.0.0/16 -j RETURN
+        iptables -t nat -A REDSOCKS -d 172.16.0.0/12 -j RETURN
+        iptables -t nat -A REDSOCKS -d 192.168.0.0/16 -j RETURN
+        iptables -t nat -A REDSOCKS -d 198.18.0.0/15 -j RETURN
+        iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
+        iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
+
+        # Lernsax 
+        for PORT in 110 995 143 465 587 993
+        do
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d gs49dd.lernsax.de -j RETURN
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d gdp.lernsax.de -j RETURN
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d lernsax.de -j RETURN
+        done
+
+        # Skip proxy for local subnet, too
+        iptables -t nat -A REDSOCKS -d $(ip -4 -br address show dev $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route) | awk '{print $3}') -j RETURN
+
+        # Redirect HTTP traffic
+        iptables -t nat -A REDSOCKS -p tcp --dport 80 -j REDIRECT --to-ports 12345
+        iptables -t nat -A REDSOCKS -p tcp -j REDIRECT --to-ports 12346
+        iptables -t nat -A OUTPUT -p tcp -j REDSOCKS
+
+}
+
+disable_redsocks() {
+        logger -t ${TAG} "removing proxy redirection"
+        iptables -t nat -D OUTPUT -p tcp -j REDSOCKS
+        iptables -t nat -F REDSOCKS
+        iptables -t nat -X REDSOCKS
+
+        logger -t ${TAG} "disabling redsocks magic proxy gateway"
+        systemctl stop redsocks
+        systemctl mask redsocks
+}
+
+# log invocation environment
+{
+        env | sort
+        echo "default network device: $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route)"
+        ip -4 -br address show
+} > /run/log/NetworkManager--dispatcher.d--99-dresden-schulen.${STATUS}.$(date +'%F.%H%Mh').log
+
+case "${STATUS}" in
+        up)
+                # detect school proxy
+                if [[ "${IP4_DOMAINS}" == *".dd-schulen.de" || "${IP4_DOMAINS}" == *".gs.dresden.de"* ]]
+                then
+                        # set up redsocks traffic redirector
+                        enable_redsocks
+                # not in school network?
+                else
+                        # unset redsocks traffic redirector
+                        disable_redsocks
+                fi
+
+                ;;
+        down)
+                # unset redsocks traffic redirector
+                disable_redsocks
+                ;;
+esac
