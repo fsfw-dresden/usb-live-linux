@@ -1,0 +1,17 @@
+# More usable htop settings ftw
+hide_kernel_threads=1
+hide_userland_threads=1
+show_thread_names=1
+show_program_path=0
+highlight_base_name=1
+shadow_distribution_path_prefix=1
+highlight_changes=1
+header_margin=0
+screen_tabs=1
+show_cpu_frequency=1
+show_cpu_temperature=1
+tree_view=1
+sort_key=47
+tree_sort_key=47
+sort_direction=-1
+tree_sort_direction=-1
