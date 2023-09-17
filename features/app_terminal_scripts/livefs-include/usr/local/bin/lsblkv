@@ -1,2 +1,2 @@
 #!/bin/sh
-/bin/lsblk --paths --output MODEL,SERIAL,RO,RM,NAME,SIZE,FSUSE%,FSAVAIL,FSTYPE,LABEL,MOUNTPOINT,STATE $@
+/bin/lsblk --paths --width $(tput cols) --output VENDOR,MODEL,FSTYPE,SIZE,NAME,MOUNTPOINT,LABEL,FSUSE%,FSAVAIL,RM,RO,STATE,SERIAL $@

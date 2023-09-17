@@ -1,8 +1,11 @@
 #!/bin/bash
 # we want full interactive shell functionality
-source /etc/profile
-source /etc/bash/bash_aliases
+for FILE in /etc/profile /etc/bash/bash_aliases
+do
+  [ -e "${FILE}" ] && source "${FILE}"
+done
+
 shopt -s expand_aliases extglob globstar
 
-cmd=$( sed '/^#/d' ~/.bash_history{,.tmux} | sort | uniq -c | sort -nr | peco | sed -r 's/^[[:space:]]*[[:digit:]]+[[:space:]]*//;s/^"(.*)"$/\1/' )
+cmd=$( sed '/^#/d' ~/.bash_history{,.tmux} 2>/dev/null| sort | uniq -c | sort -nr | peco | sed -r 's/^[[:space:]]*[[:digit:]]+[[:space:]]*//;s/^"(.*)"$/\1/' )
 eval "${cmd}"
