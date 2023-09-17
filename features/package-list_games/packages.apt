@@ -23,6 +23,7 @@ pysiogame                       # educational activity pack for kids (12.6 MB)
 tuxmath                         # math game for kids with Tux (10.7 MB)
 colobot                         # educational programming strategy game (87.9 MB)
 laby                            # learn how to program with ants and spider webs (1493 kB)
+python-is-python3               # symlink /usr/bin/python to python3 so laby finds it
 amoebax                         # Rätselspiel für bis zu zwei Spieler, im Stil von Puyo Puyo (9.096 kB)
 berusky                         # Auf Sokoban basierendes Logikspiel (5.158 kB)
 brainparty                      # 36 Denkspiele für die ganze Familie (13,9 MB)

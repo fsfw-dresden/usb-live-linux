@@ -5,6 +5,7 @@ vim-airline-themes      # themable vim status bar + themes
 vim-nox                 # vim compiled with support for scripting with Lua, Perl, Python, Ruby, and Tcl but no GUI
 vim-scripts             # Erweiterungen für vim (was man sonst noch so braucht)
 vim-pathogen            # pathogen.vim: install plugins in their own private directories ("bundles")
+xxd                     # make (or reverse) a hex dump
 
 git
 chktex
