@@ -27,7 +27,7 @@ https://github.com/triplus/CubeMenu"
 
 # Do not store in HOME, but make accessible to both deb and appimage freecad
 TARGETDIR="/usr/local/share/freecad/Mod"
-LINKDIR="/etc/skel/.FreeCAD"
+LINKDIR="/etc/skel/.local/share/FreeCAD"
 
 mkdir -pv ${TARGETDIR} ${LINKDIR}
 ln -sv ${TARGETDIR} ${LINKDIR}/Mod
