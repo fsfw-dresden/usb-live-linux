@@ -36,6 +36,14 @@ enable_redsocks() {
         iptables -t nat -A REDSOCKS -d 224.0.0.0/4 -j RETURN
         iptables -t nat -A REDSOCKS -d 240.0.0.0/4 -j RETURN
 
+        # Unproxied Lernsax email access
+        for PORT in 110 995 143 465 587 993
+        do
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d gs49dd.lernsax.de -j RETURN
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d gdp.lernsax.de -j RETURN
+                iptables -t nat -A REDSOCKS -p tcp --dport $PORT -d lernsax.de -j RETURN
+        done
+
         # Skip proxy for local subnet, too
         iptables -t nat -A REDSOCKS -d $(ip -4 -br address show dev $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route) | awk '{print $3}') -j RETURN
 
@@ -56,13 +64,6 @@ disable_redsocks() {
         systemctl stop redsocks
         systemctl mask redsocks
 }
-
-# log invocation environment
-{
-        env | sort
-        echo "default network device: $(awk '$2 == 00000000 {print $1; exit}' /proc/net/route)"
-        ip -4 -br address show
-} > /run/log/NetworkManager--dispatcher.d--99-dresden-schulen.${STATUS}.$(date +'%F.%H%Mh').log
 
 case "${STATUS}" in
         up)
