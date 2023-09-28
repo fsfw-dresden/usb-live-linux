@@ -151,7 +151,6 @@ download_external_deb_package() {
     if [ -z "${FILE_NAME}" ]
     then
         FILE_NAME=${DEB_URL##*/}
-        FILE_NAME=${FILE_NAME/-amd64/_amd64}	# korrigiert fehlerhaften Paketnamen - wird sonst nicht installiert?)
     fi
 
     FILE_CACHED=$(download_file_cached "${DEB_URL}" "${FILE_NAME}")
@@ -165,7 +164,14 @@ download_external_deb_package() {
 
     TARGET_DIR=config/packages.chroot
     mkdir -p "${TARGET_DIR}"
-    cp --archive --link "${FILE_CACHED}" "${TARGET_DIR}/"
+
+    # Rename third-party packages, live-build will only
+    # pick up files ending on _${LB_ARCHITECTURE}.deb
+    PKG_ARCH=$(dpkg-deb --field ${FILE_CACHED} Architecture)
+    [[ ${FILE_NAME} =~ _${PKG_ARCH}.deb ]] \
+        || FILE_NAME=${FILE_NAME%.deb}_${PKG_ARCH}.deb
+
+    cp --archive --link -v "${FILE_CACHED}" "${TARGET_DIR}/${FILE_NAME}"
 }
 
 check_dependencies() {
