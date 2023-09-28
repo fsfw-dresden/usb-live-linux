@@ -6,3 +6,6 @@ MiscSlimTabs=TRUE
 MiscNewTabAdjacent=TRUE
 FontName=JetBrains Mono 14
 DropdownHeight=80
+MiscBellUrgent=TRUE
+ShortcutsNoHelpkey=TRUE
+ShortcutsNoMenukey=TRUE
