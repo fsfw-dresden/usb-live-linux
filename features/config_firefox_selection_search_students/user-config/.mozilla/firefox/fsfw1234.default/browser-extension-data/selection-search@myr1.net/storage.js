@@ -61,6 +61,10 @@
       "url": "http://image.baidu.com/i?word=%s&tn=baiduimage&ipn=r&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8"
     },
     {
+      "name": "Vektor Graphics: SVG Repo",
+      "url": "https://www.svgrepo.com/vectors/%s/"
+    },
+    {
       "name": "Videos: Youtube",
       "url": "http://www.youtube.com/results?search_query=%s"
     },
@@ -159,11 +163,11 @@
         },
         {
           "name": "Hacker News",
-          "url": "https://hn.algolia.com/?query=%s"
+          "url": "https://hn.algolia.com/?query=%s&sort=byDate"
         },
         {
           "name": "Twitter",
-          "url": "https://twitter.com/search?q=%s"
+          "url": "https://nitter.net/search?q=%s"
         }
       ]
     },

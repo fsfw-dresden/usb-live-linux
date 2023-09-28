@@ -76,6 +76,10 @@
       "url": "http://images.google.de/images?q=%s&safe=active"
     },
     {
+      "name": "Vektorgrafiken: SVG Repo",
+      "url": "https://www.svgrepo.com/vectors/%s/"
+    },
+    {
       "name": "Videos: Youtube",
       "url": "http://www.youtube.com/results?search_query=%s"
     },
@@ -154,11 +158,11 @@
         },
         {
           "name": "Hacker News",
-          "url": "https://hn.algolia.com/?query=%s"
+          "url": "https://hn.algolia.com/?query=%s&sort=byDate"
         },
         {
           "name": "Twitter",
-          "url": "https://twitter.com/search?q=%s"
+          "url": "https://nitter.net/search?q=%s"
         }
       ]
     },
