@@ -445,7 +445,7 @@ handle_mime() {
         image/*)
             ## Preview as text conversion
             # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
-            chafa --size ${PV_WIDTH}x500 --colors 16 --color-space din99d --fill braille --symbols=all --work 2 --threshold 1 -- "${FILE_PATH}" && exit 5
+            chafa --size ${PV_WIDTH}x500 --colors 16 --color-space din99d --fill braille --symbols=all --work 2 --threshold 1 -- "${FILE_PATH}" && exit 4
             exiftool "${FILE_PATH}" && exit 5
             exit 1;;
 
