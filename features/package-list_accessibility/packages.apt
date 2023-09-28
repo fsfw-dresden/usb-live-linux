@@ -44,4 +44,4 @@ tesseract-ocr-deu             #  OCR-Trainingsdaten für Deutsch
 ###  Gnome-Desktop & Derivate
 
 gnome-accessibility-themes    #  Barrierereduzierung für Anwender mit Handicap
-gnome-orca                    #  Programmierbarer Screenreader
+orca                          #  Programmierbarer Screenreader
