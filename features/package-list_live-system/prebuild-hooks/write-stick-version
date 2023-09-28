@@ -10,4 +10,4 @@ mkdir -pv ${DEST_DIR}
   echo "Git revision $(git rev-parse HEAD)"
   echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD)"
   echo "(URL will show 404 not found if commit is not in main repository)"
-} > ${DEST_DIR}/live-stick
+} > ${DEST_DIR}/live_stick_version
