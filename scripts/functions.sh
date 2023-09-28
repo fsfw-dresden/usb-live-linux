@@ -68,6 +68,12 @@ print_error() {
 
 die() {
     print_error "${@}"
+    # If this was invoked from a shell (i.e. parent process
+    # looks like a shell process as its cmdline matches
+    # '[non-whitespacee]*sh[word boundary]'), just exit.
+    # Otherwise (script started from desktop shortcut f.e.),
+    # show confirmation prompt before quitting & closing.
+    grep -qs '\S*sh\b' /proc/${PPID}/cmdline || read -p "Press ENTER to exit."
     exit 1
 }
 
