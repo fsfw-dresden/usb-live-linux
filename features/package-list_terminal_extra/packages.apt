@@ -1,7 +1,4 @@
 cutycapt                # capture WebKit's rendering of a web page into a variety of vector and bitmap formats (SVG, PDF, PNG, JPEG..)
 dvipng                  # Konvertiert DVI-Dateien in PNG-Grafiken
 # blocked by freeze: hopenpgp-tools          # hOpenPGP-basierte Kommandozeilentools für digitale Signaturen (etwa für PDF-Dateien)
-podman                  # daemon-less alternative to Docker for managing Pods, Containers, and Container Images
-podman-compose          # run docker-compose.yml rootless using podman
-podman-toolbox          # containerised command line environments using Podman
 wkhtmltopdf             # convert html to pdf or image using WebKit

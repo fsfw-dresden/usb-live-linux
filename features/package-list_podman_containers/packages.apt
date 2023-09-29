@@ -1,0 +1,9 @@
+buildah                 # CLI tool to facilitate building OCI images
+catatonit               # very simple init process for application containers
+containers-storage      # CLI tools for handling how containers are stored on disk
+fuse-overlayfs          # implementation of overlay+shiftfs in FUSE for rootless containers
+podman-compose          # run docker-compose.yml rootless using podman
+podman                  # daemon-less alternative to Docker for managing Pods, Containers, and Container Images
+podman-docker           # Docker-compatible CLI interface to manage containers and pods
+podman-toolbox          # containerised command line environments using Podman
+slirp4netns             # User-mode networking for unprivileged network namespaces
