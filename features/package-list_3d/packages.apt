@@ -14,14 +14,10 @@ povray-examples                 # Persistence of vision raytracer (3D renderer) 
 
 python3-pygmsh                  # powerful mesh generation tool with the versatility of Python
 
-###  Maker Tools  -- 3D Tools - G-Code
+###  Maker Tools  -- 3D Printing Lasercutting - G-Code
 
 printrun                        # 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software (+13,5 MB)
 slic3r                          # G-code generator for 3D printers (+4 MB)
 cura                            # GUI G-code generator for 3D printers
-# < https://github.com/alicevision/meshroom/releases/download/v2018.1.0/Meshroom-2018.1.0-linux.tar.gz # Meshroom: Photogrammetrie-Werkzeug
-
-###  LaserCut
-
-# ( http://download.visicut.org/master )
+bcnc                            # GRBL CNC command sender, autoleveler and g-code editor
 < https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-202-gb8ba6089-1_all.deb      # userfriendly tool for creating, saving and sending jobs to lasercutters
