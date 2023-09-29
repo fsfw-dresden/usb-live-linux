@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+#. /mnt/stix/usb-live-linux/scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/share/sample-media-files/lego-models
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+# All models "Redistributable under CCAL version 2.0"
+# https://www.ldraw.org/ldraw-org-contributor-agreement
+MODEL_NUMS="1837 1812 1819 1778 1697 1745 1773 1698 1694 1691 1595 1803 347 1413 30 339 996 1040 403 292 300 1414 117 1175 1799 506 324 1046"
+URL_BASE="https://omr.ldraw.org/files"
+
+for NUM in ${MODEL_NUMS}
+do
+  MODEL_URL=${URL_BASE}/${NUM}
+  for FILE_URL in $(hxwls ${MODEL_URL} | egrep '\.(mpd|ldr)$')
+  do
+    FILE_NAME=$(/bin/printf "$(echo ${FILE_URL##*/} | sed 's/%/\\x/g' )")
+    echo "Getting ${FILE_NAME} from ${FILE_URL}"
+
+    FILE=$(download_file_cached "${FILE_URL}" "${FILE_NAME}") \
+      && cp -a "${FILE}" "${DEST_DIR}/"
+  done
+done
