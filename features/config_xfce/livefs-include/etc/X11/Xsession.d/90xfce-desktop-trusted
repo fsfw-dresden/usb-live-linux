@@ -1,0 +1,13 @@
+# Workaround for desktop launchers each needing to be confirmed as trusted with
+# this annoying dialog (or setting metadata::xfce-exe-checksum via shell):
+#
+# Untrusted application launcher
+# ------------------------------
+# The desktop file … is in an insecure location and not marked as secure
+# If you do not trust this program, click Cancel.
+#
+# Launch Anyway | Mark As Secure And Launch | Cancel
+
+
+XDG_DATA_DIRS="$HOME/Desktop:$XDG_DATA_DIRS"
+export XDG_DATA_DIRS
