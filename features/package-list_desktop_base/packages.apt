@@ -12,6 +12,7 @@ x11-utils                       # Hilfsprogramme für X11
 # ohne mesa kein blender
 mesa-utils                      # Mesa-GL-Hilfsprogramme
 libgl1-mesa-dri                 # Freie Implementierung der OpenGL-Schnittstelle
+mesa-vulkan-drivers             # Vulkan is a low-overhead 3D graphics and compute API
 
 xserver-xorg-input-all          # X.org-X-Server -- Metapaket für Eingabegeräte-Treiber
 xserver-xorg-video-all          # alle Grafik-Treiber (10 MB)
