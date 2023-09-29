@@ -1,0 +1,8 @@
+# Hide the many plugin entries, even though buried in a submenu,
+# they clutter menu search results.
+
+[Desktop Entry]
+Name=LSP Plugins
+Icon=lsp-plugins
+Type=Directory
+NoDisplay=true
