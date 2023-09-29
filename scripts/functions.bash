@@ -86,7 +86,7 @@ download_file_cached() {
     FILE_URL=${1}
     FILE_NAME=${2}
 
-    if [ -z ${FILE_NAME} ]
+    if [ -z "${FILE_NAME}" ]
     then
         FILE_NAME=${FILE_URL##*/}
     fi
