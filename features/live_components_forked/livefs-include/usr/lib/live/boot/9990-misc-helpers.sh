@@ -43,8 +43,8 @@ matches_uuid ()
 get_backing_device ()
 {
 	case "${1}" in
-		*.squashfs|*.ext2|*.ext3|*.ext4|*.jffs2)
-			echo $(setup_loop "${1}" "loop" "/sys/block/loop*" '0' "${LIVE_MEDIA_ENCRYPTION}" "${2}")
+		*.squashfs|*.ext2|*.ext3|*.ext4|*.jffs2|*.*.verity|*.*.fec)
+			echo $(setup_loop "${1}" "loop" "/sys/block/loop*" '0' "${2}")
 			;;
 
 		*.dir)
@@ -145,7 +145,7 @@ check_dev ()
 				mkdir /run/live/fromiso
 				mount -t $fs_type "$ISO_DEVICE" /run/live/fromiso
 				ISO_NAME="$(echo $FROMISO | sed "s|$ISO_DEVICE||")"
-				loopdevname=$(setup_loop "/run/live/fromiso/${ISO_NAME}" "loop" "/sys/block/loop*" "" '')
+				loopdevname=$(setup_loop "/run/live/fromiso/${ISO_NAME}" "loop" "/sys/block/loop*" "")
 				devname="${loopdevname}"
 			else
 				echo "Warning: unable to mount $ISO_DEVICE." >>/boot.log
@@ -203,7 +203,7 @@ check_dev ()
 
 	if [ -n "${LIVE_MEDIA_OFFSET}" ]
 	then
-		loopdevname=$(setup_loop "${devname}" "loop" "/sys/block/loop*" "${LIVE_MEDIA_OFFSET}" '')
+		loopdevname=$(setup_loop "${devname}" "loop" "/sys/block/loop*" "${LIVE_MEDIA_OFFSET}")
 		devname="${loopdevname}"
 	fi
 
@@ -250,7 +250,7 @@ check_dev ()
 				umount ${mountpoint}
 				mkdir -p /run/live/findiso
 				mount -t ${fstype} -o ro,noatime "${devname}" /run/live/findiso
-				loopdevname=$(setup_loop "/run/live/findiso/${FINDISO}" "loop" "/sys/block/loop*" 0 "")
+				loopdevname=$(setup_loop "/run/live/findiso/${FINDISO}" "loop" "/sys/block/loop*" 0)
 				devname="${loopdevname}"
 				mount -t iso9660 -o ro,noatime "${devname}" ${mountpoint}
 			else
@@ -634,13 +634,12 @@ load_keymap ()
 
 setup_loop ()
 {
-	local fspath module pattern offset encryption readonly
+	local fspath module pattern offset readonly
 	fspath=${1}
 	module=${2}
 	pattern=${3}
 	offset=${4}
-	encryption=${5}
-	readonly=${6}
+	readonly=${5}
 
 	# the output of setup_loop is evaluated in other functions,
 	# modprobe leaks kernel options like "libata.dma=0"
@@ -670,42 +669,7 @@ setup_loop ()
 				options="${options} -o ${offset}"
 			fi
 
-			if [ -z "${encryption}" ]
-			then
-				losetup ${options} "${dev}" "${fspath}"
-			else
-				# Loop AES encryption
-				while true
-				do
-					load_keymap
-
-					echo -n "Enter passphrase for root filesystem: " >&6
-					read -s passphrase
-					echo "${passphrase}" > /tmp/passphrase
-					unset passphrase
-					exec 9</tmp/passphrase
-					losetup ${options} -e "${encryption}" -p 9 "${dev}" "${fspath}"
-					error=${?}
-					exec 9<&-
-					rm -f /tmp/passphrase
-
-					if [ 0 -eq ${error} ]
-					then
-						unset error
-						break
-					fi
-
-					echo
-					echo -n "There was an error decrypting the root filesystem ... Retry? [Y/n] " >&6
-					read answer
-
-					if [ "$(echo "${answer}" | cut -b1 | tr A-Z a-z)" = "n" ]
-					then
-						unset answer
-						break
-					fi
-				done
-			fi
+			losetup ${options} "${dev}" "${fspath}"
 
 			echo "${dev}"
 			return 0
@@ -775,7 +739,7 @@ mount_persistence_media ()
 	if [ -z "${old_backing}" ]
 	then
 		fstype="$(get_fstype ${device})"
-		mount_opts="rw,lazytime,noatime"
+		mount_opts="rw,noatime"
 		if [ -n "${PERSISTENCE_READONLY}" ]
 		then
 			mount_opts="ro,noatime"
@@ -1408,7 +1372,7 @@ do_union ()
 			# index:        preserve hard-links on copy-up
 			# xino:         persistent unique object identifiers across merged FS layers
 
-			unionmountopts="-o redirect_dir=on,metacopy=on,index=on,xino=on,noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work"
+			unionmountopts="-o noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work,redirect_dir=on,metacopy=on,index=on,xino=on"
 			;;
 	esac
 
@@ -1718,4 +1682,14 @@ is_mountpoint ()
 	directory="$1"
 
 	[ $(stat -fc%d:%D "${directory}") != $(stat -fc%d:%D "${directory}/..") ]
+}
+
+# Commandline is image1:roothash1,image2:roothash2 etc.
+get_dm_verity_hash ()
+{
+	local image dmverity
+	image="$1"
+	dmverity="$2"
+
+	echo "${dmverity}" | tr "," "\n" | awk -v image=${image} -F ":" '$1==image {print $2}'
 }
