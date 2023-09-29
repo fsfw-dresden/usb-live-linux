@@ -1,4 +1,4 @@
 # Extend the list of auto-updated repositories.
 Unattended-Upgrade::Origins-Pattern {
-        "origin=Lernstick,codename=lernstick-11-thirdparty,label=lernstick-production";
+        "origin=Lernstick,codename=lernstick-12-thirdparty,label=lernstick-production";
 };
