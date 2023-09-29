@@ -1,6 +1,9 @@
 #!/bin/sh
 
+. /lib/live/config.sh
+
 ## live-config(7) - System Configuration Components
+## Copyright (C) 2016-2020 The Debian Live team
 ## Copyright (C) 2006-2015 Daniel Baumann <mail@daniel-baumann.ch>
 ##
 ## This program comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
@@ -34,8 +37,8 @@ Cmdline ()
 Init ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/user-setup.list ] || \
-	   [ -e /var/lib/live/config/user-setup -a -d "/home/${LIVE_USERNAME}" ]
+	if ! pkg_is_installed "user-setup" || \
+	   component_was_executed "user-setup"
 	then
 		exit 0
 	fi
