@@ -9,11 +9,12 @@ import sys
 
 import psutil
 from configobj import ConfigObj
-from PyQt5.QtCore import Qt, QTime
+from PyQt5.QtCore import Qt, QLocale, QTime, QTranslator
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QDialog, QSystemTrayIcon
 from PyQt5.uic import loadUi
 
+night_mode_dir = os.path.dirname(os.path.realpath(__file__))
 
 class SettingsWindow(QDialog):
     """The settings dialog"""
@@ -38,7 +39,7 @@ class SettingsWindow(QDialog):
             'dayTemp' : 6500,
             'nightTemp' : 1500
         }
-        loadUi(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'settings.ui'), self)
+        loadUi(os.path.join(night_mode_dir, 'settings.ui'), self)
         self.reload_config_file()
 
     def tray_icon_activated(self, reason):  # pylint: disable=unused-argument
@@ -53,10 +54,10 @@ class SettingsWindow(QDialog):
         if self.nightFadeStartTimeEdit.time() > self.nightFadeEndTimeEdit.time() \
             or self.dayFadeStartTimeEdit.time() > self.dayFadeEndTimeEdit.time() \
             or self.dayFadeEndTimeEdit.time() > self.nightFadeStartTimeEdit.time():
-            self.timesCoherentLabel.setText("Times inconherent, please check.")
+            self.timesCoherentLabel.setText(self.tr("Times inconherent, please check."))
             self.timesCoherentLabel.setStyleSheet('color: red;')
         else:
-            self.timesCoherentLabel.setText("OK")
+            self.timesCoherentLabel.setText(self.tr("OK"))
             self.timesCoherentLabel.setStyleSheet('color: green;')
 
     def reload_config_file(self):
@@ -136,6 +137,10 @@ def set_screen_color_temperature(temp = 6500):
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     app = QApplication(sys.argv)
+
+    translator = QTranslator()
+    if translator.load(QLocale.system(), 'settings', '_', night_mode_dir):
+        app.installTranslator(translator)
 
     settings = SettingsWindow()
     settings.show()
