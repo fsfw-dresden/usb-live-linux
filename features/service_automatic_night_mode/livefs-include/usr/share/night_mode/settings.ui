@@ -43,7 +43,7 @@
               <string>The color of indoor lights and screen tint are most often specified as temperatures in the unit Kelvin in the range of 1000K–10000K. The lower the color temperature, the "warmer" (yellow, red) the appearance and the less blue light does it contain. Some examples:
 · 1850K: Candle flame, strong red tint
 · 2700K: Standard warm color point
-· 6500K: Neutral Daylight </string>
+· 6500K: Neutral Daylight</string>
              </property>
              <property name="wordWrap">
               <bool>true</bool>

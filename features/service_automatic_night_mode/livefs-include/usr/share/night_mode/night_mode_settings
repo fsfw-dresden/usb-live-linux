@@ -130,7 +130,7 @@ def set_screen_color_temperature(temp = 6500):
     """Apply screen color change"""
     if settings.logChangesCheckBox.isChecked():
         print(f'Calling `xsct {temp}` to set screen color temperature')
-    subprocess.run(['xsct', str(temp)], check=True)
+    subprocess.run(['xsct', str(temp)], check = True)
 
 
 if __name__ == '__main__':
