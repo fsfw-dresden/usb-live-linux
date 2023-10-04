@@ -1,0 +1,16 @@
+#!/bin/bash
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/applications
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+APPIMAGE_URL="https://github.com/jes/meshmill/releases/download/v0.1.3/meshmill-0.1.3.AppImage"
+
+DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
+
+mkdir -pv ${DEST_DIR}
+cp -val "${DOWNLOADED_FILE}" "${DEST_DIR}"
+chmod -c a+x "${DEST_DIR}/${DOWNLOADED_FILE##*/}"
