@@ -1,0 +1,2 @@
+# needed to make 3DfindIT addon not fail in VM
+export QTWEBENGINE_CHROMIUM_FLAGS="--ignore-gpu-blocklist"
