@@ -20,6 +20,7 @@ class PortalWindow(QDialog):
         loadUi(os.path.join(PortalWindow.ressourceDir, "portal.ui"), self)
         self.welcomeTabInstallStickButton.clicked.connect(self.installClicked)
         self.installTabCalamaresPushButton.clicked.connect(self.calamaresClicked)
+        self.installTabUSBPushButton.clicked.connect(self.duplicateClicked)
 
     def setupTrayIcon(self):
         self.anitray = AnimatedSystemTrayIcon(QMovie(os.path.join(PortalWindow.ressourceDir, "upload.wikimedia.org--wikipedia--commons--thumb--9--9e--GIF_KARRATUA.gif--240px-GIF_KARRATUA.gif")))
@@ -52,6 +53,9 @@ class PortalWindow(QDialog):
         self.calamares = QProcess()
         self.calamares.start("install-debian")
 
+    def duplicateClicked(self):
+        self.terminal = QProcess()
+        self.terminal.start("x-terminal-emulator -e /usr/src/usb-live-linux/scripts/stick-install")
 
 class AnimatedSystemTrayIcon(QSystemTrayIcon):
     def __init__(self, movie):
