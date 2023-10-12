@@ -1,0 +1,17 @@
+gnuplot                 # Command-line driven interactive plotting program
+lua                     # Simple, extensible, embeddable programming language
+lua-penlight            # general purpose libraries for the Lua language
+octave-control          # computer-aided control system design (CACSD) for Octave
+octave                  # GNU Octave language for numerical computations
+maxima                  # Computer algebra system based on the original Macsyma developed at MIT in the 1970s
+maxima-share            # set of contributed routines and add-on packages
+scilab                  # matrixbasierte Wissenschaftssoftwaresuite
+
+cantor                  # mathematical applications from within an elegant worksheet interface
+cantor-backend-kalgebra
+cantor-backend-lua
+cantor-backend-maxima
+cantor-backend-octave
+cantor-backend-python3
+cantor-backend-r
+cantor-backend-scilab
