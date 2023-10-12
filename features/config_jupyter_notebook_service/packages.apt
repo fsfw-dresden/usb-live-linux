@@ -1,1 +1,19 @@
-jupyter-notebook                # Jupyter projects for Python 3
+jupyter-notebook        # Jupyter projects for Python 3
+python3-octave-kernel   # Jupyter kernel for Octave
+r-cran-irkernel         # Native R kernel for the Jupyter notebook
+xpython                 # Native jupyter kernel for python
+
+python3-bqplot          # Interactive plotting for the Jupyter notebook
+python3-ipywidgets      # Interactive widgets for the Jupyter notebook
+
+python3-agate           # alternative to numpy and pandas with readable code
+python3-graphviz        # Python 3 interface for Graphviz
+python3-matplotlib      # publication quality plotting
+python3-numpy           # Fast array facility to the Python 3 language
+python3-objgraph        # visually explore Python object graphs
+python3-pandas          # data structures for "relational" or "labeled" data
+python3-pipdeptree      # dependency tree of the installed Python 3 packages
+python3-pydot           # Python interface to Graphviz's dot
+python3-scipy           # scientific and numeric tools
+python3-seaborn         # statistical visualization library for Python3
+python3-sklearn         # modules for machine learning and data mining
