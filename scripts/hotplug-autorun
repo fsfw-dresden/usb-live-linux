@@ -11,15 +11,27 @@ import sys
 
 import apt
 
+def quit_msg(message):
+    """Terminate program, printing a final messaging."""
+    os.system('clear')
+    print(message)
+    input("Press [ENTER] to exit.")
+    sys.exit()
+
+def canceled():
+    """Quit with friendly message when dialog got canceled."""
+    quit_msg("Canceled. Goodbye.")
+
 deps = [ 'python3-dialog', 'python3-humanize', 'python3-blessings', 'python3-pyudev' ]
 deps_missing = []
+cache = apt.Cache()
 
 print(f"Checking for dependencies {deps}..")
 for dep in deps:
-    if not apt.Cache()[dep].is_installed:
+    if not dep in cache or not cache[dep].is_installed:
         deps_missing.append(dep)
 
-if not apt.Cache()['python3-multiplex'].is_installed:
+if not 'python3-multiplex' in cache or not cache['python3-multiplex'].is_installed:
     print('Please install python3-multiplex if you want a fancy multi-autorun.')
 
 if len(deps_missing) > 0:
@@ -44,17 +56,6 @@ udev = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(udev)
 monitor.filter_by(subsystem = 'block', device_type = 'disk')
 repo_path = os.path.realpath(os.path.dirname(__file__) + os.sep + os.pardir)
-
-def quit_msg(message):
-    """Terminate program, printing a final messaging."""
-    os.system('clear')
-    print(message)
-    input("Press [ENTER] to exit.")
-    sys.exit()
-
-def canceled():
-    """Quit with friendly message when dialog got canceled."""
-    quit_msg("Canceled. Goodbye.")
 
 def spawn_command(command):
     # pylint: disable=undefined-variable, consider-using-with
@@ -213,7 +214,10 @@ def main():
 
         if mode_tag == 'INSTALL':
             # Choose ISO file
-            isos = list(filter(lambda file: file.endswith('.iso'), os.listdir('artifacts/')))
+            isos = []
+            for iso_dir in ['artifacts', '/run/live/findiso']:
+                if os.path.isdir(iso_dir):
+                    isos += list(map(lambda file: iso_dir + '/' + file, filter(lambda file: file.endswith('.iso'), os.listdir(iso_dir))))
             choices = list(zip(map(str, range(len(isos))), isos))
             retval, tag = tui.menu("Please select ISO for installing with "
                                    "`stick-install`", width = 90, choices = choices)
