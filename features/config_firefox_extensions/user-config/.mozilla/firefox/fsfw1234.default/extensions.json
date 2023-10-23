@@ -310,15 +310,14 @@
       "location": "app-profile"
     },
     {
-      "id": "{b216c277-278a-4651-8448-d34382845efb}",
-      "version": "1.0.2020.190",
+      "id": "{fd252194-7d95-4d2a-9368-79e874fc335c}",
+      "version": "0.2.6",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
-        "name": "qr",
-        "description": "Show QR code representing url of current Tab or right clicked link",
-        "creator": "XA",
-        "homepageURL": "http://my.opera.com/XAntares/"
+        "name": "QRify",
+        "description": "Turn a URL or a text selection into a QR code with one click on the context menu or toolbar icon. Click to edit it. Works offline.",
+        "creator": "Terry Yuen"
       },
       "visible": true,
       "seen": true,

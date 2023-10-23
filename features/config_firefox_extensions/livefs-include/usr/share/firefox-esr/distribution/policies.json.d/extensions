@@ -49,10 +49,10 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/playback-speed/",
         "installation_mode": "allowed"
       },
-      "{b216c277-278a-4651-8448-d34382845efb}": {
-        "_name": "qr",
-        "_description": "Show QR code representing url of current Tab or right clicked link.",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/qr/",
+      "{fd252194-7d95-4d2a-9368-79e874fc335c}": {
+        "_name": "QRify",
+        "_description": "Turn a URL or a text selection into a QR code with one click on the context menu or toolbar icon. Click to edit it. Works offline.",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/qrify/",
         "installation_mode": "allowed"
       },
       "selection-search@myr1.net": {
