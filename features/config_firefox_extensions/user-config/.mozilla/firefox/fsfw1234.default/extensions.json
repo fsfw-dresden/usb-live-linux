@@ -1,10 +1,11 @@
 {
-  "schemaVersion": 33,
+  "schemaVersion": 35,
   "addons": [
     {
       "id": "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}",
       "version": "1.0.4",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Tab Extract",
         "description": "A simple & lightweight tool to reduce tab clutter, using just the address bar."
@@ -21,8 +22,9 @@
     },
     {
       "id": "tineye@ideeinc.com",
-      "version": "1.5.2",
+      "version": "2.0.4",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "TinEye Reverse Image Search",
         "description": "This is the official TinEye Firefox extension. Find out where an image came from, how it's used, or find higher resolution versions.",
@@ -41,8 +43,9 @@
     },
     {
       "id": "playbackSpeed@waldemar.b",
-      "version": "1.4.3",
+      "version": "1.4.4",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Playback speed",
         "description": "Control the speed of video playback."
@@ -63,8 +66,9 @@
     },
     {
       "id": "enhancerforyoutube@maximerf.addons.mozilla.org",
-      "version": "2.0.111",
+      "version": "2.0.121",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Enhancer for YouTube™",
         "description": "Take control of YouTube and boost your user experience!"
@@ -79,8 +83,9 @@
         "origins": [
           "*://www.youtube.com/*",
           "*://www.youtube.com/embed/*",
+          "*://www.youtube.com/live_chat*",
           "*://www.youtube.com/pop-up-player/*",
-          "*://www.youtube.com/live_chat*"
+          "*://www.youtube.com/shorts/*"
         ]
       },
       "location": "app-profile"
@@ -89,6 +94,7 @@
       "id": "dragselectlinktext@kestrel",
       "version": "1.5.4",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Drag-Select Link Text",
         "description": "Select link text with easy mouse gestures.",
@@ -109,8 +115,9 @@
     },
     {
       "id": "selection-search@myr1.net",
-      "version": "0.8.58",
+      "version": "0.8.64.1",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Selection Search",
         "description": "Search for the selected text in search engines"
@@ -140,6 +147,7 @@
       "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
       "version": "2.18.7",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Earth View from Google Earth",
         "description": "Experience a beautiful image from Google Earth every time you open a new tab."
@@ -156,10 +164,11 @@
     },
     {
       "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
-      "version": "9.4.2",
+      "version": "9.9.0.30",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
-        "name": "Translate Web Pages",
+        "name": "TWP - Translate Web Pages",
         "description": "Translate your page in real time using Google or Yandex.",
         "homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web"
       },
@@ -181,11 +190,12 @@
     },
     {
       "id": "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}",
-      "version": "2.1.0",
+      "version": "4.1.0",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Web Archives",
-        "description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is, Google, Bing, Yandex, Gigablast, WebCite, Sogou, Memento, Naver and Yahoo Japan.",
+        "description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is and Google.",
         "creator": "Armin Sebastian",
         "homepageURL": "https://github.com/dessant/web-archives"
       },
@@ -193,27 +203,34 @@
       "seen": true,
       "userPermissions": {
         "permissions": [
+          "alarms",
           "contextMenus",
-          "notifications",
           "storage",
+          "unlimitedStorage",
           "tabs",
+          "activeTab",
+          "notifications",
           "webRequest",
           "webRequestBlocking"
         ],
         "origins": [
-          "<all_urls>"
+          "<all_urls>",
+          "http://*/*",
+          "https://*/*",
+          "file:///*"
         ]
       },
       "location": "app-profile"
     },
     {
       "id": "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}",
-      "version": "0.4.8",
+      "version": "0.6.7",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Auto Tab Discard",
         "description": "Increase browser speed and reduce memory load when you have numerous open tabs.",
-        "homepageURL": "https://add0n.com/tab-discard.html"
+        "homepageURL": "https://webextension.org/listing/tab-discard.html"
       },
       "visible": true,
       "seen": true,
@@ -221,7 +238,6 @@
         "permissions": [
           "idle",
           "storage",
-          "tabs",
           "contextMenus",
           "notifications",
           "alarms"
@@ -235,8 +251,9 @@
     },
     {
       "id": "jid1-KKzOGWgsW3Ao4Q@jetpack",
-      "version": "3.3.5",
+      "version": "3.4.9",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "I don't care about cookies",
         "creator": "Daniel Kladnik @ kiboke studio"
@@ -261,8 +278,9 @@
     },
     {
       "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-      "version": "1.55.0",
+      "version": "2023.9.2",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "Bitwarden - Free Password Manager",
         "description": "A secure and free password manager for all of your devices.",
@@ -295,6 +313,7 @@
       "id": "{b216c277-278a-4651-8448-d34382845efb}",
       "version": "1.0.2020.190",
       "type": "extension",
+      "manifestVersion": 2,
       "defaultLocale": {
         "name": "qr",
         "description": "Show QR code representing url of current Tab or right clicked link",
