@@ -1,5 +1,5 @@
 gnuplot                 # Command-line driven interactive plotting program
-lua                     # Simple, extensible, embeddable programming language
+lua5.4                  # Simple, extensible, embeddable programming language
 lua-penlight            # general purpose libraries for the Lua language
 octave-control          # computer-aided control system design (CACSD) for Octave
 octave                  # GNU Octave language for numerical computations
