@@ -167,7 +167,7 @@ def invoke_hotfix(d):
     spawn_command_timed(['/bin/sh', '-xc',
                          f'cd {hotfix_path}'
                          f' && run-parts --verbose --regex=\'.*sh$\''
-                         f'--arg={d["path"]} install-hooks'
+                         f' --arg={d["path"]} install-hooks'
                          f' && echo hotfixed {d["path"]}'])
 
 def main():
