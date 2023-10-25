@@ -24,6 +24,7 @@ f2fs-tools
 fatattr
 gallery-dl
 git
+grub-efi-amd64-signed
 grub-efi-ia32-bin
 grub-pc-bin
 html-xml-utils

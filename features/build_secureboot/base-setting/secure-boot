@@ -1,0 +1,13 @@
+#!/bin/sh -e
+LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
+    --uefi-secure-boot enable"
+
+#     The new option --uefi-secure-boot can be set to auto (default,
+#     enable or disable.
+#     In auto, the lack of the signed EFI binaries is intentionally left as a
+#     soft failure - live-build will simply fallback to using the locally
+#     generated non-signed grub2 monolithic EFI binary as the only
+#     bootloader. […]
+#     The enable or disable options work as expected.
+
+# from commit 035518ff69a97fa5d3fa432e13c9593a9f459a4e (2018-02-27)
