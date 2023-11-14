@@ -93,7 +93,7 @@ export SYSTEMD_SECCOMP=0
 systemd-nspawn --directory=build/container apt update
 
 # Apply added dependencies
-systemd-nspawn --directory=build/container apt install --no-install-recommends --no-upgrade ${DEPS}
+systemd-nspawn --directory=build/container apt install --yes --no-install-recommends --no-upgrade ${DEPS}
 
 # Now bind-mount this repository and enter the container (without any device access restrictions)
 systemd-nspawn --directory=build/container --bind=${PWD}:/mnt/usb-live-linux --bind=/dev --tmpfs=/run/lock --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --console=pipe
