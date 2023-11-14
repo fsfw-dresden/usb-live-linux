@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Live-Stick Hotplug Autorun
+Type=Application
+Exec=su -c /usr/src/usb-live-linux/scripts/hotplug-autorun
+Icon=tag
+Categories=Settings
+Terminal=true
+StartupNotify=false
