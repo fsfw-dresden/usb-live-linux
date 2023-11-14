@@ -1,4 +1,4 @@
 # Extend the list of auto-updated repositories.
 Unattended-Upgrade::Origins-Pattern {
-        "origin=FSFW-Dresden:eMPee584,codename=fsfw-stix-12-security";
+        "origin=FSFW-Dresden:eMPee584,codename=schulstick-12-49GS";
 };

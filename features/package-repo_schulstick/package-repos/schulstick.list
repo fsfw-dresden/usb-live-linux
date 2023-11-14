@@ -1,1 +1,2 @@
-deb https://empee584.github.io/fsfw-stix-ppa schulstick-11 main
+deb https://empee584.github.io/fsfw-stix-ppa schulstick-12 main
+deb https://empee584.github.io/fsfw-stix-ppa schulstick-12-security main
