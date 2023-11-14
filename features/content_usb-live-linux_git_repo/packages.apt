@@ -5,3 +5,6 @@ python3-dialog          # making simple terminal-based user interfaces
 python3-humanize        # turning a number into a human readable size
 python3-blessings       # manage terminal color and styling
 python3-pyudev          # binding to the udev library
+
+# optional
+python3-multiplex       # View output of multiple processes, in parallel
