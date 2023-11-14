@@ -20,4 +20,4 @@ printrun                        # 3D printing host suite - printcore, standalone
 slic3r                          # G-code generator for 3D printers (+4 MB)
 cura                            # GUI G-code generator for 3D printers
 bcnc                            # GRBL CNC command sender, autoleveler and g-code editor
-< https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-204-gab3e5744-1_all.deb      # userfriendly tool for creating, saving and sending jobs to lasercutters
+< https://download.visicut.org/files/master/Debian-Ubuntu-Mint/visicut_1.9-206-g2c31b439-1_all.deb      # userfriendly tool for creating, saving and sending jobs to lasercutters

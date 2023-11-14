@@ -39,7 +39,7 @@ spice-vdagent                   #  Automatic adjustment of resolution, copy and 
 xserver-xorg-video-qxl          #  Display driver for QXL video device inside SPICE-compatible KVM/Qemu emulator
 
 # out of kernel drivers
-< http://ftp.de.debian.org/debian/pool/main/t/tp-smapi/tp-smapi-dkms_0.44-1_all.deb
+< http://ftp.de.debian.org/debian/pool/main/t/tp-smapi/tp-smapi-dkms_0.44-1~bpo12+1_all.deb
 # tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 acpi-call-dkms                  #  enables you to call ACPI methods
 broadcom-sta-dkms               #  Broadcom STA Wireless driver
