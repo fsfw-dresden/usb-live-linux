@@ -1,0 +1,3 @@
+#!/bin/sh
+
+qalc -exrates '1 EUR to USD'
