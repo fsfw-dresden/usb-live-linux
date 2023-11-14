@@ -1,6 +1,7 @@
 #!/bin/sh
 
 URLS="
+https://github.com/5axes/FreeCAD-GDT
 https://github.com/boltsparts/BOLTSFC
 https://github.com/cadenasgmbh/3dfindit-freecad-integration
 https://github.com/davesrocketshop/Rocket
@@ -12,11 +13,13 @@ https://github.com/FreeCAD/freecad.ship
 https://github.com/FreeCAD/FreeCAD-symbols
 https://github.com/JMG1/ExplodedAssembly
 https://github.com/jmplonka/InventorLoader
+https://github.com/knipknap/better-tool-library
 https://github.com/looooo/FCGear
 https://github.com/rkrenzler/ose-piping-workbench
 https://github.com/shaise/FreeCAD_FastenersWB
 https://github.com/shaise/FreeCAD_SheetMetal
-https://github.com/triplus/CubeMenu"
+https://github.com/triplus/CubeMenu
+https://github.com/URJCMakerGroup/MakerWorkbench"
 
 # https://github.com/triplus/Glass
 # https://github.com/HakanSeven12/Modern-UI
