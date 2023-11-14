@@ -1,6 +1,7 @@
 diffpdf                         # grafischer PDF-Vergleicher
 ocrmypdf                        # add an OCR text layer to PDF files
 paperwork-gtk                   # personal document manager for scanned documents and PDFs ("scan & forget")
+pdfarranger                     # merge, split and re-arrange pages from PDF documents
 pdfchain                        # Grafische Benutzeroberfläche für das PDF Tool Kit
 pdfgrep                         # grep-artiges Suchprogramm für PDF-Dateien für die Konsole
 # Updating poppler-sharp would introduce bugs in testing pdfmod                          # PDF-Bearbeitungsfrontend
