@@ -141,3 +141,4 @@ wcalc                   # command-line scientific calculator
 whois                   # intelligent WHOIS client
 xmlstarlet              # transform, query, validate, and edit XML files in similar way to UNIX grep, sed, awk, diff, patch, join, etc commands
 zip                     # Archiver for .zip files (+234 kB)
+zstd                    # fast lossless compression algorithm
