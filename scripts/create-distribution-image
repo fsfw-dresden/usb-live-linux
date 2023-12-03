@@ -45,8 +45,8 @@ get_matching_install_variant() {
     done
 
     # wasn't able to find a match
-    print_warn "Could not find a matching install variant from image name, defaulting to 'Makerstick'"
-    echo "Makerstick"
+    print_warn "Could not find a matching install variant from image name, defaulting to 'Schulstick'"
+    echo "Schulstick"
 }
 
 check_parameters() {
