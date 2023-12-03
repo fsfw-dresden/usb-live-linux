@@ -35,7 +35,7 @@ display_menu() {
     HEIGHT=$((80 * $(tput lines) / 100))
     MAXMENUHEIGHT=20
     COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = tag_color" "tag_key_selected_color = tag_selected_color" )
-    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MAXMENUHEIGHT} "${OPTIONS[@]}"
+    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --colors --stdout --title "${TITLE}" --menu "${TEXT}" ${HEIGHT} ${WIDTH} ${MAXMENUHEIGHT} "${OPTIONS[@]}"
 
     # redraw screen without erasing backscroll history
     clear -x > /dev/stderr
@@ -50,7 +50,7 @@ display_inputbox() {
     HEIGHT=$((80 * $(tput lines) / 100))
     MAXMENUHEIGHT=20
     COLORS=( "tag_selected_color = (WHITE,BLUE,ON)" "item_selected_color = item_color" "tag_key_color = tag_color" "tag_key_selected_color = tag_selected_color" )
-    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --stdout --title "${TITLE}" --inputbox "${TEXT}" ${HEIGHT} ${WIDTH} ${INIT}
+    DIALOGRC=<(printf '%s\n' "${COLORS[@]}") dialog --colors --stdout --title "${TITLE}" --inputbox "${TEXT}" ${HEIGHT} ${WIDTH} ${INIT}
 
     # redraw screen without erasing backscroll history
     clear -x > /dev/stderr
