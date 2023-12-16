@@ -2,7 +2,7 @@
 Name=Duplicate Live-Stick
 Name[de]=Live-Stick kopieren
 Type=Application
-Exec=su -c /usr/src/usb-live-linux/scripts/stick-install
+Exec=sudo /usr/src/usb-live-linux/scripts/stick-install
 Icon=live-usb-kernel-updater
 Categories=Settings
 Terminal=true
