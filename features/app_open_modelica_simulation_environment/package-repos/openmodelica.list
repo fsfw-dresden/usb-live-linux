@@ -1,2 +1,2 @@
-deb http://build.openmodelica.org/apt bullseye stable
-# deb-src http://build.openmodelica.org/apt bullseye stable
+deb http://build.openmodelica.org/apt bookworm stable
+# deb-src http://build.openmodelica.org/apt bookworm stable

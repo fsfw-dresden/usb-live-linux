@@ -8,7 +8,7 @@ PREFIX=config/includes.chroot
 TARGET_FILE="/usr/bin/godot4"
 DEST_FILE=${PREFIX}/${TARGET_FILE#/}
 
-ZIP_URL="https://github.com/godotengine/godot/releases/download/4.1.1-stable/Godot_v4.1.1-stable_linux.x86_64.zip"
+ZIP_URL="https://github.com/godotengine/godot/releases/download/4.2.1-stable/Godot_v4.2.1-stable_linux.x86_64.zip"
 
 # Create target dir
 mkdir -p ${PREFIX}/${TARGET_FILE%/*}
