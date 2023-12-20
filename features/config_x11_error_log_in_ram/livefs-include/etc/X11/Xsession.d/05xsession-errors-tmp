@@ -1,3 +1,9 @@
 # reroute xsession-errors to ram
-echo "(!) to reduce disk writing, this output is being redirected to /tmp/.xsession-errors in system RAM"
-exec >> /tmp/.xsession-errors 2>&1
+
+[ -d /tmp/zram ] && TMP_PATH="/tmp/zram" || TMP_PATH="/tmp"
+TMP_ERRFILE=${TMP_PATH}/.xsession-errors
+: > $TMP_ERRFILE
+exec >> ${TMP_ERRFILE} 2>&1
+cat $ERRFILE
+echo "(!) to reduce flash writing, xsession output has been redirected to $TMP_ERRFILE in system RAM"
+ln -sf $TMP_ERRFILE $ERRFILE
