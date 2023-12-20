@@ -38,7 +38,8 @@ Init ()
 {
 	# Checking if package is installed or already configured
 	if ! pkg_is_installed "user-setup" || \
-	   component_was_executed "user-setup"
+	   component_was_executed "user-setup" && \
+	   [ -d "/home/${LIVE_USERNAME}" ]
 	then
 		exit 0
 	fi
@@ -51,14 +52,14 @@ Config ()
 	# Checking if package is already configured differently
 	if grep -q "^${LIVE_USERNAME}:" /etc/passwd
 	then
-                # username exists but home directory absent?
-	        if [ ! -d "/home/${LIVE_USERNAME}" ]
-                then
-                        # remove user so it can be re-added
-                        deluser ${LIVE_USERNAME}
-                else
-		        exit 0
-                fi
+		# username exists but home directory absent?
+		if [ ! -d "/home/${LIVE_USERNAME}" ]
+		then
+			# remove user so it can be re-added
+			deluser ${LIVE_USERNAME}
+		else
+			exit 0
+		fi
 	fi
 
 	# Adjust formating of groups
