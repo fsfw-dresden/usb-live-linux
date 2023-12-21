@@ -271,23 +271,27 @@ execute_install_hooks() {
     # work in a subshell so the directory change is ineffective outside
     (
         cd build
+        mkdir -p install
 
-        # clean install/ folder
-        [ ! -d install ] || rm -r install
+        export INSTALL_TMPDIR=$(mktemp --directory --tmpdir=install)
 
-        # and copy out install features anew
-        transmogrify_features "../variants.install/${INSTALL_VARIANT}"
+        (
+            cd ${INSTALL_TMPDIR}
 
-        for INSTALL_HOOK in install/hooks/*
-        do
-            (
-                printf '\n'
-                print_info "Invoking ${INSTALL_HOOK}"
-                source "${INSTALL_HOOK}"
-            ) &
-            # set -e & subshell? https://unix.stackexchange.com/a/254676/18150
-            wait $! || die "Problem occurred in ${INSTALL_HOOK}"
-        done
+            # and copy out install features anew
+            transmogrify_features "../../../variants.install/${INSTALL_VARIANT}"
+
+            for INSTALL_HOOK in install/hooks/*
+            do
+                (
+                    printf '\n'
+                    print_info "Invoking install hook ${INSTALL_HOOK##*/}"
+                    source "${INSTALL_HOOK}"
+                ) &
+                # set -e & subshell? https://unix.stackexchange.com/a/254676/18150
+                wait $! || die "Problem occurred in ${INSTALL_HOOK}"
+            done
+        )
     )
 }
 

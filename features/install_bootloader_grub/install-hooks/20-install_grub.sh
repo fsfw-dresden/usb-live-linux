@@ -2,7 +2,7 @@ check_dependencies grub-pc-bin grub-efi-ia32-bin shim-signed syslinux-common lib
 
 (
     # LIVE_IMAGE URI is either absolute or relative to repo root, so cd up
-    cd ..
+    cd $(repo_root)
 
     mkdir -p ${EFIBOOT}/boot
     print_info "extracting kernel and init ramdisk from ISO to directly boot partition of type 0"
