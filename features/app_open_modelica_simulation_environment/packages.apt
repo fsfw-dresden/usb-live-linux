@@ -1,1 +1,2 @@
 openmodelica                    # Modelica modeling, compilation and simulation environment (+64,3 MB)
+omlibrary                       # OpenModelica library cache of the standard library for use without internet access
