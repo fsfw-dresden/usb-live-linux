@@ -53,6 +53,7 @@ glances                 # curses-based monitor for CPU, load, memory, network ba
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 gstreamer1.0-tools      # gst-inspect, gst-launch, gst-stats et al.
+hexyl                   # Command-line hex viewer with colored output
 highlight               # Universal source code to formatted text converter
 htop                    # interaktive Prozessübersicht für die Konsole
 htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
@@ -63,6 +64,7 @@ i7z                     # reports Intel Core i7, i5, i3 CPU information about Tu
 icdiff                  # terminal side-by-side colorized word diff
 imagemagick             # konsolenbasierte Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: um ganze Bilderordner zu konvertieren
 inotify-tools           # command-line programs providing a simple interface to inotify
+intel-gpu-tools         # tools for debugging the Intel graphics driver, including a performance monitor (intel_gpu_top)
 inxi                    # system information script
 ioping                  # disk I/O latency measuring tool
 iotop                   # displays a table of current I/O usage by processes on the system
