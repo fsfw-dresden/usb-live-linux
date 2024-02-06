@@ -1,0 +1,4 @@
+# Prioritize over older package in deb-multimedia
+Package: audacity audacity-data
+Pin: release n=lernstick-12-backports
+Pin-Priority: 600
