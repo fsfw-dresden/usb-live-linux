@@ -1,0 +1,4 @@
+#!/bin/sh
+# sorts the subscription list by name..
+# for exactly no benefit at all (just the order in file)
+jq -c '.subscriptions |= sort_by(.name | ascii_downcase)' profiles.db | sponge profiles.db
