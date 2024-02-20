@@ -1,0 +1,16 @@
+#!/bin/bash
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/applications
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+APPIMAGE_URL="https://sourceforge.net/projects/nootka/files/Testing/Nootka-2.0.3-devel-b5038-x86_64.AppImage/download"
+
+DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
+
+mkdir -pv ${DEST_DIR}
+cp -val "${DOWNLOADED_FILE}" "${DEST_DIR}"
+chmod -c a+x "${DEST_DIR}/${DOWNLOADED_FILE##*/}"
