@@ -1,0 +1,8 @@
+[Desktop Entry]
+Categories=Development;Engineering
+Exec=/opt/cadquery-editor/bin/cq-editor
+Icon=cadquery_logo_light.svg
+Name=CadQuery Editor
+GenericName=Parametric Python Scripted CAD GUI
+GenericName[de]=Parametrisches CAD-Werkzeug mit Python
+Type=Application

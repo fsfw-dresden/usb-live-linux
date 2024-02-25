@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+DEST_DIR=${PREFIX}/tmp/cadquery
+URL=https://github.com/CadQuery/CQ-editor/releases/download/nightly/CQ-editor-master-Linux-x86_64.sh
+
+mkdir -pv "${DEST_DIR}"
+FILE=$(download_file_cached ${URL}) \
+  && cp -aiv "${FILE}" "${DEST_DIR}"

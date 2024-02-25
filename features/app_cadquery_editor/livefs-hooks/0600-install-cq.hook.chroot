@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# abort on error
+set -e
+
+# Use install script
+SCRIPT="/tmp/cadquery/CQ-editor-master-Linux-x86_64.sh"
+OPTS=" -b -p /opt/cadquery-editor"
+chmod -c +x "${SCRIPT}"
+sh -xc "${SCRIPT} ${OPTS}"
+rm -v "${SCRIPT}" 
