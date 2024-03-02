@@ -9,9 +9,11 @@
   "controls": [
     "loop",
     "stop",
+    "volume-booster",
     "cards-end-screens",
     "speed",
-    "video-filters"
+    "video-filters",
+    "screenshot"
   ],
   "defaultvolume": true,
   "volume": 65,
@@ -19,5 +21,6 @@
   "stopvideos": true,
   "expanddescription": false,
   "whitelist": "",
-  "controlsvisible": true
+  "controlsvisible": true,
+  "blockads": false
 }
