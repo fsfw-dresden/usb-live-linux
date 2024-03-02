@@ -18,3 +18,6 @@ print_info "installed grub version seems to be ${GRUB_VERSION} .."
 grub-install --target=i386-efi --uefi-secure-boot --no-nvram --recheck --removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
 grub-install --target=i386-pc --no-floppy --force --removable --root-directory=${EFIBOOT} ${DEVICE}
 grub-install --target=x86_64-efi --uefi-secure-boot --no-nvram --force-extra-removable --efi-directory=${EFIBOOT} --root-directory=${EFIBOOT}
+
+# copy the stub grub.cfg that points to the actual config until debian's grub-install is fixed
+find ${EFIBOOT}/EFI -name grub.cfg -exec ls -lah {} \; -exec cp -vi --preserve=timestamps {} ${EFIBOOT}/EFI/BOOT/ \;
