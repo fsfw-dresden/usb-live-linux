@@ -9,7 +9,7 @@ url_to_filename() {
 set -e
 
 PREFIX=config/includes.chroot
-TARGET_DIR=/usr/share/sample-media-files
+TARGET_DIR=/usr/local/share/edu-materials
 BASE_DIR=${PREFIX}/${TARGET_DIR#/}
 
 mkdir -p "${BASE_DIR}"

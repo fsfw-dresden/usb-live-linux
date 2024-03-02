@@ -6,7 +6,7 @@ set -e
 #. /mnt/stix/usb-live-linux/scripts/functions.bash
 
 PREFIX=config/includes.chroot
-TARGET_DIR=/usr/share/sample-media-files/lego-models
+TARGET_DIR=/usr/local/share/edu-materials/lego-models
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
 # Create target dir

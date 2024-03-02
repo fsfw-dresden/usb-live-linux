@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CHEM_DIR="/usr/share/chemical-structures"
-TARGET_DIR="/usr/share/sample-media-files"
+TARGET_DIR="/usr/local/share/edu-materials"
 
 mkdir -pv "${TARGET_DIR}"
 cp -av "${CHEM_DIR}" "${TARGET_DIR}/"
