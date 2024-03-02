@@ -48,7 +48,8 @@ faketime                # intercepts various system calls and fake date and time
 fatattr                 # control attributes on a FAT filesystem
 fatrace                 # report system wide file access events
 finger                  # displays information about the system users
-#       fq              # jq for binary formats (will be in bookworm)
+fq                      # jq for binary formats
+gdu                     # Pretty fast disk usage analyzer written in Go
 glances                 # curses-based monitor for CPU, load, memory, network bandwidth, disk I/O, disk use, process
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird

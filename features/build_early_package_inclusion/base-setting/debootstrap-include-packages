@@ -1,6 +1,6 @@
 #!/bin/sh -e
 LB_CONFIG_PARAMETERS="${LB_CONFIG_PARAMETERS} \
-    --debootstrap-options '--include=ca-certificates,openssl,gnupg,aptitude,ncdu,eatmydata'"
+    --debootstrap-options '--include=ca-certificates,openssl,gnupg,aptitude,gdu,eatmydata'"
 
 #        --debootstrap-options OPTIONS
 #            passes the given options to debootstrap when setting up the  base

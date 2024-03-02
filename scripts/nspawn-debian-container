@@ -49,6 +49,7 @@ squashfs-tools
 syslinux-common
 systemd-container
 tig
+time
 unzip
 wget
 xorriso
