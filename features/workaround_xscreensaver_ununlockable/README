@@ -1,0 +1,3 @@
+Somehow the screensaver does not unlock with the default blank password.
+According to the lernstick authors, this might be a debian 12 specific issue.
+Needs to be tracked down further, disable xscreensaver daemon by default for now.
