@@ -11,5 +11,6 @@ POLICIES=/usr/share/firefox-esr/distribution/policies.json
 for extension in $(jq  -r '.policies.ExtensionSettings|keys|.[]' ${POLICIES});
 do
         URL=$(jq -r '.policies.ExtensionSettings."'${extension}'".install_url' ${POLICIES})
-        curl --location --remote-time --output "${EXTDIR}/${extension}.xpi" "${URL}"
+        TARGET="${EXTDIR}/${extension}.xpi"
+        [ -e "${TARGET}" ] || curl --location --remote-time --output "${TARGET}" "${URL}"
 done
