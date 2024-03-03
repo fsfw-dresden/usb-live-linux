@@ -50,25 +50,6 @@ stellarium                      # Echtzeit-Generator für fotorealistische Himme
 oneko                           # cat chases the mouse cursor around the screen
 frogatto                        # 2D platformer game starring a quixotic frog
 
-# ? kdeedu                      # Lernprogramme aus der offiziellen KDE-Veröffentlichung (<198 MB)
-# ? artikulate                  # (Teil von kdeedu)
-blinken                         # (Teil von kdeedu)
-kalgebra                        # (Teil von kdeedu)
-kalzium                         # (Teil von kdeedu)
-kanagram                        # (Teil von kdeedu)
-kbruch                          # (Teil von kdeedu)
-kgeography                      # (Teil von kdeedu)
-khangman                        # (Teil von kdeedu)
-kig                             # (Teil von kdeedu)
-klettres                        # (Teil von kdeedu)
-kmplot                          # (Teil von kdeedu)
-ktouch                          # (Teil von kdeedu)
-kturtle                         # (Teil von kdeedu)
-kwordquiz                       # (Teil von kdeedu)
-minuet                          # (Teil von kdeedu)
-parley                          # (Teil von kdeedu)
-step                            # (Teil von kdeedu)
-
 # ? kdegames                    # Spiele aus dem offiziellen KDE-Veröffentlichung (126 MB)
 # ? bomber                      # arcade spaceship game
 # ? granatier                   # Bomberman clone
