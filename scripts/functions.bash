@@ -365,7 +365,7 @@ apply_features() {
                         sed -r 's/(.*)\s+(#.*)/\2:\n\1/' ${FEATURE_PATH}/${FRAGMENT_PATH} > ${TARGET_LIST}
 
                         # download .deb URLs on lines beginning with '<'
-                        for URL in "$(sed -rn 's/^<\s+(\S+)\s*.*/\1/p' ${TARGET_LIST})"
+                        for URL in $(sed -rn 's/^<\s+(\S+)\s*.*/\1/p' ${TARGET_LIST})
                         do
                             [ -n "${URL}" ] && download_external_deb_package "${URL}"
                         done
