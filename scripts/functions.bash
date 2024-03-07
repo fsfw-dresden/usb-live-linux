@@ -171,6 +171,9 @@ download_external_deb_package() {
     [[ ${FILE_NAME} =~ _${PKG_ARCH}.deb ]] \
         || FILE_NAME=${FILE_NAME%.deb}_${PKG_ARCH}.deb
 
+    # Convert to lowercase to prevent E: Unable to locate package …
+    FILE_NAME=${FILE_NAME,,}
+
     cp --archive --link -v "${FILE_CACHED}" "${TARGET_DIR}/${FILE_NAME}"
 }
 
