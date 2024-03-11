@@ -1,0 +1,11 @@
+#!/bin/sh
+# Remove the weather plugin and adjacent separator
+
+# shellcheck disable=SC2016
+
+xmlstarlet edit --inplace \
+                --delete '/*/*/*/*[@name="plugin-ids"]/*[@value="4"]' \
+                --delete '/*/*/*/*[@name="plugin-ids"]/*[@value="12"]' \
+                --delete '/*/*[@name="plugins"]/*[@value="weather"]' \
+                --delete '/*/*[@name="plugins"]/*[@name="plugin-12"]' \
+/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
