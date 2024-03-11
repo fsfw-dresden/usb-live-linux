@@ -1,0 +1,14 @@
+# Create Download folder & set arrow emblem
+
+CONFDIR="${HOME}/.local/share/gvfs-metadata"
+DIR="${HOME}/Downloads"
+ATTR="metadata::emblems"
+
+[ -d ${CONFDIR} ] || mkdir -pv ${CONFDIR}
+[ -d ${DIR} ] || mkdir -pv ${DIR}
+
+(
+  sleep 1
+  gio info --attributes=${ATTR} $DIR | grep ${ATTR} || \
+    gio set --type=stringv ${DIR} ${ATTR} package-downgrade
+) &
