@@ -159,10 +159,6 @@
         {
           "name": "Hacker News",
           "url": "https://hn.algolia.com/?query=%s&sort=byDate"
-        },
-        {
-          "name": "Twitter",
-          "url": "https://nitter.net/search?q=%s"
         }
       ]
     },
