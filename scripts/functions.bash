@@ -100,6 +100,19 @@ download_file_cached() {
                   --remote-time --insecure --ssl-allow-beast --fail \
                   --connect-timeout 10"
 
+    if [ -f "${FILE_CACHED}" ] \
+        && URL_SIZE=$(curl --silent --output /dev/null --head --location \
+                      --write-out '%header{content-length}' "${FILE_URL}") \
+        && [ -n "${URL_SIZE}" ] && [ ${URL_SIZE} -gt $((2**20)) ] \
+        && [ $(stat --format=%s "${FILE_CACHED}") -ne ${URL_SIZE} ]; then
+        # file is available online & > 1MiB but files are not of same size
+
+        echo "File seems to be updated (size mismatch), redownloading." > /dev/stderr
+
+        # rename file with last modified date & trigger redownload
+        mv -v "${FILE_CACHED}" "${FILE_CACHED%.*}."$(date --date="$(stat --printf='%y' "${FILE_CACHED}")" +'%F.%H%Mh').${FILE_NAME##*.} > /dev/stderr
+    fi
+
     if [ -f "${FILE_CACHED}" ]; then
         echo "${FILE_NAME} available in cache, not downloading." > /dev/stderr
     else
