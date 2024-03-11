@@ -97,7 +97,8 @@ download_file_cached() {
     # Set custom user-agent string, turn on location following, timestamp files
     # and disable SSL certificate checking as well as BEAST workaround
     CURL_DEFAULT="--user-agent org.schulstick.build --location --no-keepalive \
-                  --remote-time --insecure --ssl-allow-beast --connect-timeout 10"
+                  --remote-time --insecure --ssl-allow-beast --fail \
+                  --connect-timeout 10"
 
     if [ -f "${FILE_CACHED}" ]; then
         echo "${FILE_NAME} available in cache, not downloading." > /dev/stderr
