@@ -110,7 +110,8 @@ download_file_cached() {
         # so fill the variable with an option already stated above (NOOP)
         [ -z "${CURL_OPTIONS}" ] && CURL_OPTIONS="--no-keepalive"
 
-        if eval curl ${CURL_DEFAULT} "${CURL_OPTIONS}" --output "\"${FILE_CACHED}.partial\"" "'${FILE_URL}'"
+        FILE_PARTIAL="${FILE_CACHED}.partial"
+        if eval curl ${CURL_DEFAULT} "${CURL_OPTIONS}" --output "\"${FILE_PARTIAL}\"" "'${FILE_URL}'"
         then
             echo "${FILE_NAME} fetched" > /dev/stderr
         else
@@ -118,9 +119,9 @@ download_file_cached() {
         fi
 
         # If this is a debian archive, test for integrity
-        if [[ "${DEB_FILE}" =~ \.deb$ ]] && ! check_debian_archive ${DEB_FILE}
+        if [[ "${FILE_PARTIAL}" =~ \.deb.partial$ ]] && ! check_debian_archive ${FILE_PARTIAL} > /dev/stderr
         then
-            die "${DEB_FILE} seems broke, aborting" > /dev/stderr
+            die "${FILE_PARTIAL} seems broken, aborting" > /dev/stderr
         fi
 
         # Rename file in cache
@@ -133,7 +134,7 @@ download_file_cached() {
 check_debian_archive() {
     DEB_FILE=${1}
     TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
-    trap "rm -r \"${TMPDIR}\"" RETURN
+    trap "rm -r ${TMPDIR}; trap - RETURN" RETURN
 
     # extract downloaded package to check for basic integrity
     if dpkg-deb --extract ${DEB_FILE} ${TMPDIR}
