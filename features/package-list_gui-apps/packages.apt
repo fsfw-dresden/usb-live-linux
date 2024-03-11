@@ -45,7 +45,6 @@ xpra                            # tool to detach/reattach running X programs
 
 libvte9                         # Terminal emulator widget for GTK+ 2.0 - runtime files
 
-qt5ct                           # Qt5 Configuration Utility (theme, font, icons, etc.)
 qt5-style-plugins               # Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 qttranslations5-l10n            # translations for Qt 5 (+1.501 kB)
 
