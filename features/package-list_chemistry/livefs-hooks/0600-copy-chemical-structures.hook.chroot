@@ -5,4 +5,4 @@ TARGET_DIR="/usr/local/share/edu-materials"
 
 mkdir -pv "${TARGET_DIR}"
 cp -av "${CHEM_DIR}" "${TARGET_DIR}/"
-find "${TARGET_DIR}/${CHEM_DIR##*/}" -name '*.html' -delete
+find "${TARGET_DIR}/${CHEM_DIR##*/}" \( -name styles -o -name jmol -o -name images \) -exec rm -r {} +
