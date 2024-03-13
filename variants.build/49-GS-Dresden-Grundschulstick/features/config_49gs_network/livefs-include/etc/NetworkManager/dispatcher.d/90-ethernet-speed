@@ -7,6 +7,6 @@ case "${STATUS}" in
         up)
                 # turn on ethernet auto-negotiation when speed is detected and below 1 gigabit
                 ETH_SPEED=$(ethtool "${INTERFACE}" 2>&1|sed -nr 's/.*Speed: ([0-9]+)[^0-9]+$/\1/p')
-                [ -n "${ETH_SPEED}" ] && [ "${ETH_SPEED}" -lt 1000 ] && ethtool --change "${INTERFACE}" autoneg on
+                [ -n "${ETH_SPEED}" ] && [ "${ETH_SPEED}" -lt 1000 ] && ethtool --change "${INTERFACE}" autoneg on || true
                 ;;
 esac
