@@ -7,4 +7,13 @@
      preferDarkTheme="0"
      menuIcons="1">
   </group>
+  <group
+     id="window"
+     interface_mode="0" />
+  <group
+     id="options">
+    <group
+       id="boot"
+       enabled="0" />
+  </group>
 </inkscape>
