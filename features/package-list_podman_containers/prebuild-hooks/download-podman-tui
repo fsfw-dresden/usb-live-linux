@@ -10,6 +10,6 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 # Create target dir
 mkdir -p "${DEST_DIR}"
 
-URL="https://github.com/containers/podman-tui/releases/download/v0.9.1/podman-tui-release-linux_amd64.zip"
+URL="https://github.com/containers/podman-tui/releases/download/v0.17.0/podman-tui-release-linux_amd64.zip"
 FILE=$(download_file_cached ${URL}) \
   && unzip -jd "${DEST_DIR}" "${FILE}"
