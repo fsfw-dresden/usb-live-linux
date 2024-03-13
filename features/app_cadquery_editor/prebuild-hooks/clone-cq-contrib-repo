@@ -1,0 +1,7 @@
+#!/bin/sh
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+mkdir -pv ${DEST_DIR} && cd ${DEST_DIR} && git clone https://github.com/CadQuery/cadquery-contrib
