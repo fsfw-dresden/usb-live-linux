@@ -7,9 +7,6 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 mkdir -pv ${DEST_DIR}
 cp -av ${SRC_DIR} ${DEST_DIR%/*}/
 
-# Make these template directories user-writable
-chmod --changes --recursive a+w ${DEST_DIR}
-
 # Put a symlink to the Material into home directory skeleton
 mkdir -pv ${PREFIX}/etc/skel
 ln -sv ${TARGET_DIR} ${PREFIX}/etc/skel/

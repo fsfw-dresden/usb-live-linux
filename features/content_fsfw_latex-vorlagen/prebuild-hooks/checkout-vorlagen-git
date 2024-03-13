@@ -10,4 +10,3 @@ mkdir -pv ${DEST_DIR}
 # <https://github.com/fsfw-dresden/latex-vorlagen>.
 git submodule update --init --recursive
 rsync -aP --exclude=.git* ${SRC_DIR}/ ${DEST_DIR}/
-chmod a+w --recursive --changes ${DEST_DIR}

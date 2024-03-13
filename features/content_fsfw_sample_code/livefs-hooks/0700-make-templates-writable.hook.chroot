@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# FIXME / workaround: make whole template dir writable.
+chmod -r o+w /usr/local/share/FSFW-Material
