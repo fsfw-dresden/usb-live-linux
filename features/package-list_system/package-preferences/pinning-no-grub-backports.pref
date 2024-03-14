@@ -1,0 +1,4 @@
+# workaround 2024-03: grub signed packages missing from backports
+Package: grub-* grub2-*
+Pin: release o=Debian Backports
+Pin-Priority: 499
