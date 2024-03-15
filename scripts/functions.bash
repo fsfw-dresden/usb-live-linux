@@ -146,7 +146,7 @@ download_file_cached() {
 
 check_debian_archive() {
     DEB_FILE=${1}
-    TMPDIR=$(mktemp --tmpdir --directory deb-pkg-check-XXX)
+    TMPDIR=$(mktemp --tmpdir=. --directory deb-pkg-check-XXX)
     trap "rm -r ${TMPDIR}; trap - RETURN" RETURN
 
     # extract downloaded package to check for basic integrity
