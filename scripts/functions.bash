@@ -186,8 +186,21 @@ download_external_deb_package() {
     [[ ${FILE_NAME} =~ _${PKG_ARCH}.deb ]] \
         || FILE_NAME=${FILE_NAME%.deb}_${PKG_ARCH}.deb
 
-    # Convert to lowercase to prevent E: Unable to locate package …
-    FILE_NAME=${FILE_NAME,,}
+    # Does Package field contain uppercase characters?
+    if dpkg-deb --info ${FILE_CACHED} | grep -q 'Package:.*[A-Z]'; then
+        FILE_REPACK=${FILE_CACHED%.deb}.repack.deb
+
+        if ! [ -e ${FILE_REPACK} ]; then
+            DEB_DIR=${FILE_NAME%.deb}
+            dpkg-deb --raw-extract ${FILE_CACHED} ${DEB_DIR}
+            # Convert to lowercase to prevent E: Unable to locate package …
+            sed -ri 's/^(Package:) (.*)/\1 \L\2/' ${DEB_DIR}/DEBIAN/control
+            dpkg-deb --build ${DEB_DIR}
+            rm -r ${DEB_DIR}
+            mv -iv ${FILE_NAME} ${FILE_REPACK}
+        fi
+        FILE_CACHED=${FILE_REPACK}
+    fi
 
     cp --archive --link -v "${FILE_CACHED}" "${TARGET_DIR}/${FILE_NAME}"
 }
