@@ -10,12 +10,18 @@ set -o pipefail
 # turn on extended globbing for !(pattern-list)
 shopt -s extglob
 
-# give some rudimentary help if requested
 case "${1}" in
+    # debug mode
+    "-D")
+        ;&
+    "--debug")
+        shift; set -x; trap "set +x" EXIT SIGHUP SIGQUIT SIGTERM
+        ;;
+    # give some rudimentary help if requested
     "-h")
         ;&
     "--help")
-        print_info "usage is ${0} [BUILD_VARIANT]"
+        print_info "usage is [--debug] ${0} [BUILD_VARIANT]"
         print_info "If given, BUILD_VARIANT must match a sub-folder or symlink in variants.build/"
         exit
         ;;
