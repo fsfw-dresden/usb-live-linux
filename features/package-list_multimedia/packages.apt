@@ -13,11 +13,15 @@ cheese                          # tool to take pictures and videos from your web
 clementine                      # modern music player and library organizer (+5.968 kB)
 easytag                         # viewing, editing and writing the tags of different audio files
 goobox                          # CD player and ripper with GNOME 3 integration
+hydrogen                        # advanced drum machine/step sequencer
+hydrogen-doc                    # documentation
+hydrogen-drumkits               # collection of drumkits for Hydrogen
 libdvdcss2                      # Simple foundation for reading DVDs - runtime libraries
 mixxx                           # Digital Disc Jockey Interface
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
 # abandoned upstream playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
 # soundstretch  (command line) and audacity (gui)
+rosegarden                      # music editor and MIDI/audio sequencer
 soundconverter                  # simple sound converter application
 transcriber                     # Programm zum Transkripieren (z.B. von Interviews)
 xcfa				# extract the contens of Audio-CDs and convert musical audio files

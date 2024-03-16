@@ -47,6 +47,7 @@ f3                      # test real flash memory capacity
 faketime                # intercepts various system calls and fake date and time to programs
 fatattr                 # control attributes on a FAT filesystem
 fatrace                 # report system wide file access events
+fim                     # scriptable image viewer
 finger                  # displays information about the system users
 fq                      # jq for binary formats
 gdu                     # Pretty fast disk usage analyzer written in Go
