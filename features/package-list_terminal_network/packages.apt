@@ -19,5 +19,4 @@ traceroute              # displays the route used by IP packets on their way
 tshark                  # network traffic analyzer (console version of wireshark)
 wavemon                 # watch signal and noise levels
 wireless-tools          # zum Bearbeiten von WLAN Einstellungen
-youtube-dl              # downloader of videos from YouTube and other sites
 yt-dlp                  # youtube-dl fork adding new features and patches & up to date with original project

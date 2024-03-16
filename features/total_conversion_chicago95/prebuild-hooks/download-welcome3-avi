@@ -2,7 +2,7 @@
 
 . ../scripts/functions.bash
 
-check_program_exists youtube-dl
+check_program_exists yt-dlp
 
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/share/Chicago95
@@ -12,6 +12,6 @@ URL="https://www.youtube.com/watch?v=MaU5ED3LyXM"
 FILENAME="welcome3.avi"
 
 FILE=$(get_cached "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/" || {
-  youtube-dl --format best --output "${DEST_DIR}/${FILENAME}" ${URL} \
+  yt-dlp --format best --output "${DEST_DIR}/${FILENAME}" ${URL} \
     && cache_store "${DEST_DIR}/${FILENAME}"
 }

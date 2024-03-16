@@ -135,7 +135,7 @@ mkdir -p "${BASE_DIR}"
     FILENAME="$(url_to_filename "${VIDEO_URL}").mp4"
 
     FILE=$(get_cached "${FILENAME}") && cp -a "${FILE}" "${DEST_DIR}/" || {
-      youtube-dl --output "${DEST_DIR}/${FILENAME}" "${VIDEO_URL}" \
+      yt-dlp --output "${DEST_DIR}/${FILENAME}" "${VIDEO_URL}" \
         && cache_store "${DEST_DIR}/${FILENAME}"
       sleep 1
     }
