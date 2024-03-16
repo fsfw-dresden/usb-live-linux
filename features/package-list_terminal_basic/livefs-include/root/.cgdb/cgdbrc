@@ -1,0 +1,11 @@
+map r :run<CR>
+map b ibt<CR>
+map c :continue<CR>
+map f :finish<CR>
+map n :next<CR>
+map s :step<CR>
+map q :quit<cr>
+map u :up<cr>
+map d :down<cr>
+highlight SelectedLineNr cterm=reverse 
+highlight Arrow cterm=reverse 
