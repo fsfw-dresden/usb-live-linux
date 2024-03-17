@@ -8,7 +8,7 @@ TARGET_DIR=/usr/local/applications
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 RELEASEINFO="https://api.github.com/repos/realthunder/FreeCAD/releases"
 
-APPIMAGE_URL=$(curl "${RELEASEINFO}" | jq -r '.[0].assets[].browser_download_url|select(contains("x86_64") and endswith(".AppImage"))')
+APPIMAGE_URL=$(curl "${RELEASEINFO}" | jq -r '[.[].assets[].browser_download_url|select(contains("x86_64") and endswith(".AppImage"))].[0]')
 [ -z "${APPIMAGE_URL}" ] && die "Appimage URL not found"
 
 DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
