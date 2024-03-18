@@ -19,7 +19,10 @@ for VARIANT in ${VARIANTS}
 do
     # build variant iso:
     print_info "${COLOR_YELLOW}building ${VARIANT}${COLOR_OFF}"
-    scripts/build-live-iso "${VARIANT}"
+    scripts/build-live-iso "${VARIANT}" \
+        && print_info "${COLOR_YELLOW}Built ok, removing build cruft${COLOR_OFF}" \
+        && du -sh build/chroot build/binary \
+        && rm -r build/chroot build/binary
 
     # build distribution image:
     IMAGE_NAME=$(bash -c 'source scripts/functions.bash && cd build && get_image_name')
