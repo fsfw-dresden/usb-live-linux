@@ -1,0 +1,8 @@
+#!/bin/sh
+
+RELEASEINFO="https://api.github.com/repos/Y2Z/monolith/releases"
+
+FILE_URL=$(curl "${RELEASEINFO}"|jq -r '.[0].assets[].browser_download_url|select(endswith("x86_64"))')
+TARGETEXEC="/usr/local/bin/monolith"
+curl --location --remote-time --output "${TARGETEXEC}" "${FILE_URL}"
+chmod a+x "${TARGETEXEC}"
