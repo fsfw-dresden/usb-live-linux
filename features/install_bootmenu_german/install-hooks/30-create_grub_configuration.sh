@@ -26,8 +26,12 @@ BOOTOPTIONS+="net.ifnames=0 "
 # list the persistence subdivisions we created
 BOOTOPTIONS+="persistence-label=linux-userdata,linux-systemconfig,linux-systemdata,linux-system "
 
-# accepted encrypted & unencrypted persistence volumes
-BOOTOPTIONS+="persistence-encryption=none,luks "
+# accept encrypted & unencrypted persistence volumes
+# (⚠️ probes all LUKS volumes and asks for password)
+#BOOTOPTIONS+="persistence-encryption=none,luks "
+
+# skip all luks volumes and do not ask for passwords
+BOOTOPTIONS+="persistence-encryption=none "
 
 # if the label name matches, a persistence volume can be a directory, and image file or partition
 BOOTOPTIONS+="persistence-storage=directory,file,filesystem "
@@ -45,7 +49,7 @@ BOOTOPTIONS+="mitigations=off tsx=on "
 #BOOTOPTIONS+="spec_store_bypass_disable=on "
 
 # record bootchart
-# BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
+#BOOTOPTIONS+="init=/lib/systemd/systemd-bootchart "
 
 # debug logging of the live-boot scripts
 # BOOTOPTIONS+="live-boot.debug "
