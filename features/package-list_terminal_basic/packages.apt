@@ -1,5 +1,6 @@
 acpitool                # command line ACPI client (battery status, thermal status, …)
 alsa-utils              # Utilities for configuring and using ALSA
+ansifilter              # parse common (terminal) ANSI codes and remove or convert them
 antiword                # Converts MS Word files to text, PS, PDF and XML
 aptitude                # Anständiger Paketmanager (Text UI)
 atool                   # tool for managing file archives of various types
@@ -7,9 +8,11 @@ beep                    # advanced PC-speaker beeper
 boxes                   # textmode box- and comment drawing filter
 brightnessctl           # small utility to control the brightness of screen and LEDs
 bsdmainutils            # collection of more utilities from FreeBSD (hexdump etc)
+btop                    # modern and colorful command line resource monitor
 btrfs-progs             # Checksumming Copy on Write Filesystem utilities
 caca-utils              # text mode graphics utilities
 catdoc                  # text extractor for MS-Office files
+cargo                   # Rust package manager
 ccze                    # robust and modular log coloriser
 cgdb                    # curses-based interface to the GNU Debugger (GDB)
 chafa                   # Image-to-text converter (supports animations, alpha, UTF..)
@@ -20,7 +23,6 @@ conspy                  # (Remote) control of Linux virtual consoles
 cpuid                   # dump x86 CPUID information
 cruft-ng                # finds anything that shouldn't be there, but is & anything that should be there, but isn't
 csstidy                 # CSS parser and optimiser
-# ? ctop                # text based Linux Containers monitoring tool
 curl                    # command line tool for transferring data with URL syntax
 davfs2                  # mount a WebDAV resource as a regular file system
 dconf-cli               # low-level key/value database designed for storing desktop environment settings
@@ -47,12 +49,14 @@ f3                      # test real flash memory capacity
 faketime                # intercepts various system calls and fake date and time to programs
 fatattr                 # control attributes on a FAT filesystem
 fatrace                 # report system wide file access events
+filters                 # do all sorts of strange things to text (B1FF, Swedish Chef, …)
 fim                     # scriptable image viewer
 finger                  # displays information about the system users
 fq                      # jq for binary formats
 gdu                     # Pretty fast disk usage analyzer written in Go
 glances                 # curses-based monitor for CPU, load, memory, network bandwidth, disk I/O, disk use, process
 gnuit                   # GNU Interactive Tools, a file browser/viewer and process viewer/killer
+googler                 # Power tool to google from the terminal
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 gstreamer1.0-tools      # gst-inspect, gst-launch, gst-stats et al.
 hexyl                   # Command-line hex viewer with colored output
@@ -60,6 +64,7 @@ highlight               # Universal source code to formatted text converter
 htop                    # interaktive Prozessübersicht für die Konsole
 htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
 httpie                  # CLI, cURL-like tool for humans
+httrack                 # Copy websites to your computer
 hwinfo                  # Informationen über die im System installierte Hardware
 i2c-tools               # set of I2C tools
 i7z                     # reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers
@@ -72,8 +77,10 @@ ioping                  # disk I/O latency measuring tool
 iotop                   # displays a table of current I/O usage by processes on the system
 iptraf-ng               # Interactive Colorful IP LAN Monitor, generates various network statistics
 irqtop                  # Observe IRQ and SoftIRQ in a top-like fashion
+itools                  # Islamic hijri date and prayer time utilities
 jdupes                  # identify and delete or link duplicate files
 jc                      # JSONifies the output of many CLI tools and file-types for easier parsing in scripts
+jid                     # json incremental digger: drill down JSON interactively
 jq                      # Leichtgewichtiger und flexibler JSON-Prozessor für die Kommandozeile
 # ? latencytop          # visualize system latencies (needs CONFIG_LATENCYTOP!)
 less                    # world class file viewer
@@ -109,6 +116,7 @@ powertop                # diagnose issues with power consumption and management
 procinfo                # display information from /proc and /sys
 progress                # Coreutils Progress Viewer
 psmisc                  # utilities that use the proc file system
+px                      # ps and top for human beings
 pylint                  # Python code static checker and UML diagram generator
 qalc                    # command line version of Qalculate!
 radeontop               # show Radeon GPU utilization

@@ -14,8 +14,10 @@ ipython3                        # Enhanced interactive Python 3 shell
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
 manpages-posix-dev              # Manual pages about using a POSIX system for development
+miller                          # process name-indexed data such as CSV with functions like sed, awk, cut, join, sort
 pagemon                         # ncurses based interactive memory/page monitoring tool
 poke                            # interactive, extensible editor for structured binary data
 pup                             # command-line HTML processor to filter using CSS selectors
 tig                             # ncurses-based text-mode interface for Git
 visidata                        # interactive multitool for tabular data
+zzuf                            # transparent application fuzzer

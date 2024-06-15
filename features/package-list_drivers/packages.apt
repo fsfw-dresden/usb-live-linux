@@ -19,6 +19,7 @@ printer-driver-hpijs            #  HP Linux Printing and Imaging - Druckertreibe
 hpijs-ppds                      #  HP Linux Printing and Imaging - HPIJS-Druckerdefinitions-Dateien
 printer-driver-m2300w           #  Treiber für die Farblaserdrucker Minolta magicolor 2300W/2400W
 printer-driver-min12xxw         #  Druckertreiber für KonicaMinolta PagePro 1[234]xxW
+printer-driver-oki              #  Druckertreiber für Drucker von OKI Data
 printer-driver-pnm2ppa          #  Druckertreiber für HP-GDI-Drucker
 printer-driver-postscript-hp    #  Beschreibungen von HP-PostScript-Druckern
 printer-driver-ptouch           #  Treiber für »Brother P-touch«-Etikettendrucker

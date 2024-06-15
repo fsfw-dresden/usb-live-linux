@@ -5,3 +5,11 @@ partclone               # clone and restore a partition
 testdisk                # disk/file recovery tool
 gddrescue               # GNU data recovery tool
 
+libbde-utils            # Tools to access the BitLocker Drive Encryption format.
+libevt-utils            # Windows Event Log (EVT) format access library -- Utilities
+libevtx-utils           # Windows XML Event Log format access library -- Utilities
+liblnk-utils            # Windows Shortcut File format access library -- Utilities
+libluksde-utils         # library to access LUKS Disk Encryption volumes -- Utilities
+pff-tools               # utilities for MS Outlook PAB, PST and OST files
+guymager                # Forensic imaging tool based on Qt
+sleuthkit               # tools for forensics analysis on volume and filesystem data
