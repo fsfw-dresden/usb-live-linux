@@ -3,7 +3,10 @@
 # shellcheck disable=SC2016
 # "Expressions don't expand in single quotes, use double quotes for that"
 
+SETTINGS_FILE='/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml'
 GTK='/*/*[@name="Gtk"]'
+
+! [ -e "${SETTINGS_FILE}" ] || \
 xmlstarlet edit --inplace \
                 --delete "${GTK}/*[@name='CursorThemeName']" \
                 --subnode "${GTK}" -t elem -n "property" \
@@ -17,4 +20,4 @@ xmlstarlet edit --inplace \
                 --insert '$size' -t attr -n "name" -v "CursorThemeSize" \
                 --insert '$size' -t attr -n "type" -v "int" \
                 --insert '$size' -t attr -n "value" -v "48" \
-/etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+                "${SETTINGS_FILE}"
