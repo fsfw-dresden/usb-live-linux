@@ -19,10 +19,7 @@ With this project, we want to provide anyone with a portable and robust computin
 This repository contains shell scripts to create a live-system from a nested tree of feature configuration fragments. These are being fed to Debian's [live-build](https://salsa.debian.org/live-team/live-build) tool, which assembles an ISO file that is then installed to an USB pen drive or into an image file for distribution. Using an appropriate tool, this final image can then be transferred to an USB flash drive.
 
 ## Flavors
-While the original variant was the [Uni-Stick](variants.build/FSFW-Uni-Stick:Xfce:buster/README.md), we have since been working on bringing the system to [school kids](variants.build/FSFW-Schulstick/README.md) and [makers](variants.build/OSEG-Makerstick/README.md) as well.
-
-## Online Demo
-If you would like to test Schulstick Linux online, you can try it live inside your browser at distrotest.net [2021.4 Schulstick Online Demo](https://distrotest.net/Schulstick%20Linux/2021.4) (version outdated, we're working on getting it updated).
+While the original variant was the [Uni-Stick](variants.build/FSFW-Uni-Stick/README.md), we have since been working on bringing the system to [school kids](variants.build/FSFW-Schulstick/README.md) and [makers](variants.build/OSEG-Makerstick/README.md) as well.
 
 ## Downloads
 The most recent image files can be found on our [Releases](https://github.com/fsfw-dresden/usb-live-linux/releases) page.

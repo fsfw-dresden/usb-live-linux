@@ -18,10 +18,10 @@ Einige weitere Informationen und Screenshots zum Stick-Projekt finden Sie in der
 .. gibt es ab sofort für Lehrkräfte aller Schulformen. Füllen Sie dafür einfach unser [Web-Formular](https://survey.opensourceecology.de/index.php?r=survey/index&sid=281135) aus.
 
 ## Download und Bespielen eines USB-Sticks
-Die aktuelle Version (2405d / 2023-02-23) basiert auf Debian-Linux 11 (stable, codename »bullseye«) mit dem Xfce-Desktop und lässt sich hier herunterladen:
+Die aktuelle Version (2794k / 2024-03-18) basiert auf Debian-Linux 12 (stable, codename »bookworm«) mit dem Xfce-Desktop und lässt sich hier herunterladen:
 
-> Image-Datei (11,2 GiB): [FSFW-Schulstick_2405d_Xfce_bullseye-amd64.hybrid.img.gz](https://ftp.inf.tu-dresden.de/os/FSFW/FSFW-Schulstick_2405d_Xfce_bullseye-amd64.hybrid.img.gz)
-> zugehörige SHA256-Prüfsumme: `1799bffec8357b7cc6d0a5f4e87fd6889449409ab6bfb4f4a087ad795a04a4a6`
+> Image-Datei (15 GiB): [FSFW-Schulstick_2794k_Xfce_bookworm-amd64.hybrid.img.gz](https://ftp.inf.tu-dresden.de/os/FSFW/FSFW-Schulstick_2794k_Xfce_bookworm-amd64.hybrid.img.gz)
+> zugehörige SHA256-Prüfsumme: `e128ca4afd10cf7c44ef327d2c1f68a68df65487f8f181633605ad857a0ee15f`
 
 Für die Installation des FSFW-Schulsticks braucht es (mindestens) einen 16-Gigabyte-USB-Stick guter Qualität. Weiterhin braucht man ein spezielles Programm, um das Bespielen durchzuführen. Wir empfehlen dafür den [Etcher](https://www.balena.io/etcher/), den es dort für verschiedene Betriebssysteme zum Download gibt.
 
