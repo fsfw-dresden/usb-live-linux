@@ -97,6 +97,31 @@
         <string>INTRO</string>
        </property>
       </widget>
+      <widget class="QLabel" name="welcomeTabBackgroundLabel">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>891</width>
+         <height>661</height>
+        </rect>
+       </property>
+       <property name="pixmap">
+        <pixmap>upload.wikimedia.org--wikipedia--commons--8--8e--Barley_crop_-blue_sky-4May2008.lightened.svg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <zorder>welcomeTabBackgroundLabel</zorder>
+      <zorder>welcomeTabTitleLabel</zorder>
+      <zorder>welcomeTabInstallStickButton</zorder>
+      <zorder>welcomeTabInstallNonFreeButton</zorder>
+      <zorder>welcomeTabSecureButton</zorder>
+      <zorder>wecomeTabIntroPushButton</zorder>
      </widget>
      <widget class="QWidget" name="tutorialsTab">
       <attribute name="title">
@@ -235,7 +260,7 @@
        <item row="0" column="0">
         <widget class="QPushButton" name="installTabCalamaresPushButton">
          <property name="text">
-          <string>Launch Calamares Installer</string>
+          <string>Launch Installer</string>
          </property>
         </widget>
        </item>
@@ -280,7 +305,7 @@
            </rect>
           </property>
           <property name="text">
-           <string>Start Anydesk</string>
+           <string>Start Rustdesk</string>
           </property>
          </widget>
          <widget class="QLabel" name="supportTabAnydeskLabel">
@@ -293,7 +318,7 @@
            </rect>
           </property>
           <property name="text">
-           <string>Then send us your anydesk number via above query form.</string>
+           <string>Then send us your rustdesk number via above query form.</string>
           </property>
          </widget>
         </widget>

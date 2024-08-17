@@ -1,29 +1,29 @@
 #!/usr/bin/python3
+# This is a first draft / mockup of a portal app.
 
 import os
 import signal
 import sys
 
 from PyQt5.uic import loadUi
-from PyQt5.QtCore import QSize, QUrl, QProcess
+from PyQt5.QtCore import QLocale, QSize, QUrl, QProcess, QTranslator
 from PyQt5.QtGui import *
 from PyQt5.QtMultimedia import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtWebEngineWidgets import * 
+from PyQt5.QtWebEngineWidgets import *
 
 class PortalWindow(QDialog):
-    ressourceDir = "/usr/local/share/stick-welcome"
 
     def __init__(self):
         super(PortalWindow, self).__init__()
         self.setupTrayIcon()
-        loadUi(os.path.join(PortalWindow.ressourceDir, "portal.ui"), self)
+        loadUi(os.path.join(ressourceDir, "portal.ui"), self)
         self.welcomeTabInstallStickButton.clicked.connect(self.installClicked)
         self.installTabCalamaresPushButton.clicked.connect(self.calamaresClicked)
         self.installTabUSBPushButton.clicked.connect(self.duplicateClicked)
 
     def setupTrayIcon(self):
-        self.anitray = AnimatedSystemTrayIcon(QMovie(os.path.join(PortalWindow.ressourceDir, "upload.wikimedia.org--wikipedia--commons--thumb--9--9e--GIF_KARRATUA.gif--240px-GIF_KARRATUA.gif")))
+        self.anitray = AnimatedSystemTrayIcon(QMovie(os.path.join(ressourceDir, "upload.wikimedia.org--wikipedia--commons--thumb--9--9e--GIF_KARRATUA.gif--240px-GIF_KARRATUA.gif")))
         self.anitray.setVisible(True)
         self.anitray.activated.connect(self.iconActivated)
 
@@ -37,10 +37,16 @@ class PortalWindow(QDialog):
         self.trayMenu.addAction(self.quitAction)
 
         self.anitray.setContextMenu(self.trayMenu)
-        
+
     def iconActivated(self, reason):
-        sys.stdout.write("iconActivated(" + str(reason) +")\n")
-        #sys.stdout.write("windowState: " + str(self.windowStates()) +")\n")
+        # Testing.. only left and middle click seem to work
+        if reason == 4:
+            sys.stdout.write("middle click on icon\n")
+            sys.stdout.write("windowState: " + str(self.windowState()) +")\n")
+        else:
+            sys.stdout.write("iconActivated with mouse event " + str(reason) + "\n")
+
+        # Toggle visibility
         if self.isVisible():
             self.hide()
         else:
@@ -98,10 +104,27 @@ class AnimatedSystemTrayIcon(QSystemTrayIcon):
 
 
 if __name__ == '__main__':
-    signal.signal(signal.SIGINT, signal.SIG_DFL)
-    app = QApplication(sys.argv)
-    app.setQuitOnLastWindowClosed(False)
     debug = 0
+
+    systemLocale = QLocale.system().name()
+    ressourceDir = "/usr/local/share/stick-welcome"
+    translationFile = os.path.join(ressourceDir, f"portal.{systemLocale}.qm")
+
+    # Enable aborting from terminal with CTRL+C
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+    # Try loading translation for current locale
+    translator = QTranslator()
+    if os.path.exists(translationFile):
+        sys.stdout.write("loading " + translationFile + "\n")
+        translator.load(translationFile)
+    else:
+        sys.stdout.write(translationFile + " not found\n")
+
+    # Set up translations and make application stick around when window is closed
+    app = QApplication(sys.argv)
+    app.installTranslator(translator)
+    app.setQuitOnLastWindowClosed(False)
 
     portal = PortalWindow()
 

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for LANG in de_DE
+do
+  TRANSFILE=portal.${LANG}.ts
+
+  pylupdate5 portal.ui -ts ${TRANSFILE}
+  lrelease ${TRANSFILE}
+done
