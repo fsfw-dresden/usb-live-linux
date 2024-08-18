@@ -13,6 +13,7 @@ xfce4-session                   # Xfce4 Session Manager
 xfdesktop4                      # xfce desktop background, icons and root menu manager
 xfwm4                           # window manager of the Xfce project
 libxfce4ui-utils                # xfce4-about
+xfce4-goodies                   # enhancements for the Xfce4 Desktop Environment
 xfce4-power-manager             # power manager for Xfce desktop
 xfce4-notifyd                   # simple, visually-appealing notification daemon for Xfce
 xfce4-terminal                  # lightweight and easy to use terminal emulator for X11

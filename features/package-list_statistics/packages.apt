@@ -6,7 +6,7 @@ pspp                            # Statistik-Suite
 r-base                          # GNU R - ein System für statistische Berechnungen und Grafiken
 r-base-core                     # GNU R Statistik-Suite (nur das Grundsystem)
 # https://posit.co/download/rstudio-desktop/#download
-< https://download1.rstudio.org/electron/jammy/amd64/rstudio-2023.12.1-402-amd64.deb
+< https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.04.2-764-amd64.deb
 # +1 littler                    # GNU R Konsolenfrontend
 # +1 r-cran-zelig               # GNU R package providing a unified front-end for estimating statistical models
 # +1 r-cran-rcmdr               # GNU R platform-independent basic-statistics GUI

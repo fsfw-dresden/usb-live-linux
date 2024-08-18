@@ -27,6 +27,10 @@ transcriber                     # Programm zum Transkripieren (z.B. von Intervie
 xcfa				# extract the contens of Audio-CDs and convert musical audio files
 
 ###  Video
+gstreamer1.0-vaapi              # libraries that allow hardware accelerated video decoding
+va-driver-all                   # driver metapackage
+i965-va-driver-shaders
+intel-media-va-driver-non-free
 
 vlc                             # Multimedia-Player und Streamer
 vlc-l10n                        # translations for VLC

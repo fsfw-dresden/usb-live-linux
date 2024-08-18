@@ -15,14 +15,20 @@ mate-desktop-environment-core
 # ? ffmpegthumbnailer           # Schnelles und leichtgewichtiges Programm für Video-Miniaturansichten
 # ? galculator                  # Wissenschaftlicher Taschenrechner
 mate-applets                    # Diverse Applets für das MATE-Panel
-mate-icon-theme-faenza          # MATE Faenza Desktop icon theme
+mate-applet-brisk-menu
+mate-icon-theme                 # MATE Faenza Desktop icon theme
 mate-media                      # MATE-Medienwerkzeuge sind das Audio-Mischpult und das Applet für die Lautstärkeregelung
 mate-notification-daemon        # daemon for displaying passive pop-up notifications
 mate-power-manager              # Werkzeug zur Energieverwaltung für die Arbeitsumgebung MATE
-# ? mate-screensaver            # MATE-Bildschirmschoner und -sperrer
+mate-screensaver            # MATE-Bildschirmschoner und -sperrer
 mate-system-monitor             # Prozessanzeige und Ressourcenmonitor für MATE
-# ? mate-user-guide             # Documentation for MATE Desktop
+mate-user-guide             # Documentation for MATE Desktop
 mate-utils                      # Hilfsprogramme für den MATE-Desktop
-# ? pluma                       # Offizieller Texteditor der Arbeitsumgebung MATE
+pluma                       # Offizieller Texteditor der Arbeitsumgebung MATE
 
-mate-themes                     # Official themes for the MATE desktop
+mate-tweak
+mate-hud
+mate-netbook
+mate-dock-applet
+mate-indicator-applet
+mate-desktop-environment-extras
