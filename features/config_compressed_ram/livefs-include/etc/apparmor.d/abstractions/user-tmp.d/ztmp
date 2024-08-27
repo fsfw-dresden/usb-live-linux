@@ -1,0 +1,8 @@
+# vim:syntax=apparmor
+# losen restrictions on /ztmp/, too
+
+  abi <abi/3.0>,
+
+# compressed temporary files
+  owner /ztmp/**  rwkl,
+  /ztmp/          rw,
