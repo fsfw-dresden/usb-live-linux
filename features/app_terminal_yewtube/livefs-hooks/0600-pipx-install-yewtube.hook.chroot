@@ -1,0 +1,3 @@
+#!/bin/sh
+. /etc/profile.d/pipx-global-environment.sh
+pipx install yewtube
