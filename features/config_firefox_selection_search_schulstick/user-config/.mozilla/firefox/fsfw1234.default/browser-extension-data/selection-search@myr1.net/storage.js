@@ -181,11 +181,11 @@
         },
         {
           "name": "EN N-Grams Language stats",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=26"
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&corpus=en"
         },
         {
           "name": "DE N-Grams Language stats",
-          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&year_end=2008&corpus=31"
+          "url": "https://books.google.com/ngrams/graph?content=%s&case_insensitive=on&year_start=1800&corpus=de"
         },
         {
           "name": "Search Trends",
