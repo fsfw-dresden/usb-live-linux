@@ -1,14 +1,13 @@
 check_dependencies fatattr
 
-print_info "hiding files on boot / exchange partition in Linux file manager"
-echo "boot" > ${EFIBOOT}/.hidden
-echo "EFI" >> ${EFIBOOT}/.hidden
-echo "NvVars" >> ${EFIBOOT}/.hidden
-echo "System Volume Information" >> ${EFIBOOT}/.hidden
-
 # precreate qemu EFI bios file so it can be hidden in next step
 touch ${EFIBOOT}/NvVars
 
 print_info "marking files on boot / exchange as hidden system files\n" \
-    "\tto make accidental deletion in Windows less likely"
-fatattr +hs ${EFIBOOT}/* ${EFIBOOT}/.hidden
+    "\tto make accidental deletion in Windows less likely" \
+    "\t(also, hide these files in linux, too: via .hidden)"
+for FILE in "boot" "EFI" "NvVars" "System Volume Information"
+do
+  fatattr +hs "${EFIBOOT}/${FILE}" ${EFIBOOT}/.hidden
+  echo "${FILE}" >> ${EFIBOOT}/.hidden
+done
