@@ -20,6 +20,7 @@ class SettingsWindow(QDialog):
     """The settings dialog"""
     def __init__(self):
         super().__init__()
+        self.setWindowFlag(Qt.WindowMinimizeButtonHint, True)
         self.config = ConfigObj(
             os.path.expanduser('~/.config/night-mode.conf'), create_empty = True
         )
@@ -151,10 +152,10 @@ if __name__ == '__main__':
 
     icon = QIcon.fromTheme('face-cool')
     settings.setWindowIcon(icon)
-    trayIcon = QSystemTrayIcon()
-    trayIcon.setIcon(icon)
-    trayIcon.show()
-    trayIcon.activated.connect(settings.tray_icon_activated)
+    if '--no-systray' not in sys.argv:
+        trayIcon = QSystemTrayIcon(icon)
+        trayIcon.show()
+        trayIcon.activated.connect(settings.tray_icon_activated)
 
     settings.nightFadeStartTimeEdit.timeChanged.connect(settings.check_time_coherency)
     settings.nightFadeEndTimeEdit.timeChanged.connect(settings.check_time_coherency)
@@ -174,3 +175,4 @@ if __name__ == '__main__':
     settings.closeButton.clicked.connect(settings.close)
 
     sys.exit(app.exec())
+
