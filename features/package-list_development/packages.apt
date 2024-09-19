@@ -14,7 +14,6 @@ gnat                            # GNU Ada compiler
 
 rust-all                        # Rust systems programming language - all developer tools
 cargo-binutils
-< http://ftp.de.debian.org/debian/pool/main/r/rust-cargo-debstatus/cargo-debstatus_0.5.2-2+b1_amd64.deb # cargo debstatus is similar to cargo tree, but for Debian packaging
 
 ###  Revisions-Kontroll-Systeme
 

@@ -34,6 +34,7 @@ dislocker                       #  read/write encrypted BitLocker volumes
 gvfs-backends                   #  android / camera image file transfer (mtp) and other backends
 samba-common-bin                #  Basic SMB/CIFS share tools
 # ? laptop-mode-tools           # automatically enabling laptop mode when the computer is working on batteries
+ipheth-utils                    # USB tethering: make use of the iPhone's internet connection
 
 # virtual machine support
 spice-vdagent                   #  Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
