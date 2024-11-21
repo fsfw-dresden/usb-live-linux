@@ -55,6 +55,9 @@ enable_redsocks() {
 }
 
 disable_redsocks() {
+        # Skip if chain does not exist
+        iptables -t nat -L REDSOCKS 2> /dev/null || return 0
+
         logger -t ${TAG} "removing proxy redirection"
         iptables -t nat -D OUTPUT -p tcp -j REDSOCKS
         iptables -t nat -F REDSOCKS
