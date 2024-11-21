@@ -144,7 +144,6 @@ time                    # GNU time program for measuring CPU resource usage
 tldr                    # too long didn't read the man page: practical command line examples
 translate-shell         # Command-line translator using Google Translate, etc.
 tree                    # recursive directory listing: depth indented colorized listing of files
-tuptime                 # report historical system real time
 tweak                   # Efficient text-mode hex editor
 udftools                # tools for UDF filesystems and DVD/CD-R(W) drives
 unrar                   # Unarchiver for .rar files (+111 kB)

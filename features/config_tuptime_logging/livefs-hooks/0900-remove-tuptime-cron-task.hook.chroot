@@ -1,0 +1,4 @@
+#!/bin/sh
+# delete CRON task, systemd timers are enough
+CRONFILE=/etc/cron.d/tuptime
+[ -e ${CRONFILE} ] && rm ${CRONFILE} || echo "NO FIXME ${CRONFILE}"
