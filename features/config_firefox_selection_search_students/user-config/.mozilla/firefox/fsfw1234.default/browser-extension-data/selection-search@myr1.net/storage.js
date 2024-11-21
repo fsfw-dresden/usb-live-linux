@@ -7,10 +7,6 @@
       "url": "https://www.ecosia.org/search?q=%s"
     },
     {
-      "name": "Websites: MetaGer",
-      "url": "https://www.metager.de/meta/meta.ger3?eingabe=%s&pers=yes&ui=de&sprueche=yes&QuickTips=yes&langfilter=yes&focus=web"
-    },
-    {
       "name": "Websites: DuckDuckGo",
       "url": "http://duckduckgo.com/?q=%s&km=l&kp=-1&ks=s&kx=o&k1=-1"
     },
