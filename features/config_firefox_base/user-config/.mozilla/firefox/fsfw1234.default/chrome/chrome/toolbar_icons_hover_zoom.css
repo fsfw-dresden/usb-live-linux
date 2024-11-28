@@ -46,12 +46,3 @@ toolbar[brighttext]#nav-bar .toolbarbutton-1[open="true"] > .toolbarbutton-icon 
   filter: drop-shadow(0 0 2px white) drop-shadow(0 0 1px white);
   scale: 1.4;
 }
-
-/* Use higher resolution extension icons */
-toolbar[brighttext] .webextension-browser-action {
-  list-style-image: var(--webextension-toolbar-image-2x-light, inherit) !important;
-}
-
-toolbar:not([brighttext]) .webextension-browser-action {
-  list-style-image: var(--webextension-toolbar-image-2x-dark, inherit) !important;
-}
