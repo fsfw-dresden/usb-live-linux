@@ -1,3 +1,0 @@
-#!/bin/sh
-# Replace standard compression method (gzip) with faster lz4 algorithm
-sed -i 's/COMPRESS=.*/COMPRESS=lz4/' /etc/initramfs-tools/initramfs.conf
