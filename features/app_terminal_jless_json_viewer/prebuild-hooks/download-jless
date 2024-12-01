@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+DEST_DIR=${PREFIX}/usr/local/bin
+
+RELEASEINFO="https://api.github.com/repos/PaulJuliusMartinez/jless/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r '.[].assets[].browser_download_url|select(contains("linux"))' | head -n1)
+
+mkdir -pv ${DEST_DIR}
+
+FILE=$(download_file_cached "${URL}") \
+  && unzip -jd "${DEST_DIR}" "${FILE}"
