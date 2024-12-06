@@ -1,4 +1,5 @@
 # More usable htop settings ftw
+fields=0 48 17 18 2 46 47 39 119 49 1
 hide_kernel_threads=1
 hide_userland_threads=1
 show_thread_names=1
@@ -11,7 +12,4 @@ screen_tabs=1
 show_cpu_frequency=1
 show_cpu_temperature=1
 tree_view=1
-sort_key=47
-tree_sort_key=47
-sort_direction=-1
 tree_sort_direction=-1
