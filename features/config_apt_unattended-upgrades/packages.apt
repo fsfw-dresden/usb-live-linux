@@ -1,1 +1,4 @@
 unattended-upgrades             # automatic installation of security upgrades
+debdelta                        # diff and patch utilities which work with Debian packages
+xdelta3                         # RFC3284
+bsdiff                          # generate/apply a patch between two binary files

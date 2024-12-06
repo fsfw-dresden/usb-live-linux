@@ -1,14 +1,7 @@
-##  live
-
-###  Live System  -- System Pakete werden fürs Live-System benöttigt
-
 live-boot
-live-boot-initramfs-tools       # hinzugefügt stretch
-live-tools
-rsync
-uuid-runtime
+live-boot-doc
 live-config
-live-config-systemd
-# ? iproute2
-
-apt-transport-https
+live-config-doc
+live-manual
+live-tools
+uuid-runtime

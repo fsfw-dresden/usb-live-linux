@@ -31,3 +31,5 @@ doxygen-latex                   # Doxygen-LaTeX-Abhängigkeiten, falls LaTeX-Exp
 
 umbrello                        # einfaches UML-Tool für den KDE-Desktop
 
+accerciser
+dconf-editor

@@ -1,4 +1,5 @@
 blueman                         # GTK+ bluetooth management utility
+bustle                          # D-Bus activity visualiser
 galternatives                   # graphical front-end to update-alternatives
 gnome-disk-utility              # manage and configure disk drives and media
 gparted                         # manipulate devices and partition tables

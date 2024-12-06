@@ -33,6 +33,7 @@ fonts-bwht                      # Six handwritten fonts created for the Because 
 fonts-ferrite-core              # geometric shaped font lending it a futurist look
 fonts-tomsontalks               # comic lettering font created with online comics in mind
 fonts-texgyre                   # OpenType fonts based on URW Fonts
+msttcorefonts                   # pulls in traditional font files from Redmond
 
 font-manager                    #  a way for average users to easily manage desktop fonts
 

@@ -1,6 +1,7 @@
 # printing
 foomatic-db-engine              #  Druckerunterstützung von OpenPrinting - Programme
 hp-ppd                          #  PPDs für HP-Drucker, die nicht im Paket linuxprinting.org-ppds
+hplip                           #  HP Linux Printing and Imaging System
 openprinting-ppds               #  Druckerunterstützung von OpenPrinting - PostScript-PPD-Dateien
 bluez-cups                      #  Bluetooth printer driver for CUPS
 printer-driver-cups-pdf         #  Druckertreiber zur PDF-Erzeugung mittels CUPS
@@ -28,6 +29,10 @@ printer-driver-sag-gdi          #  Druckertreiber für die Reihen Ricoh Aficio S
 printer-driver-splix            #  Treiber für Samsung-/Xerox-Laserdrucker (Druckersprachen SPL2 und SPLc)
 foomatic-db-compressed-ppds     #  Druckerunterstützung von OpenPrinting - Komprimierte PPDs
 system-config-printer-udev      #  detect and configure printers automatically
+
+# scanning
+sane-airscan                    # network scanning with Brother, Canon, Kyocera, Lexmark, Epson, HP, Ricoh, Samsung and Xerox
+sane-utils                      # includes the command line frontend scanimage, the saned  server and the sane-find-scanner utility
 
 # extra filesystem / hardware support
 dislocker                       #  read/write encrypted BitLocker volumes

@@ -17,6 +17,7 @@ ccze                    # robust and modular log coloriser
 cgdb                    # curses-based interface to the GNU Debugger (GDB)
 chafa                   # Image-to-text converter (supports animations, alpha, UTF..)
 chntpw                  # NT SAM password recovery utility
+clinfo                  # Query OpenCL (Open Computing Language) system information
 cmatrix                 # Screen saver for the terminal
 consolation             # linux console pointer support for copy-paste
 conspy                  # (Remote) control of Linux virtual consoles
