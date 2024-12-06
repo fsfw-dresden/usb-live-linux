@@ -1,0 +1,5 @@
+# marked as essential, will be dragging in
+# mint stuff just by the repo being enabled
+Package: mintsources
+Pin: release o=linuxmint
+Pin-Priority: -1
