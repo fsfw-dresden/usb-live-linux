@@ -4,18 +4,25 @@
     "ExtensionSettings": {
       "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}": {
         "_name": "Auto Tab Discard",
-        "_description": "Increase browser speed and reduce memory load and when you have numerous open tabs.",
-        "_homepageURL": "https://add0n.com/tab-discard.html",
+        "_description": "Increase browser speed and reduce memory load when you have numerous open tabs.",
+        "_homepageURL": "https://webextension.org/listing/tab-discard.html",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/auto-tab-discard/",
         "installation_mode": "allowed"
       },
       "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
-        "_name": "Bitwarden - Free Password Manager",
-        "_description": "A secure and free password manager for all of your devices.",
+        "_name": "Bitwarden Password Manager",
+        "_description": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
         "_creator": "Bitwarden Inc.",
         "_homepageURL": "https://bitwarden.com",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/",
-        "installation_mode": "normal_installed"
+        "installation_mode": "allowed"
+      },
+      "addon@darkreader.org": {
+        "_name": "Dark Reader",
+        "_description": "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.",
+        "_creator": "Alexander Shutau",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/darkreader/",
+        "installation_mode": "allowed"
       },
       "dragselectlinktext@kestrel": {
         "_name": "Drag-Select Link Text",
@@ -37,28 +44,51 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/",
         "installation_mode": "allowed"
       },
-      "jid1-KKzOGWgsW3Ao4Q@jetpack": {
-        "_name": "I don't care about cookies",
-        "_creator": "Daniel Kladnik @ kiboke studio",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/i-dont-care-about-cookies/",
+      "idcac-pub@guus.ninja": {
+        "_name": "I still don't care about cookies",
+        "_creator": "OhMyGuus and Community (originally Daniel Kladnik)",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/",
         "installation_mode": "allowed"
       },
       "playbackSpeed@waldemar.b": {
         "_name": "Playback speed",
-        "_description": "Button to control the speed of media playback",
+        "_description": "Control the speed of video playback.",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/playback-speed/",
         "installation_mode": "allowed"
       },
       "{fd252194-7d95-4d2a-9368-79e874fc335c}": {
         "_name": "QRify",
         "_description": "Turn a URL or a text selection into a QR code with one click on the context menu or toolbar icon. Click to edit it. Works offline.",
+        "_creator": "Terry Yuen",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/qrify/",
+        "installation_mode": "allowed"
+      },
+      "juraj.masiar@gmail.com_ScrollAnywhere": {
+        "_name": "ScrollAnywhere",
+        "_description": "Drag scrollbar with your middle mouse button anywhere on the page. Supports also \"grab and drag\" style.",
+        "_creator": "Juraj Mäsiar",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/scroll_anywhere/",
         "installation_mode": "allowed"
       },
       "selection-search@myr1.net": {
         "_name": "Selection Search",
         "_description": "Search for the selected text in search engines",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/selection-search-ff/",
+        "installation_mode": "allowed"
+      },
+      "{3c078156-979c-498b-8990-85f7987dd929}": {
+        "_name": "Sidebery",
+        "_description": "Tabs tree, bookmarks and history in a highly configurable sidebar.",
+        "_creator": "mbnuqw",
+        "_homepageURL": "https://github.com/mbnuqw/sidebery",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/sidebery/",
+        "installation_mode": "allowed"
+      },
+      "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
+        "_name": "TWP - Translate Web Pages",
+        "_description": "Translate your page in real time using Google or Yandex.",
+        "_homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/traduzir-paginas-web/",
         "installation_mode": "allowed"
       },
       "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}": {
@@ -74,19 +104,25 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tineye-reverse-image-search/",
         "installation_mode": "allowed"
       },
-      "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}": {
-        "_name": "Translate Web Pages",
-        "_description": "Translate your page in real time using Google or Yandex.",
-        "_homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/traduzir-paginas-web/",
+      "{f209234a-76f0-4735-9920-eb62507a54cd}": {
+        "_name": "Unpaywall",
+        "_description": "Legally get full text of scholarly articles as you browse.",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/unpaywall/",
         "installation_mode": "allowed"
       },
       "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}": {
         "_name": "Web Archives",
-        "_description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is, Google, Bi  ng, Yandex, Gigablast, WebCite, Sogou, Memento, Naver and Yahoo Japan.",
+        "_description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is and Google.",
         "_creator": "Armin Sebastian",
         "_homepageURL": "https://github.com/dessant/web-archives",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/view-page-archive/",
+        "installation_mode": "allowed"
+      },
+      "zotero@chnm.gmu.edu": {
+        "_name": "Zotero Connector",
+        "_description": "Save references to Zotero from your web browser",
+        "_homepageURL": "https://www.zotero.org/",
+        "install_url": "https://www.zotero.org/download/connector/dl?browser=firefox",
         "installation_mode": "allowed"
       }
     }

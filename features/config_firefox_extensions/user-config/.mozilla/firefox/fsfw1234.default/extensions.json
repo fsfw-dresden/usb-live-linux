@@ -1,9 +1,9 @@
 {
-  "schemaVersion": 35,
+  "schemaVersion": 36,
   "addons": [
     {
       "id": "{5f19c5b2-8ef9-4f63-9d0b-d13bc476972a}",
-      "version": "1.0.4",
+      "version": "1.0.5resigned1",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
@@ -11,6 +11,10 @@
         "description": "A simple & lightweight tool to reduce tab clutter, using just the address bar."
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -18,6 +22,11 @@
         ],
         "origins": []
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
@@ -31,6 +40,10 @@
         "homepageURL": "https://tineye.com"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -39,6 +52,11 @@
         ],
         "origins": []
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
@@ -51,6 +69,10 @@
         "description": "Control the speed of video playback."
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -62,6 +84,11 @@
           "<all_urls>"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
@@ -74,6 +101,10 @@
         "description": "Take control of YouTube and boost your user experience!"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -88,11 +119,16 @@
           "*://www.youtube.com/shorts/*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
       "id": "dragselectlinktext@kestrel",
-      "version": "1.5.4",
+      "version": "1.5.5resigned1",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
@@ -102,6 +138,10 @@
         "homepageURL": "https://github.com/nkestrel/dragselectlinktext"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -111,6 +151,11 @@
           "<all_urls>"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
@@ -123,6 +168,10 @@
         "description": "Search for the selected text in search engines"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -141,11 +190,16 @@
           "https://mycroftproject.com/*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
       "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
-      "version": "2.18.7",
+      "version": "2.18.8resigned1",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
@@ -153,6 +207,10 @@
         "description": "Experience a beautiful image from Google Earth every time you open a new tab."
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [],
@@ -160,11 +218,24 @@
           "https://www.gstatic.com/prettyearth/*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {
+        "persistentListeners": {
+          "runtime": {
+            "onInstalled": [
+              []
+            ]
+          }
+        }
+      },
       "location": "app-profile"
     },
     {
       "id": "{036a55b4-5e72-4d05-a06c-cba2dfcc134a}",
-      "version": "9.9.0.30",
+      "version": "10.0.1.1",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
@@ -173,6 +244,10 @@
         "homepageURL": "https://github.com/FilipePS/Traduzir-paginas-web"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -186,20 +261,52 @@
           "https://www.deepl.com/translator*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {
+        "persistentListeners": {
+          "webRequest": {
+            "onHeadersReceived": [
+              [
+                {
+                  "incognito": null,
+                  "tabId": null,
+                  "types": [
+                    "main_frame"
+                  ],
+                  "urls": [
+                    "*://*/*"
+                  ],
+                  "windowId": null
+                },
+                [
+                  "responseHeaders"
+                ]
+              ]
+            ]
+          }
+        }
+      },
       "location": "app-profile"
     },
     {
       "id": "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}",
-      "version": "4.1.0",
+      "version": "7.0.0",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
         "name": "Web Archives",
-        "description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine, Archive.is and Google.",
+        "description": "View archived and cached versions of web pages on 10+ search engines, such as the Wayback Machine and Archive.is.",
         "creator": "Armin Sebastian",
         "homepageURL": "https://github.com/dessant/web-archives"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        1
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -220,6 +327,42 @@
           "file:///*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {
+        "persistentListeners": {
+          "menusInternal": {
+            "onClicked": [
+              []
+            ]
+          },
+          "browserAction": {
+            "onClicked": [
+              []
+            ]
+          },
+          "storage": {
+            "onChanged": [
+              []
+            ]
+          },
+          "alarms": {
+            "onAlarm": [
+              []
+            ]
+          },
+          "runtime": {
+            "onInstalled": [
+              []
+            ],
+            "onStartup": [
+              []
+            ]
+          }
+        }
+      },
       "location": "app-profile"
     },
     {
@@ -233,6 +376,10 @@
         "homepageURL": "https://webextension.org/listing/tab-discard.html"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
@@ -247,19 +394,145 @@
           "<all_urls>"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
       "location": "app-profile"
     },
     {
-      "id": "jid1-KKzOGWgsW3Ao4Q@jetpack",
-      "version": "3.4.9",
+      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
+      "version": "2024.11.2",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
-        "name": "I don't care about cookies",
-        "creator": "Daniel Kladnik @ kiboke studio"
+        "name": "Bitwarden Password Manager",
+        "description": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+        "creator": "Bitwarden Inc.",
+        "homepageURL": "https://bitwarden.com"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        1
+      ],
       "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "tabs",
+          "contextMenus",
+          "storage",
+          "unlimitedStorage",
+          "clipboardRead",
+          "clipboardWrite",
+          "idle",
+          "alarms",
+          "webRequest",
+          "webRequestBlocking",
+          "webNavigation"
+        ],
+        "origins": [
+          "<all_urls>",
+          "*://*/*",
+          "file:///*",
+          "https://lastpass.com/export.php"
+        ]
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {},
+      "location": "app-profile"
+    },
+    {
+      "id": "{fd252194-7d95-4d2a-9368-79e874fc335c}",
+      "version": "0.2.6",
+      "type": "extension",
+      "manifestVersion": 2,
+      "defaultLocale": {
+        "name": "QRify",
+        "description": "Turn a URL or a text selection into a QR code with one click on the context menu or toolbar icon. Click to edit it. Works offline.",
+        "creator": "Terry Yuen"
+      },
+      "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "contextMenus",
+          "activeTab"
+        ],
+        "origins": []
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "startupData": {
+        "persistentListeners": {
+          "menusInternal": {
+            "onClicked": [
+              []
+            ]
+          }
+        }
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "addon@darkreader.org",
+      "version": "4.9.96",
+      "type": "extension",
+      "manifestVersion": 2,
+      "defaultLocale": {
+        "name": "Dark Reader",
+        "description": "Dark mode for every website. Take care of your eyes, use dark theme for night and daily browsing.",
+        "creator": "Alexander Shutau"
+      },
+      "visible": true,
+      "signedTypes": [
+        2,
+        1
+      ],
+      "seen": true,
+      "userPermissions": {
+        "permissions": [
+          "alarms",
+          "contextMenus",
+          "storage",
+          "tabs",
+          "theme"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "idcac-pub@guus.ninja",
+      "version": "1.1.4",
+      "type": "extension",
+      "manifestVersion": 2,
+      "defaultLocale": {
+        "name": "I still don't care about cookies",
+        "creator": "OhMyGuus and Community (originally Daniel Kladnik)"
+      },
+      "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
+      "seen": false,
       "userPermissions": {
         "permissions": [
           "tabs",
@@ -274,58 +547,148 @@
           "https://*/*"
         ]
       },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
       "location": "app-profile"
     },
     {
-      "id": "{446900e4-71c2-419f-a6a7-df9c091e268b}",
-      "version": "2023.9.2",
+      "id": "juraj.masiar@gmail.com_ScrollAnywhere",
+      "version": "9.2",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
-        "name": "Bitwarden - Free Password Manager",
-        "description": "A secure and free password manager for all of your devices.",
-        "creator": "Bitwarden Inc.",
-        "homepageURL": "https://bitwarden.com"
+        "name": "ScrollAnywhere",
+        "description": "Drag scrollbar with your middle mouse button anywhere on the page. Supports also \"grab and drag\" style.",
+        "creator": "Juraj Mäsiar"
       },
       "visible": true,
-      "seen": true,
+      "signedTypes": [
+        2,
+        0
+      ],
+      "seen": false,
+      "userPermissions": {
+        "permissions": [
+          "alarms",
+          "storage",
+          "activeTab"
+        ],
+        "origins": [
+          "<all_urls>"
+        ]
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "zotero@chnm.gmu.edu",
+      "version": "5.0.147",
+      "type": "extension",
+      "updateURL": "https://www.zotero.org/download/connector/firefox/release/updates.json",
+      "manifestVersion": 2,
+      "defaultLocale": {
+        "name": "Zotero Connector",
+        "description": "Save references to Zotero from your web browser",
+        "homepageURL": "https://www.zotero.org/"
+      },
+      "visible": true,
+      "signedTypes": [
+        2,
+        1
+      ],
+      "seen": false,
       "userPermissions": {
         "permissions": [
           "tabs",
           "contextMenus",
-          "storage",
-          "unlimitedStorage",
-          "clipboardRead",
-          "clipboardWrite",
-          "idle",
+          "cookies",
           "webRequest",
-          "webRequestBlocking"
+          "webRequestBlocking",
+          "webNavigation",
+          "storage"
         ],
         "origins": [
           "http://*/*",
           "https://*/*",
-          "file:///*"
+          "https://docs.google.com/document/*"
         ]
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
       },
       "location": "app-profile"
     },
     {
-      "id": "{fd252194-7d95-4d2a-9368-79e874fc335c}",
-      "version": "0.2.6",
+      "id": "{3c078156-979c-498b-8990-85f7987dd929}",
+      "version": "5.2.0",
       "type": "extension",
       "manifestVersion": 2,
       "defaultLocale": {
-        "name": "QRify",
-        "description": "Turn a URL or a text selection into a QR code with one click on the context menu or toolbar icon. Click to edit it. Works offline.",
-        "creator": "Terry Yuen"
+        "name": "Sidebery",
+        "description": "Tabs tree, bookmarks and history in a highly configurable sidebar.",
+        "creator": "mbnuqw",
+        "homepageURL": "https://github.com/mbnuqw/sidebery"
       },
       "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
       "seen": true,
       "userPermissions": {
         "permissions": [
           "activeTab",
-          "contextMenus"
+          "tabs",
+          "contextualIdentities",
+          "cookies",
+          "storage",
+          "unlimitedStorage",
+          "sessions",
+          "menus",
+          "menus.overrideContext",
+          "search",
+          "theme"
         ],
+        "origins": []
+      },
+      "requestedPermissions": {
+        "permissions": [],
+        "origins": []
+      },
+      "location": "app-profile"
+    },
+    {
+      "id": "{f209234a-76f0-4735-9920-eb62507a54cd}",
+      "version": "3.98",
+      "type": "extension",
+      "manifestVersion": 2,
+      "defaultLocale": {
+        "name": "Unpaywall",
+        "description": "Legally get full text of scholarly articles as you browse."
+      },
+      "visible": true,
+      "signedTypes": [
+        2,
+        0
+      ],
+      "seen": false,
+      "userPermissions": {
+        "permissions": [
+          "storage"
+        ],
+        "origins": [
+          "*://*.oadoi.org/*",
+          "<all_urls>"
+        ]
+      },
+      "requestedPermissions": {
+        "permissions": [],
         "origins": []
       },
       "location": "app-profile"
