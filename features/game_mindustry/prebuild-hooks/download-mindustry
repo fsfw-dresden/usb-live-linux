@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+DEST_DIR=${PREFIX}/usr/local/share
+DEST_FILE=${DEST_DIR}/mindustry.jar
+
+RELEASEINFO="https://api.github.com/repos/Anuken/MindustryBuilds/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r '.[].assets[].browser_download_url|select(test(".*desktop.*"; "i"))' | head -n1)
+
+mkdir -pv ${DEST_DIR}
+
+FILE=$(download_file_cached "${URL}") \
+  && cp -a "${FILE}" "${DEST_FILE}"
