@@ -1,0 +1,7 @@
+# workaround 2024-08: prevent pulling in xscreensaver from backports causing
+# The following packages have unmet dependencies:                                                
+#  xscreensaver-gl-extra : Depends: xscreensaver-gl but it is not installable                                                                                                                    
+# E: Unable to correct problems, you have held broken packages.                                                                                                                                  
+Package: xscreensaver xscreensaver-*
+Pin: release o=Debian Backports
+Pin-Priority: 499
