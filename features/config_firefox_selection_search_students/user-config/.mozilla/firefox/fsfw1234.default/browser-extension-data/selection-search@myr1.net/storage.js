@@ -73,7 +73,7 @@
       "url": "https://librivox.org/search?q=%s&search_form=advanced"
     },
     {
-      "name": "🇩🇪 TV (non-commercial)",
+      "name": "TV (non-commercial)",
       "url": "https://mediathekviewweb.de/#query=%s"
     },
     {
@@ -101,7 +101,7 @@
         },
         {
           "name": "Products: Kleinanzeigen",
-          "url": "http://www.ebay-kleinanzeigen.de/anzeigen/s-sortierung:preis/%s/k0"
+          "url": "http://www.kleinanzeigen.de/anzeigen/s-sortierung:preis/%s/k0"
         },
         {
           "name": "Products: Ebay.de sofort-Kauf",
@@ -194,7 +194,7 @@
         },
         {
           "name": "Library Genesis",
-          "url": "http://libgen.rs/search.php?req=%s&view=detailed&sort=year&sortmode=DESC"
+          "url": "http://libgen.is/search.php?req=%s&view=detailed&sort=year&sortmode=DESC"
         },
         {
           "name": "Libraries: WorldCat",
@@ -249,7 +249,7 @@
         },
         {
           "name": "Android Apps: Play Store",
-          "url": "https://play.google.com/store/search?q=%s&c=apps&price=1&sort=1"
+          "url": "https://play.google.com/store/search?q=%s&c=apps&sort=1"
         }
       ]
     },
@@ -271,7 +271,7 @@
           "url": "http://www.find-das-bild.de/suche/?tx_fdbgallery_fdbgallery[searchWord]=%s"
         },
         {
-          "name": "🇫🇷 Qwant Junior",
+          "name": "Qwant Junior (FR)",
           "url": "https://www.qwantjunior.com/?q=%s"
         }
       ]
