@@ -1,0 +1,5 @@
+# The dmo build of yt-dlp is single-binary and does not contain
+# the python library which we want to use for the portal..
+Package: yt-dlp
+Pin: origin /deb.multimedia/
+Pin-Priority: 50
