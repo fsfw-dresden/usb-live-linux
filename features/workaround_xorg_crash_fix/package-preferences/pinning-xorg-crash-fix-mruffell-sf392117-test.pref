@@ -1,0 +1,5 @@
+# thanks @mruffell for providing fixed packages, c.f.
+# https://bugs.launchpad.net/ubuntu/+source/xorg-server/+bug/1861609/comments/31
+Package: x*
+Pin: release o=LP-PPA-mruffell-sf392117-test
+Pin-Priority: 1000
