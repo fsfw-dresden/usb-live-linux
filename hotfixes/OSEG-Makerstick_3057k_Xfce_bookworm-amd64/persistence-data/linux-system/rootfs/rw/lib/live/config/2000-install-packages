@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. /lib/live/config.sh
+
+pkg_is_installed python3-fuzzywuzzy || apt install --yes python3-fuzzywuzzy
+
+for DEB in /var/cache/live/pkgs/*.deb
+do
+  apt install --yes "${DEB}"
+done
