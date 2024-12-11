@@ -3,7 +3,7 @@ systemd-container       # enable stick-build in container
 # hotplug-autorun dependencies
 python3-dialog          # making simple terminal-based user interfaces
 python3-humanize        # turning a number into a human readable size
-python3-blessings       # manage terminal color and styling
+python3-blessed         # wrapper around terminal capabilities
 python3-pyudev          # binding to the udev library
 
 # optional

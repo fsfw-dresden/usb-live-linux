@@ -22,7 +22,7 @@ def canceled():
     """Quit with friendly message when dialog got canceled."""
     quit_msg("Canceled. Goodbye.")
 
-deps = [ 'python3-dialog', 'python3-humanize', 'python3-blessings', 'python3-pyudev' ]
+deps = [ 'python3-dialog', 'python3-humanize', 'python3-blessed', 'python3-pyudev' ]
 deps_missing = []
 cache = apt.Cache()
 
@@ -39,7 +39,7 @@ if len(deps_missing) > 0:
 
 import dialog
 import humanize
-import blessings
+import blessed
 import pyudev
 
 # Toggle this for debug mode
@@ -51,7 +51,7 @@ mp = None
 mode_tag = iso_path = image_path = hotfix_path = install_variant = ''
 fat32_partition_size = 0
 
-term = blessings.Terminal()
+term = blessed.Terminal()
 udev = pyudev.Context()
 monitor = pyudev.Monitor.from_netlink(udev)
 monitor.filter_by(subsystem = 'block', device_type = 'disk')
