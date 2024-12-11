@@ -1,0 +1,92 @@
+#!/bin/sh
+
+. "$(dirname $(realpath "${0}"))/functions.sh"
+cd_repo_root
+
+check_program_exists podman
+
+DEPS="
+apt-utils
+aptitude
+bash
+bash-completion
+bmap-tools
+ca-certificates
+ccze
+curl
+cryptsetup
+dbus
+dctrl-tools
+dialog
+dosfstools
+eatmydata
+f2fs-tools
+fatattr
+gallery-dl
+git
+grub-efi-amd64-signed
+grub-efi-ia32-bin
+grub-pc-bin
+html-xml-utils
+isolinux
+jq
+libcdio-utils
+librsvg2-bin
+live-build
+make
+mtools
+nocache
+pandoc
+parted
+patch
+pigz
+pipemeter
+qemu-utils libnbd-bin nbdkit
+ranger
+rsync
+shim-signed
+squashfs-tools
+syslinux-common
+systemd-container
+tig
+time
+unzip
+wget
+xorriso
+xz-utils
+youtube-dl
+zstd
+"
+
+# run a detached container with the repo mounted
+podman run -it --detach --privileged --replace --volume=${PWD}:/mnt/usb-live-linux --name debian-container debian:bookworm
+
+ROOTPATH=$(podman mount debian-container)
+
+# Create a container welcome prompt
+{
+    echo "cd /mnt/usb-live-linux/"
+    echo "clear"
+    printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
+    echo "echo"
+    printf "echo 'Run ${COLOR_CYAN}scripts/build-live-iso${COLOR_OFF} to build ISO-image',\n"
+    printf "echo '    ${COLOR_CYAN}scripts/build-distribution-suite${COLOR_OFF} to build distribution images for main variants'\n"
+    printf "echo ' or ${COLOR_CYAN}scripts/stick-install${COLOR_OFF} to install a finished ISO-image onto a flash drive or into an image file'\n"
+} >> "${ROOTPATH}"/root/.bashrc
+
+# # Copy custom aptitude config
+cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d "${ROOTPATH}"/etc/apt/
+
+# base command
+CMD="podman exec -it --privileged debian-container"
+
+# Update apt database
+$CMD apt update
+
+# Apply added dependencies
+$CMD apt install --yes --no-install-recommends --no-upgrade ${DEPS}
+
+# enter finished container
+$CMD bash
+
+# vim: ts=2 sw=2
