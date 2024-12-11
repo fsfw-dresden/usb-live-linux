@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Theme switcher
+Type=Application
+Exec=light-dark-switcher
