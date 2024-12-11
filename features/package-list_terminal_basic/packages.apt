@@ -12,7 +12,6 @@ btop                    # modern and colorful command line resource monitor
 btrfs-progs             # Checksumming Copy on Write Filesystem utilities
 caca-utils              # text mode graphics utilities
 catdoc                  # text extractor for MS-Office files
-cargo                   # Rust package manager
 ccze                    # robust and modular log coloriser
 cgdb                    # curses-based interface to the GNU Debugger (GDB)
 chafa                   # Image-to-text converter (supports animations, alpha, UTF..)
@@ -73,7 +72,6 @@ i7z                     # reports Intel Core i7, i5, i3 CPU information about Tu
 icdiff                  # terminal side-by-side colorized word diff
 imagemagick             # konsolenbasierte Bildbearbeitungsprogramme - gut in Skripten zu verwenden z.B.: um ganze Bilderordner zu konvertieren
 inotify-tools           # command-line programs providing a simple interface to inotify
-intel-gpu-tools         # tools for debugging the Intel graphics driver, including a performance monitor (intel_gpu_top)
 inxi                    # system information script
 ioping                  # disk I/O latency measuring tool
 iotop                   # displays a table of current I/O usage by processes on the system
@@ -129,7 +127,6 @@ rlwrap                  # Kommandozeilen-Wrapper mit »readline«-Funktionalitä
 scanmem                 # locate and modify a variable in a running process
 screen                  # Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 screenfetch             # Bash Screenshot Information Tool: terminal theme information + ASCII distribution
-shellcheck              # lint tool for shell scripts
 shed                    # simple hex editor with a pico-style interface
 silversearcher-ag       # sehr schnell grep-ähnliches Programm
 smartmontools           # control and monitor storage systems using S.M.A.R.T.

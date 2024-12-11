@@ -4,11 +4,8 @@ fastboot                        # command line tool for flashing Android deviceu
 bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
 bmap-tools                      # flash image files to block devices using the block map
 bpfcc-tools                     # Berkeley Package Filter command-line tools & examples for IO analysis, networking, monitoring
+cargo                           # Rust package manager
 datamash                        # numeric, textual and statistical operations on input textual data files
-debconf-utils                   # small utilities for debconf developers
-debootstrap                     # used to create a Debian base system from scratch
-deborphan                       # find unused packages (with no other packages depending on them)
-devscripts                      # scripts to make the life of a Debian Package maintainer easier
 eatmydata                       # small LD_PRELOAD library to transparently disable fsync and friends
 git-extras                      # extra git commands to easily solve typical tasks
 ipython3                        # Enhanced interactive Python 3 shell
@@ -19,6 +16,7 @@ miller                          # process name-indexed data such as CSV with fun
 pagemon                         # ncurses based interactive memory/page monitoring tool
 poke                            # interactive, extensible editor for structured binary data
 pup                             # command-line HTML processor to filter using CSS selectors
+shellcheck                      # lint tool for shell scripts
 tig                             # ncurses-based text-mode interface for Git
 visidata                        # interactive multitool for tabular data
 zzuf                            # transparent application fuzzer

@@ -1,0 +1,13 @@
+debconf-utils                   # small utilities for debconf developers
+debootstrap                     # used to create a Debian base system from scratch
+developers-reference            # guidelines and information for Debian developers
+developers-reference-de         # guidelines and information for Debian developers, in German
+devscripts                      # scripts to make the life of a Debian Package maintainer easier
+dgit                            # git interoperability with the Debian archive
+dh-make                         # converts source archives into Debian package source
+git-debrebase                   # rebasing git workflow tool for Debian packaging
+maint-guide                     # Debian New Maintainers' Guide
+maint-guide-de                  # Debian New Maintainers' Guide (German)
+packaging-dev                   # metapackage provides tools for development of Debian-format packages
+pybuild-plugin-pyproject        # Debian helper tools for packaging Python libraries using PEP517
+pypi2deb                        # PyPI to Debian converter

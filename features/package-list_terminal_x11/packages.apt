@@ -1,5 +1,7 @@
-read-edid       # hardware information-gathering tool for VESA PnP monitors
+bb              # ASCII-art demo based on AAlib (pulls in libsdl & x11 dependencies)
+intel-gpu-tools # tools for debugging the Intel graphics driver, including a performance monitor (intel_gpu_top)
 pqiv            # powerful GTK 3 based command-line image viewer with a minimal UI
+read-edid       # hardware information-gathering tool for VESA PnP monitors
 sm              # Zeigt einen kurzen Text bildschirmfüllend an
 vainfo          # Video Acceleration (VA) API for Linux -- info program
 vdpauinfo       # Video Decode and Presentation API for Unix (vdpauinfo utility)
