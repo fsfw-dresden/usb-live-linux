@@ -1,9 +1,14 @@
 #!/bin/sh
+# Shell script to spawn a debian build environment using podman
 
-. "$(dirname $(realpath "${0}"))/functions.sh"
-cd_repo_root
+DEBIAN_CODENAME="trixie"
+CONTAINER_NAME="debian-${DEBIAN_CODENAME}"
 
-check_program_exists podman
+# go to repository root for relative paths to resolve
+cd "$(dirname $(realpath "${0}"))/.."
+
+# check for podman
+command -v podman > /dev/null || { echo "Please make sure podman is installed and in your path to use this script"; exit 1; }
 
 DEPS="
 apt-utils
@@ -54,17 +59,82 @@ unzip
 wget
 xorriso
 xz-utils
-youtube-dl
+yt-dlp
 zstd
 "
 
 # run a detached container with the repo mounted
-podman run -it --detach --privileged --replace --volume=${PWD}:/mnt/usb-live-linux --name debian-container debian:bookworm
+podman run \
+  --interactive \
+  --tty \
+  --detach \
+  --replace \
+  --privileged \
+  --volume="${PWD}":/mnt/usb-live-linux \
+  --name "${CONTAINER_NAME}" \
+  "docker.io/debian:${DEBIAN_CODENAME}"
 
-ROOTPATH=$(podman mount debian-container)
+# Man page excerpts
+# --interactive, -i
+#     When set to true, keep stdin open even if not attached. The default is false.
+#
+# --tty, -t
+#     Allocate a pseudo-TTY. The default is false.
+#
+#     When  set  to  true, Podman allocates a pseudo-tty and attach to the standard
+#     input of the container. This can be used, for example, to run a throwaway in‐
+#     teractive shell.
+#
+#     NOTE:  The  --tty  flag prevents redirection of standard output.  It combines
+#     STDOUT and STDERR, it can insert control characters, and it can  hang  pipes.
+#     This  option  is only used when run interactively in a terminal. When feeding
+#     input to Podman, use -i only, not -it.
+#
+#     echo "asdf" | podman run --rm -i someimage /bin/cat
+#
+# --detach, -d
+#     Detached  mode:  run  the  container in the background and print the new con‐
+#     tainer ID. The default is false.
+#
+#     At any time run podman ps in the other shell to view a list  of  the  running
+#     containers. Reattach to a detached container with podman attach command.
+#
+#     When  attached via tty mode, detach from the container (and leave it running)
+#     using a configurable key sequence. The  default  sequence  is  ctrl-p,ctrl-q.
+#     Specify  the  key sequence using the --detach-keys option, or configure it in
+#     the containers.conf file: see containers.conf(5) for more information.
+#
+# --replace
+#     If  another  container  with the same name already exists, replace and remove
+#     it. The default is false.
+#
+# --privileged
+#     Give extended privileges to this container. The default is false.
+#
+#     By default, Podman containers are unprivileged (=false) and cannot, for exam‐
+#     ple,  modify parts of the operating system. This is because by default a con‐
+#     tainer is only allowed limited access to devices. A "privileged" container is
+#     given  the  same  access to devices as the user launching the container, with
+#     the exception of virtual consoles (/dev/tty\d+) when running in systemd  mode
+#     (--systemd=always).
+#
+#     A  privileged container turns off the security features that isolate the con‐
+#     tainer from the host. Dropped Capabilities, limited devices, read-only  mount
+#     points,  Apparmor/SELinux  separation,  and Seccomp filters are all disabled.
+#     Due to the disabled security features, the  privileged  field  should  almost
+#     never be set as containers can easily break out of confinement.
+#
+#     Containers  running  in  a  user namespace (e.g., rootless containers) cannot
+#     have more privileges than the user that launched them.
+
+
+
+ROOTPATH="$(podman mount "${CONTAINER_NAME}")"
 
 # Create a container welcome prompt
 {
+    COLOR_CYAN="\e[1;36m"
+    COLOR_OFF="\e[0m"
     echo "cd /mnt/usb-live-linux/"
     echo "clear"
     printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
@@ -78,15 +148,15 @@ ROOTPATH=$(podman mount debian-container)
 cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d "${ROOTPATH}"/etc/apt/
 
 # base command
-CMD="podman exec -it --privileged debian-container"
+CMD="podman exec --interactive --tty ${CONTAINER_NAME}"
 
 # Update apt database
-$CMD apt update
+${CMD} apt update
 
 # Apply added dependencies
-$CMD apt install --yes --no-install-recommends --no-upgrade ${DEPS}
+${CMD} apt install --yes --no-install-recommends --no-upgrade ${DEPS}
 
 # enter finished container
-$CMD bash
+${CMD} bash
 
-# vim: ts=2 sw=2
+# vim: ts=2 sw=2 et
