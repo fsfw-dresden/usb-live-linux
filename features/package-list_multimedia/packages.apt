@@ -32,6 +32,19 @@ va-driver-all                   # driver metapackage
 i965-va-driver-shaders
 intel-media-va-driver-non-free
 
+
+obs-studio                      # recorder and streamer for live video content
+obs-plugins
+obs-cli
+obs-3d-effect
+obs-advanced-scene-switcher
+obs-ashmanix-countdown
+obs-color-monitor
+obs-gradient-source
+obs-time-source
+obs-vintage-filter
+
+
 vlc                             # Multimedia-Player und Streamer
 vlc-l10n                        # translations for VLC
 pitivi                          # Videoschnitt
@@ -47,7 +60,6 @@ qstopmotion                     # Application for creating stop-motion animation
 v4l-utils                       # Collection of command line video4linux utilities
 ogmtools                        # Dient der Bearbeitung von OGG-Streams
 gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
-# unsatisfiable dependency lives                           # Video Editing system allowing users to edit and create video (+3.172 kB)
 slowmovideo                     # creates slow-motion videos from your footage
 mplayer                         # movie player for Unix-like systems
 smplayer-l10n                   # Qt5 front-end for mplayer + translation
