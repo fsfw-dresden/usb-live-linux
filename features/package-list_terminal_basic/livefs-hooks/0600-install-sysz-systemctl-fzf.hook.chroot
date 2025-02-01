@@ -1,0 +1,7 @@
+#!/bin/sh
+# interactive systemctl service control powered by fzf
+
+TARGET_FILE="/usr/local/bin/sysz"
+URL=https://github.com/joehillen/sysz/raw/refs/heads/master/sysz
+curl --location ${URL} > ${TARGET_FILE} \
+  && chmod a+x ${TARGET_FILE}
