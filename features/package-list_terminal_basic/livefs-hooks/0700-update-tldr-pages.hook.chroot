@@ -1,0 +1,12 @@
+#!/bin/sh
+# Download tldr database & share among users (26k files)
+
+STORE_DEST=/usr/local/share
+ROOT_DEST=/root/.local/share
+USER_DEST=/etc/skel/.local/share
+
+tldr -u && \
+  mkdir -pv "${STORE_DEST}" "${USER_DEST}" && \
+  mv -v "${ROOT_DEST}/tldr" "${STORE_DEST}/" && \
+  ln -sv "${STORE_DEST}/tldr" "${ROOT_DEST}/" && \
+  ln -sv "${STORE_DEST}/tldr" "${USER_DEST}/"
