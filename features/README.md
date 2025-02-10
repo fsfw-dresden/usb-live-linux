@@ -44,4 +44,5 @@ Each feature name starts with a scope prefix. For that, there are no defined rul
       1 appimage
 
 ### Dependencies
-A feature may declare its dependencies in a Packages.md file conforming to the obscure format that is currently used in the [scripts](../scripts).
+Package dependencies are listed line-by-line in a plain text file "packages.apt".
+A feature can depend on another feature by putting a relative symlink to it into a folder "depends".
