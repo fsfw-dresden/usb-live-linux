@@ -33,7 +33,7 @@ then
 fi
 
 # clear previously generated hostnames
-sed -ir 's/ machine-[A-Z]{4}-[0-f]{5}//g' /etc/hosts
+sed -ri 's/ machine-[A-Z]{4}-[0-f]{5}//g' /etc/hosts
 
 # make subsequent 0020-hostname pick up the new name
 [ -e /var/lib/live/config/hostname ] && rm /var/lib/live/config/hostname
