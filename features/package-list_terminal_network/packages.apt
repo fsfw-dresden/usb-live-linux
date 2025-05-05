@@ -1,3 +1,4 @@
+arp-scan                # arp scanning and fingerprinting tool
 bridge-utils            # Dienstprogramme für die Konfiguration der Linux-Ethernet-Brücke
 dnstop                  # console tool to analyze DNS traffic
 ebtables                # Verwaltung von Ethernet-Bridge-Frame-Tabellen
@@ -7,6 +8,7 @@ iproute2                # Werkzeuge für Netzwerk(verkehrs)kontrolle
 iw                      # Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
 jnettop                 # display network streams sorted by bandwidth usage
 magic-wormhole          # Securely and simply transfer data between computers
+mdns-scan               # Scan for mDNS/DNS-SD services published on the local network
 mtr-tiny                # ncurses traceroute tool
 netcat-openbsd          # open TCP connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning, and deal with both IPv4 and IPv6
 nethogs                 # Net top tool grouping bandwidth per process
@@ -17,7 +19,8 @@ rfkill                  # Wlan, Bluetooth & Co. an-/ abschalten
 speedometer             # measure and display the rate of data across a network connection
 ssh-audit               # tool for ssh server auditing
 ssh-tools               # various tools (ssh-ping, ssh-facts, …)
-tftp                    # Trivial file transfer protocol client, used to recover / flash routers
+sslscan                 # Tests SSL/TLS enabled services to discover supported cipher suites
+tftp-hpa                # Trivial file transfer protocol client, used to recover / flash routers
 traceroute              # displays the route used by IP packets on their way
 tshark                  # network traffic analyzer (console version of wireshark)
 wavemon                 # watch signal and noise levels

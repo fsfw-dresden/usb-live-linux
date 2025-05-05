@@ -7,7 +7,6 @@ sudo
 
 dbus
 irqbalance
-ixo-usb-jtag
 keyboard-configuration
 libglib2.0-data
 sgml-base

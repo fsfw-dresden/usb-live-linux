@@ -1,6 +1,3 @@
-android-sdk-platform-tools      # Tools for interacting with an Android platform (pulls in adb, fastboot)
-adb                             # Android Debug Bridge: versatile command line tool for android device
-fastboot                        # command line tool for flashing Android deviceu
 bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
 bmap-tools                      # flash image files to block devices using the block map
 bpfcc-tools                     # Berkeley Package Filter command-line tools & examples for IO analysis, networking, monitoring
@@ -8,7 +5,10 @@ cargo                           # Rust package manager
 datamash                        # numeric, textual and statistical operations on input textual data files
 eatmydata                       # small LD_PRELOAD library to transparently disable fsync and friends
 git-extras                      # extra git commands to easily solve typical tasks
+google-android-platform-tools-installer # Tools for interacting with an Android platform (pulls in adb, fastboot)
 ipython3                        # Enhanced interactive Python 3 shell
+python3-ipdb                    # IPython-based pdb replacement
+linux-perf                      # Performance analysis tools for Linux
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
 manpages-posix-dev              # Manual pages about using a POSIX system for development

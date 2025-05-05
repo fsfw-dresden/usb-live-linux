@@ -1,6 +1,7 @@
 tmux                            # Terminal-Multiplexer
 tmux-themepack-jimeh            # basic theme and powerline themes for tmux
 fonts-powerline                 # font which provides symbols used by Powerline
+fzf
 htop
 iftop
 iotop

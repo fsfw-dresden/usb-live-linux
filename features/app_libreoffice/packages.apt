@@ -11,9 +11,12 @@ libreoffice-math                # Formel-Editor
 libreoffice-draw                # Zeichenprogramm
 libreoffice-impress             # Präsentation
 libreoffice-java-common         # architekturunabhängige Dateien der Java-Unterstützung
+libreoffice-librelogo           # Logo-like programming language for LibreOffice
+libreoffice-lightproof-en       # Lightproof grammar checker (English)
 libreoffice-evolution           # Unterstützung für Evolution-Adressbücher
 unoconv                         # converter between LibreOffice document formats
 
+openclipart-libreoffice         # 100% license-free, royalty-free, and restriction-free clip art
 # ? libreoffice-gnome           # GNOME-Integration
 # ? libreoffice-gtk2            # GTK+-2-Integration
 libreoffice-gtk3                # GTK+-3-Integration

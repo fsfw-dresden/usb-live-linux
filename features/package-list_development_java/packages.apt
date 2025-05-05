@@ -1,1 +1,6 @@
-default-jdk             # Standard-Java oder Java-kompatibles Development Kit - Open Java Development Kit 8
+default-jdk             # Standard Java or Java compatible Development Kit
+gradle
+gradle-completion
+gradle-doc
+maven
+openjfx

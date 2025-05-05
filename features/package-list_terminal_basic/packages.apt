@@ -4,6 +4,7 @@ ansifilter              # parse common (terminal) ANSI codes and remove or conve
 antiword                # Converts MS Word files to text, PS, PDF and XML
 aptitude                # Anständiger Paketmanager (Text UI)
 atool                   # tool for managing file archives of various types
+bat                     # cat(1) clone with syntax highlighting and git integration
 beep                    # advanced PC-speaker beeper
 boxes                   # textmode box- and comment drawing filter
 brightnessctl           # small utility to control the brightness of screen and LEDs
@@ -18,6 +19,9 @@ chafa                   # Image-to-text converter (supports animations, alpha, U
 chntpw                  # NT SAM password recovery utility
 clinfo                  # Query OpenCL (Open Computing Language) system information
 cmatrix                 # Screen saver for the terminal
+colorize                # Colorizes text on terminal with ANSI escape sequences
+colortest               # utilities to test color capabilities of terminal
+colortest-python        # automatically detect 8-256 color caps & display appropriate color charts
 consolation             # linux console pointer support for copy-paste
 conspy                  # (Remote) control of Linux virtual consoles
 cpuid                   # dump x86 CPUID information
@@ -31,6 +35,7 @@ debram                  # catalog of available shell commands
 debsums                 # verification of installed package files against MD5 checksums
 dialog                  # dialog boxes from shell scripts
 diskscan                # scan storage media for bad or near failure sectors
+distro-info             # Information about all releases of Debian and Ubuntu
 dlocate                 # find files in debian packages: fast alternative to dpkg -L and dpkg -S
 dmidecode               # SMBIOS/DMI table decoder
 dnsutils                # client programs related to DNS (dig, nslookup, nsupdate)
@@ -38,12 +43,15 @@ docutils-common         # weiterer Multiformatkonverter (für Restructured Text)
 docx2txt                # Convert Microsoft OOXML files to plain text
 dos2unix                # convert text file line endings between CRLF and LF
 dpkg-repack             # creates .deb file of an installed package
+dtrx                    # Do The Right eXtraction: intelligently extract multiple archive types
 dstat                   # versatile resource statistics tool
 e2fsprogs-l10n          # Werkzeuge für ext2-/ext3-/ext4-Dateisysteme - Übersetzungen
 edid-decode             # decode the binary EDID information from monitors
 elinks                  # advanced text-mode WWW browser
 entr                    # Event Notify Test Runner (entr) runs commands when files change (detected through kqueue/inotify kernel interface)
+exif                    # command-line utility to show EXIF information in JPEG files
 exiftool                # read and write meta information in multimedia files
+exiv2                   # EXIF/IPTC/XMP metadata manipulation tool
 f2fs-tools              # Tools for Flash-Friendly File System
 f3                      # test real flash memory capacity
 faketime                # intercepts various system calls and fake date and time to programs
@@ -66,6 +74,7 @@ htop                    # interaktive Prozessübersicht für die Konsole
 htpdate                 # HTTP based time synchronization tool for firewall blocking the NTP port
 httpie                  # CLI, cURL-like tool for humans
 httrack                 # Copy websites to your computer
+hyperfine               # Command-line benchmarking tool
 hwinfo                  # Informationen über die im System installierte Hardware
 i2c-tools               # set of I2C tools
 i7z                     # reports Intel Core i7, i5, i3 CPU information about Turbo Boost, frequencies, multipliers

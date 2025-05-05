@@ -9,6 +9,9 @@ remmina-plugin-vnc              # VNC plugin for Remmina
 remmina-plugin-rdp              # RDP plugin for Remmina
 # b0rk remmina-plugin-spice            # Spice plugin for Remmina
 
+hardinfo2                       # System Information and Benchmark for Linux Systems
+sysbench                        # multi-threaded benchmark tool for database systems
+
 kdeconnect                      # integrate linux desktop with android smartphone
 
 gnome-characters                # find and insert unusual characters
@@ -50,6 +53,8 @@ qttranslations5-l10n            # translations for Qt 5 (+1.501 kB)
 
 calibre                         # powerful and easy to use e-book manager (+28,1 MB)
 seahorse                        # front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
+
+qosmic                          # GUI for creating & rendering fractal flame images
 
 gramps                          # Familienstammbaum (+7,010 kB + 876 kB recommends)
 gir1.2-gexiv2-0.10              # recommended by gramps

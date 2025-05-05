@@ -8,10 +8,6 @@ firmware-linux-free
 firmware-misc-nonfree
 # ? firmware-amd-graphics
 
-hdmi2usb-fx2-firmware
-
-# ? dahdi-firmware-nonfree
-
 bluez-firmware
 atmel-firmware
 amd64-microcode
