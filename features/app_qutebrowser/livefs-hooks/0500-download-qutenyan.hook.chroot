@@ -1,2 +1,0 @@
-#!/bin/sh
-mkdir -pv /usr/local/lib && cd /usr/local/lib && git clone https://gitlab.com/jgkamat/qutenyan
