@@ -1,0 +1,2 @@
+< https://github.com/vagnum08/cpupower-gui/releases/download/v1.0.0/cpupower-gui_1.0.0-1_all.deb
+polkitd-pkla                    # Legacy "local authority" (.pkla) backend until cpupower-gui ships rules file
