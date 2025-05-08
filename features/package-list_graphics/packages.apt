@@ -24,6 +24,8 @@ gimp-gmic                       # GREYC's Magic Image Converter - Konvertieren, 
 # ? gimp-ufraw                  # Gimp Importierprogramm für Kamerabilder im raw-Format
 gimp-help-de                    # Dokumentation für GIMP (Deutsch) (+31,8 MB)
 
+# Not Another PDF Scanner II: Scan documents to PDF and more, as simply as possible
+< https://github.com/cyanfish/naps2/releases/download/v8.1.4/naps2-8.1.4-linux-x64.deb
 # ? darktable                   # Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
 rawtherapee                     # Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 

@@ -2,6 +2,12 @@
 sonic-pi                # Live Coding for Everyone
 solfege                 # Ear training software
 lmms                    # Linux Multimedia Studio
+fluidsynth              # Real-time MIDI software synthesizer
+qsynth                  # fluidsynth GUI front-end application
+lilypond                # program for typesetting sheet music
+frescobaldi             # LilyPond sheet music text editor
+tuxguitar               # Multitrack guitar tablature editor and player
+kmetronome              # ALSA MIDI Metronome
 
 < https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.4/surge-xt-linux-x64-1.3.4.deb
 

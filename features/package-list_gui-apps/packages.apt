@@ -54,7 +54,10 @@ qttranslations5-l10n            # translations for Qt 5 (+1.501 kB)
 calibre                         # powerful and easy to use e-book manager (+28,1 MB)
 seahorse                        # front end for GnuPG for Key Management etc (+1,1krita-l10n78 kB)
 
+gnome-maps                      # map application for GNOME
+mumble                          # low-latency, high quality encrypted voice chat
 qosmic                          # GUI for creating & rendering fractal flame images
+viking                          # GPS data editor, analyzer and viewer
 
 gramps                          # Familienstammbaum (+7,010 kB + 876 kB recommends)
 gir1.2-gexiv2-0.10              # recommended by gramps

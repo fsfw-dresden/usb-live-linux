@@ -1,4 +1,5 @@
 bitwise                         # interactive calculator for dynamic base conversion and bit manipulation
+bluez-test-tools                # Bluetooth protocol stack test tools
 bmap-tools                      # flash image files to block devices using the block map
 bpfcc-tools                     # Berkeley Package Filter command-line tools & examples for IO analysis, networking, monitoring
 cargo                           # Rust package manager

@@ -4,6 +4,7 @@ ansifilter              # parse common (terminal) ANSI codes and remove or conve
 antiword                # Converts MS Word files to text, PS, PDF and XML
 aptitude                # Anständiger Paketmanager (Text UI)
 atool                   # tool for managing file archives of various types
+attr                    # utilities for manipulating filesystem extended attributes
 bat                     # cat(1) clone with syntax highlighting and git integration
 beep                    # advanced PC-speaker beeper
 boxes                   # textmode box- and comment drawing filter
@@ -35,6 +36,7 @@ debram                  # catalog of available shell commands
 debsums                 # verification of installed package files against MD5 checksums
 dialog                  # dialog boxes from shell scripts
 diskscan                # scan storage media for bad or near failure sectors
+disktype                # detection of content format of a disk or disk image
 distro-info             # Information about all releases of Debian and Ubuntu
 dlocate                 # find files in debian packages: fast alternative to dpkg -L and dpkg -S
 dmidecode               # SMBIOS/DMI table decoder
@@ -142,6 +144,7 @@ smartmontools           # control and monitor storage systems using S.M.A.R.T.
 smem                    # reports on memory usage
 strace                  # System call tracer
 stress                  # impose load on and stress test a computer system
+stressapptest           # stress test application for simulating high load situations
 sysfsutils              # sysfs query tool and boot-time setup
 syslinux-utils          # auxiliary utilities (+98,4 kB)
 sysstat                 # system performance tools (iostat etc)
@@ -153,6 +156,7 @@ translate-shell         # Command-line translator using Google Translate, etc.
 tree                    # recursive directory listing: depth indented colorized listing of files
 tweak                   # Efficient text-mode hex editor
 udftools                # tools for UDF filesystems and DVD/CD-R(W) drives
+unhide                  # find hidden processes and ports
 unrar                   # Unarchiver for .rar files (+111 kB)
 usbtop                  # show bandwidth on USB buses and devices
 vbindiff                # visually compare binary files

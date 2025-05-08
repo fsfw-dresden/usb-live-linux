@@ -19,18 +19,22 @@ systemd-bootchart               # boot performance graphing tool
 
 bash-completion                 # Programmierbare Vervollständigung für die Bash-Shell
 console-setup                   # Programm zur Einstellung von Schriftart und Tastaturbelegung für die Konsole
+cmospwd                         # decrypt BIOS passwords from CMOS
+ddcutil                         # query and change monitor settings
 usbutils                        # Linux USB-Hilfsprogramme
 pciutils                        # PCI-Hilfsprogramme
 lshw                            # Informationen über die Hardwarekonfiguration
 lsdvd                           # liest die Inhaltsinformation einer DVD
 eject                           # Auswerfen von CDs und Steuern von CD-Wechslern unter Linux
 udisks2                         # D-Bus-Dienst für Zugriff auf und Manipulation von Speichergeräten
+smbios-utils                    # access to (SM)BIOS informationaccess to (SM)BIOS information
 sshfs                           # Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 pm-utils                        # Powermanagement
 testdisk                        # Datenrettungswerkzeug
 dosfstools                      # Programme zum Anlegen und Überprüfen von MS-DOS-FAT-Dateisystemen
 mtd-utils                       # Utilities for manipulating memory technology devices, such as flash memory, Disk-On-Chip, or ROM.
 xfsprogs                        # Utilities for managing the XFS filesystem
+xinput-calibrator               # touchscreen calibration program for X.Org
 
 cups                            # Common UNIX Printing System(tm) - PPD-/Treiber-Unterstützung, Webschnittstelle
 cups-bsd                        # Common UNIX Printing System(tm) - BSD-Befehle

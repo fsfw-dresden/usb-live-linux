@@ -5,6 +5,8 @@ ebtables                # Verwaltung von Ethernet-Bridge-Frame-Tabellen
 horst                   # Highly Optimized Radio Scanning Tool
 iftop                   # displays bandwidth usage information on an network interface
 iproute2                # Werkzeuge für Netzwerk(verkehrs)kontrolle
+iputils-arping          # send ICMP echo requests to an ARP address
+iputils-tracepath       # trace the network path to a remote host
 iw                      # Werkzeug für die Konfiguration von drahtlosen Linux-Geräten (WiFi /WLAN)
 jnettop                 # display network streams sorted by bandwidth usage
 magic-wormhole          # Securely and simply transfer data between computers
@@ -22,6 +24,7 @@ ssh-tools               # various tools (ssh-ping, ssh-facts, …)
 sslscan                 # Tests SSL/TLS enabled services to discover supported cipher suites
 tftp-hpa                # Trivial file transfer protocol client, used to recover / flash routers
 traceroute              # displays the route used by IP packets on their way
+trickle                 # user-space bandwidth shaperqq
 tshark                  # network traffic analyzer (console version of wireshark)
 wavemon                 # watch signal and noise levels
 wireless-tools          # zum Bearbeiten von WLAN Einstellungen
