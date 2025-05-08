@@ -5,7 +5,7 @@
         "Favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0ElEQVQ4jaXTvwpBcRjG8W9uwCClnMUgq8GoLMpq07kBNqSMJrkM7sENsMlgsRiIxWaUEuExHOp0HOecH+/bOz6f3n5/4O8SVYQdMjVEGWEhYl5giHiEzB1xRqwRA0TaDeQRO2TUU0TOjfQNASHGiMQbyCI2hsAF0XJv0fthi7kbyCBWhsDReyNdnFOP2lcvYCGWBsDe72E1ce49So/8gBRiESG8RRS+Pe8G4hYQPiBs/7ADJBEzn+AJMUFU+PgTn0gR0UG0X1NHlBDx4KBhPQFhUECNPv1ifAAAAABJRU5ErkJggg==",
         "Placement": "toolbar",
         "Title": "netdata dashboard",
-        "URL": "http://localhost:19999/"
+        "URL": "http://localhost:19999/v3"
       }
     ]
   }

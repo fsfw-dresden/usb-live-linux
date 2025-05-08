@@ -1,3 +1,1 @@
-netdata                         # real-time performance monitoring using interactive web dashboards on http://localhost:19999/
-# ? netdata-plugins-nodejs
-netdata-plugins-python
+< https://repository.netdata.cloud/repos/repoconfig/debian/bookworm/netdata-repo_5-1+debian12_all.deb
