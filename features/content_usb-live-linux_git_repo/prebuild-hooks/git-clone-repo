@@ -5,8 +5,13 @@ check_program_exists pandoc || exit 1
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/src/usb-live-linux
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+mkdir -pv "${DEST_DIR}"
 
-mkdir -pv ${DEST_DIR}
-git clone .. ${DEST_DIR}
-git -C ${DEST_DIR} remote set-url origin https://github.com/fsfw-dresden/usb-live-linux
-git -C ${DEST_DIR} repack -ad
+ORIGIN_URL="https://github.com/fsfw-dresden/usb-live-linux"
+
+# Github checkout action only clones a shallow copy
+[ -e ../.git/shallow ] && git clone "${ORIGIN_URL}" "${DEST_DIR}" || {
+  git clone .. "${DEST_DIR}"
+  git -C "${DEST_DIR}" remote set-url origin "${ORIGIN_URL}"
+  git -C "${DEST_DIR}" repack -ad
+}
