@@ -1,0 +1,8 @@
+#!/bin/sh -x
+VERSION_FILE="/etc/live_stick_version"
+
+# This variable is not yet available in the prebuild-hook, only after `lb config`
+LB_IMAGE_NAME=$(sed -nr 's/^LB_IMAGE_NAME="(.*)"/\1/p' /live-build/config/common)
+sed -i "s/%LB_IMAGE_NAME%/${LB_IMAGE_NAME}/" /etc/live_stick_version
+
+cp -av "${VERSION_FILE}" "/var/log/${VERSION_FILE##*/}"

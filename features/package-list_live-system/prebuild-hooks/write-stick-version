@@ -5,13 +5,18 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
 mkdir -pv ${DEST_DIR}
 {
-  echo "This ${BUILD_VARIANT} image was built $(date '+%F %R')"
-  echo "Stick version $(../scripts/calc-version-number)"
-  echo "Git revision $(git rev-parse HEAD)"
-  echo "https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD)"
-  echo "(URL will show 404 not found if commit is not in main repository)"
+  echo "Image name: %LB_IMAGE_NAME%"
+  echo "Build date: $(date '+%F %R')"
+  echo "Build variant: ${BUILD_VARIANT}"
+  echo "Version code: $(../scripts/calc-version-number)"
+  echo "Git revision: https://github.com/fsfw-dresden/usb-live-linux/tree/$(git rev-parse HEAD)"
+  echo "  (will show 404 not found error if commit this was built from"
+  echo "   has not yet been pushed to main repository)"
   echo
-  echo "You can find more information about our goals and activities on our"
-  echo "homepage at https://fsfw-dresden.de/ and details or downloads"
-  echo "regarding the schulstick project at https://schulstick.org/ ."
+  echo "You can find more information about goals and activities on our"
+  echo "homepage at <https://fsfw-dresden.de/> and details or downloads"
+  echo "regarding the schulstick project at <https://schulstick.org/>"
+  echo "and <https://github.com/fsfw-dresden/usb-live-linux>."
+  echo
+  echo "We hope you enjoy using this Freie Software Freies Wissen bundle. : )"
 } > ${DEST_DIR}/live_stick_version
