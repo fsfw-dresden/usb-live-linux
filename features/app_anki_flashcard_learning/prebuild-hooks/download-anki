@@ -18,6 +18,6 @@ DEST_DIR=${PREFIX}/tmp
 
 mkdir -pv ${DEST_DIR}
 
-URL="https://github.com/ankitects/anki/releases/download/24.04rc1/anki-24.04-linux-qt6.tar.zst"
+URL="https://github.com/ankitects/anki/releases/download/25.02.7/anki-25.02.7-linux-qt6.tar.zst"
 FILE=$(download_file_cached ${URL}) \
   && tar --extract --file "${FILE}" --directory "${DEST_DIR}" --zstd

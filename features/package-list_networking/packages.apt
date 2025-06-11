@@ -13,4 +13,4 @@ usbmuxd                         # USB-Multiplexer-Daemon für iPhone- und iPod-T
 
 dnsmasq-base                    # Kleiner zwischenspeichernder DNS-Proxy und DHCP/TFTP-Server
 
-# obsolete due to kernel changes crda                            # Central Regulatory Domain Agent für kabellose Geräte
+< https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
