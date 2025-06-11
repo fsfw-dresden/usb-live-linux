@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+
+GH_REPO=zyedidia/eget
+JQ_SELECTOR='select(contains("linux_amd64"))'
+
+RELEASEINFO="https://api.github.com/repos/${GH_REPO}/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r ".[].assets[].browser_download_url | ${JQ_SELECTOR}" | head -n1)
+
+FILE=$(download_file_cached "${URL}") \
+  && {
+    TAR_CMD="tar --extract --auto-compress --no-anchored --strip-components=1 --file ${FILE} --directory "
+    BIN_DIR="${PREFIX}/usr/local/bin"
+    MAN_DIR="${PREFIX}/usr/local/share/man/man1"
+    mkdir -p "${BIN_DIR}" "${MAN_DIR}"
+    ${TAR_CMD} ${BIN_DIR} eget
+    ${TAR_CMD} ${MAN_DIR} eget.1
+  }
