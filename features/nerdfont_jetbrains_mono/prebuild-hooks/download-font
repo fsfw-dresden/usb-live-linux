@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+. ../scripts/functions.bash
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/share/fonts/jetbrains-mono
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+
+# Create target dir
+mkdir -p "${DEST_DIR}"
+
+URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip"
+FILE=$(download_file_cached ${URL}) \
+  && unzip -d "${DEST_DIR}" "${FILE}" JetBrainsMonoNerdFont-{Bold,BoldItalic,Light,LightItalic,Regular,Italic}.ttf "*.txt" "*.md"
