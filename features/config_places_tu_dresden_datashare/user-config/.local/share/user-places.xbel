@@ -53,8 +53,8 @@
    </metadata>
   </info>
  </bookmark>
- <bookmark href="webdavs://cloudstore.zih.tu-dresden.de/remote.php/webdav/">
-  <title>cloudstore.zih.tu-dresden.de</title>
+ <bookmark href="webdavs://datashare.tu-dresden.de/remote.php/dav/">
+  <title>datashare.zih.tu-dresden.de</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="inode-directory"/>
