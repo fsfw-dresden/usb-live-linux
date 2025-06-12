@@ -1,0 +1,36 @@
+#!/bin/bash
+# briefly flash background color
+
+clean() {
+  # unset the bg style
+  tmux set -u window-active-style
+
+  # FIXME: turn focus back on
+  tmux set -g focus-events on
+
+  rm -f $LOCKFILE
+}
+
+LOCKFILE=/run/lock/tmux-flash.$(id -u).lock
+exec 42>"$LOCKFILE" || exit 42
+trap clean 0 1 2 3 9 15
+flock --nonblock 42 || exit 42
+
+# FIXME: this is a workaround to prevent many focus-event
+# hooks queuing up, would be better to have a command
+# tmux clear-hooks-queue or something 🤔
+tmux set -g focus-events off
+
+# red for root user, green for others
+test $(id -u) -eq 0 \
+  && COLORS="3f0000 2f0000 0f0000" \
+  || COLORS="003f00 002f00 000f00"
+
+SLEEP=${1:-0.05}
+
+for COLOR in $COLORS
+do
+  tmux set window-active-style bg=#$COLOR
+  sleep $SLEEP
+done
+

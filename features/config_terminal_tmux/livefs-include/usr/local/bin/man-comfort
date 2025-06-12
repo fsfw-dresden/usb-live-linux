@@ -1,0 +1,18 @@
+#!/bin/bash
+
+printf "man ${@}: "
+trap clear 0 1 2 3
+
+man "${@}" || {
+  { [ ${#} -eq 1 ] && \
+    { type "${1}" 2>/dev/null && "${1}" --help | batcat -l help; } || \
+      { printf "No ${1} command found on path…\n"; false; }
+  } || { \
+    printf "Searching for text in all manual pages…\n"
+    LIST_PAGES=$(man --where --global-apropos "${@}" 2>/dev/null|sort)
+    [ -n "${LIST_PAGES}" ] && while VIEW_PAGE=$(echo "${LIST_PAGES}" | fzf --layout=reverse --header-first --header="Manual pages containing '${@}'" --exact --preview-window=noinfo --preview="man -l {} | bat -l man -fP")
+    do
+      LESS="${LESS} --pattern=${1}" man --local-file "${VIEW_PAGE}"
+    done || { echo "No matches, sorry."; read -n1; }
+  }
+}

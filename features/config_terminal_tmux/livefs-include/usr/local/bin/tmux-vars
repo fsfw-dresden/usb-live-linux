@@ -1,0 +1,2 @@
+#!/bin/bash
+tmux display -a|cut -c -35|column -x

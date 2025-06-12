@@ -1,11 +1,12 @@
 #!/bin/bash
 # we want full interactive shell functionality
-for FILE in /etc/profile /etc/bash/bash_aliases
-do
-  [ -e "${FILE}" ] && source "${FILE}"
-done
-
+source /etc/profile
+source /etc/bash/bash_aliases
 shopt -s expand_aliases extglob globstar
 
-cmd=$( sed '/^#/d' ~/.bash_history{,.tmux} 2>/dev/null| sort | uniq -c | sort -nr | peco | sed -r 's/^[[:space:]]*[[:digit:]]+[[:space:]]*//;s/^"(.*)"$/\1/' )
-eval "${cmd}"
+# history file format changed, legacy support
+SED_IN_CMD='/^#/d; s/^"*tmux-pane-wrap -v \\*//; s/(; tmux-pane-respawn-prompt.*|\\)"*$//'
+SED_OUT_CMD='s/^[[:space:]]*[[:digit:]]+[[:space:]]*//; s/^"(.*)"$/\1/'
+SHELL_CMD=$( sed -r "${SED_IN_CMD}" ~/.bash_history{,.tmux} 2>/dev/null | sort | uniq -c | sort -nr | fzf --reverse --exact | sed -r "${SED_OUT_CMD}" )
+
+[ -n "${SHELL_CMD}" ] && tmux new-window  -c '#{pane_current_path}' "tmux-pane-wrap -v \"${SHELL_CMD}\"; tmux-pane-respawn-prompt"
