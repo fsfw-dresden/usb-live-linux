@@ -20,6 +20,7 @@ mkdir -p "${BASE_DIR}"
   https://upload.wikimedia.org/wikipedia/commons/1/1f/Adam_Simmons%2C_Swaffham_Raceway%2C_2017-03-11.JPG
   https://upload.wikimedia.org/wikipedia/commons/2/27/Rosa_de_alabastro_%28Echeveria_elegans%29%2C_jard%C3%ADn_del_molino%2C_Sierra_de_San_Felipe%2C_Set%C3%BAbal%2C_Portugal%2C_2012-05-11%2C_DD_01.JPG
   https://upload.wikimedia.org/wikipedia/commons/2/2c/Desiccation-cracks_hg.jpg
+  https://upload.wikimedia.org/wikipedia/commons/3/35/Brenham_Daily_Banner-Press_%28Brenham%2C_Tex.%29%2C_Vol._31%2C_No._134%2C_Ed._1_Tuesday%2C_September_1%2C_1914_-_DPLA_-_3f79f7b9533995d2519ae92a9a35575b_%28page_3%29.jpg
   https://upload.wikimedia.org/wikipedia/commons/3/37/%D0%9F%D1%96%D1%81%D0%BB%D1%8F_%D0%B3%D1%80%D0%BE%D0%B7%D0%B8_%29.jpg
   https://upload.wikimedia.org/wikipedia/commons/4/4e/Mavericks_Surf_Contest_2010b.jpg
   https://upload.wikimedia.org/wikipedia/commons/4/4f/Fractal_Broccoli.jpg
@@ -28,18 +29,19 @@ mkdir -p "${BASE_DIR}"
   https://upload.wikimedia.org/wikipedia/commons/5/5a/Lava_fountain_dome_2.jpg
   https://upload.wikimedia.org/wikipedia/commons/7/77/Great_Wave_unrestored.jpg
   https://upload.wikimedia.org/wikipedia/commons/7/78/Stropharia_aeruginosa_in_nature_park_Jesenicko_in_2014.JPG
+  https://upload.wikimedia.org/wikipedia/commons/7/7b/Brenham_Daily_Banner-Press_%28Brenham%2C_Tex.%29%2C_Vol._34%2C_No._39%2C_Ed._1_Saturday%2C_May_12%2C_1917_-_DPLA_-_937b6b7b342565358885e122361c6178_%28page_2%29.jpg
   https://upload.wikimedia.org/wikipedia/commons/7/7b/Fliegenpilz_fly_agaric_Amanita_muscaria.JPG
   https://upload.wikimedia.org/wikipedia/commons/8/83/Lightning_in_Dallas_2015.jpg
   https://upload.wikimedia.org/wikipedia/commons/8/86/Geranium_wallichianum_%27Crystal_Lake%27_06.JPG
   https://upload.wikimedia.org/wikipedia/commons/9/94/Reflection_in_a_soap_bubble_edit.jpg
   https://upload.wikimedia.org/wikipedia/commons/9/98/F5_tornado_Elie_Manitoba_2007.jpg
   https://upload.wikimedia.org/wikipedia/commons/9/98/Schachfiguren%2C_Bauern_--_2022_--_0022_%28bw%29.jpg
-  https://upload.wikimedia.org/wikipedia/commons/a/aa/Polarlicht_2.jpg
   https://upload.wikimedia.org/wikipedia/commons/b/b5/Bloem_van_een_Astrantia_major_%27Roma%27._24-06-2021_%28actm.%29_01.jpg
   https://upload.wikimedia.org/wikipedia/commons/b/ba/Flower_jtca001.jpg
   https://upload.wikimedia.org/wikipedia/commons/b/bc/Darvasa_gas_crater_panorama_crop.jpg
   https://upload.wikimedia.org/wikipedia/commons/b/bc/Low_pressure_system_over_Iceland.jpg
   https://upload.wikimedia.org/wikipedia/commons/c/c1/Streichholz.jpg
+  https://upload.wikimedia.org/wikipedia/commons/c/c3/Virmalised_17.03.15.jpg
   https://upload.wikimedia.org/wikipedia/commons/c/c7/Taro_leaf_underside%2C_backlit_by_sun_-_edit.jpg
   https://upload.wikimedia.org/wikipedia/commons/c/cd/Nelumbo_nucifera_Oga02.jpg
   https://upload.wikimedia.org/wikipedia/commons/d/d6/Energy_Arc_%28central_electrode_of_a_Plasma_Lamp%29.jpg
@@ -107,7 +109,7 @@ mkdir -p "${BASE_DIR}"
     FILE=$(CURL_OPTIONS="--user-agent 'Mozilla/5.0 (Linux; KHTML, like Gecko)' --referer 'http://dig.ccmixter.org/free'" download_file_cached "${MUSIC_URL}" "${FILENAME}") \
       && cp -a "${FILE}" "${DEST_DIR}/"
     # Don't stress the server
-    sleep 1
+    #sleep 1
   done
 
 }
@@ -165,7 +167,7 @@ mkdir -p "${BASE_DIR}"
   https://boell.de/sites/default/files/europa-atlas-2014_auflage_ii_kommentierbar.pdf
   https://boell.de/sites/default/files/kohleatlas2015_ii.pdf
   https://boell.de/sites/default/files/2021-05/fleischatlas2014-extra.pdf
-  https://klimafakten.de/sites/default/files/downloads/fliccdisinformation101pdf-2000px.pdf
+  https://klimafakten.de/sites/default/files/2024-03/fliccdisinformation101pdfa3web.pdf
   https://klimafakten.de/sites/default/files/downloads/ipcc-posterar62021en210812a3.pdf
   https://klimafakten.de/sites/default/files/downloads/klimafaktenbroschuere2017low.pdf
   https://klimafakten.de/sites/default/files/downloads/plurvgrundkurs-desinformationa3web.pdf
@@ -174,7 +176,6 @@ mkdir -p "${BASE_DIR}"
   https://klimakommunikation.klimafakten.de/wp-content/uploads/HandbuchKlimakommunikation_Gesamt-mitLinks_final.pdf
   https://klimakommunikation.klimafakten.de/wp-content/uploads/HandbuchKlimakommunikation_Materialsammlung.pdf
   https://skepticalscience.com/docs/Consensus_Handbook_German_A4.pdf
-  https://legunet.de/fileadmin/legunet/Dokumente/legnet_UL_Schule_Vorteile_Koernerleguminosen_230224.pdf
   "
 
   DEST_DIR=${BASE_DIR}/books
@@ -189,4 +190,4 @@ mkdir -p "${BASE_DIR}"
 }
 
 mkdir -p ${PREFIX}/etc/skel/Desktop
-ln -sv "${TARGET_DIR}" ${PREFIX}/etc/skel/Desktop/Mediendateien
+ln -sv "${TARGET_DIR}" ${PREFIX}/etc/skel/Desktop/Material
