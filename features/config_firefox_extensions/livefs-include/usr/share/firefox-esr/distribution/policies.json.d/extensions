@@ -36,7 +36,8 @@
         "_name": "Earth View from Google Earth",
         "_description": "Experience a beautiful image from Google Earth every time you open a new tab.",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/earth-view-from-google/",
-        "installation_mode": "allowed"
+        "installation_mode": "allowed",
+	"updates_disabled": true
       },
       "enhancerforyoutube@maximerf.addons.mozilla.org": {
         "_name": "Enhancer for YouTube™",
