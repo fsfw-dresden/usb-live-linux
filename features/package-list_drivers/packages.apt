@@ -48,5 +48,7 @@ xserver-xorg-video-qxl          #  Display driver for QXL video device inside SP
 # out of kernel drivers
 tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
 acpi-call-dkms                  #  enables you to call ACPI methods
-broadcom-sta-dkms               #  Broadcom STA Wireless driver
+# broadcom-sta-dkms               #  Broadcom STA Wireless driver
+# FIXME bookworm: pull in compatible module from unstable for updated kernel in backports
+< http://deb.debian.org/debian/pool/non-free/b/broadcom-sta/broadcom-sta-dkms_6.30.223.271-27_amd64.deb
 # ? virtualbox-guest-dkms       # virtualbox guest addition kernel modules
