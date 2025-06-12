@@ -6,7 +6,7 @@ xfconf_create_if_not_exist() {
   PROPERTY=$1
   TYPE=$2
   VALUE=$3
-  xfconf-query --channel xfce4-desktop --property "${PROPERTY}" || \
+  xfconf-query --channel xfce4-desktop --property "${PROPERTY}" 2>/dev/null || \
     xfconf-query --channel xfce4-desktop --property "${PROPERTY}" --type "${TYPE}" --set "${VALUE}" --create
 }
 
