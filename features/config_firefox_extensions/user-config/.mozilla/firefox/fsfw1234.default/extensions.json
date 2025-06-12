@@ -519,41 +519,6 @@
       "location": "app-profile"
     },
     {
-      "id": "idcac-pub@guus.ninja",
-      "version": "1.1.4",
-      "type": "extension",
-      "manifestVersion": 2,
-      "defaultLocale": {
-        "name": "I still don't care about cookies",
-        "creator": "OhMyGuus and Community (originally Daniel Kladnik)"
-      },
-      "visible": true,
-      "signedTypes": [
-        2,
-        0
-      ],
-      "seen": false,
-      "userPermissions": {
-        "permissions": [
-          "tabs",
-          "storage",
-          "notifications",
-          "webRequest",
-          "webRequestBlocking",
-          "webNavigation"
-        ],
-        "origins": [
-          "http://*/*",
-          "https://*/*"
-        ]
-      },
-      "requestedPermissions": {
-        "permissions": [],
-        "origins": []
-      },
-      "location": "app-profile"
-    },
-    {
       "id": "juraj.masiar@gmail.com_ScrollAnywhere",
       "version": "9.2",
       "type": "extension",

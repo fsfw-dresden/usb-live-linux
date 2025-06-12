@@ -37,18 +37,12 @@
         "_description": "Experience a beautiful image from Google Earth every time you open a new tab.",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/earth-view-from-google/",
         "installation_mode": "allowed",
-	"updates_disabled": true
+        "updates_disabled": true
       },
       "enhancerforyoutube@maximerf.addons.mozilla.org": {
         "_name": "Enhancer for YouTube™",
         "_description": "Take control of YouTube and boost your user experience!",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/",
-        "installation_mode": "allowed"
-      },
-      "idcac-pub@guus.ninja": {
-        "_name": "I still don't care about cookies",
-        "_creator": "OhMyGuus and Community (originally Daniel Kladnik)",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/",
         "installation_mode": "allowed"
       },
       "playbackSpeed@waldemar.b": {

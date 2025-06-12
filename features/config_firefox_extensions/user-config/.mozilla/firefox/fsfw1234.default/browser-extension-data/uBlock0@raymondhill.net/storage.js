@@ -9,5 +9,23 @@
     "vivaldi-scheme",
     "www.ecosia.org",
     "wyciwyg-scheme"
+  ],
+  "selectedFilterLists": [
+    "user-filters",
+    "ublock-filters",
+    "ublock-badware",
+    "ublock-privacy",
+    "ublock-quick-fixes",
+    "ublock-unbreak",
+    "easylist",
+    "easyprivacy",
+    "urlhaus-1",
+    "adguard-cookies",
+    "adguard-popup-overlays",
+    "fanboy-cookiemonster",
+    "easylist-newsletters",
+    "ublock-cookies-adguard",
+    "DEU-0",
+    "https://ublockorigin.github.io/uAssets/filters/resource-abuse.txt"
   ]
 }
