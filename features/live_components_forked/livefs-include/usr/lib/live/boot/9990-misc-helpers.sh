@@ -1371,8 +1371,9 @@ do_union ()
 			# metacopy:     enable metadata-only copy-up (as opposed to whole file) for metadata changes
 			# index:        preserve hard-links on copy-up
 			# xino:         persistent unique object identifiers across merged FS layers
+			# lazytime:	update all timestamps in-memory first
 
-			unionmountopts="-o noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work,redirect_dir=on,metacopy=on,index=on,xino=on"
+			unionmountopts="-o noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work,redirect_dir=on,metacopy=on,index=on,xino=on,lazytime=on"
 			;;
 	esac
 
