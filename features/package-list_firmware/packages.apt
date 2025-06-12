@@ -1,42 +1,41 @@
-##  System Tools
-
-###  firmware  -- wird >> lb config --firmware-chroot false << verwendet, fehlen diese Pakete
-
-firmware-linux
-firmware-linux-free
-# ? firmware-linux-nonfree
-firmware-misc-nonfree
-# ? firmware-amd-graphics
-
-bluez-firmware
-atmel-firmware
+live-task-non-free-firmware-pc
+# recommends:
 amd64-microcode
-intel-microcode
-
+bluez-firmware
+firmware-amd-graphics
 firmware-atheros
+firmware-brcm80211
+firmware-intel-sound
+firmware-ipw2x00
+firmware-iwlwifi
+firmware-linux
+firmware-linux-nonfree
+firmware-realtek
+firmware-sof-signed
+intel-microcode 
+
+live-task-non-free-firmware-server
+# recommends:
 firmware-bnx2
 firmware-bnx2x
-firmware-brcm80211
 firmware-cavium
-firmware-intel-sound
-# firmware-intelwimax
-# 20220815: intelwimax: Drop Intel WiMax package (unsupported since 5.10+) 
-firmware-ipw2x00
-# ? firmware-ivtv
-firmware-libertas
 firmware-myricom
 firmware-netronome
 firmware-netxen
-firmware-qlogic
-firmware-realtek
-# ? firmware-samsung
-# ? firmware-siano
-firmware-ti-connectivity
-firmware-zd1211
+firmware-qlogic 
 
+# recommended by firmware-misc-nonfree:
+firmware-intel-graphics
+firmware-intel-misc
+firmware-mediatek
+firmware-nvidia-graphics
 
-###  Firmware für Wlan - Hardware
-
-#firmware-b43-installer          # installiert die Broadcom 43xx WLAN Karten Firmware - installiert den Firmwareteil der Treiber
-
-firmware-iwlwifi                # wird von Thinkpads (getestet mit einem T420) gebraucht
+# additional:
+atmel-firmware                  # at76c50x wireless networking chips
+firmware-b43-installer          # Broadcom 43xx wireless network cards
+# ? firmware-ivtv               # Hauppauge TV cards
+firmware-libertas               # Marvell wireless cards
+firmware-samsung                # MFC video codecs used in Exynos SoCs
+firmware-siano                  # Mobile Digital TV receivers
+firmware-ti-connectivity        # Wi-Fi and BT/FM/GPS adapters
+firmware-zd1211                 # USB wireless dongles
