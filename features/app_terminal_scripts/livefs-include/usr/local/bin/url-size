@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for URL in ${@}
+do
+  curl --silent --head --location ${URL} | \
+    awk '/content-length/{cl=$2} END{sub("\\r","",cl); print cl}' | \
+    numfmt --to=iec-i --suffix=Byte
+done
+

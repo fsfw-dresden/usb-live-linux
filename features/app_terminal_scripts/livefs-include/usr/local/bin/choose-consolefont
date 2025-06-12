@@ -1,0 +1,19 @@
+#!/bin/bash
+# Uses fzf to display a selection menu to 
+FONTDIR=/usr/share/consolefonts/
+FONT="Uni2-Terminus"
+
+shopt -s extglob
+
+[ -z "${TMUX}" ] || MUXOPT="--tmux"
+
+cd "${FONTDIR}" || exit 1
+while {
+  command ls "${FONT}"!(Bold*) \
+    | fzf ${MUXOPT} --border --reverse --border-label='CHOOSE FONT FOR VIRTUAL TERMINAL' \
+    | { read FONT && setfont "${FONT}"; }
+}; do
+  true
+done
+
+[ ! -n "${TMUX}" ] || clear

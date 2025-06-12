@@ -1,0 +1,57 @@
+#!/bin/bash
+
+. /etc/profile.d/less-options.sh
+
+count_params() {
+  grep -viE "(invalid|unrecognized|unknown|illegal).*(argument|option)|^(Try )" | grep -ciE '(\s-+\w|^usage:)'
+}
+
+call_command() (
+  command ${@} 2>&1 </dev/null
+)
+
+cols() {
+  stty size|cut -d ' ' -f 2
+}
+
+CMD="${@}"
+
+echo "${CMD}"|grep -qE '\W-\w' \
+  && CMD="${1}" && shift && PARAM="${@}" \
+  || {
+
+    TXT_HELP=$(call_command ${CMD} --help)
+    TXT_H=$(call_command ${CMD} -h)
+
+    # try to count -x parameters
+    PARAM_COUNT_HELP=$(echo "$TXT_HELP"|count_params)
+    PARAM_COUNT_H=$(echo "$TXT_H"|count_params)
+
+    [ ${PARAM_COUNT_HELP} -gt ${PARAM_COUNT_H} ] \
+      && PARAM="--help" \
+      || {
+        [ ${PARAM_COUNT_H} -gt 0 ] \
+          && PARAM="-h" \
+          || {
+            PARAM_COUNT_WITHOUT=$(call_command ${CMD}|count_params)
+            [ ${PARAM_COUNT_WITHOUT} -eq 0 ] \
+              && NO_HELP=1
+          }
+      }
+
+    #echo "PARAM_COUNT_HELP=$PARAM_COUNT_HELP"
+    #echo "PARAM_COUNT_H=$PARAM_COUNT_H"
+    #echo "PARAM_COUNT_WITHOUT=$PARAM_COUNT_WITHOUT"
+    #echo "PARAM=$PARAM"
+  }
+
+# Calculate width here because tput cols will return 80 from within pipe
+BAT_WIDTH=$(($(tput cols)))
+
+LESS+=" -R -+J -PMHelp for ${CMD}\: ?ltlines %lt-%lb?L/%L.:byte %bB?s/%s.. ?e(END):?PB%PB\%..%t"
+{
+  [ ! -z ${NO_HELP} ] \
+    || call_command ${CMD} ${PARAM} |& batcat --language help --color always --style grid,header -P --terminal-width ${BAT_WIDTH} --wrap never --file-name "${CMD} ${PARAM}"
+
+  tldr ${CMD} 2>/dev/null | sed '1s/^/tldr examples for /' || true
+} |& less

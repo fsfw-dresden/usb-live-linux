@@ -1,0 +1,3 @@
+#!/bin/bash
+cmd=$1
+icdiff <($cmd "$2") <($cmd "$3") | less -SR

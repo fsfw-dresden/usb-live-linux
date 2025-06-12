@@ -1,0 +1,19 @@
+#!/bin/sh -e
+# For each unit in a not-found state list unit files defining relations to it
+
+COLOR_CYAN=$(tput setaf 6)
+COLOR_GREEN=$(tput setaf 2)
+COLOR_YELLOW=$(tput setaf 3)
+COLOR_OFF=$(tput sgr0)
+
+UNITS=$(systemctl list-units --state=not-found --quiet --plain | cut -f1 -d\ )
+
+for UNIT in ${UNITS}
+do
+  RDEPS="$(systemctl show "${UNIT}" | grep -E '(After|Before|For|Of|By)=')" \
+    || { echo "${UNIT} rdep not found"; exit 1; }
+  echo "${RDEPS}" \
+    | sed -r "s/(.*)=(.*)/${COLOR_GREEN}\1 ${COLOR_YELLOW}\2${COLOR_OFF}/" \
+    | xargs -rI{} printf "${COLOR_CYAN}${UNIT}${COLOR_OFF} %s\n" '{}'
+  echo
+done

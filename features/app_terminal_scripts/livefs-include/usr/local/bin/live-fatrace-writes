@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+MOUNT="/usr/lib/live/mount/overlay"
+TYPES='W+'
+
+{
+  cd "${MOUNT}"
+  fatrace --current-mount --filter=${TYPES} | sed "s|${MOUNT}/rw||"
+}
