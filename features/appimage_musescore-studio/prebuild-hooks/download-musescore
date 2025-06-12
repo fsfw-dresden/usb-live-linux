@@ -1,0 +1,18 @@
+#!/bin/bash
+. ../scripts/functions.bash
+
+set -e
+
+PREFIX=config/includes.chroot
+TARGET_DIR=/usr/local/applications
+DEST_DIR=${PREFIX}/${TARGET_DIR#/}
+RELEASEINFO="https://api.github.com/repos/musescore/MuseScore/releases"
+
+APPIMAGE_URL=$(curl "${RELEASEINFO}" | jq -r '.[].assets[].browser_download_url|select(contains("x86_64") and endswith(".AppImage"))' | head -n1)
+[ -z "${APPIMAGE_URL}" ] && die "Appimage URL not found"
+
+DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
+
+mkdir -pv ${DEST_DIR}
+cp -val "${DOWNLOADED_FILE}" "${DEST_DIR}"
+chmod -c a+x "${DEST_DIR}/${DOWNLOADED_FILE##*/}"
