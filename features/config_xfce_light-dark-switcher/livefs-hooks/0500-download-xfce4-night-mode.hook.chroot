@@ -1,0 +1,2 @@
+#!/bin/sh
+mkdir -pv /usr/local/lib && cd /usr/local/lib && git clone --branch next https://github.com/eMPee584/xfce4-night-mode

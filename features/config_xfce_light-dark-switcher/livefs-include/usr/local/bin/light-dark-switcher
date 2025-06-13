@@ -1,0 +1,48 @@
+#!/bin/python3
+# This script provides a toggle button to switch the light/dark theme from an systray icon
+
+import logging
+import signal
+import subprocess
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QSystemTrayIcon
+
+logging.basicConfig(level=logging.INFO)
+logging.info("Starting light-dark-switcher.py")
+
+app = QApplication([])
+
+# Create an icon
+icon = QIcon.fromTheme("face-cool")
+
+# Create a system tray icon
+tray_icon = QSystemTrayIcon()
+tray_icon.setIcon(icon)
+tray_icon.setVisible(True)
+
+def toggle_icon():
+    logging.info(f"Toggling icon")
+    if tray_icon.icon().cacheKey() == icon.cacheKey():
+        tray_icon.setIcon(QIcon.fromTheme("face-smirk"))
+        logging.info("Icon switched to night smirk")
+        subprocess.run(["/usr/local/lib/xfce4-night-mode/xfce4-night-mode.sh", "toggle"])
+    else:
+        tray_icon.setIcon(icon)
+        logging.info("Icon switched to cool day")
+        subprocess.run(["/usr/local/lib/xfce4-night-mode/xfce4-night-mode.sh", "toggle"])
+
+def handle_event(reason):
+    logging.info("Received event #{}".format(reason))
+    if reason == QSystemTrayIcon.ActivationReason.MiddleClick:
+        subprocess.Popen(["night_mode_settings", "--no-systray"],
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    else:
+        toggle_icon()
+
+tray_icon.activated.connect(handle_event)
+
+# Enable keyboard interrupt to kill the program
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+app.exec()
+

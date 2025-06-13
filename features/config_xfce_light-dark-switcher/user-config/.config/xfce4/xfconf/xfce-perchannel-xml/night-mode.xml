@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="night-mode" version="1.0">
+  <property name="text" type="string" value="&lt;span size=&quot;xx-large&quot;&gt;&amp;#x262F;&lt;/span&gt;"/>
+  <property name="sunrise" type="string" value="7:30"/>
+  <property name="sunset" type="string" value="18:00"/>
+  <property name="Light" type="empty">
+    <property name="GtkTheme" type="string" value="Breeze"/>
+    <property name="IconTheme" type="string" value="Papirus-Light"/>
+    <property name="CursorTheme" type="string" value="Qogir-white-cursors"/>
+    <property name="WindowManagerTheme" type="string" value="Default"/>
+    <property name="UserScript" type="string" value=""/>
+  </property>
+  <property name="Dark" type="empty">
+    <property name="GtkTheme" type="string" value="Breeze-Dark"/>
+    <property name="IconTheme" type="string" value="Papirus-Dark"/>
+    <property name="CursorTheme" type="string" value="Qogir-white-cursors"/>
+    <property name="WindowManagerTheme" type="string" value="Default"/>
+    <property name="UserScript" type="string" value=""/>
+  </property>
+  <property name="active" type="string" value="night"/>
+</channel>
