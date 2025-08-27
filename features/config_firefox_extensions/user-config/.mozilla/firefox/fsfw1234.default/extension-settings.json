@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "commands": {},
+  "newTabNotification": {
+    "{44ec79ad-72a9-471d-962d-49e7e5501d97}": {
+      "initialValue": false,
+      "precedenceList": [
+        {
+          "id": "{44ec79ad-72a9-471d-962d-49e7e5501d97}",
+          "installDate": null,
+          "value": true,
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "tabHideNotification": {},
+  "homepageNotification": {},
+  "default_search": {}
+}
