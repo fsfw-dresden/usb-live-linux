@@ -7,7 +7,7 @@ PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/applications
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 
-APPIMAGE_URL="https://download.kde.org/stable/kdenlive/24.02/linux/kdenlive-24.02.0_A-x86_64.AppImage"
+APPIMAGE_URL="https://download.kde.org/stable/kdenlive/25.08/linux/kdenlive-25.08.0-x86_64.AppImage"
 
 DOWNLOADED_FILE=$(download_file_cached "${APPIMAGE_URL}")
 
