@@ -25,5 +25,7 @@
     <property name="icon-size" type="uint" value="82"/>
     <property name="style" type="int" value="2"/>
     <property name="show-tooltips" type="bool" value="false"/>
+    <property name="use-custom-font-size" type="bool" value="true"/>
+    <property name="font-size" type="double" value="16"/>
   </property>
 </channel>
