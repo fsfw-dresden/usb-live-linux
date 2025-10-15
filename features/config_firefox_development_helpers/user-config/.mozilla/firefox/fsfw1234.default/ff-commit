@@ -1,0 +1,11 @@
+#!/bin/bash
+# Convenience helper script for tracking changes in the firefox profile directory
+
+CWD="$(basename "$(realpath .)")"
+[ "${CWD}" = "fsfw1234.default" ] || { echo "not in firefox profile dir, aborting."; exit 1; }
+
+MSG="${*:-COMMIT}"
+[ ! -d .git ] && git init && MSG=INIT
+
+git add -vA
+git commit -vm "${MSG}"

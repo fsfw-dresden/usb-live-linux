@@ -1,0 +1,16 @@
+#!/bin/bash
+# Convenience helper script to reset firefox profile
+
+CWD="$(basename "$(realpath .)")"
+[ "${CWD}" = "fsfw1234.default" ] || { echo "not in firefox profile dir, aborting."; exit 1; }
+
+git status
+echo
+
+read -n1 -sp "Press [r] to reset profile $(tput setaf 1)(! DATA LOSS)$(tput sgr0)" key
+[ "${key}" = "r" ] || exit 0
+
+echo
+git reset --hard
+git clean -xfd
+exit $?

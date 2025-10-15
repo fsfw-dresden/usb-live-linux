@@ -6,3 +6,4 @@ user.js diff=text
 *.mozlz4  diff=jsonlz4
 *.db  diff=sqlite3
 *.sqlite  diff=sqlite3
+*.bin -diff

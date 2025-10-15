@@ -1,0 +1,11 @@
+#!/bin/bash
+# Convenience helper script to copy these helpers into firefox profile directory
+
+PROFILEPATH=".mozilla/firefox/fsfw1234.default"
+REPOPATH="/usr/src/usb-live-linux"
+FFDIR="/home/user/$PROFILEPATH"
+HELPERDIR="$REPOPATH/features/config_firefox_development_helpers/user-config/$PROFILEPATH"
+
+cp -avi $HELPERDIR/{,.}* $FFDIR/
+
+cd $FFDIR && ./ff-commit
