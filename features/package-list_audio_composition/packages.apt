@@ -8,6 +8,7 @@ lilypond                # program for typesetting sheet music
 frescobaldi             # LilyPond sheet music text editor
 tuxguitar               # Multitrack guitar tablature editor and player
 kmetronome              # ALSA MIDI Metronome
+muse                    # Qt-based audio/MIDI sequencer
 
 < https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.4/surge-xt-linux-x64-1.3.4.deb
 

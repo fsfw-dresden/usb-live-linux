@@ -2,6 +2,7 @@ bitwise                         # interactive calculator for dynamic base conver
 bluez-test-tools                # Bluetooth protocol stack test tools
 bmap-tools                      # flash image files to block devices using the block map
 bpfcc-tools                     # Berkeley Package Filter command-line tools & examples for IO analysis, networking, monitoring
+bpfmon                          # traffic monitor for BPF expression/iptables rule
 cargo                           # Rust package manager
 datamash                        # numeric, textual and statistical operations on input textual data files
 eatmydata                       # small LD_PRELOAD library to transparently disable fsync and friends
@@ -9,6 +10,7 @@ git-extras                      # extra git commands to easily solve typical tas
 google-android-platform-tools-installer # Tools for interacting with an Android platform (pulls in adb, fastboot)
 ipython3                        # Enhanced interactive Python 3 shell
 python3-ipdb                    # IPython-based pdb replacement
+libbpf-tools                    # tools for BPF Compiler Collection based on libbpf (BTF and CO-RE)
 linux-perf                      # Performance analysis tools for Linux
 make                            # utility for directing compilation
 manpages-dev                    # Manual pages about using GNU/Linux for development
@@ -19,5 +21,6 @@ poke                            # interactive, extensible editor for structured 
 pup                             # command-line HTML processor to filter using CSS selectors
 shellcheck                      # lint tool for shell scripts
 tig                             # ncurses-based text-mode interface for Git
+ttysnoop                        # spy on telnet+serial connections
 visidata                        # interactive multitool for tabular data
 zzuf                            # transparent application fuzzer

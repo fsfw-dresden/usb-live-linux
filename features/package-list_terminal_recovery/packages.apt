@@ -2,12 +2,13 @@ gpart                   # Guess PC disk partition table, find lost partitions
 foremost                # recover lost files based on their headers, footers, and internal data structures
 clonezilla              # bare metal backup and recovery of disk drives
 partclone               # clone and restore a partition
-testdisk                # disk/file recovery tool
+testdisk                # + photorec: disk & file recovery tools
 gddrescue               # GNU data recovery tool
 ddrutility              # data recovery utilities for use with GNU ddrescue
 scrounge-ntfs           # data recovery program for NTFS
 ext3grep                # recover deleted files on ext3 filesystems
 extundelete             # recover deleted files from ext3/ext4 partition
+ext4magic               # recover deleted files from ext3/ext4 partitions
 
 libbde-utils            # Tools to access the BitLocker Drive Encryption format.
 libevt-utils            # Windows Event Log (EVT) format access library -- Utilities

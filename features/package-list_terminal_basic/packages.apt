@@ -70,6 +70,7 @@ gnuit                   # GNU Interactive Tools, a file browser/viewer and proce
 googler                 # Power tool to google from the terminal
 graphviz                # umfangreiches Graphenerstellungstool, das häufig in Skripten verwendet wird
 gstreamer1.0-tools      # gst-inspect, gst-launch, gst-stats et al.
+health-check            # process monitoring tool
 hexyl                   # Command-line hex viewer with colored output
 highlight               # Universal source code to formatted text converter
 htop                    # interaktive Prozessübersicht für die Konsole
@@ -138,8 +139,10 @@ rlwrap                  # Kommandozeilen-Wrapper mit »readline«-Funktionalitä
 scanmem                 # locate and modify a variable in a running process
 screen                  # Terminalmultiplexer mit VT100/ANSI-Terminalemulation
 screenfetch             # Bash Screenshot Information Tool: terminal theme information + ASCII distribution
+sharutils               # shell archive tools, uuencode, uudecode
 shed                    # simple hex editor with a pico-style interface
 silversearcher-ag       # sehr schnell grep-ähnliches Programm
+sluice                  # rate limiting data piping tool
 smartmontools           # control and monitor storage systems using S.M.A.R.T.
 smem                    # reports on memory usage
 strace                  # System call tracer
