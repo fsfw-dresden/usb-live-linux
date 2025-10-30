@@ -57,20 +57,21 @@ monitor = pyudev.Monitor.from_netlink(udev)
 monitor.filter_by(subsystem = 'block', device_type = 'disk')
 repo_path = os.path.realpath(os.path.dirname(__file__) + os.sep + os.pardir)
 
-def spawn_command(command):
+def spawn_command(command, title = None):
     # pylint: disable=undefined-variable, consider-using-with
     """Spawn command either with multiplex or subprocess module."""
 
     if use_multiplex:
-        mp.add(multiplex.Process(command))
+        mp.add(multiplex.Process(command), title)
     else:
         subprocess.Popen(command, start_new_session = True)
 
 def spawn_command_timed(command):
     """Wrap call to measure running time."""
 
-    spawn_command(["env", f"TIMEFORMAT={str(command)} ({mode_tag}) took %1R second(s)",
-                   "/bin/bash", "-xc", shlex.join(['time'] + command)])
+    timed_command=["env", f"TIMEFORMAT={str(command)} ({mode_tag}) took %1R second(s)",
+                   "/bin/bash", "-c", shlex.join(['time'] + command)]
+    spawn_command(timed_command, title=command)
 
 def plug_event(dev):
     """Handle UDEV plug event and invoke action handler as appropriate."""
@@ -250,11 +251,11 @@ def main():
         elif mode_tag == 'HOTFIX':
             # Choose Hotfix
             hotfix_dir = 'hotfixes/'
-            hotfixes = list(filter(lambda ent: os.path.isdir(os.path.join(hotfix_dir,
+            hotfixes = list(sorted(filter(lambda ent: os.path.isdir(os.path.join(hotfix_dir,
                                                                           ent)),
-                                   os.listdir(hotfix_dir)))
+                                   os.listdir(hotfix_dir)), reverse=True))
             choices = list(zip(map(str, range(len(hotfixes))), hotfixes))
-            retval, tag = tui.menu("hotfix for applying", width = 90, choices = choices)
+            retval, tag = tui.menu("hotfix for applying", height = 30, width = 100, choices = choices)
             if retval == tui.OK:
                 hotfix_path = os.path.join(hotfix_dir, dict(choices)[tag])
             else:
