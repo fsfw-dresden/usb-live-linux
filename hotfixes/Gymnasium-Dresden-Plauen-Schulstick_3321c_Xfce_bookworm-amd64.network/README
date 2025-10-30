@@ -1,0 +1,7 @@
+The config_dresden_schulproxy 99-dresden-schulen network dispatcher script did
+not stop setting up firewall redirection in case the redsocks proxy service
+would not start up successfully, which never occurred for six years - until the
+school proxy apparently was switched off this summer.
+
+This hotfix can be applied to live sticks already in circulation to block the
+script.
