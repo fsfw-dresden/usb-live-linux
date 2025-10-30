@@ -6,6 +6,11 @@ STATUS="${2}"
 PAC_URL="${DHCP4_WPAD:-http://kjs.lan.dd-schulen.de/SaferSurf/genpac.cgi}"
 TAG="dresden-schulen-proxy"
 
+[ -s /etc/redsocks.conf ] || {
+        logger -t ${TAG} "No redsocks configuration found, not enabling proxy redirection"
+        exit 1
+}
+
 enable_redsocks() {
         PROXY_URL=$(wget -qO - ${PAC_URL}|sed -nr 's/.*PROXY +([^"]*).*/\1/p'|head -n1)
         logger -t ${TAG} "configuring redsocks magic proxy to route via ${PROXY_URL}"
@@ -18,6 +23,11 @@ enable_redsocks() {
         logger -t ${TAG} "enabling redsocks magic proxy gateway"
         systemctl unmask redsocks
         systemctl restart redsocks
+        sleep 1
+        systemctl is-active --quiet redsocks || {
+                logger -t ${TAG} "redsocks proxy service failed to start, not setting up redirection"
+                exit 2
+        }
 
         # Set up global traffic redirect via local proxy gateway
         logger -t ${TAG} "Setting up proxy redirection"
