@@ -8,7 +8,7 @@
 - [Etwas im Internet finden	![](/usr/share/icons/Papirus/64x64/apps/preferences-system-search.svg)](#etwas-im-internet-finden)
 - [Welt entdecken	![](/usr/share/icons/Papirus/64x64/apps/marble.svg)](#welt-entdecken)
 - [Sterne gucken	![](/usr/share/icons/Papirus/64x64/apps/stellarium.svg)](#sterne-gucken)
-- [Schreibkram		![](/usr/share/icons/Papirus/64x64/apps/de.wolfvollprecht.UberWriter.svg)](#schreibkram)
+- [Schreibkram		![](/usr/share/icons/Papirus/64x64/apps/org.gnome.gitlab.somas.Apostrophe.svg)](#schreibkram)
 - [Malen & Zeichnen	![](/usr/share/icons/Papirus/64x64/apps/mtpaint.svg)](#malen-zeichnen)
 - [Bilder ansehen & bearbeiten	![](/usr/share/icons/Papirus/64x64/apps/photocollage.svg)](#bilder-ansehen-bearbeiten)
 - [Musik hören		![](/usr/share/icons/Papirus/64x64/devices/audio-speakers.svg)](#musik-hören)
