@@ -1,0 +1,5 @@
+#!/bin/sh
+# Zulip package now ships its own apt sources file which
+# makes apt complain about duplication, so remove ours.
+DIR=/etc/apt/sources.list.d
+[ -s $DIR/zulip-desktop.sources ] && rm -v $DIR/zulip-desktop.list
