@@ -1,16 +1,17 @@
-# reference: https://aptitude.alioth.debian.org/doc/en/ch02s05s03.html
-# defined in: /usr/src/repositories/cwidget/src/cwidget/toplevel.cc
+# reference: /usr/share/doc/aptitude/html/en/ch02s05s03.html
+# 'base' style defined in cwidget/toplevel.cc init()
 Aptitude::UI::Styles {
-	DisabledMenuEntry {fg black; bg cyan; set dim;};
-	DownloadProgress {fg cyan; bg yellow;};
-	Header {fg white; bg cyan; set bold;};
-	HighlightedMenuBar {fg white; bg cyan; set bold,reverse;};
-	HighlightedMenuEntry {fg white; bg cyan; set bold,reverse;};
-	MenuBar {fg white; bg cyan; set bold;};
-	MenuBorder {fg white; bg cyan; set bold;};
-	MenuEntry {fg white; bg cyan;};
-	MultiplexTab {fg white; bg cyan;};
-	MultiplexTabHighlighted {fg cyan; bg white;};
+	DisabledMenuEntry {fg black; bg cyan;};
+	DownloadProgress {fg yellow; bg black; set bold,reverse;};
+	Header {fg cyan; bg black; set bold,dim,reverse;};
+	HighlightedMenuBar {fg cyan; bg black; set bold,dim;};
+	HighlightedMenuEntry {fg cyan; bg black; set bold,dim;};
+	DisabledMenuEntry {fg white; bg black; set bold,dim,reverse;};
+	MenuBar {fg cyan; bg black; set bold,dim,reverse;};
+	MenuBorder {fg cyan; bg black; set bold,dim,reverse;};
+	MenuEntry {fg cyan; bg black; set bold,dim,reverse;};
+	MultiplexTab {fg cyan; bg black; set bold,dim,reverse;};
+	MultiplexTabHighlighted {fg cyan; bg black; set bold,dim;};
 	Progress {fg cyan; bg yellow;};
-	Status {fg white; bg cyan; set bold;};
+	Status {fg cyan; bg black; set bold,dim,reverse;};
 };
