@@ -6,7 +6,7 @@ set -e
 PREFIX=config/includes.chroot
 TARGET_DIR=/usr/local/applications
 DEST_DIR=${PREFIX}/${TARGET_DIR#/}
-RELEASEINFO="https://api.github.com/repos/realthunder/FreeCAD/releases"
+RELEASEINFO="https://api.github.com/repos/FreeCAD/FreeCAD/releases"
 
 APPIMAGE_URL=$(curl "${RELEASEINFO}" | jq -r '.[].assets[].browser_download_url|select(contains("x86_64") and endswith(".AppImage"))' | head -n1)
 [ -z "${APPIMAGE_URL}" ] && die "Appimage URL not found"
