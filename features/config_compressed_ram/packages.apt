@@ -1,1 +1,1 @@
-systemd-zram # unit generator for zram devices
+systemd-zram-generator
