@@ -88,11 +88,13 @@ download_file_cached() {
 
     if [ -z "${FILE_NAME}" ]
     then
-        FILE_NAME=${FILE_URL##*/}
+        FILE_NAME="${FILE_URL##*/}"
+        FILE_NAME="${FILE_NAME%&*}" # remove trailing URL params
+
     fi
 
     CACHE_DIR="cache/packages.extra"
-    FILE_CACHED="${CACHE_DIR}/${FILE_NAME%&*}" # remove trailing URL params
+    FILE_CACHED="${CACHE_DIR}/${FILE_NAME}"
 
     # Set custom user-agent string, turn on location following, timestamp files
     # and disable SSL certificate checking as well as BEAST workaround
