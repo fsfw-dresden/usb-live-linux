@@ -22,4 +22,4 @@ cura                            # GUI G-code generator for 3D printers
 bcnc                            # GRBL CNC command sender, autoleveler and g-code editor
 
 # userfriendly tool for creating, saving and sending jobs to lasercutters
-< https://github.com/t-oster/VisiCut/releases/download/continuous/visicut_2.1-17-gf216b7ae-1_all.deb
+< https://github.com/t-oster/VisiCut/releases/download/continuous/visicut_2.1-19-g511a28e8-1_all.deb

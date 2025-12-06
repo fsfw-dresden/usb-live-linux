@@ -25,7 +25,7 @@ gimp-gmic                       # GREYC's Magic Image Converter - Konvertieren, 
 gimp-help-de                    # Dokumentation für GIMP (Deutsch) (+31,8 MB)
 
 # Not Another PDF Scanner II: Scan documents to PDF and more, as simply as possible
-< https://github.com/cyanfish/naps2/releases/download/v8.2.0/naps2-8.2.0-linux-x64.deb
+< https://github.com/cyanfish/naps2/releases/download/v8.2.1/naps2-8.2.1-linux-x64.deb
 # ? darktable                   # Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
 rawtherapee                     # Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
