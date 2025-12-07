@@ -52,7 +52,7 @@ get_matching_install_variant() {
 check_parameters() {
     # Make sure that first parameter is live-image ISO file
     LIVE_IMAGE="${1##*/}"
-    [ -n "${LIVE_IMAGE}" ] && [ -s "artifacts/${LIVE_IMAGE}" ] || die "ISO not given or empty file"
+    [ -n "${LIVE_IMAGE}" ] && [ -e "artifacts/${LIVE_IMAGE}" ] || die "ISO not given or does not exist"
 
     # The "install variant" defines the set of install procedures to be executed
     [ -n "${2}" ] && {
