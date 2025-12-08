@@ -118,8 +118,10 @@ determine_install_fundamentals() {
     # no install procedures no mission
     [ -z ${INSTALL_VARIANT} ] && die "no INSTALL_VARIANT chosen, cannot continue"
 
+    ISO_DATE="$(date --reference ${LIVE_IMAGE} +%Y-%M-%D)"
+
     # make endpoint variables available to sub-processes
-    export DEVICE LIVE_IMAGE INSTALL_VARIANT
+    export DEVICE ISO_DATE LIVE_IMAGE INSTALL_VARIANT
 
     print_info "Live system image: ${LIVE_IMAGE}"
     print_info "Install variant: ${INSTALL_VARIANT}"
@@ -270,10 +272,10 @@ mount_filesystems() {
 execute_install_hooks() {
     # work in a subshell so the directory change is ineffective outside
     (
-        cd build
-        mkdir -p install
+        mkdir -pv build/install
 
-        export INSTALL_TMPDIR=$(mktemp --directory --tmpdir=install)
+        export INSTALL_TMPDIR=$(mktemp --directory --tmpdir=build/install)
+        export REPO_ROOT=$(pwd)
 
         (
             cd ${INSTALL_TMPDIR}
@@ -292,6 +294,12 @@ execute_install_hooks() {
                 wait $! || die "Problem occurred in ${INSTALL_HOOK}"
             done
         )
+
+        rmdir "${INSTALL_TMPDIR}" || {
+            echo "FIXME: anything to clean up?"
+            ls -lh "${INSTALL_TMPDIR}"
+            du -sh "${INSTALL_TMPDIR}"
+        }
     )
 }
 
