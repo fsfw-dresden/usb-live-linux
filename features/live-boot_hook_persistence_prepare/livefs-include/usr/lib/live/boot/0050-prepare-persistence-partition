@@ -29,8 +29,8 @@ Prepare_persistence()
         # is the persistence partition present ..
         if [ -b ${DEV}*3 ] && mount ${DEV}*3 ${PERSISTENCESTORE}
         then
-                # .. but empty?
-                if [ $(ls ${PERSISTENCESTORE} | wc -w) -eq 0 ]
+                # .. but not all persistence.conf files exist?
+                if [ $(ls ${PERSISTENCESTORE}/*/persistence.conf 2>/dev/null | wc -w) -lt 4 ]
                 then
                         # activate compression recursively
                         # "doesn’t expose compressed space to user"
