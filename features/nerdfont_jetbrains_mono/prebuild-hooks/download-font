@@ -11,6 +11,11 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 # Create target dir
 mkdir -p "${DEST_DIR}"
 
-URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip"
+GH_REPO=ryanoasis/nerd-fonts
+JQ_SELECTOR='select(contains("JetBrainsMono.zip"))'
+
+RELEASEINFO="https://api.github.com/repos/${GH_REPO}/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r ".[].assets[].browser_download_url | ${JQ_SELECTOR}" | head -n1)
+
 FILE=$(download_file_cached ${URL}) \
   && unzip -d "${DEST_DIR}" "${FILE}" JetBrainsMonoNerdFont-{Bold,BoldItalic,Light,LightItalic,Regular,Italic}.ttf "*.txt" "*.md"

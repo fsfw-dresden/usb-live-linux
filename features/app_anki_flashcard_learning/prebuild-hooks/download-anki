@@ -18,6 +18,11 @@ DEST_DIR=${PREFIX}/tmp
 
 mkdir -pv ${DEST_DIR}
 
-URL="https://github.com/ankitects/anki/releases/download/25.02.7/anki-25.02.7-linux-qt6.tar.zst"
+GH_REPO=ankitects/anki
+JQ_SELECTOR='select(contains("linux") and contains("tar.zst"))'
+
+RELEASEINFO="https://api.github.com/repos/${GH_REPO}/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r ".[].assets[].browser_download_url | ${JQ_SELECTOR}" | head -n1)
+
 FILE=$(download_file_cached ${URL}) \
   && tar --extract --file "${FILE}" --directory "${DEST_DIR}" --zstd

@@ -10,6 +10,11 @@ DEST_DIR=${PREFIX}/${TARGET_DIR#/}
 # Create target dir
 mkdir -p "${DEST_DIR}"
 
-URL="https://github.com/containers/podman-tui/releases/download/v0.17.0/podman-tui-release-linux_amd64.zip"
+GH_REPO=containers/podman-tui
+JQ_SELECTOR='select(contains("linux_amd64"))'
+
+RELEASEINFO="https://api.github.com/repos/${GH_REPO}/releases"
+URL=$(curl "${RELEASEINFO}" | jq -r ".[].assets[].browser_download_url | ${JQ_SELECTOR}" | head -n1)
+
 FILE=$(download_file_cached ${URL}) \
   && unzip -jd "${DEST_DIR}" "${FILE}"
