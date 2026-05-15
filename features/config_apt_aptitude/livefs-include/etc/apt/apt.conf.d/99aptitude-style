@@ -2,7 +2,8 @@
 # 'base' style defined in cwidget/toplevel.cc init()
 Aptitude::UI::Styles {
 	DisabledMenuEntry {fg black; bg cyan;};
-	DownloadProgress {fg yellow; bg black; set bold,reverse;};
+	DownloadProgress {fg black; bg yellow;};
+	DownloadProgressStatus {fg yellow; bg black; set reverse;};
 	Header {fg cyan; bg black; set bold,dim,reverse;};
 	HighlightedMenuBar {fg cyan; bg black; set bold,dim;};
 	HighlightedMenuEntry {fg cyan; bg black; set bold,dim;};
