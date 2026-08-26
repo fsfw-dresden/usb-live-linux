@@ -13,4 +13,4 @@ usbmuxd                         # USB-Multiplexer-Daemon für iPhone- und iPod-T
 
 dnsmasq-base                    # Kleiner zwischenspeichernder DNS-Proxy und DHCP/TFTP-Server
 
-< https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
+< https://github.com/localsend/localsend/releases/download/v1.18.0/LocalSend-1.18.0-linux-x86-64.deb
