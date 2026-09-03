@@ -1,0 +1,2 @@
+# Do not perform safe I/O operations when unpacking
+force-unsafe-io
