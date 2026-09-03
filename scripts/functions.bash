@@ -348,6 +348,7 @@ apply_features() {
     PATH_MAPPINGS[live-build-config]="config"
     PATH_MAPPINGS[livefs-hooks]="config/hooks/normal"
     PATH_MAPPINGS[livefs-include]="config/includes.chroot"
+    PATH_MAPPINGS[livefs-pre-include]="config/includes.chroot_before_packages"
     PATH_MAPPINGS[package-include]="config/packages.chroot"
     PATH_MAPPINGS[package-preferences]="config/archives"
     PATH_MAPPINGS[package-repos]="config/archives"
@@ -417,6 +418,7 @@ apply_features() {
                     prebuild-hooks)
                         for HOOK in ${FEATURE_PATH}/${FRAGMENT_PATH}/*
                         do
+                            print_info "Executing prebuild-hook ${HOOK}"
                             ${HOOK}
                         done
                         ;;
