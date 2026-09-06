@@ -1,1 +1,2 @@
-unburden-home-dir               # move cache/thumbnail directories to tmpfs
+# got removed from trixie then re-added to sid unchanged so just get the original package file from snapshots
+< https://snapshot.debian.org/archive/debian/20220427T042000Z/pool/main/u/unburden-home-dir/unburden-home-dir_0.4.2_all.deb
