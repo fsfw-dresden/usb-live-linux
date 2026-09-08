@@ -1,1 +1,1 @@
-deb https://download.opensuse.org/repositories/home:/munix9:/unstable/Debian_12/ ./
+deb [trusted=yes] https://download.opensuse.org/repositories/home:/munix9:/celestia:/1.7/Debian_13/ /
