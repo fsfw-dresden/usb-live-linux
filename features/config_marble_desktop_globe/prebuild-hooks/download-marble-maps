@@ -56,7 +56,7 @@ for MAP in $(echo "${MAPS}" | sed -r '/^($|#.*)/d')
 do
         URL="${BASEURL}/${MAP}-marblemap.zip"
         FILE=$(download_file_cached "${URL}") \
-          && unzip -nd "${DEST_DIR}" "${FILE}"
+          && unzip -qnd "${DEST_DIR}" "${FILE}"
 
         # increase maximum zoom level for "Earth at Night 2012" map
         [ ! "${MAP}" = "blackmarble" ] || sed -i 's/1500/1800/' "${DEST_DIR}/earth/blackmarble/blackmarble.dgml"
