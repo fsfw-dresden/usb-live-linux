@@ -13,22 +13,26 @@ echo "Unpacking CircuitJS.."
 
 # Create target dir and unpack
 mkdir -p "${DEST_DIR}"
-tar --exclude='._*' --directory "${DEST_DIR}" -xzf "${FILE}"
+
+# Extract suppressing warnings about "unknown extended header keywords" LIBARCHIVE.xattr.com.apple.provenance/quarantine
+tar --warning=no-unknown-keyword --exclude='._*' --directory "${DEST_DIR}" -xzf "${FILE}"
 
 # Keep a copy of the original app invocation
 cp -a ${DEST_DIR}/circuitjs1/resources/app/main.js{,.orig}
 
 # Make Electron show with maximized window and bigger minimal font size
 patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
---- /opt/circuitjs1/resources/app/main.js.orig	2020-12-11 20:48:48.000000000 +0100
-+++ /opt/circuitjs1/resources/app/main.js	2020-12-29 17:39:19.501094275 +0100
-@@ -18,10 +18,14 @@
-   // Create the browser window.
-   var mainWindow = new BrowserWindow({width: 800, 
+--- /opt/circuitjs1/resources/app/main.js.orig	2026-07-08 08:54:34.000000000 +0200
++++ /opt/circuitjs1/resources/app/main.js	2026-09-08 18:13:02.204659663 +0200
+@@ -167,12 +167,16 @@
+ // Create the browser window.
+   var mainWindow = new BrowserWindow({width: 800,
      height: 600,
 +    show: false,
      webPreferences: { nativeWindowOpen: true,
-+                      minimumFontSize: 14,
+                       sandbox: false,
+                       contextIsolation: false,
++                      minimumFontSize: 16,
                        preload: path.join(__dirname, 'preload.js')
      }
    })
@@ -36,7 +40,7 @@ patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
 +  mainWindow.show();
    windows.push(mainWindow);
  
-   // and load the index.html of the app.
+   var loadUrl = url.format({
 EOF
 
 # The sandbox being disabled in the .desktop Exec command prevents this error:
