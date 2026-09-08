@@ -2,6 +2,11 @@
 
 /* Slightly zoom main toolbar buttons on hover */
 
+/* Raise toolbar over browser content */
+#navigator-toolbox {
+  --browser-area-z-index-toolbox: 3;
+}
+
 /* Draw toolbar buttons on top
  * and animate changes */
 #nav-bar .toolbarbutton-1,
