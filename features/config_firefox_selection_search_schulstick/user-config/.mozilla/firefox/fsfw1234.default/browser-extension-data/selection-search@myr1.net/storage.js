@@ -108,11 +108,11 @@
         },
         {
           "name": "Kleinanzeigen",
-          "url": "http://www.kleinanzeigen.de/anzeigen/s-sortierung:preis/%s/k0"
+          "url": "https://www.kleinanzeigen.de/s-sortierung:preis/%s/k0"
         },
         {
           "name": "Ebay.de sofort-Kauf",
-          "url": "http://shop.ebay.de/items/?_nkw=%s&LH_BIN=1&LH_SubLocation=1&LH_PrefLoc=2&_sop=15&_ipg=200"
+          "url": "https://www.ebay.de/sch/i.html?_nkw=%s&LH_BIN=1&LH_PrefLoc=2&_sop=15"
         },
         {
           "name": "Amazon (für Bewertungen)",

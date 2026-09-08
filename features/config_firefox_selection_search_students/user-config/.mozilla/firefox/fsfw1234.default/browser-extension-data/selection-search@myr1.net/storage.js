@@ -57,7 +57,7 @@
       "url": "http://image.baidu.com/i?word=%s&tn=baiduimage&ipn=r&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8"
     },
     {
-      "name": "Vektor Graphics: SVG Repo",
+      "name": "Vector Graphics: SVG Repo",
       "url": "https://www.svgrepo.com/vectors/%s/"
     },
     {
@@ -101,11 +101,11 @@
         },
         {
           "name": "Products: Kleinanzeigen",
-          "url": "http://www.kleinanzeigen.de/anzeigen/s-sortierung:preis/%s/k0"
+          "url": "https://www.kleinanzeigen.de/s-sortierung:preis/%s/k0"
         },
         {
           "name": "Products: Ebay.de sofort-Kauf",
-          "url": "http://shop.ebay.de/items/?_nkw=%s&LH_BIN=1&LH_SubLocation=1&LH_PrefLoc=2&_sop=15&_ipg=200"
+          "url": "https://www.ebay.de/sch/i.html?_nkw=%s&LH_BIN=1&LH_PrefLoc=2&_sop=15"
         },
         {
           "name": "Products: Amazon.de",
