@@ -18,15 +18,11 @@ openstereogram                  # Stereogram ("Magic Eye") generator with GUI
 gimp                            # Das GNU-Bildbearbeitungsprogramm
 gimp-data-extras                # Ein extra Satz Pinsel, Paletten, Gradienten für GIMP (+3.884 kB)
 gimp-texturize                  # generates large textures from a small sample
-gimp-plugin-registry            # optional extensions
-gimp-gutenprint                 # Gutenprint-Druckerweiterung für GIMP
-gimp-gmic                       # GREYC's Magic Image Converter - Konvertieren, Manipulieren, Filtern und Visualisieren
-# ? gimp-ufraw                  # Gimp Importierprogramm für Kamerabilder im raw-Format
 gimp-help-de                    # Dokumentation für GIMP (Deutsch) (+31,8 MB)
 
 # Not Another PDF Scanner II: Scan documents to PDF and more, as simply as possible
 < https://github.com/cyanfish/naps2/releases/download/v8.3.2/naps2-8.3.2-linux-x64.deb
-# ? darktable                   # Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
+darktable                       # Virtueller Leuchttisch und virtuelle Dunkelkammer für Fotografen
 rawtherapee                     # Umwandler für RAW-Bilder und Bearbeitungssoftware für Digitalfotos
 
 icc-profiles                    # high quality ICC color profiles
@@ -34,7 +30,7 @@ icc-profiles-free               # Freie Farbprofile für die Kompatibilität mit
 
 xsane                           # Grafische Oberfläche für SANE (Scanner Access Now Easy) mit vielen Fähigkeiten
 mandelbulber2                   # 3D fractal renderer and animator
-# ? structure-synth             # generating 3D structures by specifying a design grammar
+structure-synth                 # generating 3D structures by specifying a design grammar
 sunflow                         # rendering system for photo-realistic image synthesis (for structure-synth)
 
 ###  Fotoverwaltung

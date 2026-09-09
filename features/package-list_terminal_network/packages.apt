@@ -25,6 +25,7 @@ sslscan                 # Tests SSL/TLS enabled services to discover supported c
 tftp-hpa                # Trivial file transfer protocol client, used to recover / flash routers
 traceroute              # displays the route used by IP packets on their way
 trickle                 # user-space bandwidth shaperqq
+termshark               # Terminal UI for tshark, inspired by Wireshark
 tshark                  # network traffic analyzer (console version of wireshark)
 wavemon                 # watch signal and noise levels
 wireless-tools          # zum Bearbeiten von WLAN Einstellungen

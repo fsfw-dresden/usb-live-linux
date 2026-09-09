@@ -19,8 +19,6 @@ hydrogen-drumkits               # collection of drumkits for Hydrogen
 libdvdcss2                      # Simple foundation for reading DVDs - runtime libraries
 mixxx                           # Digital Disc Jockey Interface
 musescore3                      # cross-platform multi-lingual music composition and notation (+48,4 MB)
-# abandoned upstream playitslowly                    # Plays back audio files at a different speed or pitch (+27.7 kB)
-# soundstretch  (command line) and audacity (gui)
 rosegarden                      # music editor and MIDI/audio sequencer
 soundconverter                  # simple sound converter application
 transcriber                     # Programm zum Transkripieren (z.B. von Interviews)
@@ -61,6 +59,6 @@ v4l-utils                       # Collection of command line video4linux utiliti
 ogmtools                        # Dient der Bearbeitung von OGG-Streams
 gnome-video-effects-frei0r      # GNOME Video Effects - frei0r plugins
 slowmovideo                     # creates slow-motion videos from your footage
-mplayer                         # movie player for Unix-like systems
+mpv                             # general-purpose video player based on mplayer2
 smplayer-l10n                   # Qt5 front-end for mplayer + translation
 

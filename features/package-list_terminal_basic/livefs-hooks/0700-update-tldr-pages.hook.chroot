@@ -1,12 +1,10 @@
 #!/bin/sh
-# Download tldr database & share among users (26k files)
+# Download tldr pages to /usr/local/share/tealdeer & share among users
 
-STORE_DEST=/usr/local/share
-ROOT_DEST=/root/.local/share
-USER_DEST=/etc/skel/.local/share
+GLOBAL_CONF=/etc/tealdeer
+ROOT_CONF=/root/.config/
+USER_CONF=/etc/skel/.config/
 
-tldr -u && \
-  mkdir -pv "${STORE_DEST}" "${USER_DEST}" && \
-  mv -v "${ROOT_DEST}/tldr" "${STORE_DEST}/" && \
-  ln -sv "${STORE_DEST}/tldr" "${ROOT_DEST}/" && \
-  ln -sv "${STORE_DEST}/tldr" "${USER_DEST}/"
+ln -sv "${GLOBAL_CONF}" "${ROOT_CONF}" && \
+  ln -sv "${GLOBAL_CONF}" "${USER_CONF}" && \
+  tldr --update

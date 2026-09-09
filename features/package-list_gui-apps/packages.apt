@@ -20,7 +20,6 @@ storymaps                       # graphical story planning and writing applicati
 cronometer                      # Exercise and nutrient intake tracker
 screenkey                       # screencast tool to display your keys
 openboard                       # interactive white board application designed primarily for use in schools
-quiterss                        # fast and comfortable RSS/Atom news feeds reader
 projecteur                      # virtual laser pointer for use with inertial pointers
 # ? ding                        # Graphical dictionary lookup program for Unix
 kiwix                           # offline reader and manager for online content like Wikipedia, Project Gutenberg, or TED Talks
@@ -44,11 +43,8 @@ tipp10                          # touch typing software
 
 simple-scan                     # easy-to-use Scanning Utility
 
-xpra                            # tool to detach/reattach running X programs
-
 libvte9                         # Terminal emulator widget for GTK+ 2.0 - runtime files
 
-qt5-style-plugins               # Qt 5 GTK+ 2 platformtheme and extra widget styles (Cleanlooks, Motif, Plastique)
 qttranslations5-l10n            # translations for Qt 5 (+1.501 kB)
 
 calibre                         # powerful and easy to use e-book manager (+28,1 MB)
@@ -67,15 +63,10 @@ gir1.2-osmgpsmap-1.0            # recommended by gramps
 python3-icu                     # recommended by gramps
 libnotify-bin                   # Sendet Benachrichtigungen an die Arbeitsfläche
 
-materia-gtk-theme               # Material Design theme for GNOME/GTK+ based desktop environments (+223 kB)
-
-
-# ?
-# ? ffplay                      # simple media player based on SDL and FFmpeg (+376 kB, for kdenlive)
 calf-plugins
 lsp-plugins
 zam-plugins
 
-# ? webcamoid                   # full featured webcam capture application, can do a lot of funny things (+9,328 kB)
+webcamoid                       # full featured webcam capture application, can do a lot of funny things (+9,328 kB)
 # ? guake                       # Drop-down terminal (GTK)
 # ? yakuake                     # Drop-down terminal (KDE)

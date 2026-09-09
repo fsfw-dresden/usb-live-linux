@@ -7,7 +7,6 @@ blender                         # Sehr schnelle und vielseitige Suite für 3D-Mo
 ###  CAD
 
 # ? freecad                     # umfangreiches und vielfältiges Konstruktionsprogramm
-calculix-ccx                    # Three-Dimensional Structural Finite Element Program (+1.906 kB)
 povray-examples                 # Persistence of vision raytracer (3D renderer) + sample files (+11,8 MB)
 # ? librecad                    # Anwendung für die computerunterstützte Konstruktion (CAD) in zwei Dimensionen (2D)
 # ? openscad                    # script file based graphical CAD environment
@@ -16,8 +15,6 @@ python3-pygmsh                  # powerful mesh generation tool with the versati
 
 ###  Maker Tools  -- 3D Printing Lasercutting - G-Code
 
-printrun                        # 3D printing host suite - printcore, standalone non-interactive G-Code sender - pronterface, graphical host software (+13,5 MB)
-slic3r                          # G-code generator for 3D printers (+4 MB)
 cura                            # GUI G-code generator for 3D printers
 bcnc                            # GRBL CNC command sender, autoleveler and g-code editor
 

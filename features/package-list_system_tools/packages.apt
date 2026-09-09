@@ -27,7 +27,6 @@ lshw                            # Informationen über die Hardwarekonfiguration
 lsdvd                           # liest die Inhaltsinformation einer DVD
 eject                           # Auswerfen von CDs und Steuern von CD-Wechslern unter Linux
 udisks2                         # D-Bus-Dienst für Zugriff auf und Manipulation von Speichergeräten
-smbios-utils                    # access to (SM)BIOS informationaccess to (SM)BIOS information
 sshfs                           # Dateisystemclient, der auf dem SSH-Dateiübertragungsprotokoll basiert
 pm-utils                        # Powermanagement
 testdisk                        # Datenrettungswerkzeug
