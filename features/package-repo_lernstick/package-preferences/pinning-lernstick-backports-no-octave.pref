@@ -1,4 +1,0 @@
-# updated octave-control missing..
-Package: octave octave-*
-Pin: release n=lernstick-12-backports
-Pin-Priority: 499
