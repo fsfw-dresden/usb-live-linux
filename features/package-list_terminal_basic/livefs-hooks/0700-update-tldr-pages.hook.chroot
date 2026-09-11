@@ -5,6 +5,8 @@ GLOBAL_CONF=/etc/tealdeer
 ROOT_CONF=/root/.config/
 USER_CONF=/etc/skel/.config/
 
+mkdir -pv "${ROOT_CONF}" "${USER_CONF}"
+
 ln -sv "${GLOBAL_CONF}" "${ROOT_CONF}" && \
   ln -sv "${GLOBAL_CONF}" "${USER_CONF}" && \
   tldr --update
