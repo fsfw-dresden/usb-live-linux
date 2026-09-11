@@ -116,17 +116,17 @@ mkdir -p "${BASE_DIR}"
 
 {
   VIDEO_URLS="
-  https://coverr.co/videos/coastline-paradise-pu1wu2KKyC
-  https://coverr.co/videos/overlooking-the-mountains-B1u9fiuoHy
-  https://coverr.co/videos/sandboarding-in-desert-fFFXsEFn9T
-  https://coverr.co/videos/kitten-yawning-pt3CzcIAm0
-  https://coverr.co/videos/water-buffalo-kAD9tRXEcv
-  https://coverr.co/videos/cute-dog--l2PuW4L0jF
-  https://coverr.co/videos/painting-cardboard-shapes-yellow-WWOsATIUpt
-  https://coverr.co/videos/woman-making-a-clay-pot-SvTsRSKxWD
-  https://coverr.co/videos/graffiti-on-the-street--hNfmSfFKx8
-  https://coverr.co/videos/cracking-eggs-in-a-jug-9q24xyi8KR
-  https://coverr.co/videos/putting-pink-hearts-on-cupcakes-JI1uMqSCN4
+  https://coverr.co/videos/coastline-paradise-pu1wu2kkyc
+  https://coverr.co/videos/overlooking-the-mountains-b1u9fiuohy
+  https://coverr.co/videos/sandboarding-in-desert-fffxsefn9t
+  https://coverr.co/videos/kitten-yawning-pt3czciam0
+  https://coverr.co/videos/water-buffalo-kad9trxecv
+  https://coverr.co/videos/cute-dog-l2puw4l0jf
+  https://coverr.co/videos/painting-cardboard-shapes-yellow-wwosatiupt
+  https://coverr.co/videos/woman-making-a-clay-pot-svtsrskxwd
+  https://coverr.co/videos/graffiti-on-the-street-hnfmsffkx8
+  https://coverr.co/videos/cracking-eggs-in-a-jug-9q24xyi8kr
+  https://coverr.co/videos/putting-pink-hearts-on-cupcakes-ji1umqscn4
   "
 
   DEST_DIR=${BASE_DIR}/videos
