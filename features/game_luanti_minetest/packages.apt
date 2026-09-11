@@ -1,5 +1,4 @@
 minetest                        # Multiplayer infinite-world block sandbox
-lernstick-minetest-game-tutorial
 minetest-mod-basic-materials
 minetest-mod-character-creator
 minetest-mod-craftguide
@@ -7,8 +6,6 @@ minetest-mod-currency
 minetest-mod-ethereal
 minetest-mod-homedecor
 minetest-mod-infinite-chest
-# RoM; obsolete minetest-mod-intllib
-# since then minetest got an internal api for i18n that makes it useless.
 minetest-mod-lucky-block
 minetest-mod-maidroid
 minetest-mod-mesecons
