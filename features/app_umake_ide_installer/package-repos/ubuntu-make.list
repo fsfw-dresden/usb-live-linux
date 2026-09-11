@@ -1,1 +1,4 @@
-deb https://ppa.launchpadcontent.net/lyzardking/ubuntu-make/ubuntu focal main
+# use packages for latest compatible LTS, which is (2026-09-06)
+# 24.04 LTS ("Noble Numbat") based on trixie/sid (debian 13)
+# according to https://askubuntu.com/a/445496/182923
+deb [trusted=yes] https://ppa.launchpadcontent.net/lyzardking/ubuntu-make/ubuntu noble main

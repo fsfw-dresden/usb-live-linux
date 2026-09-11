@@ -1,1 +1,1 @@
-deb http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu focal main
+deb [trusted=yes] http://ppa.launchpad.net/yannubuntu/boot-repair/ubuntu noble main
