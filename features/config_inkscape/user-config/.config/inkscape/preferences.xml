@@ -5,7 +5,8 @@
   <group
      id="theme"
      preferDarkTheme="0"
-     menuIcons="1">
+     menuIcons="1"
+     iconTheme="multicolor">
   </group>
   <group
      id="window"
@@ -15,5 +16,18 @@
     <group
        id="boot"
        enabled="0" />
+    <group
+       id="grabsize"
+       value="8" />
+  </group>
+  <group
+     id="toolbox">
+    <group
+       id="tools"
+       iconsize="24">
+    </group>
+    <group
+       id="controlbars"
+       iconsize="24" />
   </group>
 </inkscape>
