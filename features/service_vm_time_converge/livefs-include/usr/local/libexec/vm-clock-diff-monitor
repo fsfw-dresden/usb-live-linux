@@ -1,0 +1,23 @@
+#!/bin/sh
+# Continuously check for time divergence between RTC and local clock
+# (as happens in paused VMs) and restart time synchronization daemon
+
+INTERVAL=10
+MAX_DIFF=10
+TIME_DAEMON=htpdate
+
+time_diff() {
+  LOCAL_TIME_STAMP=$(date --date="$(timedatectl show | sed -n 's/^TimeUSec=//p')" +%s)
+    RTC_TIME_STAMP=$(date --date="$(timedatectl show | sed -n 's/^RTCTimeUSec=//p')" +%s)
+
+  echo $((RTC_TIME_STAMP - LOCAL_TIME_STAMP))
+}
+
+while sleep $INTERVAL
+do
+  TIME_DIFF=$(time_diff)
+  [ $TIME_DIFF -gt $MAX_DIFF ] && {
+    echo "Time divergence of $TIME_DIFF seconds detected, restarting $TIME_DAEMON.."
+    systemctl restart $TIME_DAEMON
+  }
+done

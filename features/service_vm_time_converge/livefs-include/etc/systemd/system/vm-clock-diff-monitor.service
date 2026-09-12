@@ -1,0 +1,9 @@
+[Unit]
+Description=Fight time divergence in VM
+ConditionVirtualization=true
+
+[Service]
+ExecStart=/usr/local/libexec/vm-clock-diff-monitor
+
+[Install]
+WantedBy=multi-user.target
