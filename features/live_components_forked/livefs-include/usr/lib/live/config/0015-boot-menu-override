@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Allow setting keyboard locale/layout/timezone from boot menu
+# by removing the respective live-config marker files
+
+#set -e
+
+Cmdline ()
+{
+	# Reading kernel command line
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.keyboard-layouts=*|keyboard-layouts=*)
+				rm -f /var/lib/live/config/keyboard-configuration
+				;;
+			live-config.locales=*|locales=*)
+				rm -f /var/lib/live/config/locales
+				;;
+			live-config.timezone=*|timezone=*)
+				rm -f /var/lib/live/config/tzdata
+				;;
+		esac
+	done
+}
+
+Cmdline
