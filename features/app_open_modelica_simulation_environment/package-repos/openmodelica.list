@@ -1,2 +1,2 @@
-deb http://build.openmodelica.org/apt bookworm stable
-# deb-src http://build.openmodelica.org/apt bookworm stable
+deb http://build.openmodelica.org/apt trixie stable
+# deb-src http://build.openmodelica.org/apt trixie stable
