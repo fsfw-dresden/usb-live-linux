@@ -8,7 +8,7 @@ case "$-" in
     # proceed when not in ranger or tmux, non-root user, not a linux VT
     # - and do not mess with invoked environments (IDEs, …)
     [ -n "$RANGER_LEVEL" ] || [ -n "$TMUX" ] || [ "$(id -u)" -eq 0 ] || \
-      tty | grep -qs ^/dev/tty \\
+      tty | grep -qs ^/dev/tty || \
       grep -qE -- "--init-file|--rcfile|--norc|--noprofile" /proc/$$/cmdline && \
       return ;;
   * ) return ;;
