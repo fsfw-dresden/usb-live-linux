@@ -193,9 +193,10 @@ download_external_deb_package() {
         FILE_REPACK=${FILE_CACHED%.deb}.repack.deb
 
         if ! [ -e ${FILE_REPACK} ]; then
+            print_info "Repacking package ${FILE_NAME} and making name " \
+               "lowercase to prevent E: Unable to locate package …"
             DEB_DIR=${FILE_NAME%.deb}
             dpkg-deb --raw-extract ${FILE_CACHED} ${DEB_DIR}
-            # Convert to lowercase to prevent E: Unable to locate package …
             sed -ri 's/^(Package:) (.*)/\1 \L\2/' ${DEB_DIR}/DEBIAN/control
             dpkg-deb --build ${DEB_DIR}
             rm -r ${DEB_DIR}
