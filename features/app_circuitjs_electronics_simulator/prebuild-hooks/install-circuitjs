@@ -21,13 +21,13 @@ tar --warning=no-unknown-keyword --exclude='._*' --directory "${DEST_DIR}" -xzf 
 cp -a ${DEST_DIR}/circuitjs1/resources/app/main.js{,.orig}
 
 # Make Electron show with maximized window and bigger minimal font size
-patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
+if patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
 --- /opt/circuitjs1/resources/app/main.js.orig	2026-07-08 08:54:34.000000000 +0200
 +++ /opt/circuitjs1/resources/app/main.js	2026-09-08 18:13:02.204659663 +0200
 @@ -167,12 +167,16 @@
  // Create the browser window.
    var mainWindow = new BrowserWindow({width: 800,
-     height: 600,
+     height: 800,
 +    show: false,
      webPreferences: { nativeWindowOpen: true,
                        sandbox: false,
@@ -42,6 +42,12 @@ patch --verbose --directory=config/includes.chroot/ --strip=1 <<EOF
  
    var loadUrl = url.format({
 EOF
+then
+  print_info "Patched circuitjs1's main.js to start window maximized"
+else
+  print_warn "Patch to start window maximized failed to apply against" \
+   "/opt/circuitjs1/resources/app/main.js, check for upstream changes" 
+fi
 
 # The sandbox being disabled in the .desktop Exec command prevents this error:
 # FATAL:setuid_sandbox_host.cc The SUID sandbox helper binary was found, but
