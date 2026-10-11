@@ -1,0 +1,5 @@
+diskgraph       # Graphs live view of R/W bandwidth of a disk drive.
+energygraph     # Graphs the energy use of a host inside a text terminal, using intel-rapl data from the /sys filesystem.
+freqtop         # Shows CPU core frequencies in live graph.
+icmpwatch       # Shows network reachability of hosts in a text terminal.
+ifgraph         # Records and graphs the bandwidth use of network interfaces using the /sys filesystem

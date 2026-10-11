@@ -1,0 +1,3 @@
+# misc. software like diskgraph, energygraph and freqtop
+# FIXME: updated only for latest ubuntu release, so need to check regularly
+deb https://ppa.launchpadcontent.net/b-stolk/ppa/ubuntu plucky main
