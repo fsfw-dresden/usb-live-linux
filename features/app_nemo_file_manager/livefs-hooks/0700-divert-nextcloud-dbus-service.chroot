@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Disable this service to avoid any file dialog or manager persistently bringing up a nextcloud login wizard
+dpkg-divert --add --rename --divert /usr/share/dbus-1/services/com.nextcloudgmbh.Nextcloud.service{.disabled,}

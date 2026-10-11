@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Comment out printing of connection error
+sed -i '/Could not connect to unix socket/{i\                pass;
+s/print/# print/
+}' /usr/share/nemo-python/extensions/syncstate-Nextcloud.py
