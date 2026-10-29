@@ -1,0 +1,68 @@
+#!/bin/bash
+# Helper script to find .deb URLS in feature package lists and
+# check for updated releases. Needs `gh` cli tool authenticated on github.
+
+. "$(dirname $(realpath "${0}"))/functions.sh"
+cd_repo_root
+
+DATE=$(date +%F)
+GHTOKEN=$(gh auth token)
+
+REL_DIR="features/.gh-releases"
+
+read -r -d '' JQCODE <<JQEOF || true
+.[0:20]
+| map(.assets)
+| add
+| map(select(.name | endswith(\$DEB_NAME))) as \$deb_name_matches
+| if (\$deb_name_matches | length) > 1 then \$deb_name_matches
+  else map(select(.name
+    | endswith(".deb")
+    and (contains("aarch64") | not)
+    and (test("arm.?64") | not)
+    and (contains("armhf") | not)
+    and (contains("armv7") | not)
+    and (test("i[35]86") | not)
+    and (contains("xml") | not)
+  ))
+  end
+| .[].browser_download_url
+JQEOF
+
+NEEDLE=${1:-*}
+
+shopt -s nullglob
+
+for APT in features/*${NEEDLE}*/*.apt
+do
+  while read -r DEB_URL
+  do
+    PROJECT=$(echo "${DEB_URL}" | sed -nr 's|.*github.com/(.*)/releases/download/.*|\1|p')
+    DEB_NAME=$(echo "${DEB_URL}" | sed -nr 's|.*github.com/.*/releases/download/[^/]+/(.*)|\1|p')
+    PROJECT_RELEASE_FILE="${REL_DIR}/${PROJECT////--}.releases.${DATE}.json"
+
+    grep --color=always -H "${PROJECT}" "${APT}" | grep "${DEB_NAME}"
+    gh release list --limit 5 --repo "${PROJECT}" | ccza
+    echo
+
+    [ -s "${PROJECT_RELEASE_FILE}" ] \
+      || curl --silent --header "Authorization: Bearer $GHTOKEN" \
+           --header "X-GitHub-Api-Version: 2022-11-28" \
+           https://api.github.com/repos/${PROJECT}/releases \
+           > ${PROJECT_RELEASE_FILE}
+    CANDIDATES=$(jq -C -r --arg DEB_NAME "${DEB_NAME}" "${JQCODE}" "${PROJECT_RELEASE_FILE}")
+    LATEST_DEB=$(echo "${CANDIDATES}" | head -n1)
+
+    grep -q "${LATEST_DEB}" "${APT}" && print_success "${APT} has up-to-date URL ${LATEST_DEB}" \
+      || NEW_DEB=$( printf "\n%s\n" "${CANDIDATES}" | fzf --exact --reverse --no-sort --no-info --height=~70% || true)
+    [ -z "${NEW_DEB}" ] || {
+      sed -ri.$(date +%F.%H%Mh).bak "s|${DEB_URL}|${NEW_DEB}|" "${APT}"
+      git add --patch "${APT}" < /dev/tty
+      unset NEW_DEB
+    }
+    echo
+  done < <(sed -nr '/github.com\/.*\/releases\/download\/.*\.deb/ s|^< (.*\.deb).*|\1|p' "${APT}")
+done
+
+NON_GH_DEB=$(grep -EH --color=always '\S+\.deb' features/*${NEEDLE}*/*.apt | sed '/github.com/d')
+[ -z "${NON_GH_DEB}" ] || { print_warn "Check these manually:" && echo "${NON_GH_DEB}"; }
