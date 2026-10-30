@@ -1,0 +1,12 @@
+#!/bin/sh -x
+# Convenience wrapper to search for a command and show its memory activity in pagemon
+
+[ $# -gt 0 ] && CMD="${1}" || read -p 'Please enter command name to show memory of: ' CMD
+[ -n "${2}" ] && _USER="-u ${2}"
+
+# Only invoke fzf if stdin is interactive, otherwise pick oldest process
+tty > /dev/null \
+  && PID=$(pgrep -laf ${_USER} "${CMD}" | fzf --exact --height=~100% --border --reverse --header "pgrep -la '${CMD}'" | awk '{print $1}') \
+  || PID=$(pgrep --oldest "${CMD}")
+
+[ -z "$PID" ] && echo "No process found or selected, aborting." || pagemon -avp $PID

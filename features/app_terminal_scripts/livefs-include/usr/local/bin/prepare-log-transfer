@@ -1,0 +1,105 @@
+#!/bin/bash
+# quickly gather configs & logs for debugging & performance tracking
+# shellcheck disable=SC2086,SC2013
+
+# show messages in plain english
+export LANG=C
+
+VERSION_FILE=/etc/live_stick_version
+VERSION=$(sed -nr 's/Image name: //p; 1 s/:/-/g; 1 s/^This.([^ ]+) image was built ([^ ]+).*/\1.\2/p' $VERSION_FILE)
+DATE=$(date +%F.%H%Mh)
+DEST=/ztmp/transfer.$VERSION.$DATE
+LOGDEST=$DEST/var-log
+mkdir -p $LOGDEST || exit 1
+
+# hardware overview and startup info
+inxi --color 0 --full > /var/log/inxi.$DATE.log &
+log-systemd-analyze -v 2>/dev/null &
+dmesg --ctime --show-delta --kernel > $LOGDEST/dmesg.kernel.log &
+dmesg --ctime --show-delta > $LOGDEST/dmesg.log &
+which live-log-times && live-log-times > $LOGDEST/live-config-times.log &
+unsquashfs -stat /run/live/medium/live/filesystem.squashfs > $LOGDEST/squashfs-stats.log &
+
+# EFI / secureboot info
+EFILOGDIR=$DEST/efi
+mkdir -p $EFILOGDIR/efivar.dump
+
+efi-readvar > $EFILOGDIR/efi-readvar.log &
+efibootmgr -v > $EFILOGDIR/efibootmgr.log &
+
+for VAR in $(efivar --list|tee $EFILOGDIR/efivar.list)
+do
+  echo
+  efivar --name=$VAR --print
+  efivar --name=$VAR --export $EFILOGDIR/efivar.dump/$VAR
+done > $EFILOGDIR/efivar.print &
+
+(
+  mokutil 2>&1 || exit
+  mokutil --sb-state
+  mokutil --list-enrolled
+  mokutil --list-new
+  mokutil --list-delete
+  mokutil --list-sbat-revocations
+
+) > $EFILOGDIR/mokutil.log &
+
+
+(
+  # /etc might have uncommitted changes
+  etckeeper unclean && etckeeper commit autocommit
+
+  # separate diff file for differences accumulated during 1st boot
+  cd /etc || exit 2
+  REF=$(git rev-list --reverse HEAD|sed -n 2p)
+  git format-patch --output=$DEST/etc-1st-autocommit.patch $REF^..$REF
+) &
+
+# log kernel command line, locale and tz settings
+cp -a /proc/cmdline $LOGDEST/
+localectl > $LOGDEST/localectl.log &
+timedatectl > $LOGDEST/timedatectl.log &
+
+# network logs, if any
+find /run/log -maxdepth 1 -name 'NetworkManager*' -exec rsync -ahi {} $DEST/network-logs/ \; &
+
+# fix empty live stick info file
+[ -s /var/log/${VERSION_FILE##*/} ] \
+  || cp -a $VERSION_FILE /var/log/
+
+# continue once above logging tasks complete
+wait
+
+# save complete /etc and /var/log
+rsync -a /var/log/ $LOGDEST/ &
+rsync -a --exclude={.mozilla,share/tldr} /etc $DEST/ &
+
+# xsession-errors
+cp -a /tmp/.xsession-errors $LOGDEST/xsession-errors.$DATE &
+
+# grab any scripts changed this boot
+find /usr/local/bin -type f -newer /proc -exec rsync -a {} $DEST/usr-local-bin/ \; &
+
+# light-weight copy of persistence overlays
+for OVERLAY in $(sed -nr '/persistence/ s|.*upperdir=(.*)/rw.*|\1|p' /proc/mounts)
+do
+  NAME="${OVERLAY##*/}"
+  case "$NAME" in
+    etc|rootfs) continue;;
+    *) ;;
+  esac
+  [ -z "$(find $OVERLAY/rw -maxdepth 0 -empty)" ] || continue
+  rsync -a --exclude={{.,}cache,.mozilla} $OVERLAY/rw/ $DEST/$NAME/ &
+done
+
+# also copy user directory, without firefox profile
+rsync -a --exclude={{.,}cache,.mozilla,share/tldr} /home/user/ $DEST/home-user/ &
+
+# wait for background tasks to finish copying
+wait
+
+( # tar up the directory for transfer f.e. with
+  # wormhole, which can not handle special files)
+  cd  /ztmp || exit 3
+  tar czf "${DEST##*/}.tar.gz" "${DEST##*/}"
+)

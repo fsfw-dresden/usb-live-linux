@@ -1,0 +1,37 @@
+#!/bin/bash +x
+# Wrapper to execute a command, logging its output
+
+DATE=$(date +%F.%H%Mh)
+SUFFIX=".${DATE}.log"
+MAX_LENGTH=$((256 - ${#SUFFIX}))
+
+LOGDIR=/var/log/misc
+mkdir -pv "${LOGDIR}"
+
+CMD="${*}"
+FILENAME="$(echo "${CMD}" | sed 's| /| |g;s|/|--|g;s| -|-|g;s| |-|g' | cut -c -${MAX_LENGTH})${SUFFIX}"
+[ -n "${CMD}" ] && echo "logging '${CMD}' to ${LOGDIR}/${FILENAME}" \
+  || { echo "no command given"; exit 1; }
+
+# tee succeeding would mask exit status without this
+set -o pipefail
+
+{
+  # but as it is not the standard option, unset inside to
+  # not cause confusion from exit status 141 (SIGPIPE)
+  set +o pipefail
+
+  # Log command being executed
+  echo "+ ${CMD}" >&2
+
+  # Execute in a sub shell
+  ( eval "${CMD}" )
+
+  # Capture, log & re-emit exit status
+  EXIT=$?
+  echo "+ exit status: ${EXIT}"
+  exit ${EXIT}
+
+  # log both stdout & stderr to file, omitting the
+  # 1st (+ eval [CMD]) & last (+ exit status) line
+} |& tee ${LOGDIR}/${FILENAME} | sed '1d; $d'
