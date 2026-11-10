@@ -1,8 +1,8 @@
 #!/bin/sh
 
 find_tmux_pane() {
-  PID=$1
-  #echo "PID is ${PID}, cmdline=$(tr '\0' ' ' < /proc/${PID}/cmdline)"
+  PID=${1}
+# echo "PID is ${PID}, cmdline=$(tr '\0' ' ' < /proc/${PID}/cmdline)"
 
   [ ${PID} -eq 1 ] \
     && { echo "Init process reached and TMUX_PANE not found."; return 3; }
@@ -12,13 +12,22 @@ find_tmux_pane() {
   TMUX_PANE_ID=$(sed -zn '/^TMUX_PANE/ s/.*=//p' /proc/${PID}/environ)
   [ -n "${TMUX_PANE_ID}" ] || {
     PPID=$(sed -nr 's/^PPid:\s*([0-9]+)$/\1/p' /proc/${PID}/status)
-    #tmux display-message "PPID=$PPID"
+#   tmux display-message "PPID=$PPID"
     [ -n "${PPID}" ] && find_tmux_pane ${PPID} \
       || { echo "Retrieving pane ID failed. Sure the process is running within your tmux session?"; return 1; }
   }
-  tmux select-window -t ${TMUX_PANE_ID}
-  tmux select-pane -t ${TMUX_PANE_ID}
-  exit 0
+  PID_UID=$(awk '/^Uid/ { print $2 }' /proc/${PID}/status)
+  [ ${PID_UID} -eq $(id -u) ] || { echo "Different user id ${PID_UID}, wrong tmux session"; exit 2; }
+
+  tmux select-window -t ${TMUX_PANE_ID} \
+    && tmux select-pane -t ${TMUX_PANE_ID} \
+    && exit 0
 }
 
-find_tmux_pane "$1" 2>&1
+case ${1} in
+  '') echo "must give target process"; exit 1;;
+  *[!0-9]*) PID=$(pgrep-fzf "${@}"); [ -n "${PID}" ] || exit 2;;
+  *) PID=${1};;
+esac
+
+find_tmux_pane "${PID}" 2>&1

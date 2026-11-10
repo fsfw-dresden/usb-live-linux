@@ -2,6 +2,13 @@
 {
   read -sn1 -p "[r] to respawn, [any] other key to exit"
   case $REPLY in
-    r) eval printf -- '\\n%.s' {1..$(tput lines)}; tmux respawn-pane -k;;
+    r)
+      # push text on screen into pane history, then re-exec
+      eval printf -- '\\n%.s' {0..$(tput lines)}
+      tmux respawn-pane -k;;
+    *) echo
   esac
+
+  # allow passing exit status as parameter, $? wouldn't work
+  exit $1
 }

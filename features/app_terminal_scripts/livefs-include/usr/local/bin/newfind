@@ -2,22 +2,20 @@
 # finds new files in the current directory
 # (created or modified within x minutes)
 
-if [ ! -z $1 ]; then
-    min=$1;
-else
-    min=20;
-fi;
-echo "Files $(color red)modified$(color off) within $min minutes:";
+[ ! -z $1 ] && MINUTES=$1 || MINUTES=20
+[ ! -z $2 ] && DEPTH=$1 || DEPTH=20
+
+echo "Files $(color red)modified$(color off) within $MINUTES minutes:";
 {
-    for i in $(seq 4);
+    for i in $(seq $DEPTH);
     do
-        find -xdev -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -mmin +0 -mmin -${min} -print0 | sed 's|^./||;s|\x00./|\x00|g';
+        find -xdev -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -mmin +0 -mmin -${MINUTES} -print0 2>/dev/null | sed 's|^./||;s|\x00./|\x00|g';
     done
 } | xargs -0r ls -lahdtr --color=always;
-echo -e "\nFiles $(color cyan)created$(color off) in last $min minutes:";
+echo -e "\nFiles $(color cyan)created$(color off) in last $MINUTES minutes:";
 {
     for i in $(seq 4);
     do
-        find -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -cmin +0 -cmin -${min} -mmin +${min} -print0 | sed 's|^./||;s|\x00./|\x00|g';
+        find -mindepth $i -maxdepth $i \( -name .gvfs -o -regex '.*/\.git.*' \) -prune -o -type f -cmin +0 -cmin -${MINUTES} -mmin +${MINUTES} -print0 2>/dev/null | sed 's|^./||;s|\x00./|\x00|g';
     done
 } | xargs -0r ls -lahdtcr --color=always

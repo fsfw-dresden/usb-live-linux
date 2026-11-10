@@ -7,7 +7,7 @@
 
 dpkg-info()
 {
-    for pkg in ${@};
+    for pkg in ${@%%[^a-z0-9]};
     do
         {
             {
@@ -40,7 +40,7 @@ dpkg-info()
                 apt-cache show ${pkg}
                 apt-cache showsrc ${pkg} 2>/dev/null
             } | ccze -A -o nolookups
-        } | less -SRiM~ --shift 1 -PM"debian package info\: ${pkg}, ?ltlines %lt-%lb?L/%L.:byte %bB?s/%s. .?e(END)"
+        } | less -SRiM~ --shift 1 -PM"debian package info\: ${pkg}, ?ltlines %lt-%lb?L/%L.:byte %bB?s/%s.. ?e(END).%t"
     done
 }
 

@@ -1,0 +1,29 @@
+#!/bin/bash +x
+# ripgrep-edit - search recursively for phrase & show file selection TUI for
+# editing, git blaming and other source-code-related actions
+
+rg \
+  --smart-case \
+  --no-messages \
+  --files-with-matches \
+  --hidden \
+  --sort=path \
+  --no-follow \
+  -- "${*}" \
+  | fzf \
+    --multi \
+    --exit-0 \
+    --exact \
+    --reverse \
+    --no-sort \
+    --preview-window=70% \
+    --preview "rg -SpC10 '${*}' {}" \
+    --header "Matches for '${*}' in $(pwd). [TAB] select | [ENTER] edit | [ALT-B] git blame | [ALT-R] ranger | [ALT-D] diff" \
+    --bind "enter:execute(vim +/'${*//\//.}' {+})" \
+    --bind "alt-b:execute(tig blame {+})" \
+    --bind "alt-d:execute(delta --diff-so-fancy {+})" \
+    --bind "alt-i:execute(icdiff {+})" \
+    --bind "alt-r:execute(ranger {+})" \
+    --bind home:first \
+    --bind end:last \
+    --bind ctrl-p:toggle-preview

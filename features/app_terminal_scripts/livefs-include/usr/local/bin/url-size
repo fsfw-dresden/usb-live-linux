@@ -2,8 +2,8 @@
 
 for URL in ${@}
 do
-  curl --silent --head --location ${URL} | \
-    awk '/content-length/{cl=$2} END{sub("\\r","",cl); print cl}' | \
-    numfmt --to=iec-i --suffix=Byte
+  SIZE=$(curl --silent --output /dev/null --head --location --write-out '%header{content-length}' ${URL} \
+         | numfmt --format='%.1f' --to=iec-i --suffix=Byte)
+  echo "${SIZE}"
 done
 

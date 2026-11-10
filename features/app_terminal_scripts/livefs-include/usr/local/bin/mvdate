@@ -7,16 +7,16 @@
 FSPATH=$(dirname "${@}")
 FSOBJECT=$(basename "${@}")
 
-# split off extension(s) at the first dot
-NAME=${FSOBJECT%%.*}
-EXT="${FSOBJECT#*.}"
+# split off extension(s) at the last dot
+NAME=${FSOBJECT%.*}
+EXT="${FSOBJECT##*.}"
 
 # if basename doesn't include a dot, reset name and extension
 [ "${EXT}" != "${FSOBJECT}" ] || { NAME=${FSOBJECT} && EXT=""; }
 
 # get the date of last modification and assemble target file name
 DATESTR=$(date --date="$(stat --printf='%y' "${FSPATH}/${FSOBJECT}")" +'%F.%H%Mh')
-TARGET="${FSPATH}/${NAME}.${DATESTR}${EXT:+.${EXT}}"
+TARGET="${NAME}.${DATESTR}${EXT:+.${EXT}}"
 
 # do the rename
 ${CMD} "${FSPATH}/${FSOBJECT}" "${TARGET}"

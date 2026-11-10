@@ -12,7 +12,7 @@ recursive_touch() {
     [ -d "${dir}" ] && recursive_touch "${dir}"
   done < <(find "${1}" -mindepth 1 -maxdepth 1 -name '.git*' -prune -o -type d -print0)
 #  color red
-  touch -r "$(find "${1}" -mindepth 1 -maxdepth 1 -name '.git*' -prune -o -print0|xargs -0 ls -1artd|tail -1)" "${1}"
+  touch -hr "$(find "${1}" -mindepth 1 -maxdepth 1 -name '.git*' -prune -o -print0|xargs -0 ls -1artd|tail -1)" "${1}"
 #  color off
 # find -name '.git*' -prune -o -type d 
 #  -exec sh -c 'touch -r $(ls -1artd {}/ | tail -1) {}' \;

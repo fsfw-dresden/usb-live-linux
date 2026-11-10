@@ -1,0 +1,23 @@
+#!/bin/bash +x
+
+[ -z "${TMUX}" ] || tmux select-pane -T "${@}"
+
+BROWSERS="elinks
+chromium-shell --no-sandbox
+links2 -g
+url-size
+yt-dlp -v --add-metadata --embed-thumbnail --write-info-json
+gallery-dl --directory . --filename /O
+mpv --fs
+wget --server-response --verbose --timestamping
+wget --server-response --verbose --spider
+dtrx
+eget
+iwa"
+
+[ "${1}" = "!g" ] && { shift; URL="http://www.google.com/search?q=${@}"; } || URL="${@}"
+
+BROWSER=$(echo "${BROWSERS}" | fzf --reverse --exact --no-sort --header "Choose browser to open '${URL}' with")
+
+# execute
+[ -z "${BROWSER}" ] || eatmydata ${BROWSER} "${URL}" || read -n1 -p "${BROWSER} \"${URL}\" $(tput setaf 1)FAILED$(tput sgr0)."

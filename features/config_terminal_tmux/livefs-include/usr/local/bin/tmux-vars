@@ -1,2 +1,2 @@
-#!/bin/bash
-tmux display -a|cut -c -35|column -x
+#!/bin/sh
+tmux display-message -a

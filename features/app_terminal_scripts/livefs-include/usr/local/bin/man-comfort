@@ -1,0 +1,19 @@
+#!/bin/bash
+
+printf "finding documentation for '%s' ..." "${@}"
+trap clear 0 1 2 3
+
+man "${@}" 2>/dev/null || \
+  { [ ${#} -eq 1 ] && \
+    { type "${1}" 2>/dev/null && bat-help "${1}"; }
+  } || { \
+    LIST_PAGES=$(man --where --global-apropos "${@}" 2>/dev/null)
+    [ -z "${LIST_PAGES}" ] && {
+      echo "No matches, sorry."; read -n1 -t3; exit
+    } || {
+      echo "${LIST_PAGES}" | fzf --no-sort --layout=reverse \
+        --header-first --header="Manual pages containing '${*}'"  \
+        --exact --preview-window=70% --preview="man -l {} 2>/dev/null | bat -l man -fP 2>/dev/null" \
+        --bind "enter:execute(LESS='${LESS} --pattern=${1}' man --local-file {})"
+    }
+  }

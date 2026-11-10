@@ -1,9 +1,20 @@
-#!/bin/bash -xv
+#!/bin/bash +x
 {
-    read -n1 -sp "Really execute \"$*\"? [y/any]" -r input;
+    printf "Really execute \"%s" "$(tput setaf 14 bold)"
+    for ((i=1; i<$#+1; i++))
+    do
+        case "${!i}" in
+            *" "*) printf "'%s'" "${!i}";;
+            *) printf "%s" "${!i}";;
+        esac
+        [ $i -eq $# ] || printf ' '
+    done
+    printf "%s\"? [y/any]\n" "$(tput sgr0)"
+    read -n1 -s -r input;
     echo;
+
     if [ "$input" == "y" ]; then
-        eval $*;
+        "$@"
     fi
 }
 

@@ -1,36 +1,55 @@
-#!/bin/bash
-# briefly flash background color
+#!/bin/bash +x
+# Briefly flash active tmux pane background color to give 
 
-clean() {
-  # unset the bg style
-  tmux set -u window-active-style
+# Usage:
+# tmux-pane-flash [ -w {tmux_window_id} ] [ STEP DURATION in seconds ] [ PRESET NAME | SEQUENCE OF HEX COLORS ]
 
-  # FIXME: turn focus back on
-  tmux set -g focus-events on
+# Get current window id
+WINDOW_ID=$(tmux display-message -p '#{window_id}')
+[ "${1}" = "-w" ] && {
+  # If window given as parameter does not exist, abort
+  [ -n "$(tmux list-windows -f "#{==:#{window_id},${2}}")" ] || exit
 
-  rm -f $LOCKFILE
+  WINDOW_ID=${2}
+  shift 2
 }
 
-LOCKFILE=/run/lock/tmux-flash.$(id -u).lock
-exec 42>"$LOCKFILE" || exit 42
-trap clean 0 1 2 3 9 15
-flock --nonblock 42 || exit 42
+# Prevent flashes from queuing up with ephemeral per-user/per-window lock 
+LOCK_FILE=/run/lock/tmux-flash.$(id -u).${WINDOW_ID}
+exec 4<>${LOCK_FILE} && flock --nonblock 4 || exit 0
 
-# FIXME: this is a workaround to prevent many focus-event
-# hooks queuing up, would be better to have a command
-# tmux clear-hooks-queue or something 🤔
-tmux set -g focus-events off
+# Default to 0.05s = 50ms
+STEP_DURATION=${1:-0.05}
+shift
 
-# red for root user, green for others
-test $(id -u) -eq 0 \
-  && COLORS="3f0000 2f0000 0f0000" \
-  || COLORS="003f00 002f00 000f00"
+declare -A PRESETS
+PRESETS=(
+  [GREEN]="003f00 002f00 000f00"
+  [RED]="3f0000 2f0000 0f0000"
+  [GRAY]="9f9f9f 8f8f8f 3f3f3f 2f2f2f 1f1f1f 0f0f0f"
+  [PHUNKY]="ff0000 ffff00 0fff00"
+)
 
-SLEEP=${1:-0.05}
+# Set colors according to number of arguments given
+case ${#} in
+ 0) [ "$(id -u)" -eq 0 ] \
+      && COLORS="${PRESETS[RED]}" \
+      || COLORS="${PRESETS[GREEN]}"
+    ;;
+ 1) COLORS="${PRESETS[${1}]}"
+    ;;
+ *) COLORS="${*}"
+    ;;
+esac
 
-for COLOR in $COLORS
-do
-  tmux set window-active-style bg=#$COLOR
-  sleep $SLEEP
-done
+{
+  # Unset the bg style on exit and remove lock file
+  # shellcheck disable=SC2064
+  trap "tmux set -u -t ${WINDOW_ID} window-active-style; rm ${LOCK_FILE}" 0 1 2 3 15
 
+  for COLOR in ${COLORS}
+  do
+    tmux set -t $WINDOW_ID window-active-style bg="#${COLOR}"
+    sleep ${STEP_DURATION}
+  done 
+} &

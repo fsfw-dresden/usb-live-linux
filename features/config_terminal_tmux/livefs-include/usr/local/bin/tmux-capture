@@ -1,0 +1,114 @@
+#!/bin/bash +x
+# Capture active pane history to /var/log/tmux
+# shellcheck disable=SC2015
+
+DEBUG=
+LOG_DIR="/var/log/tmux"
+TMP_DIR="/tmp/.tmux-capture"
+mkdir -p "${LOG_DIR}" "${TMP_DIR}"
+[ -O "${TMP_DIR}" ] && chown 1000 "${TMP_DIR}"
+
+# capture full pane history by default
+ACTION=${1:-capture}
+DATE=$(date +%F.%H%Mh%S)
+LOG_SUFFIX="${ACTION}.${DATE}.log"
+
+log_debug() { echo "${@}" | tee --append "${TMP_DIR}/${DATE}.log" | { [ -z "${DEBUG}" ] && cat > /dev/null || cat >&2; } }
+sanitize() { sed "s| /| |g; s|//||g; s|/|--|g; s| \+\.|.|g"; }
+#cmdline() { tr '\0' ' ' < /proc/${PANE_PID}/cmdline; }
+#cmdline() { perl -pe 's/\x0/ /g;s/ $//' /proc/${1}/cmdline; }
+cmdline() { sed -r 's/\x0/ /g; s/ +$//; s|(/usr)/bin/((perl\|python3?) )||' /proc/${1}/cmdline; }
+tmux_get_var() { tmux display -p "#{${1}}"; }
+
+PANE_START_COMMAND=$(tmux_get_var pane_start_command | sed -r 's/^"(.*)"$/\1/')
+PANE_CUR_COMMAND=$(tmux_get_var pane_current_command)
+PANE_TITLE=$(tmux_get_var pane_title)
+PANE_PID=$(tmux_get_var pane_pid)
+
+#log_debug "$(tmux_get_var pane_start_command)"
+#tmux_get_var pane_start_command
+log_debug "PANE_START_COMMAND='$PANE_START_COMMAND'"
+log_debug "PANE_CUR_COMMAND='$PANE_CUR_COMMAND'"
+log_debug "PANE_TITLE='$PANE_TITLE'"
+log_debug "PANE_PID=$PANE_PID"
+
+[ -n "${PANE_PID}" ] && [ -d /proc/${PANE_PID} ] && {
+  log_debug "Process ${PANE_PID} still alive"
+  log_debug "$(cmdline ${PANE_PID} | hexyl)"
+  log_debug "$(color cyan)$(pstree -calA ${PANE_PID})$(color off)"
+
+  COMMAND_START_TIME=$(ps --no-headers -o lstart -D '%Y-%m-%d.%H%Mh' -p ${PANE_PID} | tr -d ' ')
+  COMMAND_COMM=$(cat /proc/${PANE_PID}/comm)
+  COMMAND_STR=$(cmdline ${PANE_PID})
+
+  log_debug "cmdline='$(cmdline ${PANE_PID})'"
+  log_debug "COMMAND_COMM='$COMMAND_COMM' (command name associated with the process)"
+  #log_debug "COMMAND_STR='$COMMAND_STR'"
+
+  # Find executable name in command line string
+  [ -n "${COMMAND_COMM}" ] && {
+    COMMAND_STR="$(echo "${COMMAND_STR}" \
+      | sed -r "s/.*(${COMMAND_COMM}.*)/\1/; s/ +$//" \
+      | sed 's/bash -c //')"
+    log_debug "COMMAND_STR='$COMMAND_STR'"
+    ##[ "${COMMAND_COMM}" = "tmux-pane-respa" ] \
+      ##|| {
+        #[ "${COMMAND_COMM}" = "${PANE_CUR_COMMAND}" ] \
+          #|| COMMAND_STR+=.${COMMAND_COMM%% }
+      ##}
+  } || log_debug "COMMAND_COMM empty!"
+
+  # For whatever reason, arguments may not show up in /proc/../cmdline
+  # In that case, fall back to #{pane_start_command}
+  [ "${COMMAND_STR}" = "${COMMAND_COMM}" ] \
+    && COMMAND_STR="${PANE_START_COMMAND}"
+
+  [ "${PANE_CUR_COMMAND}" = "bash" ] || [ "${PANE_CUR_COMMAND}" = "sh" ] || [ "${PANE_CUR_COMMAND}" = "ranger" ] \
+    && CHILD_PID=$(ps --no-headers -o pid --ppid ${PANE_PID} | head -n1 | tr -d ' ') \
+    && [ -n "${CHILD_PID}" ] \
+    && log_debug "CHILD_PID=${CHILD_PID}" \
+    && CHILD_COMM=$([ -d /proc/${CHILD_PID} ] && cat /proc/${CHILD_PID}/comm) \
+    && [ -n "${CHILD_COMM}" ] \
+    && log_debug "CHILD_COMM='${CHILD_COMM}'" \
+    && log_debug "child_cmdline='$(cmdline ${CHILD_PID} | sed -r "s/[^ ]*(${CHILD_COMM})/\1/")'" \
+    && ! [[ "${COMMAND_STR}" =~ ${CHILD_COMM} ]] \
+    && COMMAND_STR+=.$(cmdline ${CHILD_PID} | sed -r "s/[^ ]*(${CHILD_COMM}.*)/\1/") \
+    && log_debug "COMMAND_STR='$COMMAND_STR'"
+
+  LOG_SUFFIX="${COMMAND_START_TIME}.${LOG_SUFFIX}"
+} || {
+  log_debug "Process already dead, falling back to tmux #{pane_start_command}='${PANE_START_COMMAND}'"
+  DEAD=.$(tmux_get_var '?pane_dead_signal,signal:#{pane_dead_signal},exit:#{pane_dead_status}')
+  COMMAND_STR=${PANE_START_COMMAND}${DEAD}
+}
+
+[[ "${PANE_START_COMMAND}" =~ ^.?tmux-pane-wrap ]] \
+  && set -x \
+  && WRAPPED_CMD=$(echo ${PANE_START_COMMAND} | sed -r 's/\\//g; s/\\?['\''"]?(; tmux-pane-respawn-prompt)?( (\$\?|[0-9]+))?$//; s/tmux-pane-wrap( -v)? \\?['\''"]?(.*)/\2/') \
+  && log_debug "WRAPPED_CMD='$WRAPPED_CMD'" \
+  && LOG_NAME=${WRAPPED_CMD}.wrapped${DEAD} \
+  || LOG_NAME=${COMMAND_STR}
+
+log_debug "LOG_NAME='$LOG_NAME'"
+
+[ "${PANE_TITLE}" != "$(hostname)" ] \
+  && [ "${PANE_TITLE}" != "${LOG_NAME}" ] \
+  && LOG_NAME+=.${PANE_TITLE}
+
+# Sanitize & obey filename length restriction
+LOG_NAME=$(echo ${LOG_NAME} | sanitize | cut -c -$((253 - ${#LOG_SUFFIX}))).${LOG_SUFFIX}
+LOG_FILE=${LOG_DIR}/${LOG_NAME}
+touch -- "${LOG_FILE}" |& fold --width 160
+
+log_debug "LOG_NAME='$LOG_NAME'"
+log_debug "LOG_FILE='$LOG_FILE'"
+
+[ "${ACTION}" = "snapshot" ] && {
+  tmux capture-pane -eJp > "${LOG_FILE}" \
+  && tmux display-message "pane snapshot written to ${LOG_FILE}"
+} || {
+  tmux capture-pane -eJp -S - -E - > "${LOG_FILE}" \
+  && tmux display-message "history saved to ${LOG_FILE}"
+}
+
+[ -s "${LOG_FILE}" ] || echo FAIL

@@ -33,6 +33,8 @@ select_files_to_add() {
             "directory")
                 SUBITEMS=$(find "${FSOBJECT}" -not -type d|wc -l)
                 [ ${SUBITEMS} -eq 0 ] \
+                    && continue \
+                    && echo "unreachable" \
                     && SIZESTR="empty" \
                     || SIZESTR="${SUBITEMS} items"
                 ;;
@@ -67,6 +69,8 @@ FILES="$(select_files_to_add) $(select_files_to_rm)"
 
 [ -n "${FILES}" ] && for FILE in ${FILES};
 do
+    # detect empty directories and create a .gitkeep file in them
+    [ -d "${FILE}" ] && find "${FILE}" -maxdepth 0 -empty && touch "${FILE}/.gitkeep"
     git add --verbose "${FILE}"
 done
 
