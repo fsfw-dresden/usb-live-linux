@@ -23,6 +23,5 @@ pup                             # command-line HTML processor to filter using CS
 shellcheck                      # lint tool for shell scripts
 tig                             # ncurses-based text-mode interface for Git
 ttysnoop                        # spy on telnet+serial connections
-unblob                          # parses unknown binary blobs
 visidata                        # interactive multitool for tabular data
 zzuf                            # transparent application fuzzer
