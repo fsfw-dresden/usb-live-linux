@@ -1,2 +1,0 @@
-#!/bin/sh
-eget --to=/usr/local/bin --all phiresky/ripgrep-all
