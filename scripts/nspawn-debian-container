@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. "$(dirname $(realpath "${0}"))/functions.sh"
+. "$(dirname "$(realpath "${0}")")/functions.sh"
 cd_repo_root
 
 check_program_exists systemd-nspawn
@@ -54,9 +54,11 @@ unzip
 wget
 xorriso
 xz-utils
-youtube-dl
+yt-dlp
 zstd
 "
+
+# shellcheck disable=SC2059
 
 # If no container directory exists, initiate a debian stable install with our build dependencies
 if [ ! -d build/container ]
@@ -70,10 +72,11 @@ then
     # Debootstrap container using same cache location as for building the images
     CACHE_DIR="${PWD}/build/cache/packages.bootstrap"
     mkdir -pv "${CACHE_DIR}"
-    debootstrap --verbose --cache-dir="${CACHE_DIR}" --include=$(echo ${DEPS}|tr ' ' ',') stable build/container http://ftp.debian.org/debian
+    debootstrap --verbose --cache-dir="${CACHE_DIR}" --include="$(echo ${DEPS}|tr ' ' ',')" stable build/container http://ftp.debian.org/debian
 
     # Create a container welcome prompt
     {
+        echo
         echo "cd /mnt/usb-live-linux/"
         echo "clear"
         printf "echo '${COLOR_CYAN}You have entered a debian container environment with the required tool set to build the usb-live-linux project.${COLOR_OFF}'\n"
@@ -84,7 +87,7 @@ then
     } >> build/container/root/.bashrc
 
     # Copy custom aptitude config
-    cp -av features/config_apt_aptitude/livefs-include/etc/apt/apt.conf.d build/container/etc/apt/
+    cp -av features/config_apt_aptitude/livefs-pre-include/etc/apt/apt.conf.d build/container/etc/apt/
 fi
 
 # Disable enforcing of seccomp filters for speed-up
@@ -97,6 +100,6 @@ systemd-nspawn --directory=build/container apt update
 systemd-nspawn --directory=build/container apt install --yes --no-install-recommends --no-upgrade ${DEPS}
 
 # Now bind-mount this repository and enter the container (without any device access restrictions)
-systemd-nspawn --directory=build/container --bind=${PWD}:/mnt/usb-live-linux --bind=/dev --tmpfs=/run/lock --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --console=pipe
+systemd-nspawn --directory=build/container --bind="${PWD}":/mnt/usb-live-linux --bind=/dev --tmpfs=/run/lock --property='DeviceAllow=block-* rwm' --property='DeviceAllow=char-* rwm' --setenv=TERM="${TERM}" --console=pipe
 
 # vim: ts=2 sw=2
