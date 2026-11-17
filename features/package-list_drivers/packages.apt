@@ -45,7 +45,8 @@ ipheth-utils                    # USB tethering: make use of the iPhone's intern
 spice-vdagent                   #  Automatic adjustment of resolution, copy and paste when running with spice hypervisor (qemu)
 xserver-xorg-video-qxl          #  Display driver for QXL video device inside SPICE-compatible KVM/Qemu emulator
 
-# out of kernel drivers
-tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
-acpi-call-dkms                  #  enables you to call ACPI methods
-broadcom-sta-dkms               #  Broadcom STA Wireless driver
+# out of mainline tree kernel drivers
+# FIXME: break regularly on kernel updates until adapted to module API changes
+# tp-smapi-dkms                   #  ThinkPad hardware/firmware access modules (control of battery charging and extended battery status)
+# acpi-call-dkms                  #  enables you to call ACPI methods
+# broadcom-sta-dkms               #  Broadcom STA Wireless driver
